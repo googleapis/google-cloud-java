@@ -26,16 +26,24 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksMetadata;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksRequest;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksResponse;
+import com.google.cloud.tasks.v2beta3.BatchDeleteTasksMetadata;
+import com.google.cloud.tasks.v2beta3.BatchDeleteTasksRequest;
+import com.google.cloud.tasks.v2beta3.CmekConfig;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta3.CreateTaskRequest;
 import com.google.cloud.tasks.v2beta3.DeleteQueueRequest;
 import com.google.cloud.tasks.v2beta3.DeleteTaskRequest;
+import com.google.cloud.tasks.v2beta3.GetCmekConfigRequest;
 import com.google.cloud.tasks.v2beta3.GetQueueRequest;
 import com.google.cloud.tasks.v2beta3.GetTaskRequest;
 import com.google.cloud.tasks.v2beta3.ListQueuesRequest;
@@ -48,12 +56,14 @@ import com.google.cloud.tasks.v2beta3.Queue;
 import com.google.cloud.tasks.v2beta3.ResumeQueueRequest;
 import com.google.cloud.tasks.v2beta3.RunTaskRequest;
 import com.google.cloud.tasks.v2beta3.Task;
+import com.google.cloud.tasks.v2beta3.UpdateCmekConfigRequest;
 import com.google.cloud.tasks.v2beta3.UpdateQueueRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -204,6 +214,17 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<BatchCreateTasksRequest, Operation>
+      batchCreateTasksMethodDescriptor =
+          MethodDescriptor.<BatchCreateTasksRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/BatchCreateTasks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
       MethodDescriptor.<DeleteTaskRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -213,6 +234,17 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<BatchDeleteTasksRequest, Operation>
+      batchDeleteTasksMethodDescriptor =
+          MethodDescriptor.<BatchDeleteTasksRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/BatchDeleteTasks")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteTasksRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<RunTaskRequest, Task> runTaskMethodDescriptor =
       MethodDescriptor.<RunTaskRequest, Task>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -221,6 +253,28 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<UpdateCmekConfigRequest, CmekConfig>
+      updateCmekConfigMethodDescriptor =
+          MethodDescriptor.<UpdateCmekConfigRequest, CmekConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/UpdateCmekConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateCmekConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CmekConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetCmekConfigRequest, CmekConfig>
+      getCmekConfigMethodDescriptor =
+          MethodDescriptor.<GetCmekConfigRequest, CmekConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/GetCmekConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetCmekConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CmekConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -260,8 +314,17 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
+  private final UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable;
+  private final OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable;
   private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
+  private final UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable;
+  private final OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
+  private final UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable;
+  private final UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -463,6 +526,17 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<BatchCreateTasksRequest, Operation> batchCreateTasksTransportSettings =
+        GrpcCallSettings.<BatchCreateTasksRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchCreateTasksMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         GrpcCallSettings.<DeleteTaskRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTaskMethodDescriptor)
@@ -474,9 +548,42 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<BatchDeleteTasksRequest, Operation> batchDeleteTasksTransportSettings =
+        GrpcCallSettings.<BatchDeleteTasksRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteTasksMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
         GrpcCallSettings.<RunTaskRequest, Task>newBuilder()
             .setMethodDescriptor(runTaskMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigTransportSettings =
+        GrpcCallSettings.<UpdateCmekConfigRequest, CmekConfig>newBuilder()
+            .setMethodDescriptor(updateCmekConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "cmek_config.name", String.valueOf(request.getCmekConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetCmekConfigRequest, CmekConfig> getCmekConfigTransportSettings =
+        GrpcCallSettings.<GetCmekConfigRequest, CmekConfig>newBuilder()
+            .setMethodDescriptor(getCmekConfigMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -556,12 +663,36 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     this.createTaskCallable =
         callableFactory.createUnaryCallable(
             createTaskTransportSettings, settings.createTaskSettings(), clientContext);
+    this.batchCreateTasksCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateTasksTransportSettings, settings.batchCreateTasksSettings(), clientContext);
+    this.batchCreateTasksOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateTasksTransportSettings,
+            settings.batchCreateTasksOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteTaskCallable =
         callableFactory.createUnaryCallable(
             deleteTaskTransportSettings, settings.deleteTaskSettings(), clientContext);
+    this.batchDeleteTasksCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteTasksTransportSettings, settings.batchDeleteTasksSettings(), clientContext);
+    this.batchDeleteTasksOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteTasksTransportSettings,
+            settings.batchDeleteTasksOperationSettings(),
+            clientContext,
+            operationsStub);
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
+    this.updateCmekConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCmekConfigTransportSettings, settings.updateCmekConfigSettings(), clientContext);
+    this.getCmekConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCmekConfigTransportSettings, settings.getCmekConfigSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -662,13 +793,46 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable() {
+    return batchCreateTasksCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable() {
+    return batchCreateTasksOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     return deleteTaskCallable;
   }
 
   @Override
+  public UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable() {
+    return batchDeleteTasksCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable() {
+    return batchDeleteTasksOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable() {
+    return updateCmekConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable() {
+    return getCmekConfigCallable;
   }
 
   @Override

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,7 +69,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetOperatingSystemVersion</td>
- *      <td><p> API to retrieve a `OperatingSystemVersion` object.</td>
+ *      <td><p> Retrieves a `OperatingSystemVersion` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +88,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListOperatingSystemVersions</td>
- *      <td><p> API to retrieve a list of `OperatingSystemVersion` objects.</td>
+ *      <td><p> Lists `OperatingSystemVersion` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -151,7 +152,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OperatingSystemVersionServiceClient implements BackgroundResource {
-  private final OperatingSystemVersionServiceSettings settings;
+  private final @Nullable OperatingSystemVersionServiceSettings settings;
   private final OperatingSystemVersionServiceStub stub;
 
   /** Constructs an instance of OperatingSystemVersionServiceClient with default settings. */
@@ -195,7 +196,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OperatingSystemVersionServiceSettings getSettings() {
+  public final @Nullable OperatingSystemVersionServiceSettings getSettings() {
     return settings;
   }
 
@@ -205,7 +206,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystemVersion` object.
+   * Retrieves a `OperatingSystemVersion` object.
    *
    * <p>Sample code:
    *
@@ -228,7 +229,8 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
    *     `networks/{network_code}/operatingSystemVersions/{operating_system_version_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperatingSystemVersion getOperatingSystemVersion(OperatingSystemVersionName name) {
+  public final OperatingSystemVersion getOperatingSystemVersion(
+      @Nullable OperatingSystemVersionName name) {
     GetOperatingSystemVersionRequest request =
         GetOperatingSystemVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -238,7 +240,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystemVersion` object.
+   * Retrieves a `OperatingSystemVersion` object.
    *
    * <p>Sample code:
    *
@@ -269,7 +271,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystemVersion` object.
+   * Retrieves a `OperatingSystemVersion` object.
    *
    * <p>Sample code:
    *
@@ -302,7 +304,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `OperatingSystemVersion` object.
+   * Retrieves a `OperatingSystemVersion` object.
    *
    * <p>Sample code:
    *
@@ -336,7 +338,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystemVersion` objects.
+   * Lists `OperatingSystemVersion` objects.
    *
    * <p>Sample code:
    *
@@ -361,7 +363,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOperatingSystemVersionsPagedResponse listOperatingSystemVersions(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListOperatingSystemVersionsRequest request =
         ListOperatingSystemVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -371,7 +373,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystemVersion` objects.
+   * Lists `OperatingSystemVersion` objects.
    *
    * <p>Sample code:
    *
@@ -403,7 +405,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystemVersion` objects.
+   * Lists `OperatingSystemVersion` objects.
    *
    * <p>Sample code:
    *
@@ -441,7 +443,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystemVersion` objects.
+   * Lists `OperatingSystemVersion` objects.
    *
    * <p>Sample code:
    *
@@ -481,7 +483,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `OperatingSystemVersion` objects.
+   * Lists `OperatingSystemVersion` objects.
    *
    * <p>Sample code:
    *
@@ -591,12 +593,13 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
           ListOperatingSystemVersionsPage> {
 
     private ListOperatingSystemVersionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOperatingSystemVersionsRequest,
                 ListOperatingSystemVersionsResponse,
                 OperatingSystemVersion>
             context,
-        ListOperatingSystemVersionsResponse response) {
+        @Nullable ListOperatingSystemVersionsResponse response) {
       super(context, response);
     }
 
@@ -606,18 +609,20 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
     @Override
     protected ListOperatingSystemVersionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOperatingSystemVersionsRequest,
                 ListOperatingSystemVersionsResponse,
                 OperatingSystemVersion>
             context,
-        ListOperatingSystemVersionsResponse response) {
+        @Nullable ListOperatingSystemVersionsResponse response) {
       return new ListOperatingSystemVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOperatingSystemVersionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOperatingSystemVersionsRequest,
                 ListOperatingSystemVersionsResponse,
                 OperatingSystemVersion>
@@ -636,7 +641,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
           ListOperatingSystemVersionsFixedSizeCollection> {
 
     private ListOperatingSystemVersionsFixedSizeCollection(
-        List<ListOperatingSystemVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListOperatingSystemVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -646,7 +651,7 @@ public class OperatingSystemVersionServiceClient implements BackgroundResource {
 
     @Override
     protected ListOperatingSystemVersionsFixedSizeCollection createCollection(
-        List<ListOperatingSystemVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListOperatingSystemVersionsPage> pages, int collectionSize) {
       return new ListOperatingSystemVersionsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,7 +150,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AudienceSegmentServiceClient implements BackgroundResource {
-  private final AudienceSegmentServiceSettings settings;
+  private final @Nullable AudienceSegmentServiceSettings settings;
   private final AudienceSegmentServiceStub stub;
 
   /** Constructs an instance of AudienceSegmentServiceClient with default settings. */
@@ -190,7 +191,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AudienceSegmentServiceSettings getSettings() {
+  public final @Nullable AudienceSegmentServiceSettings getSettings() {
     return settings;
   }
 
@@ -221,7 +222,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
    *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AudienceSegment getAudienceSegment(AudienceSegmentName name) {
+  public final AudienceSegment getAudienceSegment(@Nullable AudienceSegmentName name) {
     GetAudienceSegmentRequest request =
         GetAudienceSegmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -343,7 +344,8 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
    *     Format: `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAudienceSegmentsPagedResponse listAudienceSegments(NetworkName parent) {
+  public final ListAudienceSegmentsPagedResponse listAudienceSegments(
+      @Nullable NetworkName parent) {
     ListAudienceSegmentsRequest request =
         ListAudienceSegmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -565,9 +567,10 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
           ListAudienceSegmentsPage> {
 
     private ListAudienceSegmentsPage(
-        PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
+        @Nullable
+            PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
             context,
-        ListAudienceSegmentsResponse response) {
+        @Nullable ListAudienceSegmentsResponse response) {
       super(context, response);
     }
 
@@ -577,15 +580,17 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAudienceSegmentsPage createPage(
-        PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
+        @Nullable
+            PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
             context,
-        ListAudienceSegmentsResponse response) {
+        @Nullable ListAudienceSegmentsResponse response) {
       return new ListAudienceSegmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAudienceSegmentsPage> createPageAsync(
-        PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
+        @Nullable
+            PageContext<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse, AudienceSegment>
             context,
         ApiFuture<ListAudienceSegmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -601,7 +606,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
           ListAudienceSegmentsFixedSizeCollection> {
 
     private ListAudienceSegmentsFixedSizeCollection(
-        List<ListAudienceSegmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceSegmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -611,7 +616,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAudienceSegmentsFixedSizeCollection createCollection(
-        List<ListAudienceSegmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceSegmentsPage> pages, int collectionSize) {
       return new ListAudienceSegmentsFixedSizeCollection(pages, collectionSize);
     }
   }

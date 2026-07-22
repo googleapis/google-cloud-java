@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -85,7 +86,7 @@ public class MessageBusName implements ResourceName {
         .toString();
   }
 
-  public static MessageBusName parse(String formattedString) {
+  public static @Nullable MessageBusName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -103,7 +104,7 @@ public class MessageBusName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<MessageBusName> values) {
+  public static List<String> toStringList(List<@Nullable MessageBusName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (MessageBusName value : values) {
       if (value == null) {
@@ -152,7 +153,7 @@ public class MessageBusName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

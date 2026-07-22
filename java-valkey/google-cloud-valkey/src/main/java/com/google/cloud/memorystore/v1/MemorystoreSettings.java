@@ -16,10 +16,12 @@
 
 package com.google.cloud.memorystore.v1;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -45,6 +47,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -255,6 +258,96 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     return ((MemorystoreStubSettings) getStubSettings()).backupInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to startMigration. */
+  public UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).startMigrationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).finishMigrationOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listTokenAuthUsers. */
+  public PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listTokenAuthUsersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getTokenAuthUser. */
+  public UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAuthTokens. */
+  public PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).listAuthTokensSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAuthToken. */
+  public UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).getAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).addTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public OperationCallSettings<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).addTokenAuthUserOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public UnaryCallSettings<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteTokenAuthUserSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteTokenAuthUserOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).addAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).addAuthTokenOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteAuthTokenSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings() {
+    return ((MemorystoreStubSettings) getStubSettings()).deleteAuthTokenOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -321,7 +414,7 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -341,7 +434,7 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(MemorystoreStubSettings.newBuilder(clientContext));
     }
 
@@ -507,6 +600,99 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
         backupInstanceOperationSettings() {
       return getStubSettingsBuilder().backupInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public UnaryCallSettings.Builder<StartMigrationRequest, Operation> startMigrationSettings() {
+      return getStubSettingsBuilder().startMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings() {
+      return getStubSettingsBuilder().startMigrationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public UnaryCallSettings.Builder<FinishMigrationRequest, Operation> finishMigrationSettings() {
+      return getStubSettingsBuilder().finishMigrationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings() {
+      return getStubSettingsBuilder().finishMigrationOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listTokenAuthUsers. */
+    public PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings() {
+      return getStubSettingsBuilder().listTokenAuthUsersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getTokenAuthUser. */
+    public UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings() {
+      return getStubSettingsBuilder().getTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthTokens. */
+    public PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings() {
+      return getStubSettingsBuilder().listAuthTokensSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthToken. */
+    public UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+      return getStubSettingsBuilder().getAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings() {
+      return getStubSettingsBuilder().addTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public OperationCallSettings.Builder<AddTokenAuthUserRequest, Instance, OperationMetadata>
+        addTokenAuthUserOperationSettings() {
+      return getStubSettingsBuilder().addTokenAuthUserOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings() {
+      return getStubSettingsBuilder().deleteTokenAuthUserSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public OperationCallSettings.Builder<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings() {
+      return getStubSettingsBuilder().deleteTokenAuthUserOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+      return getStubSettingsBuilder().addAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public OperationCallSettings.Builder<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings() {
+      return getStubSettingsBuilder().addAuthTokenOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+      return getStubSettingsBuilder().deleteAuthTokenSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings() {
+      return getStubSettingsBuilder().deleteAuthTokenOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

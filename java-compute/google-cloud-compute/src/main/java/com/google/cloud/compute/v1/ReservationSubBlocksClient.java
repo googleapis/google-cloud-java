@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -264,7 +265,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ReservationSubBlocksClient implements BackgroundResource {
-  private final ReservationSubBlocksSettings settings;
+  private final @Nullable ReservationSubBlocksSettings settings;
   private final ReservationSubBlocksStub stub;
 
   /** Constructs an instance of ReservationSubBlocksClient with default settings. */
@@ -304,7 +305,7 @@ public class ReservationSubBlocksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReservationSubBlocksSettings getSettings() {
+  public final @Nullable ReservationSubBlocksSettings getSettings() {
     return settings;
   }
 
@@ -1477,12 +1478,13 @@ public class ReservationSubBlocksClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReservationSubBlocksRequest,
                 ReservationSubBlocksListResponse,
                 ReservationSubBlock>
             context,
-        ReservationSubBlocksListResponse response) {
+        @Nullable ReservationSubBlocksListResponse response) {
       super(context, response);
     }
 
@@ -1492,18 +1494,20 @@ public class ReservationSubBlocksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReservationSubBlocksRequest,
                 ReservationSubBlocksListResponse,
                 ReservationSubBlock>
             context,
-        ReservationSubBlocksListResponse response) {
+        @Nullable ReservationSubBlocksListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListReservationSubBlocksRequest,
                 ReservationSubBlocksListResponse,
                 ReservationSubBlock>
@@ -1521,7 +1525,7 @@ public class ReservationSubBlocksClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1530,7 +1534,8 @@ public class ReservationSubBlocksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -201,7 +202,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RoutesClient implements BackgroundResource {
-  private final RoutesSettings settings;
+  private final @Nullable RoutesSettings settings;
   private final RoutesStub stub;
 
   /** Constructs an instance of RoutesClient with default settings. */
@@ -239,7 +240,7 @@ public class RoutesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RoutesSettings getSettings() {
+  public final @Nullable RoutesSettings getSettings() {
     return settings;
   }
 
@@ -859,7 +860,9 @@ public class RoutesClient implements BackgroundResource {
 
   public static class ListPage extends AbstractPage<ListRoutesRequest, RouteList, Route, ListPage> {
 
-    private ListPage(PageContext<ListRoutesRequest, RouteList, Route> context, RouteList response) {
+    private ListPage(
+        @Nullable PageContext<ListRoutesRequest, RouteList, Route> context,
+        @Nullable RouteList response) {
       super(context, response);
     }
 
@@ -869,13 +872,14 @@ public class RoutesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRoutesRequest, RouteList, Route> context, RouteList response) {
+        @Nullable PageContext<ListRoutesRequest, RouteList, Route> context,
+        @Nullable RouteList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRoutesRequest, RouteList, Route> context,
+        @Nullable PageContext<ListRoutesRequest, RouteList, Route> context,
         ApiFuture<RouteList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -885,7 +889,7 @@ public class RoutesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRoutesRequest, RouteList, Route, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -894,7 +898,8 @@ public class RoutesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -24,6 +24,7 @@ import static org.mockito.Mockito.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.NoCredentials;
@@ -71,7 +72,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -81,7 +82,7 @@ public class EmulatorUtilTest {
     DatabaseAdminClient databaseClient = mock(DatabaseAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Database, CreateDatabaseMetadata> databaseOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getDatabaseAdminClient()).thenReturn(databaseClient);
     when(databaseClient.createDatabase(
@@ -122,7 +123,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -136,7 +137,7 @@ public class EmulatorUtilTest {
     DatabaseAdminClient databaseClient = mock(DatabaseAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Database, CreateDatabaseMetadata> databaseOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getDatabaseAdminClient()).thenReturn(databaseClient);
     when(databaseClient.createDatabase(
@@ -181,7 +182,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -214,7 +215,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -243,7 +244,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -253,7 +254,7 @@ public class EmulatorUtilTest {
     DatabaseAdminClient databaseClient = mock(DatabaseAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Database, CreateDatabaseMetadata> databaseOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getDatabaseAdminClient()).thenReturn(databaseClient);
     when(databaseClient.createDatabase(
@@ -290,7 +291,7 @@ public class EmulatorUtilTest {
     InstanceAdminClient instanceClient = mock(InstanceAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Instance, CreateInstanceMetadata> instanceOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getInstanceAdminClient()).thenReturn(instanceClient);
     when(instanceClient.createInstance(any(InstanceInfo.class)))
@@ -300,7 +301,7 @@ public class EmulatorUtilTest {
     DatabaseAdminClient databaseClient = mock(DatabaseAdminClient.class);
     @SuppressWarnings("unchecked")
     OperationFuture<Database, CreateDatabaseMetadata> databaseOperationFuture =
-        mock(OperationFuture.class);
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(spanner.getDatabaseAdminClient()).thenReturn(databaseClient);
     when(databaseClient.createDatabase(

@@ -72,13 +72,13 @@ public final class CheckErrorProto extends com.google.protobuf.GeneratedFile {
           + "\020{\022!\n\034NAMESPACE_LOOKUP_UNAVAILABLE\020\254\002\022\037\n"
           + "\032SERVICE_STATUS_UNAVAILABLE\020\255\002\022\037\n\032BILLIN"
           + "G_STATUS_UNAVAILABLE\020\256\002\022/\n*CLOUD_RESOURC"
-          + "E_MANAGER_BACKEND_UNAVAILABLE\020\261\002B\352\001\n com"
+          + "E_MANAGER_BACKEND_UNAVAILABLE\020\261\002B\347\001\n com"
           + ".google.api.servicecontrol.v1B\017CheckErro"
           + "rProtoP\001ZJcloud.google.com/go/servicecon"
           + "trol/apiv1/servicecontrolpb;servicecontr"
-          + "olpb\370\001\001\252\002\036Google.Cloud.ServiceControl.V1"
-          + "\312\002\036Google\\Cloud\\ServiceControl\\V1\352\002!Goog"
-          + "le::Cloud::ServiceControl::V1b\006proto3"
+          + "olpb\252\002\036Google.Cloud.ServiceControl.V1\312\002\036"
+          + "Google\\Cloud\\ServiceControl\\V1\352\002!Google:"
+          + ":Cloud::ServiceControl::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.maps.isochrones.v1",
+  "libraryPackage": "com.google.maps.isochrones.v1",
+  "services": {
+    "IsochroneService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IsochroneServiceClient",
+          "rpcs": {
+            "GenerateIsochrone": {
+              "methods": ["generateIsochrone", "generateIsochroneCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

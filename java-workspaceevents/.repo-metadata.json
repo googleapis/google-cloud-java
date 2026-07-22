@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-workspaceevents",
   "api_id": "workspaceevents.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rest_documentation": "https://developers.google.com/workspace/events/reference/rest"
 }

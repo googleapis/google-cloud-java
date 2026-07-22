@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -160,7 +161,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ServiceControllerClient implements BackgroundResource {
-  private final ServiceControllerSettings settings;
+  private final @Nullable ServiceControllerSettings settings;
   private final ServiceControllerStub stub;
 
   /** Constructs an instance of ServiceControllerClient with default settings. */
@@ -200,7 +201,7 @@ public class ServiceControllerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ServiceControllerSettings getSettings() {
+  public final @Nullable ServiceControllerSettings getSettings() {
     return settings;
   }
 

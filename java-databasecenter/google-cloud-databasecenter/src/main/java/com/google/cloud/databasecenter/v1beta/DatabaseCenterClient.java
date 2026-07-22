@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,7 +222,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DatabaseCenterClient implements BackgroundResource {
-  private final DatabaseCenterSettings settings;
+  private final @Nullable DatabaseCenterSettings settings;
   private final DatabaseCenterStub stub;
 
   /** Constructs an instance of DatabaseCenterClient with default settings. */
@@ -261,7 +262,7 @@ public class DatabaseCenterClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DatabaseCenterSettings getSettings() {
+  public final @Nullable DatabaseCenterSettings getSettings() {
     return settings;
   }
 
@@ -1001,8 +1002,8 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryProductsRequest, QueryProductsResponse, Product, QueryProductsPage> {
 
     private QueryProductsPage(
-        PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
-        QueryProductsResponse response) {
+        @Nullable PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
+        @Nullable QueryProductsResponse response) {
       super(context, response);
     }
 
@@ -1012,14 +1013,14 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryProductsPage createPage(
-        PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
-        QueryProductsResponse response) {
+        @Nullable PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
+        @Nullable QueryProductsResponse response) {
       return new QueryProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryProductsPage> createPageAsync(
-        PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
+        @Nullable PageContext<QueryProductsRequest, QueryProductsResponse, Product> context,
         ApiFuture<QueryProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1033,7 +1034,8 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryProductsPage,
           QueryProductsFixedSizeCollection> {
 
-    private QueryProductsFixedSizeCollection(List<QueryProductsPage> pages, int collectionSize) {
+    private QueryProductsFixedSizeCollection(
+        @Nullable List<QueryProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1043,7 +1045,7 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryProductsFixedSizeCollection createCollection(
-        List<QueryProductsPage> pages, int collectionSize) {
+        @Nullable List<QueryProductsPage> pages, int collectionSize) {
       return new QueryProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1077,8 +1079,9 @@ public class DatabaseCenterClient implements BackgroundResource {
           AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow, AggregateFleetPage> {
 
     private AggregateFleetPage(
-        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
-        AggregateFleetResponse response) {
+        @Nullable PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>
+            context,
+        @Nullable AggregateFleetResponse response) {
       super(context, response);
     }
 
@@ -1088,14 +1091,16 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected AggregateFleetPage createPage(
-        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
-        AggregateFleetResponse response) {
+        @Nullable PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>
+            context,
+        @Nullable AggregateFleetResponse response) {
       return new AggregateFleetPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregateFleetPage> createPageAsync(
-        PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow> context,
+        @Nullable PageContext<AggregateFleetRequest, AggregateFleetResponse, AggregateFleetRow>
+            context,
         ApiFuture<AggregateFleetResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1109,7 +1114,8 @@ public class DatabaseCenterClient implements BackgroundResource {
           AggregateFleetPage,
           AggregateFleetFixedSizeCollection> {
 
-    private AggregateFleetFixedSizeCollection(List<AggregateFleetPage> pages, int collectionSize) {
+    private AggregateFleetFixedSizeCollection(
+        @Nullable List<AggregateFleetPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1119,7 +1125,7 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected AggregateFleetFixedSizeCollection createCollection(
-        List<AggregateFleetPage> pages, int collectionSize) {
+        @Nullable List<AggregateFleetPage> pages, int collectionSize) {
       return new AggregateFleetFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1161,12 +1167,13 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryDatabaseResourceGroupsPage> {
 
     private QueryDatabaseResourceGroupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryDatabaseResourceGroupsRequest,
                 QueryDatabaseResourceGroupsResponse,
                 DatabaseResourceGroup>
             context,
-        QueryDatabaseResourceGroupsResponse response) {
+        @Nullable QueryDatabaseResourceGroupsResponse response) {
       super(context, response);
     }
 
@@ -1176,18 +1183,20 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryDatabaseResourceGroupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryDatabaseResourceGroupsRequest,
                 QueryDatabaseResourceGroupsResponse,
                 DatabaseResourceGroup>
             context,
-        QueryDatabaseResourceGroupsResponse response) {
+        @Nullable QueryDatabaseResourceGroupsResponse response) {
       return new QueryDatabaseResourceGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryDatabaseResourceGroupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 QueryDatabaseResourceGroupsRequest,
                 QueryDatabaseResourceGroupsResponse,
                 DatabaseResourceGroup>
@@ -1206,7 +1215,7 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryDatabaseResourceGroupsFixedSizeCollection> {
 
     private QueryDatabaseResourceGroupsFixedSizeCollection(
-        List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
+        @Nullable List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1216,7 +1225,7 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryDatabaseResourceGroupsFixedSizeCollection createCollection(
-        List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
+        @Nullable List<QueryDatabaseResourceGroupsPage> pages, int collectionSize) {
       return new QueryDatabaseResourceGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1254,9 +1263,10 @@ public class DatabaseCenterClient implements BackgroundResource {
           AggregateQueryStatsPage> {
 
     private AggregateQueryStatsPage(
-        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+        @Nullable
+            PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
             context,
-        AggregateQueryStatsResponse response) {
+        @Nullable AggregateQueryStatsResponse response) {
       super(context, response);
     }
 
@@ -1266,15 +1276,17 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected AggregateQueryStatsPage createPage(
-        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+        @Nullable
+            PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
             context,
-        AggregateQueryStatsResponse response) {
+        @Nullable AggregateQueryStatsResponse response) {
       return new AggregateQueryStatsPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregateQueryStatsPage> createPageAsync(
-        PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
+        @Nullable
+            PageContext<AggregateQueryStatsRequest, AggregateQueryStatsResponse, QueryStatsInfo>
             context,
         ApiFuture<AggregateQueryStatsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1290,7 +1302,7 @@ public class DatabaseCenterClient implements BackgroundResource {
           AggregateQueryStatsFixedSizeCollection> {
 
     private AggregateQueryStatsFixedSizeCollection(
-        List<AggregateQueryStatsPage> pages, int collectionSize) {
+        @Nullable List<AggregateQueryStatsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1300,7 +1312,7 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected AggregateQueryStatsFixedSizeCollection createCollection(
-        List<AggregateQueryStatsPage> pages, int collectionSize) {
+        @Nullable List<AggregateQueryStatsPage> pages, int collectionSize) {
       return new AggregateQueryStatsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1332,8 +1344,9 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue, QueryIssuesPage> {
 
     private QueryIssuesPage(
-        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
-        QueryIssuesResponse response) {
+        @Nullable PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
+            context,
+        @Nullable QueryIssuesResponse response) {
       super(context, response);
     }
 
@@ -1343,14 +1356,16 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryIssuesPage createPage(
-        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
-        QueryIssuesResponse response) {
+        @Nullable PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
+            context,
+        @Nullable QueryIssuesResponse response) {
       return new QueryIssuesPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryIssuesPage> createPageAsync(
-        PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue> context,
+        @Nullable PageContext<QueryIssuesRequest, QueryIssuesResponse, DatabaseResourceIssue>
+            context,
         ApiFuture<QueryIssuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1364,7 +1379,8 @@ public class DatabaseCenterClient implements BackgroundResource {
           QueryIssuesPage,
           QueryIssuesFixedSizeCollection> {
 
-    private QueryIssuesFixedSizeCollection(List<QueryIssuesPage> pages, int collectionSize) {
+    private QueryIssuesFixedSizeCollection(
+        @Nullable List<QueryIssuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1374,7 +1390,7 @@ public class DatabaseCenterClient implements BackgroundResource {
 
     @Override
     protected QueryIssuesFixedSizeCollection createCollection(
-        List<QueryIssuesPage> pages, int collectionSize) {
+        @Nullable List<QueryIssuesPage> pages, int collectionSize) {
       return new QueryIssuesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -176,7 +177,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FleetRoutingClient implements BackgroundResource {
-  private final FleetRoutingSettings settings;
+  private final @Nullable FleetRoutingSettings settings;
   private final FleetRoutingStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -223,7 +224,7 @@ public class FleetRoutingClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final FleetRoutingSettings getSettings() {
+  public final @Nullable FleetRoutingSettings getSettings() {
     return settings;
   }
 

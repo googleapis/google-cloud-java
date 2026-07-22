@@ -37,6 +37,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -219,7 +220,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class PoliciesClient implements BackgroundResource {
-  private final PoliciesSettings settings;
+  private final @Nullable PoliciesSettings settings;
   private final PoliciesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -265,7 +266,7 @@ public class PoliciesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PoliciesSettings getSettings() {
+  public final @Nullable PoliciesSettings getSettings() {
     return settings;
   }
 
@@ -926,8 +927,8 @@ public class PoliciesClient implements BackgroundResource {
       extends AbstractPage<ListPoliciesRequest, ListPoliciesResponse, Policy, ListPoliciesPage> {
 
     private ListPoliciesPage(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
-        ListPoliciesResponse response) {
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable ListPoliciesResponse response) {
       super(context, response);
     }
 
@@ -937,14 +938,14 @@ public class PoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPoliciesPage createPage(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
-        ListPoliciesResponse response) {
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable ListPoliciesResponse response) {
       return new ListPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPoliciesPage> createPageAsync(
-        PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
+        @Nullable PageContext<ListPoliciesRequest, ListPoliciesResponse, Policy> context,
         ApiFuture<ListPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -958,7 +959,8 @@ public class PoliciesClient implements BackgroundResource {
           ListPoliciesPage,
           ListPoliciesFixedSizeCollection> {
 
-    private ListPoliciesFixedSizeCollection(List<ListPoliciesPage> pages, int collectionSize) {
+    private ListPoliciesFixedSizeCollection(
+        @Nullable List<ListPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -968,7 +970,7 @@ public class PoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPoliciesFixedSizeCollection createCollection(
-        List<ListPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListPoliciesPage> pages, int collectionSize) {
       return new ListPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -902,8 +902,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are allowed to connect to this network
+   * attachment. The project can be specified using its id or number. Service
+   * class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -918,8 +919,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are allowed to connect to this network
+   * attachment. The project can be specified using its id or number. Service
+   * class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -934,8 +936,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are allowed to connect to this network
+   * attachment. The project can be specified using its id or number. Service
+   * class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -951,8 +954,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are allowed to connect to this network
+   * attachment. The project can be specified using its id or number. Service
+   * class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -974,8 +978,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are not allowed to connect to this
+   * network attachment. The project can be specified using its id or number.
+   * Service class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -990,8 +995,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are not allowed to connect to this
+   * network attachment. The project can be specified using its id or number.
+   * Service class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -1006,8 +1012,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are not allowed to connect to this
+   * network attachment. The project can be specified using its id or number.
+   * Service class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -1023,8 +1030,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Projects that are not allowed to connect to this network attachment.
-   * The project can be specified using its id or number.
+   * Projects or service class ids that are not allowed to connect to this
+   * network attachment. The project can be specified using its id or number.
+   * Service class id can be specified as "serviceclasses/{service_class_id}".
    * </pre>
    *
    * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3639,8 +3647,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3656,8 +3665,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3672,8 +3682,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3689,8 +3700,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3706,8 +3718,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3731,8 +3744,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3755,8 +3769,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3776,8 +3791,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3796,8 +3812,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are allowed to connect to this network
+     * attachment. The project can be specified using its id or number. Service
+     * class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_accept_lists = 202804523;</code>
@@ -3831,8 +3848,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3848,8 +3866,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3864,8 +3883,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3881,8 +3901,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3898,8 +3919,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3923,8 +3945,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3947,8 +3970,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3968,8 +3992,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>
@@ -3988,8 +4013,9 @@ public final class NetworkAttachment extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Projects that are not allowed to connect to this network attachment.
-     * The project can be specified using its id or number.
+     * Projects or service class ids that are not allowed to connect to this
+     * network attachment. The project can be specified using its id or number.
+     * Service class id can be specified as "serviceclasses/{service_class_id}".
      * </pre>
      *
      * <code>repeated string producer_reject_lists = 4112002;</code>

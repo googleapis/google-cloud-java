@@ -366,6 +366,74 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ForwardingRuleAttachedExtension attached_extensions = 385226127;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.ForwardingRuleAttachedExtension>
+      getAttachedExtensionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ForwardingRuleAttachedExtension attached_extensions = 385226127;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ForwardingRuleAttachedExtension getAttachedExtensions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ForwardingRuleAttachedExtension attached_extensions = 385226127;
+   * </code>
+   */
+  int getAttachedExtensionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ForwardingRuleAttachedExtension attached_extensions = 385226127;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.ForwardingRuleAttachedExtensionOrBuilder>
+      getAttachedExtensionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.ForwardingRuleAttachedExtension attached_extensions = 385226127;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ForwardingRuleAttachedExtensionOrBuilder
+      getAttachedExtensionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Identifies the backend service to which the forwarding rule sends traffic.
    * Required for internal and external passthrough Network Load Balancers;
    * must be omitted for all other load balancer types.

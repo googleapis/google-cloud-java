@@ -75,6 +75,8 @@ import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse;
 import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
@@ -85,6 +87,7 @@ import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
+import com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -130,6 +133,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -261,6 +265,12 @@ public class KeyManagementServiceStubSettings
       deleteCryptoKeyVersionOperationSettings;
   private final UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionSettings;
+  private final UnaryCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionSettings;
+  private final UnaryCallSettings<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionSettings;
   private final UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings;
   private final UnaryCallSettings<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeySettings;
   private final UnaryCallSettings<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -740,6 +750,24 @@ public class KeyManagementServiceStubSettings
     return importCryptoKeyVersionSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to importTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return importTrustedKeyWrappedCryptoKeyVersionSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to exportTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return exportTrustedKeyWrappedCryptoKeyVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to createImportJob. */
   public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
     return createImportJobSettings;
@@ -952,7 +980,7 @@ public class KeyManagementServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -984,6 +1012,10 @@ public class KeyManagementServiceStubSettings
     deleteCryptoKeyVersionOperationSettings =
         settingsBuilder.deleteCryptoKeyVersionOperationSettings().build();
     importCryptoKeyVersionSettings = settingsBuilder.importCryptoKeyVersionSettings().build();
+    importTrustedKeyWrappedCryptoKeyVersionSettings =
+        settingsBuilder.importTrustedKeyWrappedCryptoKeyVersionSettings().build();
+    exportTrustedKeyWrappedCryptoKeyVersionSettings =
+        settingsBuilder.exportTrustedKeyWrappedCryptoKeyVersionSettings().build();
     createImportJobSettings = settingsBuilder.createImportJobSettings().build();
     updateCryptoKeySettings = settingsBuilder.updateCryptoKeySettings().build();
     updateCryptoKeyVersionSettings = settingsBuilder.updateCryptoKeyVersionSettings().build();
@@ -1065,6 +1097,13 @@ public class KeyManagementServiceStubSettings
         deleteCryptoKeyVersionOperationSettings;
     private final UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<
+            ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<CreateImportJobRequest, ImportJob>
         createImportJobSettings;
     private final UnaryCallSettings.Builder<UpdateCryptoKeyRequest, CryptoKey>
@@ -1151,7 +1190,7 @@ public class KeyManagementServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       listKeyRingsSettings = PagedCallSettings.newBuilder(LIST_KEY_RINGS_PAGE_STR_FACT);
@@ -1175,6 +1214,10 @@ public class KeyManagementServiceStubSettings
       deleteCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteCryptoKeyVersionOperationSettings = OperationCallSettings.newBuilder();
       importCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      importTrustedKeyWrappedCryptoKeyVersionSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportTrustedKeyWrappedCryptoKeyVersionSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       createImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCryptoKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1216,6 +1259,8 @@ public class KeyManagementServiceStubSettings
               deleteCryptoKeySettings,
               deleteCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
+              importTrustedKeyWrappedCryptoKeyVersionSettings,
+              exportTrustedKeyWrappedCryptoKeyVersionSettings,
               createImportJobSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
@@ -1263,6 +1308,10 @@ public class KeyManagementServiceStubSettings
       deleteCryptoKeyVersionOperationSettings =
           settings.deleteCryptoKeyVersionOperationSettings.toBuilder();
       importCryptoKeyVersionSettings = settings.importCryptoKeyVersionSettings.toBuilder();
+      importTrustedKeyWrappedCryptoKeyVersionSettings =
+          settings.importTrustedKeyWrappedCryptoKeyVersionSettings.toBuilder();
+      exportTrustedKeyWrappedCryptoKeyVersionSettings =
+          settings.exportTrustedKeyWrappedCryptoKeyVersionSettings.toBuilder();
       createImportJobSettings = settings.createImportJobSettings.toBuilder();
       updateCryptoKeySettings = settings.updateCryptoKeySettings.toBuilder();
       updateCryptoKeyVersionSettings = settings.updateCryptoKeyVersionSettings.toBuilder();
@@ -1305,6 +1354,8 @@ public class KeyManagementServiceStubSettings
               deleteCryptoKeySettings,
               deleteCryptoKeyVersionSettings,
               importCryptoKeyVersionSettings,
+              importTrustedKeyWrappedCryptoKeyVersionSettings,
+              exportTrustedKeyWrappedCryptoKeyVersionSettings,
               createImportJobSettings,
               updateCryptoKeySettings,
               updateCryptoKeyVersionSettings,
@@ -1437,6 +1488,16 @@ public class KeyManagementServiceStubSettings
           .importCryptoKeyVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .importTrustedKeyWrappedCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportTrustedKeyWrappedCryptoKeyVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createImportJobSettings()
@@ -1725,6 +1786,27 @@ public class KeyManagementServiceStubSettings
     public UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionSettings() {
       return importCryptoKeyVersionSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * importTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return importTrustedKeyWrappedCryptoKeyVersionSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * exportTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return exportTrustedKeyWrappedCryptoKeyVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to createImportJob. */

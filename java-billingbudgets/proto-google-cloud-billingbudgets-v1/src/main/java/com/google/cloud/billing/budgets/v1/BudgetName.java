@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -72,7 +73,7 @@ public class BudgetName implements ResourceName {
     return newBuilder().setBillingAccount(billingAccount).setBudget(budget).build().toString();
   }
 
-  public static BudgetName parse(String formattedString) {
+  public static @Nullable BudgetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -90,7 +91,7 @@ public class BudgetName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BudgetName> values) {
+  public static List<String> toStringList(List<@Nullable BudgetName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BudgetName value : values) {
       if (value == null) {
@@ -135,7 +136,7 @@ public class BudgetName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

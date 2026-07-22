@@ -63,6 +63,8 @@ import com.google.cloud.networkconnectivity.v1beta.ListRemoteTransportProfilesRe
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsRequest;
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsResponse;
 import com.google.cloud.networkconnectivity.v1beta.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse;
 import com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile;
 import com.google.cloud.networkconnectivity.v1beta.Transport;
 import com.google.cloud.networkconnectivity.v1beta.UpdateTransportRequest;
@@ -82,6 +84,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -176,6 +179,8 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
       listRemoteTransportProfilesSettings;
   private final UnaryCallSettings<GetRemoteTransportProfileRequest, RemoteTransportProfile>
       getRemoteTransportProfileSettings;
+  private final UnaryCallSettings<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeySettings;
   private final PagedCallSettings<
           ListTransportsRequest, ListTransportsResponse, ListTransportsPagedResponse>
       listTransportsSettings;
@@ -393,6 +398,12 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
     return getRemoteTransportProfileSettings;
   }
 
+  /** Returns the object with the settings used for calls to parseFromActivationKey. */
+  public UnaryCallSettings<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeySettings() {
+    return parseFromActivationKeySettings;
+  }
+
   /** Returns the object with the settings used for calls to listTransports. */
   public PagedCallSettings<
           ListTransportsRequest, ListTransportsResponse, ListTransportsPagedResponse>
@@ -539,7 +550,7 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -554,6 +565,7 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
     listRemoteTransportProfilesSettings =
         settingsBuilder.listRemoteTransportProfilesSettings().build();
     getRemoteTransportProfileSettings = settingsBuilder.getRemoteTransportProfileSettings().build();
+    parseFromActivationKeySettings = settingsBuilder.parseFromActivationKeySettings().build();
     listTransportsSettings = settingsBuilder.listTransportsSettings().build();
     getTransportSettings = settingsBuilder.getTransportSettings().build();
     getStatusSettings = settingsBuilder.getStatusSettings().build();
@@ -590,6 +602,9 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
     private final UnaryCallSettings.Builder<
             GetRemoteTransportProfileRequest, RemoteTransportProfile>
         getRemoteTransportProfileSettings;
+    private final UnaryCallSettings.Builder<
+            ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+        parseFromActivationKeySettings;
     private final PagedCallSettings.Builder<
             ListTransportsRequest, ListTransportsResponse, ListTransportsPagedResponse>
         listTransportsSettings;
@@ -662,12 +677,13 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       listRemoteTransportProfilesSettings =
           PagedCallSettings.newBuilder(LIST_REMOTE_TRANSPORT_PROFILES_PAGE_STR_FACT);
       getRemoteTransportProfileSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      parseFromActivationKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listTransportsSettings = PagedCallSettings.newBuilder(LIST_TRANSPORTS_PAGE_STR_FACT);
       getTransportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -687,6 +703,7 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listRemoteTransportProfilesSettings,
               getRemoteTransportProfileSettings,
+              parseFromActivationKeySettings,
               listTransportsSettings,
               getTransportSettings,
               getStatusSettings,
@@ -707,6 +724,7 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
       listRemoteTransportProfilesSettings =
           settings.listRemoteTransportProfilesSettings.toBuilder();
       getRemoteTransportProfileSettings = settings.getRemoteTransportProfileSettings.toBuilder();
+      parseFromActivationKeySettings = settings.parseFromActivationKeySettings.toBuilder();
       listTransportsSettings = settings.listTransportsSettings.toBuilder();
       getTransportSettings = settings.getTransportSettings.toBuilder();
       getStatusSettings = settings.getStatusSettings.toBuilder();
@@ -726,6 +744,7 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listRemoteTransportProfilesSettings,
               getRemoteTransportProfileSettings,
+              parseFromActivationKeySettings,
               listTransportsSettings,
               getTransportSettings,
               getStatusSettings,
@@ -759,6 +778,11 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
 
       builder
           .getRemoteTransportProfileSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .parseFromActivationKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -920,6 +944,12 @@ public class TransportManagerStubSettings extends StubSettings<TransportManagerS
     public UnaryCallSettings.Builder<GetRemoteTransportProfileRequest, RemoteTransportProfile>
         getRemoteTransportProfileSettings() {
       return getRemoteTransportProfileSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to parseFromActivationKey. */
+    public UnaryCallSettings.Builder<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+        parseFromActivationKeySettings() {
+      return parseFromActivationKeySettings;
     }
 
     /** Returns the builder for the settings used for calls to listTransports. */

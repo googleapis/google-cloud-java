@@ -20,9 +20,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.httpjson.longrunning.OperationsClient;
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.resourcenames.ResourceName;
@@ -38,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
@@ -45,6 +49,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -162,7 +167,7 @@ import org.jspecify.annotations.NullMarked;
  *      <td><p> DeleteQueue</td>
  *      <td><p> Deletes a queue.
  * <p>  This command will delete the queue even if it has tasks in it.
- * <p>  Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+ * <p>  Note : If you delete a queue, you may be prevented from creating a new queue with the same name as the deleted queue for a tombstone window of up to 3 days. During this window, the CreateQueue operation may appear to recreate the queue, but this can be misleading. If you attempt to create a queue with the same name as one that is in the tombstone window, run GetQueue to confirm that the queue creation was successful. If GetQueue returns 200 response code, your queue was successfully created with the name of the previously deleted queue. Otherwise, your queue did not successfully recreate.
  * <p>  WARNING: Using this method may have unintended side effects if you are using an App Engine `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -333,7 +338,8 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetTask</td>
- *      <td><p> Gets a task.</td>
+ *      <td><p> Gets a task.
+ * <p>  After a task is successfully executed or has exhausted its retry attempts, the task is deleted. A `GetTask` request for a deleted task returns a `NOT_FOUND` error.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -374,6 +380,24 @@ import org.jspecify.annotations.NullMarked;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BatchCreateTasks</td>
+ *      <td><p> Creates a batch of tasks and adds them to a queue. This call is not atomic.
+ * <p>  All tasks must be for the same queue. A maximum of 100 tasks can be created in a single batch.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateTasksAsync(QueueName parent, List&lt;CreateTaskRequest&gt; requests)
+ *           <li><p> batchCreateTasksAsync(String parent, List&lt;CreateTaskRequest&gt; requests)
+ *           <li><p> batchCreateTasksAsync(BatchCreateTasksRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateTasksOperationCallable()
+ *           <li><p> batchCreateTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteTask</td>
  *      <td><p> Deletes a task.
  * <p>  A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has executed successfully or permanently failed.</td>
@@ -394,11 +418,31 @@ import org.jspecify.annotations.NullMarked;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> BatchDeleteTasks</td>
+ *      <td><p> Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it can still succeed for others. The metadata field of google.longrunning.Operation contains details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeleteTasksAsync(BatchDeleteTasksRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteTasksAsync(QueueName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeleteTasksAsync(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeleteTasksOperationCallable()
+ *           <li><p> batchDeleteTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> RunTask</td>
  *      <td><p> Forces a task to run now.
  * <p>  When this method is called, Cloud Tasks will dispatch the task, even if the task is already running, the queue has reached its [RateLimits][google.cloud.tasks.v2beta3.RateLimits] or is [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
  * <p>  This command is meant to be used for manual debugging. For example, [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] can be used to retry a failed task after a fix has been made or to manually force a task to be dispatched now.
- * <p>  The dispatched task is returned. That is, the task that is returned contains the [status][Task.status] after the task is dispatched but before the task is received by its target.
+ * <p>  The dispatched task is returned. That is, the task that is returned contains the [status][google.cloud.tasks.v2beta3.Task.first_attempt] after the task is dispatched but before the task is received by its target.
  * <p>  If Cloud Tasks receives a successful response from the task's target, then the task will be deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time] will be reset to the time that [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] was called plus the retry delay specified in the queue's [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
  * <p>  [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] returns [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a task that has already succeeded or permanently failed.</td>
  *      <td>
@@ -418,8 +462,49 @@ import org.jspecify.annotations.NullMarked;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateCmekConfig</td>
+ *      <td><p> Creates or Updates a CMEK config.
+ * <p>  Updates the Customer Managed Encryption Key associated with the Cloud Tasks location (Creates if the key does not already exist). All new tasks created in the location will be encrypted at-rest with the KMS-key provided in the config.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCmekConfig(UpdateCmekConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCmekConfig(CmekConfig cmekConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCmekConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetCmekConfig</td>
+ *      <td><p> Gets the CMEK config.
+ * <p>  Gets the Customer Managed Encryption Key configured with the Cloud Tasks lcoation. By default there is no kms_key configured.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getCmekConfig(GetCmekConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getCmekConfig(CmekConfigName name)
+ *           <li><p> getCmekConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCmekConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -504,8 +589,10 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudTasksClient implements BackgroundResource {
-  private final CloudTasksSettings settings;
+  private final @Nullable CloudTasksSettings settings;
   private final CloudTasksStub stub;
+  private final OperationsClient httpJsonOperationsClient;
+  private final com.google.longrunning.OperationsClient operationsClient;
 
   /** Constructs an instance of CloudTasksClient with default settings. */
   public static final CloudTasksClient create() throws IOException {
@@ -535,19 +622,42 @@ public class CloudTasksClient implements BackgroundResource {
   protected CloudTasksClient(CloudTasksSettings settings) throws IOException {
     this.settings = settings;
     this.stub = ((CloudTasksStubSettings) settings.getStubSettings()).createStub();
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
   protected CloudTasksClient(CloudTasksStub stub) {
     this.settings = null;
     this.stub = stub;
+    this.operationsClient =
+        com.google.longrunning.OperationsClient.create(this.stub.getOperationsStub());
+    this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CloudTasksSettings getSettings() {
+  public final @Nullable CloudTasksSettings getSettings() {
     return settings;
   }
 
   public CloudTasksStub getStub() {
     return stub;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final com.google.longrunning.OperationsClient getOperationsClient() {
+    return operationsClient;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  @BetaApi
+  public final OperationsClient getHttpJsonOperationsClient() {
+    return httpJsonOperationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -576,7 +686,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListQueuesPagedResponse listQueues(LocationName parent) {
+  public final ListQueuesPagedResponse listQueues(@Nullable LocationName parent) {
     ListQueuesRequest request =
         ListQueuesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listQueues(request);
@@ -748,7 +858,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue getQueue(QueueName name) {
+  public final Queue getQueue(@Nullable QueueName name) {
     GetQueueRequest request =
         GetQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getQueue(request);
@@ -873,7 +983,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     queue.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue createQueue(LocationName parent, Queue queue) {
+  public final Queue createQueue(@Nullable LocationName parent, Queue queue) {
     CreateQueueRequest request =
         CreateQueueRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1118,7 +1228,13 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>This command will delete the queue even if it has tasks in it.
    *
-   * <p>Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+   * <p>Note : If you delete a queue, you may be prevented from creating a new queue with the same
+   * name as the deleted queue for a tombstone window of up to 3 days. During this window, the
+   * CreateQueue operation may appear to recreate the queue, but this can be misleading. If you
+   * attempt to create a queue with the same name as one that is in the tombstone window, run
+   * GetQueue to confirm that the queue creation was successful. If GetQueue returns 200 response
+   * code, your queue was successfully created with the name of the previously deleted queue.
+   * Otherwise, your queue did not successfully recreate.
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
@@ -1142,7 +1258,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteQueue(QueueName name) {
+  public final void deleteQueue(@Nullable QueueName name) {
     DeleteQueueRequest request =
         DeleteQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteQueue(request);
@@ -1154,7 +1270,13 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>This command will delete the queue even if it has tasks in it.
    *
-   * <p>Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+   * <p>Note : If you delete a queue, you may be prevented from creating a new queue with the same
+   * name as the deleted queue for a tombstone window of up to 3 days. During this window, the
+   * CreateQueue operation may appear to recreate the queue, but this can be misleading. If you
+   * attempt to create a queue with the same name as one that is in the tombstone window, run
+   * GetQueue to confirm that the queue creation was successful. If GetQueue returns 200 response
+   * code, your queue was successfully created with the name of the previously deleted queue.
+   * Otherwise, your queue did not successfully recreate.
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
@@ -1189,7 +1311,13 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>This command will delete the queue even if it has tasks in it.
    *
-   * <p>Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+   * <p>Note : If you delete a queue, you may be prevented from creating a new queue with the same
+   * name as the deleted queue for a tombstone window of up to 3 days. During this window, the
+   * CreateQueue operation may appear to recreate the queue, but this can be misleading. If you
+   * attempt to create a queue with the same name as one that is in the tombstone window, run
+   * GetQueue to confirm that the queue creation was successful. If GetQueue returns 200 response
+   * code, your queue was successfully created with the name of the previously deleted queue.
+   * Otherwise, your queue did not successfully recreate.
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
@@ -1225,7 +1353,13 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>This command will delete the queue even if it has tasks in it.
    *
-   * <p>Note: If you delete a queue, a queue with the same name can't be created for 7 days.
+   * <p>Note : If you delete a queue, you may be prevented from creating a new queue with the same
+   * name as the deleted queue for a tombstone window of up to 3 days. During this window, the
+   * CreateQueue operation may appear to recreate the queue, but this can be misleading. If you
+   * attempt to create a queue with the same name as one that is in the tombstone window, run
+   * GetQueue to confirm that the queue creation was successful. If GetQueue returns 200 response
+   * code, your queue was successfully created with the name of the previously deleted queue.
+   * Otherwise, your queue did not successfully recreate.
    *
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
@@ -1281,7 +1415,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue purgeQueue(QueueName name) {
+  public final Queue purgeQueue(@Nullable QueueName name) {
     PurgeQueueRequest request =
         PurgeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return purgeQueue(request);
@@ -1412,7 +1546,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue pauseQueue(QueueName name) {
+  public final Queue pauseQueue(@Nullable QueueName name) {
     PauseQueueRequest request =
         PauseQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseQueue(request);
@@ -1550,7 +1684,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Queue resumeQueue(QueueName name) {
+  public final Queue resumeQueue(@Nullable QueueName name) {
     ResumeQueueRequest request =
         ResumeQueueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeQueue(request);
@@ -1698,7 +1832,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1727,7 +1861,7 @@ public class CloudTasksClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   String resource = CmekConfigName.of("[PROJECT]", "[LOCATION]").toString();
    *   Policy response = cloudTasksClient.getIamPolicy(resource);
    * }
    * }</pre>
@@ -1855,7 +1989,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1888,7 +2022,7 @@ public class CloudTasksClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   String resource = CmekConfigName.of("[PROJECT]", "[LOCATION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
    * }
@@ -2026,7 +2160,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2054,7 +2188,7 @@ public class CloudTasksClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-   *   String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   String resource = CmekConfigName.of("[PROJECT]", "[LOCATION]").toString();
    *   List<String> permissions = new ArrayList<>();
    *   TestIamPermissionsResponse response =
    *       cloudTasksClient.testIamPermissions(resource, permissions);
@@ -2185,7 +2319,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(QueueName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable QueueName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -2353,6 +2487,9 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a task.
    *
+   * <p>After a task is successfully executed or has exhausted its retry attempts, the task is
+   * deleted. A `GetTask` request for a deleted task returns a `NOT_FOUND` error.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2371,7 +2508,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -2380,6 +2517,9 @@ public class CloudTasksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a task.
+   *
+   * <p>After a task is successfully executed or has exhausted its retry attempts, the task is
+   * deleted. A `GetTask` request for a deleted task returns a `NOT_FOUND` error.
    *
    * <p>Sample code:
    *
@@ -2408,6 +2548,9 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a task.
    *
+   * <p>After a task is successfully executed or has exhausted its retry attempts, the task is
+   * deleted. A `GetTask` request for a deleted task returns a `NOT_FOUND` error.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -2435,6 +2578,9 @@ public class CloudTasksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a task.
+   *
+   * <p>After a task is successfully executed or has exhausted its retry attempts, the task is
+   * deleted. A `GetTask` request for a deleted task returns a `NOT_FOUND` error.
    *
    * <p>Sample code:
    *
@@ -2498,11 +2644,10 @@ public class CloudTasksClient implements BackgroundResource {
    *     <p>Task De-duplication:
    *     <p>Explicitly specifying a task ID enables task de-duplication. If a task's ID is identical
    *     to that of an existing task or a task that was deleted or executed recently then the call
-   *     will fail with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS]. If the task's queue was
-   *     created using Cloud Tasks, then another task with the same name can't be created for ~1
-   *     hour after the original task was deleted or executed. If the task's queue was created using
-   *     queue.yaml or queue.xml, then another task with the same name can't be created for ~9 days
-   *     after the original task was deleted or executed.
+   *     will fail with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS]. The IDs of deleted tasks
+   *     are not immediately available for reuse. It can take up to 24 hours (or 9 days if the
+   *     task's queue was created using a queue.yaml or queue.xml) for the task ID to be released
+   *     and made available again.
    *     <p>Because there is an extra lookup cost to identify duplicate task names, these
    *     [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
    *     increased latency. Using hashed strings for the task id or for the prefix of the task id is
@@ -2512,7 +2657,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     serve tasks efficiently.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task createTask(QueueName parent, Task task) {
+  public final Task createTask(@Nullable QueueName parent, Task task) {
     CreateTaskRequest request =
         CreateTaskRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2560,11 +2705,10 @@ public class CloudTasksClient implements BackgroundResource {
    *     <p>Task De-duplication:
    *     <p>Explicitly specifying a task ID enables task de-duplication. If a task's ID is identical
    *     to that of an existing task or a task that was deleted or executed recently then the call
-   *     will fail with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS]. If the task's queue was
-   *     created using Cloud Tasks, then another task with the same name can't be created for ~1
-   *     hour after the original task was deleted or executed. If the task's queue was created using
-   *     queue.yaml or queue.xml, then another task with the same name can't be created for ~9 days
-   *     after the original task was deleted or executed.
+   *     will fail with [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS]. The IDs of deleted tasks
+   *     are not immediately available for reuse. It can take up to 24 hours (or 9 days if the
+   *     task's queue was created using a queue.yaml or queue.xml) for the task ID to be released
+   *     and made available again.
    *     <p>Because there is an extra lookup cost to identify duplicate task names, these
    *     [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask] calls have significantly
    *     increased latency. Using hashed strings for the task id or for the prefix of the task id is
@@ -2651,6 +2795,188 @@ public class CloudTasksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates a batch of tasks and adds them to a queue. This call is not atomic.
+   *
+   * <p>All tasks must be for the same queue. A maximum of 100 tasks can be created in a single
+   * batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   List<CreateTaskRequest> requests = new ArrayList<>();
+   *   BatchCreateTasksResponse response =
+   *       cloudTasksClient.batchCreateTasksAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The queue name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *     <p>The queue must already exist.
+   * @param requests Required. The list of requests to create tasks. The queue specified in parent
+   *     field of each CreateTaskRequest will be the same. This validation happens on the client
+   *     side as well as in the handler. BatchCreateTasksRequest.parent will also be the same value
+   *     as the individual CreateTaskRequest.parent . The maximum number of requests is 100.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksAsync(@Nullable QueueName parent, List<CreateTaskRequest> requests) {
+    BatchCreateTasksRequest request =
+        BatchCreateTasksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateTasksAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of tasks and adds them to a queue. This call is not atomic.
+   *
+   * <p>All tasks must be for the same queue. A maximum of 100 tasks can be created in a single
+   * batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   List<CreateTaskRequest> requests = new ArrayList<>();
+   *   BatchCreateTasksResponse response =
+   *       cloudTasksClient.batchCreateTasksAsync(parent, requests).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The queue name. For example:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   *     <p>The queue must already exist.
+   * @param requests Required. The list of requests to create tasks. The queue specified in parent
+   *     field of each CreateTaskRequest will be the same. This validation happens on the client
+   *     side as well as in the handler. BatchCreateTasksRequest.parent will also be the same value
+   *     as the individual CreateTaskRequest.parent . The maximum number of requests is 100.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksAsync(String parent, List<CreateTaskRequest> requests) {
+    BatchCreateTasksRequest request =
+        BatchCreateTasksRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchCreateTasksAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of tasks and adds them to a queue. This call is not atomic.
+   *
+   * <p>All tasks must be for the same queue. A maximum of 100 tasks can be created in a single
+   * batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchCreateTasksRequest request =
+   *       BatchCreateTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllRequests(new ArrayList<CreateTaskRequest>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   BatchCreateTasksResponse response = cloudTasksClient.batchCreateTasksAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksAsync(BatchCreateTasksRequest request) {
+    return batchCreateTasksOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of tasks and adds them to a queue. This call is not atomic.
+   *
+   * <p>All tasks must be for the same queue. A maximum of 100 tasks can be created in a single
+   * batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchCreateTasksRequest request =
+   *       BatchCreateTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllRequests(new ArrayList<CreateTaskRequest>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<BatchCreateTasksResponse, BatchCreateTasksMetadata> future =
+   *       cloudTasksClient.batchCreateTasksOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateTasksResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable() {
+    return stub.batchCreateTasksOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a batch of tasks and adds them to a queue. This call is not atomic.
+   *
+   * <p>All tasks must be for the same queue. A maximum of 100 tasks can be created in a single
+   * batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchCreateTasksRequest request =
+   *       BatchCreateTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllRequests(new ArrayList<CreateTaskRequest>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = cloudTasksClient.batchCreateTasksCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable() {
+    return stub.batchCreateTasksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a task.
    *
    * <p>A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has
@@ -2674,7 +3000,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTask(TaskName name) {
+  public final void deleteTask(@Nullable TaskName name) {
     DeleteTaskRequest request =
         DeleteTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTask(request);
@@ -2773,6 +3099,176 @@ public class CloudTasksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it
+   * can still succeed for others. The metadata field of google.longrunning.Operation contains
+   * details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   List<String> names = new ArrayList<>();
+   *   cloudTasksClient.batchDeleteTasksAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The queue name. For example: Format:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   * @param names Required. The names of the tasks to delete. A maximum of 1000 tasks can be deleted
+   *     in a batch. For example: Format:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteTasksMetadata> batchDeleteTasksAsync(
+      @Nullable QueueName parent, List<String> names) {
+    BatchDeleteTasksRequest request =
+        BatchDeleteTasksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeleteTasksAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it
+   * can still succeed for others. The metadata field of google.longrunning.Operation contains
+   * details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   cloudTasksClient.batchDeleteTasksAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The queue name. For example: Format:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
+   * @param names Required. The names of the tasks to delete. A maximum of 1000 tasks can be deleted
+   *     in a batch. For example: Format:
+   *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteTasksMetadata> batchDeleteTasksAsync(
+      String parent, List<String> names) {
+    BatchDeleteTasksRequest request =
+        BatchDeleteTasksRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchDeleteTasksAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it
+   * can still succeed for others. The metadata field of google.longrunning.Operation contains
+   * details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchDeleteTasksRequest request =
+   *       BatchDeleteTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   cloudTasksClient.batchDeleteTasksAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, BatchDeleteTasksMetadata> batchDeleteTasksAsync(
+      BatchDeleteTasksRequest request) {
+    return batchDeleteTasksOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it
+   * can still succeed for others. The metadata field of google.longrunning.Operation contains
+   * details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchDeleteTasksRequest request =
+   *       BatchDeleteTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, BatchDeleteTasksMetadata> future =
+   *       cloudTasksClient.batchDeleteTasksOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable() {
+    return stub.batchDeleteTasksOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a batch of tasks. This is a non-atomic operation: if deletion fails for some tasks, it
+   * can still succeed for others. The metadata field of google.longrunning.Operation contains
+   * details of failed deletions. A maximum of 1000 tasks can be deleted in a batch.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   BatchDeleteTasksRequest request =
+   *       BatchDeleteTasksRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = cloudTasksClient.batchDeleteTasksCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable() {
+    return stub.batchDeleteTasksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Forces a task to run now.
    *
    * <p>When this method is called, Cloud Tasks will dispatch the task, even if the task is already
@@ -2784,8 +3280,8 @@ public class CloudTasksClient implements BackgroundResource {
    * after a fix has been made or to manually force a task to be dispatched now.
    *
    * <p>The dispatched task is returned. That is, the task that is returned contains the
-   * [status][Task.status] after the task is dispatched but before the task is received by its
-   * target.
+   * [status][google.cloud.tasks.v2beta3.Task.first_attempt] after the task is dispatched but before
+   * the task is received by its target.
    *
    * <p>If Cloud Tasks receives a successful response from the task's target, then the task will be
    * deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time]
@@ -2815,7 +3311,7 @@ public class CloudTasksClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task runTask(TaskName name) {
+  public final Task runTask(@Nullable TaskName name) {
     RunTaskRequest request =
         RunTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runTask(request);
@@ -2834,8 +3330,8 @@ public class CloudTasksClient implements BackgroundResource {
    * after a fix has been made or to manually force a task to be dispatched now.
    *
    * <p>The dispatched task is returned. That is, the task that is returned contains the
-   * [status][Task.status] after the task is dispatched but before the task is received by its
-   * target.
+   * [status][google.cloud.tasks.v2beta3.Task.first_attempt] after the task is dispatched but before
+   * the task is received by its target.
    *
    * <p>If Cloud Tasks receives a successful response from the task's target, then the task will be
    * deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time]
@@ -2883,8 +3379,8 @@ public class CloudTasksClient implements BackgroundResource {
    * after a fix has been made or to manually force a task to be dispatched now.
    *
    * <p>The dispatched task is returned. That is, the task that is returned contains the
-   * [status][Task.status] after the task is dispatched but before the task is received by its
-   * target.
+   * [status][google.cloud.tasks.v2beta3.Task.first_attempt] after the task is dispatched but before
+   * the task is received by its target.
    *
    * <p>If Cloud Tasks receives a successful response from the task's target, then the task will be
    * deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time]
@@ -2933,8 +3429,8 @@ public class CloudTasksClient implements BackgroundResource {
    * after a fix has been made or to manually force a task to be dispatched now.
    *
    * <p>The dispatched task is returned. That is, the task that is returned contains the
-   * [status][Task.status] after the task is dispatched but before the task is received by its
-   * target.
+   * [status][google.cloud.tasks.v2beta3.Task.first_attempt] after the task is dispatched but before
+   * the task is received by its target.
    *
    * <p>If Cloud Tasks receives a successful response from the task's target, then the task will be
    * deleted; otherwise the task's [schedule_time][google.cloud.tasks.v2beta3.Task.schedule_time]
@@ -2971,7 +3467,243 @@ public class CloudTasksClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Creates or Updates a CMEK config.
+   *
+   * <p>Updates the Customer Managed Encryption Key associated with the Cloud Tasks location
+   * (Creates if the key does not already exist). All new tasks created in the location will be
+   * encrypted at-rest with the KMS-key provided in the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CmekConfig cmekConfig = CmekConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CmekConfig response = cloudTasksClient.updateCmekConfig(cmekConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param cmekConfig Required. The config to update. Its name attribute distinguishes it.
+   * @param updateMask List of fields to be updated in this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekConfig updateCmekConfig(CmekConfig cmekConfig, FieldMask updateMask) {
+    UpdateCmekConfigRequest request =
+        UpdateCmekConfigRequest.newBuilder()
+            .setCmekConfig(cmekConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateCmekConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or Updates a CMEK config.
+   *
+   * <p>Updates the Customer Managed Encryption Key associated with the Cloud Tasks location
+   * (Creates if the key does not already exist). All new tasks created in the location will be
+   * encrypted at-rest with the KMS-key provided in the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   UpdateCmekConfigRequest request =
+   *       UpdateCmekConfigRequest.newBuilder()
+   *           .setCmekConfig(CmekConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CmekConfig response = cloudTasksClient.updateCmekConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekConfig updateCmekConfig(UpdateCmekConfigRequest request) {
+    return updateCmekConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates or Updates a CMEK config.
+   *
+   * <p>Updates the Customer Managed Encryption Key associated with the Cloud Tasks location
+   * (Creates if the key does not already exist). All new tasks created in the location will be
+   * encrypted at-rest with the KMS-key provided in the config.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   UpdateCmekConfigRequest request =
+   *       UpdateCmekConfigRequest.newBuilder()
+   *           .setCmekConfig(CmekConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CmekConfig> future =
+   *       cloudTasksClient.updateCmekConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CmekConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable() {
+    return stub.updateCmekConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the CMEK config.
+   *
+   * <p>Gets the Customer Managed Encryption Key configured with the Cloud Tasks lcoation. By
+   * default there is no kms_key configured.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CmekConfigName name = CmekConfigName.of("[PROJECT]", "[LOCATION]");
+   *   CmekConfig response = cloudTasksClient.getCmekConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The config resource name. For example:
+   *     projects/PROJECT_ID/locations/LOCATION_ID/cmekConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekConfig getCmekConfig(@Nullable CmekConfigName name) {
+    GetCmekConfigRequest request =
+        GetCmekConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getCmekConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the CMEK config.
+   *
+   * <p>Gets the Customer Managed Encryption Key configured with the Cloud Tasks lcoation. By
+   * default there is no kms_key configured.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = CmekConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   CmekConfig response = cloudTasksClient.getCmekConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The config resource name. For example:
+   *     projects/PROJECT_ID/locations/LOCATION_ID/cmekConfig`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekConfig getCmekConfig(String name) {
+    GetCmekConfigRequest request = GetCmekConfigRequest.newBuilder().setName(name).build();
+    return getCmekConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the CMEK config.
+   *
+   * <p>Gets the Customer Managed Encryption Key configured with the Cloud Tasks lcoation. By
+   * default there is no kms_key configured.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetCmekConfigRequest request =
+   *       GetCmekConfigRequest.newBuilder()
+   *           .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   CmekConfig response = cloudTasksClient.getCmekConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CmekConfig getCmekConfig(GetCmekConfigRequest request) {
+    return getCmekConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the CMEK config.
+   *
+   * <p>Gets the Customer Managed Encryption Key configured with the Cloud Tasks lcoation. By
+   * default there is no kms_key configured.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetCmekConfigRequest request =
+   *       GetCmekConfigRequest.newBuilder()
+   *           .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .build();
+   *   ApiFuture<CmekConfig> future = cloudTasksClient.getCmekConfigCallable().futureCall(request);
+   *   // Do something.
+   *   CmekConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable() {
+    return stub.getCmekConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -3006,6 +3738,18 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -3039,6 +3783,18 @@ public class CloudTasksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -3180,8 +3936,8 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractPage<ListQueuesRequest, ListQueuesResponse, Queue, ListQueuesPage> {
 
     private ListQueuesPage(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
-        ListQueuesResponse response) {
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable ListQueuesResponse response) {
       super(context, response);
     }
 
@@ -3191,14 +3947,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListQueuesPage createPage(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
-        ListQueuesResponse response) {
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable ListQueuesResponse response) {
       return new ListQueuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListQueuesPage> createPageAsync(
-        PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
+        @Nullable PageContext<ListQueuesRequest, ListQueuesResponse, Queue> context,
         ApiFuture<ListQueuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3212,7 +3968,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListQueuesPage,
           ListQueuesFixedSizeCollection> {
 
-    private ListQueuesFixedSizeCollection(List<ListQueuesPage> pages, int collectionSize) {
+    private ListQueuesFixedSizeCollection(
+        @Nullable List<ListQueuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3222,7 +3979,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListQueuesFixedSizeCollection createCollection(
-        List<ListQueuesPage> pages, int collectionSize) {
+        @Nullable List<ListQueuesPage> pages, int collectionSize) {
       return new ListQueuesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3249,8 +4006,8 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -3260,14 +4017,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3277,7 +4034,7 @@ public class CloudTasksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3287,7 +4044,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3321,8 +4078,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3332,14 +4089,14 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3353,7 +4110,8 @@ public class CloudTasksClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3363,7 +4121,7 @@ public class CloudTasksClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

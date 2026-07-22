@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -208,7 +209,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TagBindingsClient implements BackgroundResource {
-  private final TagBindingsSettings settings;
+  private final @Nullable TagBindingsSettings settings;
   private final TagBindingsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -255,7 +256,7 @@ public class TagBindingsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TagBindingsSettings getSettings() {
+  public final @Nullable TagBindingsSettings getSettings() {
     return settings;
   }
 
@@ -307,7 +308,7 @@ public class TagBindingsClient implements BackgroundResource {
    *     existing TagBindings. E.g. "//cloudresourcemanager.googleapis.com/projects/123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTagBindingsPagedResponse listTagBindings(ResourceName parent) {
+  public final ListTagBindingsPagedResponse listTagBindings(@Nullable ResourceName parent) {
     ListTagBindingsRequest request =
         ListTagBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -602,7 +603,7 @@ public class TagBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteTagBindingMetadata> deleteTagBindingAsync(
-      TagBindingName name) {
+      @Nullable TagBindingName name) {
     DeleteTagBindingRequest request =
         DeleteTagBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTagBindingAsync(request);
@@ -916,8 +917,8 @@ public class TagBindingsClient implements BackgroundResource {
           ListTagBindingsRequest, ListTagBindingsResponse, TagBinding, ListTagBindingsPage> {
 
     private ListTagBindingsPage(
-        PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
-        ListTagBindingsResponse response) {
+        @Nullable PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
+        @Nullable ListTagBindingsResponse response) {
       super(context, response);
     }
 
@@ -927,14 +928,14 @@ public class TagBindingsClient implements BackgroundResource {
 
     @Override
     protected ListTagBindingsPage createPage(
-        PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
-        ListTagBindingsResponse response) {
+        @Nullable PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
+        @Nullable ListTagBindingsResponse response) {
       return new ListTagBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTagBindingsPage> createPageAsync(
-        PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
+        @Nullable PageContext<ListTagBindingsRequest, ListTagBindingsResponse, TagBinding> context,
         ApiFuture<ListTagBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -949,7 +950,7 @@ public class TagBindingsClient implements BackgroundResource {
           ListTagBindingsFixedSizeCollection> {
 
     private ListTagBindingsFixedSizeCollection(
-        List<ListTagBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListTagBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -959,7 +960,7 @@ public class TagBindingsClient implements BackgroundResource {
 
     @Override
     protected ListTagBindingsFixedSizeCollection createCollection(
-        List<ListTagBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListTagBindingsPage> pages, int collectionSize) {
       return new ListTagBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -996,8 +997,9 @@ public class TagBindingsClient implements BackgroundResource {
           ListEffectiveTagsPage> {
 
     private ListEffectiveTagsPage(
-        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
-        ListEffectiveTagsResponse response) {
+        @Nullable PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>
+            context,
+        @Nullable ListEffectiveTagsResponse response) {
       super(context, response);
     }
 
@@ -1007,14 +1009,16 @@ public class TagBindingsClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveTagsPage createPage(
-        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
-        ListEffectiveTagsResponse response) {
+        @Nullable PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>
+            context,
+        @Nullable ListEffectiveTagsResponse response) {
       return new ListEffectiveTagsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEffectiveTagsPage> createPageAsync(
-        PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag> context,
+        @Nullable PageContext<ListEffectiveTagsRequest, ListEffectiveTagsResponse, EffectiveTag>
+            context,
         ApiFuture<ListEffectiveTagsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1029,7 +1033,7 @@ public class TagBindingsClient implements BackgroundResource {
           ListEffectiveTagsFixedSizeCollection> {
 
     private ListEffectiveTagsFixedSizeCollection(
-        List<ListEffectiveTagsPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveTagsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1039,7 +1043,7 @@ public class TagBindingsClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveTagsFixedSizeCollection createCollection(
-        List<ListEffectiveTagsPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveTagsPage> pages, int collectionSize) {
       return new ListEffectiveTagsFixedSizeCollection(pages, collectionSize);
     }
   }

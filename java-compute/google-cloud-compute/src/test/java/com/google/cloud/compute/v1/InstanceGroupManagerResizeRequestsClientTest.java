@@ -241,6 +241,7 @@ public class InstanceGroupManagerResizeRequestsClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setId(3355)
+            .addAllInstances(new ArrayList<PerInstanceConfig>())
             .setKind("kind3292052")
             .setName("name3373707")
             .setRegion("region-934795532")

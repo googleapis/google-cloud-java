@@ -36,6 +36,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mockito;
 
 /** Unit tests for {@code Files.isDirectory()}. */
 @RunWith(JUnit4.class)
@@ -69,7 +70,7 @@ public class CloudStorageIsDirectoryTest {
         CloudStorageFileSystem.forBucket("bucket", CloudStorageConfiguration.DEFAULT, mockOptions);
     when(mockStorage.get(BlobId.of("bucket", "test", null)))
         .thenThrow(new IllegalArgumentException());
-    Page<Blob> pages = mock(Page.class);
+    Page<Blob> pages = Mockito.mock(Page.class, Mockito.withSettings().withoutAnnotations());
     Blob blob = mock(Blob.class);
     when(blob.getBlobId()).thenReturn(BlobId.of("bucket", "test/hello.txt"));
     when(pages.getValues()).thenReturn(Lists.newArrayList(blob));
@@ -91,7 +92,7 @@ public class CloudStorageIsDirectoryTest {
             mockOptions);
     when(mockStorage.get(BlobId.of("bucket", "test", null)))
         .thenThrow(new IllegalArgumentException());
-    Page<Blob> pages = mock(Page.class);
+    Page<Blob> pages = Mockito.mock(Page.class, Mockito.withSettings().withoutAnnotations());
     Blob blob = mock(Blob.class);
     when(blob.getBlobId()).thenReturn(BlobId.of("bucket", "test/hello.txt"));
     when(pages.getValues()).thenReturn(Lists.newArrayList(blob));

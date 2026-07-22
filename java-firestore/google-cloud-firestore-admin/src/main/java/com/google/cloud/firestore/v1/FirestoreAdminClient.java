@@ -104,6 +104,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -833,7 +834,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FirestoreAdminClient implements BackgroundResource {
-  private final FirestoreAdminSettings settings;
+  private final @Nullable FirestoreAdminSettings settings;
   private final FirestoreAdminStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -881,7 +882,7 @@ public class FirestoreAdminClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final FirestoreAdminSettings getSettings() {
+  public final @Nullable FirestoreAdminSettings getSettings() {
     return settings;
   }
 
@@ -935,7 +936,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, IndexOperationMetadata> createIndexAsync(
-      CollectionGroupName parent, Index index) {
+      @Nullable CollectionGroupName parent, Index index) {
     CreateIndexRequest request =
         CreateIndexRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1103,7 +1104,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexesPagedResponse listIndexes(CollectionGroupName parent) {
+  public final ListIndexesPagedResponse listIndexes(@Nullable CollectionGroupName parent) {
     ListIndexesRequest request =
         ListIndexesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1270,7 +1271,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Index getIndex(IndexName name) {
+  public final Index getIndex(@Nullable IndexName name) {
     GetIndexRequest request =
         GetIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndex(request);
@@ -1382,7 +1383,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/indexes/{index_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteIndex(IndexName name) {
+  public final void deleteIndex(@Nullable IndexName name) {
     DeleteIndexRequest request =
         DeleteIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIndex(request);
@@ -1494,7 +1495,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Field getField(FieldName name) {
+  public final Field getField(@Nullable FieldName name) {
     GetFieldRequest request =
         GetFieldRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getField(request);
@@ -1776,7 +1777,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFieldsPagedResponse listFields(CollectionGroupName parent) {
+  public final ListFieldsPagedResponse listFields(@Nullable CollectionGroupName parent) {
     ListFieldsRequest request =
         ListFieldsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listFields(request);
@@ -1969,7 +1970,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportDocumentsResponse, ExportDocumentsMetadata>
-      exportDocumentsAsync(DatabaseName name) {
+      exportDocumentsAsync(@Nullable DatabaseName name) {
     ExportDocumentsRequest request =
         ExportDocumentsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return exportDocumentsAsync(request);
@@ -2160,7 +2161,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, ImportDocumentsMetadata> importDocumentsAsync(
-      DatabaseName name) {
+      @Nullable DatabaseName name) {
     ImportDocumentsRequest request =
         ImportDocumentsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return importDocumentsAsync(request);
@@ -2330,7 +2331,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BulkDeleteDocumentsResponse, BulkDeleteDocumentsMetadata>
-      bulkDeleteDocumentsAsync(DatabaseName name) {
+      bulkDeleteDocumentsAsync(@Nullable DatabaseName name) {
     BulkDeleteDocumentsRequest request =
         BulkDeleteDocumentsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2518,7 +2519,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
-      ProjectName parent, Database database, String databaseId) {
+      @Nullable ProjectName parent, Database database, String databaseId) {
     CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2683,7 +2684,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @param name Required. A name of the form `projects/{project_id}/databases/{database_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database getDatabase(DatabaseName name) {
+  public final Database getDatabase(@Nullable DatabaseName name) {
     GetDatabaseRequest request =
         GetDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatabase(request);
@@ -2791,7 +2792,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @param parent Required. A parent name of the form `projects/{project_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabasesResponse listDatabases(ProjectName parent) {
+  public final ListDatabasesResponse listDatabases(@Nullable ProjectName parent) {
     ListDatabasesRequest request =
         ListDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3024,7 +3025,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, DeleteDatabaseMetadata> deleteDatabaseAsync(
-      DatabaseName name) {
+      @Nullable DatabaseName name) {
     DeleteDatabaseRequest request =
         DeleteDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatabaseAsync(request);
@@ -3176,7 +3177,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserCreds createUserCreds(
-      DatabaseName parent, UserCreds userCreds, String userCredsId) {
+      @Nullable DatabaseName parent, UserCreds userCreds, String userCredsId) {
     CreateUserCredsRequest request =
         CreateUserCredsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3309,7 +3310,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/userCreds/{user_creds_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserCreds getUserCreds(UserCredsName name) {
+  public final UserCreds getUserCreds(@Nullable UserCredsName name) {
     GetUserCredsRequest request =
         GetUserCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUserCreds(request);
@@ -3423,7 +3424,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListUserCredsResponse listUserCreds(DatabaseName parent) {
+  public final ListUserCredsResponse listUserCreds(@Nullable DatabaseName parent) {
     ListUserCredsRequest request =
         ListUserCredsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3539,7 +3540,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/userCreds/{user_creds_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserCreds enableUserCreds(UserCredsName name) {
+  public final UserCreds enableUserCreds(@Nullable UserCredsName name) {
     EnableUserCredsRequest request =
         EnableUserCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return enableUserCreds(request);
@@ -3650,7 +3651,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/userCreds/{user_creds_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserCreds disableUserCreds(UserCredsName name) {
+  public final UserCreds disableUserCreds(@Nullable UserCredsName name) {
     DisableUserCredsRequest request =
         DisableUserCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return disableUserCreds(request);
@@ -3761,7 +3762,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/userCreds/{user_creds_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserCreds resetUserPassword(UserCredsName name) {
+  public final UserCreds resetUserPassword(@Nullable UserCredsName name) {
     ResetUserPasswordRequest request =
         ResetUserPasswordRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3874,7 +3875,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     `projects/{project_id}/databases/{database_id}/userCreds/{user_creds_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUserCreds(UserCredsName name) {
+  public final void deleteUserCreds(@Nullable UserCredsName name) {
     DeleteUserCredsRequest request =
         DeleteUserCredsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUserCreds(request);
@@ -3984,7 +3985,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>Format is `projects/{project}/locations/{location}/backups/{backup}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -4096,7 +4097,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     location or from all locations.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsResponse listBackups(LocationName parent) {
+  public final ListBackupsResponse listBackups(@Nullable LocationName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4213,7 +4214,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>format is `projects/{project}/locations/{location}/backups/{backup}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBackup(BackupName name) {
+  public final void deleteBackup(@Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBackup(request);
@@ -4464,7 +4465,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BackupSchedule createBackupSchedule(
-      DatabaseName parent, BackupSchedule backupSchedule) {
+      @Nullable DatabaseName parent, BackupSchedule backupSchedule) {
     CreateBackupScheduleRequest request =
         CreateBackupScheduleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4591,7 +4592,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>Format `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupSchedule getBackupSchedule(BackupScheduleName name) {
+  public final BackupSchedule getBackupSchedule(@Nullable BackupScheduleName name) {
     GetBackupScheduleRequest request =
         GetBackupScheduleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4707,7 +4708,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>Format is `projects/{project}/databases/{database}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupSchedulesResponse listBackupSchedules(DatabaseName parent) {
+  public final ListBackupSchedulesResponse listBackupSchedules(@Nullable DatabaseName parent) {
     ListBackupSchedulesRequest request =
         ListBackupSchedulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4916,7 +4917,7 @@ public class FirestoreAdminClient implements BackgroundResource {
    *     <p>Format `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBackupSchedule(BackupScheduleName name) {
+  public final void deleteBackupSchedule(@Nullable BackupScheduleName name) {
     DeleteBackupScheduleRequest request =
         DeleteBackupScheduleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5204,8 +5205,8 @@ public class FirestoreAdminClient implements BackgroundResource {
       extends AbstractPage<ListIndexesRequest, ListIndexesResponse, Index, ListIndexesPage> {
 
     private ListIndexesPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       super(context, response);
     }
 
@@ -5215,14 +5216,14 @@ public class FirestoreAdminClient implements BackgroundResource {
 
     @Override
     protected ListIndexesPage createPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       return new ListIndexesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexesPage> createPageAsync(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
         ApiFuture<ListIndexesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5236,7 +5237,8 @@ public class FirestoreAdminClient implements BackgroundResource {
           ListIndexesPage,
           ListIndexesFixedSizeCollection> {
 
-    private ListIndexesFixedSizeCollection(List<ListIndexesPage> pages, int collectionSize) {
+    private ListIndexesFixedSizeCollection(
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5246,7 +5248,7 @@ public class FirestoreAdminClient implements BackgroundResource {
 
     @Override
     protected ListIndexesFixedSizeCollection createCollection(
-        List<ListIndexesPage> pages, int collectionSize) {
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       return new ListIndexesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5277,8 +5279,8 @@ public class FirestoreAdminClient implements BackgroundResource {
       extends AbstractPage<ListFieldsRequest, ListFieldsResponse, Field, ListFieldsPage> {
 
     private ListFieldsPage(
-        PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
-        ListFieldsResponse response) {
+        @Nullable PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
+        @Nullable ListFieldsResponse response) {
       super(context, response);
     }
 
@@ -5288,14 +5290,14 @@ public class FirestoreAdminClient implements BackgroundResource {
 
     @Override
     protected ListFieldsPage createPage(
-        PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
-        ListFieldsResponse response) {
+        @Nullable PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
+        @Nullable ListFieldsResponse response) {
       return new ListFieldsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFieldsPage> createPageAsync(
-        PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
+        @Nullable PageContext<ListFieldsRequest, ListFieldsResponse, Field> context,
         ApiFuture<ListFieldsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5309,7 +5311,8 @@ public class FirestoreAdminClient implements BackgroundResource {
           ListFieldsPage,
           ListFieldsFixedSizeCollection> {
 
-    private ListFieldsFixedSizeCollection(List<ListFieldsPage> pages, int collectionSize) {
+    private ListFieldsFixedSizeCollection(
+        @Nullable List<ListFieldsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5319,7 +5322,7 @@ public class FirestoreAdminClient implements BackgroundResource {
 
     @Override
     protected ListFieldsFixedSizeCollection createCollection(
-        List<ListFieldsPage> pages, int collectionSize) {
+        @Nullable List<ListFieldsPage> pages, int collectionSize) {
       return new ListFieldsFixedSizeCollection(pages, collectionSize);
     }
   }

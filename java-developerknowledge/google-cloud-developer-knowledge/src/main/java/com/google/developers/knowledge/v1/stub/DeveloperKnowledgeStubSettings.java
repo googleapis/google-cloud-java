@@ -49,6 +49,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.developers.knowledge.v1.AnswerQueryRequest;
+import com.google.developers.knowledge.v1.AnswerQueryResponse;
 import com.google.developers.knowledge.v1.BatchGetDocumentsRequest;
 import com.google.developers.knowledge.v1.BatchGetDocumentsResponse;
 import com.google.developers.knowledge.v1.Document;
@@ -61,6 +63,7 @@ import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -130,6 +133,7 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
   private final UnaryCallSettings<GetDocumentRequest, Document> getDocumentSettings;
   private final UnaryCallSettings<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsSettings;
+  private final UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings;
 
   private static final PagedListDescriptor<
           SearchDocumentChunksRequest, SearchDocumentChunksResponse, DocumentChunk>
@@ -210,6 +214,11 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
   public UnaryCallSettings<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsSettings() {
     return batchGetDocumentsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return answerQuerySettings;
   }
 
   public DeveloperKnowledgeStub createStub() throws IOException {
@@ -311,7 +320,7 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -326,6 +335,7 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
     searchDocumentChunksSettings = settingsBuilder.searchDocumentChunksSettings().build();
     getDocumentSettings = settingsBuilder.getDocumentSettings().build();
     batchGetDocumentsSettings = settingsBuilder.batchGetDocumentsSettings().build();
+    answerQuerySettings = settingsBuilder.answerQuerySettings().build();
   }
 
   @Override
@@ -349,6 +359,8 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
     private final UnaryCallSettings.Builder<GetDocumentRequest, Document> getDocumentSettings;
     private final UnaryCallSettings.Builder<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
         batchGetDocumentsSettings;
+    private final UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -387,17 +399,21 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       searchDocumentChunksSettings =
           PagedCallSettings.newBuilder(SEARCH_DOCUMENT_CHUNKS_PAGE_STR_FACT);
       getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchGetDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      answerQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchDocumentChunksSettings, getDocumentSettings, batchGetDocumentsSettings);
+              searchDocumentChunksSettings,
+              getDocumentSettings,
+              batchGetDocumentsSettings,
+              answerQuerySettings);
       initDefaults(this);
     }
 
@@ -407,10 +423,14 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
       searchDocumentChunksSettings = settings.searchDocumentChunksSettings.toBuilder();
       getDocumentSettings = settings.getDocumentSettings.toBuilder();
       batchGetDocumentsSettings = settings.batchGetDocumentsSettings.toBuilder();
+      answerQuerySettings = settings.answerQuerySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              searchDocumentChunksSettings, getDocumentSettings, batchGetDocumentsSettings);
+              searchDocumentChunksSettings,
+              getDocumentSettings,
+              batchGetDocumentsSettings,
+              answerQuerySettings);
     }
 
     private static Builder createDefault() {
@@ -453,6 +473,11 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .answerQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -489,6 +514,12 @@ public class DeveloperKnowledgeStubSettings extends StubSettings<DeveloperKnowle
     public UnaryCallSettings.Builder<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
         batchGetDocumentsSettings() {
       return batchGetDocumentsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return answerQuerySettings;
     }
 
     @Override

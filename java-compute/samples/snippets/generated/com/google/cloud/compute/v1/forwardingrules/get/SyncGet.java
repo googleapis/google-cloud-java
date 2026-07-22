@@ -39,6 +39,7 @@ public class SyncGet {
               .setForwardingRule("forwardingRule-1429104743")
               .setProject("project-309310695")
               .setRegion("region-934795532")
+              .setView("view3619493")
               .build();
       ForwardingRule response = forwardingRulesClient.get(request);
     }

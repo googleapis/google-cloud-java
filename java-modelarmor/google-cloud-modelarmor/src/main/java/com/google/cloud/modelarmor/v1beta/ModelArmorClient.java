@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -339,7 +340,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ModelArmorClient implements BackgroundResource {
-  private final ModelArmorSettings settings;
+  private final @Nullable ModelArmorSettings settings;
   private final ModelArmorStub stub;
 
   /** Constructs an instance of ModelArmorClient with default settings. */
@@ -377,7 +378,7 @@ public class ModelArmorClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ModelArmorSettings getSettings() {
+  public final @Nullable ModelArmorSettings getSettings() {
     return settings;
   }
 
@@ -408,7 +409,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param parent Required. Parent value for ListTemplatesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTemplatesPagedResponse listTemplates(LocationName parent) {
+  public final ListTemplatesPagedResponse listTemplates(@Nullable LocationName parent) {
     ListTemplatesRequest request =
         ListTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -574,7 +575,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Template getTemplate(TemplateName name) {
+  public final Template getTemplate(@Nullable TemplateName name) {
     GetTemplateRequest request =
         GetTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTemplate(request);
@@ -687,7 +688,8 @@ public class ModelArmorClient implements BackgroundResource {
    *     remove this field and template_id from the method_signature of Create RPC
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Template createTemplate(LocationName parent, Template template, String templateId) {
+  public final Template createTemplate(
+      @Nullable LocationName parent, Template template, String templateId) {
     CreateTemplateRequest request =
         CreateTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -906,7 +908,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTemplate(TemplateName name) {
+  public final void deleteTemplate(@Nullable TemplateName name) {
     DeleteTemplateRequest request =
         DeleteTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTemplate(request);
@@ -1016,7 +1018,7 @@ public class ModelArmorClient implements BackgroundResource {
    * @param name Required. The name of the floor setting to get, example projects/123/floorsetting.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FloorSetting getFloorSetting(FloorSettingName name) {
+  public final FloorSetting getFloorSetting(@Nullable FloorSettingName name) {
     GetFloorSettingRequest request =
         GetFloorSettingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFloorSetting(request);
@@ -1651,8 +1653,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListTemplatesRequest, ListTemplatesResponse, Template, ListTemplatesPage> {
 
     private ListTemplatesPage(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
-        ListTemplatesResponse response) {
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
       super(context, response);
     }
 
@@ -1662,14 +1664,14 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListTemplatesPage createPage(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
-        ListTemplatesResponse response) {
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable ListTemplatesResponse response) {
       return new ListTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTemplatesPage> createPageAsync(
-        PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
+        @Nullable PageContext<ListTemplatesRequest, ListTemplatesResponse, Template> context,
         ApiFuture<ListTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1683,7 +1685,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListTemplatesPage,
           ListTemplatesFixedSizeCollection> {
 
-    private ListTemplatesFixedSizeCollection(List<ListTemplatesPage> pages, int collectionSize) {
+    private ListTemplatesFixedSizeCollection(
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1693,7 +1696,7 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListTemplatesFixedSizeCollection createCollection(
-        List<ListTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListTemplatesPage> pages, int collectionSize) {
       return new ListTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1727,8 +1730,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1738,14 +1741,14 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1759,7 +1762,8 @@ public class ModelArmorClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1769,7 +1773,7 @@ public class ModelArmorClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

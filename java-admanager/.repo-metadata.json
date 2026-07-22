@@ -11,6 +11,5 @@
   "repo_short": "java-admanager",
   "distribution_name": "com.google.api-ads:ad-manager",
   "api_id": "admanager.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }
