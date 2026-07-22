@@ -1561,6 +1561,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTables(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getTables",
+        () -> getTablesImpl(catalog, schemaPattern, tableNamePattern, types));
+  }
+
+  private ResultSet getTablesImpl(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
 
     if ((catalog != null && catalog.isEmpty())
@@ -1886,6 +1894,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getColumns",
+        () -> getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern));
+  }
+
+  private ResultSet getColumnsImpl(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
 
     if ((catalog != null && catalog.isEmpty())

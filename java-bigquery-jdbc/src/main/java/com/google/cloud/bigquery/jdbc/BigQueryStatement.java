@@ -62,7 +62,10 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanBuilder;
+import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import java.lang.ref.ReferenceQueue;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -1198,6 +1201,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // parse and put the first page in the pageCache before the other pages are parsed from the RPC
     // calls
     populateFirstPage(result, rpcResponseQueue);
+    SpanContext parentSpanContext = Span.current().getSpanContext();
 
     ExecutorService executor = connection.getExecutorService();
 
@@ -1223,22 +1227,34 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         break;
                       }
 
-                      long startTime = System.nanoTime();
-                      currentResults =
-                          this.bigQuery.listTableData(
-                              destinationTable,
-                              TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
-                              TableDataListOption.pageToken(currentPageToken));
+                      SpanBuilder spanBuilder =
+                          connection.getTracer().spanBuilder("BigQueryStatement.pagination");
+                      if (parentSpanContext.isValid()) {
+                        spanBuilder.addLink(parentSpanContext);
+                      }
+                      Span paginationSpan = spanBuilder.startSpan();
+                      try (Scope scope = paginationSpan.makeCurrent()) {
+                        paginationSpan.setAttribute("db.pagination.page_token", currentPageToken);
 
-                      currentPageToken = currentResults.getNextPageToken();
-                      // this will be parsed asynchronously without blocking the current
-                      // thread
-                      Uninterruptibles.putUninterruptibly(
-                          rpcResponseQueue, Tuple.of(currentResults, true));
-                      LOG.fine(
-                          "Fetched %d results from the server in %d ms.",
-                          querySettings.getMaxResultPerPage(),
-                          (int) ((System.nanoTime() - startTime) / 1000000));
+                        long startTime = System.nanoTime();
+                        currentResults =
+                            this.bigQuery.listTableData(
+                                destinationTable,
+                                TableDataListOption.pageSize(querySettings.getMaxResultPerPage()),
+                                TableDataListOption.pageToken(currentPageToken));
+
+                        currentPageToken = currentResults.getNextPageToken();
+                        // this will be parsed asynchronously without blocking the current
+                        // thread
+                        Uninterruptibles.putUninterruptibly(
+                            rpcResponseQueue, Tuple.of(currentResults, true));
+                        LOG.fine(
+                            "Fetched %d results from the server in %d ms.",
+                            querySettings.getMaxResultPerPage(),
+                            (int) ((System.nanoTime() - startTime) / 1000000));
+                      } finally {
+                        paginationSpan.end();
+                      }
                     }
                   } catch (Exception ex) {
                     Uninterruptibles.putUninterruptibly(

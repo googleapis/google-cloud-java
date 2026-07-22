@@ -83,6 +83,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Stream;
@@ -91,6 +92,7 @@ import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -184,6 +186,8 @@ public class BigQueryStatementTest {
     return tableResultMock;
   }
 
+  private ExecutorService testExecutorService;
+
   @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
@@ -209,8 +213,8 @@ public class BigQueryStatementTest {
         .when(bigQueryConnection)
         .getQueryDialect();
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
-    ExecutorService executorService = mock(ExecutorService.class);
-    doReturn(executorService).when(bigQueryConnection).getExecutorService();
+    testExecutorService = Executors.newSingleThreadExecutor();
+    doReturn(testExecutorService).when(bigQueryConnection).getExecutorService();
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -219,6 +223,13 @@ public class BigQueryStatementTest {
             .build();
     // bigQueryConnection.addOpenStatements(bigQueryStatement);
 
+  }
+
+  @AfterEach
+  public void tearDown() {
+    if (testExecutorService != null) {
+      testExecutorService.shutdownNow();
+    }
   }
 
   private VectorSchemaRoot getTestVectorSchemaRoot() {
