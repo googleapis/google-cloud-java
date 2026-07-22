@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.paging;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Response for paged results from a list API method
  *
@@ -36,6 +38,7 @@ package com.google.api.gax.paging;
  * tokens can be handled automatically, or by the caller. Results can be accessed on a per-element
  * or per-page basis.
  */
+@NullMarked
 public interface PagedListResponse<ResourceT> {
   /**
    * Returns an iterable that traverses all of the elements of the underlying data source. The data

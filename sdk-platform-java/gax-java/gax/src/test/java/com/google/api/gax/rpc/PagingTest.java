@@ -64,7 +64,8 @@ class PagingTest {
   }
 
   @SuppressWarnings("unchecked")
-  UnaryCallable<Integer, List<Integer>> callIntList = Mockito.mock(UnaryCallable.class);
+  UnaryCallable<Integer, List<Integer>> callIntList =
+      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
 
   @Test
   void nonPaged() {

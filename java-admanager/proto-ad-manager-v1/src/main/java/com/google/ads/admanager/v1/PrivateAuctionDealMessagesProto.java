@@ -57,77 +57,71 @@ public final class PrivateAuctionDealMessagesProto extends com.google.protobuf.G
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ";google/ads/admanager/v1/private_auction_deal_messages.proto\022\027google.ads.admana"
-          + "ger.v1\032=google/ads/admanager/v1/deal_buyer_permission_type_enum.proto\0327google/ad"
-          + "s/admanager/v1/private_marketplace_enums.proto\032\"google/ads/admanager/v1/size.pro"
-          + "to\032\'google/ads/admanager/v1/targeting.pr"
-          + "oto\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\032\037google/protobuf"
-          + "/timestamp.proto\032\027google/type/money.proto\"\342\013\n"
-          + "\022PrivateAuctionDeal\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022+\n"
-          + "\027private_auction_deal_id\030\002"
-          + " \001(\003B\005\030\001\340A\003H\000\210\001\001\022$\n"
-          + "\022private_auction_id\030\003 \001(\003B\003\340A\005H\001\210\001\001\022.\n"
-          + "\034private_auction_display_name\030\024 \001("
-          + "\tB\003\340A\003H\002\210\001\001\022\"\n"
-          + "\020buyer_account_id\030\004 \001(\003B\003\340A\005H\003\210\001\001\022\"\n"
-          + "\020external_deal_id\030\005 \001(\003B\003\340A\003H\004\210\001\001\022?\n"
-          + "\ttargeting\030\006"
-          + " \001(\0132\".google.ads.admanager.v1.TargetingB\003\340A\001H\005\210\001\001\0226\n"
-          + "\010end_time\030\010"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\006\210\001\001\0221\n"
-          + "\013floor_price\030\t"
-          + " \001(\0132\022.google.type.MoneyB\003\340A\002H\007\210\001\001\022:\n"
-          + "\016creative_sizes\030\022 \003"
-          + "(\0132\035.google.ads.admanager.v1.SizeB\003\340A\001\022p\n"
-          + "\006status\030\n"
-          + " \001(\0162V.google.ads.admanager.v1"
-          + ".PrivateMarketplaceDealStatusEnum.PrivateMarketplaceDealStatusB\003\340A\003H\010\210\001\001\022*\n"
-          + "\030auction_priority_enabled\030\013 \001(\010B\003\340A\001H\t\210\001\001\022(\n"
-          + "\026block_override_enabled\030\014 \001(\010B\003\340A\001H\n"
-          + "\210\001\001\022u\n"
-          + "\025buyer_permission_type\030\r"
-          + " \001(\0162L.google.a"
-          + "ds.admanager.v1.DealBuyerPermissionTypeEnum.DealBuyerPermissionTypeB\003\340A\001H\013\210\001\001\022S\n"
-          + "\n"
-          + "buyer_data\030\016 \001(\01325.google.ads.admanager"
-          + ".v1.PrivateAuctionDeal.BuyerDataB\003\340A\001H\014\210\001\001\0229\n"
-          + "\013create_time\030\017 \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\r"
-          + "\210\001\001\0229\n"
-          + "\013update_time\030\020 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\016\210\001\001\032&\n"
-          + "\tBuyerData\022\031\n"
-          + "\014buyer_emails\030\001 \003(\tB\003\340A\001:\236\001\352A\232\001\n"
-          + "+admanager.googleapis.com/PrivateAuctionDeal\022Bnetworks/{network_code}/pr"
-          + "ivateAuctionDeals/{private_auction_deal}"
-          + "*\023privateAuctionDeals2\022privateAuctionDealB\032\n"
-          + "\030_private_auction_deal_idB\025\n"
-          + "\023_private_auction_idB\037\n"
-          + "\035_private_auction_display_nameB\023\n"
-          + "\021_buyer_account_idB\023\n"
-          + "\021_external_deal_idB\014\n\n"
-          + "_targetingB\013\n"
-          + "\t_end_timeB\016\n"
-          + "\014_floor_priceB\t\n"
-          + "\007_statusB\033\n"
-          + "\031_auction_priority_enabledB\031\n"
-          + "\027_block_override_enabledB\030\n"
-          + "\026_buyer_permission_typeB\r\n"
-          + "\013_buyer_dataB\016\n"
-          + "\014_create_timeB\016\n"
-          + "\014_update_timeB\323\001\n"
-          + "\033com.google.ads.admanager.v1B\037PrivateAuctionDe"
-          + "alMessagesProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;admana"
-          + "ger\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\A"
-          + "ds\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+      "\n;google/ads/admanager/v1/private_auctio"
+          + "n_deal_messages.proto\022\027google.ads.admana"
+          + "ger.v1\032=google/ads/admanager/v1/deal_buy"
+          + "er_permission_type_enum.proto\032:google/ad"
+          + "s/admanager/v1/non_guaranteed_deal_prior"
+          + "ity.proto\0327google/ads/admanager/v1/priva"
+          + "te_marketplace_enums.proto\032\"google/ads/a"
+          + "dmanager/v1/size.proto\032\'google/ads/adman"
+          + "ager/v1/targeting.proto\032\037google/api/fiel"
+          + "d_behavior.proto\032\031google/api/resource.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027go"
+          + "ogle/type/money.proto\"\311\014\n\022PrivateAuction"
+          + "Deal\022\021\n\004name\030\001 \001(\tB\003\340A\010\022+\n\027private_aucti"
+          + "on_deal_id\030\002 \001(\003B\005\030\001\340A\003H\000\210\001\001\022$\n\022private_"
+          + "auction_id\030\003 \001(\003B\003\340A\005H\001\210\001\001\022.\n\034private_au"
+          + "ction_display_name\030\024 \001(\tB\003\340A\003H\002\210\001\001\022\"\n\020bu"
+          + "yer_account_id\030\004 \001(\003B\003\340A\005H\003\210\001\001\022\"\n\020extern"
+          + "al_deal_id\030\005 \001(\003B\003\340A\003H\004\210\001\001\022?\n\ttargeting\030"
+          + "\006 \001(\0132\".google.ads.admanager.v1.Targetin"
+          + "gB\003\340A\001H\005\210\001\001\0226\n\010end_time\030\010 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\003\340A\001H\006\210\001\001\0221\n\013floor_pri"
+          + "ce\030\t \001(\0132\022.google.type.MoneyB\003\340A\002H\007\210\001\001\022:"
+          + "\n\016creative_sizes\030\022 \003(\0132\035.google.ads.adma"
+          + "nager.v1.SizeB\003\340A\001\022p\n\006status\030\n \001(\0162V.goo"
+          + "gle.ads.admanager.v1.PrivateMarketplaceD"
+          + "ealStatusEnum.PrivateMarketplaceDealStat"
+          + "usB\003\340A\003H\010\210\001\001\022*\n\030auction_priority_enabled"
+          + "\030\013 \001(\010B\003\340A\001H\t\210\001\001\022(\n\026block_override_enabl"
+          + "ed\030\014 \001(\010B\003\340A\001H\n\210\001\001\022u\n\025buyer_permission_t"
+          + "ype\030\r \001(\0162L.google.ads.admanager.v1.Deal"
+          + "BuyerPermissionTypeEnum.DealBuyerPermiss"
+          + "ionTypeB\003\340A\001H\013\210\001\001\022S\n\nbuyer_data\030\016 \001(\01325."
+          + "google.ads.admanager.v1.PrivateAuctionDe"
+          + "al.BuyerDataB\003\340A\001H\014\210\001\001\022S\n\rdeal_priority\030"
+          + "\026 \001(\01322.google.ads.admanager.v1.NonGuara"
+          + "nteedDealPriorityB\003\340A\001H\r\210\001\001\0229\n\013create_ti"
+          + "me\030\017 \001(\0132\032.google.protobuf.TimestampB\003\340A"
+          + "\003H\016\210\001\001\0229\n\013update_time\030\020 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\003\340A\003H\017\210\001\001\032&\n\tBuyerData\022\031"
+          + "\n\014buyer_emails\030\001 \003(\tB\003\340A\001:\236\001\352A\232\001\n+admana"
+          + "ger.googleapis.com/PrivateAuctionDeal\022Bn"
+          + "etworks/{network_code}/privateAuctionDea"
+          + "ls/{private_auction_deal}*\023privateAuctio"
+          + "nDeals2\022privateAuctionDealB\032\n\030_private_a"
+          + "uction_deal_idB\025\n\023_private_auction_idB\037\n"
+          + "\035_private_auction_display_nameB\023\n\021_buyer"
+          + "_account_idB\023\n\021_external_deal_idB\014\n\n_tar"
+          + "getingB\013\n\t_end_timeB\016\n\014_floor_priceB\t\n\007_"
+          + "statusB\033\n\031_auction_priority_enabledB\031\n\027_"
+          + "block_override_enabledB\030\n\026_buyer_permiss"
+          + "ion_typeB\r\n\013_buyer_dataB\020\n\016_deal_priorit"
+          + "yB\016\n\014_create_timeB\016\n\014_update_timeB\323\001\n\033co"
+          + "m.google.ads.admanager.v1B\037PrivateAuctio"
+          + "nDealMessagesProtoP\001Z@google.golang.org/"
+          + "genproto/googleapis/ads/admanager/v1;adm"
+          + "anager\252\002\027Google.Ads.AdManager.V1\312\002\027Googl"
+          + "e\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdMana"
+          + "ger::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.ads.admanager.v1.DealBuyerPermissionTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.NonGuaranteedDealPriorityProto.getDescriptor(),
               com.google.ads.admanager.v1.PrivateMarketplaceEnumsProto.getDescriptor(),
               com.google.ads.admanager.v1.SizeProto.getDescriptor(),
               com.google.ads.admanager.v1.TargetingProto.getDescriptor(),
@@ -157,6 +151,7 @@ public final class PrivateAuctionDealMessagesProto extends com.google.protobuf.G
               "BlockOverrideEnabled",
               "BuyerPermissionType",
               "BuyerData",
+              "DealPriority",
               "CreateTime",
               "UpdateTime",
             });
@@ -170,6 +165,7 @@ public final class PrivateAuctionDealMessagesProto extends com.google.protobuf.G
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.DealBuyerPermissionTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.NonGuaranteedDealPriorityProto.getDescriptor();
     com.google.ads.admanager.v1.PrivateMarketplaceEnumsProto.getDescriptor();
     com.google.ads.admanager.v1.SizeProto.getDescriptor();
     com.google.ads.admanager.v1.TargetingProto.getDescriptor();

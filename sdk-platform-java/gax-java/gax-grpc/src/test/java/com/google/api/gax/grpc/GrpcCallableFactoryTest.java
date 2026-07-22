@@ -30,6 +30,7 @@
 package com.google.api.gax.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.grpc.testing.FakeServiceGrpc;
 import com.google.api.gax.grpc.testing.FakeServiceImpl;
@@ -73,7 +74,8 @@ class GrpcCallableFactoryTest {
     inprocessServer.start();
 
     channel = InProcessChannelBuilder.forName(serverName).directExecutor().usePlaintext().build();
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -153,8 +155,8 @@ class GrpcCallableFactoryTest {
         MethodDescriptor.newBuilder()
             .setType(MethodType.SERVER_STREAMING)
             .setFullMethodName("google.bigtable.v2.Bigtable/ReadRows")
-            .setRequestMarshaller(Mockito.mock(Marshaller.class))
-            .setResponseMarshaller(Mockito.mock(Marshaller.class))
+            .setRequestMarshaller(mock(Marshaller.class))
+            .setResponseMarshaller(mock(Marshaller.class))
             .build();
 
     SpanName actualSpanName = SpanName.of(GrpcCallableFactory.getApiTracerContext(descriptor));
@@ -168,8 +170,8 @@ class GrpcCallableFactoryTest {
         MethodDescriptor.newBuilder()
             .setType(MethodType.SERVER_STREAMING)
             .setFullMethodName("UnqualifiedService/ReadRows")
-            .setRequestMarshaller(Mockito.mock(Marshaller.class))
-            .setResponseMarshaller(Mockito.mock(Marshaller.class))
+            .setRequestMarshaller(mock(Marshaller.class))
+            .setResponseMarshaller(mock(Marshaller.class))
             .build();
 
     SpanName actualSpanName = SpanName.of(GrpcCallableFactory.getApiTracerContext(descriptor));
@@ -186,8 +188,8 @@ class GrpcCallableFactoryTest {
           MethodDescriptor.newBuilder()
               .setType(MethodType.SERVER_STREAMING)
               .setFullMethodName(invalidName)
-              .setRequestMarshaller(Mockito.mock(Marshaller.class))
-              .setResponseMarshaller(Mockito.mock(Marshaller.class))
+              .setRequestMarshaller(mock(Marshaller.class))
+              .setResponseMarshaller(mock(Marshaller.class))
               .build();
 
       IllegalArgumentException actualError = null;

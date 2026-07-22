@@ -20,27 +20,38 @@ import static com.google.cloud.tasks.v2beta3.CloudTasksClient.ListLocationsPaged
 import static com.google.cloud.tasks.v2beta3.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2beta3.CloudTasksClient.ListTasksPagedResponse;
 
+import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.httpjson.longrunning.stub.HttpJsonOperationsStub;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksMetadata;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksRequest;
+import com.google.cloud.tasks.v2beta3.BatchCreateTasksResponse;
+import com.google.cloud.tasks.v2beta3.BatchDeleteTasksMetadata;
+import com.google.cloud.tasks.v2beta3.BatchDeleteTasksRequest;
+import com.google.cloud.tasks.v2beta3.CmekConfig;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta3.CreateTaskRequest;
 import com.google.cloud.tasks.v2beta3.DeleteQueueRequest;
 import com.google.cloud.tasks.v2beta3.DeleteTaskRequest;
+import com.google.cloud.tasks.v2beta3.GetCmekConfigRequest;
 import com.google.cloud.tasks.v2beta3.GetQueueRequest;
 import com.google.cloud.tasks.v2beta3.GetTaskRequest;
 import com.google.cloud.tasks.v2beta3.ListQueuesRequest;
@@ -53,12 +64,15 @@ import com.google.cloud.tasks.v2beta3.Queue;
 import com.google.cloud.tasks.v2beta3.ResumeQueueRequest;
 import com.google.cloud.tasks.v2beta3.RunTaskRequest;
 import com.google.cloud.tasks.v2beta3.Task;
+import com.google.cloud.tasks.v2beta3.UpdateCmekConfigRequest;
 import com.google.cloud.tasks.v2beta3.UpdateQueueRequest;
+import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
@@ -80,7 +94,13 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonCloudTasksStub extends CloudTasksStub {
-  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+  private static final TypeRegistry typeRegistry =
+      TypeRegistry.newBuilder()
+          .add(Empty.getDescriptor())
+          .add(BatchCreateTasksMetadata.getDescriptor())
+          .add(BatchCreateTasksResponse.getDescriptor())
+          .add(BatchDeleteTasksMetadata.getDescriptor())
+          .build();
 
   private static final ApiMethodDescriptor<ListQueuesRequest, ListQueuesResponse>
       listQueuesMethodDescriptor =
@@ -586,6 +606,46 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<BatchCreateTasksRequest, Operation>
+      batchCreateTasksMethodDescriptor =
+          ApiMethodDescriptor.<BatchCreateTasksRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/BatchCreateTasks")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateTasksRequest>newBuilder()
+                      .setPath(
+                          "/v2beta3/{parent=projects/*/locations/*/queues/*}/tasks:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BatchCreateTasksRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
       ApiMethodDescriptor.<DeleteTaskRequest, Empty>newBuilder()
           .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/DeleteTask")
@@ -618,6 +678,46 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<BatchDeleteTasksRequest, Operation>
+      batchDeleteTasksMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteTasksRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/BatchDeleteTasks")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteTasksRequest>newBuilder()
+                      .setPath(
+                          "/v2beta3/{parent=projects/*/locations/*/queues/*}/tasks:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteTasksRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (BatchDeleteTasksRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
 
   private static final ApiMethodDescriptor<RunTaskRequest, Task> runTaskMethodDescriptor =
       ApiMethodDescriptor.<RunTaskRequest, Task>newBuilder()
@@ -654,6 +754,79 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<UpdateCmekConfigRequest, CmekConfig>
+      updateCmekConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCmekConfigRequest, CmekConfig>newBuilder()
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/UpdateCmekConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCmekConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2beta3/{cmekConfig.name=projects/*/locations/*/cmekConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCmekConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "cmekConfig.name", request.getCmekConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCmekConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("cmekConfig", request.getCmekConfig(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CmekConfig>newBuilder()
+                      .setDefaultInstance(CmekConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetCmekConfigRequest, CmekConfig>
+      getCmekConfigMethodDescriptor =
+          ApiMethodDescriptor.<GetCmekConfigRequest, CmekConfig>newBuilder()
+              .setFullMethodName("google.cloud.tasks.v2beta3.CloudTasks/GetCmekConfig")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetCmekConfigRequest>newBuilder()
+                      .setPath(
+                          "/v2beta3/{name=projects/*/locations/*/cmekConfig}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCmekConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetCmekConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CmekConfig>newBuilder()
+                      .setDefaultInstance(CmekConfig.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -740,14 +913,24 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable;
   private final UnaryCallable<GetTaskRequest, Task> getTaskCallable;
   private final UnaryCallable<CreateTaskRequest, Task> createTaskCallable;
+  private final UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable;
+  private final OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable;
   private final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable;
+  private final UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable;
+  private final OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
+  private final UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable;
+  private final UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
   private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
+  private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
   public static final HttpJsonCloudTasksStub create(CloudTasksStubSettings settings)
@@ -788,6 +971,18 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
       HttpJsonStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.httpJsonOperationsStub =
+        HttpJsonOperationsStub.create(
+            clientContext,
+            callableFactory,
+            typeRegistry,
+            ImmutableMap.<String, HttpRule>builder()
+                .put(
+                    "google.longrunning.Operations.GetOperation",
+                    HttpRule.newBuilder()
+                        .setGet("/v2beta3/{name=projects/*/locations/*/operations/*}")
+                        .build())
+                .build());
 
     HttpJsonCallSettings<ListQueuesRequest, ListQueuesResponse> listQueuesTransportSettings =
         HttpJsonCallSettings.<ListQueuesRequest, ListQueuesResponse>newBuilder()
@@ -957,6 +1152,18 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<BatchCreateTasksRequest, Operation> batchCreateTasksTransportSettings =
+        HttpJsonCallSettings.<BatchCreateTasksRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchCreateTasksMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<DeleteTaskRequest, Empty> deleteTaskTransportSettings =
         HttpJsonCallSettings.<DeleteTaskRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteTaskMethodDescriptor)
@@ -969,9 +1176,45 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<BatchDeleteTasksRequest, Operation> batchDeleteTasksTransportSettings =
+        HttpJsonCallSettings.<BatchDeleteTasksRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteTasksMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     HttpJsonCallSettings<RunTaskRequest, Task> runTaskTransportSettings =
         HttpJsonCallSettings.<RunTaskRequest, Task>newBuilder()
             .setMethodDescriptor(runTaskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateCmekConfigRequest, CmekConfig>newBuilder()
+            .setMethodDescriptor(updateCmekConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "cmek_config.name", String.valueOf(request.getCmekConfig().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetCmekConfigRequest, CmekConfig> getCmekConfigTransportSettings =
+        HttpJsonCallSettings.<GetCmekConfigRequest, CmekConfig>newBuilder()
+            .setMethodDescriptor(getCmekConfigMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1055,12 +1298,36 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     this.createTaskCallable =
         callableFactory.createUnaryCallable(
             createTaskTransportSettings, settings.createTaskSettings(), clientContext);
+    this.batchCreateTasksCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateTasksTransportSettings, settings.batchCreateTasksSettings(), clientContext);
+    this.batchCreateTasksOperationCallable =
+        callableFactory.createOperationCallable(
+            batchCreateTasksTransportSettings,
+            settings.batchCreateTasksOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteTaskCallable =
         callableFactory.createUnaryCallable(
             deleteTaskTransportSettings, settings.deleteTaskSettings(), clientContext);
+    this.batchDeleteTasksCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteTasksTransportSettings, settings.batchDeleteTasksSettings(), clientContext);
+    this.batchDeleteTasksOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteTasksTransportSettings,
+            settings.batchDeleteTasksOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
+    this.updateCmekConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCmekConfigTransportSettings, settings.updateCmekConfigSettings(), clientContext);
+    this.getCmekConfigCallable =
+        callableFactory.createUnaryCallable(
+            getCmekConfigTransportSettings, settings.getCmekConfigSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1092,11 +1359,19 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     methodDescriptors.add(listTasksMethodDescriptor);
     methodDescriptors.add(getTaskMethodDescriptor);
     methodDescriptors.add(createTaskMethodDescriptor);
+    methodDescriptors.add(batchCreateTasksMethodDescriptor);
     methodDescriptors.add(deleteTaskMethodDescriptor);
+    methodDescriptors.add(batchDeleteTasksMethodDescriptor);
     methodDescriptors.add(runTaskMethodDescriptor);
+    methodDescriptors.add(updateCmekConfigMethodDescriptor);
+    methodDescriptors.add(getCmekConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
+  }
+
+  public HttpJsonOperationsStub getHttpJsonOperationsStub() {
+    return httpJsonOperationsStub;
   }
 
   @Override
@@ -1181,13 +1456,46 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateTasksRequest, Operation> batchCreateTasksCallable() {
+    return batchCreateTasksCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchCreateTasksRequest, BatchCreateTasksResponse, BatchCreateTasksMetadata>
+      batchCreateTasksOperationCallable() {
+    return batchCreateTasksOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     return deleteTaskCallable;
   }
 
   @Override
+  public UnaryCallable<BatchDeleteTasksRequest, Operation> batchDeleteTasksCallable() {
+    return batchDeleteTasksCallable;
+  }
+
+  @Override
+  public OperationCallable<BatchDeleteTasksRequest, Empty, BatchDeleteTasksMetadata>
+      batchDeleteTasksOperationCallable() {
+    return batchDeleteTasksOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCmekConfigRequest, CmekConfig> updateCmekConfigCallable() {
+    return updateCmekConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetCmekConfigRequest, CmekConfig> getCmekConfigCallable() {
+    return getCmekConfigCallable;
   }
 
   @Override

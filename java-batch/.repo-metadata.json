@@ -11,6 +11,5 @@
   "repo_short": "java-batch",
   "distribution_name": "com.google.cloud:google-cloud-batch",
   "api_id": "batch.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

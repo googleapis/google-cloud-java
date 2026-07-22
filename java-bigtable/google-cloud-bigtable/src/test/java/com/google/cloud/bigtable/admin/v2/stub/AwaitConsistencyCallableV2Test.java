@@ -42,7 +42,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -59,11 +58,9 @@ public class AwaitConsistencyCallableV2Test {
   private static final TableName TABLE_NAME = TableName.of(PROJECT_ID, INSTANCE_ID, TABLE_ID);
   private static final ApiCallContext CALL_CONTEXT = FakeCallContext.createDefault();
 
-  @Mock
   private UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
       mockGenerateConsistencyTokenCallable;
 
-  @Mock
   private UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       mockCheckConsistencyCallable;
 
@@ -71,6 +68,11 @@ public class AwaitConsistencyCallableV2Test {
 
   @Before
   public void setUp() {
+    mockGenerateConsistencyTokenCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCheckConsistencyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
             .setTotalTimeout(Duration.ofMillis(100))

@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.retrying;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * {@code PollException} is thrown when polling algorithm exceeds total timeout or total number of
  * attempts.
  */
+@NullMarked
 public class PollException extends RuntimeException {
 
   private static final long serialVersionUID = -3666617975087303999L;

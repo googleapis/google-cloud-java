@@ -54,6 +54,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   private NetworkInterface() {
     accessConfigs_ = java.util.Collections.emptyList();
     aliasIpRanges_ = java.util.Collections.emptyList();
+    aliasIpv6Ranges_ = java.util.Collections.emptyList();
     fingerprint_ = "";
     igmpQuery_ = "";
     ipv6AccessConfigs_ = java.util.Collections.emptyList();
@@ -1067,6 +1068,87 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.cloud.compute.v1.AliasIpRangeOrBuilder getAliasIpRangesOrBuilder(int index) {
     return aliasIpRanges_.get(index);
+  }
+
+  public static final int ALIAS_IPV6_RANGES_FIELD_NUMBER = 104028351;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.AliasIpRange> aliasIpv6Ranges_;
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.AliasIpRange> getAliasIpv6RangesList() {
+    return aliasIpv6Ranges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
+      getAliasIpv6RangesOrBuilderList() {
+    return aliasIpv6Ranges_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  @java.lang.Override
+  public int getAliasIpv6RangesCount() {
+    return aliasIpv6Ranges_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AliasIpRange getAliasIpv6Ranges(int index) {
+    return aliasIpv6Ranges_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An array of alias IPv6 ranges for this network interface.
+   * You can only specify this field for network interfaces in VPC networks.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AliasIpRangeOrBuilder getAliasIpv6RangesOrBuilder(int index) {
+    return aliasIpv6Ranges_.get(index);
   }
 
   public static final int ENABLE_VPC_SCOPED_DNS_FIELD_NUMBER = 283425868;
@@ -2460,6 +2542,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 59810577, nicType_);
     }
+    for (int i = 0; i < aliasIpv6Ranges_.size(); i++) {
+      output.writeMessage(104028351, aliasIpv6Ranges_.get(i));
+    }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       output.writeMessage(111058326, accessConfigs_.get(i));
     }
@@ -2531,6 +2616,11 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(59810577, nicType_);
+    }
+    for (int i = 0; i < aliasIpv6Ranges_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104028351, aliasIpv6Ranges_.get(i));
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       size +=
@@ -2606,6 +2696,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
     if (!getAccessConfigsList().equals(other.getAccessConfigsList())) return false;
     if (!getAliasIpRangesList().equals(other.getAliasIpRangesList())) return false;
+    if (!getAliasIpv6RangesList().equals(other.getAliasIpv6RangesList())) return false;
     if (hasEnableVpcScopedDns() != other.hasEnableVpcScopedDns()) return false;
     if (hasEnableVpcScopedDns()) {
       if (getEnableVpcScopedDns() != other.getEnableVpcScopedDns()) return false;
@@ -2697,6 +2788,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (getAliasIpRangesCount() > 0) {
       hash = (37 * hash) + ALIAS_IP_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getAliasIpRangesList().hashCode();
+    }
+    if (getAliasIpv6RangesCount() > 0) {
+      hash = (37 * hash) + ALIAS_IPV6_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getAliasIpv6RangesList().hashCode();
     }
     if (hasEnableVpcScopedDns()) {
       hash = (37 * hash) + ENABLE_VPC_SCOPED_DNS_FIELD_NUMBER;
@@ -2928,6 +3023,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         aliasIpRangesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      if (aliasIpv6RangesBuilder_ == null) {
+        aliasIpv6Ranges_ = java.util.Collections.emptyList();
+      } else {
+        aliasIpv6Ranges_ = null;
+        aliasIpv6RangesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       enableVpcScopedDns_ = false;
       fingerprint_ = "";
       igmpQuery_ = "";
@@ -2938,7 +3040,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         ipv6AccessConfigs_ = null;
         ipv6AccessConfigsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       ipv6AccessType_ = "";
       ipv6Address_ = "";
       kind_ = "";
@@ -3007,10 +3109,19 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       } else {
         result.aliasIpRanges_ = aliasIpRangesBuilder_.build();
       }
+      if (aliasIpv6RangesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          aliasIpv6Ranges_ = java.util.Collections.unmodifiableList(aliasIpv6Ranges_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.aliasIpv6Ranges_ = aliasIpv6Ranges_;
+      } else {
+        result.aliasIpv6Ranges_ = aliasIpv6RangesBuilder_.build();
+      }
       if (ipv6AccessConfigsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           ipv6AccessConfigs_ = java.util.Collections.unmodifiableList(ipv6AccessConfigs_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.ipv6AccessConfigs_ = ipv6AccessConfigs_;
       } else {
@@ -3021,75 +3132,75 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     private void buildPartial0(com.google.cloud.compute.v1.NetworkInterface result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enableVpcScopedDns_ = enableVpcScopedDns_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.fingerprint_ = fingerprint_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.igmpQuery_ = igmpQuery_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.internalIpv6PrefixLength_ = internalIpv6PrefixLength_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.ipv6AccessType_ = ipv6AccessType_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.ipv6Address_ = ipv6Address_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.kind_ = kind_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.name_ = name_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.network_ = network_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.networkAttachment_ = networkAttachment_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.networkIP_ = networkIP_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.nicType_ = nicType_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.parentNicName_ = parentNicName_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.queueCount_ = queueCount_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.serviceClassId_ = serviceClassId_;
         to_bitField0_ |= 0x00004000;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.stackType_ = stackType_;
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.subnetwork_ = subnetwork_;
         to_bitField0_ |= 0x00010000;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.vlan_ = vlan_;
         to_bitField0_ |= 0x00020000;
       }
@@ -3162,17 +3273,44 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (aliasIpv6RangesBuilder_ == null) {
+        if (!other.aliasIpv6Ranges_.isEmpty()) {
+          if (aliasIpv6Ranges_.isEmpty()) {
+            aliasIpv6Ranges_ = other.aliasIpv6Ranges_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureAliasIpv6RangesIsMutable();
+            aliasIpv6Ranges_.addAll(other.aliasIpv6Ranges_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.aliasIpv6Ranges_.isEmpty()) {
+          if (aliasIpv6RangesBuilder_.isEmpty()) {
+            aliasIpv6RangesBuilder_.dispose();
+            aliasIpv6RangesBuilder_ = null;
+            aliasIpv6Ranges_ = other.aliasIpv6Ranges_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            aliasIpv6RangesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAliasIpv6RangesFieldBuilder()
+                    : null;
+          } else {
+            aliasIpv6RangesBuilder_.addAllMessages(other.aliasIpv6Ranges_);
+          }
+        }
+      }
       if (other.hasEnableVpcScopedDns()) {
         setEnableVpcScopedDns(other.getEnableVpcScopedDns());
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasIgmpQuery()) {
         igmpQuery_ = other.igmpQuery_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasInternalIpv6PrefixLength()) {
@@ -3182,7 +3320,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         if (!other.ipv6AccessConfigs_.isEmpty()) {
           if (ipv6AccessConfigs_.isEmpty()) {
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureIpv6AccessConfigsIsMutable();
             ipv6AccessConfigs_.addAll(other.ipv6AccessConfigs_);
@@ -3195,7 +3333,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             ipv6AccessConfigsBuilder_.dispose();
             ipv6AccessConfigsBuilder_ = null;
             ipv6AccessConfigs_ = other.ipv6AccessConfigs_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             ipv6AccessConfigsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetIpv6AccessConfigsFieldBuilder()
@@ -3207,47 +3345,47 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasIpv6AccessType()) {
         ipv6AccessType_ = other.ipv6AccessType_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasIpv6Address()) {
         ipv6Address_ = other.ipv6Address_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasNetworkAttachment()) {
         networkAttachment_ = other.networkAttachment_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasNetworkIP()) {
         networkIP_ = other.networkIP_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasNicType()) {
         nicType_ = other.nicType_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasParentNicName()) {
         parentNicName_ = other.parentNicName_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (other.hasQueueCount()) {
@@ -3255,17 +3393,17 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasServiceClassId()) {
         serviceClassId_ = other.serviceClassId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasStackType()) {
         stackType_ = other.stackType_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasSubnetwork()) {
         subnetwork_ = other.subnetwork_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasVlan()) {
@@ -3300,33 +3438,46 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 26989658
             case 28977944:
               {
                 vlan_ = input.readInt32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 28977944
             case 241996370:
               {
                 igmpQuery_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 241996370
             case 478484618:
               {
                 nicType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 478484618
+            case 832226810:
+              {
+                com.google.cloud.compute.v1.AliasIpRange m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.AliasIpRange.parser(), extensionRegistry);
+                if (aliasIpv6RangesBuilder_ == null) {
+                  ensureAliasIpv6RangesIsMutable();
+                  aliasIpv6Ranges_.add(m);
+                } else {
+                  aliasIpv6RangesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 832226810
             case 888466610:
               {
                 com.google.cloud.compute.v1.AccessConfig m =
@@ -3356,67 +3507,67 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case 1630670056:
               {
                 internalIpv6PrefixLength_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1630670056
             case 1657455690:
               {
                 networkIP_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 1657455690
             case 1797152418:
               {
                 networkAttachment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 1797152418
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 1862979954
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1877428002
             case -2027560352:
               {
                 enableVpcScopedDns_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -2027560352
             case -1832345742:
               {
                 subnetwork_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -1832345742
             case -1562456862:
               {
                 ipv6Address_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -1562456862
             case -944852294:
               {
                 parentNicName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -944852294
             case -912860062:
               {
                 serviceClassId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -912860062
             case -887696246:
               {
                 stackType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -887696246
             case -427190414:
@@ -3435,13 +3586,13 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
             case -265297144:
               {
                 queueCount_ = input.readInt32();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -265297144
             case -257698070:
               {
                 ipv6AccessType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case -257698070
             default:
@@ -4259,6 +4410,396 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return aliasIpRangesBuilder_;
     }
 
+    private java.util.List<com.google.cloud.compute.v1.AliasIpRange> aliasIpv6Ranges_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAliasIpv6RangesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        aliasIpv6Ranges_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.AliasIpRange>(aliasIpv6Ranges_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AliasIpRange,
+            com.google.cloud.compute.v1.AliasIpRange.Builder,
+            com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
+        aliasIpv6RangesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AliasIpRange> getAliasIpv6RangesList() {
+      if (aliasIpv6RangesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(aliasIpv6Ranges_);
+      } else {
+        return aliasIpv6RangesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public int getAliasIpv6RangesCount() {
+      if (aliasIpv6RangesBuilder_ == null) {
+        return aliasIpv6Ranges_.size();
+      } else {
+        return aliasIpv6RangesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public com.google.cloud.compute.v1.AliasIpRange getAliasIpv6Ranges(int index) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        return aliasIpv6Ranges_.get(index);
+      } else {
+        return aliasIpv6RangesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder setAliasIpv6Ranges(int index, com.google.cloud.compute.v1.AliasIpRange value) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.set(index, value);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder setAliasIpv6Ranges(
+        int index, com.google.cloud.compute.v1.AliasIpRange.Builder builderForValue) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder addAliasIpv6Ranges(com.google.cloud.compute.v1.AliasIpRange value) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.add(value);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder addAliasIpv6Ranges(int index, com.google.cloud.compute.v1.AliasIpRange value) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.add(index, value);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder addAliasIpv6Ranges(
+        com.google.cloud.compute.v1.AliasIpRange.Builder builderForValue) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.add(builderForValue.build());
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder addAliasIpv6Ranges(
+        int index, com.google.cloud.compute.v1.AliasIpRange.Builder builderForValue) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder addAllAliasIpv6Ranges(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.AliasIpRange> values) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        ensureAliasIpv6RangesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aliasIpv6Ranges_);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder clearAliasIpv6Ranges() {
+      if (aliasIpv6RangesBuilder_ == null) {
+        aliasIpv6Ranges_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public Builder removeAliasIpv6Ranges(int index) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        ensureAliasIpv6RangesIsMutable();
+        aliasIpv6Ranges_.remove(index);
+        onChanged();
+      } else {
+        aliasIpv6RangesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public com.google.cloud.compute.v1.AliasIpRange.Builder getAliasIpv6RangesBuilder(int index) {
+      return internalGetAliasIpv6RangesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public com.google.cloud.compute.v1.AliasIpRangeOrBuilder getAliasIpv6RangesOrBuilder(
+        int index) {
+      if (aliasIpv6RangesBuilder_ == null) {
+        return aliasIpv6Ranges_.get(index);
+      } else {
+        return aliasIpv6RangesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
+        getAliasIpv6RangesOrBuilderList() {
+      if (aliasIpv6RangesBuilder_ != null) {
+        return aliasIpv6RangesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(aliasIpv6Ranges_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public com.google.cloud.compute.v1.AliasIpRange.Builder addAliasIpv6RangesBuilder() {
+      return internalGetAliasIpv6RangesFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.AliasIpRange.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public com.google.cloud.compute.v1.AliasIpRange.Builder addAliasIpv6RangesBuilder(int index) {
+      return internalGetAliasIpv6RangesFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.AliasIpRange.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An array of alias IPv6 ranges for this network interface.
+     * You can only specify this field for network interfaces in VPC networks.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AliasIpRange alias_ipv6_ranges = 104028351;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AliasIpRange.Builder>
+        getAliasIpv6RangesBuilderList() {
+      return internalGetAliasIpv6RangesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AliasIpRange,
+            com.google.cloud.compute.v1.AliasIpRange.Builder,
+            com.google.cloud.compute.v1.AliasIpRangeOrBuilder>
+        internalGetAliasIpv6RangesFieldBuilder() {
+      if (aliasIpv6RangesBuilder_ == null) {
+        aliasIpv6RangesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.AliasIpRange,
+                com.google.cloud.compute.v1.AliasIpRange.Builder,
+                com.google.cloud.compute.v1.AliasIpRangeOrBuilder>(
+                aliasIpv6Ranges_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        aliasIpv6Ranges_ = null;
+      }
+      return aliasIpv6RangesBuilder_;
+    }
+
     private boolean enableVpcScopedDns_;
 
     /**
@@ -4275,7 +4816,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasEnableVpcScopedDns() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -4311,7 +4852,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setEnableVpcScopedDns(boolean value) {
 
       enableVpcScopedDns_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -4329,7 +4870,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableVpcScopedDns() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enableVpcScopedDns_ = false;
       onChanged();
       return this;
@@ -4352,7 +4893,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -4427,7 +4968,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4448,7 +4989,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -4474,7 +5015,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4495,7 +5036,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the igmpQuery field is set.
      */
     public boolean hasIgmpQuery() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -4567,7 +5108,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       igmpQuery_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4587,7 +5128,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIgmpQuery() {
       igmpQuery_ = getDefaultInstance().getIgmpQuery();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -4612,7 +5153,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       igmpQuery_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4632,7 +5173,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasInternalIpv6PrefixLength() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -4666,7 +5207,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setInternalIpv6PrefixLength(int value) {
 
       internalIpv6PrefixLength_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4683,7 +5224,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearInternalIpv6PrefixLength() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalIpv6PrefixLength_ = 0;
       onChanged();
       return this;
@@ -4693,10 +5234,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureIpv6AccessConfigsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         ipv6AccessConfigs_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.AccessConfig>(ipv6AccessConfigs_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -4955,7 +5496,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder clearIpv6AccessConfigs() {
       if (ipv6AccessConfigsBuilder_ == null) {
         ipv6AccessConfigs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         ipv6AccessConfigsBuilder_.clear();
@@ -5107,7 +5648,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.AccessConfig.Builder,
                 com.google.cloud.compute.v1.AccessConfigOrBuilder>(
                 ipv6AccessConfigs_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000080) != 0),
                 getParentForChildren(),
                 isClean());
         ipv6AccessConfigs_ = null;
@@ -5134,7 +5675,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6AccessType field is set.
      */
     public boolean hasIpv6AccessType() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -5215,7 +5756,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5238,7 +5779,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpv6AccessType() {
       ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -5266,7 +5807,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipv6AccessType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -5288,7 +5829,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the ipv6Address field is set.
      */
     public boolean hasIpv6Address() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -5363,7 +5904,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       ipv6Address_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5384,7 +5925,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearIpv6Address() {
       ipv6Address_ = getDefaultInstance().getIpv6Address();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -5410,7 +5951,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       ipv6Address_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -5429,7 +5970,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -5495,7 +6036,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5513,7 +6054,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -5536,7 +6077,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -5557,7 +6098,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -5629,7 +6170,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5649,7 +6190,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -5674,7 +6215,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -5706,7 +6247,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -5811,7 +6352,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5842,7 +6383,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -5878,7 +6419,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -5899,7 +6440,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkAttachment field is set.
      */
     public boolean hasNetworkAttachment() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5971,7 +6512,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkAttachment_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5991,7 +6532,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkAttachment() {
       networkAttachment_ = getDefaultInstance().getNetworkAttachment();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -6016,7 +6557,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkAttachment_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -6037,7 +6578,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the networkIP field is set.
      */
     public boolean hasNetworkIP() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -6109,7 +6650,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       networkIP_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6129,7 +6670,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNetworkIP() {
       networkIP_ = getDefaultInstance().getNetworkIP();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -6154,7 +6695,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       networkIP_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -6175,7 +6716,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the nicType field is set.
      */
     public boolean hasNicType() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -6247,7 +6788,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       nicType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6267,7 +6808,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearNicType() {
       nicType_ = getDefaultInstance().getNicType();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -6292,7 +6833,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       nicType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -6311,7 +6852,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the parentNicName field is set.
      */
     public boolean hasParentNicName() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -6377,7 +6918,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       parentNicName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6395,7 +6936,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearParentNicName() {
       parentNicName_ = getDefaultInstance().getParentNicName();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -6418,7 +6959,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       parentNicName_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -6440,7 +6981,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasQueueCount() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -6478,7 +7019,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setQueueCount(int value) {
 
       queueCount_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6497,7 +7038,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQueueCount() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       queueCount_ = 0;
       onChanged();
       return this;
@@ -6520,7 +7061,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the serviceClassId field is set.
      */
     public boolean hasServiceClassId() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6595,7 +7136,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceClassId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6616,7 +7157,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceClassId() {
       serviceClassId_ = getDefaultInstance().getServiceClassId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6642,7 +7183,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceClassId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6666,7 +7207,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the stackType field is set.
      */
     public boolean hasStackType() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6747,7 +7288,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       stackType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6770,7 +7311,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStackType() {
       stackType_ = getDefaultInstance().getStackType();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6798,7 +7339,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       stackType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6827,7 +7368,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return Whether the subnetwork field is set.
      */
     public boolean hasSubnetwork() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6923,7 +7464,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       subnetwork_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6951,7 +7492,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSubnetwork() {
       subnetwork_ = getDefaultInstance().getSubnetwork();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6984,7 +7525,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       subnetwork_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7005,7 +7546,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVlan() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -7041,7 +7582,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     public Builder setVlan(int value) {
 
       vlan_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7059,7 +7600,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVlan() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       vlan_ = 0;
       onChanged();
       return this;

@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-ces",
   "api_id": "ces.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rpc_documentation": "https://docs.cloud.google.com/customer-engagement-ai/conversational-agents/ps/reference/rpc"
 }

@@ -54,6 +54,15 @@ public final class Content extends com.google.protobuf.GeneratedMessage
   private Content() {
     name_ = "";
     displayName_ = "";
+    status_ = 0;
+    contentStatusSource_ = 0;
+    hlsIngestStatus_ = 0;
+    hlsIngestErrors_ = java.util.Collections.emptyList();
+    dashIngestStatus_ = 0;
+    dashIngestErrors_ = java.util.Collections.emptyList();
+    cmsSources_ = java.util.Collections.emptyList();
+    contentBundles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    cmsMetadataValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -196,6 +205,1057 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private int status_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override
+  public int getStatusValue() {
+    return status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus getStatus() {
+    com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus result =
+        com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus.forNumber(status_);
+    return result == null
+        ? com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CONTENT_STATUS_SOURCE_FIELD_NUMBER = 4;
+  private int contentStatusSource_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the contentStatusSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasContentStatusSource() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for contentStatusSource.
+   */
+  @java.lang.Override
+  public int getContentStatusSourceValue() {
+    return contentStatusSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The contentStatusSource.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource
+      getContentStatusSource() {
+    com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource result =
+        com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource.forNumber(
+            contentStatusSource_);
+    return result == null
+        ? com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int HLS_INGEST_STATUS_FIELD_NUMBER = 5;
+  private int hlsIngestStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hlsIngestStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasHlsIngestStatus() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hlsIngestStatus.
+   */
+  @java.lang.Override
+  public int getHlsIngestStatusValue() {
+    return hlsIngestStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hlsIngestStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getHlsIngestStatus() {
+    com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus result =
+        com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.forNumber(hlsIngestStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int HLS_INGEST_ERRORS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.DaiIngestError> hlsIngestErrors_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.DaiIngestError> getHlsIngestErrorsList() {
+    return hlsIngestErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+      getHlsIngestErrorsOrBuilderList() {
+    return hlsIngestErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getHlsIngestErrorsCount() {
+    return hlsIngestErrors_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestError getHlsIngestErrors(int index) {
+    return hlsIngestErrors_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getHlsIngestErrorsOrBuilder(
+      int index) {
+    return hlsIngestErrors_.get(index);
+  }
+
+  public static final int LAST_HLS_INGEST_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp lastHlsIngestTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastHlsIngestTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastHlsIngestTime() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastHlsIngestTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastHlsIngestTime() {
+    return lastHlsIngestTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastHlsIngestTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastHlsIngestTimeOrBuilder() {
+    return lastHlsIngestTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastHlsIngestTime_;
+  }
+
+  public static final int DASH_INGEST_STATUS_FIELD_NUMBER = 8;
+  private int dashIngestStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dashIngestStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasDashIngestStatus() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dashIngestStatus.
+   */
+  @java.lang.Override
+  public int getDashIngestStatusValue() {
+    return dashIngestStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dashIngestStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getDashIngestStatus() {
+    com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus result =
+        com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.forNumber(
+            dashIngestStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DASH_INGEST_ERRORS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.DaiIngestError> dashIngestErrors_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.DaiIngestError> getDashIngestErrorsList() {
+    return dashIngestErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+      getDashIngestErrorsOrBuilderList() {
+    return dashIngestErrors_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDashIngestErrorsCount() {
+    return dashIngestErrors_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestError getDashIngestErrors(int index) {
+    return dashIngestErrors_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getDashIngestErrorsOrBuilder(
+      int index) {
+    return dashIngestErrors_.get(index);
+  }
+
+  public static final int LAST_DASH_INGEST_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp lastDashIngestTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastDashIngestTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastDashIngestTime() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastDashIngestTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getLastDashIngestTime() {
+    return lastDashIngestTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastDashIngestTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getLastDashIngestTimeOrBuilder() {
+    return lastDashIngestTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastDashIngestTime_;
+  }
+
+  public static final int IMPORT_TIME_FIELD_NUMBER = 11;
+  private com.google.protobuf.Timestamp importTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasImportTime() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getImportTime() {
+    return importTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : importTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getImportTimeOrBuilder() {
+    return importTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : importTime_;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int CMS_SOURCES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.CmsContent> cmsSources_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.CmsContent> getCmsSourcesList() {
+    return cmsSources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.CmsContentOrBuilder>
+      getCmsSourcesOrBuilderList() {
+    return cmsSources_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCmsSourcesCount() {
+    return cmsSources_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CmsContent getCmsSources(int index) {
+    return cmsSources_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CmsContentOrBuilder getCmsSourcesOrBuilder(int index) {
+    return cmsSources_.get(index);
+  }
+
+  public static final int CONTENT_BUNDLES_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList contentBundles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the contentBundles.
+   */
+  public com.google.protobuf.ProtocolStringList getContentBundlesList() {
+    return contentBundles_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of contentBundles.
+   */
+  public int getContentBundlesCount() {
+    return contentBundles_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The contentBundles at the given index.
+   */
+  public java.lang.String getContentBundles(int index) {
+    return contentBundles_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contentBundles at the given index.
+   */
+  public com.google.protobuf.ByteString getContentBundlesBytes(int index) {
+    return contentBundles_.getByteString(index);
+  }
+
+  public static final int CMS_METADATA_VALUES_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList cmsMetadataValues_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the cmsMetadataValues.
+   */
+  public com.google.protobuf.ProtocolStringList getCmsMetadataValuesList() {
+    return cmsMetadataValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of cmsMetadataValues.
+   */
+  public int getCmsMetadataValuesCount() {
+    return cmsMetadataValues_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The cmsMetadataValues at the given index.
+   */
+  public java.lang.String getCmsMetadataValues(int index) {
+    return cmsMetadataValues_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the cmsMetadataValues at the given index.
+   */
+  public com.google.protobuf.ByteString getCmsMetadataValuesBytes(int index) {
+    return cmsMetadataValues_.getByteString(index);
+  }
+
+  public static final int DURATION_FIELD_NUMBER = 16;
+  private com.google.protobuf.Duration duration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the duration field is set.
+   */
+  @java.lang.Override
+  public boolean hasDuration() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The duration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getDuration() {
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+    return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,6 +1276,48 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeEnum(3, status_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(4, contentStatusSource_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeEnum(5, hlsIngestStatus_);
+    }
+    for (int i = 0; i < hlsIngestErrors_.size(); i++) {
+      output.writeMessage(6, hlsIngestErrors_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(7, getLastHlsIngestTime());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeEnum(8, dashIngestStatus_);
+    }
+    for (int i = 0; i < dashIngestErrors_.size(); i++) {
+      output.writeMessage(9, dashIngestErrors_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(10, getLastDashIngestTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(11, getImportTime());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(12, getUpdateTime());
+    }
+    for (int i = 0; i < cmsSources_.size(); i++) {
+      output.writeMessage(13, cmsSources_.get(i));
+    }
+    for (int i = 0; i < contentBundles_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 14, contentBundles_.getRaw(i));
+    }
+    for (int i = 0; i < cmsMetadataValues_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, cmsMetadataValues_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(16, getDuration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +1332,58 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, status_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, contentStatusSource_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, hlsIngestStatus_);
+    }
+    for (int i = 0; i < hlsIngestErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, hlsIngestErrors_.get(i));
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLastHlsIngestTime());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, dashIngestStatus_);
+    }
+    for (int i = 0; i < dashIngestErrors_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, dashIngestErrors_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLastDashIngestTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getImportTime());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getUpdateTime());
+    }
+    for (int i = 0; i < cmsSources_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, cmsSources_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < contentBundles_.size(); i++) {
+        dataSize += computeStringSizeNoTag(contentBundles_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getContentBundlesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < cmsMetadataValues_.size(); i++) {
+        dataSize += computeStringSizeNoTag(cmsMetadataValues_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getCmsMetadataValuesList().size();
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDuration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -251,6 +1405,47 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       if (!getDisplayName().equals(other.getDisplayName())) return false;
     }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasContentStatusSource() != other.hasContentStatusSource()) return false;
+    if (hasContentStatusSource()) {
+      if (contentStatusSource_ != other.contentStatusSource_) return false;
+    }
+    if (hasHlsIngestStatus() != other.hasHlsIngestStatus()) return false;
+    if (hasHlsIngestStatus()) {
+      if (hlsIngestStatus_ != other.hlsIngestStatus_) return false;
+    }
+    if (!getHlsIngestErrorsList().equals(other.getHlsIngestErrorsList())) return false;
+    if (hasLastHlsIngestTime() != other.hasLastHlsIngestTime()) return false;
+    if (hasLastHlsIngestTime()) {
+      if (!getLastHlsIngestTime().equals(other.getLastHlsIngestTime())) return false;
+    }
+    if (hasDashIngestStatus() != other.hasDashIngestStatus()) return false;
+    if (hasDashIngestStatus()) {
+      if (dashIngestStatus_ != other.dashIngestStatus_) return false;
+    }
+    if (!getDashIngestErrorsList().equals(other.getDashIngestErrorsList())) return false;
+    if (hasLastDashIngestTime() != other.hasLastDashIngestTime()) return false;
+    if (hasLastDashIngestTime()) {
+      if (!getLastDashIngestTime().equals(other.getLastDashIngestTime())) return false;
+    }
+    if (hasImportTime() != other.hasImportTime()) return false;
+    if (hasImportTime()) {
+      if (!getImportTime().equals(other.getImportTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (!getCmsSourcesList().equals(other.getCmsSourcesList())) return false;
+    if (!getContentBundlesList().equals(other.getContentBundlesList())) return false;
+    if (!getCmsMetadataValuesList().equals(other.getCmsMetadataValuesList())) return false;
+    if (hasDuration() != other.hasDuration()) return false;
+    if (hasDuration()) {
+      if (!getDuration().equals(other.getDuration())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -267,6 +1462,62 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasContentStatusSource()) {
+      hash = (37 * hash) + CONTENT_STATUS_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + contentStatusSource_;
+    }
+    if (hasHlsIngestStatus()) {
+      hash = (37 * hash) + HLS_INGEST_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + hlsIngestStatus_;
+    }
+    if (getHlsIngestErrorsCount() > 0) {
+      hash = (37 * hash) + HLS_INGEST_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getHlsIngestErrorsList().hashCode();
+    }
+    if (hasLastHlsIngestTime()) {
+      hash = (37 * hash) + LAST_HLS_INGEST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastHlsIngestTime().hashCode();
+    }
+    if (hasDashIngestStatus()) {
+      hash = (37 * hash) + DASH_INGEST_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + dashIngestStatus_;
+    }
+    if (getDashIngestErrorsCount() > 0) {
+      hash = (37 * hash) + DASH_INGEST_ERRORS_FIELD_NUMBER;
+      hash = (53 * hash) + getDashIngestErrorsList().hashCode();
+    }
+    if (hasLastDashIngestTime()) {
+      hash = (37 * hash) + LAST_DASH_INGEST_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getLastDashIngestTime().hashCode();
+    }
+    if (hasImportTime()) {
+      hash = (37 * hash) + IMPORT_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getImportTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (getCmsSourcesCount() > 0) {
+      hash = (37 * hash) + CMS_SOURCES_FIELD_NUMBER;
+      hash = (53 * hash) + getCmsSourcesList().hashCode();
+    }
+    if (getContentBundlesCount() > 0) {
+      hash = (37 * hash) + CONTENT_BUNDLES_FIELD_NUMBER;
+      hash = (53 * hash) + getContentBundlesList().hashCode();
+    }
+    if (getCmsMetadataValuesCount() > 0) {
+      hash = (37 * hash) + CMS_METADATA_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getCmsMetadataValuesList().hashCode();
+    }
+    if (hasDuration()) {
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -397,10 +1648,26 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.ads.admanager.v1.Content.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetHlsIngestErrorsFieldBuilder();
+        internalGetLastHlsIngestTimeFieldBuilder();
+        internalGetDashIngestErrorsFieldBuilder();
+        internalGetLastDashIngestTimeFieldBuilder();
+        internalGetImportTimeFieldBuilder();
+        internalGetUpdateTimeFieldBuilder();
+        internalGetCmsSourcesFieldBuilder();
+        internalGetDurationFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -409,6 +1676,58 @@ public final class Content extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       displayName_ = "";
+      status_ = 0;
+      contentStatusSource_ = 0;
+      hlsIngestStatus_ = 0;
+      if (hlsIngestErrorsBuilder_ == null) {
+        hlsIngestErrors_ = java.util.Collections.emptyList();
+      } else {
+        hlsIngestErrors_ = null;
+        hlsIngestErrorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      lastHlsIngestTime_ = null;
+      if (lastHlsIngestTimeBuilder_ != null) {
+        lastHlsIngestTimeBuilder_.dispose();
+        lastHlsIngestTimeBuilder_ = null;
+      }
+      dashIngestStatus_ = 0;
+      if (dashIngestErrorsBuilder_ == null) {
+        dashIngestErrors_ = java.util.Collections.emptyList();
+      } else {
+        dashIngestErrors_ = null;
+        dashIngestErrorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
+      lastDashIngestTime_ = null;
+      if (lastDashIngestTimeBuilder_ != null) {
+        lastDashIngestTimeBuilder_.dispose();
+        lastDashIngestTimeBuilder_ = null;
+      }
+      importTime_ = null;
+      if (importTimeBuilder_ != null) {
+        importTimeBuilder_.dispose();
+        importTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      if (cmsSourcesBuilder_ == null) {
+        cmsSources_ = java.util.Collections.emptyList();
+      } else {
+        cmsSources_ = null;
+        cmsSourcesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
+      contentBundles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      cmsMetadataValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
+        durationBuilder_ = null;
+      }
       return this;
     }
 
@@ -435,11 +1754,42 @@ public final class Content extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public com.google.ads.admanager.v1.Content buildPartial() {
       com.google.ads.admanager.v1.Content result = new com.google.ads.admanager.v1.Content(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.ads.admanager.v1.Content result) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          hlsIngestErrors_ = java.util.Collections.unmodifiableList(hlsIngestErrors_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.hlsIngestErrors_ = hlsIngestErrors_;
+      } else {
+        result.hlsIngestErrors_ = hlsIngestErrorsBuilder_.build();
+      }
+      if (dashIngestErrorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          dashIngestErrors_ = java.util.Collections.unmodifiableList(dashIngestErrors_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.dashIngestErrors_ = dashIngestErrors_;
+      } else {
+        result.dashIngestErrors_ = dashIngestErrorsBuilder_.build();
+      }
+      if (cmsSourcesBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          cmsSources_ = java.util.Collections.unmodifiableList(cmsSources_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.cmsSources_ = cmsSources_;
+      } else {
+        result.cmsSources_ = cmsSourcesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.ads.admanager.v1.Content result) {
@@ -451,6 +1801,56 @@ public final class Content extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contentStatusSource_ = contentStatusSource_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.hlsIngestStatus_ = hlsIngestStatus_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.lastHlsIngestTime_ =
+            lastHlsIngestTimeBuilder_ == null
+                ? lastHlsIngestTime_
+                : lastHlsIngestTimeBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dashIngestStatus_ = dashIngestStatus_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.lastDashIngestTime_ =
+            lastDashIngestTimeBuilder_ == null
+                ? lastDashIngestTime_
+                : lastDashIngestTimeBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.importTime_ = importTimeBuilder_ == null ? importTime_ : importTimeBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        contentBundles_.makeImmutable();
+        result.contentBundles_ = contentBundles_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        cmsMetadataValues_.makeImmutable();
+        result.cmsMetadataValues_ = cmsMetadataValues_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -476,6 +1876,134 @@ public final class Content extends com.google.protobuf.GeneratedMessage
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasStatus()) {
+        setStatusValue(other.getStatusValue());
+      }
+      if (other.hasContentStatusSource()) {
+        setContentStatusSourceValue(other.getContentStatusSourceValue());
+      }
+      if (other.hasHlsIngestStatus()) {
+        setHlsIngestStatusValue(other.getHlsIngestStatusValue());
+      }
+      if (hlsIngestErrorsBuilder_ == null) {
+        if (!other.hlsIngestErrors_.isEmpty()) {
+          if (hlsIngestErrors_.isEmpty()) {
+            hlsIngestErrors_ = other.hlsIngestErrors_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureHlsIngestErrorsIsMutable();
+            hlsIngestErrors_.addAll(other.hlsIngestErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.hlsIngestErrors_.isEmpty()) {
+          if (hlsIngestErrorsBuilder_.isEmpty()) {
+            hlsIngestErrorsBuilder_.dispose();
+            hlsIngestErrorsBuilder_ = null;
+            hlsIngestErrors_ = other.hlsIngestErrors_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            hlsIngestErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetHlsIngestErrorsFieldBuilder()
+                    : null;
+          } else {
+            hlsIngestErrorsBuilder_.addAllMessages(other.hlsIngestErrors_);
+          }
+        }
+      }
+      if (other.hasLastHlsIngestTime()) {
+        mergeLastHlsIngestTime(other.getLastHlsIngestTime());
+      }
+      if (other.hasDashIngestStatus()) {
+        setDashIngestStatusValue(other.getDashIngestStatusValue());
+      }
+      if (dashIngestErrorsBuilder_ == null) {
+        if (!other.dashIngestErrors_.isEmpty()) {
+          if (dashIngestErrors_.isEmpty()) {
+            dashIngestErrors_ = other.dashIngestErrors_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureDashIngestErrorsIsMutable();
+            dashIngestErrors_.addAll(other.dashIngestErrors_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dashIngestErrors_.isEmpty()) {
+          if (dashIngestErrorsBuilder_.isEmpty()) {
+            dashIngestErrorsBuilder_.dispose();
+            dashIngestErrorsBuilder_ = null;
+            dashIngestErrors_ = other.dashIngestErrors_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            dashIngestErrorsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDashIngestErrorsFieldBuilder()
+                    : null;
+          } else {
+            dashIngestErrorsBuilder_.addAllMessages(other.dashIngestErrors_);
+          }
+        }
+      }
+      if (other.hasLastDashIngestTime()) {
+        mergeLastDashIngestTime(other.getLastDashIngestTime());
+      }
+      if (other.hasImportTime()) {
+        mergeImportTime(other.getImportTime());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (cmsSourcesBuilder_ == null) {
+        if (!other.cmsSources_.isEmpty()) {
+          if (cmsSources_.isEmpty()) {
+            cmsSources_ = other.cmsSources_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureCmsSourcesIsMutable();
+            cmsSources_.addAll(other.cmsSources_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.cmsSources_.isEmpty()) {
+          if (cmsSourcesBuilder_.isEmpty()) {
+            cmsSourcesBuilder_.dispose();
+            cmsSourcesBuilder_ = null;
+            cmsSources_ = other.cmsSources_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            cmsSourcesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCmsSourcesFieldBuilder()
+                    : null;
+          } else {
+            cmsSourcesBuilder_.addAllMessages(other.cmsSources_);
+          }
+        }
+      }
+      if (!other.contentBundles_.isEmpty()) {
+        if (contentBundles_.isEmpty()) {
+          contentBundles_ = other.contentBundles_;
+          bitField0_ |= 0x00002000;
+        } else {
+          ensureContentBundlesIsMutable();
+          contentBundles_.addAll(other.contentBundles_);
+        }
+        onChanged();
+      }
+      if (!other.cmsMetadataValues_.isEmpty()) {
+        if (cmsMetadataValues_.isEmpty()) {
+          cmsMetadataValues_ = other.cmsMetadataValues_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureCmsMetadataValuesIsMutable();
+          cmsMetadataValues_.addAll(other.cmsMetadataValues_);
+        }
+        onChanged();
+      }
+      if (other.hasDuration()) {
+        mergeDuration(other.getDuration());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -515,6 +2043,118 @@ public final class Content extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 32:
+              {
+                contentStatusSource_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+            case 40:
+              {
+                hlsIngestStatus_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 50:
+              {
+                com.google.ads.admanager.v1.DaiIngestError m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.DaiIngestError.parser(), extensionRegistry);
+                if (hlsIngestErrorsBuilder_ == null) {
+                  ensureHlsIngestErrorsIsMutable();
+                  hlsIngestErrors_.add(m);
+                } else {
+                  hlsIngestErrorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetLastHlsIngestTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+            case 64:
+              {
+                dashIngestStatus_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+            case 74:
+              {
+                com.google.ads.admanager.v1.DaiIngestError m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.DaiIngestError.parser(), extensionRegistry);
+                if (dashIngestErrorsBuilder_ == null) {
+                  ensureDashIngestErrorsIsMutable();
+                  dashIngestErrors_.add(m);
+                } else {
+                  dashIngestErrorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetLastDashIngestTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetImportTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+            case 106:
+              {
+                com.google.ads.admanager.v1.CmsContent m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.CmsContent.parser(), extensionRegistry);
+                if (cmsSourcesBuilder_ == null) {
+                  ensureCmsSourcesIsMutable();
+                  cmsSources_.add(m);
+                } else {
+                  cmsSourcesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureContentBundlesIsMutable();
+                contentBundles_.add(s);
+                break;
+              } // case 114
+            case 122:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureCmsMetadataValuesIsMutable();
+                cmsMetadataValues_.add(s);
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(
+                    internalGetDurationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -774,6 +2414,3520 @@ public final class Content extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      return status_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus getStatus() {
+      com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus result =
+          com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus.forNumber(status_);
+      return result == null
+          ? com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of this `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int contentStatusSource_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the contentStatusSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentStatusSource() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for contentStatusSource.
+     */
+    @java.lang.Override
+    public int getContentStatusSourceValue() {
+      return contentStatusSource_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for contentStatusSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentStatusSourceValue(int value) {
+      contentStatusSource_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The contentStatusSource.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource
+        getContentStatusSource() {
+      com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource result =
+          com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource.forNumber(
+              contentStatusSource_);
+      return result == null
+          ? com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The contentStatusSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentStatusSource(
+        com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      contentStatusSource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the content status was defined by the user, or by the
+     * source CMS from which the `Content` was ingested.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContentStatusSource() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      contentStatusSource_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int hlsIngestStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the hlsIngestStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasHlsIngestStatus() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for hlsIngestStatus.
+     */
+    @java.lang.Override
+    public int getHlsIngestStatusValue() {
+      return hlsIngestStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for hlsIngestStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHlsIngestStatusValue(int value) {
+      hlsIngestStatus_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The hlsIngestStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getHlsIngestStatus() {
+      com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus result =
+          com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.forNumber(
+              hlsIngestStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The hlsIngestStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHlsIngestStatus(
+        com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      hlsIngestStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the HLS media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have HLS media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHlsIngestStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      hlsIngestStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.DaiIngestError> hlsIngestErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureHlsIngestErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        hlsIngestErrors_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.DaiIngestError>(hlsIngestErrors_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.DaiIngestError,
+            com.google.ads.admanager.v1.DaiIngestError.Builder,
+            com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        hlsIngestErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.DaiIngestError> getHlsIngestErrorsList() {
+      if (hlsIngestErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(hlsIngestErrors_);
+      } else {
+        return hlsIngestErrorsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getHlsIngestErrorsCount() {
+      if (hlsIngestErrorsBuilder_ == null) {
+        return hlsIngestErrors_.size();
+      } else {
+        return hlsIngestErrorsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError getHlsIngestErrors(int index) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        return hlsIngestErrors_.get(index);
+      } else {
+        return hlsIngestErrorsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHlsIngestErrors(int index, com.google.ads.admanager.v1.DaiIngestError value) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.set(index, value);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHlsIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHlsIngestErrors(com.google.ads.admanager.v1.DaiIngestError value) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.add(value);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHlsIngestErrors(int index, com.google.ads.admanager.v1.DaiIngestError value) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.add(index, value);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHlsIngestErrors(
+        com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addHlsIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllHlsIngestErrors(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.DaiIngestError> values) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        ensureHlsIngestErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, hlsIngestErrors_);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearHlsIngestErrors() {
+      if (hlsIngestErrorsBuilder_ == null) {
+        hlsIngestErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeHlsIngestErrors(int index) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        ensureHlsIngestErrorsIsMutable();
+        hlsIngestErrors_.remove(index);
+        onChanged();
+      } else {
+        hlsIngestErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder getHlsIngestErrorsBuilder(int index) {
+      return internalGetHlsIngestErrorsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getHlsIngestErrorsOrBuilder(
+        int index) {
+      if (hlsIngestErrorsBuilder_ == null) {
+        return hlsIngestErrors_.get(index);
+      } else {
+        return hlsIngestErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        getHlsIngestErrorsOrBuilderList() {
+      if (hlsIngestErrorsBuilder_ != null) {
+        return hlsIngestErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(hlsIngestErrors_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder addHlsIngestErrorsBuilder() {
+      return internalGetHlsIngestErrorsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.DaiIngestError.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder addHlsIngestErrorsBuilder(int index) {
+      return internalGetHlsIngestErrorsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.DaiIngestError.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the HLS media. This attribute will be empty if the
+     * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * HLS media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.DaiIngestError.Builder>
+        getHlsIngestErrorsBuilderList() {
+      return internalGetHlsIngestErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.DaiIngestError,
+            com.google.ads.admanager.v1.DaiIngestError.Builder,
+            com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        internalGetHlsIngestErrorsFieldBuilder() {
+      if (hlsIngestErrorsBuilder_ == null) {
+        hlsIngestErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.DaiIngestError,
+                com.google.ads.admanager.v1.DaiIngestError.Builder,
+                com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>(
+                hlsIngestErrors_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        hlsIngestErrors_ = null;
+      }
+      return hlsIngestErrorsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp lastHlsIngestTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastHlsIngestTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastHlsIngestTime field is set.
+     */
+    public boolean hasLastHlsIngestTime() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastHlsIngestTime.
+     */
+    public com.google.protobuf.Timestamp getLastHlsIngestTime() {
+      if (lastHlsIngestTimeBuilder_ == null) {
+        return lastHlsIngestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastHlsIngestTime_;
+      } else {
+        return lastHlsIngestTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastHlsIngestTime(com.google.protobuf.Timestamp value) {
+      if (lastHlsIngestTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastHlsIngestTime_ = value;
+      } else {
+        lastHlsIngestTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastHlsIngestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastHlsIngestTimeBuilder_ == null) {
+        lastHlsIngestTime_ = builderForValue.build();
+      } else {
+        lastHlsIngestTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastHlsIngestTime(com.google.protobuf.Timestamp value) {
+      if (lastHlsIngestTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && lastHlsIngestTime_ != null
+            && lastHlsIngestTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastHlsIngestTimeBuilder().mergeFrom(value);
+        } else {
+          lastHlsIngestTime_ = value;
+        }
+      } else {
+        lastHlsIngestTimeBuilder_.mergeFrom(value);
+      }
+      if (lastHlsIngestTime_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastHlsIngestTime() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      lastHlsIngestTime_ = null;
+      if (lastHlsIngestTimeBuilder_ != null) {
+        lastHlsIngestTimeBuilder_.dispose();
+        lastHlsIngestTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastHlsIngestTimeBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetLastHlsIngestTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastHlsIngestTimeOrBuilder() {
+      if (lastHlsIngestTimeBuilder_ != null) {
+        return lastHlsIngestTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastHlsIngestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastHlsIngestTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s HLS media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have HLS
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetLastHlsIngestTimeFieldBuilder() {
+      if (lastHlsIngestTimeBuilder_ == null) {
+        lastHlsIngestTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastHlsIngestTime(), getParentForChildren(), isClean());
+        lastHlsIngestTime_ = null;
+      }
+      return lastHlsIngestTimeBuilder_;
+    }
+
+    private int dashIngestStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dashIngestStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasDashIngestStatus() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dashIngestStatus.
+     */
+    @java.lang.Override
+    public int getDashIngestStatusValue() {
+      return dashIngestStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for dashIngestStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDashIngestStatusValue(int value) {
+      dashIngestStatus_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dashIngestStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getDashIngestStatus() {
+      com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus result =
+          com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.forNumber(
+              dashIngestStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The dashIngestStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDashIngestStatus(
+        com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      dashIngestStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current DAI ingest status of the DASH media for the
+     * `Content`. This attribute is unset if the `Content` is not eligible for
+     * dynamic ad insertion or if the `Content` does not have DASH media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDashIngestStatus() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dashIngestStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.DaiIngestError> dashIngestErrors_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDashIngestErrorsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        dashIngestErrors_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.DaiIngestError>(dashIngestErrors_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.DaiIngestError,
+            com.google.ads.admanager.v1.DaiIngestError.Builder,
+            com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        dashIngestErrorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.DaiIngestError> getDashIngestErrorsList() {
+      if (dashIngestErrorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dashIngestErrors_);
+      } else {
+        return dashIngestErrorsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getDashIngestErrorsCount() {
+      if (dashIngestErrorsBuilder_ == null) {
+        return dashIngestErrors_.size();
+      } else {
+        return dashIngestErrorsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError getDashIngestErrors(int index) {
+      if (dashIngestErrorsBuilder_ == null) {
+        return dashIngestErrors_.get(index);
+      } else {
+        return dashIngestErrorsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDashIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError value) {
+      if (dashIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.set(index, value);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDashIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (dashIngestErrorsBuilder_ == null) {
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDashIngestErrors(com.google.ads.admanager.v1.DaiIngestError value) {
+      if (dashIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.add(value);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDashIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError value) {
+      if (dashIngestErrorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.add(index, value);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDashIngestErrors(
+        com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (dashIngestErrorsBuilder_ == null) {
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDashIngestErrors(
+        int index, com.google.ads.admanager.v1.DaiIngestError.Builder builderForValue) {
+      if (dashIngestErrorsBuilder_ == null) {
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllDashIngestErrors(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.DaiIngestError> values) {
+      if (dashIngestErrorsBuilder_ == null) {
+        ensureDashIngestErrorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dashIngestErrors_);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDashIngestErrors() {
+      if (dashIngestErrorsBuilder_ == null) {
+        dashIngestErrors_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeDashIngestErrors(int index) {
+      if (dashIngestErrorsBuilder_ == null) {
+        ensureDashIngestErrorsIsMutable();
+        dashIngestErrors_.remove(index);
+        onChanged();
+      } else {
+        dashIngestErrorsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder getDashIngestErrorsBuilder(
+        int index) {
+      return internalGetDashIngestErrorsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getDashIngestErrorsOrBuilder(
+        int index) {
+      if (dashIngestErrorsBuilder_ == null) {
+        return dashIngestErrors_.get(index);
+      } else {
+        return dashIngestErrorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        getDashIngestErrorsOrBuilderList() {
+      if (dashIngestErrorsBuilder_ != null) {
+        return dashIngestErrorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dashIngestErrors_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder addDashIngestErrorsBuilder() {
+      return internalGetDashIngestErrorsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.DaiIngestError.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DaiIngestError.Builder addDashIngestErrorsBuilder(
+        int index) {
+      return internalGetDashIngestErrorsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.DaiIngestError.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of any errors that occurred during the most recent
+     * DAI ingestion process of the DASH media. This attribute will be empty if
+     * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+     * not eligible for dynamic ad insertion or if the `Content` does not have
+     * DASH media.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.DaiIngestError.Builder>
+        getDashIngestErrorsBuilderList() {
+      return internalGetDashIngestErrorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.DaiIngestError,
+            com.google.ads.admanager.v1.DaiIngestError.Builder,
+            com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+        internalGetDashIngestErrorsFieldBuilder() {
+      if (dashIngestErrorsBuilder_ == null) {
+        dashIngestErrorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.DaiIngestError,
+                com.google.ads.admanager.v1.DaiIngestError.Builder,
+                com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>(
+                dashIngestErrors_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        dashIngestErrors_ = null;
+      }
+      return dashIngestErrorsBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp lastDashIngestTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastDashIngestTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastDashIngestTime field is set.
+     */
+    public boolean hasLastDashIngestTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastDashIngestTime.
+     */
+    public com.google.protobuf.Timestamp getLastDashIngestTime() {
+      if (lastDashIngestTimeBuilder_ == null) {
+        return lastDashIngestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastDashIngestTime_;
+      } else {
+        return lastDashIngestTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastDashIngestTime(com.google.protobuf.Timestamp value) {
+      if (lastDashIngestTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastDashIngestTime_ = value;
+      } else {
+        lastDashIngestTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastDashIngestTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (lastDashIngestTimeBuilder_ == null) {
+        lastDashIngestTime_ = builderForValue.build();
+      } else {
+        lastDashIngestTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastDashIngestTime(com.google.protobuf.Timestamp value) {
+      if (lastDashIngestTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && lastDashIngestTime_ != null
+            && lastDashIngestTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getLastDashIngestTimeBuilder().mergeFrom(value);
+        } else {
+          lastDashIngestTime_ = value;
+        }
+      } else {
+        lastDashIngestTimeBuilder_.mergeFrom(value);
+      }
+      if (lastDashIngestTime_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastDashIngestTime() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      lastDashIngestTime_ = null;
+      if (lastDashIngestTimeBuilder_ != null) {
+        lastDashIngestTimeBuilder_.dispose();
+        lastDashIngestTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getLastDashIngestTimeBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetLastDashIngestTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getLastDashIngestTimeOrBuilder() {
+      if (lastDashIngestTimeBuilder_ != null) {
+        return lastDashIngestTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return lastDashIngestTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastDashIngestTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content`'s DASH media was last
+     * ingested for DAI. This attribute will be unset if the `Content` is not
+     * eligible for dynamic ad insertion or if the `Content` does not have DASH
+     * media.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetLastDashIngestTimeFieldBuilder() {
+      if (lastDashIngestTimeBuilder_ == null) {
+        lastDashIngestTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastDashIngestTime(), getParentForChildren(), isClean());
+        lastDashIngestTime_ = null;
+      }
+      return lastDashIngestTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp importTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        importTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the importTime field is set.
+     */
+    public boolean hasImportTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The importTime.
+     */
+    public com.google.protobuf.Timestamp getImportTime() {
+      if (importTimeBuilder_ == null) {
+        return importTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importTime_;
+      } else {
+        return importTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportTime(com.google.protobuf.Timestamp value) {
+      if (importTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        importTime_ = value;
+      } else {
+        importTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setImportTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (importTimeBuilder_ == null) {
+        importTime_ = builderForValue.build();
+      } else {
+        importTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeImportTime(com.google.protobuf.Timestamp value) {
+      if (importTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && importTime_ != null
+            && importTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getImportTimeBuilder().mergeFrom(value);
+        } else {
+          importTime_ = value;
+        }
+      } else {
+        importTimeBuilder_.mergeFrom(value);
+      }
+      if (importTime_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearImportTime() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      importTime_ = null;
+      if (importTimeBuilder_ != null) {
+        importTimeBuilder_.dispose();
+        importTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getImportTimeBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetImportTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getImportTimeOrBuilder() {
+      if (importTimeBuilder_ != null) {
+        return importTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return importTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : importTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was published.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetImportTimeFieldBuilder() {
+      if (importTimeBuilder_ == null) {
+        importTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getImportTime(), getParentForChildren(), isClean());
+        importTime_ = null;
+      }
+      return importTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which this `Content` was last modified.
+     * The last modified date time will always be updated when a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+     * association is changed, but will not always be updated when a
+     * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+     * value is changed.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.CmsContent> cmsSources_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCmsSourcesIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        cmsSources_ = new java.util.ArrayList<com.google.ads.admanager.v1.CmsContent>(cmsSources_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CmsContent,
+            com.google.ads.admanager.v1.CmsContent.Builder,
+            com.google.ads.admanager.v1.CmsContentOrBuilder>
+        cmsSourcesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CmsContent> getCmsSourcesList() {
+      if (cmsSourcesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(cmsSources_);
+      } else {
+        return cmsSourcesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getCmsSourcesCount() {
+      if (cmsSourcesBuilder_ == null) {
+        return cmsSources_.size();
+      } else {
+        return cmsSourcesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsContent getCmsSources(int index) {
+      if (cmsSourcesBuilder_ == null) {
+        return cmsSources_.get(index);
+      } else {
+        return cmsSourcesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmsSources(int index, com.google.ads.admanager.v1.CmsContent value) {
+      if (cmsSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsSourcesIsMutable();
+        cmsSources_.set(index, value);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCmsSources(
+        int index, com.google.ads.admanager.v1.CmsContent.Builder builderForValue) {
+      if (cmsSourcesBuilder_ == null) {
+        ensureCmsSourcesIsMutable();
+        cmsSources_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCmsSources(com.google.ads.admanager.v1.CmsContent value) {
+      if (cmsSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsSourcesIsMutable();
+        cmsSources_.add(value);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCmsSources(int index, com.google.ads.admanager.v1.CmsContent value) {
+      if (cmsSourcesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCmsSourcesIsMutable();
+        cmsSources_.add(index, value);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCmsSources(com.google.ads.admanager.v1.CmsContent.Builder builderForValue) {
+      if (cmsSourcesBuilder_ == null) {
+        ensureCmsSourcesIsMutable();
+        cmsSources_.add(builderForValue.build());
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addCmsSources(
+        int index, com.google.ads.admanager.v1.CmsContent.Builder builderForValue) {
+      if (cmsSourcesBuilder_ == null) {
+        ensureCmsSourcesIsMutable();
+        cmsSources_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllCmsSources(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.CmsContent> values) {
+      if (cmsSourcesBuilder_ == null) {
+        ensureCmsSourcesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cmsSources_);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCmsSources() {
+      if (cmsSourcesBuilder_ == null) {
+        cmsSources_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeCmsSources(int index) {
+      if (cmsSourcesBuilder_ == null) {
+        ensureCmsSourcesIsMutable();
+        cmsSources_.remove(index);
+        onChanged();
+      } else {
+        cmsSourcesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsContent.Builder getCmsSourcesBuilder(int index) {
+      return internalGetCmsSourcesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsContentOrBuilder getCmsSourcesOrBuilder(int index) {
+      if (cmsSourcesBuilder_ == null) {
+        return cmsSources_.get(index);
+      } else {
+        return cmsSourcesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.CmsContentOrBuilder>
+        getCmsSourcesOrBuilderList() {
+      if (cmsSourcesBuilder_ != null) {
+        return cmsSourcesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(cmsSources_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsContent.Builder addCmsSourcesBuilder() {
+      return internalGetCmsSourcesFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.CmsContent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CmsContent.Builder addCmsSourcesBuilder(int index) {
+      return internalGetCmsSourcesFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.CmsContent.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about the `Content` from the CMS it was ingested
+     * from.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CmsContent.Builder>
+        getCmsSourcesBuilderList() {
+      return internalGetCmsSourcesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CmsContent,
+            com.google.ads.admanager.v1.CmsContent.Builder,
+            com.google.ads.admanager.v1.CmsContentOrBuilder>
+        internalGetCmsSourcesFieldBuilder() {
+      if (cmsSourcesBuilder_ == null) {
+        cmsSourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.CmsContent,
+                com.google.ads.admanager.v1.CmsContent.Builder,
+                com.google.ads.admanager.v1.CmsContentOrBuilder>(
+                cmsSources_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
+        cmsSources_ = null;
+      }
+      return cmsSourcesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList contentBundles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureContentBundlesIsMutable() {
+      if (!contentBundles_.isModifiable()) {
+        contentBundles_ = new com.google.protobuf.LazyStringArrayList(contentBundles_);
+      }
+      bitField0_ |= 0x00002000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the contentBundles.
+     */
+    public com.google.protobuf.ProtocolStringList getContentBundlesList() {
+      contentBundles_.makeImmutable();
+      return contentBundles_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of contentBundles.
+     */
+    public int getContentBundlesCount() {
+      return contentBundles_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The contentBundles at the given index.
+     */
+    public java.lang.String getContentBundles(int index) {
+      return contentBundles_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the contentBundles at the given index.
+     */
+    public com.google.protobuf.ByteString getContentBundlesBytes(int index) {
+      return contentBundles_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The contentBundles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentBundles(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureContentBundlesIsMutable();
+      contentBundles_.set(index, value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The contentBundles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addContentBundles(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureContentBundlesIsMutable();
+      contentBundles_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The contentBundles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllContentBundles(java.lang.Iterable<java.lang.String> values) {
+      ensureContentBundlesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contentBundles_);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContentBundles() {
+      contentBundles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the
+     * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+     * which this `Content` is a member.
+     * </pre>
+     *
+     * <code>
+     * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the contentBundles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addContentBundlesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureContentBundlesIsMutable();
+      contentBundles_.add(value);
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList cmsMetadataValues_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureCmsMetadataValuesIsMutable() {
+      if (!cmsMetadataValues_.isModifiable()) {
+        cmsMetadataValues_ = new com.google.protobuf.LazyStringArrayList(cmsMetadataValues_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the cmsMetadataValues.
+     */
+    public com.google.protobuf.ProtocolStringList getCmsMetadataValuesList() {
+      cmsMetadataValues_.makeImmutable();
+      return cmsMetadataValues_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of cmsMetadataValues.
+     */
+    public int getCmsMetadataValuesCount() {
+      return cmsMetadataValues_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The cmsMetadataValues at the given index.
+     */
+    public java.lang.String getCmsMetadataValues(int index) {
+      return cmsMetadataValues_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the cmsMetadataValues at the given index.
+     */
+    public com.google.protobuf.ByteString getCmsMetadataValuesBytes(int index) {
+      return cmsMetadataValues_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The cmsMetadataValues to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCmsMetadataValues(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCmsMetadataValuesIsMutable();
+      cmsMetadataValues_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The cmsMetadataValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCmsMetadataValues(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCmsMetadataValuesIsMutable();
+      cmsMetadataValues_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The cmsMetadataValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCmsMetadataValues(java.lang.Iterable<java.lang.String> values) {
+      ensureCmsMetadataValuesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cmsMetadataValues_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCmsMetadataValues() {
+      cmsMetadataValues_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource names of the [CmsMetadataValues]
+     * [google.ads.admanager.v1.CmsMetadataValue] that
+     * are associated with this `Content`.
+     * </pre>
+     *
+     * <code>
+     * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the cmsMetadataValues to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCmsMetadataValuesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCmsMetadataValuesIsMutable();
+      cmsMetadataValues_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration duration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        durationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the duration field is set.
+     */
+    public boolean hasDuration() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The duration.
+     */
+    public com.google.protobuf.Duration getDuration() {
+      if (durationBuilder_ == null) {
+        return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+      } else {
+        return durationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDuration(com.google.protobuf.Duration value) {
+      if (durationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        duration_ = value;
+      } else {
+        durationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
+      if (durationBuilder_ == null) {
+        duration_ = builderForValue.build();
+      } else {
+        durationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDuration(com.google.protobuf.Duration value) {
+      if (durationBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && duration_ != null
+            && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getDurationBuilder().mergeFrom(value);
+        } else {
+          duration_ = value;
+        }
+      } else {
+        durationBuilder_.mergeFrom(value);
+      }
+      if (duration_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDuration() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      duration_ = null;
+      if (durationBuilder_ != null) {
+        durationBuilder_.dispose();
+        durationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getDurationBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+      if (durationBuilder_ != null) {
+        return durationBuilder_.getMessageOrBuilder();
+      } else {
+        return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The duration of the `Content`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetDurationFieldBuilder() {
+      if (durationBuilder_ == null) {
+        durationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getDuration(), getParentForChildren(), isClean());
+        duration_ = null;
+      }
+      return durationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.Content)

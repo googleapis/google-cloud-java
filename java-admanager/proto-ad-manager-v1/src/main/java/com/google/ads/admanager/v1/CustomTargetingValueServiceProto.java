@@ -52,6 +52,54 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
       internal_static_google_ads_admanager_v1_ListCustomTargetingValuesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListCustomTargetingValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateCustomTargetingValueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateCustomTargetingValueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateCustomTargetingValueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateCustomTargetingValueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ActivateCustomTargetingValueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ActivateCustomTargetingValueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DeactivateCustomTargetingValueRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DeactivateCustomTargetingValueRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -66,7 +114,8 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
           + "ager.v1\032=google/ads/admanager/v1/custom_"
           + "targeting_value_messages.proto\032\034google/a"
           + "pi/annotations.proto\032\027google/api/client."
-          + "proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"e\n"
+          + "proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"e\n"
           + "\036GetCustomTargetingValueRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-admanager.googleapis.com/CustomTargetingValue\"\314\001\n"
@@ -79,29 +128,102 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\021\n"
           + "\004skip\030\006 \001(\005B\003\340A\001\"\240\001\n"
           + "!ListCustomTargetingValuesResponse\022N\n"
-          + "\027custom_targeting_values\030\001"
-          + " \003(\0132-.google.ads.admanager.v1.CustomTargetingValue\022\027\n"
+          + "\027custom_targeting_values\030\001 \003(\013"
+          + "2-.google.ads.admanager.v1.CustomTargetingValue\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\300\005\n"
+          + "total_size\030\003 \001(\005\"\261\001\n"
+          + "!CreateCustomTargetingValueRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022R\n"
+          + "\026custom_targeting_value\030\002"
+          + " \001(\0132-.google.ads.admanager.v1.CustomTargetingValueB\003\340A\002\"\266\001\n"
+          + "\'BatchCreateCustomTargetingValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022Q\n"
+          + "\010requests\030\002 \003(\0132:.googl"
+          + "e.ads.admanager.v1.CreateCustomTargetingValueRequestB\003\340A\002\"z\n"
+          + "(BatchCreateCustomTargetingValuesResponse\022N\n"
+          + "\027custom_targeting_values\030\001"
+          + " \003(\0132-.google.ads.admanager.v1.CustomTargetingValue\"\255\001\n"
+          + "!UpdateCustomTargetingValueRequest\022R\n"
+          + "\026custom_targeting_value\030\001"
+          + " \001(\0132-.google.ads.admanager.v1.CustomTargetingValueB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\266\001\n"
+          + "\'BatchUpdateCustomTargetingValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022Q\n"
+          + "\010requests\030\002 \003(\0132:."
+          + "google.ads.admanager.v1.UpdateCustomTargetingValueRequestB\003\340A\002\"z\n"
+          + "(BatchUpdateCustomTargetingValuesResponse\022N\n"
+          + "\027custom_targeting_values\030\001"
+          + " \003(\0132-.google.ads.admanager.v1.CustomTargetingValue\"j\n"
+          + "#ActivateCustomTargetingValueRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-admanager.googleapis.com/CustomTargetingValue\"\272\001\n"
+          + ")BatchActivateCustomTargetingValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022S\n"
+          + "\010requests\030\002 \003(\0132<.google.ads.admanager."
+          + "v1.ActivateCustomTargetingValueRequestB\003\340A\002\",\n"
+          + "*BatchActivateCustomTargetingValuesResponse\"l\n"
+          + "%DeactivateCustomTargetingValueRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-admanager.googleapis.com/CustomTargetingValue\"\276\001\n"
+          + "+BatchDeactivateCustomTargetingValuesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022U\n"
+          + "\010requests\030\002 "
+          + "\003(\0132>.google.ads.admanager.v1.DeactivateCustomTargetingValueRequestB\003\340A\002\".\n"
+          + ",BatchDeactivateCustomTargetingValuesResponse2\357\021\n"
           + "\033CustomTargetingValueService\022\207\002\n"
-          + "\027GetCustomTargetingValue\0227.google.ads.admanager.v1.GetCustomTarget"
-          + "ingValueRequest\032-.google.ads.admanager.v"
-          + "1.CustomTargetingValue\"\203\001\332A\004name\202\323\344\223\002v\022-"
-          + "/v1/{name=networks/*/customTargetingValu"
-          + "es/*}ZE\022C/v1/{name=networks/*/customTargetingKeys/*/customTargetingValues/*}\022\232\002\n"
-          + "\031ListCustomTargetingValues\0229.google.ads.admanager.v1.ListCustomTargetingValuesRe"
-          + "quest\032:.google.ads.admanager.v1.ListCust"
-          + "omTargetingValuesResponse\"\205\001\332A\006parent\202\323\344"
-          + "\223\002v\022-/v1/{parent=networks/*}/customTarge"
-          + "tingValuesZE\022C/v1/{parent=networks/*/customTargetingKeys/*}/customTargetingValue"
-          + "s\032z\312A\030admanager.googleapis.com\322A\\https:/"
-          + "/www.googleapis.com/auth/admanager,https"
-          + "://www.googleapis.com/auth/admanager.readonlyB\324\001\n"
-          + "\033com.google.ads.admanager.v1B CustomTargetingValueServiceProtoP\001Z@googl"
-          + "e.golang.org/genproto/googleapis/ads/adm"
-          + "anager/v1;admanager\252\002\027Google.Ads.AdManag"
-          + "er.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google"
-          + "::Ads::AdManager::V1b\006proto3"
+          + "\027GetCustomTargetingValue\0227.google.ads.admana"
+          + "ger.v1.GetCustomTargetingValueRequest\032-.google.ads.admanager.v1.CustomTargetingV"
+          + "alue\"\203\001\332A\004name\202\323\344\223\002v\022-/v1/{name=networks"
+          + "/*/customTargetingValues/*}ZE\022C/v1/{name"
+          + "=networks/*/customTargetingKeys/*/customTargetingValues/*}\022\232\002\n"
+          + "\031ListCustomTargetingValues\0229.google.ads.admanager.v1.ListC"
+          + "ustomTargetingValuesRequest\032:.google.ads.admanager.v1.ListCustomTargetingValuesR"
+          + "esponse\"\205\001\332A\006parent\202\323\344\223\002v\022-/v1/{parent=n"
+          + "etworks/*}/customTargetingValuesZE\022C/v1/"
+          + "{parent=networks/*/customTargetingKeys/*}/customTargetingValues\022\366\001\n"
+          + "\032CreateCustomTargetingValue\022:.google.ads.admanager.v1"
+          + ".CreateCustomTargetingValueRequest\032-.google.ads.admanager.v1.CustomTargetingValu"
+          + "e\"m\332A\035parent,custom_targeting_value\202\323\344\223\002"
+          + "G\"-/v1/{parent=networks/*}/customTargetingValues:\026custom_targeting_value\022\377\001\n"
+          + " BatchCreateCustomTargetingValues\022@.google.a"
+          + "ds.admanager.v1.BatchCreateCustomTargetingValuesRequest\032A.google.ads.admanager.v"
+          + "1.BatchCreateCustomTargetingValuesRespon"
+          + "se\"V\332A\017parent,requests\202\323\344\223\002>\"9/v1/{paren"
+          + "t=networks/*}/customTargetingValues:batchCreate:\001*\022\223\002\n"
+          + "\032UpdateCustomTargetingValue\022:.google.ads.admanager.v1.UpdateCustom"
+          + "TargetingValueRequest\032-.google.ads.adman"
+          + "ager.v1.CustomTargetingValue\"\211\001\332A\"custom"
+          + "_targeting_value,update_mask\202\323\344\223\002^2D/v1/"
+          + "{custom_targeting_value.name=networks/*/"
+          + "customTargetingValues/*}:\026custom_targeting_value\022\377\001\n"
+          + " BatchUpdateCustomTargetingValues\022@.google.ads.admanager.v1.BatchUpd"
+          + "ateCustomTargetingValuesRequest\032A.google.ads.admanager.v1.BatchUpdateCustomTarge"
+          + "tingValuesResponse\"V\332A\017parent,requests\202\323"
+          + "\344\223\002>\"9/v1/{parent=networks/*}/customTargetingValues:batchUpdate:\001*\022\207\002\n"
+          + "\"BatchActivateCustomTargetingValues\022B.google.ads.a"
+          + "dmanager.v1.BatchActivateCustomTargetingValuesRequest\032C.google.ads.admanager.v1."
+          + "BatchActivateCustomTargetingValuesRespon"
+          + "se\"X\332A\017parent,requests\202\323\344\223\002@\";/v1/{paren"
+          + "t=networks/*}/customTargetingValues:batchActivate:\001*\022\217\002\n"
+          + "$BatchDeactivateCustomTargetingValues\022D.google.ads.admanager.v1."
+          + "BatchDeactivateCustomTargetingValuesRequest\032E.google.ads.admanager.v1.BatchDeact"
+          + "ivateCustomTargetingValuesResponse\"Z\332A\017p"
+          + "arent,requests\202\323\344\223\002B\"=/v1/{parent=networ"
+          + "ks/*}/customTargetingValues:batchDeactiv"
+          + "ate:\001*\032z\312A\030admanager.googleapis.com\322A\\ht"
+          + "tps://www.googleapis.com/auth/admanager,"
+          + "https://www.googleapis.com/auth/admanager.readonlyB\324\001\n"
+          + "\033com.google.ads.admanager.v1B CustomTargetingValueServiceProtoP\001Z@"
+          + "google.golang.org/genproto/googleapis/ad"
+          + "s/admanager/v1;admanager\252\002\027Google.Ads.Ad"
+          + "Manager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032G"
+          + "oogle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -112,6 +234,7 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetCustomTargetingValueRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -137,12 +260,105 @@ public final class CustomTargetingValueServiceProto extends com.google.protobuf.
             new java.lang.String[] {
               "CustomTargetingValues", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_CreateCustomTargetingValueRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_CreateCustomTargetingValueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateCustomTargetingValueRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "CustomTargetingValue",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateCustomTargetingValuesResponse_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingValues",
+            });
+    internal_static_google_ads_admanager_v1_UpdateCustomTargetingValueRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateCustomTargetingValueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateCustomTargetingValueRequest_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingValue", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateCustomTargetingValuesResponse_descriptor,
+            new java.lang.String[] {
+              "CustomTargetingValues",
+            });
+    internal_static_google_ads_admanager_v1_ActivateCustomTargetingValueRequest_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_ActivateCustomTargetingValueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ActivateCustomTargetingValueRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateCustomTargetingValuesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_DeactivateCustomTargetingValueRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_DeactivateCustomTargetingValueRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DeactivateCustomTargetingValueRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesResponse_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateCustomTargetingValuesResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.CustomTargetingValueMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

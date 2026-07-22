@@ -22,6 +22,8 @@ import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
+import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPoolOptions;
+import com.google.cloud.bigtable.data.v2.internal.channels.TenantKey;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
@@ -66,6 +68,12 @@ class TableBase implements AutoCloseable {
       Executor backgroundExecutor,
       Executor userCallbackExecutor) {
 
+    // Stamp the tenant key so ChannelPoolDpImpl can make tenant-aware placement decisions.
+    CallOptions stamped =
+        callOptions.withOption(
+            ChannelPoolOptions.TENANT_KEY_OPTION,
+            new TenantKey(clientInfo.getInstanceName(), clientInfo.getAppProfileId()));
+
     SessionPool<ReqT> sessionPool =
         new SessionPoolImpl<>(
             metrics,
@@ -73,7 +81,7 @@ class TableBase implements AutoCloseable {
             clientInfo,
             configManager,
             channelPool,
-            callOptions,
+            stamped,
             sessionDescriptor,
             sessionPoolName,
             timer,

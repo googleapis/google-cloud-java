@@ -16,8 +16,12 @@
 
 package com.google.cloud.memorystore.v1beta.stub;
 
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAuthTokensPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -54,17 +58,43 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1beta.AddAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.AddTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1beta.AuthToken;
+import com.google.cloud.memorystore.v1beta.Backup;
+import com.google.cloud.memorystore.v1beta.BackupCollection;
+import com.google.cloud.memorystore.v1beta.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1beta.CertificateAuthority;
 import com.google.cloud.memorystore.v1beta.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1beta.DeleteAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1beta.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1beta.DeleteTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1beta.ExportBackupRequest;
+import com.google.cloud.memorystore.v1beta.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1beta.GetAuthTokenRequest;
+import com.google.cloud.memorystore.v1beta.GetBackupCollectionRequest;
+import com.google.cloud.memorystore.v1beta.GetBackupRequest;
 import com.google.cloud.memorystore.v1beta.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.GetInstanceRequest;
 import com.google.cloud.memorystore.v1beta.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.memorystore.v1beta.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1beta.Instance;
+import com.google.cloud.memorystore.v1beta.ListAuthTokensRequest;
+import com.google.cloud.memorystore.v1beta.ListAuthTokensResponse;
+import com.google.cloud.memorystore.v1beta.ListBackupCollectionsRequest;
+import com.google.cloud.memorystore.v1beta.ListBackupCollectionsResponse;
+import com.google.cloud.memorystore.v1beta.ListBackupsRequest;
+import com.google.cloud.memorystore.v1beta.ListBackupsResponse;
 import com.google.cloud.memorystore.v1beta.ListInstancesRequest;
 import com.google.cloud.memorystore.v1beta.ListInstancesResponse;
+import com.google.cloud.memorystore.v1beta.ListTokenAuthUsersRequest;
+import com.google.cloud.memorystore.v1beta.ListTokenAuthUsersResponse;
 import com.google.cloud.memorystore.v1beta.OperationMetadata;
+import com.google.cloud.memorystore.v1beta.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
+import com.google.cloud.memorystore.v1beta.StartMigrationRequest;
+import com.google.cloud.memorystore.v1beta.TokenAuthUser;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -162,7 +192,11 @@ import org.jspecify.annotations.Nullable;
 public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/memorystore.read-only")
+          .add("https://www.googleapis.com/auth/memorystore.read-write")
+          .build();
 
   private final PagedCallSettings<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -182,6 +216,56 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   private final UnaryCallSettings<
           GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
       getSharedRegionalCertificateAuthoritySettings;
+  private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings;
+  private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings;
+  private final PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings;
+  private final UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings;
+  private final OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings;
+  private final UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings;
+  private final OperationCallSettings<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationSettings;
+  private final UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings;
+  private final OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationSettings;
+  private final UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings;
+  private final OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings;
+  private final UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings;
+  private final OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings;
+  private final PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings;
+  private final UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings;
+  private final PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings;
+  private final UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings;
+  private final UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings;
+  private final OperationCallSettings<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationSettings;
+  private final UnaryCallSettings<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserSettings;
+  private final OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings;
+  private final UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings;
+  private final OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings;
+  private final UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings;
+  private final OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -218,6 +302,152 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
               return payload.getInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectToken(
+                ListBackupCollectionsRequest payload, String token) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupCollectionsRequest injectPageSize(
+                ListBackupCollectionsRequest payload, int pageSize) {
+              return ListBackupCollectionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupCollectionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupCollectionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackupCollection> extractResources(
+                ListBackupCollectionsResponse payload) {
+              return payload.getBackupCollectionsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+      LIST_TOKEN_AUTH_USERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTokenAuthUsersRequest injectToken(
+                ListTokenAuthUsersRequest payload, String token) {
+              return ListTokenAuthUsersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTokenAuthUsersRequest injectPageSize(
+                ListTokenAuthUsersRequest payload, int pageSize) {
+              return ListTokenAuthUsersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTokenAuthUsersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTokenAuthUsersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TokenAuthUser> extractResources(ListTokenAuthUsersResponse payload) {
+              return payload.getTokenAuthUsersList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken>
+      LIST_AUTH_TOKENS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAuthTokensRequest injectToken(ListAuthTokensRequest payload, String token) {
+              return ListAuthTokensRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAuthTokensRequest injectPageSize(
+                ListAuthTokensRequest payload, int pageSize) {
+              return ListAuthTokensRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAuthTokensRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAuthTokensResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuthToken> extractResources(ListAuthTokensResponse payload) {
+              return payload.getAuthTokensList();
             }
           };
 
@@ -269,6 +499,85 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               PageContext<ListInstancesRequest, ListInstancesResponse, Instance> pageContext =
                   PageContext.create(callable, LIST_INSTANCES_PAGE_STR_DESC, request, context);
               return ListInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupCollectionsRequest,
+              ListBackupCollectionsResponse,
+              ListBackupCollectionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupCollectionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupCollectionsRequest, ListBackupCollectionsResponse> callable,
+                ListBackupCollectionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupCollectionsResponse> futureResponse) {
+              PageContext<
+                      ListBackupCollectionsRequest, ListBackupCollectionsResponse, BackupCollection>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_COLLECTIONS_PAGE_STR_DESC, request, context);
+              return ListBackupCollectionsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      LIST_TOKEN_AUTH_USERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTokenAuthUsersRequest,
+              ListTokenAuthUsersResponse,
+              ListTokenAuthUsersPagedResponse>() {
+            @Override
+            public ApiFuture<ListTokenAuthUsersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse> callable,
+                ListTokenAuthUsersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTokenAuthUsersResponse> futureResponse) {
+              PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOKEN_AUTH_USERS_PAGE_STR_DESC, request, context);
+              return ListTokenAuthUsersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      LIST_AUTH_TOKENS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>() {
+            @Override
+            public ApiFuture<ListAuthTokensPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> callable,
+                ListAuthTokensRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAuthTokensResponse> futureResponse) {
+              PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> pageContext =
+                  PageContext.create(callable, LIST_AUTH_TOKENS_PAGE_STR_DESC, request, context);
+              return ListAuthTokensPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -346,6 +655,167 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
       getSharedRegionalCertificateAuthoritySettings() {
     return getSharedRegionalCertificateAuthoritySettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return rescheduleMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return rescheduleMaintenanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupCollections. */
+  public PagedCallSettings<
+          ListBackupCollectionsRequest,
+          ListBackupCollectionsResponse,
+          ListBackupCollectionsPagedResponse>
+      listBackupCollectionsSettings() {
+    return listBackupCollectionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackupCollection. */
+  public UnaryCallSettings<GetBackupCollectionRequest, BackupCollection>
+      getBackupCollectionSettings() {
+    return getBackupCollectionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Operation> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public OperationCallSettings<DeleteBackupRequest, Empty, OperationMetadata>
+      deleteBackupOperationSettings() {
+    return deleteBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public UnaryCallSettings<ExportBackupRequest, Operation> exportBackupSettings() {
+    return exportBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportBackup. */
+  public OperationCallSettings<ExportBackupRequest, Backup, OperationMetadata>
+      exportBackupOperationSettings() {
+    return exportBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public UnaryCallSettings<BackupInstanceRequest, Operation> backupInstanceSettings() {
+    return backupInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to backupInstance. */
+  public OperationCallSettings<BackupInstanceRequest, Instance, OperationMetadata>
+      backupInstanceOperationSettings() {
+    return backupInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public UnaryCallSettings<StartMigrationRequest, Operation> startMigrationSettings() {
+    return startMigrationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to startMigration. */
+  public OperationCallSettings<StartMigrationRequest, Instance, OperationMetadata>
+      startMigrationOperationSettings() {
+    return startMigrationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public UnaryCallSettings<FinishMigrationRequest, Operation> finishMigrationSettings() {
+    return finishMigrationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to finishMigration. */
+  public OperationCallSettings<FinishMigrationRequest, Instance, OperationMetadata>
+      finishMigrationOperationSettings() {
+    return finishMigrationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listTokenAuthUsers. */
+  public PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings() {
+    return listTokenAuthUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTokenAuthUser. */
+  public UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings() {
+    return getTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAuthTokens. */
+  public PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings() {
+    return listAuthTokensSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAuthToken. */
+  public UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+    return getAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings() {
+    return addTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public OperationCallSettings<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationSettings() {
+    return addTokenAuthUserOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public UnaryCallSettings<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserSettings() {
+    return deleteTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings() {
+    return deleteTokenAuthUserOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+    return addAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings() {
+    return addAuthTokenOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+    return deleteAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings() {
+    return deleteAuthTokenOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -481,6 +951,36 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
     getSharedRegionalCertificateAuthoritySettings =
         settingsBuilder.getSharedRegionalCertificateAuthoritySettings().build();
+    rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
+    rescheduleMaintenanceOperationSettings =
+        settingsBuilder.rescheduleMaintenanceOperationSettings().build();
+    listBackupCollectionsSettings = settingsBuilder.listBackupCollectionsSettings().build();
+    getBackupCollectionSettings = settingsBuilder.getBackupCollectionSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
+    exportBackupSettings = settingsBuilder.exportBackupSettings().build();
+    exportBackupOperationSettings = settingsBuilder.exportBackupOperationSettings().build();
+    backupInstanceSettings = settingsBuilder.backupInstanceSettings().build();
+    backupInstanceOperationSettings = settingsBuilder.backupInstanceOperationSettings().build();
+    startMigrationSettings = settingsBuilder.startMigrationSettings().build();
+    startMigrationOperationSettings = settingsBuilder.startMigrationOperationSettings().build();
+    finishMigrationSettings = settingsBuilder.finishMigrationSettings().build();
+    finishMigrationOperationSettings = settingsBuilder.finishMigrationOperationSettings().build();
+    listTokenAuthUsersSettings = settingsBuilder.listTokenAuthUsersSettings().build();
+    getTokenAuthUserSettings = settingsBuilder.getTokenAuthUserSettings().build();
+    listAuthTokensSettings = settingsBuilder.listAuthTokensSettings().build();
+    getAuthTokenSettings = settingsBuilder.getAuthTokenSettings().build();
+    addTokenAuthUserSettings = settingsBuilder.addTokenAuthUserSettings().build();
+    addTokenAuthUserOperationSettings = settingsBuilder.addTokenAuthUserOperationSettings().build();
+    deleteTokenAuthUserSettings = settingsBuilder.deleteTokenAuthUserSettings().build();
+    deleteTokenAuthUserOperationSettings =
+        settingsBuilder.deleteTokenAuthUserOperationSettings().build();
+    addAuthTokenSettings = settingsBuilder.addAuthTokenSettings().build();
+    addAuthTokenOperationSettings = settingsBuilder.addAuthTokenOperationSettings().build();
+    deleteAuthTokenSettings = settingsBuilder.deleteAuthTokenSettings().build();
+    deleteAuthTokenOperationSettings = settingsBuilder.deleteAuthTokenOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -518,6 +1018,67 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     private final UnaryCallSettings.Builder<
             GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
         getSharedRegionalCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings;
+    private final UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings;
+    private final OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings;
+    private final UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings;
+    private final OperationCallSettings.Builder<ExportBackupRequest, Backup, OperationMetadata>
+        exportBackupOperationSettings;
+    private final UnaryCallSettings.Builder<BackupInstanceRequest, Operation>
+        backupInstanceSettings;
+    private final OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
+        backupInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<StartMigrationRequest, Operation>
+        startMigrationSettings;
+    private final OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings;
+    private final UnaryCallSettings.Builder<FinishMigrationRequest, Operation>
+        finishMigrationSettings;
+    private final OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings;
+    private final UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings;
+    private final PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings;
+    private final UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings;
+    private final UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings;
+    private final OperationCallSettings.Builder<
+            AddTokenAuthUserRequest, Instance, OperationMetadata>
+        addTokenAuthUserOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings;
+    private final OperationCallSettings.Builder<
+            DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings;
+    private final UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings;
+    private final OperationCallSettings.Builder<
+            AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation>
+        deleteAuthTokenSettings;
+    private final OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -584,6 +1145,36 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSharedRegionalCertificateAuthoritySettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
+      listBackupCollectionsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_COLLECTIONS_PAGE_STR_FACT);
+      getBackupCollectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteBackupOperationSettings = OperationCallSettings.newBuilder();
+      exportBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportBackupOperationSettings = OperationCallSettings.newBuilder();
+      backupInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      backupInstanceOperationSettings = OperationCallSettings.newBuilder();
+      startMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      startMigrationOperationSettings = OperationCallSettings.newBuilder();
+      finishMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      finishMigrationOperationSettings = OperationCallSettings.newBuilder();
+      listTokenAuthUsersSettings =
+          PagedCallSettings.newBuilder(LIST_TOKEN_AUTH_USERS_PAGE_STR_FACT);
+      getTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAuthTokensSettings = PagedCallSettings.newBuilder(LIST_AUTH_TOKENS_PAGE_STR_FACT);
+      getAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addTokenAuthUserOperationSettings = OperationCallSettings.newBuilder();
+      deleteTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTokenAuthUserOperationSettings = OperationCallSettings.newBuilder();
+      addAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addAuthTokenOperationSettings = OperationCallSettings.newBuilder();
+      deleteAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAuthTokenOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -596,6 +1187,24 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
+              rescheduleMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupInstanceSettings,
+              startMigrationSettings,
+              finishMigrationSettings,
+              listTokenAuthUsersSettings,
+              getTokenAuthUserSettings,
+              listAuthTokensSettings,
+              getAuthTokenSettings,
+              addTokenAuthUserSettings,
+              deleteTokenAuthUserSettings,
+              addAuthTokenSettings,
+              deleteAuthTokenSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -615,6 +1224,36 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
       getSharedRegionalCertificateAuthoritySettings =
           settings.getSharedRegionalCertificateAuthoritySettings.toBuilder();
+      rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
+      rescheduleMaintenanceOperationSettings =
+          settings.rescheduleMaintenanceOperationSettings.toBuilder();
+      listBackupCollectionsSettings = settings.listBackupCollectionsSettings.toBuilder();
+      getBackupCollectionSettings = settings.getBackupCollectionSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
+      exportBackupSettings = settings.exportBackupSettings.toBuilder();
+      exportBackupOperationSettings = settings.exportBackupOperationSettings.toBuilder();
+      backupInstanceSettings = settings.backupInstanceSettings.toBuilder();
+      backupInstanceOperationSettings = settings.backupInstanceOperationSettings.toBuilder();
+      startMigrationSettings = settings.startMigrationSettings.toBuilder();
+      startMigrationOperationSettings = settings.startMigrationOperationSettings.toBuilder();
+      finishMigrationSettings = settings.finishMigrationSettings.toBuilder();
+      finishMigrationOperationSettings = settings.finishMigrationOperationSettings.toBuilder();
+      listTokenAuthUsersSettings = settings.listTokenAuthUsersSettings.toBuilder();
+      getTokenAuthUserSettings = settings.getTokenAuthUserSettings.toBuilder();
+      listAuthTokensSettings = settings.listAuthTokensSettings.toBuilder();
+      getAuthTokenSettings = settings.getAuthTokenSettings.toBuilder();
+      addTokenAuthUserSettings = settings.addTokenAuthUserSettings.toBuilder();
+      addTokenAuthUserOperationSettings = settings.addTokenAuthUserOperationSettings.toBuilder();
+      deleteTokenAuthUserSettings = settings.deleteTokenAuthUserSettings.toBuilder();
+      deleteTokenAuthUserOperationSettings =
+          settings.deleteTokenAuthUserOperationSettings.toBuilder();
+      addAuthTokenSettings = settings.addAuthTokenSettings.toBuilder();
+      addAuthTokenOperationSettings = settings.addAuthTokenOperationSettings.toBuilder();
+      deleteAuthTokenSettings = settings.deleteAuthTokenSettings.toBuilder();
+      deleteAuthTokenOperationSettings = settings.deleteAuthTokenOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -627,6 +1266,24 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
+              rescheduleMaintenanceSettings,
+              listBackupCollectionsSettings,
+              getBackupCollectionSettings,
+              listBackupsSettings,
+              getBackupSettings,
+              deleteBackupSettings,
+              exportBackupSettings,
+              backupInstanceSettings,
+              startMigrationSettings,
+              finishMigrationSettings,
+              listTokenAuthUsersSettings,
+              getTokenAuthUserSettings,
+              listAuthTokensSettings,
+              getAuthTokenSettings,
+              addTokenAuthUserSettings,
+              deleteTokenAuthUserSettings,
+              addAuthTokenSettings,
+              deleteAuthTokenSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -688,6 +1345,96 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
 
       builder
           .getSharedRegionalCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .rescheduleMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupCollectionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupCollectionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .exportBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .backupInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .startMigrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .finishMigrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listTokenAuthUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAuthTokensSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAuthTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addAuthTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAuthTokenSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -756,6 +1503,246 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
                   .<DeleteInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .rescheduleMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Backup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .backupInstanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BackupInstanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .startMigrationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<StartMigrationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .finishMigrationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<FinishMigrationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .addTokenAuthUserOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddTokenAuthUserRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteTokenAuthUserOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTokenAuthUserRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .addAuthTokenOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddAuthTokenRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TokenAuthUser.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAuthTokenOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAuthTokenRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -849,6 +1836,171 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
         getSharedRegionalCertificateAuthoritySettings() {
       return getSharedRegionalCertificateAuthoritySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return rescheduleMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return rescheduleMaintenanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupCollections. */
+    public PagedCallSettings.Builder<
+            ListBackupCollectionsRequest,
+            ListBackupCollectionsResponse,
+            ListBackupCollectionsPagedResponse>
+        listBackupCollectionsSettings() {
+      return listBackupCollectionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackupCollection. */
+    public UnaryCallSettings.Builder<GetBackupCollectionRequest, BackupCollection>
+        getBackupCollectionSettings() {
+      return getBackupCollectionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Operation> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public OperationCallSettings.Builder<DeleteBackupRequest, Empty, OperationMetadata>
+        deleteBackupOperationSettings() {
+      return deleteBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public UnaryCallSettings.Builder<ExportBackupRequest, Operation> exportBackupSettings() {
+      return exportBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportBackup. */
+    public OperationCallSettings.Builder<ExportBackupRequest, Backup, OperationMetadata>
+        exportBackupOperationSettings() {
+      return exportBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public UnaryCallSettings.Builder<BackupInstanceRequest, Operation> backupInstanceSettings() {
+      return backupInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to backupInstance. */
+    public OperationCallSettings.Builder<BackupInstanceRequest, Instance, OperationMetadata>
+        backupInstanceOperationSettings() {
+      return backupInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public UnaryCallSettings.Builder<StartMigrationRequest, Operation> startMigrationSettings() {
+      return startMigrationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to startMigration. */
+    public OperationCallSettings.Builder<StartMigrationRequest, Instance, OperationMetadata>
+        startMigrationOperationSettings() {
+      return startMigrationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public UnaryCallSettings.Builder<FinishMigrationRequest, Operation> finishMigrationSettings() {
+      return finishMigrationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to finishMigration. */
+    public OperationCallSettings.Builder<FinishMigrationRequest, Instance, OperationMetadata>
+        finishMigrationOperationSettings() {
+      return finishMigrationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTokenAuthUsers. */
+    public PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings() {
+      return listTokenAuthUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTokenAuthUser. */
+    public UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings() {
+      return getTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthTokens. */
+    public PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings() {
+      return listAuthTokensSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthToken. */
+    public UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+      return getAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings() {
+      return addTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public OperationCallSettings.Builder<AddTokenAuthUserRequest, Instance, OperationMetadata>
+        addTokenAuthUserOperationSettings() {
+      return addTokenAuthUserOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings() {
+      return deleteTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public OperationCallSettings.Builder<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings() {
+      return deleteTokenAuthUserOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+      return addAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public OperationCallSettings.Builder<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings() {
+      return addAuthTokenOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+      return deleteAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings() {
+      return deleteAuthTokenOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

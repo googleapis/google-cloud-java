@@ -59,13 +59,13 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Dns_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Dns_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Dns.class, com.google.backstory.Dns.Builder.class);
   }
@@ -200,13 +200,13 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_Question_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dns_Question_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_Dns_Question_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Dns.Question.class,
@@ -562,13 +562,13 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Dns.Question)
         com.google.backstory.Dns.QuestionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_Question_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Dns_Question_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Dns_Question_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Dns.Question.class,
@@ -608,7 +608,7 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_Question_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Dns_Question_descriptor;
       }
 
       @java.lang.Override
@@ -1371,14 +1371,14 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_Dns_ResourceRecord_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_Dns_ResourceRecord_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Dns.ResourceRecord.class,
@@ -1789,14 +1789,14 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Dns.ResourceRecord)
         com.google.backstory.Dns.ResourceRecordOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Dns_ResourceRecord_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Dns_ResourceRecord_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Dns.ResourceRecord.class,
@@ -1825,7 +1825,7 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Dns_ResourceRecord_descriptor;
       }
 
@@ -3248,13 +3248,13 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Dns)
       com.google.backstory.DnsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dns_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Dns_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Dns.class, com.google.backstory.Dns.Builder.class);
     }
@@ -3311,7 +3311,7 @@ public final class Dns extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dns_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dns_descriptor;
     }
 
     @java.lang.Override

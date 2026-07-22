@@ -57,13 +57,13 @@ public final class ArtifactClient extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_ArtifactClient_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_ArtifactClient_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_ArtifactClient_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.ArtifactClient.class,
@@ -401,13 +401,13 @@ public final class ArtifactClient extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.ArtifactClient)
       com.google.backstory.ArtifactClientOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_ArtifactClient_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_ArtifactClient_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_ArtifactClient_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.ArtifactClient.class,
@@ -432,7 +432,7 @@ public final class ArtifactClient extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_ArtifactClient_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_ArtifactClient_descriptor;
     }
 
     @java.lang.Override

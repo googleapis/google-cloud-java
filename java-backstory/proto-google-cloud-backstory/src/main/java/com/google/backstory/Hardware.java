@@ -61,13 +61,13 @@ public final class Hardware extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Hardware_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Hardware_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Hardware_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Hardware_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Hardware.class, com.google.backstory.Hardware.Builder.class);
   }
@@ -660,13 +660,13 @@ public final class Hardware extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Hardware)
       com.google.backstory.HardwareOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Hardware_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Hardware_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Hardware_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Hardware_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Hardware.class, com.google.backstory.Hardware.Builder.class);
     }
@@ -696,7 +696,7 @@ public final class Hardware extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Hardware_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Hardware_descriptor;
     }
 
     @java.lang.Override

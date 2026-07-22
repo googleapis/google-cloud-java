@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.mockito.Mockito.mock;
+
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.retrying.RetrySettings;
@@ -45,7 +47,7 @@ class BatchingCallSettingsTest {
   void testEmptyBuilder() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
@@ -71,13 +73,14 @@ class BatchingCallSettingsTest {
   void testBuilder() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController =
+        mock(FlowController.class, Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -115,13 +118,14 @@ class BatchingCallSettingsTest {
   void testBuilderFromSettings() throws Exception {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController =
+        mock(FlowController.class, Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -154,7 +158,7 @@ class BatchingCallSettingsTest {
   void testNoFlowControlSettings() throws Exception {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
@@ -172,13 +176,14 @@ class BatchingCallSettingsTest {
   void testToString() {
     @SuppressWarnings("unchecked")
     BatchingDescriptor<Integer, Integer> batchingDescriptor =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
     BatchingCallSettings.Builder<Integer, Integer> builder =
         BatchingCallSettings.newBuilder(batchingDescriptor);
 
     BatchingSettings batchingSettings =
         BatchingSettings.newBuilder().setElementCountThreshold(1L).build();
-    FlowController flowController = Mockito.mock(FlowController.class);
+    FlowController flowController =
+        mock(FlowController.class, Mockito.withSettings().withoutAnnotations());
     Set<StatusCode.Code> retryCodes = Sets.newHashSet(Code.UNAVAILABLE);
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
 

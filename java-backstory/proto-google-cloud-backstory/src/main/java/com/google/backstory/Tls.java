@@ -60,13 +60,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Tls_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Tls_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Tls.class, com.google.backstory.Tls.Builder.class);
   }
@@ -285,13 +285,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Client_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_Client_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Client_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_Client_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Tls.Client.class, com.google.backstory.Tls.Client.Builder.class);
     }
@@ -798,13 +798,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Tls.Client)
         com.google.backstory.Tls.ClientOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Client_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Tls_Client_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Tls_Client_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Tls.Client.class,
@@ -845,7 +845,7 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Client_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Tls_Client_descriptor;
       }
 
       @java.lang.Override
@@ -1907,13 +1907,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Server_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_Server_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Server_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_Server_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Tls.Server.class, com.google.backstory.Tls.Server.Builder.class);
     }
@@ -2274,13 +2274,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Tls.Server)
         com.google.backstory.Tls.ServerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Server_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Tls_Server_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Tls_Server_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Tls.Server.class,
@@ -2319,7 +2319,7 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_Server_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Tls_Server_descriptor;
       }
 
       @java.lang.Override
@@ -3577,13 +3577,13 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Tls)
       com.google.backstory.TlsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Tls.class, com.google.backstory.Tls.Builder.class);
     }
@@ -3631,7 +3631,7 @@ public final class Tls extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tls_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tls_descriptor;
     }
 
     @java.lang.Override
