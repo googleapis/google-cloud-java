@@ -67,10 +67,30 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link DefaultCredentialsProvider}. */
 class DefaultCredentialsProviderTest {
+
+  @BeforeEach
+  void setUp() {
+    // Isolate tests and opt out of bound tokens by default to avoid polling delays
+    AgentIdentityUtils.setEnvReader(
+        name -> {
+          if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
+            return "true"; // Triggers isOptedOut() = true
+          }
+          return null;
+        });
+  }
+
+  @AfterEach
+  void tearDown() {
+    // Reset to default behavior.
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   private static final String USER_CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";
   private static final String USER_CLIENT_ID = "ya29.1.AADtN_UtlxN3PuGAxrN2XQnZTVRvDyVWnYq4I6dws";

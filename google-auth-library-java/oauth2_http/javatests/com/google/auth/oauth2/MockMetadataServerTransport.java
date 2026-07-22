@@ -71,6 +71,7 @@ public class MockMetadataServerTransport extends MockHttpTransport {
 
   private boolean emptyContent;
   private MockLowLevelHttpRequest request;
+  private String requestMethod;
 
   public MockMetadataServerTransport() {}
 
@@ -123,8 +124,13 @@ public class MockMetadataServerTransport extends MockHttpTransport {
     return request;
   }
 
+  public String getRequestMethod() {
+    return requestMethod;
+  }
+
   @Override
   public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+    this.requestMethod = method;
     if (url.startsWith(ComputeEngineCredentials.getTokenServerEncodedUrl())) {
       this.request = getMockRequestForTokenEndpoint(url);
       return this.request;
