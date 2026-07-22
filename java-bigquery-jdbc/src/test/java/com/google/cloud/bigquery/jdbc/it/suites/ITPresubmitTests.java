@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.jdbc.it.ITConnectionTest;
 import com.google.cloud.bigquery.jdbc.it.ITDatabaseMetadataTest;
 import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
 import com.google.cloud.bigquery.jdbc.it.ITLocalSslValidationTest;
+import com.google.cloud.bigquery.jdbc.it.ITOpenTelemetryTest;
 import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
 import com.google.cloud.bigquery.jdbc.it.ITStatementTest;
 import org.junit.platform.suite.api.SelectClasses;
@@ -39,6 +40,7 @@ import org.junit.platform.suite.api.Suite;
   ITDatabaseMetadataTest.class,
   ITDriverTest.class,
   ITLocalSslValidationTest.class,
+  ITOpenTelemetryTest.class,
   ITResultSetMetadataTest.class,
   ITStatementTest.class
 })
