@@ -22,6 +22,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
+import com.google.api.gax.httpjson.HttpJsonTransportUtils;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -30,6 +31,7 @@ import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.HttpJsonCapturingClientInterceptor;
 import java.io.File;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
@@ -120,8 +122,7 @@ public class ITPostQuantumCryptography {
             .setSslSocketConfigurator(
                 socket -> {
                   if (Conscrypt.isConscrypt(socket)) {
-                    Conscrypt.setNamedGroups(
-                        socket, InstantiatingHttpJsonChannelProvider.DEFAULT_PQC_GROUPS);
+                    Conscrypt.setNamedGroups(socket, HttpJsonTransportUtils.DEFAULT_PQC_GROUPS);
                   }
                 })
             .trustCertificates(null, loadCaCert(DEFAULT_CA_CERT_PATH), "")
@@ -182,15 +183,16 @@ public class ITPostQuantumCryptography {
             .setSslSocketConfigurator(
                 socket -> {
                   try {
+                    Method setNamedGroupsMethod =
+                        SSLParameters.class.getMethod("setNamedGroups", String[].class);
                     SSLParameters params = socket.getSSLParameters();
-                    params.setNamedGroups(new String[] {"X25519", "SecP256r1"});
+                    setNamedGroupsMethod.invoke(
+                        params, (Object) new String[] {"X25519", "SecP256r1"});
                     socket.setSSLParameters(params);
                   } catch (Exception e) {
                     // For JDK 8-19, SSLParameters.setNamedGroups() is unsupported, and JSSE
-                    // naturally
-                    // defaults to classical algorithms. Setting classical named groups is primarily
-                    // for
-                    // JDK 20+ when PQC becomes the default in standard JSSE.
+                    // naturally defaults to classical algorithms. Setting classical named groups is
+                    // primarily for JDK 20+ when PQC becomes the default in standard JSSE.
                   }
                 })
             .build();
