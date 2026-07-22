@@ -31,7 +31,6 @@ import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.HttpJsonCapturingClientInterceptor;
 import java.io.File;
 import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
@@ -42,7 +41,6 @@ import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.List;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLParameters;
 import javax.net.ssl.TrustManagerFactory;
 import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.BeforeAll;
@@ -182,17 +180,8 @@ public class ITPostQuantumCryptography {
             .setSslSocketFactory(sslContext.getSocketFactory())
             .setSslSocketConfigurator(
                 socket -> {
-                  try {
-                    Method setNamedGroupsMethod =
-                        SSLParameters.class.getMethod("setNamedGroups", String[].class);
-                    SSLParameters params = socket.getSSLParameters();
-                    setNamedGroupsMethod.invoke(
-                        params, (Object) new String[] {"X25519", "SecP256r1"});
-                    socket.setSSLParameters(params);
-                  } catch (Exception e) {
-                    // For JDK 8-19, SSLParameters.setNamedGroups() is unsupported, and JSSE
-                    // naturally defaults to classical algorithms. Setting classical named groups is
-                    // primarily for JDK 20+ when PQC becomes the default in standard JSSE.
+                  if (Conscrypt.isConscrypt(socket)) {
+                    Conscrypt.setNamedGroups(socket, new String[] {"X25519", "SecP256r1"});
                   }
                 })
             .build();
