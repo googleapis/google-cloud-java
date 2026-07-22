@@ -504,36 +504,24 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   public void registerOutParameter(int parameterIndex, int sqlType) throws SQLException {
     LOG.finer("registerOutParameter: parameterIndex %s, sqlType %s", parameterIndex, sqlType);
     checkClosed();
-    try {
-      this.parameterHandler.setParameter(
-          parameterIndex,
-          null,
-          BigQueryJdbcTypeMappings.getJavaType(sqlType),
-          BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
-          -1);
-    } catch (Exception e) {
-      SQLException ex = new SQLException(e);
-      LOG.severe("Failed to registerOutParameter", ex);
-      throw ex;
-    }
+    this.parameterHandler.setParameter(
+        parameterIndex,
+        null,
+        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
+        -1);
   }
 
   @Override
   public void registerOutParameter(String parameterName, int sqlType) throws SQLException {
     LOG.finer("registerOutParameter: parameterName %s, sqlType %s", parameterName, sqlType);
     checkClosed();
-    try {
-      this.parameterHandler.setParameter(
-          parameterName,
-          null,
-          BigQueryJdbcTypeMappings.getJavaType(sqlType),
-          BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
-          -1);
-    } catch (Exception e) {
-      SQLException ex = new SQLException(e);
-      LOG.severe("Failed to registerOutParameter", ex);
-      throw ex;
-    }
+    this.parameterHandler.setParameter(
+        parameterName,
+        null,
+        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
+        -1);
   }
 
   @Override
@@ -549,18 +537,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
-    try {
-      this.parameterHandler.setParameter(
-          parameterIndex,
-          null,
-          BigQueryJdbcTypeMappings.getJavaType(sqlType),
-          BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
-          scale);
-    } catch (Exception e) {
-      SQLException ex = new SQLException(e);
-      LOG.severe("Failed to registerOutParameter", ex);
-      throw ex;
-    }
+    this.parameterHandler.setParameter(
+        parameterIndex,
+        null,
+        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
+        scale);
   }
 
   @Override
@@ -587,18 +569,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
-    try {
-      this.parameterHandler.setParameter(
-          parameterName,
-          null,
-          BigQueryJdbcTypeMappings.getJavaType(sqlType),
-          BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
-          scale);
-    } catch (Exception e) {
-      SQLException ex = new SQLException(e);
-      LOG.severe("Failed to registerOutParameter", ex);
-      throw ex;
-    }
+    this.parameterHandler.setParameter(
+        parameterName,
+        null,
+        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
+        scale);
   }
 
   @Override
@@ -732,9 +708,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        value == null
-            ? null
-            : BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar),
+        BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar),
         Date.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -930,9 +904,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        value == null
-            ? null
-            : BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar),
+        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar),
         Timestamp.class,
         BigQueryStatementParameterType.IN,
         0);
