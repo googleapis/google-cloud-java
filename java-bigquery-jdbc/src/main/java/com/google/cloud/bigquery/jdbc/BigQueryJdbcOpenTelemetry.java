@@ -215,10 +215,16 @@ public class BigQueryJdbcOpenTelemetry {
         sdkCache.computeIfPresent(
             entry.getKey(),
             (k, cachedSdk) -> {
+              if (cachedSdk.sdk != openTelemetry) {
+                return cachedSdk;
+              }
               if (cachedSdk.refCount.decrementAndGet() <= 0) {
                 try {
                   cachedSdk.sdk.close();
                 } catch (Exception e) {
+                  // Swallow exceptions so that telemetry shutdown failures (e.g. flush timeouts)
+                  // do not propagate and disrupt the core BigQueryConnection.close() logic.
+                  // Throwing here could prevent the core connection from cleaning up correctly.
                   LOG.warning("Failed to close OpenTelemetry SDK: %s", e.getMessage());
                 }
                 return null;
