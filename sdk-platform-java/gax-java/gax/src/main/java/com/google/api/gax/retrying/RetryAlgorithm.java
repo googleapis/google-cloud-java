@@ -153,19 +153,25 @@ public class RetryAlgorithm<ResponseT> {
       Throwable previousThrowable,
       ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
-    // a small optimization that avoids calling relatively heavy methods
-    // like timedAlgorithm.createNextAttempt(), when it is not necessary.
-    if (!shouldRetryBasedOnResult(context, previousThrowable, previousResponse)) {
-      return null;
+    if (shouldRetryBasedOnResult(context, previousThrowable, previousResponse)) {
+      TimedAttemptSettings newSettings =
+          createNextAttemptBasedOnResult(
+              context, previousThrowable, previousResponse, previousSettings);
+      if (newSettings == null) {
+        newSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+      }
+      return newSettings;
     }
-
-    TimedAttemptSettings newSettings =
-        createNextAttemptBasedOnResult(
-            context, previousThrowable, previousResponse, previousSettings);
-    if (newSettings == null) {
-      newSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+    // If we shouldn't retry based on result and the last attempt failed with an
+    // exception, defer to any exception thrown by shouldRetryBasedOnTiming.
+    // This lets a timeout-related exception get propagated when justified
+    // rather than e.g. exceptions caused by very short RPC deadlines on a
+    // final polling attempt.
+    if (previousThrowable != null) {
+      TimedAttemptSettings nextSettings = createNextAttemptBasedOnTiming(context, previousSettings);
+      shouldRetryBasedOnTiming(context, nextSettings);
     }
-    return newSettings;
+    return null;
   }
 
   private TimedAttemptSettings createNextAttemptBasedOnResult(

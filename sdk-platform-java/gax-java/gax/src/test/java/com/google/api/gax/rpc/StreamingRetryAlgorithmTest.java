@@ -116,12 +116,17 @@ class StreamingRetryAlgorithmTest {
     StreamingRetryAlgorithm<String> algorithm =
         new StreamingRetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
 
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    when(previousSettings.getGlobalSettings()).thenReturn(DEFAULT_RETRY_SETTINGS);
+    when(previousSettings.getRpcTimeoutDuration())
+        .thenReturn(DEFAULT_RETRY_SETTINGS.getInitialRpcTimeoutDuration());
+
     TimedAttemptSettings attempt =
-        algorithm.createNextAttempt(context, exception, null, mock(TimedAttemptSettings.class));
+        algorithm.createNextAttempt(context, exception, null, previousSettings);
     assertThat(attempt).isNull();
 
     TimedAttemptSettings attemptWithoutContext =
-        algorithm.createNextAttempt(exception, null, mock(TimedAttemptSettings.class));
+        algorithm.createNextAttempt(exception, null, previousSettings);
     assertThat(attemptWithoutContext).isNull();
   }
 

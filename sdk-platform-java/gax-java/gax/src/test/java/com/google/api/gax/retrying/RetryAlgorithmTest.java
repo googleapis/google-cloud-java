@@ -30,10 +30,14 @@
 package com.google.api.gax.retrying;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.concurrent.CancellationException;
 import org.junit.jupiter.api.Test;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -111,6 +115,45 @@ class RetryAlgorithmTest {
 
     algorithm.createNextAttempt(context, previousThrowable, previousResult, previousSettings);
     verify(resultAlgorithm).shouldRetry(context, previousThrowable, previousResult);
+  }
+
+  @Test
+  void testCreateNextAttempt_exceptionAndTimeout_defersToTimingException() {
+    ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
+    TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
+    RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    Throwable throwable = new Throwable();
+    Object result = new Object();
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings nextSettings = mock(TimedAttemptSettings.class);
+
+    when(resultAlgorithm.shouldRetry(throwable, result)).thenReturn(false);
+    when(timedAlgorithm.createNextAttempt(previousSettings)).thenReturn(nextSettings);
+    when(timedAlgorithm.shouldRetry(nextSettings)).thenThrow(new CancellationException());
+
+    assertThrows(
+        CancellationException.class,
+        () -> algorithm.createNextAttempt(throwable, result, previousSettings));
+  }
+
+  @Test
+  void testCreateNextAttempt_exceptionAndNoTimeout_returnsNull() {
+    ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
+    TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
+    RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    Throwable throwable = new Throwable();
+    Object result = new Object();
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    TimedAttemptSettings nextSettings = mock(TimedAttemptSettings.class);
+
+    when(resultAlgorithm.shouldRetry(throwable, result)).thenReturn(false);
+    when(timedAlgorithm.createNextAttempt(previousSettings)).thenReturn(nextSettings);
+    when(timedAlgorithm.shouldRetry(nextSettings)).thenReturn(true);
+
+    TimedAttemptSettings nextAttemptSettings =
+        algorithm.createNextAttempt(throwable, result, previousSettings);
+
+    assertNull(nextAttemptSettings);
   }
 
   @Test
@@ -200,5 +243,20 @@ class RetryAlgorithmTest {
     Object previousResult = new Object();
 
     assertFalse(algorithm.shouldRetry(context, previousThrowable, previousResult, null));
+  }
+
+  @Test
+  void testShouldRetry_resultFalseAndThrowableNull_shortCircuits() {
+    ResultRetryAlgorithm<Object> resultAlgorithm = mock(ResultRetryAlgorithm.class);
+    TimedRetryAlgorithm timedAlgorithm = mock(TimedRetryAlgorithm.class);
+    RetryAlgorithm<Object> algorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    Object previousResult = new Object();
+    TimedAttemptSettings previousSettings = mock(TimedAttemptSettings.class);
+    when(resultAlgorithm.shouldRetry(null, previousResult)).thenReturn(false);
+
+    boolean shouldRetry = algorithm.shouldRetry(null, previousResult, previousSettings);
+
+    assertFalse(shouldRetry);
+    verify(timedAlgorithm, never()).shouldRetry(previousSettings);
   }
 }
