@@ -1,0 +1,15 @@
+{
+  "api_shortname": "sqladmin",
+  "name_pretty": "Cloud SQL Admin",
+  "product_documentation": "",
+  "api_description": "Cloud SQL Admin API",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-sql/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-sql",
+  "distribution_name": "com.google.cloud:google-cloud-sql",
+  "api_id": "sqladmin.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}
