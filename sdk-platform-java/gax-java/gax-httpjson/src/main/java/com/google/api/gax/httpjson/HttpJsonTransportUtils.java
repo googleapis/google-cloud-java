@@ -109,8 +109,7 @@ public class HttpJsonTransportUtils {
               } catch (Exception t) {
                 // Catch runtime socket configuration errors (e.g. unexpected socket implementation
                 // from wrapped or proxy configurations) to gracefully fall back to Conscrypt's
-                // default
-                // TLS groups without failing transport creation.
+                // default TLS groups without failing transport creation.
                 LOG.log(
                     Level.WARNING,
                     "Failed to set PQC named groups on Conscrypt socket. Falling back to"
