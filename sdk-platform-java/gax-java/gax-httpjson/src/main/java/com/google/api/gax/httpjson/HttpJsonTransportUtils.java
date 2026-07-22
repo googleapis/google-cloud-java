@@ -69,6 +69,12 @@ public class HttpJsonTransportUtils {
    * ensuring that setting Conscrypt as the default security provider does not cause breaking
    * failures for customers running on environments where Conscrypt is unsupported or unavailable.
    */
+  /**
+   * Tracks whether Conscrypt supports PQC named groups. If configuration fails once, this is set to
+   * false so subsequent socket connection attempts skip calling Conscrypt.setNamedGroups.
+   */
+  private static volatile boolean pqcNamedGroupsSupported = true;
+
   private static class ConscryptProviderHolder {
     private static final Provider INSTANCE = createProvider();
 
@@ -101,20 +107,26 @@ public class HttpJsonTransportUtils {
         .setSecurityProvider(conscryptProvider)
         .setSslSocketConfigurator(
             socket -> {
-              if (!Conscrypt.isConscrypt(socket)) {
+              if (!pqcNamedGroupsSupported || !Conscrypt.isConscrypt(socket)) {
                 return;
               }
               try {
                 Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-              } catch (Exception t) {
-                // Catch runtime socket configuration errors (e.g. unexpected socket implementation
-                // from wrapped or proxy configurations) to gracefully fall back to Conscrypt's
-                // default TLS groups without failing transport creation.
+              } catch (Exception e) {
+                // Native JNI linkage errors (e.g. UnsatisfiedLinkError) are caught during
+                // ConscryptProviderHolder initialization. Catching Exception here safely
+                // intercepts runtime socket configuration errors (e.g. unsupported groups or
+                // closed socket) without swallowing JVM errors like OutOfMemoryError.
+                pqcNamedGroupsSupported = false;
                 LOG.log(
                     Level.WARNING,
-                    "Failed to set PQC named groups on Conscrypt socket. Falling back to"
-                        + " Conscrypt default TLS groups.",
-                    t);
+                    "Failed to set PQC named groups on Conscrypt socket ("
+                        + e.getClass().getName()
+                        + ": "
+                        + e.getMessage()
+                        + "). Disabling PQC named groups and falling back to Conscrypt default TLS"
+                        + " groups.",
+                    e);
               }
             });
   }
