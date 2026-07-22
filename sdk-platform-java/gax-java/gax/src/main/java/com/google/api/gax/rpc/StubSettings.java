@@ -52,7 +52,8 @@ import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.Executor;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A base settings class to configure a client stub class.
@@ -64,6 +65,7 @@ import javax.annotation.Nullable;
  * <p>If no ExecutorProvider is set, then InstantiatingExecutorProvider will be used, which creates
  * a default executor.
  */
+@NullMarked
 public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
 
   static final String QUOTA_PROJECT_ID_HEADER_KEY = "x-goog-user-project";
@@ -75,8 +77,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   private final TransportChannelProvider transportChannelProvider;
   private final ApiClock clock;
   private final String quotaProjectId;
-  @Nullable private final String gdchApiAudience;
-  @Nullable private final WatchdogProvider streamWatchdogProvider;
+  private final @Nullable String gdchApiAudience;
+  private final @Nullable WatchdogProvider streamWatchdogProvider;
   @Nonnull private final java.time.Duration streamWatchdogCheckInterval;
   @Nonnull private final ApiTracerFactory tracerFactory;
   // Track if deprecated setExecutorProvider is called
@@ -135,6 +137,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   /**
    * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
    */
+  @Nullable
   @Deprecated
   public final ExecutorProvider getExecutorProvider() {
     return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
@@ -211,8 +214,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     return quotaProjectId;
   }
 
-  @Nullable
-  public final WatchdogProvider getStreamWatchdogProvider() {
+  public final @Nullable WatchdogProvider getStreamWatchdogProvider() {
     return streamWatchdogProvider;
   }
 
@@ -239,8 +241,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   }
 
   /** Gets the GDCH API audience to be used with {@link com.google.auth.oauth2.GdchCredentials} */
-  @Nullable
-  public final String getGdchApiAudience() {
+  public final @Nullable String getGdchApiAudience() {
     return gdchApiAudience;
   }
 
@@ -290,20 +291,20 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     private CredentialsProvider credentialsProvider;
     private HeaderProvider headerProvider;
     private HeaderProvider internalHeaderProvider;
-    private TransportChannelProvider transportChannelProvider;
+    private @Nullable TransportChannelProvider transportChannelProvider;
     private ApiClock clock;
-    private String clientSettingsEndpoint;
-    private String transportChannelProviderEndpoint;
-    private String mtlsEndpoint;
-    private String quotaProjectId;
-    @Nullable private String gdchApiAudience;
-    @Nullable private WatchdogProvider streamWatchdogProvider;
+    private @Nullable String clientSettingsEndpoint;
+    private @Nullable String transportChannelProviderEndpoint;
+    private @Nullable String mtlsEndpoint;
+    private @Nullable String quotaProjectId;
+    private @Nullable String gdchApiAudience;
+    private @Nullable WatchdogProvider streamWatchdogProvider;
     @Nonnull private java.time.Duration streamWatchdogCheckInterval;
     @Nonnull private ApiTracerFactory tracerFactory;
     private boolean deprecatedExecutorProviderSet;
-    private String universeDomain;
+    private @Nullable String universeDomain;
     private final EndpointContext endpointContext;
-    private String apiKey;
+    private @Nullable String apiKey;
 
     /**
      * Indicate when creating transport whether it is allowed to use mTLS endpoint instead of the
@@ -345,7 +346,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     }
 
     /** Get Quota Project ID from Client Context * */
-    private static String getQuotaProjectIdFromClientContext(ClientContext clientContext) {
+    private static @Nullable String getQuotaProjectIdFromClientContext(
+        ClientContext clientContext) {
       if (clientContext.getQuotaProjectId() != null) {
         return clientContext.getQuotaProjectId();
       }
@@ -361,7 +363,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
       return null;
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       if (clientContext == null) {
         this.backgroundExecutorProvider = InstantiatingExecutorProvider.newBuilder().build();
         this.transportChannelProvider = null;
@@ -621,6 +623,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     /**
      * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
      */
+    @Nullable
     @Deprecated
     public ExecutorProvider getExecutorProvider() {
       return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
@@ -652,8 +655,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     }
 
     /** Gets the {@link WatchdogProvider }that was previously set on this Builder. */
-    @Nullable
-    public WatchdogProvider getStreamWatchdogProvider() {
+    public @Nullable WatchdogProvider getStreamWatchdogProvider() {
       return streamWatchdogProvider;
     }
 

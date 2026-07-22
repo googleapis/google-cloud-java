@@ -40,6 +40,7 @@ import com.google.longrunning.ListOperationsRequest;
 import com.google.longrunning.ListOperationsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -47,6 +48,7 @@ import com.google.protobuf.Empty;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 public abstract class OperationsStub implements BackgroundResource {
 
   public UnaryCallable<ListOperationsRequest, ListOperationsPagedResponse>

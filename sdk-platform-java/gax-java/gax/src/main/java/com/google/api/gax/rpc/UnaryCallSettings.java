@@ -38,6 +38,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A base settings class to configure a UnaryCallable. An instance of UnaryCallSettings is not
@@ -55,6 +57,7 @@ import java.util.Set;
  * builder class cannot be used to create an instance of UnaryCallSettings, because
  * UnaryCallSettings is an abstract class.
  */
+@NullMarked
 @InternalExtensionOnly
 public class UnaryCallSettings<RequestT, ResponseT> {
 
@@ -107,7 +110,7 @@ public class UnaryCallSettings<RequestT, ResponseT> {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (this == obj) {
       return true;
     } else if (obj == null) {

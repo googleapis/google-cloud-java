@@ -30,6 +30,7 @@
 package com.google.api.gax.retrying;
 
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A result retry algorithm is responsible for the following operations (based on the response
@@ -49,6 +50,7 @@ import java.util.concurrent.CancellationException;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public interface ResultRetryAlgorithmWithContext<ResponseT>
     extends ResultRetryAlgorithm<ResponseT> {
 

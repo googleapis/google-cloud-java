@@ -45,6 +45,7 @@ import com.google.protobuf.Option;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 class HttpJsonLongRunningClientTest {
 
@@ -57,7 +58,8 @@ class HttpJsonLongRunningClientTest {
         new OperationSnapshotFactory<Option, Field>() {
           @Override
           public OperationSnapshot create(final Option request, final Field response) {
-            OperationSnapshot mockOpSnap = mock(OperationSnapshot.class);
+            OperationSnapshot mockOpSnap =
+                mock(OperationSnapshot.class, Mockito.withSettings().withoutAnnotations());
             when(mockOpSnap.getName()).thenReturn(response.getName());
             return mockOpSnap;
           }

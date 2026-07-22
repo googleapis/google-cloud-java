@@ -32,12 +32,14 @@ package com.google.api.gax.rpc;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A UnaryCallable which provides page streaming functionality for unary calls.
  *
  * <p>Public for technical reasons - for advanced usage.
  */
+@NullMarked
 @InternalApi("For use by transport-specific implementations")
 public class PagedCallable<RequestT, ResponseT, PagedListResponseT>
     extends UnaryCallable<RequestT, PagedListResponseT> {

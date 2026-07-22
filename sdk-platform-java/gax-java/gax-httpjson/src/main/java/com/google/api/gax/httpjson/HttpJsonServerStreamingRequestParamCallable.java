@@ -38,7 +38,9 @@ import com.google.api.gax.rpc.internal.Headers;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HttpJsonServerStreamingRequestParamCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> callable;

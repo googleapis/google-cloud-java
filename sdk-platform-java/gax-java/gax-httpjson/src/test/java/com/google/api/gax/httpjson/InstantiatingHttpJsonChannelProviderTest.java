@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -190,8 +191,9 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
             .setEndpoint("localhost:8080")
             .setMtlsProvider(provider)
             .setCertificateBasedAccess(certificateBasedAccess)
-            .setHeaderProvider(Mockito.mock(HeaderProvider.class))
-            .setExecutor(Mockito.mock(Executor.class))
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
             .build();
     NetHttpTransport transport = (NetHttpTransport) channelProvider.createHttpTransport();
     return (transport != null && transport.isMtls()) ? transport : null;
