@@ -5537,6 +5537,10 @@ libraries:
         java:
           additional_protos:
             - path: google/cloud/location/locations.proto
+      - path: google/cloud/sql/v1beta4
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: storage
     version: 2.71.0-SNAPSHOT
     apis:

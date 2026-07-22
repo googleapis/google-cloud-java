@@ -1097,3 +1097,5 @@ google-cloud-sql-bom:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-sql-v1:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-sql-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-sql:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-sql-v1beta4:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-sql-v1beta4:0.0.0:0.1.0-SNAPSHOT

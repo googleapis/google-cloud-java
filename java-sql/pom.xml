@@ -39,8 +39,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-sql-v1beta4</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-sql-v1beta4:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-sql-v1</artifactId>
         <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-sql-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-sql-v1beta4</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-sql-v1beta4:current} -->
       </dependency>
       <!-- {x-generated-dependencies-end} -->
     </dependencies>
@@ -50,7 +60,9 @@
     <!-- {x-generated-modules-start} -->
     <module>google-cloud-sql</module>
     <module>grpc-google-cloud-sql-v1</module>
+    <module>grpc-google-cloud-sql-v1beta4</module>
     <module>proto-google-cloud-sql-v1</module>
+    <module>proto-google-cloud-sql-v1beta4</module>
     <!-- {x-generated-modules-end} -->
     <module>google-cloud-sql-bom</module>
   </modules>
