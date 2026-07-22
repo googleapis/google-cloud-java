@@ -195,9 +195,9 @@ public class ShimImpl implements Shim {
   }
 
   /**
-   * Creates a lightweight child shim for factory mode. Reuses the factory's already-started,
-   * shared channel pool and config manager. The pool and manager are not closed when this shim is
-   * closed — only the child's own session pools are cleaned up.
+   * Creates a lightweight child shim for factory mode. Reuses the factory's already-started, shared
+   * channel pool and config manager. The pool and manager are not closed when this shim is closed —
+   * only the child's own session pools are cleaned up.
    */
   public static Shim createForFactoryChild(
       ClientInfo clientInfo,

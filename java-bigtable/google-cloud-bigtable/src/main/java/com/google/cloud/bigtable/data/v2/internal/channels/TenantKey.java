@@ -20,8 +20,8 @@ import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import java.util.Objects;
 
 /**
- * Identifies a single (instanceName, appProfileId) tenant within a shared channel pool. Used as
- * the tenant dimension of a {@link RouteKey} in {@link ChannelPoolDpImpl}.
+ * Identifies a single (instanceName, appProfileId) tenant within a shared channel pool. Used as the
+ * tenant dimension of a {@link RouteKey} in {@link ChannelPoolDpImpl}.
  */
 public final class TenantKey {
   /** Sentinel used when no tenant is stamped (single-tenant / sessions-disabled clients). */

@@ -81,9 +81,7 @@ public class BigtableClientContext {
   }
 
   public static BigtableClientContext create(
-      EnhancedBigtableStubSettings settings,
-      Tagger ocTagger,
-      StatsRecorder ocRecorder)
+      EnhancedBigtableStubSettings settings, Tagger ocTagger, StatsRecorder ocRecorder)
       throws IOException {
     ClientInfo clientInfo =
         ClientInfo.builder()

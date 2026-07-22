@@ -189,7 +189,7 @@ public class Client implements AutoCloseable {
         Resource.createOwned(configManager, configManager::close),
         Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
         Resource.<Executor>createOwned(
-          userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)),
+            userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)),
         settings.getChannelProvider());
   }
 

@@ -80,8 +80,8 @@ import javax.annotation.concurrent.GuardedBy;
  *         <li>3a. Preferred: pick the ACTIVE channel whose last observed route for this tenant was
  *             that AFE, choosing the least-loaded.
  *         <li>3b. Unobserved-tenant fallback: pick any ACTIVE channel with capacity (least-loaded).
- *             RLS may route to the target AFE or somewhere else; {@code routeObservations} will
- *             be updated on {@code onBeforeSessionStart} for future placements.
+ *             RLS may route to the target AFE or somewhere else; {@code routeObservations} will be
+ *             updated on {@code onBeforeSessionStart} for future placements.
  *       </ul>
  *   <li>Diversity mode (all known AFEs at cap, or none known): prefer an ACTIVE channel with fewer
  *       than {@code softMaxPerGroup / 2} streams; otherwise add a new channel and absorb whatever
@@ -119,8 +119,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
   /**
    * Per-(channel, tenant) observation of the last AFE seen on {@code onBeforeSessionStart}.
-   * Self-healing: updated on every session open, so stale entries from ~1hr AFE drift are
-   * corrected automatically.
+   * Self-healing: updated on every session open, so stale entries from ~1hr AFE drift are corrected
+   * automatically.
    */
   @GuardedBy("this")
   private final Map<RouteKey, AfeId> routeObservations = new HashMap<>();
@@ -444,7 +444,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
       target = minGroups;
     }
 
-    int activeCount = (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
+    int activeCount =
+        (int) channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
 
     if (activeCount > target) {
       List<ChannelWrapper> candidates = pickDrainCandidates(activeCount - target);
@@ -498,8 +499,10 @@ public class ChannelPoolDpImpl implements ChannelPool {
       return;
     }
 
-    long activeCount = channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
-    long drainingCount = channels.stream().filter(c -> c.state == ChannelWrapper.State.DRAINING).count();
+    long activeCount =
+        channels.stream().filter(c -> c.state == ChannelWrapper.State.ACTIVE).count();
+    long drainingCount =
+        channels.stream().filter(c -> c.state == ChannelWrapper.State.DRAINING).count();
     String s =
         sessionsPerAfeId.entrySet().stream()
             .sorted(Comparator.comparing(e -> e.getElement().toString()))
