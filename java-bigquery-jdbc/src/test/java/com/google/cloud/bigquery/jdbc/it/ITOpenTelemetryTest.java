@@ -306,8 +306,8 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
     int attempts = 0;
-    int maxAttempts = 120; // 120 attempts * 500ms = 60 seconds max delay
-    long delayMs = 500; // 500ms linear polling
+    int maxAttempts = 20; // 20 attempts * 3000ms = 60 seconds max delay
+    long delayMs = 3000; // 3000ms linear polling
 
     while (attempts < maxAttempts) {
       attempts++;
