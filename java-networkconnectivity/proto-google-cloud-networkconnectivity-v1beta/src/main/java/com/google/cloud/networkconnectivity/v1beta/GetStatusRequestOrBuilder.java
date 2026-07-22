@@ -55,4 +55,18 @@ public interface GetStatusRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will bypass any caches and return
+   * the freshest possible data.
+   * </pre>
+   *
+   * <code>bool skip_cache = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipCache.
+   */
+  boolean getSkipCache();
 }

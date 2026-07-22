@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetBrowser</td>
- *      <td><p> API to retrieve a `Browser` object.</td>
+ *      <td><p> Retrieves a `Browser` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListBrowsers</td>
- *      <td><p> API to retrieve a list of `Browser` objects.</td>
+ *      <td><p> Lists `Browser` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -196,7 +196,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Browser` object.
+   * Retrieves a `Browser` object.
    *
    * <p>Sample code:
    *
@@ -224,7 +224,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Browser` object.
+   * Retrieves a `Browser` object.
    *
    * <p>Sample code:
    *
@@ -251,7 +251,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Browser` object.
+   * Retrieves a `Browser` object.
    *
    * <p>Sample code:
    *
@@ -279,7 +279,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Browser` object.
+   * Retrieves a `Browser` object.
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Browser` objects.
+   * Lists `Browser` objects.
    *
    * <p>Sample code:
    *
@@ -338,7 +338,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Browser` objects.
+   * Lists `Browser` objects.
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Browser` objects.
+   * Lists `Browser` objects.
    *
    * <p>Sample code:
    *
@@ -402,7 +402,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Browser` objects.
+   * Lists `Browser` objects.
    *
    * <p>Sample code:
    *
@@ -438,7 +438,7 @@ public class BrowserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Browser` objects.
+   * Lists `Browser` objects.
    *
    * <p>Sample code:
    *

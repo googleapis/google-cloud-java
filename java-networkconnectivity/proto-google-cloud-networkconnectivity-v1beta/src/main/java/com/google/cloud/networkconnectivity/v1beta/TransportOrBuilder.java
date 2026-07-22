@@ -225,12 +225,12 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the remoteTransportProfile that this Transport is
-   * connecting to.
+   * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+   * is connecting to.
    * </pre>
    *
    * <code>
-   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The remoteProfile.
@@ -241,12 +241,12 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the remoteTransportProfile that this Transport is
-   * connecting to.
+   * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+   * is connecting to.
    * </pre>
    *
    * <code>
-   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for remoteProfile.
@@ -257,12 +257,14 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Key used for establishing a connection with the remote transport.
-   * This key can only be provided if the profile supports an INPUT key flow and
-   * the resource is in the PENDING_KEY state.
+   * Optional. Immutable. Key used for establishing a connection with the remote
+   * transport. This key can only be provided if the profile supports an INPUT
+   * key flow and the resource is in the PENDING_KEY state.
    * </pre>
    *
-   * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The providedActivationKey.
    */
@@ -272,12 +274,14 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Key used for establishing a connection with the remote transport.
-   * This key can only be provided if the profile supports an INPUT key flow and
-   * the resource is in the PENDING_KEY state.
+   * Optional. Immutable. Key used for establishing a connection with the remote
+   * transport. This key can only be provided if the profile supports an INPUT
+   * key flow and the resource is in the PENDING_KEY state.
    * </pre>
    *
-   * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for providedActivationKey.
    */
@@ -446,13 +450,13 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource URI of the Network that will be peered with this
-   * Transport. This field must be provided during resource creation and cannot
-   * be changed.
+   * Optional. Immutable. Resource URI of the Network that will be peered with
+   * this Transport. This field must be provided during resource creation and
+   * cannot be changed.
    * </pre>
    *
    * <code>
-   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -463,13 +467,13 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. Resource URI of the Network that will be peered with this
-   * Transport. This field must be provided during resource creation and cannot
-   * be changed.
+   * Optional. Immutable. Resource URI of the Network that will be peered with
+   * this Transport. This field must be provided during resource creation and
+   * cannot be changed.
    * </pre>
    *
    * <code>
-   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -538,11 +542,13 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. The user supplied account id for the CSP associated with the
-   * remote profile.
+   * Optional. Immutable. The user supplied account id for the CSP associated
+   * with the remote profile.
    * </pre>
    *
-   * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The remoteAccountId.
    */
@@ -552,11 +558,13 @@ public interface TransportOrBuilder
    *
    *
    * <pre>
-   * Optional. The user supplied account id for the CSP associated with the
-   * remote profile.
+   * Optional. Immutable. The user supplied account id for the CSP associated
+   * with the remote profile.
    * </pre>
    *
-   * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for remoteAccountId.
    */
@@ -591,4 +599,76 @@ public interface TransportOrBuilder
    * @return The bytes for peeringNetwork.
    */
   com.google.protobuf.ByteString getPeeringNetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+   * hub must be in the same project as the Transport. Format:
+   * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+   * </pre>
+   *
+   * <code>
+   * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The hub.
+   */
+  java.lang.String getHub();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+   * hub must be in the same project as the Transport. Format:
+   * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+   * </pre>
+   *
+   * <code>
+   * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for hub.
+   */
+  com.google.protobuf.ByteString getHubBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Controls whether a Routing VPC Spoke should be created
+   * and attached to the NCC Hub. This will provide Private Service Connect
+   * (PSC) connectivity through NCC. This can only be set when the Transport is
+   * first created.
+   * </pre>
+   *
+   * <code>
+   * bool psc_routing_enabled = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The pscRoutingEnabled.
+   */
+  boolean getPscRoutingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Controls whether resources proposed by the Transport
+   * are automatically accepted on behalf of the user. List of actions that can
+   * be automatically accepted are:
+   * 1. VPC Peering creation
+   * 2. Routing VPC Spoke creation
+   * 3. Hybrid Spoke creation
+   * </pre>
+   *
+   * <code>
+   * bool auto_accept = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The autoAccept.
+   */
+  boolean getAutoAccept();
 }

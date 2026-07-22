@@ -63,11 +63,12 @@ public final class SkuGroupProto extends com.google.protobuf.GeneratedFile {
           + "\022cloud_billing_skus\030\003 \003(\tB\003\340A\003:\201\001\352A~\n"
           + "(commerceproducer.googleapis.com/S"
           + "kuGroup\022=projects/{project}/locations/{location}/skuGroups/{sku_group}*"
-          + "\tskuGroups2\010skuGroupB\270\001\n"
+          + "\tskuGroups2\010skuGroupB\342\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\r"
           + "SkuGroupProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1bet"
           + "a/commerceproducerpb;commerceproducerpb\252"
-          + "\002$Google.Cloud.CommerceProducer.V1Betab\006proto3"
+          + "\002$Google.Cloud.CommerceProducer.V1Beta\352\002"
+          + "\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

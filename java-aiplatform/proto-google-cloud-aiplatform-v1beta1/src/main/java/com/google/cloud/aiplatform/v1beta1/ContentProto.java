@@ -181,6 +181,10 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_GroundingSupport_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_GroundingSupport_fieldAccessorTable;
@@ -494,7 +498,7 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
           + "part_index\030\001 \001(\005B\003\340A\003\022\030\n"
           + "\013start_index\030\002 \001(\005B\003\340A\003\022\026\n"
           + "\tend_index\030\003 \001(\005B\003\340A\003\022\021\n"
-          + "\004text\030\004 \001(\tB\003\340A\003\"\360\007\n"
+          + "\004text\030\004 \001(\tB\003\340A\003\"\251\t\n"
           + "\016GroundingChunk\022B\n"
           + "\003web\030\001"
           + " \001(\01323.google.cloud.aiplatform.v1beta1.GroundingChunk.WebH\000\022]\n"
@@ -518,47 +522,53 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
           + "\004_uriB\010\n"
           + "\006_titleB\007\n"
           + "\005_textB\020\n"
-          + "\016_document_name\032\270\003\n"
+          + "\016_document_name\032\361\004\n"
           + "\004Maps\022\020\n"
           + "\003uri\030\001 \001(\tH\000\210\001\001\022\022\n"
           + "\005title\030\002 \001(\tH\001\210\001\001\022\021\n"
           + "\004text\030\003 \001(\tH\002\210\001\001\022\025\n"
           + "\010place_id\030\004 \001(\tH\003\210\001\001\022e\n"
           + "\024place_answer_sources\030\005 \001(\0132G.google.cloud.a"
-          + "iplatform.v1beta1.GroundingChunk.Maps.PlaceAnswerSources\032\320\001\n"
+          + "iplatform.v1beta1.GroundingChunk.Maps.PlaceAnswerSources\022N\n"
+          + "\005route\030\006 \001(\0132:.google"
+          + ".cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteB\003\340A\003\032\320\001\n"
           + "\022PlaceAnswerSources\022n\n"
           + "\017review_snippets\030\001 \003(\0132U.google.cloud."
           + "aiplatform.v1beta1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet\032J\n\r"
           + "ReviewSnippet\022\021\n"
           + "\treview_id\030\001 \001(\t\022\027\n"
           + "\017google_maps_uri\030\002 \001(\t\022\r\n"
-          + "\005title\030\003 \001(\tB\006\n"
+          + "\005title\030\003 \001(\t\032g\n"
+          + "\005Route\022\027\n"
+          + "\017distance_meters\030\001 \001(\005\022+\n"
+          + "\010duration\030\002 \001(\0132\031.google.protobuf.Duration\022\030\n"
+          + "\020encoded_polyline\030\003 \001(\tB\006\n"
           + "\004_uriB\010\n"
           + "\006_titleB\007\n"
           + "\005_textB\013\n"
           + "\t_place_idB\014\n\n"
           + "chunk_type\"\232\001\n"
           + "\020GroundingSupport\022>\n"
-          + "\007segment\030\001 \001(\0132"
-          + "(.google.cloud.aiplatform.v1beta1.SegmentH\000\210\001\001\022\037\n"
+          + "\007segment\030\001"
+          + " \001(\0132(.google.cloud.aiplatform.v1beta1.SegmentH\000\210\001\001\022\037\n"
           + "\027grounding_chunk_indices\030\002 \003(\005\022\031\n"
           + "\021confidence_scores\030\003 \003(\002B\n\n"
           + "\010_segment\"\331\005\n"
           + "\021GroundingMetadata\022\037\n"
           + "\022web_search_queries\030\001 \003(\tB\003\340A\001\022W\n"
-          + "\022search_entry_point\030\004 \001("
-          + "\01321.google.cloud.aiplatform.v1beta1.SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n"
+          + "\022search_entry_point\030\004 \001(\01321.google.clou"
+          + "d.aiplatform.v1beta1.SearchEntryPointB\003\340A\001H\000\210\001\001\022\036\n"
           + "\021retrieval_queries\030\003 \003(\tB\003\340A\001\022I\n"
-          + "\020grounding_chunks\030\005 \003(\013"
-          + "2/.google.cloud.aiplatform.v1beta1.GroundingChunk\022R\n"
-          + "\022grounding_supports\030\006 \003(\01321."
-          + "google.cloud.aiplatform.v1beta1.GroundingSupportB\003\340A\001\022[\n"
-          + "\022retrieval_metadata\030\007 \001("
-          + "\01322.google.cloud.aiplatform.v1beta1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
+          + "\020grounding_chunks\030\005"
+          + " \003(\0132/.google.cloud.aiplatform.v1beta1.GroundingChunk\022R\n"
+          + "\022grounding_supports\030\006 \003(\01321.google.cloud.ai"
+          + "platform.v1beta1.GroundingSupportB\003\340A\001\022[\n"
+          + "\022retrieval_metadata\030\007 \001(\01322.google.clou"
+          + "d.aiplatform.v1beta1.RetrievalMetadataB\006\340A\001\340A\003H\001\210\001\001\0225\n"
           + " google_maps_widget_context_token\030\010 \001("
           + "\tB\006\340A\001\340A\003H\002\210\001\001\022b\n"
-          + "\024source_flagging_uris\030\t \003(\0132D.google"
-          + ".cloud.aiplatform.v1beta1.GroundingMetadata.SourceFlaggingUri\032@\n"
+          + "\024source_flagging_uris\030\t \003(\0132D.google.cloud.aiplatfo"
+          + "rm.v1beta1.GroundingMetadata.SourceFlaggingUri\032@\n"
           + "\021SourceFlaggingUri\022\021\n"
           + "\tsource_id\030\001 \001(\t\022\030\n"
           + "\020flag_content_uri\030\002 \001(\tB\025\n"
@@ -593,13 +603,12 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
           + "\005VIDEO\020\003\022\t\n"
           + "\005AUDIO\020\004\022\014\n"
           + "\010DOCUMENT\020\005B\310\002\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\014ContentProtoP\001ZCclou"
-          + "d.google.com/go/aiplatform/apiv1beta1/ai"
-          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
-          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
-          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1\352Ab\n"
-          + "\"modelarmor.googleapis.com/Template\022<projects/{project}/locations/{l"
-          + "ocation}/templates/{template}b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\014ContentProtoP\001ZCcloud.google.com/go"
+          + "/aiplatform/apiv1beta1/aiplatformpb;aipl"
+          + "atformpb\252\002\037Google.Cloud.AIPlatform.V1Bet"
+          + "a1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1\352Ab\n"
+          + "\"modelarmor.googleapis.com/Template\022<projec"
+          + "ts/{project}/locations/{location}/templates/{template}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -922,7 +931,7 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor,
             new java.lang.String[] {
-              "Uri", "Title", "Text", "PlaceId", "PlaceAnswerSources",
+              "Uri", "Title", "Text", "PlaceId", "PlaceAnswerSources", "Route",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_PlaceAnswerSources_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor
@@ -941,6 +950,15 @@ public final class ContentProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor,
             new java.lang.String[] {
               "ReviewId", "GoogleMapsUri", "Title",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor,
+            new java.lang.String[] {
+              "DistanceMeters", "Duration", "EncodedPolyline",
             });
     internal_static_google_cloud_aiplatform_v1beta1_GroundingSupport_descriptor =
         getDescriptor().getMessageType(23);
