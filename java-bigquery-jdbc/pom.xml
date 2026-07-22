@@ -84,7 +84,7 @@
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
-            <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies combine.children="append">
                 <ignoredUnusedDeclaredDependency>io.opentelemetry.contrib:opentelemetry-gcp-auth-extension</ignoredUnusedDeclaredDependency>
                 <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
