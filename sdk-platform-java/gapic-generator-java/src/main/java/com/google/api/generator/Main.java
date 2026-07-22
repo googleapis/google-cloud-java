@@ -22,6 +22,7 @@ import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse;
 import java.io.IOException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public class Main {
@@ -29,7 +30,7 @@ public class Main {
     ExtensionRegistry registry = ExtensionRegistry.newInstance();
     ProtoRegistry.registerAllExtensions(registry);
     CodeGeneratorRequest request = CodeGeneratorRequest.parseFrom(System.in, registry);
-    CodeGeneratorResponse response = Generator.generateGapic(request);
+    @Nullable CodeGeneratorResponse response = Generator.generateGapic(request);
     if (response != EMPTY_RESPONSE) {
       response.writeTo(System.out);
     }

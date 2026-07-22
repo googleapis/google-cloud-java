@@ -52,7 +52,7 @@ public class Writer {
   protected static @Nullable CodeGeneratorResponse write(
       GapicContext context,
       List<GapicClass> clazzes,
-      GapicPackageInfo gapicPackageInfo,
+      @Nullable GapicPackageInfo gapicPackageInfo,
       List<ReflectConfig> reflectConfigInfo,
       String outputFilePath,
       JarOutputStream jos,
@@ -87,10 +87,10 @@ public class Writer {
     return response.build();
   }
 
-  public static CodeGeneratorResponse write(
+  public static @Nullable CodeGeneratorResponse write(
       GapicContext context,
       List<GapicClass> clazzes,
-      GapicPackageInfo gapicPackageInfo,
+      @Nullable GapicPackageInfo gapicPackageInfo,
       List<ReflectConfig> reflectConfigInfo,
       String outputFilePath) {
     ByteString.Output output = ByteString.newOutput();
