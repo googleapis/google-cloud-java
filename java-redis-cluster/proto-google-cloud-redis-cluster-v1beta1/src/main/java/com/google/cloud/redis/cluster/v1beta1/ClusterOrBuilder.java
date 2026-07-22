@@ -1367,6 +1367,42 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. If true, cluster endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such a cluster endpoint
+   * can be de-registered before the forwarding rules in the cluster endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the asyncClusterEndpointsDeletionEnabled field is set.
+   */
+  boolean hasAsyncClusterEndpointsDeletionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, cluster endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such a cluster endpoint
+   * can be de-registered before the forwarding rules in the cluster endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The asyncClusterEndpointsDeletionEnabled.
+   */
+  boolean getAsyncClusterEndpointsDeletionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Server CA mode for the cluster.
    * </pre>
    *

@@ -287,6 +287,25 @@ public interface ImportCryptoKeyVersionRequestOrBuilder
    */
   com.google.protobuf.ByteString getRsaAesWrappedKey();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether trusted wrapping will be enabled on the imported
+   * [CryptoKeyVersion]. This field is only supported for keys with
+   * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field is supported for all
+   * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] besides
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  boolean getTrustedWrappingEnabled();
+
   com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest.WrappedKeyMaterialCase
       getWrappedKeyMaterialCase();
 }

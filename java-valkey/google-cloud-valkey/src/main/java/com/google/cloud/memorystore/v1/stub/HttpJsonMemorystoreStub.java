@@ -16,10 +16,12 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.InternalApi;
@@ -41,31 +43,43 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.AddAuthTokenRequest;
+import com.google.cloud.memorystore.v1.AddTokenAuthUserRequest;
+import com.google.cloud.memorystore.v1.AuthToken;
 import com.google.cloud.memorystore.v1.Backup;
 import com.google.cloud.memorystore.v1.BackupCollection;
 import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
 import com.google.cloud.memorystore.v1.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
 import com.google.cloud.memorystore.v1.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.memorystore.v1.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListAuthTokensRequest;
+import com.google.cloud.memorystore.v1.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsResponse;
 import com.google.cloud.memorystore.v1.ListBackupsRequest;
 import com.google.cloud.memorystore.v1.ListBackupsResponse;
 import com.google.cloud.memorystore.v1.ListInstancesRequest;
 import com.google.cloud.memorystore.v1.ListInstancesResponse;
+import com.google.cloud.memorystore.v1.ListTokenAuthUsersRequest;
+import com.google.cloud.memorystore.v1.ListTokenAuthUsersResponse;
 import com.google.cloud.memorystore.v1.OperationMetadata;
 import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.StartMigrationRequest;
+import com.google.cloud.memorystore.v1.TokenAuthUser;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -93,6 +107,7 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(Instance.getDescriptor())
+          .add(TokenAuthUser.getDescriptor())
           .add(Backup.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
@@ -744,6 +759,308 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersMethodDescriptor =
+          ApiMethodDescriptor.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/ListTokenAuthUsers")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTokenAuthUsersRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*}/tokenAuthUsers",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTokenAuthUsersResponse>newBuilder()
+                      .setDefaultInstance(ListTokenAuthUsersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTokenAuthUserRequest, TokenAuthUser>
+      getTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/GetTokenAuthUser")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TokenAuthUser>newBuilder()
+                      .setDefaultInstance(TokenAuthUser.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAuthTokensRequest, ListAuthTokensResponse>
+      listAuthTokensMethodDescriptor =
+          ApiMethodDescriptor.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/ListAuthTokens")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuthTokensRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/instances/*/tokenAuthUsers/*}/authTokens",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuthTokensResponse>newBuilder()
+                      .setDefaultInstance(ListAuthTokensResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuthTokenRequest, AuthToken>
+      getAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<GetAuthTokenRequest, AuthToken>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/GetAuthToken")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuthToken>newBuilder()
+                      .setDefaultInstance(AuthToken.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AddTokenAuthUserRequest, Operation>
+      addTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<AddTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/AddTokenAuthUser")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1/{instance=projects/*/locations/*/instances/*}:addTokenAuthUser",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearInstance().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/DeleteTokenAuthUser")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<AddAuthTokenRequest, Operation>
+      addAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<AddAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/AddAuthToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{tokenAuthUser=projects/*/locations/*/instances/*/tokenAuthUsers/*}:addAuthToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "tokenAuthUser", request.getTokenAuthUser());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearTokenAuthUser().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAuthTokenRequest, Operation>
+      deleteAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/DeleteAuthToken")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/instances/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -859,6 +1176,27 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private final UnaryCallable<FinishMigrationRequest, Operation> finishMigrationCallable;
   private final OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
       finishMigrationOperationCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable;
+  private final UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable;
+  private final UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable;
+  private final UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable;
+  private final OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable;
+  private final UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable;
+  private final OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable;
+  private final UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable;
+  private final OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable;
+  private final UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable;
+  private final OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1147,6 +1485,105 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+        listTokenAuthUsersTransportSettings =
+            HttpJsonCallSettings.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+                .setMethodDescriptor(listTokenAuthUsersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+            .setMethodDescriptor(getTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListAuthTokensRequest, ListAuthTokensResponse>
+        listAuthTokensTransportSettings =
+            HttpJsonCallSettings.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+                .setMethodDescriptor(listAuthTokensMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenTransportSettings =
+        HttpJsonCallSettings.<GetAuthTokenRequest, AuthToken>newBuilder()
+            .setMethodDescriptor(getAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<AddTokenAuthUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(addTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("instance", String.valueOf(request.getInstance()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getInstance())
+            .build();
+    HttpJsonCallSettings<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserTransportSettings =
+            HttpJsonCallSettings.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteTokenAuthUserMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<AddAuthTokenRequest, Operation> addAuthTokenTransportSettings =
+        HttpJsonCallSettings.<AddAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(addAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("token_auth_user", String.valueOf(request.getTokenAuthUser()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getTokenAuthUser())
+            .build();
+    HttpJsonCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenTransportSettings =
+        HttpJsonCallSettings.<DeleteAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1297,6 +1734,66 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
             settings.finishMigrationOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listTokenAuthUsersCallable =
+        callableFactory.createUnaryCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.listTokenAuthUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.getTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            getTokenAuthUserTransportSettings, settings.getTokenAuthUserSettings(), clientContext);
+    this.listAuthTokensCallable =
+        callableFactory.createUnaryCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.listAuthTokensPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.getAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            getAuthTokenTransportSettings, settings.getAuthTokenSettings(), clientContext);
+    this.addTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            addTokenAuthUserTransportSettings, settings.addTokenAuthUserSettings(), clientContext);
+    this.addTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            addTokenAuthUserTransportSettings,
+            settings.addTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserSettings(),
+            clientContext);
+    this.deleteTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.addAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            addAuthTokenTransportSettings, settings.addAuthTokenSettings(), clientContext);
+    this.addAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            addAuthTokenTransportSettings,
+            settings.addAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthTokenTransportSettings, settings.deleteAuthTokenSettings(), clientContext);
+    this.deleteAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthTokenTransportSettings,
+            settings.deleteAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1331,6 +1828,14 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
     methodDescriptors.add(backupInstanceMethodDescriptor);
     methodDescriptors.add(startMigrationMethodDescriptor);
     methodDescriptors.add(finishMigrationMethodDescriptor);
+    methodDescriptors.add(listTokenAuthUsersMethodDescriptor);
+    methodDescriptors.add(getTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(listAuthTokensMethodDescriptor);
+    methodDescriptors.add(getAuthTokenMethodDescriptor);
+    methodDescriptors.add(addTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(deleteTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(addAuthTokenMethodDescriptor);
+    methodDescriptors.add(deleteAuthTokenMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1498,6 +2003,83 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   public OperationCallable<FinishMigrationRequest, Instance, OperationMetadata>
       finishMigrationOperationCallable() {
     return finishMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    return listTokenAuthUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    return listTokenAuthUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    return getTokenAuthUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    return listAuthTokensCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    return listAuthTokensPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    return getAuthTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    return addTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    return addTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    return deleteTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    return deleteTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    return addAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    return addAuthTokenOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    return deleteAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    return deleteAuthTokenOperationCallable;
   }
 
   @Override

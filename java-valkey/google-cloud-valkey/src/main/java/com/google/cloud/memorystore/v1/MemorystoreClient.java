@@ -403,6 +403,164 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListTokenAuthUsers</td>
+ *      <td><p> Lists all the token auth users for a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listTokenAuthUsers(ListTokenAuthUsersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listTokenAuthUsers(InstanceName parent)
+ *           <li><p> listTokenAuthUsers(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listTokenAuthUsersPagedCallable()
+ *           <li><p> listTokenAuthUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetTokenAuthUser</td>
+ *      <td><p> Gets a specific token auth user for a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getTokenAuthUser(GetTokenAuthUserRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getTokenAuthUser(TokenAuthUserName name)
+ *           <li><p> getTokenAuthUser(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getTokenAuthUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAuthTokens</td>
+ *      <td><p> Lists all the auth tokens for a specific token auth user.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAuthTokens(ListAuthTokensRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAuthTokens(TokenAuthUserName parent)
+ *           <li><p> listAuthTokens(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAuthTokensPagedCallable()
+ *           <li><p> listAuthTokensCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAuthToken</td>
+ *      <td><p> Gets a token based auth enabled instance's auth token for a given user.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAuthToken(GetAuthTokenRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAuthToken(AuthTokenName name)
+ *           <li><p> getAuthToken(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAuthTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddTokenAuthUser</td>
+ *      <td><p> Adds a token auth user for a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addTokenAuthUserAsync(AddTokenAuthUserRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addTokenAuthUserAsync(InstanceName instance, String tokenAuthUser)
+ *           <li><p> addTokenAuthUserAsync(String instance, String tokenAuthUser)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addTokenAuthUserOperationCallable()
+ *           <li><p> addTokenAuthUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteTokenAuthUser</td>
+ *      <td><p> Deletes a token auth user for a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteTokenAuthUserAsync(DeleteTokenAuthUserRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteTokenAuthUserAsync(TokenAuthUserName name)
+ *           <li><p> deleteTokenAuthUserAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteTokenAuthUserOperationCallable()
+ *           <li><p> deleteTokenAuthUserCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddAuthToken</td>
+ *      <td><p> Adds a token for a user of a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addAuthTokenAsync(AddAuthTokenRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addAuthTokenAsync(TokenAuthUserName tokenAuthUser, AuthToken authToken)
+ *           <li><p> addAuthTokenAsync(String tokenAuthUser, AuthToken authToken)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addAuthTokenOperationCallable()
+ *           <li><p> addAuthTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAuthToken</td>
+ *      <td><p> Deletes a token for a user of a token based auth enabled instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAuthTokenAsync(DeleteAuthTokenRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAuthTokenAsync(AuthTokenName name)
+ *           <li><p> deleteAuthTokenAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAuthTokenOperationCallable()
+ *           <li><p> deleteAuthTokenCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
  * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
@@ -3018,6 +3176,1258 @@ public class MemorystoreClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists all the token auth users for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   for (TokenAuthUser element : memorystoreClient.listTokenAuthUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent to list token auth users from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTokenAuthUsersPagedResponse listTokenAuthUsers(@Nullable InstanceName parent) {
+    ListTokenAuthUsersRequest request =
+        ListTokenAuthUsersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listTokenAuthUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the token auth users for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   for (TokenAuthUser element : memorystoreClient.listTokenAuthUsers(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent to list token auth users from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTokenAuthUsersPagedResponse listTokenAuthUsers(String parent) {
+    ListTokenAuthUsersRequest request =
+        ListTokenAuthUsersRequest.newBuilder().setParent(parent).build();
+    return listTokenAuthUsers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the token auth users for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListTokenAuthUsersRequest request =
+   *       ListTokenAuthUsersRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (TokenAuthUser element : memorystoreClient.listTokenAuthUsers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListTokenAuthUsersPagedResponse listTokenAuthUsers(
+      ListTokenAuthUsersRequest request) {
+    return listTokenAuthUsersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the token auth users for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListTokenAuthUsersRequest request =
+   *       ListTokenAuthUsersRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<TokenAuthUser> future =
+   *       memorystoreClient.listTokenAuthUsersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TokenAuthUser element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    return stub.listTokenAuthUsersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the token auth users for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListTokenAuthUsersRequest request =
+   *       ListTokenAuthUsersRequest.newBuilder()
+   *           .setParent(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListTokenAuthUsersResponse response =
+   *         memorystoreClient.listTokenAuthUsersCallable().call(request);
+   *     for (TokenAuthUser element : response.getTokenAuthUsersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    return stub.listTokenAuthUsersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a specific token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   TokenAuthUserName name =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+   *   TokenAuthUser response = memorystoreClient.getTokenAuthUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of token auth user for a basic auth enabled instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TokenAuthUser getTokenAuthUser(@Nullable TokenAuthUserName name) {
+    GetTokenAuthUserRequest request =
+        GetTokenAuthUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getTokenAuthUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a specific token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String name =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *           .toString();
+   *   TokenAuthUser response = memorystoreClient.getTokenAuthUser(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of token auth user for a basic auth enabled instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TokenAuthUser getTokenAuthUser(String name) {
+    GetTokenAuthUserRequest request = GetTokenAuthUserRequest.newBuilder().setName(name).build();
+    return getTokenAuthUser(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a specific token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   GetTokenAuthUserRequest request =
+   *       GetTokenAuthUserRequest.newBuilder()
+   *           .setName(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .build();
+   *   TokenAuthUser response = memorystoreClient.getTokenAuthUser(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TokenAuthUser getTokenAuthUser(GetTokenAuthUserRequest request) {
+    return getTokenAuthUserCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a specific token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   GetTokenAuthUserRequest request =
+   *       GetTokenAuthUserRequest.newBuilder()
+   *           .setName(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<TokenAuthUser> future =
+   *       memorystoreClient.getTokenAuthUserCallable().futureCall(request);
+   *   // Do something.
+   *   TokenAuthUser response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    return stub.getTokenAuthUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the auth tokens for a specific token auth user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   TokenAuthUserName parent =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+   *   for (AuthToken element : memorystoreClient.listAuthTokens(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent to list auth tokens from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthTokensPagedResponse listAuthTokens(@Nullable TokenAuthUserName parent) {
+    ListAuthTokensRequest request =
+        ListAuthTokensRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAuthTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the auth tokens for a specific token auth user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String parent =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *           .toString();
+   *   for (AuthToken element : memorystoreClient.listAuthTokens(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent to list auth tokens from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthTokensPagedResponse listAuthTokens(String parent) {
+    ListAuthTokensRequest request = ListAuthTokensRequest.newBuilder().setParent(parent).build();
+    return listAuthTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the auth tokens for a specific token auth user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListAuthTokensRequest request =
+   *       ListAuthTokensRequest.newBuilder()
+   *           .setParent(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AuthToken element : memorystoreClient.listAuthTokens(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAuthTokensPagedResponse listAuthTokens(ListAuthTokensRequest request) {
+    return listAuthTokensPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the auth tokens for a specific token auth user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListAuthTokensRequest request =
+   *       ListAuthTokensRequest.newBuilder()
+   *           .setParent(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AuthToken> future =
+   *       memorystoreClient.listAuthTokensPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AuthToken element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    return stub.listAuthTokensPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the auth tokens for a specific token auth user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   ListAuthTokensRequest request =
+   *       ListAuthTokensRequest.newBuilder()
+   *           .setParent(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAuthTokensResponse response = memorystoreClient.listAuthTokensCallable().call(request);
+   *     for (AuthToken element : response.getAuthTokensList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse>
+      listAuthTokensCallable() {
+    return stub.listAuthTokensCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a token based auth enabled instance's auth token for a given user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AuthTokenName name =
+   *       AuthTokenName.of(
+   *           "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+   *   AuthToken response = memorystoreClient.getAuthToken(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of token auth user for a token auth enabled instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}/authTokens/{auth_token}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthToken getAuthToken(@Nullable AuthTokenName name) {
+    GetAuthTokenRequest request =
+        GetAuthTokenRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAuthToken(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a token based auth enabled instance's auth token for a given user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String name =
+   *       AuthTokenName.of(
+   *               "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]")
+   *           .toString();
+   *   AuthToken response = memorystoreClient.getAuthToken(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of token auth user for a token auth enabled instance. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}/authTokens/{auth_token}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthToken getAuthToken(String name) {
+    GetAuthTokenRequest request = GetAuthTokenRequest.newBuilder().setName(name).build();
+    return getAuthToken(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a token based auth enabled instance's auth token for a given user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   GetAuthTokenRequest request =
+   *       GetAuthTokenRequest.newBuilder()
+   *           .setName(
+   *               AuthTokenName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[INSTANCE]",
+   *                       "[TOKEN_AUTH_USER]",
+   *                       "[AUTH_TOKEN]")
+   *                   .toString())
+   *           .build();
+   *   AuthToken response = memorystoreClient.getAuthToken(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AuthToken getAuthToken(GetAuthTokenRequest request) {
+    return getAuthTokenCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a token based auth enabled instance's auth token for a given user.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   GetAuthTokenRequest request =
+   *       GetAuthTokenRequest.newBuilder()
+   *           .setName(
+   *               AuthTokenName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[INSTANCE]",
+   *                       "[TOKEN_AUTH_USER]",
+   *                       "[AUTH_TOKEN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AuthToken> future = memorystoreClient.getAuthTokenCallable().futureCall(request);
+   *   // Do something.
+   *   AuthToken response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    return stub.getAuthTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   String tokenAuthUser = "tokenAuthUser345456300";
+   *   Instance response = memorystoreClient.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance resource that this token auth user will be added for.
+   *     Format: projects/{project}/locations/{location}/instances/{instance}
+   * @param tokenAuthUser Required. The name of the token auth user to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> addTokenAuthUserAsync(
+      @Nullable InstanceName instance, String tokenAuthUser) {
+    AddTokenAuthUserRequest request =
+        AddTokenAuthUserRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .setTokenAuthUser(tokenAuthUser)
+            .build();
+    return addTokenAuthUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   String tokenAuthUser = "tokenAuthUser345456300";
+   *   Instance response = memorystoreClient.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. The instance resource that this token auth user will be added for.
+   *     Format: projects/{project}/locations/{location}/instances/{instance}
+   * @param tokenAuthUser Required. The name of the token auth user to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> addTokenAuthUserAsync(
+      String instance, String tokenAuthUser) {
+    AddTokenAuthUserRequest request =
+        AddTokenAuthUserRequest.newBuilder()
+            .setInstance(instance)
+            .setTokenAuthUser(tokenAuthUser)
+            .build();
+    return addTokenAuthUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddTokenAuthUserRequest request =
+   *       AddTokenAuthUserRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTokenAuthUser("tokenAuthUser345456300")
+   *           .build();
+   *   Instance response = memorystoreClient.addTokenAuthUserAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> addTokenAuthUserAsync(
+      AddTokenAuthUserRequest request) {
+    return addTokenAuthUserOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddTokenAuthUserRequest request =
+   *       AddTokenAuthUserRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTokenAuthUser("tokenAuthUser345456300")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       memorystoreClient.addTokenAuthUserOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddTokenAuthUserRequest, Instance, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    return stub.addTokenAuthUserOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddTokenAuthUserRequest request =
+   *       AddTokenAuthUserRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setTokenAuthUser("tokenAuthUser345456300")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       memorystoreClient.addTokenAuthUserCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    return stub.addTokenAuthUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   TokenAuthUserName name =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+   *   memorystoreClient.deleteTokenAuthUserAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the token auth user to delete. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTokenAuthUserAsync(
+      @Nullable TokenAuthUserName name) {
+    DeleteTokenAuthUserRequest request =
+        DeleteTokenAuthUserRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteTokenAuthUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String name =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *           .toString();
+   *   memorystoreClient.deleteTokenAuthUserAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the token auth user to delete. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTokenAuthUserAsync(String name) {
+    DeleteTokenAuthUserRequest request =
+        DeleteTokenAuthUserRequest.newBuilder().setName(name).build();
+    return deleteTokenAuthUserAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteTokenAuthUserRequest request =
+   *       DeleteTokenAuthUserRequest.newBuilder()
+   *           .setName(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   memorystoreClient.deleteTokenAuthUserAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteTokenAuthUserAsync(
+      DeleteTokenAuthUserRequest request) {
+    return deleteTokenAuthUserOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteTokenAuthUserRequest request =
+   *       DeleteTokenAuthUserRequest.newBuilder()
+   *           .setName(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       memorystoreClient.deleteTokenAuthUserOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    return stub.deleteTokenAuthUserOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token auth user for a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteTokenAuthUserRequest request =
+   *       DeleteTokenAuthUserRequest.newBuilder()
+   *           .setName(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       memorystoreClient.deleteTokenAuthUserCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    return stub.deleteTokenAuthUserCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   TokenAuthUserName tokenAuthUser =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+   *   AuthToken authToken = AuthToken.newBuilder().build();
+   *   TokenAuthUser response = memorystoreClient.addAuthTokenAsync(tokenAuthUser, authToken).get();
+   * }
+   * }</pre>
+   *
+   * @param tokenAuthUser Required. The name of the token auth user resource that this token will be
+   *     added for.
+   * @param authToken Required. The auth token to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TokenAuthUser, OperationMetadata> addAuthTokenAsync(
+      @Nullable TokenAuthUserName tokenAuthUser, AuthToken authToken) {
+    AddAuthTokenRequest request =
+        AddAuthTokenRequest.newBuilder()
+            .setTokenAuthUser(tokenAuthUser == null ? null : tokenAuthUser.toString())
+            .setAuthToken(authToken)
+            .build();
+    return addAuthTokenAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String tokenAuthUser =
+   *       TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *           .toString();
+   *   AuthToken authToken = AuthToken.newBuilder().build();
+   *   TokenAuthUser response = memorystoreClient.addAuthTokenAsync(tokenAuthUser, authToken).get();
+   * }
+   * }</pre>
+   *
+   * @param tokenAuthUser Required. The name of the token auth user resource that this token will be
+   *     added for.
+   * @param authToken Required. The auth token to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TokenAuthUser, OperationMetadata> addAuthTokenAsync(
+      String tokenAuthUser, AuthToken authToken) {
+    AddAuthTokenRequest request =
+        AddAuthTokenRequest.newBuilder()
+            .setTokenAuthUser(tokenAuthUser)
+            .setAuthToken(authToken)
+            .build();
+    return addAuthTokenAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddAuthTokenRequest request =
+   *       AddAuthTokenRequest.newBuilder()
+   *           .setTokenAuthUser(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setAuthToken(AuthToken.newBuilder().build())
+   *           .build();
+   *   TokenAuthUser response = memorystoreClient.addAuthTokenAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<TokenAuthUser, OperationMetadata> addAuthTokenAsync(
+      AddAuthTokenRequest request) {
+    return addAuthTokenOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddAuthTokenRequest request =
+   *       AddAuthTokenRequest.newBuilder()
+   *           .setTokenAuthUser(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setAuthToken(AuthToken.newBuilder().build())
+   *           .build();
+   *   OperationFuture<TokenAuthUser, OperationMetadata> future =
+   *       memorystoreClient.addAuthTokenOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TokenAuthUser response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    return stub.addAuthTokenOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AddAuthTokenRequest request =
+   *       AddAuthTokenRequest.newBuilder()
+   *           .setTokenAuthUser(
+   *               TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+   *                   .toString())
+   *           .setAuthToken(AuthToken.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = memorystoreClient.addAuthTokenCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    return stub.addAuthTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   AuthTokenName name =
+   *       AuthTokenName.of(
+   *           "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+   *   memorystoreClient.deleteAuthTokenAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the token auth user resource that this token will be deleted
+   *     from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}/authTokens/{name}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthTokenAsync(
+      @Nullable AuthTokenName name) {
+    DeleteAuthTokenRequest request =
+        DeleteAuthTokenRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteAuthTokenAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   String name =
+   *       AuthTokenName.of(
+   *               "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]")
+   *           .toString();
+   *   memorystoreClient.deleteAuthTokenAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the token auth user resource that this token will be deleted
+   *     from. Format:
+   *     projects/{project}/locations/{location}/instances/{instance}/tokenAuthUsers/{token_auth_user}/authTokens/{name}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthTokenAsync(String name) {
+    DeleteAuthTokenRequest request = DeleteAuthTokenRequest.newBuilder().setName(name).build();
+    return deleteAuthTokenAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteAuthTokenRequest request =
+   *       DeleteAuthTokenRequest.newBuilder()
+   *           .setName(
+   *               AuthTokenName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[INSTANCE]",
+   *                       "[TOKEN_AUTH_USER]",
+   *                       "[AUTH_TOKEN]")
+   *                   .toString())
+   *           .build();
+   *   memorystoreClient.deleteAuthTokenAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAuthTokenAsync(
+      DeleteAuthTokenRequest request) {
+    return deleteAuthTokenOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteAuthTokenRequest request =
+   *       DeleteAuthTokenRequest.newBuilder()
+   *           .setName(
+   *               AuthTokenName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[INSTANCE]",
+   *                       "[TOKEN_AUTH_USER]",
+   *                       "[AUTH_TOKEN]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       memorystoreClient.deleteAuthTokenOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    return stub.deleteAuthTokenOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a token for a user of a token based auth enabled instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (MemorystoreClient memorystoreClient = MemorystoreClient.create()) {
+   *   DeleteAuthTokenRequest request =
+   *       DeleteAuthTokenRequest.newBuilder()
+   *           .setName(
+   *               AuthTokenName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[INSTANCE]",
+   *                       "[TOKEN_AUTH_USER]",
+   *                       "[AUTH_TOKEN]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future = memorystoreClient.deleteAuthTokenCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    return stub.deleteAuthTokenCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
@@ -3475,6 +4885,166 @@ public class MemorystoreClient implements BackgroundResource {
     protected ListBackupsFixedSizeCollection createCollection(
         @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListTokenAuthUsersPagedResponse
+      extends AbstractPagedListResponse<
+          ListTokenAuthUsersRequest,
+          ListTokenAuthUsersResponse,
+          TokenAuthUser,
+          ListTokenAuthUsersPage,
+          ListTokenAuthUsersFixedSizeCollection> {
+
+    public static ApiFuture<ListTokenAuthUsersPagedResponse> createAsync(
+        PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser> context,
+        ApiFuture<ListTokenAuthUsersResponse> futureResponse) {
+      ApiFuture<ListTokenAuthUsersPage> futurePage =
+          ListTokenAuthUsersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListTokenAuthUsersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListTokenAuthUsersPagedResponse(ListTokenAuthUsersPage page) {
+      super(page, ListTokenAuthUsersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListTokenAuthUsersPage
+      extends AbstractPage<
+          ListTokenAuthUsersRequest,
+          ListTokenAuthUsersResponse,
+          TokenAuthUser,
+          ListTokenAuthUsersPage> {
+
+    private ListTokenAuthUsersPage(
+        @Nullable PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+            context,
+        @Nullable ListTokenAuthUsersResponse response) {
+      super(context, response);
+    }
+
+    private static ListTokenAuthUsersPage createEmptyPage() {
+      return new ListTokenAuthUsersPage(null, null);
+    }
+
+    @Override
+    protected ListTokenAuthUsersPage createPage(
+        @Nullable PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+            context,
+        @Nullable ListTokenAuthUsersResponse response) {
+      return new ListTokenAuthUsersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListTokenAuthUsersPage> createPageAsync(
+        @Nullable PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+            context,
+        ApiFuture<ListTokenAuthUsersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListTokenAuthUsersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListTokenAuthUsersRequest,
+          ListTokenAuthUsersResponse,
+          TokenAuthUser,
+          ListTokenAuthUsersPage,
+          ListTokenAuthUsersFixedSizeCollection> {
+
+    private ListTokenAuthUsersFixedSizeCollection(
+        @Nullable List<ListTokenAuthUsersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListTokenAuthUsersFixedSizeCollection createEmptyCollection() {
+      return new ListTokenAuthUsersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListTokenAuthUsersFixedSizeCollection createCollection(
+        @Nullable List<ListTokenAuthUsersPage> pages, int collectionSize) {
+      return new ListTokenAuthUsersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAuthTokensPagedResponse
+      extends AbstractPagedListResponse<
+          ListAuthTokensRequest,
+          ListAuthTokensResponse,
+          AuthToken,
+          ListAuthTokensPage,
+          ListAuthTokensFixedSizeCollection> {
+
+    public static ApiFuture<ListAuthTokensPagedResponse> createAsync(
+        PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> context,
+        ApiFuture<ListAuthTokensResponse> futureResponse) {
+      ApiFuture<ListAuthTokensPage> futurePage =
+          ListAuthTokensPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAuthTokensPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAuthTokensPagedResponse(ListAuthTokensPage page) {
+      super(page, ListAuthTokensFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAuthTokensPage
+      extends AbstractPage<
+          ListAuthTokensRequest, ListAuthTokensResponse, AuthToken, ListAuthTokensPage> {
+
+    private ListAuthTokensPage(
+        @Nullable PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> context,
+        @Nullable ListAuthTokensResponse response) {
+      super(context, response);
+    }
+
+    private static ListAuthTokensPage createEmptyPage() {
+      return new ListAuthTokensPage(null, null);
+    }
+
+    @Override
+    protected ListAuthTokensPage createPage(
+        @Nullable PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> context,
+        @Nullable ListAuthTokensResponse response) {
+      return new ListAuthTokensPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAuthTokensPage> createPageAsync(
+        @Nullable PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> context,
+        ApiFuture<ListAuthTokensResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAuthTokensFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAuthTokensRequest,
+          ListAuthTokensResponse,
+          AuthToken,
+          ListAuthTokensPage,
+          ListAuthTokensFixedSizeCollection> {
+
+    private ListAuthTokensFixedSizeCollection(
+        @Nullable List<ListAuthTokensPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAuthTokensFixedSizeCollection createEmptyCollection() {
+      return new ListAuthTokensFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAuthTokensFixedSizeCollection createCollection(
+        @Nullable List<ListAuthTokensPage> pages, int collectionSize) {
+      return new ListAuthTokensFixedSizeCollection(pages, collectionSize);
     }
   }
 

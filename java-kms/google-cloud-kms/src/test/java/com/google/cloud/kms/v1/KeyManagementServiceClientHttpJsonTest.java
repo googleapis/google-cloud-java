@@ -840,6 +840,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -908,6 +910,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1507,6 +1511,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1575,6 +1581,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1832,6 +1840,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1850,6 +1860,7 @@ public class KeyManagementServiceClientHttpJsonTest {
                     .toString())
             .setImportJob("importJob-208547368")
             .setWrappedKey(ByteString.EMPTY)
+            .setTrustedWrappingEnabled(true)
             .build();
 
     CryptoKeyVersion actualResponse = client.importCryptoKeyVersion(request);
@@ -1893,8 +1904,171 @@ public class KeyManagementServiceClientHttpJsonTest {
                       .toString())
               .setImportJob("importJob-208547368")
               .setWrappedKey(ByteString.EMPTY)
+              .setTrustedWrappingEnabled(true)
               .build();
       client.importCryptoKeyVersion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void importTrustedKeyWrappedCryptoKeyVersionTest() throws Exception {
+    CryptoKeyVersion expectedResponse =
+        CryptoKeyVersion.newBuilder()
+            .setName(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .setProtectionLevel(ProtectionLevel.forNumber(0))
+            .setAttestation(KeyOperationAttestation.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setGenerateTime(Timestamp.newBuilder().build())
+            .setDestroyTime(Timestamp.newBuilder().build())
+            .setDestroyEventTime(Timestamp.newBuilder().build())
+            .setImportJob("importJob-208547368")
+            .setImportTime(Timestamp.newBuilder().build())
+            .setImportFailureReason("importFailureReason985493705")
+            .setGenerationFailureReason("generationFailureReason-1733956042")
+            .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
+            .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
+            .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ImportTrustedKeyWrappedCryptoKeyVersionRequest request =
+        ImportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+            .setParent(
+                "projects/project-7206/locations/location-7206/keyRings/keyRing-7206/cryptoKeys/cryptoKey-7206")
+            .setImportingKey("importingKey-1425125630")
+            .setCryptoKeyVersion("cryptoKeyVersion135105818")
+            .setWrappedKey(ByteString.EMPTY)
+            .build();
+
+    CryptoKeyVersion actualResponse = client.importTrustedKeyWrappedCryptoKeyVersion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void importTrustedKeyWrappedCryptoKeyVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ImportTrustedKeyWrappedCryptoKeyVersionRequest request =
+          ImportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+              .setParent(
+                  "projects/project-7206/locations/location-7206/keyRings/keyRing-7206/cryptoKeys/cryptoKey-7206")
+              .setImportingKey("importingKey-1425125630")
+              .setCryptoKeyVersion("cryptoKeyVersion135105818")
+              .setWrappedKey(ByteString.EMPTY)
+              .build();
+      client.importTrustedKeyWrappedCryptoKeyVersion(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportTrustedKeyWrappedCryptoKeyVersionTest() throws Exception {
+    ExportTrustedKeyWrappedCryptoKeyVersionResponse expectedResponse =
+        ExportTrustedKeyWrappedCryptoKeyVersionResponse.newBuilder()
+            .setWrappedKey(ByteString.EMPTY)
+            .setWrappedKeyCrc32C(Int64Value.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ExportTrustedKeyWrappedCryptoKeyVersionRequest request =
+        ExportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+            .setName(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .setWrappingKey(
+                CryptoKeyVersionName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[KEY_RING]",
+                        "[CRYPTO_KEY]",
+                        "[CRYPTO_KEY_VERSION]")
+                    .toString())
+            .build();
+
+    ExportTrustedKeyWrappedCryptoKeyVersionResponse actualResponse =
+        client.exportTrustedKeyWrappedCryptoKeyVersion(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportTrustedKeyWrappedCryptoKeyVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportTrustedKeyWrappedCryptoKeyVersionRequest request =
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+              .setName(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
+                      .toString())
+              .setWrappingKey(
+                  CryptoKeyVersionName.of(
+                          "[PROJECT]",
+                          "[LOCATION]",
+                          "[KEY_RING]",
+                          "[CRYPTO_KEY]",
+                          "[CRYPTO_KEY_VERSION]")
+                      .toString())
+              .build();
+      client.exportTrustedKeyWrappedCryptoKeyVersion(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -2133,6 +2307,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2159,6 +2335,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2212,6 +2390,8 @@ public class KeyManagementServiceClientHttpJsonTest {
               .setExternalProtectionLevelOptions(
                   ExternalProtectionLevelOptions.newBuilder().build())
               .setReimportEligible(true)
+              .setTrustedWrappingEnabled(true)
+              .setHsmTrusted(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCryptoKeyVersion(cryptoKeyVersion, updateMask);
@@ -2367,6 +2547,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2435,6 +2617,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2501,6 +2685,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2569,6 +2755,8 @@ public class KeyManagementServiceClientHttpJsonTest {
             .setExternalDestructionFailureReason("externalDestructionFailureReason-914693177")
             .setExternalProtectionLevelOptions(ExternalProtectionLevelOptions.newBuilder().build())
             .setReimportEligible(true)
+            .setTrustedWrappingEnabled(true)
+            .setHsmTrusted(true)
             .build();
     mockService.addResponse(expectedResponse);
 
