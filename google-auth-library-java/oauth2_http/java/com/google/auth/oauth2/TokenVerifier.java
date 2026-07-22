@@ -95,7 +95,7 @@ public class TokenVerifier {
   private final String issuer;
   private final PublicKey publicKey;
   private final Clock clock;
-  private final LoadingCache<String, Map<String, PublicKey>> publicKeyCache;
+  private final LoadingCache<String, Map<String, @Nullable PublicKey>> publicKeyCache;
 
   private TokenVerifier(Builder builder) {
     this.audience = builder.audience;
@@ -280,7 +280,7 @@ public class TokenVerifier {
   }
 
   /** Custom CacheLoader for mapping certificate urls to the contained public keys. */
-  static class PublicKeyLoader extends CacheLoader<String, Map<String, PublicKey>> {
+  static class PublicKeyLoader extends CacheLoader<String, Map<String, @Nullable PublicKey>> {
     private static final int DEFAULT_NUMBER_OF_RETRIES = 2;
     private final HttpTransportFactory httpTransportFactory;
 
@@ -318,7 +318,7 @@ public class TokenVerifier {
     }
 
     @Override
-    public Map<String, PublicKey> load(String certificateUrl) throws Exception {
+    public Map<String, @Nullable PublicKey> load(String certificateUrl) throws Exception {
       HttpTransport httpTransport = httpTransportFactory.create();
       JsonWebKeySet jwks;
       HttpRequest request =
@@ -345,7 +345,7 @@ public class TokenVerifier {
       HttpResponse response = request.execute();
       jwks = response.parseAs(JsonWebKeySet.class);
 
-      ImmutableMap.Builder<String, PublicKey> keyCacheBuilder = new ImmutableMap.Builder<>();
+      ImmutableMap.Builder<String, @Nullable PublicKey> keyCacheBuilder = new ImmutableMap.Builder<>();
       if (jwks.keys == null) {
         // Fall back to x509 formatted specification
         for (String keyId : jwks.keySet()) {
@@ -364,7 +364,7 @@ public class TokenVerifier {
         }
       }
 
-      ImmutableMap<String, PublicKey> keyCache = keyCacheBuilder.build();
+      ImmutableMap<String, @Nullable PublicKey> keyCache = keyCacheBuilder.build();
 
       if (keyCache.isEmpty()) {
         throw new VerificationException(

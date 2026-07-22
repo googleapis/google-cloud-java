@@ -185,7 +185,7 @@ public class OAuth2Credentials extends Credentials {
    * authorization bearer token.
    */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     return unwrapDirectFuture(asyncFetch(MoreExecutors.directExecutor())).requestMetadata;
   }
 

@@ -42,6 +42,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
@@ -853,7 +854,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     ServiceAccountCredentials sourceCredentialsMock =
         mock(
             ServiceAccountCredentials.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+            withSettings().withoutAnnotations());
     when(sourceCredentialsMock.getUniverseDomain()).thenThrow(IOException.class);
 
     MockIAMCredentialsServiceTransportFactory transportFactory =

@@ -36,6 +36,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Credentials class for calling Google APIs using an API key.
@@ -72,7 +73,7 @@ public class ApiKeyCredentials extends Credentials {
   }
 
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     return Collections.singletonMap(API_KEY_HEADER_KEY, Collections.singletonList(apiKey));
   }
 

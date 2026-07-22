@@ -999,7 +999,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * function returns "https://compute.googleapis.com/".
    */
   @VisibleForTesting
-  static URI getUriForSelfSignedJWT(URI uri) {
+  static @Nullable URI getUriForSelfSignedJWT(@Nullable URI uri) {
     if (uri == null || uri.getScheme() == null || uri.getHost() == null) {
       return uri;
     }
@@ -1062,7 +1062,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   /** Provide the request metadata by putting an access JWT directly in the metadata. */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     if (createScopedRequired() && uri == null) {
       throw new IOException(
           "Scopes and uri are not configured for service account. Specify the scopes"

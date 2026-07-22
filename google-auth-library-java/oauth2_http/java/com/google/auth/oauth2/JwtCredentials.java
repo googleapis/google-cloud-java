@@ -161,7 +161,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   }
 
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     synchronized (lock) {
       if (shouldRefresh()) {
         refresh();

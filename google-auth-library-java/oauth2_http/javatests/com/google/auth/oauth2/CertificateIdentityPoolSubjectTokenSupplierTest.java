@@ -37,7 +37,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.oauth2.IdentityPoolCredentialSource.CertificateConfig;
 import java.io.ByteArrayInputStream;
@@ -82,16 +84,16 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
   @BeforeEach
   void setUp() throws IOException, URISyntaxException {
     mockCredentialSource =
-        org.mockito.Mockito.mock(
+        mock(
             IdentityPoolCredentialSource.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+            withSettings().withoutAnnotations());
     mockCertificateConfig =
-        org.mockito.Mockito.mock(
-            CertificateConfig.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(
+            CertificateConfig.class, withSettings().withoutAnnotations());
     mockContext =
-        org.mockito.Mockito.mock(
+        mock(
             ExternalAccountSupplierContext.class,
-            org.mockito.Mockito.withSettings().withoutAnnotations());
+            withSettings().withoutAnnotations());
 
     ClassLoader classLoader = getClass().getClassLoader();
     URL leafCertUrl = classLoader.getResource("x509_leaf_certificate.pem");

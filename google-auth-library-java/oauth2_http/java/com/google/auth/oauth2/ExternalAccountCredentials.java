@@ -348,7 +348,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   }
 
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     Map<String, List<String>> requestMetadata = super.getRequestMetadata(uri);
     return addQuotaProjectIdToRequestMetadata(quotaProjectId, requestMetadata);
   }

@@ -383,7 +383,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
 
   /** Provide the request metadata by putting an access JWT directly in the metadata. */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     if (uri == null) {
       if (defaultAudience != null) {
         uri = defaultAudience;

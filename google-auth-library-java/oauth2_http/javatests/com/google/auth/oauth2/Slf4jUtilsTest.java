@@ -39,6 +39,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.oauth2.Slf4jUtils.LoggerFactoryProvider;
 import java.util.logging.Level;
@@ -85,9 +86,9 @@ class Slf4jUtilsTest {
     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
     // Create a mock LoggerFactoryProvider
     LoggerFactoryProvider mockLoggerFactoryProvider =
-        mock(LoggerFactoryProvider.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(LoggerFactoryProvider.class, withSettings().withoutAnnotations());
     ILoggerFactory mockLoggerFactory =
-        mock(ILoggerFactory.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+        mock(ILoggerFactory.class, withSettings().withoutAnnotations());
     when(mockLoggerFactoryProvider.getLoggerFactory()).thenReturn(mockLoggerFactory);
     when(mockLoggerFactory.getLogger(anyString()))
         .thenReturn(org.slf4j.helpers.NOPLogger.NOP_LOGGER);
