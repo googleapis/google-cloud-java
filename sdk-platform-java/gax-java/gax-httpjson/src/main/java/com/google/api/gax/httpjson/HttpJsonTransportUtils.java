@@ -37,8 +37,7 @@ import java.util.logging.Logger;
 import org.conscrypt.Conscrypt;
 
 /**
- * Utility class for creating and configuring {@link NetHttpTransport} instances with Post-Quantum
- * Cryptography (PQC) Conscrypt support.
+ * Utility class for creating and configuring {@link NetHttpTransport} instances.
  */
 @InternalApi
 public class HttpJsonTransportUtils {
@@ -59,7 +58,7 @@ public class HttpJsonTransportUtils {
    *       standard TLS 1.3 endpoints if ML-KEM is not negotiated.
    * </ul>
    */
-  public static final String[] DEFAULT_PQC_GROUPS =
+  static final String[] DEFAULT_PQC_GROUPS =
       new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
 
   /**
@@ -87,12 +86,15 @@ public class HttpJsonTransportUtils {
   }
 
   /**
-   * Creates a {@link NetHttpTransport.Builder} pre-configured with Conscrypt as the security
+   * Configures the given {@link NetHttpTransport.Builder} with Conscrypt as the security
    * provider by default if Conscrypt is available. Users can customize the {@link
    * NetHttpTransport.Builder} to use a different security provider.
+   *
+   * @param builder the {@link NetHttpTransport.Builder} to configure
+   * @return the configured {@link NetHttpTransport.Builder}
    */
-  public static NetHttpTransport.Builder createConscryptHttpTransportBuilder() {
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+  public static NetHttpTransport.Builder configureConscryptSecurityProvider(
+      NetHttpTransport.Builder builder) {
     Provider conscryptProvider = ConscryptProviderHolder.INSTANCE;
     if (conscryptProvider == null) {
       return builder;

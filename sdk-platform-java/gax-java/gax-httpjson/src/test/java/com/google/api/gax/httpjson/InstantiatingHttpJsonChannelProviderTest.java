@@ -216,4 +216,12 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
         .containsExactly("X25519MLKEM768", "SecP256r1MLKEM768", "X25519")
         .inOrder();
   }
+
+  @Test
+  void testConfigureConscryptSecurityProvider_returnsConfiguredBuilder() {
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    NetHttpTransport.Builder result =
+        HttpJsonTransportUtils.configureConscryptSecurityProvider(builder);
+    assertThat(result).isSameInstanceAs(builder);
+  }
 }

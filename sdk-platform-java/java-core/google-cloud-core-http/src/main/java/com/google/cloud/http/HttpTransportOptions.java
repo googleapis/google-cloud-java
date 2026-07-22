@@ -22,6 +22,7 @@ import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
@@ -69,7 +70,9 @@ public class HttpTransportOptions implements TransportOptions {
         }
       }
 
-      return HttpJsonTransportUtils.createConscryptHttpTransportBuilder().build();
+      return HttpJsonTransportUtils.configureConscryptSecurityProvider(
+              new NetHttpTransport.Builder())
+          .build();
     }
   }
 

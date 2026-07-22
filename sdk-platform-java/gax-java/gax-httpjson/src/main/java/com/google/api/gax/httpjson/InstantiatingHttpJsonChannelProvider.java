@@ -191,8 +191,10 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
-    NetHttpTransport.Builder builder = HttpJsonTransportUtils.createConscryptHttpTransportBuilder();
-    return configureMtls(builder).build();
+    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+    configureMtls(builder);
+    HttpJsonTransportUtils.configureConscryptSecurityProvider(builder);
+    return builder.build();
   }
 
   private NetHttpTransport.Builder configureMtls(NetHttpTransport.Builder builder)
