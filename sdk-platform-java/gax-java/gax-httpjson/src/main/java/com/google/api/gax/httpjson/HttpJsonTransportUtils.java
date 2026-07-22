@@ -36,9 +36,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.conscrypt.Conscrypt;
 
-/**
- * Utility class for creating and configuring {@link NetHttpTransport} instances.
- */
+/** Utility class for creating and configuring {@link NetHttpTransport} instances. */
 @InternalApi
 public class HttpJsonTransportUtils {
 
@@ -86,9 +84,9 @@ public class HttpJsonTransportUtils {
   }
 
   /**
-   * Configures the given {@link NetHttpTransport.Builder} with Conscrypt as the security
-   * provider by default if Conscrypt is available. Users can customize the {@link
-   * NetHttpTransport.Builder} to use a different security provider.
+   * Configures the given {@link NetHttpTransport.Builder} with Conscrypt as the security provider
+   * by default if Conscrypt is available. Users can customize the {@link NetHttpTransport.Builder}
+   * to use a different security provider.
    *
    * @param builder the {@link NetHttpTransport.Builder} to configure
    * @return the configured {@link NetHttpTransport.Builder}
@@ -108,10 +106,11 @@ public class HttpJsonTransportUtils {
               }
               try {
                 Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-              } catch (Throwable t) {
-                // Catch runtime socket configuration errors (e.g. version mismatch or unexpected
-                // socket implementation) to gracefully fall back to Conscrypt's default TLS groups
-                // without failing transport creation.
+              } catch (Exception t) {
+                // Catch runtime socket configuration errors (e.g. unexpected socket implementation
+                // from wrapped or proxy configurations) to gracefully fall back to Conscrypt's
+                // default
+                // TLS groups without failing transport creation.
                 LOG.log(
                     Level.WARNING,
                     "Failed to set PQC named groups on Conscrypt socket. Falling back to"
