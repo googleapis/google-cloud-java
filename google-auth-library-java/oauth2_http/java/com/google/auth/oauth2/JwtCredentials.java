@@ -48,6 +48,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Credentials class for calling Google APIs using a JWT with custom claims.
@@ -67,6 +69,7 @@ import java.util.concurrent.TimeUnit;
  *     .build();
  * </code></pre>
  */
+@NullMarked
 public class JwtCredentials extends Credentials implements JwtProvider {
   private static final String JWT_ACCESS_PREFIX = OAuth2Utils.BEARER_PREFIX;
   private static final String JWT_INCOMPLETE_ERROR_MESSAGE =
@@ -179,7 +182,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof JwtCredentials)) {
       return false;
     }

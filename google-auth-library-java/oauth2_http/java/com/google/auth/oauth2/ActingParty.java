@@ -33,10 +33,13 @@ package com.google.auth.oauth2;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * The acting party as defined in <a href="https://tools.ietf.org/html/rfc8693">OAuth 2.0 Token
  * Exchange</a>.
  */
+@NullMarked
 final class ActingParty {
   private final String actorToken;
   private final String actorTokenType;

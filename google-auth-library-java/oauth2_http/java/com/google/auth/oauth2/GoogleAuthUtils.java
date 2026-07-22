@@ -33,11 +33,13 @@ package com.google.auth.oauth2;
 
 import java.io.File;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This public class provides shared utilities for common OAuth2 utils or ADC. It also exposes
  * convenience methods such as a getter for well-known Application Default Credentials file path
  */
+@NullMarked
 public class GoogleAuthUtils {
 
   /**

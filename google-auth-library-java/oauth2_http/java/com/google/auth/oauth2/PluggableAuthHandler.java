@@ -49,7 +49,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal handler for retrieving 3rd party tokens from user defined scripts/executables for
@@ -57,6 +58,7 @@ import javax.annotation.Nullable;
  *
  * <p>See {@link PluggableAuthCredentials}.
  */
+@NullMarked
 final class PluggableAuthHandler implements ExecutableHandler {
 
   // The maximum supported version for the executable response.
@@ -148,8 +150,7 @@ final class PluggableAuthHandler implements ExecutableHandler {
     return executableResponse.getSubjectToken();
   }
 
-  @Nullable
-  ExecutableResponse getCachedExecutableResponse(ExecutableOptions options)
+  @Nullable ExecutableResponse getCachedExecutableResponse(ExecutableOptions options)
       throws PluggableAuthException {
     ExecutableResponse executableResponse = null;
     if (options.getOutputFilePath() != null && !options.getOutputFilePath().isEmpty()) {

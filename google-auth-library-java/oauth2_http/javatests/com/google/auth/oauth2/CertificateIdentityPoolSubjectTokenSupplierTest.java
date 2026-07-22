@@ -57,17 +57,13 @@ import java.util.Base64;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 /** Tests for {@link CertificateIdentityPoolSubjectTokenSupplier}. */
-@ExtendWith(MockitoExtension.class)
 class CertificateIdentityPoolSubjectTokenSupplierTest {
 
-  @Mock private IdentityPoolCredentialSource mockCredentialSource;
-  @Mock private CertificateConfig mockCertificateConfig;
-  @Mock private ExternalAccountSupplierContext mockContext;
+  private IdentityPoolCredentialSource mockCredentialSource;
+  private CertificateConfig mockCertificateConfig;
+  private ExternalAccountSupplierContext mockContext;
 
   private CertificateIdentityPoolSubjectTokenSupplier supplier;
 
@@ -85,6 +81,18 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
 
   @BeforeEach
   void setUp() throws IOException, URISyntaxException {
+    mockCredentialSource =
+        org.mockito.Mockito.mock(
+            IdentityPoolCredentialSource.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
+    mockCertificateConfig =
+        org.mockito.Mockito.mock(
+            CertificateConfig.class, org.mockito.Mockito.withSettings().withoutAnnotations());
+    mockContext =
+        org.mockito.Mockito.mock(
+            ExternalAccountSupplierContext.class,
+            org.mockito.Mockito.withSettings().withoutAnnotations());
+
     ClassLoader classLoader = getClass().getClassLoader();
     URL leafCertUrl = classLoader.getResource("x509_leaf_certificate.pem");
     assertNotNull(leafCertUrl, "Test leaf certificate file not found!");
