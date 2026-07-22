@@ -31,6 +31,8 @@ package com.google.api.gax.retrying;
 
 import com.google.api.core.InternalApi;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The streaming retry algorithm, which makes decision based either on the thrown exception and the
@@ -41,6 +43,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Internal use only - public for technical reasons.
  */
+@NullMarked
 @InternalApi("For internal use only")
 public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<ResponseT> {
 
@@ -75,9 +78,9 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    * <p>The attempt settings will be reset if the stream attempt produced any messages.
    */
   @Override
-  public TimedAttemptSettings createNextAttempt(
-      Throwable previousThrowable,
-      ResponseT previousResponse,
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
     return createNextAttempt(null, previousThrowable, previousResponse, previousSettings);
   }
@@ -88,10 +91,10 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    * <p>The attempt settings will be reset if the stream attempt produced any messages.
    */
   @Override
-  public TimedAttemptSettings createNextAttempt(
-      RetryingContext context,
-      Throwable previousThrowable,
-      ResponseT previousResponse,
+  public @Nullable TimedAttemptSettings createNextAttempt(
+      @Nullable RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
       TimedAttemptSettings previousSettings) {
 
     if (previousThrowable instanceof ServerStreamingAttemptException) {
@@ -120,8 +123,8 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    */
   @Override
   public boolean shouldRetry(
-      Throwable previousThrowable,
-      ResponseT previousResponse,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)
       throws CancellationException {
     return shouldRetry(null, previousThrowable, previousResponse, nextAttemptSettings);
@@ -135,9 +138,9 @@ public final class StreamingRetryAlgorithm<ResponseT> extends RetryAlgorithm<Res
    */
   @Override
   public boolean shouldRetry(
-      RetryingContext context,
-      Throwable previousThrowable,
-      ResponseT previousResponse,
+      @Nullable RetryingContext context,
+      @Nullable Throwable previousThrowable,
+      @Nullable ResponseT previousResponse,
       TimedAttemptSettings nextAttemptSettings)
       throws CancellationException {
 

@@ -41,9 +41,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Implementation of HttpJsonChannel which can issue http-json calls. */
+@NullMarked
 public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResource {
 
   private final Executor executor;
@@ -62,9 +64,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   }
 
   private ManagedHttpJsonChannel(
-      Executor executor,
+      @Nullable Executor executor,
       boolean usingDefaultExecutor,
-      String endpoint,
+      @Nullable String endpoint,
       @Nullable HttpTransport httpTransport) {
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;

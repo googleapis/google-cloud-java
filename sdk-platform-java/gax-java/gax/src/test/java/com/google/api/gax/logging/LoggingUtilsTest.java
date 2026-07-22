@@ -71,7 +71,8 @@ class LoggingUtilsTest {
 
   @Test
   void testExecuteWithTryCatch_WithException() throws Throwable {
-    ThrowingRunnable action = Mockito.mock(ThrowingRunnable.class);
+    ThrowingRunnable action =
+        mock(ThrowingRunnable.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doThrow(new RuntimeException("Test Exception")).when(action).run();
     assertDoesNotThrow(() -> LoggingUtils.executeWithTryCatch(action));
     // Verify that the action was executed (despite the exception)
@@ -80,7 +81,8 @@ class LoggingUtilsTest {
 
   @Test
   void testExecuteWithTryCatch_WithNoSuchMethodError() throws Throwable {
-    ThrowingRunnable action = Mockito.mock(ThrowingRunnable.class);
+    ThrowingRunnable action =
+        mock(ThrowingRunnable.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doThrow(new NoSuchMethodError("Test Error")).when(action).run();
     assertDoesNotThrow(() -> LoggingUtils.executeWithTryCatch(action));
     // Verify that the action was executed (despite the error)
@@ -95,7 +97,8 @@ class LoggingUtilsTest {
   @Test
   void testLogActionableError_loggingDisabled() {
     LoggingUtils.setLoggingEnabled(false);
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider =
+        mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
 
     LoggingUtils.logActionableError(
         Collections.<String, Object>emptyMap(), loggerProvider, "message");
@@ -106,8 +109,9 @@ class LoggingUtilsTest {
   @Test
   void testLogActionableError_success() {
     LoggingUtils.setLoggingEnabled(true);
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
-    Logger logger = mock(Logger.class);
+    LoggerProvider loggerProvider =
+        mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
+    Logger logger = mock(Logger.class, Mockito.withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(logger);
 
     org.slf4j.spi.LoggingEventBuilder eventBuilder = mock(org.slf4j.spi.LoggingEventBuilder.class);

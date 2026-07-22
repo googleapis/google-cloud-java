@@ -180,7 +180,8 @@ class Slf4jUtilsTest {
   }
 
   LoggerProvider setUpLoggerProviderMock(TestLogger testLogger) {
-    LoggerProvider loggerProvider = mock(LoggerProvider.class);
+    LoggerProvider loggerProvider =
+        Mockito.mock(LoggerProvider.class, Mockito.withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(testLogger);
     return loggerProvider;
   }
@@ -268,7 +269,8 @@ class Slf4jUtilsTest {
   @Test
   void testLogRequest_infoEnabled_debugDisabled() {
     Object message = new Object(); // not used in info path
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder =
+        mock(LogData.Builder.class, Mockito.withSettings().withoutAnnotations());
 
     LogData.Builder testLogDataBuilder =
         LogData.builder().serviceName("service-name").rpcName("rpc-name");
@@ -293,7 +295,8 @@ class Slf4jUtilsTest {
             .addOptions(Option.newBuilder().setName("opt_name2").build())
             .build();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder =
+        mock(LogData.Builder.class, Mockito.withSettings().withoutAnnotations());
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")
@@ -319,7 +322,8 @@ class Slf4jUtilsTest {
     String status = "OK";
     Map<String, Object> responseData = new HashMap<>();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder =
+        mock(LogData.Builder.class, Mockito.withSettings().withoutAnnotations());
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")
@@ -342,7 +346,8 @@ class Slf4jUtilsTest {
     String status = "OK";
     Map<String, Object> responseData = new HashMap<>();
 
-    LogData.Builder logDataBuilder = Mockito.mock(LogData.Builder.class);
+    LogData.Builder logDataBuilder =
+        mock(LogData.Builder.class, Mockito.withSettings().withoutAnnotations());
     LogData.Builder testLogDataBuilder =
         LogData.builder()
             .serviceName("service-name")

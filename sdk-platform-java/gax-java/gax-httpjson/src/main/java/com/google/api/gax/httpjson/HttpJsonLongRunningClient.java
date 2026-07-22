@@ -35,12 +35,14 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.TranslatingUnaryCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implementation of LongRunningClient based on REST transport.
  *
  * <p>Public for technical reasons. For internal use only.
  */
+@NullMarked
 @InternalApi
 public class HttpJsonLongRunningClient<RequestT, OperationT> implements LongRunningClient {
 

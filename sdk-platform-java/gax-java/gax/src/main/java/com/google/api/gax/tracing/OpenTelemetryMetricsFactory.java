@@ -30,12 +30,14 @@
 package com.google.api.gax.tracing;
 
 import io.opentelemetry.api.OpenTelemetry;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryMetricsTracer}.
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
+@NullMarked
 public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
 
   private final ApiTracerContext clientLevelTracerContext;

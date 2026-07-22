@@ -36,8 +36,10 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallable;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create low level grpc-based direct callables. */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public class GrpcRawCallableFactory {
   private GrpcRawCallableFactory() {}

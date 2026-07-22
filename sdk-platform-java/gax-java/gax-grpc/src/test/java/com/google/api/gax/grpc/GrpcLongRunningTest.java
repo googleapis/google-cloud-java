@@ -97,7 +97,8 @@ class GrpcLongRunningTest {
   @BeforeEach
   void setUp() throws IOException {
     channel = mock(ManagedChannel.class);
-    TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
+    TransportChannelProvider operationsChannelProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     TransportChannel transportChannel =
         GrpcTransportChannel.newBuilder().setManagedChannel(channel).build();
     when(operationsChannelProvider.getTransportChannel()).thenReturn(transportChannel);
@@ -134,7 +135,8 @@ class GrpcLongRunningTest {
             .setPollingAlgorithm(pollingAlgorithm)
             .build();
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));
@@ -162,7 +164,8 @@ class GrpcLongRunningTest {
         GrpcCallableFactory.createOperationCallable(
             createGrpcSettings(), callSettings, initialContext, operationsStub);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(Mockito.any(Credentials.class), Mockito.any(GrpcStatusCode.class));

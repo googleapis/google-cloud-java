@@ -36,6 +36,7 @@ import com.google.api.core.ApiFutures;
 import java.io.InterruptedIOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The retry executor which executes attempts in the current thread, potentially causing the current
@@ -45,6 +46,7 @@ import java.util.concurrent.Callable;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public class DirectRetryingExecutor<ResponseT> implements RetryingExecutorWithContext<ResponseT> {
 
   private final RetryAlgorithm<ResponseT> retryAlgorithm;

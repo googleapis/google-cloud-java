@@ -36,8 +36,10 @@ import static com.google.api.gax.nativeimage.NativeImageUtils.registerForReflect
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerForUnsafeFieldAccess;
 
 import org.graalvm.nativeimage.hosted.Feature;
+import org.jspecify.annotations.NullMarked;
 
 /** Configures Native Image settings for the grpc-netty-shaded dependency. */
+@NullMarked
 final class GrpcNettyFeature implements Feature {
 
   private static final String GRPC_NETTY_SHADED_CLASS =
