@@ -1225,6 +1225,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
         tempDir.resolve("missing_config.json").toAbsolutePath().toString());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     final AtomicLong currentTime = new AtomicLong(0);
     AgentIdentityUtils.setTimeService(
         new AgentIdentityUtils.TimeService() {

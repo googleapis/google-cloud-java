@@ -194,11 +194,22 @@ public final class AgentIdentityUtils {
     String keyPath = null;
 
     if (!Strings.isNullOrEmpty(certConfigPath)) {
-      // Read cert path from config file. We use retry with backoff to handle transient race
-      // conditions where the config file might be being updated by a rotation process.
-      certPath = getCertificatePathWithRetry(certConfigPath);
-      keyPath = extractKeyPathFromConfig(certConfigPath);
+      if (!Files.exists(Paths.get(certConfigPath)) && !Files.exists(Paths.get(wellKnownDir))) {
+        // Fail-fast if config doesn't exist and we're not in a workload environment (e.g. workstation)
+        return new ResolvedCertAndKeyPaths(null, null);
+      }
+      // Read cert and key paths from config file. We use retry with backoff to handle transient
+      // race conditions where the config file might be being updated by a rotation process.
+      ResolvedCertAndKeyPaths paths = getPathsFromConfigWithRetry(certConfigPath);
+      if (paths != null) {
+        certPath = paths.certPath;
+        keyPath = paths.keyPath;
+      }
     } else {
+      if (!Files.exists(Paths.get(wellKnownDir))) {
+        // Fail-fast if well-known dir doesn't exist (e.g. workstation)
+        return new ResolvedCertAndKeyPaths(null, null);
+      }
       // Fallback to well-known locations. We use retry with backoff here as well to handle
       // race conditions during file replacement by a rotation process.
       certPath = getWellKnownCertificatePathWithRetry();
@@ -276,14 +287,14 @@ public final class AgentIdentityUtils {
    * Reads the certificate path from the config file with retry logic to handle rotation race
    * conditions.
    */
-  private static String getCertificatePathWithRetry(String certConfigPath) throws IOException {
+  private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(String certConfigPath) throws IOException {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
         if (Files.exists(Paths.get(certConfigPath))) {
-          String certPath = extractCertPathFromConfig(certConfigPath);
-          if (!Strings.isNullOrEmpty(certPath) && Files.exists(Paths.get(certPath))) {
-            return certPath;
+          ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
+          if (paths != null && !Strings.isNullOrEmpty(paths.certPath) && Files.exists(Paths.get(paths.certPath))) {
+            return paths;
           }
         }
       } catch (IOException e) {
@@ -295,7 +306,7 @@ public final class AgentIdentityUtils {
             org.slf4j.event.Level.WARN,
             Collections.emptyMap(),
             String.format(
-                "Certificate config file not found at %s (from %s environment variable). Retrying for up to %d seconds.",
+                "Certificate config file not found or invalid at %s (from %s environment variable). Retrying for up to %d seconds.",
                 certConfigPath, GOOGLE_API_CERTIFICATE_CONFIG, TOTAL_TIMEOUT_MS / 1000));
         warned = true;
       }
@@ -443,7 +454,7 @@ public final class AgentIdentityUtils {
         throw new IOException(
             "Certificate intent inferred via config, but cert files are missing.");
       }
-      // Neither cert-config nor certsexist, do not enable
+      // Neither cert-config nor certs exist, do not enable
       return false;
     }
   }
@@ -458,35 +469,30 @@ public final class AgentIdentityUtils {
   }
 
   @SuppressWarnings("unchecked")
-  /** Extracts the certificate path from the JSON configuration file. */
-  private static String extractCertPathFromConfig(String certConfigPath) throws IOException {
+  /** Extracts the certificate and private key paths from the JSON configuration file. */
+  private static ResolvedCertAndKeyPaths extractPathsFromConfig(String certConfigPath) throws IOException {
     try (InputStream stream = new FileInputStream(certConfigPath)) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
       GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
-      Map certConfigs = (Map) config.get("cert_configs");
-      if (certConfigs != null) {
-        Map workload = (Map) certConfigs.get("workload");
-        if (workload != null) {
-          return (String) workload.get("cert_path");
+      Object certConfigsObj = config.get("cert_configs");
+      if (certConfigsObj instanceof Map) {
+        Map certConfigs = (Map) certConfigsObj;
+        Object workloadObj = certConfigs.get("workload");
+        if (workloadObj instanceof Map) {
+          Map workload = (Map) workloadObj;
+          String certPath = null;
+          String keyPath = null;
+          if (workload.get("cert_path") instanceof String) {
+            certPath = (String) workload.get("cert_path");
+          }
+          if (workload.get("key_path") instanceof String) {
+            keyPath = (String) workload.get("key_path");
+          }
+          return new ResolvedCertAndKeyPaths(certPath, keyPath);
         }
       }
-    }
-    return null;
-  }
-
-  @SuppressWarnings("unchecked")
-  /** Extracts the private key path from the JSON configuration file. */
-  private static String extractKeyPathFromConfig(String certConfigPath) throws IOException {
-    try (InputStream stream = new FileInputStream(certConfigPath)) {
-      JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-      GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
-      Map certConfigs = (Map) config.get("cert_configs");
-      if (certConfigs != null) {
-        Map workload = (Map) certConfigs.get("workload");
-        if (workload != null) {
-          return (String) workload.get("key_path");
-        }
-      }
+    } catch (Exception e) {
+      throw new IOException("Failed to parse Agent Identity config JSON", e);
     }
     return null;
   }
