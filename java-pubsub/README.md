@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.76.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -31,9 +31,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pubsub</artifactId>
   </dependency>
-
 </dependencies>
-
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
@@ -43,9 +41,8 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.148.0</version>
+  <version>1.152.0</version>
 </dependency>
-
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies:
@@ -55,6 +52,7 @@ implementation platform('com.google.cloud:libraries-bom:26.83.0')
 
 implementation 'com.google.cloud:google-cloud-pubsub'
 ```
+
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
@@ -80,7 +78,7 @@ The client application making API calls must be granted [authorization scopes][a
 ### Prerequisites
 
 You will need a [Google Cloud Platform Console][developer-console] project with the Cloud Pub/Sub [API enabled][enable-api].
-
+You will need to [enable billing][enable-billing] to use Google Cloud Pub/Sub.
 [Follow these instructions][create-project] to get your project set up. You will also need to set up the local development environment by
 [installing the Google Cloud Command Line Interface][cloud-cli] and running the following commands in command line:
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
@@ -373,8 +371,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -413,7 +409,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
 [code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
-
+[enable-billing]: https://cloud.google.com/apis/docs/getting-started#enabling_billing
 [enable-api]: https://console.cloud.google.com/flows/enableapi?apiid=pubsub.googleapis.com
 [libraries-bom]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/wiki/The-Google-Cloud-Platform-Libraries-BOM
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png

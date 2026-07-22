@@ -115,10 +115,11 @@ public final class StandardOfferProto extends com.google.protobuf.GeneratedFile 
           + "locations/{location}/services/{service}/"
           + "standardOffers/{standard_offer}*\016standardOffers2\r"
           + "standardOfferB\006\n"
-          + "\004termB\275\001\n"
+          + "\004termB\347\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\022Sta"
           + "ndardOfferProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1beta/commerceproduc"
-          + "erpb;commerceproducerpb\252\002$Google.Cloud.CommerceProducer.V1Betab\006proto3"
+          + "erpb;commerceproducerpb\252\002$Google.Cloud.C"
+          + "ommerceProducer.V1Beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

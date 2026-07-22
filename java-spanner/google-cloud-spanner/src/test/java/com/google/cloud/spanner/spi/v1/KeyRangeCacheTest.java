@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -33,9 +34,14 @@ import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
+import java.time.Clock;
 import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
@@ -212,6 +218,91 @@ public class KeyRangeCacheTest {
     assertNotNull(result.endpoint);
     assertEquals("server2", result.endpoint.getAddress());
     assertEquals(KeyRangeCache.RouteFailureReason.NONE, result.failureReason);
+  }
+
+  @Test
+  public void lookupRoutingHintRescuesOldestCoolingReplicaWhenAnotherTabletIsSkipped() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.addRanges(
+        CacheUpdate.newBuilder()
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(bytes("a"))
+                    .setLimitKey(bytes("z"))
+                    .setGroupUid(5)
+                    .setSplitId(1)
+                    .setGeneration(bytes("1")))
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(5)
+                    .setGeneration(bytes("1"))
+                    .setLeaderIndex(1)
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(1)
+                            .setIncarnation(bytes("1"))
+                            .setSkip(true))
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(2)
+                            .setServerAddress("server1")
+                            .setIncarnation(bytes("1")))
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(3)
+                            .setServerAddress("server2")
+                            .setIncarnation(bytes("1"))))
+            .build());
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+    MutableClock clock = new MutableClock();
+    EndpointOverloadCooldownTracker cooldowns =
+        new EndpointOverloadCooldownTracker(
+            Duration.ofSeconds(10),
+            Duration.ofMinutes(1),
+            Duration.ofMinutes(10),
+            clock,
+            ignored -> 0L);
+    for (int i = 0; i < 2; i++) {
+      cooldowns.recordFailure(
+          "server1", io.grpc.Status.Code.RESOURCE_EXHAUSTED, Duration.ofMillis(100));
+    }
+    clock.advance(Duration.ofMillis(10));
+    for (int i = 0; i < 2; i++) {
+      cooldowns.recordFailure(
+          "server2", io.grpc.Status.Code.RESOURCE_EXHAUSTED, Duration.ofMillis(100));
+    }
+    clock.advance(Duration.ofMillis(100));
+
+    KeyRangeCache.RouteLookupResult first =
+        cache.lookupRoutingHint(
+            true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            RoutingHint.newBuilder().setKey(bytes("a")),
+            cooldowns);
+    KeyRangeCache.RouteLookupResult second =
+        cache.lookupRoutingHint(
+            true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            RoutingHint.newBuilder().setKey(bytes("a")),
+            cooldowns);
+    KeyRangeCache.RouteLookupResult third =
+        cache.lookupRoutingHint(
+            true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            RoutingHint.newBuilder().setKey(bytes("a")),
+            cooldowns);
+
+    assertNotNull(first.endpoint);
+    assertEquals("server1", first.endpoint.getAddress());
+    assertNotNull(second.endpoint);
+    assertEquals("server2", second.endpoint.getAddress());
+    assertNull(third.endpoint);
+    assertEquals(KeyRangeCache.RouteFailureReason.NO_ROUTABLE_REPLICA, third.failureReason);
   }
 
   @Test
@@ -1068,7 +1159,612 @@ public class KeyRangeCacheTest {
     }
   }
 
+  private static final class MutableClock extends Clock {
+    private Instant now = Instant.ofEpochSecond(100);
+
+    @Override
+    public ZoneId getZone() {
+      return ZoneOffset.UTC;
+    }
+
+    @Override
+    public Clock withZone(ZoneId zone) {
+      return this;
+    }
+
+    @Override
+    public Instant instant() {
+      return now;
+    }
+
+    private void advance(Duration duration) {
+      now = now.plus(duration);
+    }
+  }
+
+  @Test
+  public void staleGenerationGroupUpdateDoesNotOverwriteTablets() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+
+    // Newer generation: dead tablet skip+empty, leader on survivor.
+    cache.addRanges(
+        CacheUpdate.newBuilder()
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(bytes("a"))
+                    .setLimitKey(bytes("z"))
+                    .setGroupUid(5)
+                    .setSplitId(1)
+                    .setGeneration(bytes("2")))
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(5)
+                    .setGeneration(bytes("2"))
+                    .setLeaderIndex(1)
+                    .addTablets(Tablet.newBuilder().setTabletUid(1).setSkip(true).setDistance(0))
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(2)
+                            .setServerAddress("survivor")
+                            .setIncarnation(bytes("2"))
+                            .setDistance(0)))
+            .build());
+
+    // Older generation still names the isolated host — must not re-inject it.
+    cache.addRanges(
+        CacheUpdate.newBuilder()
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(bytes("a"))
+                    .setLimitKey(bytes("z"))
+                    .setGroupUid(5)
+                    .setSplitId(1)
+                    .setGeneration(bytes("1")))
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(5)
+                    .setGeneration(bytes("1"))
+                    .setLeaderIndex(0)
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(1)
+                            .setServerAddress("isolated-dead")
+                            .setIncarnation(bytes("1"))
+                            .setDistance(0)
+                            .setSkip(false))
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(2)
+                            .setServerAddress("survivor")
+                            .setIncarnation(bytes("1"))
+                            .setDistance(0)))
+            .build());
+
+    Set<String> active = cache.getActiveAddresses();
+    assertTrue("survivor should remain active", active.contains("survivor"));
+    assertFalse(
+        "stale generation must not re-inject isolated-dead into active addresses: " + active,
+        active.contains("isolated-dead"));
+  }
+
+  @Test
+  public void equalGenerationWithNewerIncarnationRestoresSkippedEmptyTablet() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+
+    addSingleTabletGroup(cache, "1", true, "", "");
+    addSingleTabletGroup(cache, "1", false, "recovered", "1");
+    endpointCache.get("recovered");
+
+    assertTrue(cache.getActiveAddresses().contains("recovered"));
+    RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+    ChannelEndpoint selected =
+        cache.fillRoutingHint(
+            /* preferLeader= */ true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+    assertNotNull(selected);
+    assertEquals("recovered", selected.getAddress());
+    assertEquals(0, hint.getSkippedTabletUidCount());
+  }
+
+  @Test
+  public void equalGenerationWithSameIncarnationDoesNotRestoreSkippedEmptyTablet() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+
+    addSingleTabletGroup(cache, "1", true, "", "1");
+    addSingleTabletGroup(cache, "1", false, "isolated-dead", "1");
+
+    assertFalse(
+        "equal-gen unskip with the same incarnation must remain latched",
+        cache.getActiveAddresses().contains("isolated-dead"));
+  }
+
+  @Test
+  public void equalGenerationWithEmptyIncarnationDoesNotRestoreSkippedEmptyTablet() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+
+    addSingleTabletGroup(cache, "1", true, "", "");
+    addSingleTabletGroup(cache, "1", false, "isolated-dead", "");
+
+    assertFalse(
+        "equal-gen unskip with an empty incarnation must remain latched",
+        cache.getActiveAddresses().contains("isolated-dead"));
+  }
+
+  @Test
+  public void equalGenerationWithOlderIncarnationDoesNotRestoreSkippedEmptyTablet() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+
+    addSingleTabletGroup(cache, "1", true, "", "2");
+    addSingleTabletGroup(cache, "1", false, "isolated-dead", "1");
+
+    assertFalse(
+        "equal-gen unskip with an older incarnation must remain latched",
+        cache.getActiveAddresses().contains("isolated-dead"));
+  }
+
+  @Test
+  public void equalGenerationTreatsNonEmptyIncarnationAsNewerThanEmpty() {
+    assertTrue(
+        restoresSkippedTablet(ByteString.EMPTY, ByteString.copyFrom(new byte[] {(byte) 0x00})));
+  }
+
+  @Test
+  public void equalGenerationTreatsProperPrefixExtensionAsNewerIncarnation() {
+    assertTrue(
+        restoresSkippedTablet(
+            ByteString.copyFrom(new byte[] {(byte) 0x01}),
+            ByteString.copyFrom(new byte[] {(byte) 0x01, (byte) 0x00})));
+  }
+
+  @Test
+  public void equalGenerationComparesLastIncarnationByteUnsigned() {
+    assertTrue(
+        restoresSkippedTablet(
+            ByteString.copyFrom(new byte[] {(byte) 0x01, (byte) 0x7f}),
+            ByteString.copyFrom(new byte[] {(byte) 0x01, (byte) 0x80})));
+  }
+
+  @Test
+  public void equalGenerationRejectsLongerLexicographicallySmallerIncarnation() {
+    assertFalse(
+        restoresSkippedTablet(
+            ByteString.copyFrom(new byte[] {(byte) 0x02}),
+            ByteString.copyFrom(new byte[] {(byte) 0x01, (byte) 0xff})));
+  }
+
+  @Test
+  public void equalGenerationSkipPreservesIncarnationAndRefusesReplay() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertTrue(cache.getActiveAddresses().isEmpty());
+  }
+
+  @Test
+  public void equalGenerationSkipPreservesIncarnationAndAcceptsNewerRecovery() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+    assertTrue(cache.getActiveAddresses().isEmpty());
+
+    addSingleTabletGroup(
+        cache, "1", false, "recovered", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    assertTrue(cache.getActiveAddresses().contains("recovered"));
+  }
+
+  @Test
+  public void equalGenerationRepeatedSkipRoundsDoNotLaunderIncarnation() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    for (int i = 0; i < 3; i++) {
+      addSingleTabletGroup(cache, "1", true, "", ByteString.EMPTY);
+      addSingleTabletGroup(cache, "1", false, "replayed-" + i, incarnation);
+      assertTrue("skip round " + i + " must remain latched", cache.getActiveAddresses().isEmpty());
+    }
+  }
+
+  @Test
+  public void equalGenerationOmissionDoesNotEraseIncarnationHistory() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", true, "", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+    assertFalse(cache.getActiveAddresses().contains("replayed"));
+
+    addSingleTabletGroup(
+        cache, "1", false, "recovered", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    assertTrue(cache.getActiveAddresses().contains("recovered"));
+  }
+
+  @Test
+  public void equalGenerationOmittedHealthyTabletReappearsAtSameAddress() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+
+    assertTrue(cache.getActiveAddresses().contains("healthy"));
+  }
+
+  @Test
+  public void equalGenerationOmittedHealthyTabletRequiresNewerIncarnationForNewAddress() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+    assertFalse(cache.getActiveAddresses().contains("replayed"));
+
+    addSingleTabletGroup(
+        cache, "1", false, "recovered", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    assertTrue(cache.getActiveAddresses().contains("recovered"));
+  }
+
+  @Test
+  public void equalGenerationEmptyGroupRefillsAtSameAddress() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addEmptyTabletGroup(cache, "1");
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+
+    assertTrue(cache.getActiveAddresses().contains("healthy"));
+  }
+
+  @Test
+  public void equalGenerationUnfreshAddressedSkipDoesNotAuthorizeNewAddress() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "replayed", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+
+    addSingleTabletGroup(
+        cache, "1", false, "replayed", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    ChannelEndpoint selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("replayed", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationOmittedTabletUnfreshSkipDoesNotAuthorizeNewAddress() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", true, "replayed", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationEmptyAddressStateDoesNotBypassAddressBaseline() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "replayed", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationOmittedTabletEmptyAddressStateDoesNotBypassBaseline() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", true, "replayed", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationFreshAddressMoveAdvancesBaseline() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString firstIncarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    ByteString secondIncarnation = ByteString.copyFrom(new byte[] {(byte) 0x02});
+    endpointCache.get("healthy");
+    endpointCache.get("moved");
+
+    addSingleTabletGroup(cache, "1", false, "healthy", firstIncarnation);
+    addSingleTabletGroup(cache, "1", false, "moved", secondIncarnation);
+    ChannelEndpoint selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("moved", selected.getAddress());
+
+    addSingleTabletGroup(cache, "1", false, "", secondIncarnation);
+    addSingleTabletGroup(cache, "1", false, "healthy", firstIncarnation);
+    assertNull(selectSingleTablet(cache));
+
+    addSingleTabletGroup(cache, "1", false, "moved", secondIncarnation);
+    selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("moved", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationFirstAddressDiscoveryDoesNotRequireNewerIncarnation() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("healthy");
+
+    addSingleTabletGroup(cache, "1", false, "old", incarnation);
+    addSingleTabletGroup(cache, "2", false, "", incarnation);
+    addSingleTabletGroup(cache, "2", false, "healthy", incarnation);
+
+    ChannelEndpoint selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("healthy", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationFirstAddressDiscoveryEstablishesAddressBaseline() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("healthy");
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "old", incarnation);
+    addSingleTabletGroup(cache, "2", false, "", incarnation);
+    addSingleTabletGroup(cache, "2", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "2", false, "replayed", incarnation);
+
+    ChannelEndpoint selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("healthy", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationSkippedEmptyStateLatchesFirstAddressFreshness() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "", incarnation);
+    addSingleTabletGroup(cache, "1", true, "", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationOlderIncarnationCannotSupplyFirstAddress() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", false, "", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    addSingleTabletGroup(
+        cache, "1", false, "replayed", ByteString.copyFrom(new byte[] {(byte) 0x01}));
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationFirstSeenSkippedEmptyTabletRequiresNewerIncarnation() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", true, "", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationFirstSeenAddressedSkipCannotChangeAddressWithoutNewerIncarnation() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", true, "skipped", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertNull(selectSingleTablet(cache));
+  }
+
+  @Test
+  public void equalGenerationFirstSeenRoutableTabletEstablishesAddressBaseline() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+    endpointCache.get("healthy");
+    endpointCache.get("replayed");
+
+    addSingleTabletGroup(cache, "1", 2L, false, "other", incarnation);
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    ChannelEndpoint selected = selectSingleTablet(cache);
+    assertNotNull(selected);
+    assertEquals("healthy", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationAddressedSkipRefusesSameIncarnationAddressReplacement() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "healthy", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "replayed", incarnation);
+
+    assertFalse(cache.getActiveAddresses().contains("replayed"));
+    assertTrue(cache.getActiveAddresses().contains("healthy"));
+  }
+
+  @Test
+  public void equalGenerationAddressedSkipAllowsSameAddressUnskip() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    ByteString incarnation = ByteString.copyFrom(new byte[] {(byte) 0x01});
+
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    addSingleTabletGroup(cache, "1", true, "healthy", ByteString.EMPTY);
+    addSingleTabletGroup(cache, "1", false, "healthy", incarnation);
+    endpointCache.get("healthy");
+
+    ChannelEndpoint selected =
+        cache.fillRoutingHint(
+            /* preferLeader= */ true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            RoutingHint.newBuilder().setKey(bytes("a")));
+    assertNotNull(selected);
+    assertEquals("healthy", selected.getAddress());
+  }
+
+  @Test
+  public void equalGenerationNewerSkippedIncarnationRatchetsHistory() {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+
+    addSingleTabletGroup(
+        cache, "1", false, "healthy", ByteString.copyFrom(new byte[] {(byte) 0x01}));
+    addSingleTabletGroup(cache, "1", true, "", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    addSingleTabletGroup(
+        cache, "1", false, "replayed", ByteString.copyFrom(new byte[] {(byte) 0x02}));
+    assertTrue(cache.getActiveAddresses().isEmpty());
+
+    addSingleTabletGroup(
+        cache, "1", false, "recovered", ByteString.copyFrom(new byte[] {(byte) 0x03}));
+    assertTrue(cache.getActiveAddresses().contains("recovered"));
+  }
+
   // --- Helper methods ---
+
+  private static boolean restoresSkippedTablet(
+      ByteString previousIncarnation, ByteString incomingIncarnation) {
+    KeyRangeCache cache = new KeyRangeCache(new FakeEndpointCache());
+    addSingleTabletGroup(cache, "1", true, "", previousIncarnation);
+    addSingleTabletGroup(cache, "1", false, "recovered", incomingIncarnation);
+    return cache.getActiveAddresses().contains("recovered");
+  }
+
+  private static ChannelEndpoint selectSingleTablet(KeyRangeCache cache) {
+    return cache.fillRoutingHint(
+        /* preferLeader= */ true,
+        KeyRangeCache.RangeMode.COVERING_SPLIT,
+        DirectedReadOptions.getDefaultInstance(),
+        RoutingHint.newBuilder().setKey(bytes("a")));
+  }
+
+  private static void addSingleTabletGroup(
+      KeyRangeCache cache,
+      String generation,
+      boolean skip,
+      String serverAddress,
+      String incarnation) {
+    addSingleTabletGroup(cache, generation, skip, serverAddress, bytes(incarnation));
+  }
+
+  private static void addSingleTabletGroup(
+      KeyRangeCache cache,
+      String generation,
+      boolean skip,
+      String serverAddress,
+      ByteString incarnation) {
+    addSingleTabletGroup(cache, generation, 1L, skip, serverAddress, incarnation);
+  }
+
+  private static void addSingleTabletGroup(
+      KeyRangeCache cache,
+      String generation,
+      long tabletUid,
+      boolean skip,
+      String serverAddress,
+      ByteString incarnation) {
+    cache.addRanges(
+        CacheUpdate.newBuilder()
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(bytes("a"))
+                    .setLimitKey(bytes("z"))
+                    .setGroupUid(5)
+                    .setSplitId(1)
+                    .setGeneration(bytes(generation)))
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(5)
+                    .setGeneration(bytes(generation))
+                    .setLeaderIndex(0)
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(tabletUid)
+                            .setServerAddress(serverAddress)
+                            .setIncarnation(incarnation)
+                            .setDistance(0)
+                            .setSkip(skip)))
+            .build());
+  }
+
+  private static void addEmptyTabletGroup(KeyRangeCache cache, String generation) {
+    cache.addRanges(
+        CacheUpdate.newBuilder()
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(bytes("a"))
+                    .setLimitKey(bytes("z"))
+                    .setGroupUid(5)
+                    .setSplitId(1)
+                    .setGeneration(bytes(generation)))
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(5)
+                    .setGeneration(bytes(generation))
+                    .setLeaderIndex(0))
+            .build());
+  }
 
   private static CacheUpdate singleReplicaUpdate(String serverAddress) {
     return CacheUpdate.newBuilder()

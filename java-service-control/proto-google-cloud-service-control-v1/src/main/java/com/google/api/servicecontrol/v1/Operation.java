@@ -73,6 +73,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     switch (number) {
       case 6:
         return internalGetLabels();
+      case 12:
+        return internalGetUserLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -377,6 +379,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
    *
+   *
    * - This can be in one of the following formats:
    * - project:PROJECT_ID,
    * - project`_`number:PROJECT_NUMBER,
@@ -411,6 +414,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
    * This field should be filled in for the operations initiated by a
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
+   *
    *
    * - This can be in one of the following formats:
    * - project:PROJECT_ID,
@@ -952,6 +956,125 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int USER_LABELS_FIELD_NUMBER = 12;
+
+  private static final class UserLabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.api.servicecontrol.v1.OperationProto
+                .internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
+    if (userLabels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+    }
+    return userLabels_;
+  }
+
+  public int getUserLabelsCount() {
+    return internalGetUserLabels().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetUserLabels().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+    return getUserLabelsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+    return internalGetUserLabels().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   public static final int EXTENSIONS_FIELD_NUMBER = 16;
 
   @SuppressWarnings("serial")
@@ -1067,6 +1190,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     if (importance_ != com.google.api.servicecontrol.v1.Operation.Importance.LOW.getNumber()) {
       output.writeEnum(11, importance_);
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 12);
     for (int i = 0; i < extensions_.size(); i++) {
       output.writeMessage(16, extensions_.get(i));
     }
@@ -1113,6 +1238,16 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     if (importance_ != com.google.api.servicecontrol.v1.Operation.Importance.LOW.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, importance_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, userLabels__);
+    }
     for (int i = 0; i < extensions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, extensions_.get(i));
     }
@@ -1147,6 +1282,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     if (!getMetricValueSetsList().equals(other.getMetricValueSetsList())) return false;
     if (!getLogEntriesList().equals(other.getLogEntriesList())) return false;
     if (importance_ != other.importance_) return false;
+    if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getExtensionsList().equals(other.getExtensionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1187,6 +1323,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IMPORTANCE_FIELD_NUMBER;
     hash = (53 * hash) + importance_;
+    if (!internalGetUserLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + USER_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetUserLabels().hashCode();
+    }
     if (getExtensionsCount() > 0) {
       hash = (37 * hash) + EXTENSIONS_FIELD_NUMBER;
       hash = (53 * hash) + getExtensionsList().hashCode();
@@ -1316,6 +1456,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 6:
           return internalGetLabels();
+        case 12:
+          return internalGetUserLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1327,6 +1469,8 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       switch (number) {
         case 6:
           return internalGetMutableLabels();
+        case 12:
+          return internalGetMutableUserLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1395,13 +1539,14 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000080);
       importance_ = 0;
+      internalGetMutableUserLabels().clear();
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
       } else {
         extensions_ = null;
         extensionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1457,9 +1602,9 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
         result.logEntries_ = logEntriesBuilder_.build();
       }
       if (extensionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           extensions_ = java.util.Collections.unmodifiableList(extensions_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.extensions_ = extensions_;
       } else {
@@ -1493,6 +1638,10 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.importance_ = importance_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.userLabels_ = internalGetUserLabels();
+        result.userLabels_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1589,11 +1738,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       if (other.importance_ != 0) {
         setImportanceValue(other.getImportanceValue());
       }
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
+      bitField0_ |= 0x00000200;
       if (extensionsBuilder_ == null) {
         if (!other.extensions_.isEmpty()) {
           if (extensions_.isEmpty()) {
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureExtensionsIsMutable();
             extensions_.addAll(other.extensions_);
@@ -1606,7 +1757,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
             extensionsBuilder_.dispose();
             extensionsBuilder_ = null;
             extensions_ = other.extensions_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             extensionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetExtensionsFieldBuilder()
@@ -1718,6 +1869,18 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 88
+            case 98:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                    input.readMessage(
+                        UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableUserLabels()
+                    .getMutableMap()
+                    .put(userLabels__.getKey(), userLabels__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             case 130:
               {
                 com.google.protobuf.Any m =
@@ -2022,6 +2185,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
      *
+     *
      * - This can be in one of the following formats:
      * - project:PROJECT_ID,
      * - project`_`number:PROJECT_NUMBER,
@@ -2055,6 +2219,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      *
      * - This can be in one of the following formats:
      * - project:PROJECT_ID,
@@ -2090,6 +2255,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
      *
+     *
      * - This can be in one of the following formats:
      * - project:PROJECT_ID,
      * - project`_`number:PROJECT_NUMBER,
@@ -2123,6 +2289,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
      *
+     *
      * - This can be in one of the following formats:
      * - project:PROJECT_ID,
      * - project`_`number:PROJECT_NUMBER,
@@ -2151,6 +2318,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * This field should be filled in for the operations initiated by a
      * consumer, but not for service-initiated operations that are
      * not related to a specific consumer.
+     *
      *
      * - This can be in one of the following formats:
      * - project:PROJECT_ID,
@@ -3875,12 +4043,208 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetUserLabels() {
+      if (userLabels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      return userLabels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableUserLabels() {
+      if (userLabels_ == null) {
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!userLabels_.isMutable()) {
+        userLabels_ = userLabels_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return userLabels_;
+    }
+
+    public int getUserLabelsCount() {
+      return internalGetUserLabels().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetUserLabels().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getUserLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
+      return getUserLabelsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
+      return internalGetUserLabels().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getUserLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearUserLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableUserLabels().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableUserLabels().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Private Preview. This feature is only available for approved services.
+     *
+     * User defined labels for the resource that this operation is associated
+     * with.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; user_labels = 12;</code>
+     */
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
     private java.util.List<com.google.protobuf.Any> extensions_ = java.util.Collections.emptyList();
 
     private void ensureExtensionsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         extensions_ = new java.util.ArrayList<com.google.protobuf.Any>(extensions_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -4102,7 +4466,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
     public Builder clearExtensions() {
       if (extensionsBuilder_ == null) {
         extensions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         extensionsBuilder_.clear();
@@ -4229,7 +4593,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
                 com.google.protobuf.Any,
                 com.google.protobuf.Any.Builder,
                 com.google.protobuf.AnyOrBuilder>(
-                extensions_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+                extensions_, ((bitField0_ & 0x00000400) != 0), getParentForChildren(), isClean());
         extensions_ = null;
       }
       return extensionsBuilder_;

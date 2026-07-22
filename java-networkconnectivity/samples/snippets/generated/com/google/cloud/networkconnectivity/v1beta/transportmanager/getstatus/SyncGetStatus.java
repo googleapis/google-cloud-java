@@ -38,6 +38,7 @@ public class SyncGetStatus {
       GetStatusRequest request =
           GetStatusRequest.newBuilder()
               .setName(TransportName.of("[PROJECT]", "[LOCATION]", "[TRANSPORT]").toString())
+              .setSkipCache(true)
               .build();
       GetStatusResponse response = transportManagerClient.getStatus(request);
     }

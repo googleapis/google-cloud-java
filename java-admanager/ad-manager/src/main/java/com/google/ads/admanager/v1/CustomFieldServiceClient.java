@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomField</td>
- *      <td><p> API to retrieve a `CustomField` object.</td>
+ *      <td><p> Retrieves a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListCustomFields</td>
- *      <td><p> API to retrieve a list of `CustomField` objects.</td>
+ *      <td><p> Lists `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +106,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCustomField</td>
- *      <td><p> API to create a `CustomField` object.</td>
+ *      <td><p> Creates a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateCustomFields</td>
- *      <td><p> API to batch create `CustomField` objects.</td>
+ *      <td><p> Creates `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -141,7 +141,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCustomField</td>
- *      <td><p> API to update a `CustomField` object.</td>
+ *      <td><p> Updates a `CustomField` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -159,7 +159,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateCustomFields</td>
- *      <td><p> API to batch update `CustomField` objects.</td>
+ *      <td><p> Batch updates `CustomField` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -307,7 +307,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -335,7 +335,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -362,7 +362,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -390,7 +390,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomField` object.
+   * Retrieves a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -418,7 +418,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -450,7 +450,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -480,7 +480,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -515,7 +515,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -551,7 +551,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomField` objects.
+   * Lists `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -594,7 +594,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -628,7 +628,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -658,7 +658,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -687,7 +687,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomField` object.
+   * Creates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -716,7 +716,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -753,7 +753,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -790,7 +790,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -821,7 +821,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomField` objects.
+   * Creates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -851,7 +851,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -884,7 +884,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -913,7 +913,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomField` object.
+   * Updates a `CustomField` object.
    *
    * <p>Sample code:
    *
@@ -942,7 +942,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -979,7 +979,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -1016,7 +1016,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *
@@ -1047,7 +1047,7 @@ public class CustomFieldServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomField` objects.
+   * Batch updates `CustomField` objects.
    *
    * <p>Sample code:
    *

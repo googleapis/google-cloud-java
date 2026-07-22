@@ -191,6 +191,17 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * <code>KEY_ENCAPSULATION = 10;</code>
      */
     KEY_ENCAPSULATION(10),
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * for AES key
+     * </pre>
+     *
+     * <code>AES_WRAPPING = 11;</code>
+     */
+    AES_WRAPPING(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -299,6 +310,18 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      */
     public static final int KEY_ENCAPSULATION_VALUE = 10;
 
+    /**
+     *
+     *
+     * <pre>
+     * [CryptoKeys][google.cloud.kms.v1.CryptoKey] with this purpose may be used
+     * for AES key
+     * </pre>
+     *
+     * <code>AES_WRAPPING = 11;</code>
+     */
+    public static final int AES_WRAPPING_VALUE = 11;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -337,6 +360,8 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
           return MAC;
         case 10:
           return KEY_ENCAPSULATION;
+        case 11:
+          return AES_WRAPPING;
         default:
           return null;
       }

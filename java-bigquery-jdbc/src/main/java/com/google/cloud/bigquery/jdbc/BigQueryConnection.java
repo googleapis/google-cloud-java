@@ -205,6 +205,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean filterTablesOnDefaultDataset;
   String sslTrustStorePath;
   String sslTrustStorePassword;
+  String sslTrustStoreType;
+  String sslTrustStoreProvider;
   long maxBytesBilled;
   Map<String, String> labels;
   Integer httpConnectTimeout;
@@ -277,6 +279,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.sslTrustStorePath = ds.getSSLTrustStorePath();
       this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
+      this.sslTrustStoreType = ds.getSSLTrustStoreType();
+      this.sslTrustStoreProvider = ds.getSSLTrustStoreProvider();
       this.httpConnectTimeout = ds.getHttpConnectTimeout();
       this.httpReadTimeout = ds.getHttpReadTimeout();
 
@@ -285,6 +289,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               proxyProperties,
               this.sslTrustStorePath,
               this.sslTrustStorePassword,
+              this.sslTrustStoreType,
+              this.sslTrustStoreProvider,
               this.httpConnectTimeout,
               this.httpReadTimeout,
               this.connectionClassName);
@@ -337,6 +343,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               proxyProperties,
               this.sslTrustStorePath,
               this.sslTrustStorePassword,
+              this.sslTrustStoreType,
+              this.sslTrustStoreProvider,
               this.connectionClassName);
       this.enableSession = ds.getEnableSession();
       this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
