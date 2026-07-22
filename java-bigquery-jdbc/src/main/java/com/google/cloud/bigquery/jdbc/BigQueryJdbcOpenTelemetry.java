@@ -44,6 +44,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -107,7 +108,7 @@ public class BigQueryJdbcOpenTelemetry {
 
   private static final class CachedSdk {
     final OpenTelemetrySdk sdk;
-    final AtomicInteger refCount = new AtomicInteger(0);
+    final AtomicInteger refCount = new AtomicInteger(1);
 
     CachedSdk(OpenTelemetrySdk sdk) {
       this.sdk = sdk;
@@ -210,6 +211,7 @@ public class BigQueryJdbcOpenTelemetry {
       return;
     }
 
+    AtomicBoolean shouldClose = new AtomicBoolean(false);
     for (Map.Entry<SdkCacheKey, CachedSdk> entry : sdkCache.entrySet()) {
       if (entry.getValue().sdk == openTelemetry) {
         sdkCache.computeIfPresent(
@@ -219,19 +221,23 @@ public class BigQueryJdbcOpenTelemetry {
                 return cachedSdk;
               }
               if (cachedSdk.refCount.decrementAndGet() <= 0) {
-                try {
-                  cachedSdk.sdk.close();
-                } catch (Exception e) {
-                  // Swallow exceptions so that telemetry shutdown failures (e.g. flush timeouts)
-                  // do not propagate and disrupt the core BigQueryConnection.close() logic.
-                  // Throwing here could prevent the core connection from cleaning up correctly.
-                  LOG.warning("Failed to close OpenTelemetry SDK: %s", e.getMessage());
-                }
+                shouldClose.set(true);
                 return null;
               }
               return cachedSdk;
             });
         break;
+      }
+    }
+
+    if (shouldClose.get() && openTelemetry instanceof OpenTelemetrySdk) {
+      try {
+        ((OpenTelemetrySdk) openTelemetry).close();
+      } catch (Exception e) {
+        // Swallow exceptions so that telemetry shutdown failures (e.g. flush timeouts)
+        // do not propagate and disrupt the core BigQueryConnection.close() logic.
+        // Throwing here could prevent the core connection from cleaning up correctly.
+        LOG.warning("Failed to close OpenTelemetry SDK: %s", e.getMessage());
       }
     }
   }
@@ -395,9 +401,7 @@ public class BigQueryJdbcOpenTelemetry {
 
               OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
 
-              CachedSdk newCachedSdk = new CachedSdk(sdk);
-              newCachedSdk.refCount.incrementAndGet();
-              return newCachedSdk;
+              return new CachedSdk(sdk);
             })
         .sdk;
   }

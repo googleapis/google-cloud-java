@@ -1102,6 +1102,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
       BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
       BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+      this.openTelemetry = null;
     }
     if (exceptionToThrow != null) {
       throw exceptionToThrow;
