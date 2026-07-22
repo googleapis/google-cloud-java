@@ -83,12 +83,12 @@ public final class MetricValueSetProto extends com.google.protobuf.GeneratedFile
           + "\005value\"g\n"
           + "\016MetricValueSet\022\023\n"
           + "\013metric_name\030\001 \001(\t\022@\n\r"
-          + "metric_values\030\002 \003(\0132).google.api.servicecontrol.v1.MetricValueB\356\001\n"
+          + "metric_values\030\002 \003(\0132).google.api.servicecontrol.v1.MetricValueB\353\001\n"
           + " com.google.api.servicecontrol.v1B\023MetricValue"
           + "SetProtoP\001ZJcloud.google.com/go/servicecontrol/apiv1/servicecontrolpb;servicecon"
-          + "trolpb\370\001\001\252\002\036Google.Cloud.ServiceControl."
-          + "V1\312\002\036Google\\Cloud\\ServiceControl\\V1\352\002!Go"
-          + "ogle::Cloud::ServiceControl::V1b\006proto3"
+          + "trolpb\252\002\036Google.Cloud.ServiceControl.V1\312"
+          + "\002\036Google\\Cloud\\ServiceControl\\V1\352\002!Googl"
+          + "e::Cloud::ServiceControl::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

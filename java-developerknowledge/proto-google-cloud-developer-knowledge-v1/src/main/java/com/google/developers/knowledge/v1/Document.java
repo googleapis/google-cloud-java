@@ -503,6 +503,25 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.developers.knowledge.v1.DocumentView.UNRECOGNIZED : result;
   }
 
+  public static final int CONTENT_LENGTH_BYTES_FIELD_NUMBER = 9;
+  private int contentLengthBytes_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The length of the `content` field in bytes.
+   * </pre>
+   *
+   * <code>int32 content_length_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The contentLengthBytes.
+   */
+  @java.lang.Override
+  public int getContentLengthBytes() {
+    return contentLengthBytes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -542,6 +561,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         != com.google.developers.knowledge.v1.DocumentView.DOCUMENT_VIEW_UNSPECIFIED.getNumber()) {
       output.writeEnum(8, view_);
     }
+    if (contentLengthBytes_ != 0) {
+      output.writeInt32(9, contentLengthBytes_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -576,6 +598,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         != com.google.developers.knowledge.v1.DocumentView.DOCUMENT_VIEW_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, view_);
     }
+    if (contentLengthBytes_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, contentLengthBytes_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -603,6 +628,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (view_ != other.view_) return false;
+    if (getContentLengthBytes() != other.getContentLengthBytes()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -632,6 +658,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    hash = (37 * hash) + CONTENT_LENGTH_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + getContentLengthBytes();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -793,6 +821,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       view_ = 0;
+      contentLengthBytes_ = 0;
       return this;
     }
 
@@ -855,6 +884,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.view_ = view_;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.contentLengthBytes_ = contentLengthBytes_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -905,6 +937,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
+      }
+      if (other.getContentLengthBytes() != 0) {
+        setContentLengthBytes(other.getContentLengthBytes());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -981,6 +1016,12 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 72:
+              {
+                contentLengthBytes_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2018,6 +2059,62 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     public Builder clearView() {
       bitField0_ = (bitField0_ & ~0x00000080);
       view_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int contentLengthBytes_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The length of the `content` field in bytes.
+     * </pre>
+     *
+     * <code>int32 content_length_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The contentLengthBytes.
+     */
+    @java.lang.Override
+    public int getContentLengthBytes() {
+      return contentLengthBytes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The length of the `content` field in bytes.
+     * </pre>
+     *
+     * <code>int32 content_length_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The contentLengthBytes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentLengthBytes(int value) {
+
+      contentLengthBytes_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The length of the `content` field in bytes.
+     * </pre>
+     *
+     * <code>int32 content_length_bytes = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContentLengthBytes() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      contentLengthBytes_ = 0;
       onChanged();
       return this;
     }

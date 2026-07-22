@@ -65,7 +65,7 @@
     <api-common.version>2.66.0-SNAPSHOT</api-common.version><!-- {x-version-update:api-common:current} -->
     <auto-value.version>1.11.0</auto-value.version>
     <error-prone-annotations.version>2.48.0</error-prone-annotations.version>
-    <google-http-client.version>2.1.1</google-http-client.version>
+    <google-http-client.version>2.2.0</google-http-client.version>
     <gson.version>2.13.2</gson.version>
     <guava.version>33.5.0-jre</guava.version>
     <protobuf.version>4.33.2</protobuf.version>

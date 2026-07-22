@@ -293,4 +293,27 @@ class BigQueryResultImplTest {
 
     assertThat(resultSet.next()).isFalse();
   }
+
+  @Test
+  void testResultSetReadApiGetLongByColumnIndexPreservesInt64Value()
+      throws InterruptedException, SQLException {
+    long largeInt64Value = 3_000_000_000L;
+    BlockingQueue<BigQueryResultImpl.Row> buffer = new LinkedBlockingDeque<>(BUFFER_SIZE);
+
+    Map<String, Object> rowValues = new HashMap<>();
+    rowValues.put("long", largeInt64Value);
+    buffer.put(new BigQueryResultImpl.Row(rowValues));
+    buffer.put(new BigQueryResultImpl.Row(null, true)); // End of buffer marker.
+
+    BigQueryResultImpl<BigQueryResultImpl.Row> bigQueryResult =
+        new BigQueryResultImpl<>(SCHEMA, 1, buffer, null);
+    ResultSet resultSet = bigQueryResult.getResultSet();
+
+    assertThat(resultSet.next()).isTrue();
+    assertThat(resultSet.getLong(1)).isEqualTo(largeInt64Value);
+    assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.getLong("long")).isEqualTo(largeInt64Value);
+    assertThat(resultSet.wasNull()).isFalse();
+    assertThat(resultSet.next()).isFalse();
+  }
 }

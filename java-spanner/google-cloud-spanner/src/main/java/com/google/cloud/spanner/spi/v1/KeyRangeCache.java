@@ -28,6 +28,7 @@ import com.google.spanner.v1.Range;
 import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.Tablet;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -678,6 +679,21 @@ public final class KeyRangeCache {
     }
   }
 
+  private static final class TabletFreshnessBaseline {
+    final ByteString incarnation;
+    final String serverAddress;
+    final boolean requiresNewerIncarnationForFirstAddress;
+
+    private TabletFreshnessBaseline(
+        ByteString incarnation,
+        String serverAddress,
+        boolean requiresNewerIncarnationForFirstAddress) {
+      this.incarnation = incarnation;
+      this.serverAddress = serverAddress;
+      this.requiresNewerIncarnationForFirstAddress = requiresNewerIncarnationForFirstAddress;
+    }
+  }
+
   private static final class GroupSnapshot {
     final ByteString generation;
     final int leaderIndex;
@@ -703,6 +719,7 @@ public final class KeyRangeCache {
     final long groupUid;
     volatile GroupSnapshot snapshot = EMPTY_GROUP_SNAPSHOT;
     int refs = 1;
+    private final Map<Long, TabletFreshnessBaseline> freshnessBaselineByTabletUid = new HashMap<>();
 
     CachedGroup(long groupUid) {
       this.groupUid = groupUid;
@@ -710,10 +727,18 @@ public final class KeyRangeCache {
 
     void update(Group groupIn) {
       GroupSnapshot current = snapshot;
+      int generationCmp = compare(groupIn.getGeneration(), current.generation);
+      // Response-carried cache updates may arrive out of order. Older group information must not
+      // overwrite newer tablet membership and reintroduce an unavailable tablet.
+      if (generationCmp < 0) {
+        return;
+      }
+
       ByteString generation = current.generation;
       int leaderIndex = current.leaderIndex;
-      if (compare(groupIn.getGeneration(), generation) > 0) {
+      if (generationCmp > 0) {
         generation = groupIn.getGeneration();
+        freshnessBaselineByTabletUid.clear();
         if (groupIn.getLeaderIndex() >= 0 && groupIn.getLeaderIndex() < groupIn.getTabletsCount()) {
           leaderIndex = groupIn.getLeaderIndex();
         } else {
@@ -721,11 +746,105 @@ public final class KeyRangeCache {
         }
       }
 
-      List<TabletSnapshot> tablets = new ArrayList<>(groupIn.getTabletsCount());
-      for (int t = 0; t < groupIn.getTabletsCount(); t++) {
-        tablets.add(new TabletSnapshot(groupIn.getTablets(t)));
+      List<TabletSnapshot> tablets;
+      if (generationCmp == 0) {
+        // Frontend-local location caches can disagree about availability at the same Paxos
+        // generation. Tablet incarnation is the authoritative per-tablet freshness signal.
+        tablets = mergeEqualGenerationTablets(current.tablets, groupIn);
+      } else {
+        tablets = new ArrayList<>(groupIn.getTabletsCount());
+        for (int t = 0; t < groupIn.getTabletsCount(); t++) {
+          TabletSnapshot tablet = new TabletSnapshot(groupIn.getTablets(t));
+          tablets.add(tablet);
+          rememberFreshnessBaseline(tablet);
+        }
       }
       snapshot = new GroupSnapshot(generation, leaderIndex, tablets);
+    }
+
+    /** Reconciles equal-generation tablets against generation-scoped freshness baselines. */
+    private List<TabletSnapshot> mergeEqualGenerationTablets(
+        List<TabletSnapshot> currentTablets, Group groupIn) {
+      Map<Long, TabletSnapshot> currentByUid = new HashMap<>();
+      for (TabletSnapshot tablet : currentTablets) {
+        currentByUid.put(tablet.tabletUid, tablet);
+      }
+
+      List<TabletSnapshot> tablets = new ArrayList<>(groupIn.getTabletsCount());
+      for (int t = 0; t < groupIn.getTabletsCount(); t++) {
+        TabletSnapshot incoming = new TabletSnapshot(groupIn.getTablets(t));
+        TabletSnapshot previous = currentByUid.get(incoming.tabletUid);
+        TabletFreshnessBaseline baseline = freshnessBaselineByTabletUid.get(incoming.tabletUid);
+        boolean makesRoutable = !incoming.skip && !incoming.serverAddress.isEmpty();
+        int incarnationCmp =
+            baseline == null ? 1 : compare(incoming.incarnation, baseline.incarnation);
+        boolean hasNewerIncarnation =
+            baseline != null && !incoming.incarnation.isEmpty() && incarnationCmp > 0;
+        boolean hasOlderFirstAddress =
+            baseline != null && baseline.serverAddress.isEmpty() && incarnationCmp < 0;
+        boolean changesProvenAddress =
+            baseline != null
+                && !baseline.serverAddress.isEmpty()
+                && !incoming.serverAddress.equals(baseline.serverAddress);
+        boolean requiresFreshFirstAddress =
+            baseline != null
+                && baseline.serverAddress.isEmpty()
+                && baseline.requiresNewerIncarnationForFirstAddress;
+        boolean latchesFirstAddressFreshness =
+            baseline != null
+                && baseline.serverAddress.isEmpty()
+                && incoming.skip
+                && incoming.serverAddress.isEmpty()
+                && incarnationCmp >= 0;
+        // Routability depends only on incoming metadata and the freshness baseline. Intermediate
+        // skip, missing-address, and omission states cannot relax a proven address change.
+        boolean refusesStaleAddressChange =
+            makesRoutable
+                && (hasOlderFirstAddress
+                    || ((changesProvenAddress || requiresFreshFirstAddress)
+                        && !hasNewerIncarnation));
+        if (refusesStaleAddressChange) {
+          if (previous != null) {
+            tablets.add(previous);
+          }
+        } else {
+          tablets.add(incoming);
+          if (baseline == null
+              || makesRoutable
+              || hasNewerIncarnation
+              || latchesFirstAddressFreshness) {
+            rememberFreshnessBaseline(incoming);
+          }
+        }
+      }
+      return tablets;
+    }
+
+    private void rememberFreshnessBaseline(TabletSnapshot tablet) {
+      TabletFreshnessBaseline baseline = freshnessBaselineByTabletUid.get(tablet.tabletUid);
+      int incarnationCmp = baseline == null ? 1 : compare(tablet.incarnation, baseline.incarnation);
+      boolean hasNewerIncarnation = incarnationCmp > 0;
+      ByteString incarnation = hasNewerIncarnation ? tablet.incarnation : baseline.incarnation;
+      String serverAddress = baseline == null ? "" : baseline.serverAddress;
+      boolean requiresNewerIncarnationForFirstAddress =
+          baseline != null && baseline.requiresNewerIncarnationForFirstAddress;
+      if (!tablet.serverAddress.isEmpty() && incarnationCmp >= 0) {
+        serverAddress = tablet.serverAddress;
+        requiresNewerIncarnationForFirstAddress = false;
+      } else if (hasNewerIncarnation) {
+        // Missing-address metadata can accept its first address at the same incarnation. A skipped
+        // empty-address baseline still requires freshness before resurrection.
+        requiresNewerIncarnationForFirstAddress = tablet.skip;
+      } else if (serverAddress.isEmpty()
+          && tablet.skip
+          && tablet.serverAddress.isEmpty()
+          && incarnationCmp == 0) {
+        requiresNewerIncarnationForFirstAddress = true;
+      }
+      freshnessBaselineByTabletUid.put(
+          tablet.tabletUid,
+          new TabletFreshnessBaseline(
+              incarnation, serverAddress, requiresNewerIncarnationForFirstAddress));
     }
 
     RouteLookupResult lookupRoutingHint(
@@ -756,7 +875,10 @@ public final class KeyRangeCache {
               selectionStats);
       if (selected == null) {
         RouteFailureReason failureReason = selectionStats.toFailureReason();
-        if (failureReason == RouteFailureReason.ALL_EXCLUDED_OR_COOLDOWN) {
+        // A skipped or addressless tablet can make the aggregate reason NO_ROUTABLE_REPLICA even
+        // when every otherwise usable replica is cooling.
+        if (failureReason == RouteFailureReason.ALL_EXCLUDED_OR_COOLDOWN
+            || selectionStats.sawExcludedReplica) {
           TabletSnapshot preferredLeader =
               preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
           selected =
@@ -765,6 +887,7 @@ public final class KeyRangeCache {
                   preferLeader,
                   directedReadOptions,
                   hintBuilder,
+                  excludedEndpoints,
                   resolvedEndpoints,
                   preferredLeader);
           if (selected != null) {
@@ -1035,12 +1158,16 @@ public final class KeyRangeCache {
         boolean preferLeader,
         DirectedReadOptions directedReadOptions,
         RoutingHint.Builder hintBuilder,
+        Predicate<String> excludedEndpoints,
         Map<String, ChannelEndpoint> resolvedEndpoints,
         @javax.annotation.Nullable TabletSnapshot preferredLeader) {
       long operationUid = hintBuilder.getOperationUid();
       List<EligibleReplica> candidates = new ArrayList<>();
       for (TabletSnapshot tablet : snapshot.tablets) {
-        if (!tablet.matches(directedReadOptions) || tablet.skip || tablet.serverAddress.isEmpty()) {
+        if (!tablet.matches(directedReadOptions)
+            || tablet.skip
+            || tablet.serverAddress.isEmpty()
+            || !excludedEndpoints.test(tablet.serverAddress)) {
           continue;
         }
         ChannelEndpoint endpoint = resolveEndpoint(tablet, resolvedEndpoints);
@@ -1054,6 +1181,32 @@ public final class KeyRangeCache {
                 selectionCost(operationUid, preferLeader, endpoint, tablet, preferredLeader)));
       }
       if (candidates.isEmpty()) {
+        return null;
+      }
+      if (excludedEndpoints instanceof EndpointOverloadCooldownTracker) {
+        EndpointOverloadCooldownTracker cooldowns =
+            (EndpointOverloadCooldownTracker) excludedEndpoints;
+        candidates.sort(
+            (first, second) -> {
+              Instant firstFailure = cooldowns.getLastOverloadFailureAt(first.tablet.serverAddress);
+              Instant secondFailure =
+                  cooldowns.getLastOverloadFailureAt(second.tablet.serverAddress);
+              if (firstFailure == null) {
+                return secondFailure == null ? 0 : 1;
+              }
+              if (secondFailure == null) {
+                return -1;
+              }
+              int failureComparison = firstFailure.compareTo(secondFailure);
+              return failureComparison != 0
+                  ? failureComparison
+                  : Double.compare(first.selectionCost, second.selectionCost);
+            });
+        for (EligibleReplica candidate : candidates) {
+          if (cooldowns.tryReserveProbe(candidate.tablet.serverAddress)) {
+            return candidate.tablet;
+          }
+        }
         return null;
       }
       return selectEligibleReplica(candidates).tablet;

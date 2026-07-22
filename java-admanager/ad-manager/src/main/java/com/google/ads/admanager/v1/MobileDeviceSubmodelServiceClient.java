@@ -69,7 +69,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetMobileDeviceSubmodel</td>
- *      <td><p> API to retrieve a `MobileDeviceSubmodel` object.</td>
+ *      <td><p> Retrieves a `MobileDeviceSubmodel` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListMobileDeviceSubmodels</td>
- *      <td><p> API to retrieve a list of `MobileDeviceSubmodel` objects.</td>
+ *      <td><p> Lists `MobileDeviceSubmodel` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -205,7 +205,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDeviceSubmodel` object.
+   * Retrieves a `MobileDeviceSubmodel` object.
    *
    * <p>Sample code:
    *
@@ -239,7 +239,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDeviceSubmodel` object.
+   * Retrieves a `MobileDeviceSubmodel` object.
    *
    * <p>Sample code:
    *
@@ -270,7 +270,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDeviceSubmodel` object.
+   * Retrieves a `MobileDeviceSubmodel` object.
    *
    * <p>Sample code:
    *
@@ -303,7 +303,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDeviceSubmodel` object.
+   * Retrieves a `MobileDeviceSubmodel` object.
    *
    * <p>Sample code:
    *
@@ -335,7 +335,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDeviceSubmodel` objects.
+   * Lists `MobileDeviceSubmodel` objects.
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDeviceSubmodel` objects.
+   * Lists `MobileDeviceSubmodel` objects.
    *
    * <p>Sample code:
    *
@@ -402,7 +402,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDeviceSubmodel` objects.
+   * Lists `MobileDeviceSubmodel` objects.
    *
    * <p>Sample code:
    *
@@ -440,7 +440,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDeviceSubmodel` objects.
+   * Lists `MobileDeviceSubmodel` objects.
    *
    * <p>Sample code:
    *
@@ -480,7 +480,7 @@ public class MobileDeviceSubmodelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDeviceSubmodel` objects.
+   * Lists `MobileDeviceSubmodel` objects.
    *
    * <p>Sample code:
    *

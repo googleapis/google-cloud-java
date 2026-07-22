@@ -147,6 +147,12 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
     return ((TransportManagerStubSettings) getStubSettings()).getRemoteTransportProfileSettings();
   }
 
+  /** Returns the object with the settings used for calls to parseFromActivationKey. */
+  public UnaryCallSettings<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeySettings() {
+    return ((TransportManagerStubSettings) getStubSettings()).parseFromActivationKeySettings();
+  }
+
   /** Returns the object with the settings used for calls to listTransports. */
   public PagedCallSettings<
           ListTransportsRequest, ListTransportsResponse, ListTransportsPagedResponse>
@@ -333,6 +339,12 @@ public class TransportManagerSettings extends ClientSettings<TransportManagerSet
     public UnaryCallSettings.Builder<GetRemoteTransportProfileRequest, RemoteTransportProfile>
         getRemoteTransportProfileSettings() {
       return getStubSettingsBuilder().getRemoteTransportProfileSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to parseFromActivationKey. */
+    public UnaryCallSettings.Builder<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+        parseFromActivationKeySettings() {
+      return getStubSettingsBuilder().parseFromActivationKeySettings();
     }
 
     /** Returns the builder for the settings used for calls to listTransports. */

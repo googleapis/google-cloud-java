@@ -61,6 +61,7 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     flow_ = 0;
     orderState_ = 0;
     displayName_ = "";
+    providerType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1070,6 +1071,178 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(enum_scope:google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Provider type for this profile.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType}
+   */
+  public enum ProviderType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified provider type.
+     * </pre>
+     *
+     * <code>PROVIDER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    PROVIDER_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Represents a Cloud service provider.
+     * </pre>
+     *
+     * <code>CLOUD = 1;</code>
+     */
+    CLOUD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Represents a Network service provider.
+     * </pre>
+     *
+     * <code>NETWORK = 2;</code>
+     */
+    NETWORK(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ProviderType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified provider type.
+     * </pre>
+     *
+     * <code>PROVIDER_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROVIDER_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a Cloud service provider.
+     * </pre>
+     *
+     * <code>CLOUD = 1;</code>
+     */
+    public static final int CLOUD_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a Network service provider.
+     * </pre>
+     *
+     * <code>NETWORK = 2;</code>
+     */
+    public static final int NETWORK_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ProviderType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ProviderType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROVIDER_TYPE_UNSPECIFIED;
+        case 1:
+          return CLOUD;
+        case 2:
+          return NETWORK;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ProviderType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ProviderType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ProviderType>() {
+          public ProviderType findValueByNumber(int number) {
+            return ProviderType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.getDescriptor()
+          .getEnumTypes()
+          .get(4);
+    }
+
+    private static final ProviderType[] VALUES = values();
+
+    public static ProviderType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ProviderType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType)
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1717,6 +1890,52 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int PROVIDER_TYPE_FIELD_NUMBER = 14;
+  private int providerType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provider type for this profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for providerType.
+   */
+  @java.lang.Override
+  public int getProviderTypeValue() {
+    return providerType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provider type for this profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The providerType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+      getProviderType() {
+    com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType result =
+        com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType.forNumber(
+            providerType_);
+    return result == null
+        ? com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1773,6 +1992,12 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 13, displayName_);
+    }
+    if (providerType_
+        != com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+            .PROVIDER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, providerType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1840,6 +2065,12 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(13, displayName_);
     }
+    if (providerType_
+        != com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+            .PROVIDER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, providerType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1866,6 +2097,7 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     if (flow_ != other.flow_) return false;
     if (orderState_ != other.orderState_) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (providerType_ != other.providerType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1901,6 +2133,8 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + orderState_;
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + PROVIDER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + providerType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2076,6 +2310,7 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
       flow_ = 0;
       orderState_ = 0;
       displayName_ = "";
+      providerType_ = 0;
       return this;
     }
 
@@ -2147,6 +2382,9 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.displayName_ = displayName_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.providerType_ = providerType_;
+      }
     }
 
     @java.lang.Override
@@ -2211,6 +2449,9 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000200;
         onChanged();
+      }
+      if (other.providerType_ != 0) {
+        setProviderTypeValue(other.getProviderTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2316,6 +2557,12 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000200;
                 break;
               } // case 106
+            case 112:
+              {
+                providerType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3712,6 +3959,117 @@ public final class RemoteTransportProfile extends com.google.protobuf.GeneratedM
       checkByteStringIsUtf8(value);
       displayName_ = value;
       bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private int providerType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provider type for this profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for providerType.
+     */
+    @java.lang.Override
+    public int getProviderTypeValue() {
+      return providerType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provider type for this profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for providerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderTypeValue(int value) {
+      providerType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provider type for this profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The providerType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+        getProviderType() {
+      com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType result =
+          com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType.forNumber(
+              providerType_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provider type for this profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The providerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderType(
+        com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      providerType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provider type for this profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1beta.RemoteTransportProfile.ProviderType provider_type = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProviderType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      providerType_ = 0;
       onChanged();
       return this;
     }

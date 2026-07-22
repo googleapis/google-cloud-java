@@ -39,6 +39,8 @@ import com.google.cloud.networkconnectivity.v1beta.ListRemoteTransportProfilesRe
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsRequest;
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsResponse;
 import com.google.cloud.networkconnectivity.v1beta.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse;
 import com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile;
 import com.google.cloud.networkconnectivity.v1beta.Transport;
 import com.google.cloud.networkconnectivity.v1beta.UpdateTransportRequest;
@@ -84,6 +86,11 @@ public abstract class TransportManagerStub implements BackgroundResource {
   public UnaryCallable<GetRemoteTransportProfileRequest, RemoteTransportProfile>
       getRemoteTransportProfileCallable() {
     throw new UnsupportedOperationException("Not implemented: getRemoteTransportProfileCallable()");
+  }
+
+  public UnaryCallable<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: parseFromActivationKeyCallable()");
   }
 
   public UnaryCallable<ListTransportsRequest, ListTransportsPagedResponse>

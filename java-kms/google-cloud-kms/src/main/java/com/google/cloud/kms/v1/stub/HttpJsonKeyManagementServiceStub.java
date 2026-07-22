@@ -60,6 +60,8 @@ import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse;
 import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
@@ -70,6 +72,7 @@ import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
+import com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -601,6 +604,10 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                                 fields,
                                 "skipInitialVersionCreation",
                                 request.getSkipInitialVersionCreation());
+                            serializer.putQueryParam(
+                                fields,
+                                "trustedWrappingEnabled",
+                                request.getTrustedWrappingEnabled());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -760,6 +767,92 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
                       .setDefaultInstance(CryptoKeyVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionMethodDescriptor =
+          ApiMethodDescriptor
+              .<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService/ImportTrustedKeyWrappedCryptoKeyVersion")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ImportTrustedKeyWrappedCryptoKeyVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/keyRings/*/cryptoKeys/*}/cryptoKeyVersions:importTrustedKeyWrappedCryptoKeyVersion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportTrustedKeyWrappedCryptoKeyVersionRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ImportTrustedKeyWrappedCryptoKeyVersionRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CryptoKeyVersion>newBuilder()
+                      .setDefaultInstance(CryptoKeyVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionMethodDescriptor =
+          ApiMethodDescriptor
+              .<ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                  ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService/ExportTrustedKeyWrappedCryptoKeyVersion")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ExportTrustedKeyWrappedCryptoKeyVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:exportTrustedKeyWrappedCryptoKeyVersion",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportTrustedKeyWrappedCryptoKeyVersionRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExportTrustedKeyWrappedCryptoKeyVersionRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "wrappingKey", request.getWrappingKey());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<ExportTrustedKeyWrappedCryptoKeyVersionResponse>newBuilder()
+                      .setDefaultInstance(
+                          ExportTrustedKeyWrappedCryptoKeyVersionResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1595,6 +1688,12 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
       deleteCryptoKeyVersionOperationCallable;
   private final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable;
+  private final UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable;
+  private final UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable;
   private final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable;
   private final UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable;
   private final UnaryCallable<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -1897,6 +1996,37 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionTransportSettings =
+            HttpJsonCallSettings
+                .<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+                .setMethodDescriptor(importTrustedKeyWrappedCryptoKeyVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionTransportSettings =
+            HttpJsonCallSettings
+                .<ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                    ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+                    newBuilder()
+                .setMethodDescriptor(exportTrustedKeyWrappedCryptoKeyVersionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         HttpJsonCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
@@ -2252,6 +2382,16 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
             importCryptoKeyVersionTransportSettings,
             settings.importCryptoKeyVersionSettings(),
             clientContext);
+    this.importTrustedKeyWrappedCryptoKeyVersionCallable =
+        callableFactory.createUnaryCallable(
+            importTrustedKeyWrappedCryptoKeyVersionTransportSettings,
+            settings.importTrustedKeyWrappedCryptoKeyVersionSettings(),
+            clientContext);
+    this.exportTrustedKeyWrappedCryptoKeyVersionCallable =
+        callableFactory.createUnaryCallable(
+            exportTrustedKeyWrappedCryptoKeyVersionTransportSettings,
+            settings.exportTrustedKeyWrappedCryptoKeyVersionSettings(),
+            clientContext);
     this.createImportJobCallable =
         callableFactory.createUnaryCallable(
             createImportJobTransportSettings, settings.createImportJobSettings(), clientContext);
@@ -2357,6 +2497,8 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     methodDescriptors.add(deleteCryptoKeyMethodDescriptor);
     methodDescriptors.add(deleteCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(importCryptoKeyVersionMethodDescriptor);
+    methodDescriptors.add(importTrustedKeyWrappedCryptoKeyVersionMethodDescriptor);
+    methodDescriptors.add(exportTrustedKeyWrappedCryptoKeyVersionMethodDescriptor);
     methodDescriptors.add(createImportJobMethodDescriptor);
     methodDescriptors.add(updateCryptoKeyMethodDescriptor);
     methodDescriptors.add(updateCryptoKeyVersionMethodDescriptor);
@@ -2513,6 +2655,20 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable() {
     return importCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return importTrustedKeyWrappedCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return exportTrustedKeyWrappedCryptoKeyVersionCallable;
   }
 
   @Override
