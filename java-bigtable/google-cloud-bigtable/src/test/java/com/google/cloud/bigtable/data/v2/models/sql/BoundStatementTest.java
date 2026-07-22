@@ -893,28 +893,6 @@ public class BoundStatementTest {
   }
 
   @Test
-  public void statementWithStringViewParametersMap() {
-    Value stringVal = Value.newBuilder().setType(stringType()).setStringValue("alice").build();
-    Value locationVal = Value.newBuilder().setType(stringType()).setStringValue("us-east1").build();
-
-    HashMap<String, String> viewParams = new HashMap<>();
-    viewParams.put("user_id", "alice");
-    viewParams.put("location", "us-east1");
-
-    BoundStatement s = boundStatementBuilder().setStringViewParameters(viewParams).build();
-
-    assertThat(s.toProto(EXPECTED_PREPARED_QUERY, REQUEST_CONTEXT, NO_RESUME_TOKEN))
-        .isEqualTo(
-            ExecuteQueryRequest.newBuilder()
-                .setPreparedQuery(EXPECTED_PREPARED_QUERY)
-                .setInstanceName(EXPECTED_INSTANCE_NAME)
-                .setAppProfileId(EXPECTED_APP_PROFILE)
-                .putViewParameters("user_id", stringVal)
-                .putViewParameters("location", locationVal)
-                .build());
-  }
-
-  @Test
   public void statementWithNullStringViewParameter() {
     Value nullStringVal = Value.newBuilder().setType(stringType()).build();
 
@@ -932,10 +910,9 @@ public class BoundStatementTest {
   }
 
   @Test
-  public void setStringViewParametersNullChecks() {
+  public void setStringViewParameterNullChecks() {
     BoundStatement.Builder builder = boundStatementBuilder();
 
     assertThrows(NullPointerException.class, () -> builder.setStringViewParameter(null, "alice"));
-    assertThrows(NullPointerException.class, () -> builder.setStringViewParameters(null));
   }
 }
