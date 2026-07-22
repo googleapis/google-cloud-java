@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetCmsMetadataValue</td>
- *      <td><p> API to retrieve a `CmsMetadataValue` object.</td>
+ *      <td><p> Retrieves a `CmsMetadataValue` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListCmsMetadataValues</td>
- *      <td><p> API to retrieve a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Lists `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +106,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCmsMetadataValues</td>
- *      <td><p> API to activate a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Activates a list of `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateCmsMetadataValues</td>
- *      <td><p> API to deactivate a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Deactivates a list of `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -239,7 +239,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -270,7 +270,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -299,7 +299,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -328,7 +328,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -358,7 +358,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -393,7 +393,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -425,7 +425,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -463,7 +463,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -500,7 +500,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -544,7 +544,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -581,7 +581,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -618,7 +618,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -650,7 +650,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -684,7 +684,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -721,7 +721,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -758,7 +758,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -790,7 +790,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *

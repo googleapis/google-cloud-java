@@ -151,6 +151,7 @@ public class DeveloperKnowledgeClientHttpJsonTest {
             .setTitle("title110371416")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setView(DocumentView.forNumber(0))
+            .setContentLengthBytes(228531160)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -202,6 +203,7 @@ public class DeveloperKnowledgeClientHttpJsonTest {
             .setTitle("title110371416")
             .setUpdateTime(Timestamp.newBuilder().build())
             .setView(DocumentView.forNumber(0))
+            .setContentLengthBytes(228531160)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -285,6 +287,49 @@ public class DeveloperKnowledgeClientHttpJsonTest {
               .setView(DocumentView.forNumber(0))
               .build();
       client.batchGetDocuments(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void answerQueryTest() throws Exception {
+    AnswerQueryResponse expectedResponse =
+        AnswerQueryResponse.newBuilder().setAnswer(Answer.newBuilder().build()).build();
+    mockService.addResponse(expectedResponse);
+
+    AnswerQueryRequest request = AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+
+    AnswerQueryResponse actualResponse = client.answerQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void answerQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AnswerQueryRequest request =
+          AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+      client.answerQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

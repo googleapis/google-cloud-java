@@ -208,6 +208,9 @@
             "Encrypt": {
               "methods": ["encrypt", "encrypt", "encrypt", "encryptCallable"]
             },
+            "ExportTrustedKeyWrappedCryptoKeyVersion": {
+              "methods": ["exportTrustedKeyWrappedCryptoKeyVersion", "exportTrustedKeyWrappedCryptoKeyVersionCallable"]
+            },
             "GenerateRandomBytes": {
               "methods": ["generateRandomBytes", "generateRandomBytes", "generateRandomBytesCallable"]
             },
@@ -237,6 +240,9 @@
             },
             "ImportCryptoKeyVersion": {
               "methods": ["importCryptoKeyVersion", "importCryptoKeyVersionCallable"]
+            },
+            "ImportTrustedKeyWrappedCryptoKeyVersion": {
+              "methods": ["importTrustedKeyWrappedCryptoKeyVersion", "importTrustedKeyWrappedCryptoKeyVersionCallable"]
             },
             "ListCryptoKeyVersions": {
               "methods": ["listCryptoKeyVersions", "listCryptoKeyVersions", "listCryptoKeyVersions", "listCryptoKeyVersionsPagedCallable", "listCryptoKeyVersionsCallable"]
