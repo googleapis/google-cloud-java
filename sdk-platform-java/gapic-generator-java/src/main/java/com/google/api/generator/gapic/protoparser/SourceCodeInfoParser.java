@@ -35,7 +35,8 @@ import com.google.protobuf.Descriptors.MethodDescriptor;
 import com.google.protobuf.Descriptors.OneofDescriptor;
 import com.google.protobuf.Descriptors.ServiceDescriptor;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A helper class which provides protocol buffer source info for descriptors.
@@ -48,6 +49,7 @@ import javax.annotation.Nullable;
  * If you think you need this functionality in a thread-safe context, feel free to suggest a
  * refactor.
  */
+@NullMarked
 public class SourceCodeInfoParser {
   /**
    * A map from file descriptors to the analyzed source info, stored as a multimap from a path of
@@ -60,8 +62,7 @@ public class SourceCodeInfoParser {
   private final Map<Object, String> descriptorToPath = Maps.newHashMap();
 
   /** Gets the location of a message, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(Descriptor message) {
+  public @Nullable SourceCodeInfoLocation getLocation(Descriptor message) {
     FileDescriptor file = message.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -70,8 +71,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of a field, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(FieldDescriptor field) {
+  public @Nullable SourceCodeInfoLocation getLocation(FieldDescriptor field) {
     FileDescriptor file = field.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -81,8 +81,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of a service, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(ServiceDescriptor service) {
+  public @Nullable SourceCodeInfoLocation getLocation(ServiceDescriptor service) {
     FileDescriptor file = service.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -91,8 +90,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of a method, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(MethodDescriptor method) {
+  public @Nullable SourceCodeInfoLocation getLocation(MethodDescriptor method) {
     FileDescriptor file = method.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -101,8 +99,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of an enum type, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(EnumDescriptor enumType) {
+  public @Nullable SourceCodeInfoLocation getLocation(EnumDescriptor enumType) {
     FileDescriptor file = enumType.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -111,8 +108,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of an enum value, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(EnumValueDescriptor enumValue) {
+  public @Nullable SourceCodeInfoLocation getLocation(EnumValueDescriptor enumValue) {
     FileDescriptor file = enumValue.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -121,8 +117,7 @@ public class SourceCodeInfoParser {
   }
 
   /** Gets the location of a oneof, if available. */
-  @Nullable
-  public SourceCodeInfoLocation getLocation(OneofDescriptor oneof) {
+  public @Nullable SourceCodeInfoLocation getLocation(OneofDescriptor oneof) {
     FileDescriptor file = oneof.getFile();
     if (!file.toProto().hasSourceCodeInfo()) {
       return null;
@@ -136,7 +131,7 @@ public class SourceCodeInfoParser {
   /**
    * A helper to compute the location based on a file descriptor and a path into that descriptor.
    */
-  private Location getLocation(FileDescriptor file, String path) {
+  private @Nullable Location getLocation(FileDescriptor file, String path) {
     ImmutableList<Location> cands = getCandidateLocations(file, path);
     if (cands != null && cands.isEmpty()) {
       return null;

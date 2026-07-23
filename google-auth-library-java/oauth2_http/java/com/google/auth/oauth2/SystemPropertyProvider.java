@@ -32,12 +32,14 @@ package com.google.auth.oauth2;
 
 import com.google.api.core.InternalApi;
 import java.io.Serializable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Represents the default system property provider.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 public class SystemPropertyProvider implements PropertyProvider, Serializable {
   public static final SystemPropertyProvider INSTANCE = new SystemPropertyProvider();

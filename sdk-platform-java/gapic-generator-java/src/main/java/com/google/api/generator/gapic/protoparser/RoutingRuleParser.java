@@ -27,10 +27,13 @@ import com.google.protobuf.DescriptorProtos.MethodOptions;
 import com.google.protobuf.Descriptors.MethodDescriptor;
 import java.util.Map;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class RoutingRuleParser {
 
-  public static RoutingHeaderRule parse(
+  public static @Nullable RoutingHeaderRule parse(
       MethodDescriptor protoMethod, Message inputMessage, Map<String, Message> messageTypes) {
     MethodOptions methodOptions = protoMethod.getOptions();
     if (!methodOptions.hasExtension(RoutingProto.routing)) {

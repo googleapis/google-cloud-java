@@ -38,7 +38,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HttpJsonServiceCallableFactoryClassComposer
     extends AbstractServiceCallableFactoryClassComposer {
   private static final HttpJsonServiceCallableFactoryClassComposer INSTANCE =

@@ -31,7 +31,9 @@ import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.Service;
 import java.util.Arrays;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class LibraryVersionClassComposer {
   private static final LibraryVersionClassComposer INSTANCE = new LibraryVersionClassComposer();
 

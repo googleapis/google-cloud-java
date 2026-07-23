@@ -35,7 +35,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ResourceNameParser {
   /** Returns a map of resource types (strings) to ResourceName POJOs. */
   public static Map<String, ResourceName> parseResourceNames(
@@ -142,7 +145,7 @@ public class ResourceNameParser {
   }
 
   private static Optional<ResourceName> createResourceName(
-      ResourceDescriptor protoResource, String pakkage, String parentMessageName) {
+      ResourceDescriptor protoResource, String pakkage, @Nullable String parentMessageName) {
     // We may need to modify this list.
     List<String> patterns = new ArrayList<>(protoResource.getPatternList());
     Preconditions.checkState(

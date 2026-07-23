@@ -17,7 +17,9 @@ package com.google.api.generator.engine.writer;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public final class JavaFormatter {
 
   private static final Formatter FORMATTER = new Formatter();

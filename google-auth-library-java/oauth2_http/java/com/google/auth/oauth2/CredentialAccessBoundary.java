@@ -38,7 +38,8 @@ import com.google.api.client.json.GenericJson;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Defines an upper bound of permissions available for a GCP credential via {@link
@@ -47,6 +48,7 @@ import javax.annotation.Nullable;
  * <p>See <a href='https://cloud.google.com/iam/docs/downscoping-short-lived-credentials'>for more
  * information.</a>
  */
+@NullMarked
 public final class CredentialAccessBoundary {
 
   private static final int RULES_SIZE_LIMIT = 10;

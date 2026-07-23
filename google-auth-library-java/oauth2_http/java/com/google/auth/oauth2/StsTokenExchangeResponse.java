@@ -37,7 +37,8 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Represents a successful OAuth 2.0 token exchange response from the Google Security Token Service
@@ -51,6 +52,7 @@ import javax.annotation.Nullable;
  * <p>Instances are immutable. Use {@link #newBuilder(String, String, String)} to create an
  * instance.
  */
+@NullMarked
 public final class StsTokenExchangeResponse {
   private final AccessToken accessToken;
   private final String issuedTokenType;

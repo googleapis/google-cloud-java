@@ -47,8 +47,10 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 /** A wrapper for using Credentials with the Google API Client Libraries for Java with Http. */
+@NullMarked
 public class HttpCredentialsAdapter
     implements HttpRequestInitializer, HttpUnsuccessfulResponseHandler {
 

@@ -26,7 +26,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class GapicServiceConfig {
   public static final RetryPolicy EMPTY_RETRY_POLICY = RetryPolicy.newBuilder().build();
   public static final Duration EMPTY_TIMEOUT = Duration.newBuilder().setSeconds(5).build();

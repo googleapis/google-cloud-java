@@ -24,10 +24,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
+@NullMarked
 public class GapicLanguageSettingsParser {
   private static final String YAML_KEY_LANGUAGE_SETTINGS = "language_settings";
   private static final String YAML_KEY_JAVA = "java";

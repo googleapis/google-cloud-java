@@ -16,7 +16,9 @@
 package com.google.api.generator.gapic.model;
 
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class OperationResponse {
   public abstract String nameFieldName();

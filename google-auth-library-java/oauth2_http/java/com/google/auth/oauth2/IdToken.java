@@ -40,8 +40,11 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents a temporary IdToken and its JsonWebSignature object */
+@NullMarked
 public class IdToken extends AccessToken implements Serializable {
 
   private static final long serialVersionUID = -8514239465808977353L;
@@ -104,7 +107,7 @@ public class IdToken extends AccessToken implements Serializable {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof IdToken)) {
       return false;
     }
