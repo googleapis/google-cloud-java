@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.models.ExplainMetrics;
@@ -132,7 +133,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     }
     if (requestOptions != null) {
       requestPb.setRequestOptions(
-          RequestOptionsHelper.createRequestOptions(datastore.getOptions(), requestOptions));
+          createRequestOptions(datastore.getOptions(), requestOptions));
     }
     query.populatePb(requestPb);
     runQueryResponsePb = datastore.runQuery(requestPb.build());

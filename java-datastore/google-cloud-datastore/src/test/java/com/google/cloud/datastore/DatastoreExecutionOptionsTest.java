@@ -16,11 +16,12 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.datastore.models.ExplainOptions;
-import com.google.datastore.v1.RequestOptions;
 import com.google.common.collect.ImmutableList;
+import com.google.datastore.v1.RequestOptions;
 import org.junit.Test;
 
 public class DatastoreExecutionOptionsTest {
@@ -109,8 +110,7 @@ public class DatastoreExecutionOptionsTest {
     DatastoreExecutionOptions execOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(reqOpts).build();
 
-    RequestOptions merged =
-        RequestOptionsHelper.createRequestOptions(datastoreOptions, execOptions);
+    RequestOptions merged = createRequestOptions(datastoreOptions, execOptions);
 
     assertThat(merged.getRequestTagsList()).containsExactly("request-tag", "instance-tag");
   }

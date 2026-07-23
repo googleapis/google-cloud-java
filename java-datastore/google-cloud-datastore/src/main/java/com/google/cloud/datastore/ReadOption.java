@@ -25,7 +25,6 @@ import com.google.datastore.v1.ExplainOptions;
 import com.google.datastore.v1.RequestOptions;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -183,18 +182,16 @@ public abstract class ReadOption implements Serializable {
     public static <Q extends Query<?>> QueryConfig<Q> createWithDatastoreExecutionOptions(
         Q query, DatastoreExecutionOptions executionOptions) {
       Preconditions.checkNotNull(query, "query cannot be null");
-      if (executionOptions != null) {
-        ExplainOptions explainOptions =
-            executionOptions.getExplainOptions() != null
-                ? executionOptions.getExplainOptions().toPb()
-                : null;
-        return new QueryConfig<>(
-            query,
-            explainOptions,
-            executionOptions.getReadOptions(),
-            executionOptions.getRequestOptions());
-      }
-      return new QueryConfig<>(query, null, Collections.emptyList(), null);
+      Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+      ExplainOptions explainOptions =
+          executionOptions.getExplainOptions() != null
+              ? executionOptions.getExplainOptions().toPb()
+              : null;
+      return new QueryConfig<>(
+          query,
+          explainOptions,
+          executionOptions.getReadOptions(),
+          executionOptions.getRequestOptions());
     }
   }
 }

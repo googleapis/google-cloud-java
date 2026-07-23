@@ -57,6 +57,7 @@ import com.google.datastore.v1.PartitionId;
 import com.google.datastore.v1.QueryResultBatch;
 import com.google.datastore.v1.ReadOptions;
 import com.google.datastore.v1.ReadOptions.ReadConsistency;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.ReserveIdsRequest;
 import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
@@ -1426,7 +1427,7 @@ public abstract class AbstractDatastoreTest {
             .setPartitionId(partitionId)
             .setQuery(queryPb)
             .setRequestOptions(
-                com.google.datastore.v1.RequestOptions.newBuilder()
+                RequestOptions.newBuilder()
                     .addRequestTags("instance-tag")
                     .build())
             .build();
@@ -1456,8 +1457,8 @@ public abstract class AbstractDatastoreTest {
 
   @Test
   public void testRunQueryWithRequestOptions() {
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("test-tag").build();
 
     PartitionId partitionId =
         PartitionId.newBuilder()
@@ -1560,8 +1561,8 @@ public abstract class AbstractDatastoreTest {
             .setServiceRpcFactory(rpcFactoryMock)
             .build();
 
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("instance-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("instance-tag").build();
 
     RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
 
@@ -1593,8 +1594,8 @@ public abstract class AbstractDatastoreTest {
 
   @Test
   public void testRunAggregationQueryWithRequestOptions() {
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("agg-test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("agg-test-tag").build();
 
     RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
 
@@ -1687,7 +1688,7 @@ public abstract class AbstractDatastoreTest {
 
   private Predicate<RunAggregationQueryRequest> aggregationQueryWithAliasAndRequestOptions(
       String alias,
-      com.google.datastore.v1.RequestOptions requestOptions,
+      RequestOptions requestOptions,
       boolean checkEventual,
       boolean checkExplain) {
     return req -> {
@@ -1710,8 +1711,8 @@ public abstract class AbstractDatastoreTest {
     Key key = datastore.newKeyFactory().setKind(KIND1).newKey(keyName);
     Entity entity = Entity.newBuilder(key).set("prop", "val").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("test-tag").build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1729,8 +1730,8 @@ public abstract class AbstractDatastoreTest {
     Entity entity1 = Entity.newBuilder(key1).set("prop", "val1").build();
     Entity entity2 = Entity.newBuilder(key2).set("prop", "val2").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("test-tag").build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1751,8 +1752,8 @@ public abstract class AbstractDatastoreTest {
     
     Entity updatedEntity = Entity.newBuilder(entity).set("prop", "val_updated").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("test-tag").build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1770,8 +1771,8 @@ public abstract class AbstractDatastoreTest {
     Entity entity2 = Entity.newBuilder(key2).set("prop", "val2").build();
     datastore.add(entity1, entity2);
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("test-tag").build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
