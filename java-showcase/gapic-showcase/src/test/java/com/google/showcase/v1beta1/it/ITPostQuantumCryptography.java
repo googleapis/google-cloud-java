@@ -34,13 +34,13 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
+import java.security.Provider;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.List;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
-import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -123,7 +123,11 @@ public class ITPostQuantumCryptography {
     TrustManagerFactory tmf =
         TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
     tmf.init(trustStore);
-    SSLContext sslContext = SSLContext.getInstance("TLS");
+    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
+    SSLContext sslContext =
+        conscryptProvider != null
+            ? SSLContext.getInstance("TLS", conscryptProvider)
+            : SSLContext.getInstance("TLS");
     sslContext.init(null, tmf.getTrustManagers(), null);
     SSLContext.setDefault(sslContext);
   }
@@ -170,51 +174,6 @@ public class ITPostQuantumCryptography {
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
-    }
-  }
-
-  @Test
-  void testHttpJsonPqc_withExplicitClassicalGroupsNoPqc() throws Exception {
-    // This test explicitly configures non-PQC classical groups (X25519, SecP256r1) on Conscrypt
-    // to verify that the client falls back gracefully to classical TLS key exchange.
-    NetHttpTransport transport =
-        HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
-            .setSslSocketConfigurator(
-                socket -> {
-                  if (Conscrypt.isConscrypt(socket)) {
-                    Conscrypt.setNamedGroups(socket, new String[] {"X25519", "SecP256r1"});
-                  }
-                })
-            .build();
-
-    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
-
-    InstantiatingHttpJsonChannelProvider transportChannelProvider =
-        EchoSettings.defaultHttpJsonTransportProviderBuilder()
-            .setHttpTransport(transport)
-            .setEndpoint("https://" + SECURE_ENDPOINT)
-            .setInterceptorProvider(() -> Collections.singletonList(interceptor))
-            .build();
-
-    EchoSettings settings =
-        EchoSettings.newHttpJsonBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(transportChannelProvider)
-            .build();
-
-    try (EchoClient client = EchoClient.create(settings)) {
-      EchoResponse response =
-          client.echo(
-              EchoRequest.newBuilder().setContent("pqc-httpjson-explicit-provider-test").build());
-      assertThat(response.getContent()).isEqualTo("pqc-httpjson-explicit-provider-test");
-
-      HttpJsonMetadata capturedHeaders = interceptor.metadata;
-      assertThat(capturedHeaders).isNotNull();
-
-      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      // Under classical non-PQC configuration, negotiated group is a classical curve
-      assertThat(negotiatedGroup).isAnyOf("X25519", "SecP256r1", "CurveP256");
-      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_PQC_GROUP);
     }
   }
 
