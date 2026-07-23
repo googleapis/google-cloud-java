@@ -38,7 +38,7 @@ import org.junit.jupiter.api.Test;
 class ManagedHttpJsonChannelTest {
 
   @Test
-  void testBuilder_defaultHttpTransport_usesConscryptConfiguredTransport() {
+  void testBuilder_defaultHttpTransport_createsNetHttpTransport() {
     ManagedHttpJsonChannel channel =
         ManagedHttpJsonChannel.newBuilder().setEndpoint("localhost:8080").build();
     assertThat(channel.getHttpTransport()).isInstanceOf(NetHttpTransport.class);
