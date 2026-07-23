@@ -693,6 +693,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
   private static boolean pingComputeEngineMetadata(
       HttpTransportFactory transportFactory, DefaultCredentialsProvider provider) {
     GenericUrl tokenUrl = new GenericUrl(getMetadataServerUrl(provider));
+    // pingComputeEngineMetadata is executed heavily during startup (within isOnGce()) on non-GCE
+    // environments. We use a strict 500ms timeout and manual 3-try loop (instead of
+    // ExponentialBackOff and HttpRequest.setUnsuccessfulResponseHandler) to fail fast and avoid
+    // significantly delaying application startup for workflows running on local setups.
     for (int i = 1; i <= MAX_COMPUTE_PING_TRIES; ++i) {
       try {
         HttpRequest request =
@@ -718,6 +722,12 @@ public class ComputeEngineCredentials extends GoogleCredentials
       } catch (SocketTimeoutException expected) {
         // Ignore logging timeouts which is the expected failure mode in non GCE environments.
       } catch (IOException e) {
+        if (e instanceof HttpResponseException) {
+          int statusCode = ((HttpResponseException) e).getStatusCode();
+          if (statusCode >= 400 && statusCode < 500) {
+            return false;
+          }
+        }
         LOGGER.log(
             Level.FINE,
             "Encountered an unexpected exception when checking"
