@@ -179,7 +179,8 @@ class AgentIdentityUtilsTest {
     assertTrue(
         e.getMessage()
             .contains(
-                "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
+                "Unable to find Agent Identity certificate config or file for bound token request"
+                    + " after multiple retries."));
   }
 
   @Test
@@ -220,7 +221,9 @@ class AgentIdentityUtilsTest {
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
-    assertEquals(new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8), info.certContent);
+    assertEquals(
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8),
+        info.certContent);
   }
 
   @Test
@@ -295,7 +298,8 @@ class AgentIdentityUtilsTest {
     assertTrue(
         e.getMessage()
             .contains(
-                "Agent Identity certificate and private key mismatch or read failure after 3 retries."));
+                "Agent Identity certificate and private key mismatch or read failure after 3"
+                    + " retries."));
     assertEquals(200, fakeTime.currentTimeMillis()); // 2 retries * 100ms
   }
 
