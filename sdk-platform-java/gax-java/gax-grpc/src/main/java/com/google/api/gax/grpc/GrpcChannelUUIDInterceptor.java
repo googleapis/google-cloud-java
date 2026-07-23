@@ -36,7 +36,9 @@ import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
 import io.grpc.MethodDescriptor;
 import java.util.UUID;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 class GrpcChannelUUIDInterceptor implements ClientInterceptor {
   private final String uuid = UUID.randomUUID().toString();
 

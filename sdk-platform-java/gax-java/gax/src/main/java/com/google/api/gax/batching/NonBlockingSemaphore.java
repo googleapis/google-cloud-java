@@ -32,8 +32,10 @@ package com.google.api.gax.batching;
 
 import com.google.common.base.Preconditions;
 import java.util.concurrent.atomic.AtomicLong;
+import org.jspecify.annotations.NullMarked;
 
 /** A {@link Semaphore64} that immediately returns with failure if permits are not available. */
+@NullMarked
 class NonBlockingSemaphore implements Semaphore64 {
   private AtomicLong acquiredPermits;
   private AtomicLong limit;

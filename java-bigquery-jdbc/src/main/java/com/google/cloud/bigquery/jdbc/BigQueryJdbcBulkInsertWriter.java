@@ -60,7 +60,7 @@ class BigQueryJdbcBulkInsertWriter {
     WriteStream writeStream = client.createWriteStream(createWriteStreamRequest);
 
     JsonStreamWriter.Builder jsonStreamWriterBuilder =
-        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema());
+        JsonStreamWriter.newBuilder(writeStream.getName(), writeStream.getTableSchema(), client);
 
     if (retrySettings != null) {
       jsonStreamWriterBuilder.setRetrySettings(retrySettings);

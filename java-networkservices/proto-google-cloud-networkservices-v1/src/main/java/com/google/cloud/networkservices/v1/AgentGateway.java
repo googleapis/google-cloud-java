@@ -1062,6 +1062,76 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * @return The bytes for resourceUri.
      */
     com.google.protobuf.ByteString getResourceUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the resourceUris.
+     */
+    java.util.List<java.lang.String> getResourceUrisList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of resourceUris.
+     */
+    int getResourceUrisCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceUris at the given index.
+     */
+    java.lang.String getResourceUris(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceUris at the given index.
+     */
+    com.google.protobuf.ByteString getResourceUrisBytes(int index);
   }
 
   /**
@@ -1097,6 +1167,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
 
     private SelfManaged() {
       resourceUri_ = "";
+      resourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1173,6 +1244,90 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int RESOURCE_URIS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList resourceUris_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the resourceUris.
+     */
+    public com.google.protobuf.ProtocolStringList getResourceUrisList() {
+      return resourceUris_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of resourceUris.
+     */
+    public int getResourceUrisCount() {
+      return resourceUris_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The resourceUris at the given index.
+     */
+    public java.lang.String getResourceUris(int index) {
+      return resourceUris_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of supported Google Cloud networking proxies in the Project and
+     * Location.
+     * resource_uris is mutually exclusive with resource_uri.
+     * </pre>
+     *
+     * <code>
+     * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the resourceUris at the given index.
+     */
+    public com.google.protobuf.ByteString getResourceUrisBytes(int index) {
+      return resourceUris_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1190,6 +1345,9 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceUri_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, resourceUri_);
       }
+      for (int i = 0; i < resourceUris_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, resourceUris_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1201,6 +1359,14 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceUri_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, resourceUri_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < resourceUris_.size(); i++) {
+          dataSize += computeStringSizeNoTag(resourceUris_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getResourceUrisList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1219,6 +1385,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.networkservices.v1.AgentGateway.SelfManaged) obj;
 
       if (!getResourceUri().equals(other.getResourceUri())) return false;
+      if (!getResourceUrisList().equals(other.getResourceUrisList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1232,6 +1399,10 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RESOURCE_URI_FIELD_NUMBER;
       hash = (53 * hash) + getResourceUri().hashCode();
+      if (getResourceUrisCount() > 0) {
+        hash = (37 * hash) + RESOURCE_URIS_FIELD_NUMBER;
+        hash = (53 * hash) + getResourceUrisList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1375,6 +1546,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         resourceUri_ = "";
+        resourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1416,6 +1588,10 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.resourceUri_ = resourceUri_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          resourceUris_.makeImmutable();
+          result.resourceUris_ = resourceUris_;
+        }
       }
 
       @java.lang.Override
@@ -1435,6 +1611,16 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
         if (!other.getResourceUri().isEmpty()) {
           resourceUri_ = other.resourceUri_;
           bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.resourceUris_.isEmpty()) {
+          if (resourceUris_.isEmpty()) {
+            resourceUris_ = other.resourceUris_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureResourceUrisIsMutable();
+            resourceUris_.addAll(other.resourceUris_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1469,6 +1655,13 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureResourceUrisIsMutable();
+                  resourceUris_.add(s);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1610,6 +1803,225 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         resourceUri_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList resourceUris_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureResourceUrisIsMutable() {
+        if (!resourceUris_.isModifiable()) {
+          resourceUris_ = new com.google.protobuf.LazyStringArrayList(resourceUris_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the resourceUris.
+       */
+      public com.google.protobuf.ProtocolStringList getResourceUrisList() {
+        resourceUris_.makeImmutable();
+        return resourceUris_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of resourceUris.
+       */
+      public int getResourceUrisCount() {
+        return resourceUris_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The resourceUris at the given index.
+       */
+      public java.lang.String getResourceUris(int index) {
+        return resourceUris_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the resourceUris at the given index.
+       */
+      public com.google.protobuf.ByteString getResourceUrisBytes(int index) {
+        return resourceUris_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The resourceUris to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceUris(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourceUrisIsMutable();
+        resourceUris_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The resourceUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addResourceUris(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResourceUrisIsMutable();
+        resourceUris_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param values The resourceUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllResourceUris(java.lang.Iterable<java.lang.String> values) {
+        ensureResourceUrisIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceUris_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResourceUris() {
+        resourceUris_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of supported Google Cloud networking proxies in the Project and
+       * Location.
+       * resource_uris is mutually exclusive with resource_uri.
+       * </pre>
+       *
+       * <code>
+       * repeated string resource_uris = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes of the resourceUris to add.
+       * @return This builder for chaining.
+       */
+      public Builder addResourceUrisBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureResourceUrisIsMutable();
+        resourceUris_.add(value);
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7791,7 +8203,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return A list containing the protocols.
    */
   @java.lang.Override
@@ -7815,7 +8227,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return The count of protocols.
    */
   @java.lang.Override
@@ -7836,7 +8248,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @param index The index of the element to return.
    * @return The protocols at the given index.
    */
@@ -7858,7 +8270,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return A list containing the enum numeric values on the wire for protocols.
    */
   @java.lang.Override
@@ -7879,7 +8291,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of protocols at the given index.
    */
@@ -10342,7 +10754,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @return A list containing the protocols.
      */
     @java.lang.Deprecated
@@ -10365,7 +10777,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @return The count of protocols.
      */
     @java.lang.Deprecated
@@ -10385,7 +10797,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param index The index of the element to return.
      * @return The protocols at the given index.
      */
@@ -10406,7 +10818,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param index The index to set the value at.
      * @param value The protocols to set.
      * @return This builder for chaining.
@@ -10435,7 +10847,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param value The protocols to add.
      * @return This builder for chaining.
      */
@@ -10462,7 +10874,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param values The protocols to add.
      * @return This builder for chaining.
      */
@@ -10490,7 +10902,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10513,7 +10925,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @return A list containing the enum numeric values on the wire for protocols.
      */
     @java.lang.Deprecated
@@ -10534,7 +10946,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of protocols at the given index.
      */
@@ -10555,7 +10967,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for protocols to set.
      * @return This builder for chaining.
@@ -10580,7 +10992,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param value The enum numeric value on the wire for protocols to add.
      * @return This builder for chaining.
      */
@@ -10604,7 +11016,7 @@ public final class AgentGateway extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-     *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+     *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
      * @param values The enum numeric values on the wire for protocols to add.
      * @return This builder for chaining.
      */

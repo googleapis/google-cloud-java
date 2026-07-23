@@ -31,8 +31,10 @@ package com.google.api.gax.grpc;
 
 import io.grpc.ClientInterceptor;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /** Provider of custom gRPC ClientInterceptors. */
+@NullMarked
 public interface GrpcInterceptorProvider {
 
   /**

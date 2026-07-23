@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Wraps a {@link ServerStreamingCallable} in a {@link UnaryCallable} that returns the first
@@ -40,6 +41,7 @@ import com.google.api.core.ApiFuture;
  * @param <RequestT> The type of the request.
  * @param <ResponseT> The type of the item in the stream.
  */
+@NullMarked
 final class FirstElementCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> streamingCallable;
 

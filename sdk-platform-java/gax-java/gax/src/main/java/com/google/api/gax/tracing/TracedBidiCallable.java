@@ -41,13 +41,15 @@ import com.google.common.base.Preconditions;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A wrapper callable that will wrap a callable chain in a trace.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @BetaApi("The surface for tracing is not stable and might change in the future")
 @InternalApi("For internal use by google-cloud-java clients only")
 public class TracedBidiCallable<RequestT, ResponseT>
@@ -55,7 +57,7 @@ public class TracedBidiCallable<RequestT, ResponseT>
 
   @Nonnull private final ApiTracerFactory tracerFactory;
   @Nonnull private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
+  private final @Nullable ApiTracerContext apiTracerContext;
   @Nonnull private final BidiStreamingCallable<RequestT, ResponseT> innerCallable;
 
   public TracedBidiCallable(

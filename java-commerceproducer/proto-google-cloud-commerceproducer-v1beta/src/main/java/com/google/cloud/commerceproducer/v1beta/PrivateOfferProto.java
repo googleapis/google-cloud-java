@@ -323,10 +323,11 @@ public final class PrivateOfferProto extends com.google.protobuf.GeneratedFile {
           + "4commerceproducer.googleapis.com/PrivateOfferDocument\022Zprojects/{projec"
           + "t}/locations/{location}/privateOffers/{private_offer}/documents/{document}*\025priv"
           + "ateOfferDocuments2\024privateOfferDocumentB\t\n"
-          + "\007contentB\274\001\n"
+          + "\007contentB\346\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\021PrivateOfferProtoP\001ZTcl"
           + "oud.google.com/go/commerceproducer/apiv1beta/commerceproducerpb;commerceproducer"
-          + "pb\252\002$Google.Cloud.CommerceProducer.V1Betab\006proto3"
+          + "pb\252\002$Google.Cloud.CommerceProducer.V1Bet"
+          + "a\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

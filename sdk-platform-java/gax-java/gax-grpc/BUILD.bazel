@@ -16,6 +16,7 @@ _COMPILE_DEPS = [
     "@com_google_guava_guava//jar",
     "@com_google_code_findbugs_jsr305//jar",
     "@com_google_code_gson_gson//jar",
+    "@org_jspecify_jspecify//jar",
     "@org_threeten_threetenbp//jar",
     "@gapic_generator_java//google-auth-library-java/oauth2_http",
     "@gapic_generator_java//google-auth-library-java/credentials",

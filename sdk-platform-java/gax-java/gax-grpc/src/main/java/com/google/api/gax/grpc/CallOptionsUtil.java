@@ -37,8 +37,10 @@ import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
 import java.util.Collections;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** A utility class that provides helper functions to work with custom call options. */
+@NullMarked
 class CallOptionsUtil {
   // this is a call option name, not a header name, it is not transferred over the wire
   private static final CallOptions.Key<Map<Key<String>, String>> DYNAMIC_HEADERS_CALL_OPTION_KEY =

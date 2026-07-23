@@ -30,12 +30,14 @@
 package com.google.api.gax.grpc;
 
 import io.grpc.Metadata;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An interface to handle metadata returned from an RPC. A ResponseMetadataHandler is used by the
  * GrpcMetadataHandlerInterceptor class to provide custom handling of the returned headers and
  * trailers.
  */
+@NullMarked
 public interface ResponseMetadataHandler {
 
   /** Handle the headers returned by an RPC. */

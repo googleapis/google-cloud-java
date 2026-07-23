@@ -30,6 +30,7 @@
 package com.google.api.gax.longrunning;
 
 import com.google.api.gax.rpc.StatusCode;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A snapshot of a long-running operation.
@@ -37,6 +38,7 @@ import com.google.api.gax.rpc.StatusCode;
  * <p>The metadata and response will have a structure defined by the particular long-running
  * operation that was initiated.
  */
+@NullMarked
 public interface OperationSnapshot {
 
   /** The name of the operation. This is used for identifying the operation on the server. */

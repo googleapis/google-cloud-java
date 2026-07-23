@@ -24,6 +24,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
@@ -477,7 +478,7 @@ public class SpannerPoolTest {
             .setUri(
                 "cloudspanner://localhost:9010/projects/p1/instances/i/databases/d"
                     + "?minSessions=200;maxSessions=400;numChannels=8;usePlainText=true;userAgent=test-agent")
-            .setCredentials(mock(Credentials.class))
+            .setCredentials(mock(Credentials.class, withSettings().withoutAnnotations()))
             .build();
     // options2 equals the default session pool options, and is therefore equal to ConnectionOptions
     // without any session pool configuration.

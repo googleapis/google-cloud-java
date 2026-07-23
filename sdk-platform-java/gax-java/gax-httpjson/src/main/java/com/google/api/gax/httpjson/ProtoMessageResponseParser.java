@@ -36,8 +36,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import org.jspecify.annotations.NullMarked;
 
 /** The implementation of {@link HttpResponseParser} which works with protobuf messages. */
+@NullMarked
 public class ProtoMessageResponseParser<ResponseT extends Message>
     implements HttpResponseParser<ResponseT> {
 

@@ -41,12 +41,14 @@ import com.google.longrunning.ListOperationsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.WaitOperationRequest;
 import com.google.protobuf.Empty;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Base stub class for Google Long Running Operations API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 public abstract class OperationsStub implements BackgroundResource {
 
   public UnaryCallable<GetOperationRequest, Operation> getOperationCallable() {

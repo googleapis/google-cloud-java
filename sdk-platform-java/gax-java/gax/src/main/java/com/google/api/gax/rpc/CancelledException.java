@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** The exception thrown when the operation was cancelled (typically by the caller). */
+@NullMarked
 public class CancelledException extends ApiException {
   public CancelledException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

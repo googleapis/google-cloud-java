@@ -29,5 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public interface BidiStreamObserver<RequestT, ResponseT>
     extends ResponseObserver<ResponseT>, ClientStreamReadyObserver<RequestT> {}

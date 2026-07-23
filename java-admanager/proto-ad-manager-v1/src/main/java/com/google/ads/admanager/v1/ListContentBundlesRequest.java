@@ -232,6 +232,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
    * &lt;ul style="list-style-type:none"&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -264,6 +266,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
    * &lt;ul style="list-style-type:none"&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -1123,6 +1127,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
      * &lt;ul style="list-style-type:none"&gt;
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -1154,6 +1160,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
      * &lt;ul style="list-style-type:none"&gt;
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -1185,6 +1193,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
      * &lt;ul style="list-style-type:none"&gt;
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -1215,6 +1225,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
      * &lt;ul style="list-style-type:none"&gt;
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
@@ -1241,6 +1253,8 @@ public final class ListContentBundlesRequest extends com.google.protobuf.Generat
      * &lt;ul style="list-style-type:none"&gt;
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
      * </pre>
      *
