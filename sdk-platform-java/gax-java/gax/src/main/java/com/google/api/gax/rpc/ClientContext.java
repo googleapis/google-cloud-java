@@ -162,6 +162,29 @@ public abstract class ClientContext {
   public abstract Builder toBuilder();
 
   /**
+   * Creates a secondary ClientContext using the credentials, executor, and headers from this
+   * context, but resolving a new channel from the provided channel provider.
+   */
+  @BetaApi
+  public ClientContext withTransportChannelProvider(TransportChannelProvider channelProvider)
+      throws IOException {
+    if (channelProvider.needsExecutor()) {
+      channelProvider = channelProvider.withExecutor(getExecutor());
+    }
+    if (channelProvider.needsHeaders()) {
+      channelProvider = channelProvider.withHeaders(getHeaders());
+    }
+    if (channelProvider.needsCredentials() && getCredentials() != null) {
+      channelProvider = channelProvider.withCredentials(getCredentials());
+    }
+    TransportChannel secondaryChannel = channelProvider.getTransportChannel();
+    return toBuilder()
+        .setTransportChannel(secondaryChannel)
+        .setDefaultCallContext(secondaryChannel.getEmptyCallContext().withCredentials(getCredentials()))
+        .build();
+  }
+
+  /**
    * Instantiates the executor, credentials, and transport context based on the given client
    * settings.
    */

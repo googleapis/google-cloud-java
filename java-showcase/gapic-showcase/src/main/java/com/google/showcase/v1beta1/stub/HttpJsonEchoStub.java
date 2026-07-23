@@ -27,6 +27,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonCallableFactory;
 import com.google.api.gax.httpjson.HttpJsonOperationSnapshot;
 import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
@@ -38,6 +39,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
@@ -611,6 +613,7 @@ public class HttpJsonEchoStub extends EchoStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -853,6 +856,9 @@ public class HttpJsonEchoStub extends EchoStub {
             pagedExpandLegacyMappedTransportSettings,
             settings.pagedExpandLegacyMappedSettings(),
             clientContext);
+    this.resumableUploadCallable =
+        HttpJsonCallableFactory.createResumableUploadCallable(
+            echoTransportSettings, clientContext);
     this.waitCallable =
         callableFactory.createUnaryCallable(
             waitTransportSettings, settings.waitSettings(), clientContext);
@@ -1008,6 +1014,11 @@ public class HttpJsonEchoStub extends EchoStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable() {
+    return resumableUploadCallable;
   }
 
   @Override
