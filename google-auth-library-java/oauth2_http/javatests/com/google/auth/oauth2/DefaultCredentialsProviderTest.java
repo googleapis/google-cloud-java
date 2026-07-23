@@ -80,7 +80,7 @@ class DefaultCredentialsProviderTest {
     AgentIdentityUtils.setEnvReader(
         name -> {
           if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
-            return "true"; // Triggers isOptedOut() = true
+            return "false"; // Triggers isTokenBindingEnabled() = false
           }
           return null;
         });

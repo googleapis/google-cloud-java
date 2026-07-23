@@ -109,7 +109,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
           }
         });
     // Opt out of bound tokens by default in tests to avoid polling delays
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
   }
 
   @AfterEach
@@ -1221,7 +1221,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
         tempDir.resolve("missing_config.json").toAbsolutePath().toString());
@@ -1252,12 +1252,12 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   private void setupCertAndKeyConfig() throws IOException {
     java.nio.file.Path certSource =
-        java.nio.file.Paths.get("testresources/agent/agent_spiffe_cert.pem");
+        java.nio.file.Paths.get(ComputeEngineCredentialsTest.class.getResource("/agent/agent_spiffe_cert.pem").getPath());
     java.nio.file.Path certTarget = tempDir.resolve("certificates.pem");
     Files.copy(certSource, certTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
     java.nio.file.Path keySource =
-        java.nio.file.Paths.get("testresources/agent/agent_spiffe_key.pem");
+        java.nio.file.Paths.get(ComputeEngineCredentialsTest.class.getResource("/agent/agent_spiffe_key.pem").getPath());
     java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
     Files.copy(keySource, keyTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
@@ -1281,7 +1281,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   void refreshAccessToken_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(
-        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false"); // Enable bound token
+        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
@@ -1302,7 +1302,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   void idTokenWithAudience_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(
-        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false"); // Enable bound token
+        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
