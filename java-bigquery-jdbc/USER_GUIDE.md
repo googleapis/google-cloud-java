@@ -373,7 +373,7 @@ public class FinancialTransactionCUJ {
         + ";ProjectId=my-gcp-project"
         + ";DefaultDataset=finance"
         + ";EnableSession=true"
-        + ";OAuthType=0";
+        + ";OAuthType=3"; // 3 = Application Default Credentials (ADC)
 
     try (Connection conn = DriverManager.getConnection(url)) {
       // 1. Start Transaction Session
@@ -443,7 +443,7 @@ public class EtlBatchIngestionCUJ {
         + ";ProjectId=my-gcp-project"
         + ";DefaultDataset=telemetry"
         + ";EnableWriteAPI=true" // High-throughput write streaming
-        + ";OAuthType=0";
+        + ";OAuthType=3";
 
     String insertSql = "INSERT INTO telemetry.sensor_readings (reading_id, sensor_id, temperature, is_valid, record_time) VALUES (?, ?, ?, ?, ?)";
 
@@ -487,7 +487,7 @@ public class HighThroughputExtractionCUJ {
         + ";ProjectId=my-gcp-project"
         + ";DefaultDataset=analytics"
         + ";EnableHighThroughputAPI=true" // Stream via gRPC Storage Read API
-        + ";OAuthType=0";
+        + ";OAuthType=3";
 
     try (Connection conn = DriverManager.getConnection(url);
          Statement stmt = conn.createStatement();
@@ -525,7 +525,7 @@ import java.time.LocalDate;
 
 public class ParameterizedTypesCUJ {
   public static void main(String[] args) throws Exception {
-    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=0";
+    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
     String sql = "SELECT order_id FROM sales.orders "
         + "WHERE order_date = ? "
@@ -561,7 +561,7 @@ public class ParameterizedTypesCUJ {
 
 ### CUJ 5: Nested Structs & Repeated Array Operations
 
-**Scenario**: Processing e-commerce orders containing nested address `STRUCT` objects and line-item `ARRAY` objects.
+**Scenario**: Processing e-commerce orders containing nested address `STRUCT` objects and line-item `ARRAY` objects with null-safe guardrails.
 
 ```java
 import java.sql.Array;
@@ -573,7 +573,7 @@ import java.sql.Struct;
 
 public class ComplexTypesCUJ {
   public static void main(String[] args) throws Exception {
-    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=0";
+    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
     String query = "SELECT "
         + "  order_id, "
@@ -588,23 +588,36 @@ public class ComplexTypesCUJ {
       while (rs.next()) {
         long orderId = rs.getLong("order_id");
 
-        // 1. Reading Struct
+        // 1. Reading Struct with Null Safety
         Struct addressStruct = (Struct) rs.getObject("shipping_address");
-        Object[] addressAttrs = addressStruct.getAttributes();
-        System.out.printf("Order %d Address: %s, %s%n", orderId, addressAttrs[0], addressAttrs[1]);
-
-        // 2. Reading Array of Structs
-        Array itemsArray = rs.getArray("line_items");
-        Struct[] items = (Struct[]) itemsArray.getArray();
-        for (Struct item : items) {
-          Object[] itemAttrs = item.getAttributes();
-          System.out.printf("  Item -> SKU: %s, Qty: %s%n", itemAttrs[0], itemAttrs[1]);
+        if (addressStruct != null) {
+          Object[] addressAttrs = addressStruct.getAttributes();
+          if (addressAttrs != null && addressAttrs.length >= 2) {
+            System.out.printf("Order %d Address: %s, %s%n", orderId, addressAttrs[0], addressAttrs[1]);
+          }
         }
 
-        // 3. Reading Primitive Array
+        // 2. Reading Array of Structs with Null Safety
+        Array itemsArray = rs.getArray("line_items");
+        if (itemsArray != null && itemsArray.getArray() != null) {
+          Object[] itemsObj = (Object[]) itemsArray.getArray();
+          for (Object itemObj : itemsObj) {
+            if (itemObj instanceof Struct) {
+              Struct item = (Struct) itemObj;
+              Object[] itemAttrs = item.getAttributes();
+              if (itemAttrs != null && itemAttrs.length >= 2) {
+                System.out.printf("  Item -> SKU: %s, Qty: %s%n", itemAttrs[0], itemAttrs[1]);
+              }
+            }
+          }
+        }
+
+        // 3. Reading Primitive Array with Null Safety
         Array tagsArray = rs.getArray("tags");
-        String[] tags = (String[]) tagsArray.getArray();
-        System.out.println("  Tags: " + String.join(", ", tags));
+        if (tagsArray != null && tagsArray.getArray() != null) {
+          String[] tags = (String[]) tagsArray.getArray();
+          System.out.println("  Tags: " + String.join(", ", tags));
+        }
       }
     }
   }
@@ -629,7 +642,7 @@ public class CrossProjectImpersonationCUJ {
         + ";ProjectId=billing-project-id" // Project billed for the query
         + ";AdditionalProjects=data-project-id" // Cross-project dataset access
         + ";DefaultDataset=shared_dataset"
-        + ";OAuthType=0" // Use ADC context for initial authentication
+        + ";OAuthType=3" // Use ADC context for initial authentication
         + ";ServiceAccountImpersonationEmail=analytics-executor@billing-project-id.iam.gserviceaccount.com";
 
     try (Connection conn = DriverManager.getConnection(url);
@@ -659,7 +672,7 @@ import java.sql.Types;
 
 public class StoredProcedureCUJ {
   public static void main(String[] args) throws Exception {
-    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=0";
+    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
     String procSql = "CALL my_dataset.calculate_tax(?, ?)";
 
@@ -860,10 +873,10 @@ Connection conn = DriverManager.getConnection(url);
 String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
     + ";ProjectId=my-gcp-project"
     + ";OAuthType=4"
-    + ";BYOIDAudienceUri=//iam.googleapis.com/projects/123456789/locations/global/workloadIdentityPools/aws-pool/providers/aws-provider"
-    + ";BYOIDSubjectTokenType=urn:ietf:params:aws:token-type:aws-sigv4"
-    + ";BYOIDCredentialSource={\"environment_id\":\"aws-1\",\"region_url\":\"http://169.254.169.254/latest/meta-data/placement/availability-zone\"}"
-    + ";BYOIDTokenUri=https://sts-privateendpoint.p.googleapis.com/v1/token"
+    + ";BYOID_AudienceUri=//iam.googleapis.com/projects/123456789/locations/global/workloadIdentityPools/aws-pool/providers/aws-provider"
+    + ";BYOID_SubjectTokenType=urn:ietf:params:aws:token-type:aws-sigv4"
+    + ";BYOID_CredentialSource={\"environment_id\":\"aws-1\",\"region_url\":\"http://169.254.169.254/latest/meta-data/placement/availability-zone\"}"
+    + ";BYOID_TokenUri=https://sts-privateendpoint.p.googleapis.com/v1/token"
     + ";EndpointOverrides=STS=https://sts-privateendpoint.p.googleapis.com/v1/token";
 
 Connection conn = DriverManager.getConnection(url);
