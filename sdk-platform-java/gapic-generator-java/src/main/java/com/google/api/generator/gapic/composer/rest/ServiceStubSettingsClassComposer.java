@@ -27,7 +27,9 @@ import com.google.api.generator.gapic.model.Service;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceStubSettingsClassComposer extends AbstractServiceStubSettingsClassComposer {
   private static final ServiceStubSettingsClassComposer INSTANCE =
       new ServiceStubSettingsClassComposer();

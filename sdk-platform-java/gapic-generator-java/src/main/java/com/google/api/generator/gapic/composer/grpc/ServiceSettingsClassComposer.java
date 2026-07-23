@@ -15,7 +15,9 @@
 package com.google.api.generator.gapic.composer.grpc;
 
 import com.google.api.generator.gapic.composer.common.AbstractServiceSettingsClassComposer;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceSettingsClassComposer extends AbstractServiceSettingsClassComposer {
   private static final ServiceSettingsClassComposer INSTANCE = new ServiceSettingsClassComposer();
 

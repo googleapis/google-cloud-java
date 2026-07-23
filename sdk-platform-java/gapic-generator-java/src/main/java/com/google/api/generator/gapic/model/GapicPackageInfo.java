@@ -16,8 +16,10 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.engine.ast.PackageInfoDefinition;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
 /** A thin wrapper around PackageInfoDefinition to maintain a clean separation of concerns. */
+@NullMarked
 @AutoValue
 public abstract class GapicPackageInfo {
   public abstract PackageInfoDefinition packageInfo();

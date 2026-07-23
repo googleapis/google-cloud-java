@@ -18,12 +18,14 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This model represents routing rules configured in rpc services. It will be used for generating
  * the logic to match-and-extract field values from request, the extracted values will be
  * concatenated to a request header that is used for routing purposes.
  */
+@NullMarked
 @AutoValue
 public abstract class RoutingHeaderRule {
 

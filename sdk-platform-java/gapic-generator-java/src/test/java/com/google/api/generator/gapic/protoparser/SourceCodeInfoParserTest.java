@@ -32,6 +32,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -154,7 +155,7 @@ class SourceCodeInfoParserTest {
    *
    * @return the top level target protoFile descriptor
    */
-  private static FileDescriptor buildFileDescriptor() throws Exception {
+  private static @Nullable FileDescriptor buildFileDescriptor() throws Exception {
     try (InputStream in = newDescriptorSetInputStream()) {
       List<FileDescriptorProto> protoFileList = FileDescriptorSet.parseFrom(in).getFileList();
       List<FileDescriptor> deps = new ArrayList<>();

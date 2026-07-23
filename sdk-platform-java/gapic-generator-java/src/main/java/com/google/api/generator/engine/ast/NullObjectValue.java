@@ -14,6 +14,9 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public class NullObjectValue implements ObjectValue {
   private static final String NULL_VALUE = "null";
 

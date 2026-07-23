@@ -41,7 +41,9 @@ import io.grpc.ServerServiceDefinition;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class MockServiceClassComposer implements ClassComposer {
   private static final MockServiceClassComposer INSTANCE = new MockServiceClassComposer();
   private static final String SERVICE_IMPL_VAR_NAME = "serviceImpl";

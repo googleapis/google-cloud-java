@@ -58,7 +58,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientCallableMethodSampleComposer {
   private static Sample composeUnaryOrLroCallableSample(
       Method method, VariableExpr clientVarExpr, VariableExpr requestVarExpr, Service service) {
