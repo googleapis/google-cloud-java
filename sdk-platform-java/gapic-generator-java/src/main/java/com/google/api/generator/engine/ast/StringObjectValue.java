@@ -17,7 +17,9 @@ package com.google.api.generator.engine.ast;
 import com.google.auto.value.AutoValue;
 import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class StringObjectValue implements ObjectValue {
   @Override

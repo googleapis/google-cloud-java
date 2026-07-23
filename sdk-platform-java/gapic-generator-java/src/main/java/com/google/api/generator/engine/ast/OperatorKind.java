@@ -15,7 +15,9 @@
 package com.google.api.generator.engine.ast;
 
 import java.util.EnumSet;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public enum OperatorKind {
   ARITHMETIC_ADDITION,
   LOGICAL_AND,

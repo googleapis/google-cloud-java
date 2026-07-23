@@ -19,7 +19,9 @@ import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.auto.value.AutoValue;
 import java.util.Collections;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class GapicClass {
   // TODO(miraleung): Add enum for resource name classes.

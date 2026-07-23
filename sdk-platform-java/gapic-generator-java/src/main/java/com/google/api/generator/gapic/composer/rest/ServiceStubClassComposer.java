@@ -16,7 +16,9 @@
 package com.google.api.generator.gapic.composer.rest;
 
 import com.google.api.generator.gapic.composer.common.AbstractServiceStubClassComposer;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceStubClassComposer extends AbstractServiceStubClassComposer {
   private static final ServiceStubClassComposer INSTANCE = new ServiceStubClassComposer();
 

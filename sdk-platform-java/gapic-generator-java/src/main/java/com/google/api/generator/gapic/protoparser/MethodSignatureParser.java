@@ -33,8 +33,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
 // TODO(miraleung): Add tests for this class. Currently exercised in integration tests.
+@NullMarked
 public class MethodSignatureParser {
   private static final String DOT = ".";
   private static final String METHOD_SIGNATURE_DELIMITER = "\\s*,\\s*";

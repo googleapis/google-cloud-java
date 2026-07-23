@@ -21,8 +21,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class TryCatchStatement implements Statement {
 
@@ -36,8 +38,7 @@ public abstract class TryCatchStatement implements Statement {
   public abstract List<List<Statement>> catchBlocks();
 
   // Optional.
-  @Nullable
-  public abstract AssignmentExpr tryResourceExpr();
+  public abstract @Nullable AssignmentExpr tryResourceExpr();
 
   public abstract boolean isSampleCode();
 

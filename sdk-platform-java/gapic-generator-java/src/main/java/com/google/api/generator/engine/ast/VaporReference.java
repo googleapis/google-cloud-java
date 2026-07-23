@@ -20,8 +20,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class VaporReference implements Reference {
   private static final String DOT = ".";
@@ -53,8 +55,7 @@ public abstract class VaporReference implements Reference {
   @Override
   public abstract ImmutableList<String> enclosingClassNames();
 
-  @Nullable
-  public abstract Reference supertypeReference();
+  public abstract @Nullable Reference supertypeReference();
 
   @Nullable
   @Override
@@ -109,7 +110,7 @@ public abstract class VaporReference implements Reference {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof VaporReference)) {
       return false;
     }

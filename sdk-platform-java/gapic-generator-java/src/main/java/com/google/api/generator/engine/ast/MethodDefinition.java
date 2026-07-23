@@ -23,8 +23,10 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class MethodDefinition implements AstNode {
   static final Reference RUNTIME_EXCEPTION_REFERENCE =
@@ -68,8 +70,7 @@ public abstract class MethodDefinition implements AstNode {
 
   abstract ImmutableList<String> returnTemplateNames();
 
-  @Nullable
-  public abstract ReturnExpr returnExpr();
+  public abstract @Nullable ReturnExpr returnExpr();
 
   abstract boolean isOverride();
 
