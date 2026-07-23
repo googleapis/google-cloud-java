@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import java.sql.Array;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -341,15 +340,9 @@ public class ITConnectionTest {
   @Test
   public void testCreateArray() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
-    try {
-      Array array = connection.createArrayOf("INTEGER", new Object[] {1, 2, 3});
-      assertNotNull(array);
-
-      array.free(); // Remember to free resources
-    } catch (SQLException e) {
-      e.printStackTrace();
-    }
-    connection.close();
+    assertThrows(
+        SQLFeatureNotSupportedException.class,
+        () -> connection.createArrayOf("INTEGER", new Object[] {1, 2, 3}));
   }
 
   @Test
