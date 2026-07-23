@@ -35,7 +35,8 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableMap;
 import java.io.Serializable;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Value class representing the set of fields used as the payload of a JWT token.
@@ -50,6 +51,7 @@ import javax.annotation.Nullable;
  *     .build();
  * </code></pre>
  */
+@NullMarked
 @AutoValue
 public abstract class JwtClaims implements Serializable {
   private static final long serialVersionUID = 4974444151019426702L;

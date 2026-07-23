@@ -40,8 +40,10 @@ import io.opentelemetry.api.common.AttributesBuilder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 final class ObservabilityUtils {
 
   /** Function to extract the status of the error as a canonical code. */

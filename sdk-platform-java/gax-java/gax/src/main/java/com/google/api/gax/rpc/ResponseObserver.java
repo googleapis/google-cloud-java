@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Receives notifications from server-streaming calls.
  *
@@ -48,6 +50,7 @@ package com.google.api.gax.rpc;
  * control by calling {@code disableAutoInboundFlowControl()} in {@code onStart}. After this, the
  * consumer must request responses by calling {@code request()}.
  */
+@NullMarked
 public interface ResponseObserver<V> {
 
   /**

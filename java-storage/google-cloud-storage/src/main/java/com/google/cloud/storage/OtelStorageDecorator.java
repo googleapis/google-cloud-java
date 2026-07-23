@@ -2218,6 +2218,32 @@ final class OtelStorageDecorator implements Storage {
 
       @Override
       @BetaApi
+      public void finalizeAndClose(@Nullable String expectedCrc32c) throws IOException {
+        try (Scope ignore = openSpan.makeCurrent()) {
+          Span span = tracer.spanBuilder("finalizeAndClose").startSpan();
+          try (Scope ignore2 = span.makeCurrent()) {
+            delegate.finalizeAndClose(expectedCrc32c);
+          } catch (Throwable t) {
+            span.recordException(t);
+            span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+            throw t;
+          } finally {
+            span.end();
+          }
+        } catch (IOException | RuntimeException e) {
+          openSpan.recordException(e);
+          openSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          uploadSpan.recordException(e);
+          uploadSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          throw e;
+        } finally {
+          openSpan.end();
+          uploadSpan.end();
+        }
+      }
+
+      @Override
+      @BetaApi
       public void closeWithoutFinalizing() throws IOException {
         try (Scope ignore = openSpan.makeCurrent()) {
           Span span = tracer.spanBuilder("closeWithoutFinalizing").startSpan();
@@ -2249,6 +2275,32 @@ final class OtelStorageDecorator implements Storage {
           Span span = tracer.spanBuilder("close").startSpan();
           try (Scope ignore2 = span.makeCurrent()) {
             delegate.close();
+          } catch (Throwable t) {
+            span.recordException(t);
+            span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+            throw t;
+          } finally {
+            span.end();
+          }
+        } catch (IOException | RuntimeException e) {
+          openSpan.recordException(e);
+          openSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          uploadSpan.recordException(e);
+          uploadSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          throw e;
+        } finally {
+          openSpan.end();
+          uploadSpan.end();
+        }
+      }
+
+      @Override
+      @BetaApi
+      public void close(@Nullable String expectedCrc32c) throws IOException {
+        try (Scope ignore = openSpan.makeCurrent()) {
+          Span span = tracer.spanBuilder("close").startSpan();
+          try (Scope ignore2 = span.makeCurrent()) {
+            delegate.close(expectedCrc32c);
           } catch (Throwable t) {
             span.recordException(t);
             span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());

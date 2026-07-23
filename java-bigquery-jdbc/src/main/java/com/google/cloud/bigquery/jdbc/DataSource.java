@@ -92,6 +92,8 @@ public class DataSource implements javax.sql.DataSource {
   private Integer metadataFetchThreadCount;
   private String sslTrustStorePath;
   private String sslTrustStorePassword;
+  private String sslTrustStoreType;
+  private String sslTrustStoreProvider;
   private Map<String, String> labels;
   private String requestReason;
   private Integer timeout;
@@ -276,6 +278,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PWD_PROPERTY_NAME,
               DataSource::setSSLTrustStorePassword)
+          .put(
+              BigQueryJdbcUrlUtility.SSL_TRUST_STORE_TYPE_PROPERTY_NAME,
+              DataSource::setSSLTrustStoreType)
+          .put(
+              BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME,
+              DataSource::setSSLTrustStoreProvider)
           .put(
               BigQueryJdbcUrlUtility.LABELS_PROPERTY_NAME,
               (ds, val) ->
@@ -624,6 +632,15 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PWD_PROPERTY_NAME,
           String.valueOf(this.sslTrustStorePassword));
+    }
+    if (this.sslTrustStoreType != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.SSL_TRUST_STORE_TYPE_PROPERTY_NAME, this.sslTrustStoreType);
+    }
+    if (this.sslTrustStoreProvider != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME,
+          this.sslTrustStoreProvider);
     }
     if (this.labels != null) {
       connectionProperties.setProperty(
@@ -1222,6 +1239,22 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setSSLTrustStorePassword(String sslTrustStorePassword) {
     this.sslTrustStorePassword = sslTrustStorePassword;
+  }
+
+  public String getSSLTrustStoreType() {
+    return sslTrustStoreType;
+  }
+
+  public void setSSLTrustStoreType(String sslTrustStoreType) {
+    this.sslTrustStoreType = sslTrustStoreType;
+  }
+
+  public String getSSLTrustStoreProvider() {
+    return sslTrustStoreProvider;
+  }
+
+  public void setSSLTrustStoreProvider(String sslTrustStoreProvider) {
+    this.sslTrustStoreProvider = sslTrustStoreProvider;
   }
 
   public Map<String, String> getLabels() {

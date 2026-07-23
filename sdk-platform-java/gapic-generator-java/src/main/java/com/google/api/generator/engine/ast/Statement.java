@@ -14,6 +14,9 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public interface Statement extends AstNode {
   @Override
   void accept(AstNodeVisitor visitor);

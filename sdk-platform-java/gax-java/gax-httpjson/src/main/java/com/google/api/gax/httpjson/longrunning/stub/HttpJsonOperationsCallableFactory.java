@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -48,6 +49,7 @@ import com.google.longrunning.Operation;
  *
  * <p>This class is for advanced usage.
  */
+@NullMarked
 public class HttpJsonOperationsCallableFactory
     implements HttpJsonStubCallableFactory<Operation, BackgroundResource> {
 

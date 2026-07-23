@@ -36,6 +36,7 @@ import io.grpc.ClientCall;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Wraps a GRPC ClientCall in a {@link StreamController}. It feeds events to a {@link
@@ -43,6 +44,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcDirectStreamController<RequestT, ResponseT> implements StreamController {
   private static final Runnable NOOP_RUNNABLE =
       new Runnable() {

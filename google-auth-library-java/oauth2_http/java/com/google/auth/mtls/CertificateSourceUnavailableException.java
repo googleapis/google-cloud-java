@@ -31,12 +31,14 @@
 package com.google.auth.mtls;
 
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This exception is thrown by certificate providers in the Google auth library when the certificate
  * source is unavailable. This means that the transport layer should move on to the next certificate
  * source provider type.
  */
+@NullMarked
 public class CertificateSourceUnavailableException extends IOException {
 
   /**

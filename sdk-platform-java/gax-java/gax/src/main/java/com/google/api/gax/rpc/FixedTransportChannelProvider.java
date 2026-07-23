@@ -36,8 +36,10 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
+import org.jspecify.annotations.NullMarked;
 
 /** An instance of TransportChannelProvider that always provides the same TransportChannel. */
+@NullMarked
 @InternalExtensionOnly
 public class FixedTransportChannelProvider implements TransportChannelProvider {
 

@@ -65,7 +65,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * GrpcCallContext encapsulates context data used to make a grpc call.
@@ -75,6 +76,7 @@ import javax.annotation.Nullable;
  * #withTransportChannel}, return copies of the object, but with one field changed. The immutability
  * and thread safety of the arguments solely depends on the arguments themselves.
  */
+@NullMarked
 @BetaApi("Reference ApiCallContext instead - this class is likely to experience breaking changes")
 public final class GrpcCallContext implements ApiCallContext {
   private static final GrpcStatusCode UNAUTHENTICATED_STATUS_CODE =
@@ -84,15 +86,15 @@ public final class GrpcCallContext implements ApiCallContext {
   // CallOptions
   public static final CallOptions.Key<ApiTracer> TRACER_KEY = CallOptions.Key.create("gax.tracer");
 
-  private final Channel channel;
-  @Nullable private final Credentials credentials;
+  private final @Nullable Channel channel;
+  private final @Nullable Credentials credentials;
   private final CallOptions callOptions;
-  @Nullable private final java.time.Duration timeout;
-  @Nullable private final java.time.Duration streamWaitTimeout;
-  @Nullable private final java.time.Duration streamIdleTimeout;
-  @Nullable private final Integer channelAffinity;
-  @Nullable private final RetrySettings retrySettings;
-  @Nullable private final ImmutableSet<StatusCode.Code> retryableCodes;
+  private final java.time.@Nullable Duration timeout;
+  private final java.time.@Nullable Duration streamWaitTimeout;
+  private final java.time.@Nullable Duration streamIdleTimeout;
+  private final @Nullable Integer channelAffinity;
+  private final @Nullable RetrySettings retrySettings;
+  private final @Nullable ImmutableSet<StatusCode.Code> retryableCodes;
   private final ImmutableMap<String, List<String>> extraHeaders;
   private final ApiCallContextOptions options;
   private final EndpointContext endpointContext;
@@ -135,12 +137,12 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   private GrpcCallContext(
-      Channel channel,
+      @Nullable Channel channel,
       @Nullable Credentials credentials,
       CallOptions callOptions,
-      @Nullable java.time.Duration timeout,
-      @Nullable java.time.Duration streamWaitTimeout,
-      @Nullable java.time.Duration streamIdleTimeout,
+      java.time.@Nullable Duration timeout,
+      java.time.@Nullable Duration streamWaitTimeout,
+      java.time.@Nullable Duration streamIdleTimeout,
       @Nullable Integer channelAffinity,
       ImmutableMap<String, List<String>> extraHeaders,
       ApiCallContextOptions options,
@@ -257,12 +259,12 @@ public final class GrpcCallContext implements ApiCallContext {
   /** This method is obsolete. Use {@link #withTimeoutDuration(java.time.Duration)} instead. */
   @Override
   @ObsoleteApi("Use withTimeoutDuration(java.time.Duration) instead")
-  public GrpcCallContext withTimeout(@Nullable org.threeten.bp.Duration timeout) {
+  public GrpcCallContext withTimeout(org.threeten.bp.@Nullable Duration timeout) {
     return withTimeoutDuration(toJavaTimeDuration(timeout));
   }
 
   @Override
-  public GrpcCallContext withTimeoutDuration(@Nullable java.time.Duration timeout) {
+  public GrpcCallContext withTimeoutDuration(java.time.@Nullable Duration timeout) {
     // Default RetrySettings use 0 for RPC timeout. Treat that as disabled timeouts.
     if (timeout != null && (timeout.isZero() || timeout.isNegative())) {
       timeout = null;
@@ -289,17 +291,14 @@ public final class GrpcCallContext implements ApiCallContext {
         isDirectPath);
   }
 
-  /** This method is obsolete. Use {@link #getTimeoutDuration()} instead. */
-  @Nullable
   @Override
   @ObsoleteApi("Use getTimeoutDuration() instead")
-  public org.threeten.bp.Duration getTimeout() {
+  public org.threeten.bp.@Nullable Duration getTimeout() {
     return toThreetenDuration(getTimeoutDuration());
   }
 
-  @Nullable
   @Override
-  public java.time.Duration getTimeoutDuration() {
+  public java.time.@Nullable Duration getTimeoutDuration() {
     return timeout;
   }
 
@@ -310,13 +309,13 @@ public final class GrpcCallContext implements ApiCallContext {
   @Override
   @ObsoleteApi("Use withStreamWaitTimeoutDuration(java.time.Duration) instead")
   public GrpcCallContext withStreamWaitTimeout(
-      @Nullable org.threeten.bp.Duration streamWaitTimeout) {
+      org.threeten.bp.@Nullable Duration streamWaitTimeout) {
     return withStreamWaitTimeoutDuration(toJavaTimeDuration(streamWaitTimeout));
   }
 
   @Override
   public GrpcCallContext withStreamWaitTimeoutDuration(
-      @Nullable java.time.Duration streamWaitTimeout) {
+      java.time.@Nullable Duration streamWaitTimeout) {
     if (streamWaitTimeout != null) {
       Preconditions.checkArgument(
           streamWaitTimeout.compareTo(java.time.Duration.ZERO) >= 0, "Invalid timeout: < 0 s");
@@ -345,13 +344,13 @@ public final class GrpcCallContext implements ApiCallContext {
   @Override
   @ObsoleteApi("Use withStreamIdleTimeoutDuration(java.time.Duration) instead")
   public GrpcCallContext withStreamIdleTimeout(
-      @Nullable org.threeten.bp.Duration streamIdleTimeout) {
+      org.threeten.bp.@Nullable Duration streamIdleTimeout) {
     return withStreamIdleTimeoutDuration(toJavaTimeDuration(streamIdleTimeout));
   }
 
   @Override
   public GrpcCallContext withStreamIdleTimeoutDuration(
-      @Nullable java.time.Duration streamIdleTimeout) {
+      java.time.@Nullable Duration streamIdleTimeout) {
     if (streamIdleTimeout != null) {
       Preconditions.checkArgument(
           streamIdleTimeout.compareTo(java.time.Duration.ZERO) >= 0, "Invalid timeout: < 0 s");
@@ -562,7 +561,7 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   /** The {@link Channel} set on this context. */
-  public Channel getChannel() {
+  public @Nullable Channel getChannel() {
     return channel;
   }
 
@@ -573,9 +572,8 @@ public final class GrpcCallContext implements ApiCallContext {
 
   /** This method is obsolete. Use {@link #getStreamWaitTimeoutDuration()} instead. */
   @Override
-  @Nullable
   @ObsoleteApi("Use getStreamWaitTimeoutDuration() instead")
-  public org.threeten.bp.Duration getStreamWaitTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamWaitTimeout() {
     return toThreetenDuration(getStreamWaitTimeoutDuration());
   }
 
@@ -585,16 +583,14 @@ public final class GrpcCallContext implements ApiCallContext {
    * @see ApiCallContext#withStreamWaitTimeoutDuration(java.time.Duration)
    */
   @Override
-  @Nullable
-  public java.time.Duration getStreamWaitTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamWaitTimeoutDuration() {
     return streamWaitTimeout;
   }
 
   /** This method is obsolete. Use {@link #getStreamIdleTimeoutDuration()} instead. */
   @Override
-  @Nullable
   @ObsoleteApi("Use getStreamIdleTimeoutDuration() instead")
-  public org.threeten.bp.Duration getStreamIdleTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamIdleTimeout() {
     return toThreetenDuration(getStreamIdleTimeoutDuration());
   }
 
@@ -604,14 +600,12 @@ public final class GrpcCallContext implements ApiCallContext {
    * @see ApiCallContext#withStreamIdleTimeoutDuration(java.time.Duration)
    */
   @Override
-  @Nullable
-  public java.time.Duration getStreamIdleTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamIdleTimeoutDuration() {
     return streamIdleTimeout;
   }
 
   /** The channel affinity for this context. */
-  @Nullable
-  public Integer getChannelAffinity() {
+  public @Nullable Integer getChannelAffinity() {
     return channelAffinity;
   }
 
@@ -627,7 +621,7 @@ public final class GrpcCallContext implements ApiCallContext {
    * with the channel set to the given channel.
    */
   @ObsoleteApi("Use withTransportChannel() instead")
-  public GrpcCallContext withChannel(Channel newChannel) {
+  public GrpcCallContext withChannel(@Nullable Channel newChannel) {
     return new GrpcCallContext(
         newChannel,
         credentials,
@@ -769,7 +763,7 @@ public final class GrpcCallContext implements ApiCallContext {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (this == o) {
       return true;
     }

@@ -19,8 +19,10 @@ import com.google.api.generator.engine.ast.TypeNode;
 import com.google.auto.value.AutoValue;
 import java.util.Objects;
 import java.util.Optional;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class Field {
   // The field's canonical name, potentially post-processed by conflict resolution logic.
@@ -31,8 +33,7 @@ public abstract class Field {
   // resolution behavior. For more context, please see the invocation site of the setter method.
   public abstract String originalName();
 
-  @Nullable
-  public abstract String jsonName();
+  public abstract @Nullable String jsonName();
 
   public abstract TypeNode type();
 
@@ -42,8 +43,7 @@ public abstract class Field {
   // *not* be autopopulated.
   public abstract boolean isRequired();
 
-  @Nullable
-  public abstract Format fieldInfoFormat();
+  public abstract @Nullable Format fieldInfoFormat();
 
   public abstract boolean isMessage();
 
@@ -57,11 +57,9 @@ public abstract class Field {
 
   public abstract boolean isProto3Optional();
 
-  @Nullable
-  public abstract ResourceReference resourceReference();
+  public abstract @Nullable ResourceReference resourceReference();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   public boolean hasFieldNameConflict() {
     return !name().equals(originalName());
@@ -87,7 +85,7 @@ public abstract class Field {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof Field)) {
       return false;
     }

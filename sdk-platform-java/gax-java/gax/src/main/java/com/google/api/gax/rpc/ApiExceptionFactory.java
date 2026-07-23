@@ -29,20 +29,27 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
 /**
  * A factory class that returns the corresponding type of exception class from the given status
  * code.
  */
+@NullMarked
 public class ApiExceptionFactory {
   private ApiExceptionFactory() {}
 
   public static ApiException createException(
-      Throwable cause, StatusCode statusCode, boolean retryable) {
+      @Nullable Throwable cause, StatusCode statusCode, boolean retryable) {
     return createException(cause, statusCode, retryable, null);
   }
 
   public static ApiException createException(
-      String message, Throwable cause, StatusCode statusCode, boolean retryable) {
+      @Nullable String message,
+      @Nullable Throwable cause,
+      StatusCode statusCode,
+      boolean retryable) {
     switch (statusCode.getCode()) {
       case CANCELLED:
         return new CancelledException(message, cause, statusCode, retryable);
@@ -82,17 +89,20 @@ public class ApiExceptionFactory {
   }
 
   public static ApiException createException(
-      Throwable cause, StatusCode statusCode, boolean retryable, ErrorDetails errorDetails) {
+      @Nullable Throwable cause,
+      StatusCode statusCode,
+      boolean retryable,
+      @Nullable ErrorDetails errorDetails) {
     return createException(
         cause == null ? null : cause.toString(), cause, statusCode, retryable, errorDetails);
   }
 
   public static ApiException createException(
-      String message,
-      Throwable cause,
+      @Nullable String message,
+      @Nullable Throwable cause,
       StatusCode statusCode,
       boolean retryable,
-      ErrorDetails errorDetails) {
+      @Nullable ErrorDetails errorDetails) {
     switch (statusCode.getCode()) {
       case CANCELLED:
         return new CancelledException(message, cause, statusCode, retryable, errorDetails);

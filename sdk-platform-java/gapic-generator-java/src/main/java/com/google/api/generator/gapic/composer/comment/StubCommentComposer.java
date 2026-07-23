@@ -18,7 +18,9 @@ import com.google.api.generator.engine.ast.CommentStatement;
 import com.google.api.generator.engine.ast.JavaDocComment;
 import java.util.Arrays;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class StubCommentComposer {
   private static final String STUB_CLASS_HEADER_SUMMARY_PATTERN =
       "Base stub class for the %s service API.";

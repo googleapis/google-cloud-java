@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.common.base.Preconditions;
 import io.grpc.ClientCall;
 import io.grpc.MethodDescriptor;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code GrpcDirectBidiStreamingCallable} creates bidirectional streaming gRPC calls.
@@ -45,6 +46,7 @@ import io.grpc.MethodDescriptor;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcDirectBidiStreamingCallable<RequestT, ResponseT>
     extends BidiStreamingCallable<RequestT, ResponseT> {
   private final MethodDescriptor<RequestT, ResponseT> descriptor;

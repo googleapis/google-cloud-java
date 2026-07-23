@@ -40,6 +40,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -64,7 +65,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -78,6 +79,7 @@ public abstract class AbstractRetryingExecutorTest {
 
   @BeforeEach
   void setup() {
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -91,7 +93,7 @@ public abstract class AbstractRetryingExecutorTest {
     return Stream.of(Arguments.of(false), Arguments.of(true));
   }
 
-  @Mock protected ApiTracer tracer;
+  protected ApiTracer tracer;
   protected RetryingContext retryingContext;
 
   protected abstract RetryingExecutorWithContext<String> getExecutor(

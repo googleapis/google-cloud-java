@@ -35,12 +35,14 @@ import com.google.api.client.json.GenericJson;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.Instant;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Encapsulates response values for the 3rd party executable response (e.g. OIDC, SAML, error
  * responses).
  */
+@NullMarked
 class ExecutableResponse {
 
   private static final String SAML_SUBJECT_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:saml2";
@@ -140,8 +142,7 @@ class ExecutableResponse {
   }
 
   /** Returns the subject token expiration time in seconds (Unix epoch time). */
-  @Nullable
-  Long getExpirationTime() {
+  @Nullable Long getExpirationTime() {
     return this.expirationTime;
   }
 
@@ -158,26 +159,22 @@ class ExecutableResponse {
    *
    * @return The 3rd party subject token type for success responses, null otherwise.
    */
-  @Nullable
-  String getTokenType() {
+  @Nullable String getTokenType() {
     return this.tokenType;
   }
 
   /** Returns the subject token if the execution was successful, null otherwise. */
-  @Nullable
-  String getSubjectToken() {
+  @Nullable String getSubjectToken() {
     return this.subjectToken;
   }
 
   /** Returns the error code if the execution was unsuccessful, null otherwise. */
-  @Nullable
-  String getErrorCode() {
+  @Nullable String getErrorCode() {
     return this.errorCode;
   }
 
   /** Returns the error message if the execution was unsuccessful, null otherwise. */
-  @Nullable
-  String getErrorMessage() {
+  @Nullable String getErrorMessage() {
     return this.errorMessage;
   }
 

@@ -33,8 +33,10 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.auto.value.AutoValue;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** Implementation of TransportChannel based on http/json. */
+@NullMarked
 @AutoValue
 @InternalExtensionOnly
 public abstract class HttpJsonTransportChannel implements TransportChannel {

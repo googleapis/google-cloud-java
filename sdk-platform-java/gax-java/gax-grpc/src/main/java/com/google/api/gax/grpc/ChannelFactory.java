@@ -32,12 +32,14 @@ package com.google.api.gax.grpc;
 import com.google.api.core.InternalApi;
 import io.grpc.ManagedChannel;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This interface represents a factory for creating one ManagedChannel
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public interface ChannelFactory {
   ManagedChannel createSingleChannel() throws IOException;

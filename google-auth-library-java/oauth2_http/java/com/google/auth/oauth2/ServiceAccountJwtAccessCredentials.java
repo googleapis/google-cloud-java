@@ -67,12 +67,15 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Service Account credentials for calling Google APIs using a JWT directly for access.
  *
  * <p>Uses a JSON Web Token (JWT) directly in the request metadata to provide authorization.
  */
+@NullMarked
 public class ServiceAccountJwtAccessCredentials extends Credentials
     implements JwtProvider, ServiceAccountSigner, QuotaProjectIdProvider {
 
@@ -131,8 +134,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       String clientEmail,
       PrivateKey privateKey,
       String privateKeyId,
-      URI defaultAudience,
-      String quotaProjectId,
+      @Nullable URI defaultAudience,
+      @Nullable String quotaProjectId,
       String universeDomain) {
     this.clientId = clientId;
     this.clientEmail = Preconditions.checkNotNull(clientEmail);
@@ -169,8 +172,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    * @return the credentials defined by the JSON.
    * @throws IOException if the credential cannot be created from the JSON.
    */
-  static ServiceAccountJwtAccessCredentials fromJson(Map<String, Object> json, URI defaultAudience)
-      throws IOException {
+  static ServiceAccountJwtAccessCredentials fromJson(
+      Map<String, Object> json, @Nullable URI defaultAudience) throws IOException {
     String clientId = (String) json.get("client_id");
     String clientEmail = (String) json.get("client_email");
     String privateKeyPkcs8 = (String) json.get("private_key");
@@ -230,7 +233,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       String clientEmail,
       String privateKeyPkcs8,
       String privateKeyId,
-      URI defaultAudience)
+      @Nullable URI defaultAudience)
       throws IOException {
     return ServiceAccountJwtAccessCredentials.fromPkcs8(
         clientId,
@@ -248,7 +251,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       String privateKeyPkcs8,
       String privateKeyId,
       URI defaultAudience,
-      String quotaProjectId,
+      @Nullable String quotaProjectId,
       String universeDomain)
       throws IOException {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(privateKeyPkcs8);
@@ -285,7 +288,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    * @throws IOException if the credential cannot be created from the stream.
    */
   public static ServiceAccountJwtAccessCredentials fromStream(
-      InputStream credentialsStream, URI defaultAudience) throws IOException {
+      InputStream credentialsStream, @Nullable URI defaultAudience) throws IOException {
     Preconditions.checkNotNull(credentialsStream);
 
     JsonFactory jsonFactory = OAuth2Utils.JSON_FACTORY;
@@ -380,7 +383,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
 
   /** Provide the request metadata by putting an access JWT directly in the metadata. */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     if (uri == null) {
       if (defaultAudience != null) {
         uri = defaultAudience;
@@ -477,7 +480,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ServiceAccountJwtAccessCredentials)) {
       return false;
     }

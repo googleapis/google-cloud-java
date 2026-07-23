@@ -31,10 +31,12 @@ package com.google.api.gax.batching;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The default implementation of {@link BatchResource} which tracks the elementCount and byteCount.
  */
+@NullMarked
 @AutoValue
 abstract class DefaultBatchResource implements BatchResource {
 

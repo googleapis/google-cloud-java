@@ -17,6 +17,7 @@ _COMPILE_DEPS = [
     "@com_google_auto_value_auto_value_annotations//jar",
     "@com_google_code_findbugs_jsr305//jar",
     "@com_google_errorprone_error_prone_annotations//jar",
+    "@org_jspecify_jspecify//jar",
     "@com_google_guava_guava//jar",
     "@io_opentelemetry_opentelemetry_api//jar",
     "@io_opentelemetry_opentelemetry_context//jar",

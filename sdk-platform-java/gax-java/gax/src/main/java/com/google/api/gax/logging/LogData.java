@@ -35,42 +35,34 @@ import com.google.auto.value.AutoValue;
 import com.google.gson.Gson;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @InternalApi
 @AutoValue
 public abstract class LogData {
   private static final Gson gson = new Gson();
 
-  @Nullable
-  public abstract String serviceName();
+  public abstract @Nullable String serviceName();
 
-  @Nullable
-  public abstract String rpcName();
+  public abstract @Nullable String rpcName();
 
-  @Nullable
-  public abstract String requestId();
+  public abstract @Nullable String requestId();
 
-  @Nullable
-  public abstract Map<String, String> requestHeaders();
+  public abstract @Nullable Map<String, String> requestHeaders();
 
-  @Nullable
-  public abstract Map<String, Object> requestPayload();
+  public abstract @Nullable Map<String, Object> requestPayload();
 
-  @Nullable
-  public abstract String responseStatus();
+  public abstract @Nullable String responseStatus();
 
-  @Nullable
-  public abstract Map<String, String> responseHeaders();
+  public abstract @Nullable Map<String, String> responseHeaders();
 
-  @Nullable
-  public abstract Map<String, Object> responsePayload();
+  public abstract @Nullable Map<String, Object> responsePayload();
 
-  @Nullable
-  public abstract String httpMethod();
+  public abstract @Nullable String httpMethod();
 
-  @Nullable
-  public abstract String httpUrl();
+  public abstract @Nullable String httpUrl();
 
   public static Builder builder() {
     return new AutoValue_LogData.Builder();

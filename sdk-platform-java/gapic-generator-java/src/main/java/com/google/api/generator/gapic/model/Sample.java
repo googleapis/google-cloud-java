@@ -20,11 +20,13 @@ import com.google.api.generator.engine.ast.Statement;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This model represents a generated code sample. It contains the information needed to generate a
  * sample file.
  */
+@NullMarked
 @AutoValue
 public abstract class Sample {
   public abstract List<Statement> body();
