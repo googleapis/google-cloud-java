@@ -21,7 +21,11 @@ import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
+<<<<<<< HEAD
 import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
+=======
+import com.google.api.gax.grpc.GrpcTransportChannel;
+>>>>>>> be36e14166c (fix(showcase): use Conscrypt.newProvider() directly in ITPostQuantumCryptography)
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
@@ -41,6 +45,7 @@ import java.util.Collections;
 import java.util.List;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
+import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -123,7 +128,7 @@ public class ITPostQuantumCryptography {
     TrustManagerFactory tmf =
         TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
     tmf.init(trustStore);
-    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
+    Provider conscryptProvider = Conscrypt.newProvider();
     SSLContext sslContext =
         conscryptProvider != null
             ? SSLContext.getInstance("TLS", conscryptProvider)
