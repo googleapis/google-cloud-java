@@ -36,7 +36,6 @@ import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -295,9 +294,7 @@ public final class AgentIdentityUtils {
     return new CertInfo(cert, certContent);
   }
 
-  /**
-   * Checks if a file exists, throwing AccessDeniedException if permission is denied.
-   */
+  /** Checks if a file exists, throwing AccessDeniedException if permission is denied. */
   private static boolean checkExistsOrAccessDenied(java.nio.file.Path path)
       throws java.nio.file.AccessDeniedException {
     try {
@@ -310,9 +307,7 @@ public final class AgentIdentityUtils {
     }
   }
 
-  /**
-   * Checks if the user has disabled token binding by setting the environment variable to false.
-   */
+  /** Checks if the user has disabled token binding by setting the environment variable to false. */
   private static boolean isTokenBindingEnabled() {
     String preventSharing = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
     return !("false".equalsIgnoreCase(preventSharing));
@@ -322,7 +317,8 @@ public final class AgentIdentityUtils {
    * Reads the certificate path from the config file with retry logic to handle rotation race
    * conditions.
    */
-  private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(String certConfigPath) throws IOException {
+  private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(String certConfigPath)
+      throws IOException {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
@@ -350,7 +346,8 @@ public final class AgentIdentityUtils {
             org.slf4j.event.Level.WARN,
             Collections.emptyMap(),
             String.format(
-                "Certificate config file not found or invalid at %s (from %s environment variable). Retrying for up to %d seconds.",
+                "Certificate config file not found or invalid at %s (from %s environment variable)."
+                    + " Retrying for up to %d seconds.",
                 certConfigPath, GOOGLE_API_CERTIFICATE_CONFIG, TOTAL_TIMEOUT_MS / 1000));
         warned = true;
       }
@@ -359,12 +356,15 @@ public final class AgentIdentityUtils {
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new IOException(
-            "Interrupted while waiting for Agent Identity certificate files for bound token request.",
+            "Interrupted while waiting for Agent Identity certificate files for bound token"
+                + " request.",
             e);
       }
     }
     throw new IOException(
-        "Unable to find Agent Identity certificate config or file for bound token request after multiple retries. Token binding protection is failing. You can turn off this protection by setting "
+        "Unable to find Agent Identity certificate config or file for bound token request after"
+            + " multiple retries. Token binding protection is failing. You can turn off this"
+            + " protection by setting "
             + GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES
             + " to false to fall back to unbound tokens.");
   }
@@ -411,7 +411,8 @@ public final class AgentIdentityUtils {
       }
     }
     throw new IOException(
-        "Unable to find well-known certificate file for bound token request after multiple retries.");
+        "Unable to find well-known certificate file for bound token request after multiple"
+            + " retries.");
   }
 
   /** Reads the full certificate chain from the specified path as a string. */
@@ -489,7 +490,8 @@ public final class AgentIdentityUtils {
             LOGGER,
             org.slf4j.event.Level.WARN,
             Collections.emptyMap(),
-            "Token binding protection is disabled because mTLS was explicitly disabled via GOOGLE_API_USE_CLIENT_CERTIFICATE.");
+            "Token binding protection is disabled because mTLS was explicitly disabled via"
+                + " GOOGLE_API_USE_CLIENT_CERTIFICATE.");
         return false;
       }
       return false;
@@ -521,7 +523,8 @@ public final class AgentIdentityUtils {
 
   @SuppressWarnings("unchecked")
   /** Extracts the certificate and private key paths from the JSON configuration file. */
-  private static ResolvedCertAndKeyPaths extractPathsFromConfig(String certConfigPath) throws IOException {
+  private static ResolvedCertAndKeyPaths extractPathsFromConfig(String certConfigPath)
+      throws IOException {
     try (InputStream stream = Files.newInputStream(Paths.get(certConfigPath))) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
       GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
@@ -552,7 +555,8 @@ public final class AgentIdentityUtils {
 
   /** Parses the X509 certificate from the specified content string. */
   private static X509Certificate parseCertificateContent(String certContent) throws IOException {
-    try (InputStream stream = new java.io.ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8))) {
+    try (InputStream stream =
+        new java.io.ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8))) {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
       return (X509Certificate) cf.generateCertificate(stream);
     } catch (GeneralSecurityException e) {
