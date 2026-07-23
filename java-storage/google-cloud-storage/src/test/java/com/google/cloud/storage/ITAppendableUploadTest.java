@@ -262,6 +262,182 @@ public final class ITAppendableUploadTest {
         () -> assertThat(done2.getCrc32c()).isNotNull());
   }
 
+  @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+  public void explicitFinalizeWithCorrectChecksum() throws Exception {
+    BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
+    assumeTrue(
+        "manually finalizing",
+        p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
+
+    BlobAppendableUpload upload =
+        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+
+    try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+
+      String expectedCrc = Utils.crc32cCodec.encode(p.content.getCrc32c());
+      channel.finalizeAndClose(expectedCrc);
+    }
+
+    BlobInfo gen1 = upload.getResult().get(5, TimeUnit.SECONDS);
+    assertThat(gen1.getSize()).isEqualTo(p.content.length());
+    assertThat(gen1.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(p.content.getCrc32c()));
+  }
+
+  @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+  public void explicitFinalizeWithIncorrectChecksumFails() throws Exception {
+    BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
+    assumeTrue(
+        "manually finalizing",
+        p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
+
+    BlobAppendableUpload upload =
+        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+
+    try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+
+      String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
+    }
+
+    try {
+      upload.getResult().get(5, TimeUnit.SECONDS);
+      org.junit.Assert.fail("Expected exception due to checksum mismatch");
+    } catch (ExecutionException e) {
+      // The server rejects it
+      assertThat(e.getCause().getMessage().toLowerCase()).contains("mismatch");
+    }
+  }
+
+  @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+  public void takeoverJustToFinalizeWithIncorrectChecksumFails() throws Exception {
+    BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
+    assumeTrue(
+        "manually finalizing",
+        p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
+
+    BlobAppendableUpload upload =
+        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+    try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+    }
+    BlobInfo done1 = upload.getResult().get(5, TimeUnit.SECONDS);
+    assertThat(done1.getSize()).isEqualTo(p.content.length());
+    assertThat(done1.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(p.content.getCrc32c()));
+
+    BlobAppendableUpload takeOver =
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+
+    String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
+    try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
+    }
+
+    try {
+      takeOver.getResult().get(5, TimeUnit.SECONDS);
+      org.junit.Assert.fail("Expected exception due to checksum mismatch");
+    } catch (ExecutionException e) {
+      // The server rejects it
+      assertThat(e.getCause().getMessage().toLowerCase()).contains("mismatch");
+    }
+  }
+
+  @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+  public void takeoverAndAppendWithCorrectChecksumWorks() throws Exception {
+    BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
+    assumeTrue(
+        "manually finalizing",
+        p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
+
+    BlobAppendableUpload upload =
+        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+    try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+    }
+    BlobInfo done1 = upload.getResult().get(5, TimeUnit.SECONDS);
+    assertThat(done1.getSize()).isEqualTo(p.content.length());
+
+    BlobAppendableUpload takeOver =
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+
+    try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+
+      ChecksummedTestContent fullContent = p.content.concat(p.content);
+      String expectedCrc = Utils.crc32cCodec.encode(fullContent.getCrc32c());
+      channel.finalizeAndClose(expectedCrc);
+    }
+
+    BlobInfo done2 = takeOver.getResult().get(5, TimeUnit.SECONDS);
+    assertThat(done2.getSize()).isEqualTo(p.content.length() * 2);
+    ChecksummedTestContent fullContent = p.content.concat(p.content);
+    assertThat(done2.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(fullContent.getCrc32c()));
+  }
+
+  @Test
+  @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
+  public void takeoverAndAppendWithIncorrectChecksumFails() throws Exception {
+    BlobId bid = BlobId.of(bucket.getName(), UUID.randomUUID().toString());
+    assumeTrue(
+        "manually finalizing",
+        p.uploadConfig.getCloseAction() != CloseAction.FINALIZE_WHEN_CLOSING);
+
+    BlobAppendableUpload upload =
+        storage.blobAppendableUpload(BlobInfo.newBuilder(bid).build(), p.uploadConfig);
+    try (AppendableUploadWriteableByteChannel channel = upload.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+    }
+    BlobInfo done1 = upload.getResult().get(5, TimeUnit.SECONDS);
+    assertThat(done1.getSize()).isEqualTo(p.content.length());
+
+    BlobAppendableUpload takeOver =
+        storage.blobAppendableUpload(
+            BlobInfo.newBuilder(done1.getBlobId()).build(), p.uploadConfig);
+
+    try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
+      int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
+      assertThat(written).isEqualTo(p.content.length());
+
+      String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
+      try {
+        channel.finalizeAndClose(badCrc);
+        org.junit.Assert.fail("Expected exception due to checksum mismatch");
+      } catch (IOException e) {
+        assertThat(e.getMessage().toLowerCase()).contains("mismatch");
+      }
+    }
+
+    try {
+      takeOver.getResult().get(5, TimeUnit.SECONDS);
+      org.junit.Assert.fail("Expected exception due to checksum mismatch");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause().getMessage().toLowerCase()).contains("mismatch");
+    }
+  }
+
   private void checkTestbenchIssue733() {
     if (backend == Backend.TEST_BENCH
         && p.uploadConfig.getCloseAction() == CloseAction.FINALIZE_WHEN_CLOSING) {
