@@ -195,9 +195,8 @@ public final class AgentIdentityUtils {
 
     if (!Strings.isNullOrEmpty(certConfigPath)) {
       java.nio.file.Path configPath = Paths.get(certConfigPath);
-      java.nio.file.Path parentPath = configPath.getParent();
-      if (!Files.exists(configPath) && (parentPath == null || !Files.exists(parentPath))) {
-        // Fail-fast if config doesn't exist and its parent directory doesn't exist
+      if (!Files.exists(configPath) && !Files.exists(Paths.get(wellKnownDir))) {
+        // Fail-fast if config doesn't exist and we are not in a workload environment
         return new ResolvedCertAndKeyPaths(null, null);
       }
       // Read cert and key paths from config file. We use retry with backoff to handle transient
@@ -252,6 +251,13 @@ public final class AgentIdentityUtils {
             break;
           }
           LOGGER.warn("Cert and key mismatch, retrying...");
+        } catch (java.nio.file.AccessDeniedException e) {
+          Slf4jUtils.log(
+              LOGGER,
+              org.slf4j.event.Level.WARN,
+              Collections.emptyMap(),
+              "Permission denied reading certificate or key files. Falling back to unbound token.");
+          return null;
         } catch (Exception e) {
           LOGGER.warn("Failed to read or verify cert/key, retrying...", e);
         }
@@ -273,11 +279,34 @@ public final class AgentIdentityUtils {
       }
     } else if (!Strings.isNullOrEmpty(certPath)) {
       // Bundle or only cert available
-      certContent = readCertificateChain(certPath);
-      cert = parseCertificateContent(certContent);
+      try {
+        certContent = readCertificateChain(certPath);
+        cert = parseCertificateContent(certContent);
+      } catch (java.nio.file.AccessDeniedException e) {
+        Slf4jUtils.log(
+            LOGGER,
+            org.slf4j.event.Level.WARN,
+            Collections.emptyMap(),
+            "Permission denied reading certificate files. Falling back to unbound token.");
+        return null;
+      }
     }
 
     return new CertInfo(cert, certContent);
+  }
+
+  /**
+   * Checks if a file exists, throwing AccessDeniedException if permission is denied.
+   */
+  private static boolean checkExistsOrAccessDenied(java.nio.file.Path path) throws java.nio.file.AccessDeniedException {
+    try {
+      Files.readAttributes(path, java.nio.file.attribute.BasicFileAttributes.class);
+      return true;
+    } catch (java.nio.file.AccessDeniedException e) {
+      throw e;
+    } catch (IOException e) {
+      return false;
+    }
   }
 
   /**
@@ -296,12 +325,19 @@ public final class AgentIdentityUtils {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
-        if (Files.exists(Paths.get(certConfigPath))) {
+        if (checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
           ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
-          if (paths != null && !Strings.isNullOrEmpty(paths.certPath) && Files.exists(Paths.get(paths.certPath))) {
+          if (paths != null && !Strings.isNullOrEmpty(paths.certPath) && checkExistsOrAccessDenied(Paths.get(paths.certPath))) {
             return paths;
           }
         }
+      } catch (java.nio.file.AccessDeniedException e) {
+        Slf4jUtils.log(
+            LOGGER,
+            org.slf4j.event.Level.WARN,
+            Collections.emptyMap(),
+            "Permission denied reading certificate config file. Falling back to unbound token.");
+        return null;
       } catch (IOException e) {
         // Fall through to retry
       }
@@ -338,12 +374,19 @@ public final class AgentIdentityUtils {
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
-        if (Files.exists(Paths.get(bundlePath))) {
+        if (checkExistsOrAccessDenied(Paths.get(bundlePath))) {
           return bundlePath;
         }
-        if (Files.exists(Paths.get(certOnlyPath))) {
+        if (checkExistsOrAccessDenied(Paths.get(certOnlyPath))) {
           return certOnlyPath;
         }
+      } catch (java.nio.file.AccessDeniedException e) {
+        Slf4jUtils.log(
+            LOGGER,
+            org.slf4j.event.Level.WARN,
+            Collections.emptyMap(),
+            "Permission denied reading well-known certificates. Falling back to unbound token.");
+        return null;
       } catch (Exception e) {
         // Fall through to retry
       }
@@ -476,7 +519,7 @@ public final class AgentIdentityUtils {
   @SuppressWarnings("unchecked")
   /** Extracts the certificate and private key paths from the JSON configuration file. */
   private static ResolvedCertAndKeyPaths extractPathsFromConfig(String certConfigPath) throws IOException {
-    try (InputStream stream = new FileInputStream(certConfigPath)) {
+    try (InputStream stream = Files.newInputStream(Paths.get(certConfigPath))) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
       GenericJson config = parser.parseAndClose(stream, StandardCharsets.UTF_8, GenericJson.class);
       Object certConfigsObj = config.get("cert_configs");
@@ -496,6 +539,8 @@ public final class AgentIdentityUtils {
           return new ResolvedCertAndKeyPaths(certPath, keyPath);
         }
       }
+    } catch (java.nio.file.AccessDeniedException e) {
+      throw e;
     } catch (Exception e) {
       throw new IOException("Failed to parse Agent Identity config JSON", e);
     }
