@@ -60,8 +60,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** OAuth2 Credentials representing a user's identity and consent. */
+@NullMarked
 public class UserCredentials extends GoogleCredentials implements IdTokenProvider {
 
   private static final String GRANT_TYPE = "refresh_token";
@@ -382,7 +385,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof UserCredentials)) {
       return false;
     }
@@ -471,7 +474,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       super.setAccessToken(token);
       return this;
     }

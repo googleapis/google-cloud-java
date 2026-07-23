@@ -65,9 +65,11 @@ import java.util.ServiceLoader;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Base type for Credentials using OAuth2. */
+@NullMarked
 public class OAuth2Credentials extends Credentials {
 
   private static final long serialVersionUID = 4556936364828217687L;
@@ -80,8 +82,8 @@ public class OAuth2Credentials extends Credentials {
 
   // byte[] is serializable, so the lock variable can be final
   @VisibleForTesting final Object lock = new byte[0];
-  private volatile OAuthValue value = null;
-  @VisibleForTesting transient RefreshTask refreshTask;
+  @Nullable private volatile OAuthValue value = null;
+  @Nullable @VisibleForTesting transient RefreshTask refreshTask;
 
   // Change listeners are not serialized
   private transient List<CredentialsChangedListener> changeListeners;
@@ -108,7 +110,7 @@ public class OAuth2Credentials extends Credentials {
    *
    * @param accessToken initial or temporary access token
    */
-  protected OAuth2Credentials(AccessToken accessToken) {
+  protected OAuth2Credentials(@Nullable AccessToken accessToken) {
     this(accessToken, DEFAULT_REFRESH_MARGIN, DEFAULT_EXPIRATION_MARGIN);
   }
 
@@ -147,6 +149,7 @@ public class OAuth2Credentials extends Credentials {
    *
    * @return The cached access token.
    */
+  @Nullable
   public final AccessToken getAccessToken() {
     OAuthValue localState = value;
     if (localState != null) {
@@ -182,7 +185,7 @@ public class OAuth2Credentials extends Credentials {
    * authorization bearer token.
    */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     return unwrapDirectFuture(asyncFetch(MoreExecutors.directExecutor())).requestMetadata;
   }
 
@@ -472,7 +475,7 @@ public class OAuth2Credentials extends Credentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof OAuth2Credentials)) {
       return false;
     }
@@ -588,7 +591,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(@Nullable Object obj) {
       if (!(obj instanceof OAuthValue)) {
         return false;
       }

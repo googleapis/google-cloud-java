@@ -52,6 +52,7 @@ import java.util.Base64;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provider for retrieving the subject tokens for {@link IdentityPoolCredentials} by reading an
@@ -59,6 +60,7 @@ import java.util.regex.Pattern;
  * the leaf certificate is base64-encoded (DER format), wrapped in a JSON array, and used as the
  * subject token for STS exchange.
  */
+@NullMarked
 public class CertificateIdentityPoolSubjectTokenSupplier
     implements IdentityPoolSubjectTokenSupplier {
 

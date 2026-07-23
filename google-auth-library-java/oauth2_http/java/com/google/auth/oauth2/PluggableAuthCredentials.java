@@ -40,7 +40,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * PluggableAuthCredentials enables the exchange of workload identity pool external credentials for
@@ -97,6 +98,7 @@ import javax.annotation.Nullable;
  *
  * <p>Please see this repositories README for a complete executable request/response specification.
  */
+@NullMarked
 public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   static final String PLUGGABLE_AUTH_METRICS_HEADER_VALUE = "executable";
@@ -209,8 +211,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  @Nullable
-  ExecutableHandler getExecutableHandler() {
+  @Nullable ExecutableHandler getExecutableHandler() {
     return this.handler;
   }
 

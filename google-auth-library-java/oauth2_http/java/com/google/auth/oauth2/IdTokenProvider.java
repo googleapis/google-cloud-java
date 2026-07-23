@@ -33,8 +33,10 @@ package com.google.auth.oauth2;
 
 import java.io.IOException;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /** Interface for an Google OIDC token provider. This type represents a google issued OIDC token. */
+@NullMarked
 public interface IdTokenProvider {
 
   /**

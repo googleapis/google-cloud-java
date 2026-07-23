@@ -32,6 +32,7 @@
 package com.google.auth.http;
 
 import com.google.api.client.http.HttpTransport;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A base interface for all {@link HttpTransport} factories.
@@ -39,6 +40,7 @@ import com.google.api.client.http.HttpTransport;
  * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
  * is done via {@link java.util.ServiceLoader}.
  */
+@NullMarked
 public interface HttpTransportFactory {
 
   /**
