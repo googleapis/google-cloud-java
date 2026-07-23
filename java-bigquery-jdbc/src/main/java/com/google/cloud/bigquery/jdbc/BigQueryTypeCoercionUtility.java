@@ -138,6 +138,27 @@ class BigQueryTypeCoercionUtility {
     return adjustedTimestamp;
   }
 
+  static Time localTimeToTime(LocalTime lt) {
+    long epochMillis =
+        lt.atDate(LocalDate.of(1970, 1, 1))
+            .atZone(ZoneId.systemDefault())
+            .toInstant()
+            .toEpochMilli();
+    return new Time(epochMillis);
+  }
+
+  static LocalDateTime parseFieldValueToLocalDateTime(FieldValue fv) {
+    String raw = fv.getStringValue();
+    if (raw.contains("T") || raw.contains(" ")) {
+      return LocalDateTime.parse(raw.replace(' ', 'T'));
+    }
+    long micros = fv.getTimestampValue();
+    return Instant.EPOCH
+        .plus(micros, ChronoUnit.MICROS)
+        .atOffset(ZoneOffset.UTC)
+        .toLocalDateTime();
+  }
+
   static BigQueryTypeCoercer INSTANCE;
 
   static {
@@ -163,7 +184,7 @@ class BigQueryTypeCoercionUtility {
 
             // Read API Type coercions
             .registerTypeCoercion(
-                (LocalDateTime ldt) -> Timestamp.from(ldt.toInstant(ZoneOffset.UTC)),
+                (LocalDateTime ldt) -> Timestamp.valueOf(ldt),
                 LocalDateTime.class,
                 Timestamp.class)
             .registerTypeCoercion(Text::toString, Text.class, String.class)
@@ -172,22 +193,15 @@ class BigQueryTypeCoercionUtility {
             .registerTypeCoercion(new LongToTime())
             .registerTypeCoercion(new IntegerToDate())
             .registerTypeCoercion(
-                (Timestamp ts) ->
-                    Date.valueOf(ts.toInstant().atOffset(ZoneOffset.UTC).toLocalDate()),
+                (Timestamp ts) -> Date.valueOf(ts.toLocalDateTime().toLocalDate()),
                 Timestamp.class,
                 Date.class)
             .registerTypeCoercion(
-                (Timestamp ts) ->
-                    Time.valueOf(ts.toInstant().atOffset(ZoneOffset.UTC).toLocalTime()),
+                (Timestamp ts) -> localTimeToTime(ts.toLocalDateTime().toLocalTime()),
                 Timestamp.class,
                 Time.class)
             .registerTypeCoercion(
-                (Time time) -> // Per JDBC spec, the date component should be 1970-01-01
-                Timestamp.from(
-                        LocalDateTime.of(LocalDate.ofEpochDay(0), time.toLocalTime())
-                            .toInstant(ZoneOffset.UTC)),
-                Time.class,
-                Timestamp.class)
+                (Time time) -> new Timestamp(time.getTime()), Time.class, Timestamp.class)
             .registerTypeCoercion(
                 (Date date) -> new Timestamp(date.getTime()), Date.class, Timestamp.class)
             .registerTypeCoercion(
@@ -195,35 +209,94 @@ class BigQueryTypeCoercionUtility {
                 LocalDateTime.class,
                 Date.class)
             .registerTypeCoercion(
-                (LocalDateTime ldt) -> {
-                  // Custom conversion is used to preserve sub-second (millisecond) precision,
-                  // as standard java.sql.Time.valueOf(LocalTime) truncates milliseconds.
-                  long millisOfDay = TimeUnit.NANOSECONDS.toMillis(ldt.toLocalTime().toNanoOfDay());
-                  long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
-                  return new Time(localMillis);
-                },
+                (LocalDateTime ldt) -> localTimeToTime(ldt.toLocalTime()),
                 LocalDateTime.class,
                 Time.class)
             .registerTypeCoercion((Date date) -> date.toLocalDate(), Date.class, LocalDate.class)
             .registerTypeCoercion(
-                (Time time) -> {
-                  // Custom conversion is used to preserve sub-second (millisecond) precision,
-                  // as standard java.sql.Time.toLocalTime() truncates milliseconds.
-                  long millis = time.getTime();
-                  long localMillis = millis + TimeZoneCache.getOffset(millis);
-                  return LocalTime.ofNanoOfDay(TimeUnit.MILLISECONDS.toNanos(localMillis));
-                },
+                (Date date) -> date.toLocalDate().atStartOfDay(),
+                Date.class,
+                LocalDateTime.class)
+            .registerTypeCoercion(
+                (Time time) ->
+                    Instant.ofEpochMilli(time.getTime())
+                        .atZone(ZoneId.systemDefault())
+                        .toLocalTime(),
                 Time.class,
                 LocalTime.class)
             .registerTypeCoercion(
-                (Timestamp ts) -> ts.toInstant().atOffset(ZoneOffset.UTC).toLocalDateTime(),
-                Timestamp.class,
-                LocalDateTime.class)
+                (Timestamp ts) -> ts.toLocalDateTime(), Timestamp.class, LocalDateTime.class)
             .registerTypeCoercion(
-                (Timestamp ts) -> ts.toInstant().atOffset(ZoneOffset.UTC),
+                (Timestamp ts) -> ts.toLocalDateTime().toLocalDate(),
+                Timestamp.class,
+                LocalDate.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toLocalDateTime().toLocalTime(),
+                Timestamp.class,
+                LocalTime.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toLocalDateTime().atOffset(ZoneOffset.UTC),
                 Timestamp.class,
                 OffsetDateTime.class)
-            .registerTypeCoercion((Timestamp ts) -> ts.toInstant(), Timestamp.class, Instant.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toLocalDateTime().atZone(ZoneOffset.UTC),
+                Timestamp.class,
+                ZonedDateTime.class)
+            .registerTypeCoercion(
+                (Timestamp ts) -> ts.toLocalDateTime().atOffset(ZoneOffset.UTC).toInstant(),
+                Timestamp.class,
+                Instant.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> ldt.toLocalDate(), LocalDateTime.class, LocalDate.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> ldt.toLocalTime(), LocalDateTime.class, LocalTime.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> ldt.atOffset(ZoneOffset.UTC),
+                LocalDateTime.class,
+                OffsetDateTime.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> ldt.atZone(ZoneOffset.UTC),
+                LocalDateTime.class,
+                ZonedDateTime.class)
+            .registerTypeCoercion(
+                (LocalDateTime ldt) -> ldt.toInstant(ZoneOffset.UTC),
+                LocalDateTime.class,
+                Instant.class)
+            .registerTypeCoercion((LocalDate ld) -> Date.valueOf(ld), LocalDate.class, Date.class)
+            .registerTypeCoercion(
+                (LocalDate ld) -> Timestamp.valueOf(ld.atStartOfDay()),
+                LocalDate.class,
+                Timestamp.class)
+            .registerTypeCoercion(
+                (LocalDate ld) -> ld.atStartOfDay(), LocalDate.class, LocalDateTime.class)
+            .registerTypeCoercion(
+                BigQueryTypeCoercionUtility::localTimeToTime,
+                LocalTime.class,
+                Time.class)
+            .registerTypeCoercion(
+                (FieldValue fv) -> Date.valueOf(fv.getStringValue()).toLocalDate(),
+                FieldValue.class,
+                LocalDate.class)
+            .registerTypeCoercion(
+                (FieldValue fv) -> LocalTime.parse(fv.getStringValue()),
+                FieldValue.class,
+                LocalTime.class)
+            .registerTypeCoercion(
+                BigQueryTypeCoercionUtility::parseFieldValueToLocalDateTime,
+                FieldValue.class,
+                LocalDateTime.class)
+            .registerTypeCoercion(
+                (FieldValue fv) -> parseFieldValueToLocalDateTime(fv).atOffset(ZoneOffset.UTC),
+                FieldValue.class,
+                OffsetDateTime.class)
+            .registerTypeCoercion(
+                (FieldValue fv) -> parseFieldValueToLocalDateTime(fv).atZone(ZoneOffset.UTC),
+                FieldValue.class,
+                ZonedDateTime.class)
+            .registerTypeCoercion(
+                (FieldValue fv) -> parseFieldValueToLocalDateTime(fv).toInstant(ZoneOffset.UTC),
+                FieldValue.class,
+                Instant.class)
             .registerTypeCoercion(new TimestampToString())
             .registerTypeCoercion(new TimeToString())
             .registerTypeCoercion((Long l) -> l != 0L, Long.class, Boolean.class)
@@ -276,7 +349,9 @@ class BigQueryTypeCoercionUtility {
 
     @Override
     public String coerce(Time value) {
-      return FORMATTER.format(value.toLocalTime());
+      LocalTime lt =
+          Instant.ofEpochMilli(value.getTime()).atZone(ZoneId.systemDefault()).toLocalTime();
+      return FORMATTER.format(lt);
     }
   }
 
@@ -355,10 +430,11 @@ class BigQueryTypeCoercionUtility {
 
     @Override
     public Timestamp coerce(Long value) {
-      // Long value is in microseconds. All further calculations should account for the unit.
       Instant instant = Instant.EPOCH.plus(value, ChronoUnit.MICROS);
-      // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
-      return Timestamp.from(instant);
+      LocalDateTime utcDateTime = instant.atOffset(ZoneOffset.UTC).toLocalDateTime();
+      Timestamp ts = Timestamp.valueOf(utcDateTime);
+      ts.setNanos((int) ((value % 1_000_000) * 1000));
+      return ts;
     }
   }
 
@@ -390,17 +466,9 @@ class BigQueryTypeCoercionUtility {
 
     @Override
     public Time coerce(FieldValue fieldValue) {
-      // Time ranges from 00:00:00 to 23:59:59.999999 in BigQuery
       String strTime = fieldValue.getStringValue();
       try {
-        LocalTime localTime = LocalTime.parse(strTime);
-        // Convert LocalTime to milliseconds of the day. This correctly preserves millisecond
-        // precision and truncates anything smaller
-        long millisOfDay = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
-        // Adjust by local timezone offset to ensure correct wall-clock representation with
-        // millisecond precision
-        long localMillis = TimeZoneCache.getLocalMillis(millisOfDay);
-        return new Time(localMillis);
+        return localTimeToTime(LocalTime.parse(strTime));
       } catch (java.time.format.DateTimeParseException e) {
         IllegalArgumentException ex =
             new IllegalArgumentException(
@@ -416,19 +484,10 @@ class BigQueryTypeCoercionUtility {
     @Override
     public Timestamp coerce(FieldValue fieldValue) {
       String rawValue = fieldValue.getStringValue();
-      // BigQuery DATETIME strings are formatted like "YYYY-MM-DD'T'HH:MM:SS.fffffffff"
-      // BigQuery TIMESTAMP strings are numeric epoch seconds.
-      if (rawValue.contains("T")) {
-        // It's a DATETIME string.
-        // Timestamp.valueOf() expects "yyyy-mm-dd hh:mm:ss.fffffffff" format.
+      if (rawValue.contains("T") || rawValue.contains(" ")) {
         return Timestamp.valueOf(rawValue.replace('T', ' '));
-      } else {
-        // It's a TIMESTAMP numeric string.
-        long microseconds = fieldValue.getTimestampValue();
-        Instant instant = Instant.EPOCH.plus(microseconds, ChronoUnit.MICROS);
-        // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
-        return Timestamp.from(instant);
       }
+      return new LongToTimestamp().coerce(fieldValue.getTimestampValue());
     }
   }
 

@@ -116,6 +116,10 @@ class BigQueryTypeCoercer {
       return null;
     }
     if (coercion == null) {
+      if (targetClass.isAssignableFrom(sourceClass)
+          || (sourceClass.isArray() && targetClass.isArray())) {
+        return (T) value;
+      }
       if (targetClass.equals(String.class)) {
         return (T) value.toString();
       }
