@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_DEFERRED;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.ATTRIBUTES_KEY_MISSING;
@@ -111,7 +112,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private static final ExceptionHandler TRANSACTION_OPERATION_EXCEPTION_HANDLER =
       TransactionOperationExceptionHandler.build();
 
-  private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
+  private final TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
   private final DatastoreMetricsRecorder metricsRecorder;
   private final OpenTelemetry builtInOpenTelemetry;
@@ -180,7 +181,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
     TracedReadWriteTransactionCallable(
         ReadWriteTransactionCallable<T> delegate,
-        @Nullable com.google.cloud.datastore.telemetry.TraceUtil.Span parentSpan) {
+        @Nullable TraceUtil.Span parentSpan) {
       this.delegate = delegate;
       this.parentSpan = parentSpan;
     }
@@ -362,13 +363,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public <T> QueryResults<T> run(Query<T> query, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     com.google.cloud.datastore.models.ExplainOptions explainOptions =
         executionOptions.getExplainOptions();
     return run(
         toReadOptionsPb(executionOptions.getReadOptions().toArray(new ReadOption[0])),
         query,
         explainOptions != null ? explainOptions.toPb() : null,
-        executionOptions.getRequestOptions());
+        executionOptions.getRequestOptions() != null
+            ? executionOptions.getRequestOptions().toPb()
+            : RequestOptions.getDefaultInstance());
   }
 
   @SuppressWarnings("unchecked")
@@ -435,7 +439,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return runWithObservability(
         () -> {
           RunQueryResponse response = datastoreRpc.runQuery(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -488,7 +492,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public List<Key> allocateId(List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     Preconditions.checkArgument(
         verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
     if (keys.isEmpty()) {
@@ -501,7 +504,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
     requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
+        createRequestOptions(getOptions(), executionOptions));
     AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (com.google.datastore.v1.Key keyPb : responsePb.getKeysList()) {
@@ -546,7 +549,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public List<Entity> add(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     if (entities.isEmpty()) {
       return Collections.emptyList();
     }
@@ -663,7 +665,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
     requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
+        createRequestOptions(getOptions(), executionOptions));
     return new ResultsIterator(requestPb);
   }
 
@@ -707,7 +709,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return runWithObservability(
         () -> {
           LookupResponse response = datastoreRpc.lookup(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -738,7 +740,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public List<Key> reserveIds(List<Key> keys, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     ReserveIdsRequest.Builder requestPb = ReserveIdsRequest.newBuilder();
     for (Key key : keys) {
       requestPb.addKeys(key.toPb());
@@ -746,7 +747,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
     requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
+        createRequestOptions(getOptions(), executionOptions));
     ReserveIdsResponse responsePb = reserveIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     if (responsePb.isInitialized()) {
@@ -773,7 +774,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public void update(List<Entity> entities, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     if (!entities.isEmpty()) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
@@ -801,7 +801,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public List<Entity> put(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     if (entities.isEmpty()) {
       return Collections.emptyList();
     }
@@ -842,7 +841,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public void delete(List<Key> keys, DatastoreExecutionOptions executionOptions) {
-    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     if (!keys.isEmpty()) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Set<Key> dedupKeys = new LinkedHashSet<>(keys);
@@ -858,10 +856,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.newKeyFactory(getOptions());
   }
 
-  private CommitResponse commitMutation(ImmutableList<Mutation> mutationsPb) {
-    return commitMutation(mutationsPb, DatastoreExecutionOptions.getDefaultInstance());
-  }
-
   private CommitResponse commitMutation(
       ImmutableList<Mutation> mutationsPb, DatastoreExecutionOptions executionOptions) {
     CommitRequest.Builder requestPb =
@@ -869,9 +863,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             .setMode(CommitRequest.Mode.NON_TRANSACTIONAL)
             .setProjectId(getOptions().getProjectId())
             .setDatabaseId(getOptions().getDatabaseId())
-            .addAllMutations(mutationsPb);
-    requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
+            .addAllMutations(mutationsPb)
+            .setRequestOptions(createRequestOptions(getOptions(), executionOptions));
     return commit(requestPb.build());
   }
 
@@ -883,7 +876,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return runWithObservability(
         () -> {
           CommitResponse response = datastoreRpc.commit(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -925,8 +918,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     requestPb.setTransaction(transaction);
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(getOptions(), executionOptions));
+    requestPb.setRequestOptions(createRequestOptions(getOptions(), executionOptions));
     rollback(requestPb.build());
   }
 
@@ -934,7 +926,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     runWithObservability(
         () -> {
           datastoreRpc.rollback(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 SPAN_NAME_ROLLBACK,
@@ -954,7 +946,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       String methodName,
       String spanName,
       ResultRetryAlgorithm<?> exceptionHandler) {
-    com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
+    TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
 
     Stopwatch operationStopwatch = Stopwatch.createStarted();
     String operationStatus = StatusCode.Code.OK.toString();

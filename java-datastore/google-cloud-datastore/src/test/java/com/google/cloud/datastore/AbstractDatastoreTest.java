@@ -38,6 +38,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.datastore.models.RequestOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
@@ -46,6 +47,8 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.datastore.v1.AggregationResultBatch;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
 import com.google.datastore.v1.CommitRequest;
@@ -1456,8 +1459,8 @@ public abstract class AbstractDatastoreTest {
 
   @Test
   public void testRunQueryWithRequestOptions() {
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("test-tag")).build();
 
     PartitionId partitionId =
         PartitionId.newBuilder()
@@ -1477,7 +1480,7 @@ public abstract class AbstractDatastoreTest {
             .setProjectId(PROJECT_ID)
             .setPartitionId(partitionId)
             .setQuery(queryPb)
-            .setRequestOptions(requestOptions)
+            .setRequestOptions(requestOptions.toPb())
             .build();
 
     // 2. RunQueryRequest with requestOptions and ReadOption
@@ -1488,7 +1491,7 @@ public abstract class AbstractDatastoreTest {
             .setQuery(queryPb)
             .setReadOptions(
                 ReadOptions.newBuilder().setReadConsistency(ReadConsistency.EVENTUAL).build())
-            .setRequestOptions(requestOptions)
+            .setRequestOptions(requestOptions.toPb())
             .build();
 
     // 3. RunQueryRequest with explainOptions, requestOptions, and ReadOption
@@ -1501,7 +1504,7 @@ public abstract class AbstractDatastoreTest {
                 ReadOptions.newBuilder().setReadConsistency(ReadConsistency.EVENTUAL).build())
             .setExplainOptions(
                 com.google.datastore.v1.ExplainOptions.newBuilder().setAnalyze(true).build())
-            .setRequestOptions(requestOptions)
+            .setRequestOptions(requestOptions.toPb())
             .build();
 
     RunQueryResponse response =
@@ -1560,8 +1563,8 @@ public abstract class AbstractDatastoreTest {
             .setServiceRpcFactory(rpcFactoryMock)
             .build();
 
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("instance-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
 
     RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
 
@@ -1593,8 +1596,8 @@ public abstract class AbstractDatastoreTest {
 
   @Test
   public void testRunAggregationQueryWithRequestOptions() {
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("agg-test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("agg-test-tag")).build();
 
     RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
 
@@ -1687,13 +1690,13 @@ public abstract class AbstractDatastoreTest {
 
   private Predicate<RunAggregationQueryRequest> aggregationQueryWithAliasAndRequestOptions(
       String alias,
-      com.google.datastore.v1.RequestOptions requestOptions,
+      RequestOptions requestOptions,
       boolean checkEventual,
       boolean checkExplain) {
     return req -> {
       boolean match =
           alias.equals(req.getAggregationQuery().getAggregationsList().get(0).getAlias())
-              && requestOptions.equals(req.getRequestOptions());
+              && requestOptions.toPb().equals(req.getRequestOptions());
       if (checkEventual) {
         match = match && req.getReadOptions().getReadConsistency() == ReadConsistency.EVENTUAL;
       }
@@ -1710,8 +1713,8 @@ public abstract class AbstractDatastoreTest {
     Key key = datastore.newKeyFactory().setKind(KIND1).newKey(keyName);
     Entity entity = Entity.newBuilder(key).set("prop", "val").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("test-tag")).build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1729,8 +1732,8 @@ public abstract class AbstractDatastoreTest {
     Entity entity1 = Entity.newBuilder(key1).set("prop", "val1").build();
     Entity entity2 = Entity.newBuilder(key2).set("prop", "val2").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("test-tag")).build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1751,8 +1754,8 @@ public abstract class AbstractDatastoreTest {
     
     Entity updatedEntity = Entity.newBuilder(entity).set("prop", "val_updated").build();
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("test-tag")).build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1770,8 +1773,8 @@ public abstract class AbstractDatastoreTest {
     Entity entity2 = Entity.newBuilder(key2).set("prop", "val2").build();
     datastore.add(entity1, entity2);
     
-    com.google.datastore.v1.RequestOptions requestOptions =
-        com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("test-tag")).build();
     DatastoreExecutionOptions executionOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
@@ -1788,4 +1791,634 @@ public abstract class AbstractDatastoreTest {
     assertEquals(entity1, fetched.get(0));
     assertEquals(entity2, fetched.get(1));
   }
+
+  @Test
+  public void testAddWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.add(ENTITY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testAddWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.add(ENTITY1, executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testAddWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.add(ENTITY1, (DatastoreExecutionOptions) null));
+  }
+
+  // update()
+  @Test
+  public void testUpdateWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.update(ENTITY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testUpdateWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.update(Collections.singletonList(ENTITY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testUpdateWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.update(Collections.singletonList(ENTITY1), (DatastoreExecutionOptions) null));
+  }
+
+  // put()
+  @Test
+  public void testPutWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.put(ENTITY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testPutWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.put(Collections.singletonList(ENTITY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testPutWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.put(Collections.singletonList(ENTITY1), (DatastoreExecutionOptions) null));
+  }
+
+  // delete()
+  @Test
+  public void testDeleteWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.delete(KEY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testDeleteWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<CommitRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.commit(EasyMock.capture(capturedRequest)))
+        .andReturn(CommitResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.delete(Collections.singletonList(KEY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    CommitRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testDeleteWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.delete(Collections.singletonList(KEY1), (DatastoreExecutionOptions) null));
+  }
+
+  // get()
+  @Test
+  public void testGetWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<LookupRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.lookup(EasyMock.capture(capturedRequest)))
+        .andReturn(LookupResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.get(KEY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    LookupRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testGetWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<LookupRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.lookup(EasyMock.capture(capturedRequest)))
+        .andReturn(LookupResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.get(Collections.singletonList(KEY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    LookupRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testGetWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.get(Collections.singletonList(KEY1), (DatastoreExecutionOptions) null));
+  }
+
+  // fetch()
+  @Test
+  public void testFetchWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<LookupRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.lookup(EasyMock.capture(capturedRequest)))
+        .andReturn(LookupResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.fetch(Collections.singletonList(KEY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    LookupRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testFetchWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.fetch(Collections.singletonList(KEY1), (DatastoreExecutionOptions) null));
+  }
+
+  // allocateId()
+  @Test
+  public void testAllocateIdWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<AllocateIdsRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.allocateIds(EasyMock.capture(capturedRequest)))
+        .andReturn(AllocateIdsResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.allocateId(INCOMPLETE_KEY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    AllocateIdsRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testAllocateIdWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<AllocateIdsRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.allocateIds(EasyMock.capture(capturedRequest)))
+        .andReturn(AllocateIdsResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.allocateId(Collections.singletonList(INCOMPLETE_KEY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    AllocateIdsRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testAllocateIdWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.allocateId(Collections.singletonList(INCOMPLETE_KEY1), (DatastoreExecutionOptions) null));
+  }
+
+  // reserveIds()
+  @Test
+  public void testReserveIdsWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<ReserveIdsRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.reserveIds(EasyMock.capture(capturedRequest)))
+        .andReturn(ReserveIdsResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.reserveIds(KEY1);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    ReserveIdsRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testReserveIdsWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<ReserveIdsRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.reserveIds(EasyMock.capture(capturedRequest)))
+        .andReturn(ReserveIdsResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.reserveIds(Collections.singletonList(KEY1), executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    ReserveIdsRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testReserveIdsWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.reserveIds(Collections.singletonList(KEY1), (DatastoreExecutionOptions) null));
+  }
+
+  // run(Query)
+  @Test
+  public void testRunQueryWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
+
+    org.easymock.Capture<RunQueryRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.runQuery(EasyMock.capture(capturedRequest)))
+        .andReturn(RunQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.run(query);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    RunQueryRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testRunQueryWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<RunQueryRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.runQuery(EasyMock.capture(capturedRequest)))
+        .andReturn(RunQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.run(query, executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    RunQueryRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testRunQueryWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.run(query, (DatastoreExecutionOptions) null));
+  }
+
+  // runAggregation(AggregationQuery)
+  @Test
+  public void testRunAggregationQueryWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    AggregationQuery query =
+        Query.newAggregationQueryBuilder()
+            .over(Query.newEntityQueryBuilder().setKind(KIND1).build())
+            .addAggregation(count().as("total_count"))
+            .build();
+
+    org.easymock.Capture<RunAggregationQueryRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.runAggregationQuery(EasyMock.capture(capturedRequest)))
+        .andReturn(RunAggregationQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.runAggregation(query);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    RunAggregationQueryRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testRunAggregationQueryWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    AggregationQuery query =
+        Query.newAggregationQueryBuilder()
+            .over(Query.newEntityQueryBuilder().setKind(KIND1).build())
+            .addAggregation(count().as("total_count"))
+            .build();
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<RunAggregationQueryRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.runAggregationQuery(EasyMock.capture(capturedRequest)))
+        .andReturn(RunAggregationQueryResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.runAggregation(query, executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    RunAggregationQueryRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testRunAggregationQueryWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+    AggregationQuery query =
+        Query.newAggregationQueryBuilder()
+            .over(Query.newEntityQueryBuilder().setKind(KIND1).build())
+            .addAggregation(count().as("total_count"))
+            .build();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.runAggregation(query, (DatastoreExecutionOptions) null));
+  }
+
+  // newTransaction()
+  @Test
+  public void testNewTransactionWithoutExecutionOptions_hasInstanceLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    org.easymock.Capture<BeginTransactionRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.capture(capturedRequest)))
+        .andReturn(BeginTransactionResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.newTransaction();
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    BeginTransactionRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("instance-tag");
+  }
+
+  @Test
+  public void testNewTransactionWithExecutionOptions_hasInstanceAndRequestLevelTags() {
+    DatastoreOptions datastoreOptions =
+        rpcMockOptions.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+    Datastore mockDatastore = datastoreOptions.getService();
+
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder()
+            .setRequestOptions(
+                RequestOptions.newBuilder()
+                    .setRequestTags(ImmutableList.of("request-tag"))
+                    .build())
+            .build();
+
+    org.easymock.Capture<BeginTransactionRequest> capturedRequest = EasyMock.newCapture();
+    EasyMock.expect(rpcMock.beginTransaction(EasyMock.capture(capturedRequest)))
+        .andReturn(BeginTransactionResponse.newBuilder().build());
+    EasyMock.replay(rpcFactoryMock, rpcMock);
+
+    mockDatastore.newTransaction(executionOptions);
+
+    EasyMock.verify(rpcFactoryMock, rpcMock);
+    BeginTransactionRequest request = capturedRequest.getValue();
+    assertThat(request.getRequestOptions().getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag")
+        .inOrder();
+  }
+
+  @Test
+  public void testNewTransactionWithNullExecutionOptions_throwsException() {
+    Datastore mockDatastore = rpcMockOptions.getService();
+
+    Assert.assertThrows(
+        NullPointerException.class,
+        () -> mockDatastore.newTransaction((DatastoreExecutionOptions) null));
+  }
 }
+
+
+

@@ -28,12 +28,18 @@ public final class RequestOptionsHelper {
   private RequestOptionsHelper() {}
 
   /**
-   * Creates a merged {@link RequestOptions} instance containing both the instance-level tags and
-   * the request-level options from {@link DatastoreExecutionOptions}.
+   * Creates a merged {@link RequestOptions} instance combining request-level options with
+   * instance-level tags.
+   *
+   * <p>This extracts the underlying {@link RequestOptions} from {@code executionOptions} and merges
+   * it with the global request tags configured on {@code datastoreOptions} via {@link
+   * #createRequestOptions(DatastoreOptions, RequestOptions)}.
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags
-   * @param executionOptions the execution options containing request-level options
-   * @return the merged RequestOptions proto message
+   * @param executionOptions the execution options containing request-level options (must not be
+   *     null)
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
+   *     instance-level tags
    */
   public static RequestOptions createRequestOptions(
       DatastoreOptions datastoreOptions, @Nonnull DatastoreExecutionOptions executionOptions) {
@@ -42,12 +48,33 @@ public final class RequestOptionsHelper {
   }
 
   /**
-   * Creates a merged {@link RequestOptions} instance containing both the instance-level tags and
-   * the request-level options.
+   * Creates a merged {@link RequestOptions} proto instance combining model {@link
+   * com.google.cloud.datastore.models.RequestOptions} with instance-level tags.
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags
    * @param requestOptions the individual request-level options, or {@code null}
-   * @return the merged RequestOptions proto message
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
+   *     instance-level tags
+   */
+  public static RequestOptions createRequestOptions(
+      DatastoreOptions datastoreOptions,
+      com.google.cloud.datastore.models.RequestOptions requestOptions) {
+    return createRequestOptions(
+        datastoreOptions, requestOptions != null ? requestOptions.toPb() : null);
+  }
+
+  /**
+   * Creates a merged {@link RequestOptions} instance combining request-level options with
+   * instance-level tags.
+   *
+   * <p>If {@code requestOptions} is provided (non-null), its properties and request-level tags are
+   * copied first. Then, any instance-level request tags configured on {@code datastoreOptions} are
+   * appended to the list of request tags.
+   *
+   * @param datastoreOptions the global Datastore options containing instance-level tags
+   * @param requestOptions the individual request-level options, or {@code null}
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
+   *     instance-level tags
    */
   public static RequestOptions createRequestOptions(
       DatastoreOptions datastoreOptions, RequestOptions requestOptions) {

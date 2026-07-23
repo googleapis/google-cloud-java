@@ -16,10 +16,12 @@
 
 package com.google.cloud.datastore;
 
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.datastore.models.ExplainOptions;
-import com.google.datastore.v1.RequestOptions;
+import com.google.cloud.datastore.models.RequestOptions;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
@@ -30,7 +32,7 @@ public class DatastoreExecutionOptionsTest {
     DatastoreExecutionOptions option = DatastoreExecutionOptions.newBuilder().build();
 
     assertThat(option.getExplainOptions()).isNull();
-    assertThat(option.getRequestOptions()).isNull();
+    assertThat(option.getRequestOptions()).isEqualTo(RequestOptions.getDefaultInstance());
     assertThat(option.getReadOptions()).isEmpty();
   }
 
@@ -39,14 +41,15 @@ public class DatastoreExecutionOptionsTest {
     DatastoreExecutionOptions defaultOptions = DatastoreExecutionOptions.getDefaultInstance();
 
     assertThat(defaultOptions.getExplainOptions()).isNull();
-    assertThat(defaultOptions.getRequestOptions()).isNull();
+    assertThat(defaultOptions.getRequestOptions()).isEqualTo(RequestOptions.getDefaultInstance());
     assertThat(defaultOptions.getReadOptions()).isEmpty();
   }
 
   @Test
   public void testBuilderFull() {
     ExplainOptions explainOptions = ExplainOptions.newBuilder().setAnalyze(true).build();
-    RequestOptions requestOptions = RequestOptions.newBuilder().addRequestTags("tag1").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("tag1")).build();
     ReadOption readOption = ReadOption.eventualConsistency();
 
     DatastoreExecutionOptions option =
@@ -64,7 +67,8 @@ public class DatastoreExecutionOptionsTest {
   @Test
   public void testToBuilder() {
     ExplainOptions explainOptions = ExplainOptions.newBuilder().setAnalyze(true).build();
-    RequestOptions requestOptions = RequestOptions.newBuilder().addRequestTags("tag1").build();
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("tag1")).build();
     ReadOption readOption = ReadOption.eventualConsistency();
 
     DatastoreExecutionOptions original =
@@ -83,7 +87,8 @@ public class DatastoreExecutionOptionsTest {
 
   @Test
   public void testEqualsAndHashCode() {
-    RequestOptions reqOpts = RequestOptions.newBuilder().addRequestTags("tag1").build();
+    RequestOptions reqOpts =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("tag1")).build();
     ExplainOptions expOpts = ExplainOptions.newBuilder().setAnalyze(true).build();
 
     DatastoreExecutionOptions opt1 =
@@ -105,13 +110,21 @@ public class DatastoreExecutionOptionsTest {
   public void testCreateRequestOptionsWithDatastoreExecutionOptions() {
     DatastoreOptions datastoreOptions =
         DatastoreOptions.newBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
-    RequestOptions reqOpts = RequestOptions.newBuilder().addRequestTags("request-tag").build();
+    RequestOptions reqOpts =
+        RequestOptions.newBuilder().setRequestTags(ImmutableList.of("request-tag")).build();
     DatastoreExecutionOptions execOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(reqOpts).build();
 
-    RequestOptions merged =
-        RequestOptionsHelper.createRequestOptions(datastoreOptions, execOptions);
+    com.google.datastore.v1.RequestOptions merged =
+        createRequestOptions(datastoreOptions, execOptions);
 
     assertThat(merged.getRequestTagsList()).containsExactly("request-tag", "instance-tag");
+  }
+
+  @Test
+  public void testSetNullRequestOptionsThrows() {
+    assertThrows(
+        NullPointerException.class,
+        () -> DatastoreExecutionOptions.newBuilder().setRequestOptions(null));
   }
 }

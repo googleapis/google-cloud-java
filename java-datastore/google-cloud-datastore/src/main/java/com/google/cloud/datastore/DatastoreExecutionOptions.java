@@ -18,23 +18,24 @@ package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.models.ExplainOptions;
+import com.google.cloud.datastore.models.RequestOptions;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.datastore.v1.RequestOptions;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Class representing options for query execution in Google Cloud Datastore. Combines {@link
  * ExplainOptions}, {@link RequestOptions}, and {@link ReadOption}s.
  */
 @BetaApi
+@NullMarked
 public class DatastoreExecutionOptions {
 
-  private final ExplainOptions explainOptions;
+  private final @Nullable ExplainOptions explainOptions;
   private final RequestOptions requestOptions;
   private final List<ReadOption> readOptions;
 
@@ -44,17 +45,14 @@ public class DatastoreExecutionOptions {
     this.readOptions = ImmutableList.copyOf(builder.readOptions);
   }
 
-  @Nullable
-  public ExplainOptions getExplainOptions() {
+  public @Nullable ExplainOptions getExplainOptions() {
     return explainOptions;
   }
 
-  @Nullable
   public RequestOptions getRequestOptions() {
     return requestOptions;
   }
 
-  @Nonnull
   public List<ReadOption> getReadOptions() {
     return readOptions;
   }
@@ -89,8 +87,8 @@ public class DatastoreExecutionOptions {
 
   /** Builder for {@link DatastoreExecutionOptions}. */
   public static class Builder {
-    private ExplainOptions explainOptions;
-    private RequestOptions requestOptions;
+    private @Nullable ExplainOptions explainOptions;
+    private RequestOptions requestOptions = RequestOptions.getDefaultInstance();
     private List<ReadOption> readOptions = Collections.emptyList();
 
     private Builder() {}
@@ -106,12 +104,13 @@ public class DatastoreExecutionOptions {
       return this;
     }
 
-    public Builder setRequestOptions(@Nullable RequestOptions requestOptions) {
+    public Builder setRequestOptions(RequestOptions requestOptions) {
+      Preconditions.checkNotNull(requestOptions, "requestOptions cannot be null");
       this.requestOptions = requestOptions;
       return this;
     }
 
-    public Builder setReadOptions(@Nonnull List<ReadOption> readOptions) {
+    public Builder setReadOptions(List<ReadOption> readOptions) {
       Preconditions.checkNotNull(readOptions, "readOptions cannot be null");
       this.readOptions = readOptions;
       return this;

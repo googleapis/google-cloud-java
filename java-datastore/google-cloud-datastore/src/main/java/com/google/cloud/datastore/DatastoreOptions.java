@@ -17,6 +17,7 @@
 package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
+import static com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
@@ -240,7 +241,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         if (this.transportOptions instanceof GrpcTransportOptions) {
           this.setHost(DatastoreSettings.getDefaultEndpoint());
         } else if (this.transportOptions instanceof HttpTransportOptions) {
-          this.setHost(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST);
+          this.setHost(DEFAULT_HOST);
         }
       }
       return new DatastoreOptions(this);
@@ -259,6 +260,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     /**
      * Sets the request tags to be associated with all requests sent by this client.
+     *
+     * <p>These instance-level tags will be merged with any request-level options or tags specified
+     * via {@link DatastoreExecutionOptions} before sending a request.
      *
      * @param requestTags the list of request tags to set
      * @return the builder object
@@ -340,7 +344,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   @Override
   protected String getDefaultHost() {
     String host = System.getProperty(LOCAL_HOST_ENV_VAR, System.getenv(LOCAL_HOST_ENV_VAR));
-    return host != null ? host : com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
+    return host != null ? host : DEFAULT_HOST;
   }
 
   @Override
@@ -392,6 +396,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   /**
    * Returns the request tags to be associated with all requests sent by this client.
+   *
+   * <p>These instance-level tags are merged with any request-level options or tags passed via {@link
+   * DatastoreExecutionOptions} before sending a request.
    *
    * @return the request tags
    */
