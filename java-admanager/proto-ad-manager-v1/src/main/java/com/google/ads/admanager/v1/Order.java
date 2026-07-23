@@ -2096,6 +2096,127 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     return customFieldValues_.get(index);
   }
 
+  public static final int IMPRESSIONS_DELIVERED_FIELD_NUMBER = 41;
+  private long impressionsDelivered_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of impressions delivered for Line items in
+   * this order.
+   * </pre>
+   *
+   * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the impressionsDelivered field is set.
+   */
+  @java.lang.Override
+  public boolean hasImpressionsDelivered() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of impressions delivered for Line items in
+   * this order.
+   * </pre>
+   *
+   * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The impressionsDelivered.
+   */
+  @java.lang.Override
+  public long getImpressionsDelivered() {
+    return impressionsDelivered_;
+  }
+
+  public static final int TOTAL_CLICKS_DELIVERED_FIELD_NUMBER = 53;
+  private long totalClicksDelivered_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total clicks delivered for all Line items of this `Order`.
+   * This value is calculated from the associated `LineItem` values.
+   * </pre>
+   *
+   * <code>optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalClicksDelivered field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalClicksDelivered() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total clicks delivered for all Line items of this `Order`.
+   * This value is calculated from the associated `LineItem` values.
+   * </pre>
+   *
+   * <code>optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalClicksDelivered.
+   */
+  @java.lang.Override
+  public long getTotalClicksDelivered() {
+    return totalClicksDelivered_;
+  }
+
+  public static final int TOTAL_VIEWABLE_IMPRESSIONS_DELIVERED_FIELD_NUMBER = 54;
+  private long totalViewableImpressionsDelivered_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total viewable impressions delivered for all Line items of
+   * this `Order`. This value is calculated from the associated `LineItem`
+   * values.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalViewableImpressionsDelivered field is set.
+   */
+  @java.lang.Override
+  public boolean hasTotalViewableImpressionsDelivered() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total viewable impressions delivered for all Line items of
+   * this `Order`. This value is calculated from the associated `LineItem`
+   * values.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalViewableImpressionsDelivered.
+   */
+  @java.lang.Override
+  public long getTotalViewableImpressionsDelivered() {
+    return totalViewableImpressionsDelivered_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2194,8 +2315,17 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < customFieldValues_.size(); i++) {
       output.writeMessage(38, customFieldValues_.get(i));
     }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeInt64(41, impressionsDelivered_);
+    }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(45, unlimitedEndTime_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeInt64(53, totalClicksDelivered_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      output.writeInt64(54, totalViewableImpressionsDelivered_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2323,8 +2453,19 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(38, customFieldValues_.get(i));
     }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(41, impressionsDelivered_);
+    }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(45, unlimitedEndTime_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(53, totalClicksDelivered_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(
+              54, totalViewableImpressionsDelivered_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2428,6 +2569,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (!getEffectiveAppliedLabelsList().equals(other.getEffectiveAppliedLabelsList()))
       return false;
     if (!getCustomFieldValuesList().equals(other.getCustomFieldValuesList())) return false;
+    if (hasImpressionsDelivered() != other.hasImpressionsDelivered()) return false;
+    if (hasImpressionsDelivered()) {
+      if (getImpressionsDelivered() != other.getImpressionsDelivered()) return false;
+    }
+    if (hasTotalClicksDelivered() != other.hasTotalClicksDelivered()) return false;
+    if (hasTotalClicksDelivered()) {
+      if (getTotalClicksDelivered() != other.getTotalClicksDelivered()) return false;
+    }
+    if (hasTotalViewableImpressionsDelivered() != other.hasTotalViewableImpressionsDelivered())
+      return false;
+    if (hasTotalViewableImpressionsDelivered()) {
+      if (getTotalViewableImpressionsDelivered() != other.getTotalViewableImpressionsDelivered())
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2552,6 +2707,20 @@ public final class Order extends com.google.protobuf.GeneratedMessage
     if (getCustomFieldValuesCount() > 0) {
       hash = (37 * hash) + CUSTOM_FIELD_VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomFieldValuesList().hashCode();
+    }
+    if (hasImpressionsDelivered()) {
+      hash = (37 * hash) + IMPRESSIONS_DELIVERED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getImpressionsDelivered());
+    }
+    if (hasTotalClicksDelivered()) {
+      hash = (37 * hash) + TOTAL_CLICKS_DELIVERED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalClicksDelivered());
+    }
+    if (hasTotalViewableImpressionsDelivered()) {
+      hash = (37 * hash) + TOTAL_VIEWABLE_IMPRESSIONS_DELIVERED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(getTotalViewableImpressionsDelivered());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2765,6 +2934,9 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         customFieldValuesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x10000000);
+      impressionsDelivered_ = 0L;
+      totalClicksDelivered_ = 0L;
+      totalViewableImpressionsDelivered_ = 0L;
       return this;
     }
 
@@ -2934,6 +3106,18 @@ public final class Order extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x02000000) != 0)) {
         secondaryTraffickers_.makeImmutable();
         result.secondaryTraffickers_ = secondaryTraffickers_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.impressionsDelivered_ = impressionsDelivered_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.totalClicksDelivered_ = totalClicksDelivered_;
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.totalViewableImpressionsDelivered_ = totalViewableImpressionsDelivered_;
+        to_bitField0_ |= 0x00200000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3173,6 +3357,15 @@ public final class Order extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasImpressionsDelivered()) {
+        setImpressionsDelivered(other.getImpressionsDelivered());
+      }
+      if (other.hasTotalClicksDelivered()) {
+        setTotalClicksDelivered(other.getTotalClicksDelivered());
+      }
+      if (other.hasTotalViewableImpressionsDelivered()) {
+        setTotalViewableImpressionsDelivered(other.getTotalViewableImpressionsDelivered());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3396,12 +3589,30 @@ public final class Order extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 306
+            case 328:
+              {
+                impressionsDelivered_ = input.readInt64();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 328
             case 360:
               {
                 unlimitedEndTime_ = input.readBool();
                 bitField0_ |= 0x00008000;
                 break;
               } // case 360
+            case 424:
+              {
+                totalClicksDelivered_ = input.readInt64();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 424
+            case 432:
+              {
+                totalViewableImpressionsDelivered_ = input.readInt64();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 432
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8679,6 +8890,258 @@ public final class Order extends com.google.protobuf.GeneratedMessage
         customFieldValues_ = null;
       }
       return customFieldValuesBuilder_;
+    }
+
+    private long impressionsDelivered_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of impressions delivered for Line items in
+     * this order.
+     * </pre>
+     *
+     * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the impressionsDelivered field is set.
+     */
+    @java.lang.Override
+    public boolean hasImpressionsDelivered() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of impressions delivered for Line items in
+     * this order.
+     * </pre>
+     *
+     * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The impressionsDelivered.
+     */
+    @java.lang.Override
+    public long getImpressionsDelivered() {
+      return impressionsDelivered_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of impressions delivered for Line items in
+     * this order.
+     * </pre>
+     *
+     * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The impressionsDelivered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImpressionsDelivered(long value) {
+
+      impressionsDelivered_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The total number of impressions delivered for Line items in
+     * this order.
+     * </pre>
+     *
+     * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImpressionsDelivered() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      impressionsDelivered_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalClicksDelivered_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total clicks delivered for all Line items of this `Order`.
+     * This value is calculated from the associated `LineItem` values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the totalClicksDelivered field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalClicksDelivered() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total clicks delivered for all Line items of this `Order`.
+     * This value is calculated from the associated `LineItem` values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalClicksDelivered.
+     */
+    @java.lang.Override
+    public long getTotalClicksDelivered() {
+      return totalClicksDelivered_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total clicks delivered for all Line items of this `Order`.
+     * This value is calculated from the associated `LineItem` values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalClicksDelivered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalClicksDelivered(long value) {
+
+      totalClicksDelivered_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total clicks delivered for all Line items of this `Order`.
+     * This value is calculated from the associated `LineItem` values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalClicksDelivered() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      totalClicksDelivered_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long totalViewableImpressionsDelivered_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total viewable impressions delivered for all Line items of
+     * this `Order`. This value is calculated from the associated `LineItem`
+     * values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the totalViewableImpressionsDelivered field is set.
+     */
+    @java.lang.Override
+    public boolean hasTotalViewableImpressionsDelivered() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total viewable impressions delivered for all Line items of
+     * this `Order`. This value is calculated from the associated `LineItem`
+     * values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The totalViewableImpressionsDelivered.
+     */
+    @java.lang.Override
+    public long getTotalViewableImpressionsDelivered() {
+      return totalViewableImpressionsDelivered_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total viewable impressions delivered for all Line items of
+     * this `Order`. This value is calculated from the associated `LineItem`
+     * values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The totalViewableImpressionsDelivered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTotalViewableImpressionsDelivered(long value) {
+
+      totalViewableImpressionsDelivered_ = value;
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total viewable impressions delivered for all Line items of
+     * this `Order`. This value is calculated from the associated `LineItem`
+     * values.
+     * </pre>
+     *
+     * <code>
+     * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTotalViewableImpressionsDelivered() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      totalViewableImpressionsDelivered_ = 0L;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.Order)

@@ -74,9 +74,9 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Indicates the type of unit used for defining a reservation. The
-   * [LineItem.cost_type][] can differ from the UnitType - an
-   * ad can have an impression goal, but be billed by its click. Usually
-   * CostType and UnitType will refer to the same unit.
+   * [LineItem.cost_type][google.ads.admanager.v1.LineItem.cost_type] can differ
+   * from the UnitType - an ad can have an impression goal, but be billed by its
+   * click. Usually CostType and UnitType will refer to the same unit.
    * </pre>
    *
    * Protobuf enum {@code google.ads.admanager.v1.UnitTypeEnum.UnitType}
@@ -125,7 +125,8 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The number of click-through Cost-Per-Action (CPA) conversions from
      * creatives associated with the line item. This is only supported as
-     * secondary goal and the [LineItem.cost_type][] must be
+     * secondary goal and the
+     * [LineItem.cost_type][google.ads.admanager.v1.LineItem.cost_type] must be
      * [CostTypeEnum.CostType.CPA][].
      * </pre>
      *
@@ -138,7 +139,8 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The number of view-through Cost-Per-Action (CPA) conversions from
      * creatives associated with the line item. This is only supported as
-     * secondary goal and the [LineItem.cost_type][] must be
+     * secondary goal and the
+     * [LineItem.cost_type][google.ads.admanager.v1.LineItem.cost_type] must be
      * [CostTypeEnum.CostType.CPA}.
      * </pre>
      *
@@ -260,7 +262,8 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The number of click-through Cost-Per-Action (CPA) conversions from
      * creatives associated with the line item. This is only supported as
-     * secondary goal and the [LineItem.cost_type][] must be
+     * secondary goal and the
+     * [LineItem.cost_type][google.ads.admanager.v1.LineItem.cost_type] must be
      * [CostTypeEnum.CostType.CPA][].
      * </pre>
      *
@@ -274,7 +277,8 @@ public final class UnitTypeEnum extends com.google.protobuf.GeneratedMessage
      * <pre>
      * The number of view-through Cost-Per-Action (CPA) conversions from
      * creatives associated with the line item. This is only supported as
-     * secondary goal and the [LineItem.cost_type][] must be
+     * secondary goal and the
+     * [LineItem.cost_type][google.ads.admanager.v1.LineItem.cost_type] must be
      * [CostTypeEnum.CostType.CPA}.
      * </pre>
      *

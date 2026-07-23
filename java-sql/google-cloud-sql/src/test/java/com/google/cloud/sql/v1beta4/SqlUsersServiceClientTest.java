@@ -165,6 +165,7 @@ public class SqlUsersServiceClientTest {
             .setIamEmail("iamEmail1687646791")
             .setPasswordPolicy(UserPasswordValidationPolicy.newBuilder().build())
             .addAllDatabaseRoles(new ArrayList<String>())
+            .addAllServerRoles(new ArrayList<String>())
             .build();
     mockSqlUsersService.addResponse(expectedResponse);
 
@@ -364,6 +365,8 @@ public class SqlUsersServiceClientTest {
             .setProject("project-309310695")
             .addAllDatabaseRoles(new ArrayList<String>())
             .setRevokeExistingRoles(true)
+            .addAllServerRoles(new ArrayList<String>())
+            .setRevokeExistingServerRoles(true)
             .setBody(User.newBuilder().build())
             .build();
 
@@ -380,6 +383,9 @@ public class SqlUsersServiceClientTest {
     Assert.assertEquals(request.getProject(), actualRequest.getProject());
     Assert.assertEquals(request.getDatabaseRolesList(), actualRequest.getDatabaseRolesList());
     Assert.assertEquals(request.getRevokeExistingRoles(), actualRequest.getRevokeExistingRoles());
+    Assert.assertEquals(request.getServerRolesList(), actualRequest.getServerRolesList());
+    Assert.assertEquals(
+        request.getRevokeExistingServerRoles(), actualRequest.getRevokeExistingServerRoles());
     Assert.assertEquals(request.getBody(), actualRequest.getBody());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -401,6 +407,8 @@ public class SqlUsersServiceClientTest {
               .setProject("project-309310695")
               .addAllDatabaseRoles(new ArrayList<String>())
               .setRevokeExistingRoles(true)
+              .addAllServerRoles(new ArrayList<String>())
+              .setRevokeExistingServerRoles(true)
               .setBody(User.newBuilder().build())
               .build();
       client.update(request);

@@ -219,6 +219,100 @@ public interface SqlUsersUpdateRequestOrBuilder
   boolean getRevokeExistingRoles();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the serverRoles.
+   */
+  java.util.List<java.lang.String> getServerRolesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of serverRoles.
+   */
+  int getServerRolesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serverRoles at the given index.
+   */
+  java.lang.String getServerRoles(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serverRoles at the given index.
+   */
+  com.google.protobuf.ByteString getServerRolesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether to revoke existing roles that are not present
+   * in the `server_roles` field. If `false` or unset, the server roles
+   * specified in `server_roles` are added to the user's existing server roles.
+   * </pre>
+   *
+   * <code>optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the revokeExistingServerRoles field is set.
+   */
+  boolean hasRevokeExistingServerRoles();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether to revoke existing roles that are not present
+   * in the `server_roles` field. If `false` or unset, the server roles
+   * specified in `server_roles` are added to the user's existing server roles.
+   * </pre>
+   *
+   * <code>optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The revokeExistingServerRoles.
+   */
+  boolean getRevokeExistingServerRoles();
+
+  /**
    * <code>.google.cloud.sql.v1.User body = 100;</code>
    *
    * @return Whether the body field is set.

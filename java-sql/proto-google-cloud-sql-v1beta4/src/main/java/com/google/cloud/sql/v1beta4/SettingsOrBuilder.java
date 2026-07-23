@@ -83,7 +83,7 @@ public interface SettingsOrBuilder
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3252
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3270
    * @return A list containing the authorizedGaeApplications.
    */
   @java.lang.Deprecated
@@ -100,7 +100,7 @@ public interface SettingsOrBuilder
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3252
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3270
    * @return The count of authorizedGaeApplications.
    */
   @java.lang.Deprecated
@@ -117,7 +117,7 @@ public interface SettingsOrBuilder
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3252
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3270
    * @param index The index of the element to return.
    * @return The authorizedGaeApplications at the given index.
    */
@@ -135,7 +135,7 @@ public interface SettingsOrBuilder
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3252
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3270
    * @param index The index of the value to return.
    * @return The bytes of the authorizedGaeApplications at the given index.
    */
@@ -345,7 +345,7 @@ public interface SettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.replication_type is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3282
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3300
    * @return The enum numeric value on the wire for replicationType.
    */
   @java.lang.Deprecated
@@ -364,7 +364,7 @@ public interface SettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.replication_type is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3282
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3300
    * @return The replicationType.
    */
   @java.lang.Deprecated
@@ -792,7 +792,7 @@ public interface SettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.crash_safe_replication_enabled is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3333
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3351
    * @return Whether the crashSafeReplicationEnabled field is set.
    */
   @java.lang.Deprecated
@@ -811,7 +811,7 @@ public interface SettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.Settings.crash_safe_replication_enabled is deprecated. See
-   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3333
+   *     google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3351
    * @return The crashSafeReplicationEnabled.
    */
   @java.lang.Deprecated

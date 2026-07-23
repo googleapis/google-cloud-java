@@ -58,6 +58,8 @@ import com.google.cloud.commerceproducer.v1beta.ListStandardOffersResponse;
 import com.google.cloud.commerceproducer.v1beta.PrivateOffer;
 import com.google.cloud.commerceproducer.v1beta.PrivateOfferDocument;
 import com.google.cloud.commerceproducer.v1beta.PublishPrivateOfferRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse;
 import com.google.cloud.commerceproducer.v1beta.Service;
 import com.google.cloud.commerceproducer.v1beta.Sku;
 import com.google.cloud.commerceproducer.v1beta.SkuGroup;
@@ -130,6 +132,21 @@ public class GrpcCommerceTransactionStub extends CommerceTransactionStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPrivateOfferRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PrivateOffer.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetMethodDescriptor =
+          MethodDescriptor
+              .<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.commerceproducer.v1beta.CommerceTransaction/ResolveAmendmentTarget")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ResolveAmendmentTargetRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ResolveAmendmentTargetResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -356,6 +373,8 @@ public class GrpcCommerceTransactionStub extends CommerceTransactionStub {
   private final UnaryCallable<ListPrivateOffersRequest, ListPrivateOffersPagedResponse>
       listPrivateOffersPagedCallable;
   private final UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable;
+  private final UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable;
   private final UnaryCallable<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferCallable;
   private final UnaryCallable<UpdatePrivateOfferRequest, PrivateOffer> updatePrivateOfferCallable;
   private final UnaryCallable<PublishPrivateOfferRequest, PrivateOffer> publishPrivateOfferCallable;
@@ -480,6 +499,19 @@ public class GrpcCommerceTransactionStub extends CommerceTransactionStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+        resolveAmendmentTargetTransportSettings =
+            GrpcCallSettings
+                .<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>newBuilder()
+                .setMethodDescriptor(resolveAmendmentTargetMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferTransportSettings =
         GrpcCallSettings.<CreatePrivateOfferRequest, PrivateOffer>newBuilder()
             .setMethodDescriptor(createPrivateOfferMethodDescriptor)
@@ -708,6 +740,11 @@ public class GrpcCommerceTransactionStub extends CommerceTransactionStub {
     this.getPrivateOfferCallable =
         callableFactory.createUnaryCallable(
             getPrivateOfferTransportSettings, settings.getPrivateOfferSettings(), clientContext);
+    this.resolveAmendmentTargetCallable =
+        callableFactory.createUnaryCallable(
+            resolveAmendmentTargetTransportSettings,
+            settings.resolveAmendmentTargetSettings(),
+            clientContext);
     this.createPrivateOfferCallable =
         callableFactory.createUnaryCallable(
             createPrivateOfferTransportSettings,
@@ -842,6 +879,12 @@ public class GrpcCommerceTransactionStub extends CommerceTransactionStub {
   @Override
   public UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable() {
     return getPrivateOfferCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable() {
+    return resolveAmendmentTargetCallable;
   }
 
   @Override

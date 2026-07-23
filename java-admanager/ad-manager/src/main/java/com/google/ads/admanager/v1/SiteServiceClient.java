@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetSite</td>
- *      <td><p> API to retrieve a `Site` object.</td>
+ *      <td><p> Retrieves a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListSites</td>
- *      <td><p> API to retrieve a list of `Site` objects.</td>
+ *      <td><p> Lists `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSite</td>
- *      <td><p> API to create a `Site` object.</td>
+ *      <td><p> Creates a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +124,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateSites</td>
- *      <td><p> API to batch create `Site` objects.</td>
+ *      <td><p> Creates `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +140,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSite</td>
- *      <td><p> API to update a `Site` object.</td>
+ *      <td><p> Updates a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +158,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateSites</td>
- *      <td><p> API to batch update `Site` objects.</td>
+ *      <td><p> Batch updates `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -303,7 +303,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -358,7 +358,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -386,7 +386,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -413,7 +413,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -507,7 +507,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -541,7 +541,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -615,7 +615,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -645,7 +645,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -674,7 +674,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -702,7 +702,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -737,7 +737,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -798,7 +798,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -828,7 +828,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -858,7 +858,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -887,7 +887,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -915,7 +915,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -950,7 +950,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -982,7 +982,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -1011,7 +1011,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *

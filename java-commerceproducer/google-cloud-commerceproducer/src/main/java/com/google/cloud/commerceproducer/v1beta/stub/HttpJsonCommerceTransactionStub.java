@@ -63,6 +63,8 @@ import com.google.cloud.commerceproducer.v1beta.ListStandardOffersResponse;
 import com.google.cloud.commerceproducer.v1beta.PrivateOffer;
 import com.google.cloud.commerceproducer.v1beta.PrivateOfferDocument;
 import com.google.cloud.commerceproducer.v1beta.PublishPrivateOfferRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse;
 import com.google.cloud.commerceproducer.v1beta.Service;
 import com.google.cloud.commerceproducer.v1beta.Sku;
 import com.google.cloud.commerceproducer.v1beta.SkuGroup;
@@ -238,6 +240,47 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<PrivateOffer>newBuilder()
                       .setDefaultInstance(PrivateOffer.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetMethodDescriptor =
+          ApiMethodDescriptor
+              .<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.commerceproducer.v1beta.CommerceTransaction/ResolveAmendmentTarget")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ResolveAmendmentTargetRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/privateOffers:resolveAmendmentTarget",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ResolveAmendmentTargetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ResolveAmendmentTargetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "baseStandardOffer", request.getBaseStandardOffer());
+                            serializer.putQueryParam(
+                                fields, "targetBillingAccount", request.getTargetBillingAccount());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ResolveAmendmentTargetResponse>newBuilder()
+                      .setDefaultInstance(ResolveAmendmentTargetResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -921,6 +964,8 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
   private final UnaryCallable<ListPrivateOffersRequest, ListPrivateOffersPagedResponse>
       listPrivateOffersPagedCallable;
   private final UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable;
+  private final UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable;
   private final UnaryCallable<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferCallable;
   private final UnaryCallable<UpdatePrivateOfferRequest, PrivateOffer> updatePrivateOfferCallable;
   private final UnaryCallable<PublishPrivateOfferRequest, PrivateOffer> publishPrivateOfferCallable;
@@ -1049,6 +1094,20 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+        resolveAmendmentTargetTransportSettings =
+            HttpJsonCallSettings
+                .<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>newBuilder()
+                .setMethodDescriptor(resolveAmendmentTargetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<CreatePrivateOfferRequest, PrivateOffer>
         createPrivateOfferTransportSettings =
             HttpJsonCallSettings.<CreatePrivateOfferRequest, PrivateOffer>newBuilder()
@@ -1303,6 +1362,11 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
     this.getPrivateOfferCallable =
         callableFactory.createUnaryCallable(
             getPrivateOfferTransportSettings, settings.getPrivateOfferSettings(), clientContext);
+    this.resolveAmendmentTargetCallable =
+        callableFactory.createUnaryCallable(
+            resolveAmendmentTargetTransportSettings,
+            settings.resolveAmendmentTargetSettings(),
+            clientContext);
     this.createPrivateOfferCallable =
         callableFactory.createUnaryCallable(
             createPrivateOfferTransportSettings,
@@ -1410,6 +1474,7 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
     methodDescriptors.add(getServiceMethodDescriptor);
     methodDescriptors.add(listPrivateOffersMethodDescriptor);
     methodDescriptors.add(getPrivateOfferMethodDescriptor);
+    methodDescriptors.add(resolveAmendmentTargetMethodDescriptor);
     methodDescriptors.add(createPrivateOfferMethodDescriptor);
     methodDescriptors.add(updatePrivateOfferMethodDescriptor);
     methodDescriptors.add(publishPrivateOfferMethodDescriptor);
@@ -1461,6 +1526,12 @@ public class HttpJsonCommerceTransactionStub extends CommerceTransactionStub {
   @Override
   public UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable() {
     return getPrivateOfferCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable() {
+    return resolveAmendmentTargetCallable;
   }
 
   @Override

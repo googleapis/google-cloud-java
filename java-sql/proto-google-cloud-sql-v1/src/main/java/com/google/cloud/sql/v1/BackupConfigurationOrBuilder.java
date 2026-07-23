@@ -172,7 +172,7 @@ public interface BackupConfigurationOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1.BackupConfiguration.replication_log_archiving_enabled is
-   *     deprecated. See google/cloud/sql/v1/cloud_sql_resources.proto;l=169
+   *     deprecated. See google/cloud/sql/v1/cloud_sql_resources.proto;l=165
    * @return Whether the replicationLogArchivingEnabled field is set.
    */
   @java.lang.Deprecated
@@ -193,7 +193,7 @@ public interface BackupConfigurationOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1.BackupConfiguration.replication_log_archiving_enabled is
-   *     deprecated. See google/cloud/sql/v1/cloud_sql_resources.proto;l=169
+   *     deprecated. See google/cloud/sql/v1/cloud_sql_resources.proto;l=165
    * @return The replicationLogArchivingEnabled.
    */
   @java.lang.Deprecated

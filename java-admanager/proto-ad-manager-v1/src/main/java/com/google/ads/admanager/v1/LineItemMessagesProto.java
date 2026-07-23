@@ -53,49 +53,230 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/ads/admanager/v1/line_item_mess"
-          + "ages.proto\022\027google.ads.admanager.v1\0320goo"
-          + "gle/ads/admanager/v1/custom_field_value."
-          + "proto\032\"google/ads/admanager/v1/goal.prot"
-          + "o\032-google/ads/admanager/v1/line_item_enu"
-          + "ms.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032\037google/pro"
-          + "tobuf/timestamp.proto\032\027google/type/money"
-          + ".proto\"\371\005\n\010LineItem\022\021\n\004name\030\001 \001(\tB\003\340A\010\022="
-          + "\n\005order\030\002 \001(\tB)\340A\002\340A\005\372A \n\036admanager.goog"
-          + "leapis.com/OrderH\000\210\001\001\022\036\n\014display_name\030\003 "
-          + "\001(\tB\003\340A\002H\001\210\001\001\0228\n\nstart_time\030\006 \001(\0132\032.goog"
-          + "le.protobuf.TimestampB\003\340A\002H\002\210\001\001\0226\n\010end_t"
-          + "ime\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003H\003\210\001\001\022X\n\016line_item_type\030\021 \001(\01626.google"
-          + ".ads.admanager.v1.LineItemTypeEnum.LineI"
-          + "temTypeB\003\340A\002H\004\210\001\001\022*\n\004rate\030\024 \001(\0132\022.google"
-          + ".type.MoneyB\003\340A\002H\005\210\001\001\022,\n\006budget\030# \001(\0132\022."
-          + "google.type.MoneyB\003\340A\003H\006\210\001\001\022K\n\023custom_fi"
-          + "eld_values\030; \003(\0132).google.ads.admanager."
-          + "v1.CustomFieldValueB\003\340A\001\0225\n\004goal\030L \001(\0132\035"
-          + ".google.ads.admanager.v1.GoalB\003\340A\001H\007\210\001\001:"
-          + "j\352Ag\n!admanager.googleapis.com/LineItem\022"
-          + "-networks/{network_code}/lineItems/{line"
-          + "_item}*\tlineItems2\010lineItemB\010\n\006_orderB\017\n"
-          + "\r_display_nameB\r\n\013_start_timeB\013\n\t_end_ti"
-          + "meB\021\n\017_line_item_typeB\007\n\005_rateB\t\n\007_budge"
-          + "tB\007\n\005_goalB\311\001\n\033com.google.ads.admanager."
-          + "v1B\025LineItemMessagesProtoP\001Z@google.gola"
-          + "ng.org/genproto/googleapis/ads/admanager"
-          + "/v1;admanager\252\002\027Google.Ads.AdManager.V1\312"
-          + "\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads:"
-          + ":AdManager::V1b\006proto3"
+      "\n"
+          + "0google/ads/admanager/v1/line_item_mess"
+          + "ages.proto\022\027google.ads.admanager.v1\032+goo"
+          + "gle/ads/admanager/v1/applied_label.proto\032<google/ads/admanager/v1/child_content_"
+          + "eligibility_enum.proto\0322google/ads/admanager/v1/creative_placeholder.proto\0320goog"
+          + "le/ads/admanager/v1/creative_targeting.proto\0320google/ads/admanager/v1/custom_fie"
+          + "ld_value.proto\0321google/ads/admanager/v1/custom_pacing_curve.proto\032,google/ads/ad"
+          + "manager/v1/delivery_enums.proto\0320google/ads/admanager/v1/delivery_indicator.prot"
+          + "o\0323google/ads/admanager/v1/environment_type_enum.proto\0322google/ads/admanager/v1/"
+          + "exclusion_scope_enum.proto\032+google/ads/a"
+          + "dmanager/v1/frequency_cap.proto\032\"google/"
+          + "ads/admanager/v1/goal.proto\032*google/ads/admanager/v1/grp_settings.proto\032;google/"
+          + "ads/admanager/v1/line_item_allowed_format_enum.proto\0321google/ads/admanager/v1/li"
+          + "ne_item_deal_info.proto\032Egoogle/ads/admanager/v1/line_item_delivery_forecast_sou"
+          + "rce_enum.proto\0320google/ads/admanager/v1/line_item_discount.proto\032-google/ads/adm"
+          + "anager/v1/line_item_enums.proto\032-google/ads/admanager/v1/line_item_stats.proto\0324"
+          + "google/ads/admanager/v1/skippable_ad_type_enum.proto\032\'google/ads/admanager/v1/ta"
+          + "rgeting.proto\032>google/ads/admanager/v1/t"
+          + "hird_party_measurement_settings.proto\032\037g"
+          + "oogle/api/field_behavior.proto\032\031google/a"
+          + "pi/resource.proto\032\036google/protobuf/durat"
+          + "ion.proto\032\037google/protobuf/timestamp.proto\032\027google/type/money.proto\"\375*\n"
+          + "\010LineItem\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022=\n"
+          + "\005order\030\002 \001(\tB)\340A\002\340A\005\372A \n"
+          + "\036admanager.googleapis.com/OrderH\000\210\001\001\022\036\n"
+          + "\014display_name\030\003 \001(\tB\003\340A\002H\001\210\001\001\022\'\n"
+          + "\025external_line_item_id\030\004 \001(\tB\003\340A\001H\002\210\001\001\022$\n"
+          + "\022order_display_name\030\005 \001(\tB\003\340A\003H\003\210\001\001\0228\n\n"
+          + "start_time\030\006"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002H\004\210\001\001\022=\n"
+          + "\017target_end_time\030_"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\005\210\001\001\0226\n"
+          + "\010end_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\006\210\001\001\022%\n"
+          + "\023auto_extension_days\030\010 \001(\005B\003\340A\001H\007\210\001\001\022\'\n"
+          + "\022end_time_unlimited\030\t \001(\010B\006\340A\001\340A\007H\010\210\001\001\022p\n"
+          + "\026creative_rotation_type\030\n"
+          + " \001(\0162F.google.ads.admanager.v1.CreativeRot"
+          + "ationTypeEnum.CreativeRotationTypeB\003\340A\002H\t\210\001\001\022w\n"
+          + "\022delivery_rate_type\030\013 \001(\0162N.googl"
+          + "e.ads.admanager.v1.LineItemDeliveryRateT"
+          + "ypeEnum.LineItemDeliveryRateTypeB\006\340A\001\340A\007H\n"
+          + "\210\001\001\022\211\001\n"
+          + "\030delivery_forecast_source\030\014 \001(\0162Z.google.ads.admanager.v1.LineItemDeliv"
+          + "eryForecastSourceEnum.LineItemDeliveryForecastSourceB\006\340A\001\340A\007H\013\210\001\001\022Q\n"
+          + "\023custom_pacing_curve\030\r"
+          + " \001(\0132*.google.ads.admanager.v1.CustomPacingCurveB\003\340A\001H\014\210\001\001\022f\n"
+          + "\021roadblocking_type\030\016 \001(\0162>.google.ads.admanager.v"
+          + "1.RoadblockingTypeEnum.RoadblockingTypeB\006\340A\001\340A\007H\r"
+          + "\210\001\001\022d\n"
+          + "\021skippable_ad_type\030\017 \001(\0162"
+          + "<.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdTypeB\006\340A\001\340A\007H\016\210\001\001\022B\n"
+          + "\016frequency_caps\030\020"
+          + " \003(\0132%.google.ads.admanager.v1.FrequencyCapB\003\340A\001\022X\n"
+          + "\016line_item_type\030\021"
+          + " \001(\01626.google.ads.admanager.v1.LineItemTypeEnum.LineItemTypeB\003\340A\002H\017\210\001\001\022\035\n"
+          + "\010priority\030\023 \001(\005B\006\340A\001\340A\007H\020\210\001\001\022*\n"
+          + "\004rate\030\024"
+          + " \001(\0132\022.google.type.MoneyB\003\340A\002H\021\210\001\001\0222\n"
+          + "\tvalue_cpm\030\025"
+          + " \001(\0132\022.google.type.MoneyB\006\340A\001\340A\007H\022\210\001\001\022[\n"
+          + "\tcost_type\030\026 \001(\0162>.google.ads.admanage"
+          + "r.v1.LineItemCostTypeEnum.LineItemCostTypeB\003\340A\002H\023\210\001\001\022E\n"
+          + "\010discount\030\027 \001(\0132).google."
+          + "ads.admanager.v1.LineItemDiscountB\003\340A\001H\024\210\001\001\022)\n"
+          + "\027contracted_units_bought\030\030 \001(\003B\003\340A\001H\025\210\001\001\022P\n"
+          + "\025creative_placeholders\030\031 \003(\0132,."
+          + "google.ads.admanager.v1.CreativePlaceholderB\003\340A\002\022c\n"
+          + "\020environment_type\030\032 \001(\0162<.goo"
+          + "gle.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentTypeB\006\340A\001\340A\007H\026\210\001\001\022y\n"
+          + "\031companion_delivery_option\030\033 \001(\0162L.google.ads.ad"
+          + "manager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOptionB\003\340A\001H\027\210\001\001\022"
+          + " \n"
+          + "\016allow_overbook\030\034 \001(\010B\003\340A\004H\030\210\001\001\022&\n"
+          + "\024skip_inventory_check\030\035 \001(\010B\003\340A\004H\031\210\001\001\0228\n"
+          + "&skip_cross_selling_rule_warning_checks\030\036"
+          + " \001(\010B\003\340A\004H\032\210\001\001\022%\n"
+          + "\023reserve_on_creation\030\037 \001(\010B\003\340A\004H\033\210\001\001\022?\n"
+          + "\005stats\030 "
+          + " \001(\0132&.google.ads.admanager.v1.LineItemStatsB\003\340A\003H\034\210\001\001\022P\n"
+          + "\022delivery_indicator\030!"
+          + " \001(\0132*.google.ads.admanager.v1.DeliveryIndicatorB\003\340A\003H\035\210\001\001\022,\n"
+          + "\006budget\030# \001(\0132\022.google.type.MoneyB\003\340A\003H\036\210\001\001\022d\n"
+          + "\006status\030$ \001(\0162J.google.ads.admanager.v1.L"
+          + "ineItemComputedStatusEnum.LineItemComputedStatusB\003\340A\003H\037\210\001\001\022v\n"
+          + "\022reservation_status\030& \001(\0162P.google.ads.admanager.v1.LineIte"
+          + "mReservationStatusEnum.LineItemReservationStatusB\003\340A\003H \210\001\001\022\032\n"
+          + "\010archived\030\' \001(\010B\003\340A\003H!\210\001\001\022#\n"
+          + "\021web_property_code\0301 \001(\tB\003\340A\001H\"\210\001\001\022B\n"
+          + "\016applied_labels\0302"
+          + " \003(\0132%.google.ads.admanager.v1.AppliedLabelB\003\340A\001\022L\n"
+          + "\030effective_applied_labels\0303"
+          + " \003(\0132%.google.ads.admanager.v1.AppliedLabelB\003\340A\003\0223\n"
+          + "!same_advertiser_exception_enabled\0304"
+          + " \001(\010B\003\340A\001H#\210\001\001\022\037\n\r"
+          + "update_source\0305 \001(\tB\003\340A\003H$\210\001\001\022\027\n"
+          + "\005notes\0306 \001(\tB\003\340A\001H%\210\001\001\022m\n"
+          + "\034competitive_constraint_scope\0308 \001(\0162:.google.ads.admanage"
+          + "r.v1.ExclusionScopeEnum.ExclusionScopeB\006\340A\001\340A\007H&\210\001\001\0229\n"
+          + "\013update_time\0309"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\'\210\001\001\0229\n"
+          + "\013create_time\030:"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H(\210\001\001\022K\n"
+          + "\023custom_field_values\030; \003(\0132)"
+          + ".google.ads.admanager.v1.CustomFieldValueB\003\340A\001\022#\n"
+          + "\021missing_creatives\030= \001(\010B\003\340A\003H)\210\001\001\022j\n"
+          + " third_party_measurement_settings\030C"
+          + " \001(\01326.google.ads.admanager.v1.ThirdPartyMeasurementSettingsB\003\340A\001H*\210\001\001\022)\n"
+          + "\027youtube_kids_restricted\030J \001(\010B\003\340A\001H+\210\001\001\022H\n"
+          + "\033max_video_creative_duration\030K"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H,\210\001\001\0225\n"
+          + "\004goal\030L \001"
+          + "(\0132\035.google.ads.admanager.v1.GoalB\003\340A\001H-\210\001\001\022;\n"
+          + "\017secondary_goals\030d"
+          + " \003(\0132\035.google.ads.admanager.v1.GoalB\003\340A\001\022D\n"
+          + "\014grp_settings\030N"
+          + " \001(\0132$.google.ads.admanager.v1.GrpSettingsB\003\340A\001H.\210\001\001\022F\n"
+          + "\tdeal_info\030O \001(\0132).goog"
+          + "le.ads.admanager.v1.LineItemDealInfoB\003\340A\001H/\210\001\001\022P\n"
+          + "\036viewability_provider_companies\030U \003(\tB(\340A\001\372A\"\n"
+          + " admanager.googleapis.com/Company\022|\n"
+          + "\031child_content_eligibility\030V \001(\0162L.google.ads.admanager.v1.ChildConte"
+          + "ntEligibilityEnum.ChildContentEligibilityB\006\340A\001\340A\007H0\210\001\001\022\'\n"
+          + "\025custom_vast_extension\030X \001(\tB\003\340A\001H1\210\001\001\0221\n"
+          + "\037sponsorship_exclusivity_enabled\030Y \001(\010B\003\340A\001H2\210\001\001\0223\n"
+          + "!repeated_creative_serving_enabled\030Z \001(\010B\003\340A\001H3\210\001\001\022?\n"
+          + "\ttargeting\030]"
+          + " \001(\0132\".google.ads.admanager.v1.TargetingB\003\340A\002H4\210\001\001\022L\n"
+          + "\023creative_targetings\030^"
+          + " \003(\0132*.google.ads.admanager.v1.CreativeTargetingB\003\340A\001\022f\n"
+          + "\017allowed_formats\030p \003(\0162H.google.ads.admanager.v1.LineIt"
+          + "emAllowedFormatEnum.LineItemAllowedFormatB\003\340A\001:j\352Ag\n"
+          + "!admanager.googleapis.com/LineItem\022-networks/{network_code}/lineItems/{line_item}*"
+          + "\tlineItems2\010lineItemB\010\n"
+          + "\006_orderB\017\n\r"
+          + "_display_nameB\030\n"
+          + "\026_external_line_item_idB\025\n"
+          + "\023_order_display_nameB\r\n"
+          + "\013_start_timeB\022\n"
+          + "\020_target_end_timeB\013\n"
+          + "\t_end_timeB\026\n"
+          + "\024_auto_extension_daysB\025\n"
+          + "\023_end_time_unlimitedB\031\n"
+          + "\027_creative_rotation_typeB\025\n"
+          + "\023_delivery_rate_typeB\033\n"
+          + "\031_delivery_forecast_sourceB\026\n"
+          + "\024_custom_pacing_curveB\024\n"
+          + "\022_roadblocking_typeB\024\n"
+          + "\022_skippable_ad_typeB\021\n"
+          + "\017_line_item_typeB\013\n"
+          + "\t_priorityB\007\n"
+          + "\005_rateB\014\n\n"
+          + "_value_cpmB\014\n\n"
+          + "_cost_typeB\013\n"
+          + "\t_discountB\032\n"
+          + "\030_contracted_units_boughtB\023\n"
+          + "\021_environment_typeB\034\n"
+          + "\032_companion_delivery_optionB\021\n"
+          + "\017_allow_overbookB\027\n"
+          + "\025_skip_inventory_checkB)\n"
+          + "\'_skip_cross_selling_rule_warning_checksB\026\n"
+          + "\024_reserve_on_creationB\010\n"
+          + "\006_statsB\025\n"
+          + "\023_delivery_indicatorB\t\n"
+          + "\007_budgetB\t\n"
+          + "\007_statusB\025\n"
+          + "\023_reservation_statusB\013\n"
+          + "\t_archivedB\024\n"
+          + "\022_web_property_codeB$\n"
+          + "\"_same_advertiser_exception_enabledB\020\n"
+          + "\016_update_sourceB\010\n"
+          + "\006_notesB\037\n"
+          + "\035_competitive_constraint_scopeB\016\n"
+          + "\014_update_timeB\016\n"
+          + "\014_create_timeB\024\n"
+          + "\022_missing_creativesB#\n"
+          + "!_third_party_measurement_settingsB\032\n"
+          + "\030_youtube_kids_restrictedB\036\n"
+          + "\034_max_video_creative_durationB\007\n"
+          + "\005_goalB\017\n\r"
+          + "_grp_settingsB\014\n\n"
+          + "_deal_infoB\034\n"
+          + "\032_child_content_eligibilityB\030\n"
+          + "\026_custom_vast_extensionB\"\n"
+          + " _sponsorship_exclusivity_enabledB$\n"
+          + "\"_repeated_creative_serving_enabledB\014\n"
+          + "\n"
+          + "_targetingB\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025LineItemMessagesProtoP\001Z@google.gol"
+          + "ang.org/genproto/googleapis/ads/admanage"
+          + "r/v1;admanager\252\002\027Google.Ads.AdManager.V1"
+          + "\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads"
+          + "::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor(),
+              com.google.ads.admanager.v1.ChildContentEligibilityEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativePlaceholderProto.getDescriptor(),
+              com.google.ads.admanager.v1.CreativeTargetingProto.getDescriptor(),
               com.google.ads.admanager.v1.CustomFieldValueProto.getDescriptor(),
+              com.google.ads.admanager.v1.CustomPacingCurveProto.getDescriptor(),
+              com.google.ads.admanager.v1.DeliveryEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.DeliveryIndicatorProto.getDescriptor(),
+              com.google.ads.admanager.v1.EnvironmentTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.ExclusionScopeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.FrequencyCapProto.getDescriptor(),
               com.google.ads.admanager.v1.GoalProto.getDescriptor(),
+              com.google.ads.admanager.v1.GrpSettingsProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemAllowedFormatEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemDealInfoProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemDiscountProto.getDescriptor(),
               com.google.ads.admanager.v1.LineItemEnumsProto.getDescriptor(),
+              com.google.ads.admanager.v1.LineItemStatsProto.getDescriptor(),
+              com.google.ads.admanager.v1.SkippableAdTypeEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.TargetingProto.getDescriptor(),
+              com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
             });
@@ -107,20 +288,93 @@ public final class LineItemMessagesProto extends com.google.protobuf.GeneratedFi
               "Name",
               "Order",
               "DisplayName",
+              "ExternalLineItemId",
+              "OrderDisplayName",
               "StartTime",
+              "TargetEndTime",
               "EndTime",
+              "AutoExtensionDays",
+              "EndTimeUnlimited",
+              "CreativeRotationType",
+              "DeliveryRateType",
+              "DeliveryForecastSource",
+              "CustomPacingCurve",
+              "RoadblockingType",
+              "SkippableAdType",
+              "FrequencyCaps",
               "LineItemType",
+              "Priority",
               "Rate",
+              "ValueCpm",
+              "CostType",
+              "Discount",
+              "ContractedUnitsBought",
+              "CreativePlaceholders",
+              "EnvironmentType",
+              "CompanionDeliveryOption",
+              "AllowOverbook",
+              "SkipInventoryCheck",
+              "SkipCrossSellingRuleWarningChecks",
+              "ReserveOnCreation",
+              "Stats",
+              "DeliveryIndicator",
               "Budget",
+              "Status",
+              "ReservationStatus",
+              "Archived",
+              "WebPropertyCode",
+              "AppliedLabels",
+              "EffectiveAppliedLabels",
+              "SameAdvertiserExceptionEnabled",
+              "UpdateSource",
+              "Notes",
+              "CompetitiveConstraintScope",
+              "UpdateTime",
+              "CreateTime",
               "CustomFieldValues",
+              "MissingCreatives",
+              "ThirdPartyMeasurementSettings",
+              "YoutubeKidsRestricted",
+              "MaxVideoCreativeDuration",
               "Goal",
+              "SecondaryGoals",
+              "GrpSettings",
+              "DealInfo",
+              "ViewabilityProviderCompanies",
+              "ChildContentEligibility",
+              "CustomVastExtension",
+              "SponsorshipExclusivityEnabled",
+              "RepeatedCreativeServingEnabled",
+              "Targeting",
+              "CreativeTargetings",
+              "AllowedFormats",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor();
+    com.google.ads.admanager.v1.ChildContentEligibilityEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativePlaceholderProto.getDescriptor();
+    com.google.ads.admanager.v1.CreativeTargetingProto.getDescriptor();
     com.google.ads.admanager.v1.CustomFieldValueProto.getDescriptor();
+    com.google.ads.admanager.v1.CustomPacingCurveProto.getDescriptor();
+    com.google.ads.admanager.v1.DeliveryEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.DeliveryIndicatorProto.getDescriptor();
+    com.google.ads.admanager.v1.EnvironmentTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.ExclusionScopeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.FrequencyCapProto.getDescriptor();
     com.google.ads.admanager.v1.GoalProto.getDescriptor();
+    com.google.ads.admanager.v1.GrpSettingsProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemAllowedFormatEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemDealInfoProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemDiscountProto.getDescriptor();
     com.google.ads.admanager.v1.LineItemEnumsProto.getDescriptor();
+    com.google.ads.admanager.v1.LineItemStatsProto.getDescriptor();
+    com.google.ads.admanager.v1.SkippableAdTypeEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.TargetingProto.getDescriptor();
+    com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

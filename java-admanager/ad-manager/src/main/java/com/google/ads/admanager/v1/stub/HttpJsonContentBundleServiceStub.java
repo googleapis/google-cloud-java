@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchActivateContentBundlesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesResponse;
 import com.google.ads.admanager.v1.ContentBundle;
 import com.google.ads.admanager.v1.GetContentBundleRequest;
 import com.google.ads.admanager.v1.ListContentBundlesRequest;
@@ -128,11 +132,99 @@ public class HttpJsonContentBundleServiceStub extends ContentBundleServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ContentBundleService/BatchActivateContentBundles")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchActivateContentBundlesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/contentBundles:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateContentBundlesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateContentBundlesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchActivateContentBundlesResponse>newBuilder()
+                      .setDefaultInstance(BatchActivateContentBundlesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ContentBundleService/BatchDeactivateContentBundles")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeactivateContentBundlesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/contentBundles:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateContentBundlesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateContentBundlesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchDeactivateContentBundlesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchDeactivateContentBundlesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetContentBundleRequest, ContentBundle> getContentBundleCallable;
   private final UnaryCallable<ListContentBundlesRequest, ListContentBundlesResponse>
       listContentBundlesCallable;
   private final UnaryCallable<ListContentBundlesRequest, ListContentBundlesPagedResponse>
       listContentBundlesPagedCallable;
+  private final UnaryCallable<
+          BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesCallable;
+  private final UnaryCallable<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -201,6 +293,37 @@ public class HttpJsonContentBundleServiceStub extends ContentBundleServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+        batchActivateContentBundlesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchActivateContentBundlesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+        batchDeactivateContentBundlesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateContentBundlesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getContentBundleCallable =
         callableFactory.createUnaryCallable(
@@ -215,6 +338,16 @@ public class HttpJsonContentBundleServiceStub extends ContentBundleServiceStub {
             listContentBundlesTransportSettings,
             settings.listContentBundlesSettings(),
             clientContext);
+    this.batchActivateContentBundlesCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateContentBundlesTransportSettings,
+            settings.batchActivateContentBundlesSettings(),
+            clientContext);
+    this.batchDeactivateContentBundlesCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateContentBundlesTransportSettings,
+            settings.batchDeactivateContentBundlesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -225,6 +358,8 @@ public class HttpJsonContentBundleServiceStub extends ContentBundleServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getContentBundleMethodDescriptor);
     methodDescriptors.add(listContentBundlesMethodDescriptor);
+    methodDescriptors.add(batchActivateContentBundlesMethodDescriptor);
+    methodDescriptors.add(batchDeactivateContentBundlesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -243,6 +378,18 @@ public class HttpJsonContentBundleServiceStub extends ContentBundleServiceStub {
   public UnaryCallable<ListContentBundlesRequest, ListContentBundlesPagedResponse>
       listContentBundlesPagedCallable() {
     return listContentBundlesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesCallable() {
+    return batchActivateContentBundlesCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesCallable() {
+    return batchDeactivateContentBundlesCallable;
   }
 
   @Override

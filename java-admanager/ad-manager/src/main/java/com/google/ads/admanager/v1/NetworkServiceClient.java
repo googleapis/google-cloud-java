@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetNetwork</td>
- *      <td><p> API to retrieve a Network object.</td>
+ *      <td><p> Retrieves a `Network` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListNetworks</td>
- *      <td><p> API to retrieve all the networks the current user has access to.</td>
+ *      <td><p> Retrieves all the networks the current user has access to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -191,7 +191,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -218,7 +218,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -244,7 +244,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -272,7 +272,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -299,7 +299,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -364,7 +364,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *

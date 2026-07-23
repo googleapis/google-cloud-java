@@ -353,6 +353,24 @@
  * }
  * }</pre>
  *
+ * <p>======================= CreativeSetServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `CreativeSet` objects.
+ *
+ * <p>Sample for CreativeSetServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CreativeSetServiceClient creativeSetServiceClient = CreativeSetServiceClient.create()) {
+ *   CreativeSetName name = CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]");
+ *   CreativeSet response = creativeSetServiceClient.getCreativeSet(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CreativeTemplateServiceClient =======================
  *
  * <p>Service Description: Provides methods for handling `CreativeTemplate` objects.
@@ -902,6 +920,24 @@
  * try (SiteServiceClient siteServiceClient = SiteServiceClient.create()) {
  *   SiteName name = SiteName.of("[NETWORK_CODE]", "[SITE]");
  *   Site response = siteServiceClient.getSite(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SlateServiceClient =======================
+ *
+ * <p>Service Description: Provides methods for handling `Slate` objects.
+ *
+ * <p>Sample for SlateServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SlateServiceClient slateServiceClient = SlateServiceClient.create()) {
+ *   SlateName name = SlateName.of("[NETWORK_CODE]", "[SLATE]");
+ *   Slate response = slateServiceClient.getSlate(name);
  * }
  * }</pre>
  *

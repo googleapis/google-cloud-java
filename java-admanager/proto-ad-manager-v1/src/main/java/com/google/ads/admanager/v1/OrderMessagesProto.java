@@ -59,7 +59,7 @@ public final class OrderMessagesProto extends com.google.protobuf.GeneratedFile 
           + "ads/admanager/v1/applied_label.proto\0320google/ads/admanager/v1/custom_field_value"
           + ".proto\032)google/ads/admanager/v1/order_en"
           + "ums.proto\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\233\017\n"
+          + "to\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\204\021\n"
           + "\005Order\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\034\n"
           + "\010order_id\030\004 \001(\003B\005\030\001\340A\003H\000\210\001\001\022\036\n"
@@ -111,9 +111,13 @@ public final class OrderMessagesProto extends com.google.protobuf.GeneratedFile 
           + "\030effective_applied_labels\030\032"
           + " \003(\0132%.google.ads.admanager.v1.AppliedLabelB\003\340A\003\022K\n"
           + "\023custom_field_values\030&"
-          + " \003(\0132).google.ads.admanager.v1.CustomFieldValueB\003\340A\001:Z\352AW\n"
-          + "\036admanager"
-          + ".googleapis.com/Order\022&networks/{network_code}/orders/{order}*\006orders2\005orderB\013\n"
+          + " \003(\0132).google.ads.admanager.v1.CustomFieldValueB\003\340A\001\022\'\n"
+          + "\025impressions_delivered\030) \001(\003B\003\340A\003H\023\210\001\001\022(\n"
+          + "\026total_clicks_delivered\0305 \001(\003B\003\340A\003H\024\210\001\001\0226\n"
+          + "$total_viewable_impressions_delivered\0306"
+          + " \001(\003B\003\340A\003H\025\210\001\001:Z\352AW\n"
+          + "\036admanager.googleapis.com/Order"
+          + "\022&networks/{network_code}/orders/{order}*\006orders2\005orderB\013\n"
           + "\t_order_idB\017\n\r"
           + "_display_nameB\017\n\r"
           + "_programmaticB\r\n"
@@ -132,11 +136,14 @@ public final class OrderMessagesProto extends com.google.protobuf.GeneratedFile 
           + "\006_notesB\014\n\n"
           + "_po_numberB\t\n"
           + "\007_statusB\016\n"
-          + "\014_salespersonB\306\001\n"
-          + "\033com.google.ads.admanager.v1B\022OrderMessagesProtoP\001Z@google.golan"
-          + "g.org/genproto/googleapis/ads/admanager/"
-          + "v1;admanager\252\002\027Google.Ads.AdManager.V1\312\002"
-          + "\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\014_salespersonB\030\n"
+          + "\026_impressions_deliveredB\031\n"
+          + "\027_total_clicks_deliveredB\'\n"
+          + "%_total_viewable_impressions_deliveredB\306\001\n"
+          + "\033com.google.ads.admanager.v1B\022OrderMessagesProtoP\001Z@google.golang.org/g"
+          + "enproto/googleapis/ads/admanager/v1;adma"
+          + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
+          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -183,6 +190,9 @@ public final class OrderMessagesProto extends com.google.protobuf.GeneratedFile 
               "AppliedLabels",
               "EffectiveAppliedLabels",
               "CustomFieldValues",
+              "ImpressionsDelivered",
+              "TotalClicksDelivered",
+              "TotalViewableImpressionsDelivered",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.AppliedLabelProto.getDescriptor();

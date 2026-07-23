@@ -53,6 +53,18 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_commerceproducer_v1beta_GetPrivateOfferRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_OptionalOffers_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_OptionalOffers_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_fieldAccessorTable;
@@ -178,17 +190,35 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",commerceproducer.googleapis.com/PrivateOffer\022I\n"
           + "\004view\030\002 \001(\01626.google.cloud."
-          + "commerceproducer.v1beta.PrivateOfferViewB\003\340A\001\"\261\001\n"
-          + "\031CreatePrivateOfferRequest\022D\n"
+          + "commerceproducer.v1beta.PrivateOfferViewB\003\340A\001\"\215\002\n"
+          + "\035ResolveAmendmentTargetRequest\022D\n"
           + "\006parent\030\001 \001("
-          + "\tB4\340A\002\372A.\022,commerceproducer.googleapis.com/PrivateOffer\022N\n\r"
-          + "private_offer\030\003"
-          + " \001(\01322.google.cloud.commerceproducer.v1beta.PrivateOfferB\003\340A\002\"\241\001\n"
+          + "\tB4\340A\002\372A.\022,commerceproducer.googleapis.com/PrivateOffer\022R\n"
+          + "\026target_billing_account\030\002 \001(\tB2\340A\002\372A,\n"
+          + "*cloudbilling.googleapis.com/BillingAccount\022R\n"
+          + "\023base_standard_offer\030\003 \001(\tB5\340A\002\372A/\n"
+          + "-commerceproducer.googleapis.com/StandardOffer\"\262\003\n"
+          + "\036ResolveAmendmentTargetResponse\022S\n"
+          + "\026required_private_offer\030\001 \001(\tB1\372A.\n"
+          + ",commerceproducer.googleapis.com/PrivateOfferH\000\022U\n"
+          + "\027required_standard_offer\030\002 \001(\tB2\372A/\n"
+          + "-commerceproducer.googleapis.com/StandardOfferH\000\022n\n"
+          + "\017optional_offers\030\003 \001(\0132S.google.c"
+          + "loud.commerceproducer.v1beta.ResolveAmendmentTargetResponse.OptionalOffersH\000\032[\n"
+          + "\016OptionalOffers\022I\n"
+          + "\016private_offers\030\001 \003(\tB1\372A.\n"
+          + ",commerceproducer.googleapis.com/PrivateOfferB\027\n"
+          + "\025amendment_requirement\"\261\001\n"
+          + "\031CreatePrivateOfferRequest\022D\n"
+          + "\006parent\030\001 \001(\t"
+          + "B4\340A\002\372A.\022,commerceproducer.googleapis.com/PrivateOffer\022N\n\r"
+          + "private_offer\030\003 \001(\01322."
+          + "google.cloud.commerceproducer.v1beta.PrivateOfferB\003\340A\002\"\241\001\n"
           + "\031UpdatePrivateOfferRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022N\n\r"
-          + "private_offer\030\002"
-          + " \001(\01322.google.cloud.commerceproducer.v1beta.PrivateOfferB\003\340A\002\"|\n"
+          + "private_offer\030\002 \001("
+          + "\01322.google.cloud.commerceproducer.v1beta.PrivateOfferB\003\340A\002\"|\n"
           + "\032PublishPrivateOfferRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",commerceproducer.googleapis.com/PrivateOffer\022\032\n\r"
@@ -207,20 +237,20 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\231\001\n"
           + "!ListPrivateOfferDocumentsResponse\022[\n"
-          + "\027private_offer_documents\030\001 \003(\0132:.g"
-          + "oogle.cloud.commerceproducer.v1beta.PrivateOfferDocument\022\027\n"
+          + "\027private_offer_documents\030\001 \003(\0132:.google.cloud"
+          + ".commerceproducer.v1beta.PrivateOfferDocument\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"l\n"
           + "\036GetPrivateOfferDocumentRequest\022J\n"
           + "\004name\030\001 \001(\tB<\340A\002\372A6\n"
           + "4commerceproducer.googleapis.com/PrivateOfferDocument\"\322\001\n"
           + "!CreatePrivateOfferDocumentRequest\022L\n"
-          + "\006parent\030\001 \001("
-          + "\tB<\340A\002\372A6\0224commerceproducer.googleapis.com/PrivateOfferDocument\022_\n"
-          + "\026private_offer_document\030\003 \001(\0132:.google.cloud.comme"
-          + "rceproducer.v1beta.PrivateOfferDocumentB\003\340A\002\"\272\001\n"
+          + "\006parent\030\001 \001(\tB<\340A\002\372"
+          + "A6\0224commerceproducer.googleapis.com/PrivateOfferDocument\022_\n"
+          + "\026private_offer_document\030\003"
+          + " \001(\0132:.google.cloud.commerceproducer.v1beta.PrivateOfferDocumentB\003\340A\002\"\272\001\n"
           + "!UpdatePrivateOfferDocumentRequest\022_\n"
-          + "\026private_offer_document\030\001 \001(\0132:.goo"
-          + "gle.cloud.commerceproducer.v1beta.PrivateOfferDocumentB\003\340A\002\0224\n"
+          + "\026private_offer_document\030\001 \001(\0132:.google.cloud.c"
+          + "ommerceproducer.v1beta.PrivateOfferDocumentB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"o\n"
           + "!DeletePrivateOfferDocumentRequest\022J\n"
           + "\004name\030\001 \001(\tB<\340A\002\372A6\n"
@@ -231,8 +261,8 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"p\n"
           + "\024ListServicesResponse\022?\n"
-          + "\010services\030\001"
-          + " \003(\0132-.google.cloud.commerceproducer.v1beta.Service\022\027\n"
+          + "\010services\030\001 \003(\0132-.go"
+          + "ogle.cloud.commerceproducer.v1beta.Service\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\230\001\n"
           + "\021GetServiceRequest\022=\n"
           + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
@@ -240,24 +270,24 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\004view\030\002"
           + " \001(\01621.google.cloud.commerceproducer.v1beta.ServiceViewB\003\340A\001\"\277\001\n"
           + "\031ListStandardOffersRequest\022E\n"
-          + "\006parent\030\001 \001(\tB"
-          + "5\340A\002\372A/\022-commerceproducer.googleapis.com/StandardOffer\022\026\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-co"
+          + "mmerceproducer.googleapis.com/StandardOffer\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\203\001\n"
           + "\032ListStandardOffersResponse\022L\n"
-          + "\017standard_offers\030\001 "
-          + "\003(\01323.google.cloud.commerceproducer.v1beta.StandardOffer\022\027\n"
+          + "\017standard_offers\030\001 \003(\01323.googl"
+          + "e.cloud.commerceproducer.v1beta.StandardOffer\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\252\001\n"
           + "\027GetStandardOfferRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-commerceproducer.googleapis.com/StandardOffer\022J\n"
-          + "\004view\030\002 \001(\01627.googl"
-          + "e.cloud.commerceproducer.v1beta.StandardOfferViewB\003\340A\001\"\177\n"
+          + "\004view\030\002 \001(\01627.google.cloud.com"
+          + "merceproducer.v1beta.StandardOfferViewB\003\340A\001\"\177\n"
           + "\017ListSkusRequest\022;\n"
-          + "\006parent\030\001 \001("
-          + "\tB+\340A\002\372A%\022#commerceproducer.googleapis.com/Sku\022\026\n"
+          + "\006parent\030\001 \001(\tB+"
+          + "\340A\002\372A%\022#commerceproducer.googleapis.com/Sku\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"d\n"
           + "\020ListSkusResponse\0227\n"
@@ -270,8 +300,8 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(commerceproducer.googleapis.com/SkuGroup\"\211\001\n"
           + "\024ListSkuGroupsRequest\022@\n"
-          + "\006parent\030\001 \001("
-          + "\tB0\340A\002\372A*\022(commerceproducer.googleapis.com/SkuGroup\022\026\n"
+          + "\006parent\030\001 \001(\tB0\340"
+          + "A\002\372A*\022(commerceproducer.googleapis.com/SkuGroup\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"t\n"
           + "\025ListSkuGroupsResponse\022B\n\n"
@@ -288,97 +318,101 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
           + "\013ServiceView\022\034\n"
           + "\030SERVICE_VIEW_UNSPECIFIED\020\000\022\026\n"
           + "\022SERVICE_VIEW_BASIC\020\001\022\025\n"
-          + "\021SERVICE_VIEW_FULL\020\0022\304#\n"
+          + "\021SERVICE_VIEW_FULL\020\0022\365%\n"
           + "\023CommerceTransaction\022\310\001\n"
-          + "\014ListServices\0229.google.cloud.commerceproducer.v1beta.ListServ"
-          + "icesRequest\032:.google.cloud.commerceprodu"
-          + "cer.v1beta.ListServicesResponse\"A\332A\006pare"
-          + "nt\202\323\344\223\0022\0220/v1beta/{parent=projects/*/locations/*}/services\022\265\001\n\n"
-          + "GetService\0227.google.cloud.commerceproducer.v1beta.GetServ"
-          + "iceRequest\032-.google.cloud.commerceproduc"
-          + "er.v1beta.Service\"?\332A\004name\202\323\344\223\0022\0220/v1bet"
-          + "a/{name=projects/*/locations/*/services/*}\022\334\001\n"
-          + "\021ListPrivateOffers\022>.google.cloud.commerceproducer.v1beta.ListPrivateOffer"
-          + "sRequest\032?.google.cloud.commerceproducer"
-          + ".v1beta.ListPrivateOffersResponse\"F\332A\006pa"
-          + "rent\202\323\344\223\0027\0225/v1beta/{parent=projects/*/locations/*}/privateOffers\022\311\001\n"
-          + "\017GetPrivateOffer\022<.google.cloud.commerceproducer.v1"
-          + "beta.GetPrivateOfferRequest\0322.google.cloud.commerceproducer.v1beta.PrivateOffer\""
-          + "D\332A\004name\202\323\344\223\0027\0225/v1beta/{name=projects/*/locations/*/privateOffers/*}\022\327\001\n"
-          + "\022CreatePrivateOffer\022?.google.cloud.commerceprod"
-          + "ucer.v1beta.CreatePrivateOfferRequest\0322.google.cloud.commerceproducer.v1beta.Pri"
-          + "vateOffer\"L\202\323\344\223\002F\"5/v1beta/{parent=projects/*/locations/*}/privateOffers:\r"
+          + "\014ListServices\0229.google.cloud.commerceproducer.v1beta.ListServicesRequest"
+          + "\032:.google.cloud.commerceproducer.v1beta."
+          + "ListServicesResponse\"A\332A\006parent\202\323\344\223\0022\0220/"
+          + "v1beta/{parent=projects/*/locations/*}/services\022\265\001\n\n"
+          + "GetService\0227.google.cloud.commerceproducer.v1beta.GetServiceRequest\032"
+          + "-.google.cloud.commerceproducer.v1beta.S"
+          + "ervice\"?\332A\004name\202\323\344\223\0022\0220/v1beta/{name=projects/*/locations/*/services/*}\022\334\001\n"
+          + "\021ListPrivateOffers\022>.google.cloud.commercepro"
+          + "ducer.v1beta.ListPrivateOffersRequest\032?.google.cloud.commerceproducer.v1beta.Lis"
+          + "tPrivateOffersResponse\"F\332A\006parent\202\323\344\223\0027\022"
+          + "5/v1beta/{parent=projects/*/locations/*}/privateOffers\022\311\001\n"
+          + "\017GetPrivateOffer\022<.google.cloud.commerceproducer.v1beta.GetPri"
+          + "vateOfferRequest\0322.google.cloud.commerce"
+          + "producer.v1beta.PrivateOffer\"D\332A\004name\202\323\344"
+          + "\223\0027\0225/v1beta/{name=projects/*/locations/*/privateOffers/*}\022\256\002\n"
+          + "\026ResolveAmendmentTarget\022C.google.cloud.commerceproducer.v1"
+          + "beta.ResolveAmendmentTargetRequest\032D.google.cloud.commerceproducer.v1beta.Resolv"
+          + "eAmendmentTargetResponse\"\210\001\332A1parent,tar"
+          + "get_billing_account,base_standard_offer\202"
+          + "\323\344\223\002N\022L/v1beta/{parent=projects/*/locati"
+          + "ons/*}/privateOffers:resolveAmendmentTarget\022\327\001\n"
+          + "\022CreatePrivateOffer\022?.google.cloud.commerceproducer.v1beta.CreatePrivateO"
+          + "fferRequest\0322.google.cloud.commerceprodu"
+          + "cer.v1beta.PrivateOffer\"L\202\323\344\223\002F\"5/v1beta"
+          + "/{parent=projects/*/locations/*}/privateOffers:\r"
           + "private_offer\022\201\002\n"
-          + "\022UpdatePrivateOffer\022?.google.cloud.commerceproducer.v1beta.UpdatePriv"
-          + "ateOfferRequest\0322.google.cloud.commercep"
-          + "roducer.v1beta.PrivateOffer\"v\332A\031private_"
-          + "offer,update_mask\202\323\344\223\002T2C/v1beta/{privat"
-          + "e_offer.name=projects/*/locations/*/privateOffers/*}:\r"
+          + "\022UpdatePrivateOffer\022?.google.cloud.commerceproducer.v1b"
+          + "eta.UpdatePrivateOfferRequest\0322.google.cloud.commerceproducer.v1beta.PrivateOffe"
+          + "r\"v\332A\031private_offer,update_mask\202\323\344\223\002T2C/"
+          + "v1beta/{private_offer.name=projects/*/locations/*/privateOffers/*}:\r"
           + "private_offer\022\334\001\n"
-          + "\023PublishPrivateOffer\022@.google.cloud.commerceprodu"
-          + "cer.v1beta.PublishPrivateOfferRequest\0322.google.cloud.commerceproducer.v1beta.Pri"
-          + "vateOffer\"O\332A\004name\202\323\344\223\002B\"=/v1beta/{name="
-          + "projects/*/locations/*/privateOffers/*}:publish:\001*\022\331\001\n"
-          + "\022CancelPrivateOffer\022?.google.cloud.commerceproducer.v1beta.CancelP"
-          + "rivateOfferRequest\0322.google.cloud.commer"
-          + "ceproducer.v1beta.PrivateOffer\"N\332A\004name\202"
-          + "\323\344\223\002A\"</v1beta/{name=projects/*/locations/*/privateOffers/*}:cancel:\001*\022\263\001\n"
-          + "\022DeletePrivateOffer\022?.google.cloud.commercepro"
-          + "ducer.v1beta.DeletePrivateOfferRequest\032\026"
-          + ".google.protobuf.Empty\"D\332A\004name\202\323\344\223\0027*5/"
-          + "v1beta/{name=projects/*/locations/*/privateOffers/*}\022\200\002\n"
-          + "\031ListPrivateOfferDocuments\022F.google.cloud.commerceproducer.v1bet"
-          + "a.ListPrivateOfferDocumentsRequest\032G.google.cloud.commerceproducer.v1beta.ListPr"
-          + "ivateOfferDocumentsResponse\"R\332A\006parent\202\323"
-          + "\344\223\002C\022A/v1beta/{parent=projects/*/locations/*/privateOffers/*}/documents\022\355\001\n"
-          + "\027GetPrivateOfferDocument\022D.google.cloud.comme"
-          + "rceproducer.v1beta.GetPrivateOfferDocumentRequest\032:.google.cloud.commerceproduce"
-          + "r.v1beta.PrivateOfferDocument\"P\332A\004name\202\323"
-          + "\344\223\002C\022A/v1beta/{name=projects/*/locations/*/privateOffers/*/documents/*}\022\204\002\n"
-          + "\032CreatePrivateOfferDocument\022G.google.cloud.co"
-          + "mmerceproducer.v1beta.CreatePrivateOfferDocumentRequest\032:.google.cloud.commercep"
-          + "roducer.v1beta.PrivateOfferDocument\"a\202\323\344"
-          + "\223\002[\"A/v1beta/{parent=projects/*/location"
-          + "s/*/privateOffers/*}/documents:\026private_offer_document\022\301\002\n"
-          + "\032UpdatePrivateOfferDocument\022G.google.cloud.commerceproducer.v1"
-          + "beta.UpdatePrivateOfferDocumentRequest\032:.google.cloud.commerceproducer.v1beta.Pr"
-          + "ivateOfferDocument\"\235\001\332A\"private_offer_do"
-          + "cument,update_mask\202\323\344\223\002r2X/v1beta/{priva"
-          + "te_offer_document.name=projects/*/locati"
-          + "ons/*/privateOffers/*/documents/*}:\026private_offer_document\022\317\001\n"
-          + "\032DeletePrivateOfferDocument\022G.google.cloud.commerceproduce"
-          + "r.v1beta.DeletePrivateOfferDocumentReque"
-          + "st\032\026.google.protobuf.Empty\"P\332A\004name\202\323\344\223\002"
-          + "C*A/v1beta/{name=projects/*/locations/*/privateOffers/*/documents/*}\022\353\001\n"
-          + "\022ListStandardOffers\022?.google.cloud.commerceprodu"
-          + "cer.v1beta.ListStandardOffersRequest\032@.google.cloud.commerceproducer.v1beta.List"
-          + "StandardOffersResponse\"R\332A\006parent\202\323\344\223\002C\022"
-          + "A/v1beta/{parent=projects/*/locations/*/services/*}/standardOffers\022\330\001\n"
-          + "\020GetStandardOffer\022=.google.cloud.commerceproducer."
-          + "v1beta.GetStandardOfferRequest\0323.google.cloud.commerceproducer.v1beta.StandardOf"
-          + "fer\"P\332A\004name\202\323\344\223\002C\022A/v1beta/{name=projec"
-          + "ts/*/locations/*/services/*/standardOffers/*}\022\260\001\n"
-          + "\006GetSku\0223.google.cloud.commerceproducer.v1beta.GetSkuRequest\032).google.c"
-          + "loud.commerceproducer.v1beta.Sku\"F\332A\004nam"
-          + "e\202\323\344\223\0029\0227/v1beta/{name=projects/*/locations/*/services/*/skus/*}\022\303\001\n"
-          + "\010ListSkus\0225.google.cloud.commerceproducer.v1beta.Lis"
-          + "tSkusRequest\0326.google.cloud.commerceprod"
-          + "ucer.v1beta.ListSkusResponse\"H\332A\006parent\202"
-          + "\323\344\223\0029\0227/v1beta/{parent=projects/*/locations/*/services/*}/skus\022\271\001\n"
-          + "\013GetSkuGroup\0228.google.cloud.commerceproducer.v1beta.Ge"
-          + "tSkuGroupRequest\032..google.cloud.commerce"
-          + "producer.v1beta.SkuGroup\"@\332A\004name\202\323\344\223\0023\022"
-          + "1/v1beta/{name=projects/*/locations/*/skuGroups/*}\022\314\001\n\r"
-          + "ListSkuGroups\022:.google.cloud.commerceproducer.v1beta.ListSkuGroup"
-          + "sRequest\032;.google.cloud.commerceproducer"
-          + ".v1beta.ListSkuGroupsResponse\"B\332A\006parent"
-          + "\202\323\344\223\0023\0221/v1beta/{parent=projects/*/locat"
-          + "ions/*}/skuGroups\032S\312A\037commerceproducer.g"
-          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
-          + "(com.google.cloud.commerceproducer.v1betaB\030CommerceTra"
-          + "nsactionProtoP\001ZTcloud.google.com/go/commerceproducer/apiv1beta/commerceproducer"
-          + "pb;commerceproducerpb\252\002$Google.Cloud.Com"
-          + "merceProducer.V1Beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
+          + "\023PublishPrivateOffer\022@.google.cloud.commerceproducer.v1beta.PublishPrivateO"
+          + "fferRequest\0322.google.cloud.commerceprodu"
+          + "cer.v1beta.PrivateOffer\"O\332A\004name\202\323\344\223\002B\"="
+          + "/v1beta/{name=projects/*/locations/*/privateOffers/*}:publish:\001*\022\331\001\n"
+          + "\022CancelPrivateOffer\022?.google.cloud.commerceproducer."
+          + "v1beta.CancelPrivateOfferRequest\0322.google.cloud.commerceproducer.v1beta.PrivateO"
+          + "ffer\"N\332A\004name\202\323\344\223\002A\"</v1beta/{name=proje"
+          + "cts/*/locations/*/privateOffers/*}:cancel:\001*\022\263\001\n"
+          + "\022DeletePrivateOffer\022?.google.cloud.commerceproducer.v1beta.DeletePrivate"
+          + "OfferRequest\032\026.google.protobuf.Empty\"D\332A"
+          + "\004name\202\323\344\223\0027*5/v1beta/{name=projects/*/locations/*/privateOffers/*}\022\200\002\n"
+          + "\031ListPrivateOfferDocuments\022F.google.cloud.commerce"
+          + "producer.v1beta.ListPrivateOfferDocumentsRequest\032G.google.cloud.commerceproducer"
+          + ".v1beta.ListPrivateOfferDocumentsRespons"
+          + "e\"R\332A\006parent\202\323\344\223\002C\022A/v1beta/{parent=proj"
+          + "ects/*/locations/*/privateOffers/*}/documents\022\355\001\n"
+          + "\027GetPrivateOfferDocument\022D.google.cloud.commerceproducer.v1beta.GetPriv"
+          + "ateOfferDocumentRequest\032:.google.cloud.commerceproducer.v1beta.PrivateOfferDocum"
+          + "ent\"P\332A\004name\202\323\344\223\002C\022A/v1beta/{name=projec"
+          + "ts/*/locations/*/privateOffers/*/documents/*}\022\204\002\n"
+          + "\032CreatePrivateOfferDocument\022G.google.cloud.commerceproducer.v1beta.Crea"
+          + "tePrivateOfferDocumentRequest\032:.google.cloud.commerceproducer.v1beta.PrivateOffe"
+          + "rDocument\"a\202\323\344\223\002[\"A/v1beta/{parent=proje"
+          + "cts/*/locations/*/privateOffers/*}/documents:\026private_offer_document\022\301\002\n"
+          + "\032UpdatePrivateOfferDocument\022G.google.cloud.comme"
+          + "rceproducer.v1beta.UpdatePrivateOfferDocumentRequest\032:.google.cloud.commerceprod"
+          + "ucer.v1beta.PrivateOfferDocument\"\235\001\332A\"pr"
+          + "ivate_offer_document,update_mask\202\323\344\223\002r2X"
+          + "/v1beta/{private_offer_document.name=pro"
+          + "jects/*/locations/*/privateOffers/*/documents/*}:\026private_offer_document\022\317\001\n"
+          + "\032DeletePrivateOfferDocument\022G.google.cloud.c"
+          + "ommerceproducer.v1beta.DeletePrivateOfferDocumentRequest\032\026.google.protobuf.Empty"
+          + "\"P\332A\004name\202\323\344\223\002C*A/v1beta/{name=projects/"
+          + "*/locations/*/privateOffers/*/documents/*}\022\353\001\n"
+          + "\022ListStandardOffers\022?.google.cloud.commerceproducer.v1beta.ListStandardOff"
+          + "ersRequest\032@.google.cloud.commerceproduc"
+          + "er.v1beta.ListStandardOffersResponse\"R\332A"
+          + "\006parent\202\323\344\223\002C\022A/v1beta/{parent=projects/"
+          + "*/locations/*/services/*}/standardOffers\022\330\001\n"
+          + "\020GetStandardOffer\022=.google.cloud.commerceproducer.v1beta.GetStandardOfferReq"
+          + "uest\0323.google.cloud.commerceproducer.v1b"
+          + "eta.StandardOffer\"P\332A\004name\202\323\344\223\002C\022A/v1bet"
+          + "a/{name=projects/*/locations/*/services/*/standardOffers/*}\022\260\001\n"
+          + "\006GetSku\0223.google.cloud.commerceproducer.v1beta.GetSkuRequ"
+          + "est\032).google.cloud.commerceproducer.v1be"
+          + "ta.Sku\"F\332A\004name\202\323\344\223\0029\0227/v1beta/{name=pro"
+          + "jects/*/locations/*/services/*/skus/*}\022\303\001\n"
+          + "\010ListSkus\0225.google.cloud.commerceprodu"
+          + "cer.v1beta.ListSkusRequest\0326.google.cloud.commerceproducer.v1beta.ListSkusRespon"
+          + "se\"H\332A\006parent\202\323\344\223\0029\0227/v1beta/{parent=projects/*/locations/*/services/*}/skus\022\271\001\n"
+          + "\013GetSkuGroup\0228.google.cloud.commerceprod"
+          + "ucer.v1beta.GetSkuGroupRequest\032..google.cloud.commerceproducer.v1beta.SkuGroup\"@"
+          + "\332A\004name\202\323\344\223\0023\0221/v1beta/{name=projects/*/locations/*/skuGroups/*}\022\314\001\n\r"
+          + "ListSkuGroups\022:.google.cloud.commerceproducer.v1bet"
+          + "a.ListSkuGroupsRequest\032;.google.cloud.commerceproducer.v1beta.ListSkuGroupsRespo"
+          + "nse\"B\332A\006parent\202\323\344\223\0023\0221/v1beta/{parent=pr"
+          + "ojects/*/locations/*}/skuGroups\032S\312A\037comm"
+          + "erceproducer.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\355\001\n"
+          + "(com.google.cloud.commerceproducer.v1betaB\030CommerceTransactionProtoP\001ZTcloud.goo"
+          + "gle.com/go/commerceproducer/apiv1beta/commerceproducerpb;commerceproducerpb\252\002$Go"
+          + "ogle.Cloud.CommerceProducer.V1Beta\352\002\'Goo"
+          + "gle::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -420,8 +454,36 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "Name", "View",
             });
-    internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_descriptor =
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetRequest_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "TargetBillingAccount", "BaseStandardOffer",
+            });
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_descriptor,
+            new java.lang.String[] {
+              "RequiredPrivateOffer",
+              "RequiredStandardOffer",
+              "OptionalOffers",
+              "AmendmentRequirement",
+            });
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_OptionalOffers_descriptor =
+        internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_OptionalOffers_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_commerceproducer_v1beta_ResolveAmendmentTargetResponse_OptionalOffers_descriptor,
+            new java.lang.String[] {
+              "PrivateOffers",
+            });
+    internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferRequest_descriptor,
@@ -429,7 +491,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PrivateOffer",
             });
     internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferRequest_descriptor,
@@ -437,7 +499,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "UpdateMask", "PrivateOffer",
             });
     internal_static_google_cloud_commerceproducer_v1beta_PublishPrivateOfferRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_commerceproducer_v1beta_PublishPrivateOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_PublishPrivateOfferRequest_descriptor,
@@ -445,7 +507,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name", "ValidateOnly",
             });
     internal_static_google_cloud_commerceproducer_v1beta_CancelPrivateOfferRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_commerceproducer_v1beta_CancelPrivateOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_CancelPrivateOfferRequest_descriptor,
@@ -453,7 +515,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name", "CancellationNote",
             });
     internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferRequest_descriptor,
@@ -461,7 +523,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name", "Force",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsRequest_descriptor,
@@ -469,7 +531,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListPrivateOfferDocumentsResponse_descriptor,
@@ -477,7 +539,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "PrivateOfferDocuments", "NextPageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_GetPrivateOfferDocumentRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_commerceproducer_v1beta_GetPrivateOfferDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_GetPrivateOfferDocumentRequest_descriptor,
@@ -485,7 +547,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name",
             });
     internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferDocumentRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_CreatePrivateOfferDocumentRequest_descriptor,
@@ -493,7 +555,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PrivateOfferDocument",
             });
     internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferDocumentRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_UpdatePrivateOfferDocumentRequest_descriptor,
@@ -501,7 +563,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "PrivateOfferDocument", "UpdateMask",
             });
     internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferDocumentRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_DeletePrivateOfferDocumentRequest_descriptor,
@@ -509,7 +571,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListServicesRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_commerceproducer_v1beta_ListServicesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListServicesRequest_descriptor,
@@ -517,7 +579,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListServicesResponse_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_commerceproducer_v1beta_ListServicesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListServicesResponse_descriptor,
@@ -525,7 +587,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Services", "NextPageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_GetServiceRequest_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_commerceproducer_v1beta_GetServiceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_GetServiceRequest_descriptor,
@@ -533,7 +595,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name", "View",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersRequest_descriptor,
@@ -541,7 +603,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersResponse_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListStandardOffersResponse_descriptor,
@@ -549,7 +611,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "StandardOffers", "NextPageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_GetStandardOfferRequest_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_commerceproducer_v1beta_GetStandardOfferRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_GetStandardOfferRequest_descriptor,
@@ -557,7 +619,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name", "View",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListSkusRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_commerceproducer_v1beta_ListSkusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListSkusRequest_descriptor,
@@ -565,7 +627,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListSkusResponse_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_commerceproducer_v1beta_ListSkusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListSkusResponse_descriptor,
@@ -573,7 +635,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Skus", "NextPageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_GetSkuRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_commerceproducer_v1beta_GetSkuRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_GetSkuRequest_descriptor,
@@ -581,7 +643,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name",
             });
     internal_static_google_cloud_commerceproducer_v1beta_GetSkuGroupRequest_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_commerceproducer_v1beta_GetSkuGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_GetSkuGroupRequest_descriptor,
@@ -589,7 +651,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Name",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsRequest_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsRequest_descriptor,
@@ -597,7 +659,7 @@ public final class CommerceTransactionProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsResponse_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_commerceproducer_v1beta_ListSkuGroupsResponse_descriptor,

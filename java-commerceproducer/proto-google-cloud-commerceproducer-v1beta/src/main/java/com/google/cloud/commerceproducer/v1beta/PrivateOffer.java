@@ -5253,6 +5253,121 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.commerceproducer.v1beta.PrivateOffer.Term.EndPolicy getEndPolicy();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveTermEndTime field is set.
+     */
+    boolean hasEffectiveTermEndTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveTermEndTime.
+     */
+    com.google.type.DateTime getEffectiveTermEndTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.type.DateTimeOrBuilder getEffectiveTermEndTimeOrBuilder();
+
     com.google.cloud.commerceproducer.v1beta.PrivateOffer.Term.EndPolicyDataCase
         getEndPolicyDataCase();
 
@@ -6312,6 +6427,137 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int EFFECTIVE_TERM_END_TIME_FIELD_NUMBER = 8;
+    private com.google.type.DateTime effectiveTermEndTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the effectiveTermEndTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasEffectiveTermEndTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The effectiveTermEndTime.
+     */
+    @java.lang.Override
+    public com.google.type.DateTime getEffectiveTermEndTime() {
+      return effectiveTermEndTime_ == null
+          ? com.google.type.DateTime.getDefaultInstance()
+          : effectiveTermEndTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The expected end time of the current offer term.
+     *
+     * At the end of each offer term, an offer associated with an active
+     * order will either renew or end. When an offer renews, a new term begins
+     * and this value changes to reflect the end time of the new term.
+     * When an offer ends this value is no longer set and instead `end_time` is
+     * set.
+     *
+     * When the term of an offer ends and the offer does not renew, the
+     * associated order also ends if the base standard offer has a
+     * subscription price model. Otherwise, the associated order does not end
+     * and remains active.
+     *
+     * Not included for PRIVATE_OFFER_VIEW_BASIC.
+     * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+     * either the offer has started or the value can be derived from other
+     * fields.
+     *
+     * For offers that have not started, this field is set when one of the
+     * following conditions is true.
+     *
+     * * The offer sets `term.scheduled_end_time`.
+     * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+     * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+     * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+     * </pre>
+     *
+     * <code>
+     * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.type.DateTimeOrBuilder getEffectiveTermEndTimeOrBuilder() {
+      return effectiveTermEndTime_ == null
+          ? com.google.type.DateTime.getDefaultInstance()
+          : effectiveTermEndTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6352,6 +6598,9 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       }
       if (renewalCase_ == 7) {
         output.writeBool(7, (boolean) ((java.lang.Boolean) renewal_));
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(8, getEffectiveTermEndTime());
       }
       getUnknownFields().writeTo(output);
     }
@@ -6398,6 +6647,10 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeBoolSize(
                 7, (boolean) ((java.lang.Boolean) renewal_));
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEffectiveTermEndTime());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6420,6 +6673,10 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         if (!getScheduledStartTime().equals(other.getScheduledStartTime())) return false;
       }
       if (endPolicy_ != other.endPolicy_) return false;
+      if (hasEffectiveTermEndTime() != other.hasEffectiveTermEndTime()) return false;
+      if (hasEffectiveTermEndTime()) {
+        if (!getEffectiveTermEndTime().equals(other.getEffectiveTermEndTime())) return false;
+      }
       if (!getEndPolicyDataCase().equals(other.getEndPolicyDataCase())) return false;
       switch (endPolicyDataCase_) {
         case 4:
@@ -6461,6 +6718,10 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       }
       hash = (37 * hash) + END_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + endPolicy_;
+      if (hasEffectiveTermEndTime()) {
+        hash = (37 * hash) + EFFECTIVE_TERM_END_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getEffectiveTermEndTime().hashCode();
+      }
       switch (endPolicyDataCase_) {
         case 4:
           hash = (37 * hash) + DURATION_MONTHS_FIELD_NUMBER;
@@ -6631,6 +6892,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetScheduledStartTimeFieldBuilder();
+          internalGetEffectiveTermEndTimeFieldBuilder();
         }
       }
 
@@ -6648,6 +6910,11 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
           scheduledStartTimeBuilder_ = null;
         }
         endPolicy_ = 0;
+        effectiveTermEndTime_ = null;
+        if (effectiveTermEndTimeBuilder_ != null) {
+          effectiveTermEndTimeBuilder_.dispose();
+          effectiveTermEndTimeBuilder_ = null;
+        }
         endPolicyDataCase_ = 0;
         endPolicyData_ = null;
         renewalCase_ = 0;
@@ -6705,6 +6972,13 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.endPolicy_ = endPolicy_;
         }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.effectiveTermEndTime_ =
+              effectiveTermEndTimeBuilder_ == null
+                  ? effectiveTermEndTime_
+                  : effectiveTermEndTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -6741,6 +7015,9 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         }
         if (other.endPolicy_ != 0) {
           setEndPolicyValue(other.getEndPolicyValue());
+        }
+        if (other.hasEffectiveTermEndTime()) {
+          mergeEffectiveTermEndTime(other.getEffectiveTermEndTime());
         }
         switch (other.getEndPolicyDataCase()) {
           case DURATION_MONTHS:
@@ -6844,6 +7121,14 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
                   renewalCase_ = 7;
                   break;
                 } // case 56
+              case 66:
+                {
+                  input.readMessage(
+                      internalGetEffectiveTermEndTimeFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8111,6 +8396,434 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
         endPolicy_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.type.DateTime effectiveTermEndTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.type.DateTime,
+              com.google.type.DateTime.Builder,
+              com.google.type.DateTimeOrBuilder>
+          effectiveTermEndTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the effectiveTermEndTime field is set.
+       */
+      public boolean hasEffectiveTermEndTime() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The effectiveTermEndTime.
+       */
+      public com.google.type.DateTime getEffectiveTermEndTime() {
+        if (effectiveTermEndTimeBuilder_ == null) {
+          return effectiveTermEndTime_ == null
+              ? com.google.type.DateTime.getDefaultInstance()
+              : effectiveTermEndTime_;
+        } else {
+          return effectiveTermEndTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEffectiveTermEndTime(com.google.type.DateTime value) {
+        if (effectiveTermEndTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          effectiveTermEndTime_ = value;
+        } else {
+          effectiveTermEndTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEffectiveTermEndTime(com.google.type.DateTime.Builder builderForValue) {
+        if (effectiveTermEndTimeBuilder_ == null) {
+          effectiveTermEndTime_ = builderForValue.build();
+        } else {
+          effectiveTermEndTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeEffectiveTermEndTime(com.google.type.DateTime value) {
+        if (effectiveTermEndTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)
+              && effectiveTermEndTime_ != null
+              && effectiveTermEndTime_ != com.google.type.DateTime.getDefaultInstance()) {
+            getEffectiveTermEndTimeBuilder().mergeFrom(value);
+          } else {
+            effectiveTermEndTime_ = value;
+          }
+        } else {
+          effectiveTermEndTimeBuilder_.mergeFrom(value);
+        }
+        if (effectiveTermEndTime_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearEffectiveTermEndTime() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        effectiveTermEndTime_ = null;
+        if (effectiveTermEndTimeBuilder_ != null) {
+          effectiveTermEndTimeBuilder_.dispose();
+          effectiveTermEndTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.type.DateTime.Builder getEffectiveTermEndTimeBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return internalGetEffectiveTermEndTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.type.DateTimeOrBuilder getEffectiveTermEndTimeOrBuilder() {
+        if (effectiveTermEndTimeBuilder_ != null) {
+          return effectiveTermEndTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return effectiveTermEndTime_ == null
+              ? com.google.type.DateTime.getDefaultInstance()
+              : effectiveTermEndTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The expected end time of the current offer term.
+       *
+       * At the end of each offer term, an offer associated with an active
+       * order will either renew or end. When an offer renews, a new term begins
+       * and this value changes to reflect the end time of the new term.
+       * When an offer ends this value is no longer set and instead `end_time` is
+       * set.
+       *
+       * When the term of an offer ends and the offer does not renew, the
+       * associated order also ends if the base standard offer has a
+       * subscription price model. Otherwise, the associated order does not end
+       * and remains active.
+       *
+       * Not included for PRIVATE_OFFER_VIEW_BASIC.
+       * Included for PRIVATE_OFFER_VIEW_FULL when the offer has not ended and
+       * either the offer has started or the value can be derived from other
+       * fields.
+       *
+       * For offers that have not started, this field is set when one of the
+       * following conditions is true.
+       *
+       * * The offer sets `term.scheduled_end_time`.
+       * * The offer sets `term.scheduled_start_time` and `term.duration_months`,
+       * the offer's `term.end_policy` is not `MATCH_AMENDED_OFFER`, and the
+       * offer does not have standard_interval set to `MONTHLY_POSTPAY`.
+       * </pre>
+       *
+       * <code>
+       * .google.type.DateTime effective_term_end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.type.DateTime,
+              com.google.type.DateTime.Builder,
+              com.google.type.DateTimeOrBuilder>
+          internalGetEffectiveTermEndTimeFieldBuilder() {
+        if (effectiveTermEndTimeBuilder_ == null) {
+          effectiveTermEndTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.type.DateTime,
+                  com.google.type.DateTime.Builder,
+                  com.google.type.DateTimeOrBuilder>(
+                  getEffectiveTermEndTime(), getParentForChildren(), isClean());
+          effectiveTermEndTime_ = null;
+        }
+        return effectiveTermEndTimeBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.commerceproducer.v1beta.PrivateOffer.Term)
