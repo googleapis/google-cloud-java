@@ -95,6 +95,14 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     LOG.finestTrace("getArrayInternal");
     Class<?> targetClass = getTargetClass();
     int size = toIndexExclusive - fromIndex;
+    if (size == 1) {
+      Object firstVal = getCoercedValue(fromIndex);
+      if (firstVal != null
+          && firstVal.getClass().isArray()
+          && firstVal.getClass().getComponentType().equals(targetClass)) {
+        return firstVal;
+      }
+    }
     Object javaArray = Array.newInstance(targetClass, size);
 
     for (int index = 0; index < size; index++) {

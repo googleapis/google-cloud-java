@@ -53,6 +53,8 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Properties;
@@ -2715,6 +2717,63 @@ public class ITBigQueryJDBCTest extends ITBase {
           }
         };
     validate("getTimestamp", getter, result);
+  }
+
+  @Test
+  public void validateGetLocalDate() throws Exception {
+    final ImmutableMap<String, Object> result =
+        new ImmutableMap.Builder<String, Object>()
+            .put("dateField", LocalDate.of(2023, 7, 28))
+            .put("dateTimeField", LocalDate.of(2023, 7, 28))
+            .put("timestampFiled", LocalDate.of(2023, 7, 28))
+            .build();
+    BiFunction<ResultSet, Integer, Object> getter =
+        (s, i) -> {
+          try {
+            return s.getObject(i, LocalDate.class);
+          } catch (Exception e) {
+            return EXCEPTION_REPLACEMENT;
+          }
+        };
+    validate("getLocalDate", getter, result);
+  }
+
+  @Test
+  public void validateGetLocalTime() throws Exception {
+    final ImmutableMap<String, Object> result =
+        new ImmutableMap.Builder<String, Object>()
+            .put("timeField", LocalTime.of(12, 30, 0))
+            .put("dateTimeField", LocalTime.of(12, 30, 0))
+            .put("timestampFiled", LocalTime.of(12, 30, 0))
+            .build();
+    BiFunction<ResultSet, Integer, Object> getter =
+        (s, i) -> {
+          try {
+            return s.getObject(i, LocalTime.class);
+          } catch (Exception e) {
+            return EXCEPTION_REPLACEMENT;
+          }
+        };
+    validate("getLocalTime", getter, result);
+  }
+
+  @Test
+  public void validateGetLocalDateTime() throws Exception {
+    final ImmutableMap<String, Object> result =
+        new ImmutableMap.Builder<String, Object>()
+            .put("dateField", LocalDate.of(2023, 7, 28).atStartOfDay())
+            .put("dateTimeField", LocalDateTime.of(2023, 7, 28, 12, 30, 0))
+            .put("timestampFiled", LocalDateTime.of(2023, 7, 28, 12, 30, 0))
+            .build();
+    BiFunction<ResultSet, Integer, Object> getter =
+        (s, i) -> {
+          try {
+            return s.getObject(i, LocalDateTime.class);
+          } catch (Exception e) {
+            return EXCEPTION_REPLACEMENT;
+          }
+        };
+    validate("getLocalDateTime", getter, result);
   }
 
   @Test
