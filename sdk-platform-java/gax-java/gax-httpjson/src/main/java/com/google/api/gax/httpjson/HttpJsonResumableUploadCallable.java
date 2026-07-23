@@ -53,8 +53,7 @@ public final class HttpJsonResumableUploadCallable<RequestT, ResponseT>
   private final ClientContext clientContext;
 
   public HttpJsonResumableUploadCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
-      ClientContext clientContext) {
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings, ClientContext clientContext) {
     this.httpJsonCallSettings = Preconditions.checkNotNull(httpJsonCallSettings);
     this.clientContext = Preconditions.checkNotNull(clientContext);
   }
@@ -63,7 +62,7 @@ public final class HttpJsonResumableUploadCallable<RequestT, ResponseT>
   public ApiFuture<ResponseT> futureCall(
       ResumableUploadRequest<RequestT> request, ApiCallContext context) {
     Preconditions.checkNotNull(request);
-    
+
     // Resolve call context
     HttpJsonCallContext httpJsonContext = HttpJsonCallContext.createDefault();
     if (context != null) {
@@ -71,7 +70,8 @@ public final class HttpJsonResumableUploadCallable<RequestT, ResponseT>
     }
 
     // Resolve channel and endpoint
-    HttpJsonTransportChannel transportChannel = (HttpJsonTransportChannel) clientContext.getTransportChannel();
+    HttpJsonTransportChannel transportChannel =
+        (HttpJsonTransportChannel) clientContext.getTransportChannel();
     ManagedHttpJsonChannel channel = transportChannel.getManagedChannel();
     String endpoint = channel.getEndpoint();
     HttpTransport httpTransport = channel.getHttpTransport();
@@ -81,22 +81,22 @@ public final class HttpJsonResumableUploadCallable<RequestT, ResponseT>
     if (callOptions.getCredentials() == null && clientContext.getCredentials() != null) {
       callOptions = callOptions.toBuilder().setCredentials(clientContext.getCredentials()).build();
     }
-    
+
     Executor executor = clientContext.getExecutor();
 
     // Gather request headers
-    HttpJsonMetadata requestHeaders = HttpJsonMetadata.newBuilder().build()
-        .withHeaders(httpJsonContext.getExtraHeaders());
+    HttpJsonMetadata requestHeaders =
+        HttpJsonMetadata.newBuilder().build().withHeaders(httpJsonContext.getExtraHeaders());
 
-    HttpJsonResumableUploadCall<RequestT, ResponseT> call = new HttpJsonResumableUploadCall<>(
-        httpJsonCallSettings.getMethodDescriptor(),
-        request,
-        httpTransport,
-        requestHeaders,
-        callOptions,
-        endpoint,
-        executor
-    );
+    HttpJsonResumableUploadCall<RequestT, ResponseT> call =
+        new HttpJsonResumableUploadCall<>(
+            httpJsonCallSettings.getMethodDescriptor(),
+            request,
+            httpTransport,
+            requestHeaders,
+            callOptions,
+            endpoint,
+            executor);
 
     return call.execute();
   }

@@ -43,18 +43,15 @@ import com.google.api.gax.rpc.InputStreamProvider;
 import com.google.api.gax.rpc.ResumableUploadProgressListener;
 import com.google.api.gax.rpc.ResumableUploadRequest;
 import com.google.api.gax.rpc.ResumableUploadStatus;
-import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.TypeRegistry;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -83,13 +80,19 @@ class HttpJsonResumableUploadCallableTest {
     Mockito.lenient().when(clientContext.getTransportChannel()).thenReturn(transportChannel);
     Mockito.lenient().when(transportChannel.getManagedChannel()).thenReturn(managedChannel);
     Mockito.lenient().when(managedChannel.getEndpoint()).thenReturn("localhost");
-    
+
     // Wire formatter and parser mocking
     Mockito.lenient().when(methodDescriptor.getRequestFormatter()).thenReturn(requestFormatter);
     Mockito.lenient().when(methodDescriptor.getResponseParser()).thenReturn(responseParser);
-    Mockito.lenient().when(requestFormatter.getPath(Mockito.anyString())).thenReturn("/upload/resource");
-    Mockito.lenient().when(requestFormatter.getRequestBody(Mockito.anyString())).thenReturn("{\"metadata\":\"value\"}");
-    Mockito.lenient().when(requestFormatter.getQueryParamNames(Mockito.anyString())).thenReturn(Collections.emptyMap());
+    Mockito.lenient()
+        .when(requestFormatter.getPath(Mockito.anyString()))
+        .thenReturn("/upload/resource");
+    Mockito.lenient()
+        .when(requestFormatter.getRequestBody(Mockito.anyString()))
+        .thenReturn("{\"metadata\":\"value\"}");
+    Mockito.lenient()
+        .when(requestFormatter.getQueryParamNames(Mockito.anyString()))
+        .thenReturn(Collections.emptyMap());
   }
 
   @AfterEach
@@ -104,14 +107,14 @@ class HttpJsonResumableUploadCallableTest {
 
     // Sequence of mock HTTP responses
     Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
-    
+
     // 1. Session start response
     mockResponses.add(
         new MockLowLevelHttpResponse()
             .setStatusCode(200)
             .addHeader("X-Goog-Upload-Status", "active")
             .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
-            
+
     // 2. Finalize upload response
     mockResponses.add(
         new MockLowLevelHttpResponse()
@@ -119,50 +122,56 @@ class HttpJsonResumableUploadCallableTest {
             .addHeader("X-Goog-Upload-Status", "final")
             .setContent("{\"response\":\"success\"}"));
 
-    MockHttpTransport transport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) {
-        return new MockLowLevelHttpRequest(url) {
+    MockHttpTransport transport =
+        new MockHttpTransport() {
           @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            MockLowLevelHttpResponse response = mockResponses.poll();
-            if (response == null) {
-              throw new IOException("Unexpected out-of-bounds mock request: " + url);
-            }
-            return response;
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                MockLowLevelHttpResponse response = mockResponses.poll();
+                if (response == null) {
+                  throw new IOException("Unexpected out-of-bounds mock request: " + url);
+                }
+                return response;
+              }
+            };
           }
         };
-      }
-    };
 
     Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
-    Mockito.when(responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
         .thenReturn("SUCCESS_RESPONSE");
 
     List<ResumableUploadStatus> progressHistory = new ArrayList<>();
     ResumableUploadProgressListener listener = progressHistory::add;
 
-    ResumableUploadRequest<String> request = ResumableUploadRequest.<String>newBuilder()
-        .setRequest("META")
-        .setStreamProvider(streamProvider)
-        .setTotalBytes(data.length)
-        .setProgressListener(listener)
-        .build();
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setTotalBytes(data.length)
+            .setProgressListener(listener)
+            .build();
 
-    HttpJsonCallSettings<String, String> settings = HttpJsonCallSettings.<String, String>newBuilder()
-        .setMethodDescriptor(methodDescriptor)
-        .build();
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
 
-    HttpJsonResumableUploadCallable<String, String> callable = new HttpJsonResumableUploadCallable<>(settings, clientContext);
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
 
     String response = callable.call(request);
 
     assertThat(response).isEqualTo("SUCCESS_RESPONSE");
     assertThat(progressHistory).isNotEmpty();
-    
+
     // Verify progress tracking states
-    assertThat(progressHistory.get(0).getState()).isEqualTo(ResumableUploadProgressListener.State.NOT_STARTED);
-    
+    assertThat(progressHistory.get(0).getState())
+        .isEqualTo(ResumableUploadProgressListener.State.NOT_STARTED);
+
     ResumableUploadStatus lastStatus = progressHistory.get(progressHistory.size() - 1);
     assertThat(lastStatus.getState()).isEqualTo(ResumableUploadProgressListener.State.COMPLETED);
     assertThat(lastStatus.getBytesUploaded()).isEqualTo(data.length);
@@ -174,17 +183,21 @@ class HttpJsonResumableUploadCallableTest {
     InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
 
     Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
-    
+
     // 1. Session start transient failure (503)
-    mockResponses.add(new MockLowLevelHttpResponse().setStatusCode(503).setReasonPhrase("Service Unavailable").setContent(""));
-    
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(503)
+            .setReasonPhrase("Service Unavailable")
+            .setContent(""));
+
     // 2. Retry start session success
     mockResponses.add(
         new MockLowLevelHttpResponse()
             .setStatusCode(200)
             .addHeader("X-Goog-Upload-Status", "active")
             .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
-            
+
     // 3. Finalize upload success
     mockResponses.add(
         new MockLowLevelHttpResponse()
@@ -192,32 +205,37 @@ class HttpJsonResumableUploadCallableTest {
             .addHeader("X-Goog-Upload-Status", "final")
             .setContent("{\"response\":\"ok\"}"));
 
-    MockHttpTransport transport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) {
-        return new MockLowLevelHttpRequest(url) {
+    MockHttpTransport transport =
+        new MockHttpTransport() {
           @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            return mockResponses.poll();
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
           }
         };
-      }
-    };
 
     Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
-    Mockito.when(responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
         .thenReturn("OK_REP");
 
-    ResumableUploadRequest<String> request = ResumableUploadRequest.<String>newBuilder()
-        .setRequest("META")
-        .setStreamProvider(streamProvider)
-        .build();
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .build();
 
-    HttpJsonCallSettings<String, String> settings = HttpJsonCallSettings.<String, String>newBuilder()
-        .setMethodDescriptor(methodDescriptor)
-        .build();
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
 
-    HttpJsonResumableUploadCallable<String, String> callable = new HttpJsonResumableUploadCallable<>(settings, clientContext);
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
 
     String response = callable.call(request);
     assertThat(response).isEqualTo("OK_REP");
@@ -229,14 +247,14 @@ class HttpJsonResumableUploadCallableTest {
     InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
 
     Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
-    
+
     // 1. Session start success
     mockResponses.add(
         new MockLowLevelHttpResponse()
             .setStatusCode(200)
             .addHeader("X-Goog-Upload-Status", "active")
             .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
-            
+
     // 2. Transmit failure with Category 2 (400 Bad Request)
     mockResponses.add(
         new MockLowLevelHttpResponse()
@@ -258,42 +276,47 @@ class HttpJsonResumableUploadCallableTest {
             .addHeader("X-Goog-Upload-Status", "final")
             .setContent("{\"response\":\"restored\"}"));
 
-    MockHttpTransport transport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) {
-        return new MockLowLevelHttpRequest(url) {
+    MockHttpTransport transport =
+        new MockHttpTransport() {
           @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            return mockResponses.poll();
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
           }
         };
-      }
-    };
 
     Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
-    Mockito.when(responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
         .thenReturn("RECOVERY_REP");
 
     List<ResumableUploadStatus> progressHistory = new ArrayList<>();
     ResumableUploadProgressListener listener = progressHistory::add;
 
-    ResumableUploadRequest<String> request = ResumableUploadRequest.<String>newBuilder()
-        .setRequest("META")
-        .setStreamProvider(streamProvider)
-        .setTotalBytes(data.length)
-        .setProgressListener(listener)
-        .build();
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setTotalBytes(data.length)
+            .setProgressListener(listener)
+            .build();
 
-    HttpJsonCallSettings<String, String> settings = HttpJsonCallSettings.<String, String>newBuilder()
-        .setMethodDescriptor(methodDescriptor)
-        .build();
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
 
-    HttpJsonResumableUploadCallable<String, String> callable = new HttpJsonResumableUploadCallable<>(settings, clientContext);
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
 
     String response = callable.call(request);
-    
+
     assertThat(response).isEqualTo("RECOVERY_REP");
-    
+
     // Verify recovery state was logged
     boolean hasRecoveringState = false;
     for (ResumableUploadStatus status : progressHistory) {
@@ -311,35 +334,520 @@ class HttpJsonResumableUploadCallableTest {
     InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
 
     Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
-    
-    // 1. Session start returns 403 Forbidden (Category 3 Fatal)
-    mockResponses.add(new MockLowLevelHttpResponse().setStatusCode(403).setReasonPhrase("Forbidden").setContent(""));
 
-    MockHttpTransport transport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) {
-        return new MockLowLevelHttpRequest(url) {
+    // 1. Session start returns 403 Forbidden (Category 3 Fatal)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(403)
+            .setReasonPhrase("Forbidden")
+            .setContent(""));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
           @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            return mockResponses.poll();
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
           }
         };
-      }
-    };
 
     Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
 
-    ResumableUploadRequest<String> request = ResumableUploadRequest.<String>newBuilder()
-        .setRequest("META")
-        .setStreamProvider(streamProvider)
-        .build();
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .build();
 
-    HttpJsonCallSettings<String, String> settings = HttpJsonCallSettings.<String, String>newBuilder()
-        .setMethodDescriptor(methodDescriptor)
-        .build();
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
 
-    HttpJsonResumableUploadCallable<String, String> callable = new HttpJsonResumableUploadCallable<>(settings, clientContext);
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
 
     assertThrows(ApiException.class, () -> callable.call(request));
+  }
+
+  @Test
+  void chunkedUploadHappyPath() throws Exception {
+    byte[] data = "0123456789012345678901234".getBytes(); // 25 bytes
+    InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
+    // 2. Chunk 1 (0-10)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 3. Chunk 2 (10-20)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 4. Chunk 3 (20-25)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"chunked_success\"}"));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_CHUNKED");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10)
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_CHUNKED");
+  }
+
+  @Test
+  void chunkedUploadWithTransientError() throws Exception {
+    byte[] data = "012345678901234".getBytes(); // 15 bytes
+    InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
+    // 2. Chunk 1 (0-10) -> Transient 503 error
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(503)
+            .setReasonPhrase("Service Unavailable")
+            .setContent(""));
+    // 3. Retry Chunk 1 (0-10) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 4. Chunk 2 (10-15) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"transient_retry_success\"}"));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_TRANSIENT");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10)
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_TRANSIENT");
+  }
+
+  @Test
+  void chunkedUploadWithMismatchRecoveryInMemory() throws Exception {
+    byte[] data = "0123456789012345678901234".getBytes(); // 25 bytes
+    InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
+    // 2. Chunk 1 (0-10) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 3. Chunk 2 (10-20) -> Mismatch 400 error
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(400)
+            .setReasonPhrase("Bad Request")
+            .setContent(""));
+    // 4. Query offset -> Server returns 10 (mismatch recovery offset matches currentChunkOffset)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-Size-Received", "10"));
+    // 5. Retry Chunk 2 (10-20) from memory buffer -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 6. Chunk 3 (20-25) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"mismatch_success\"}"));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_MISMATCH");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10)
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_MISMATCH");
+  }
+
+  @Test
+  void chunkedUploadWithRecoveryFromPreviousChunk() throws Exception {
+    byte[] data = "0123456789012345678901234".getBytes(); // 25 bytes
+    InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
+    // 2. Chunk 1 (0-10) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 3. Chunk 2 (10-20) -> Mismatch 400 error
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(400)
+            .setReasonPhrase("Bad Request")
+            .setContent(""));
+    // 4. Query offset -> Server returns 0 (which matches previousChunkOffset)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-Size-Received", "0"));
+    // 5. Resend Chunk 1 (0-10) from memory buffer -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 6. Send Chunk 2 (10-20) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 7. Chunk 3 (20-25) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"prev_chunk_success\"}"));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_PREV_CHUNK");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10)
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_PREV_CHUNK");
+  }
+
+  @Test
+  void chunkedUploadWithRecoveryBySeekingStream() throws Exception {
+    byte[] data = "01234567890123456789012345678901234".getBytes(); // 35 bytes
+    java.util.concurrent.atomic.AtomicInteger streamCreationCount =
+        new java.util.concurrent.atomic.AtomicInteger(0);
+    InputStreamProvider streamProvider =
+        () -> {
+          streamCreationCount.incrementAndGet();
+          return new ByteArrayInputStream(data);
+        };
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345"));
+    // 2. Chunk 1 (0-10) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 3. Chunk 2 (10-20) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 4. Chunk 3 (20-30) -> Mismatch 400 error
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(400)
+            .setReasonPhrase("Bad Request")
+            .setContent(""));
+    // 5. Query offset -> Server returns 5 (outside the 2-chunk buffer: previous offset was 10,
+    // current is 20)
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-Size-Received", "5"));
+    // 6. Client seeks stream to 5. Sends upload (offset 5, length 10, i.e., bytes 5-15) -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 7. Sends chunk 15-25 -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 8. Sends chunk 25-35 -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"seek_success\"}"));
+
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_SEEK");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10)
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_SEEK");
+    // Verify that the stream was recreated (once initially, and once on seek recovery)
+    assertThat(streamCreationCount.get()).isEqualTo(2);
+  }
+
+  @Test
+  void granularityAlignment() throws Exception {
+    byte[] data = "01234567890123456789".getBytes(); // 20 bytes
+    InputStreamProvider streamProvider = () -> new ByteArrayInputStream(data);
+
+    Queue<MockLowLevelHttpResponse> mockResponses = new ConcurrentLinkedQueue<>();
+    // 1. Session start with granularity constraint = 8
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active")
+            .addHeader("X-Goog-Upload-URL", "https://localhost/session/12345")
+            .addHeader("X-Goog-Upload-Chunk-Granularity", "8"));
+    // 2. First chunk: adjusted chunk size = 8 (largest multiple of 8 <= 10). Length = 8. -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 3. Second chunk: length = 8 -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "active"));
+    // 4. Third chunk (last chunk): length = 4 -> Success
+    mockResponses.add(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(200)
+            .addHeader("X-Goog-Upload-Status", "final")
+            .setContent("{\"response\":\"granularity_success\"}"));
+
+    List<String> requestCommandsAndOffsets = new ArrayList<>();
+    MockHttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                String cmd = getFirstHeaderValue("X-Goog-Upload-Command");
+                String offset = getFirstHeaderValue("X-Goog-Upload-Offset");
+                if (cmd != null) {
+                  requestCommandsAndOffsets.add(cmd + ":" + offset);
+                }
+                return mockResponses.poll();
+              }
+            };
+          }
+        };
+
+    Mockito.when(managedChannel.getHttpTransport()).thenReturn(transport);
+    Mockito.when(
+            responseParser.parse(Mockito.any(Reader.class), Mockito.nullable(TypeRegistry.class)))
+        .thenReturn("SUCCESS_GRANULARITY");
+
+    ResumableUploadRequest<String> request =
+        ResumableUploadRequest.<String>newBuilder()
+            .setRequest("META")
+            .setStreamProvider(streamProvider)
+            .setChunkSize(10) // 10 is user-requested, will be aligned down to 8
+            .setTotalBytes(data.length)
+            .build();
+
+    HttpJsonCallSettings<String, String> settings =
+        HttpJsonCallSettings.<String, String>newBuilder()
+            .setMethodDescriptor(methodDescriptor)
+            .build();
+
+    HttpJsonResumableUploadCallable<String, String> callable =
+        new HttpJsonResumableUploadCallable<>(settings, clientContext);
+
+    String response = callable.call(request);
+    assertThat(response).isEqualTo("SUCCESS_GRANULARITY");
+
+    // Verify command sequences and offsets:
+    // Chunk 1: upload:0
+    // Chunk 2: upload:8
+    // Chunk 3: upload, finalize:16
+    assertThat(requestCommandsAndOffsets)
+        .containsExactly("start:null", "upload:0", "upload:8", "upload, finalize:16");
   }
 }

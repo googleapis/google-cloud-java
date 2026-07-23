@@ -231,22 +231,33 @@ stateDiagram-v2
 - Set `X-Goog-Upload-Protocol: resumable` and `X-Goog-Upload-Command: start`.
 - Execute POST with the request JSON body.
 - Extract `X-Goog-Upload-URL` header value to obtain the `uploadUrl`.
+- Extract `X-Goog-Upload-Chunk-Granularity` and adjust the user-configured `chunkSize` to the largest multiple of this granularity value (rounded down, minimum equal to granularity).
 
 #### Step 2: Upload Loop (Transmit)
 - Check absolute global deadline.
-- Call `streamProvider.get()`.
-- Skip/seek to current `offset`.
-- Set `X-Goog-Upload-Command: upload, finalize` and `X-Goog-Upload-Offset: offset`.
-- Stream payload using a chunked output stream, updating the progress listener during writes.
-- If response is `final` with `2xx`: parse response and return.
-- If exception occurs: Categorize exception. If Category 2 (Mismatch) or connection drop, transition to **Query State**.
+- Retrieve the chunk corresponding to the current `offset`:
+  - Search in the 2-chunk memory cache.
+  - If not found:
+    - Check if the underlying stream position matches `offset`.
+    - If not, close and recreate the stream from `streamProvider.get()` and skip/seek to `offset`.
+    - Read `adjustedChunkSize` bytes from the stream, store as a `BufferedChunk`, add to the cache (retaining at most 2 chunks), and update the stream position.
+- If no data was read (stream reached EOF at a chunk boundary):
+  - Send an empty POST request with `X-Goog-Upload-Command: finalize`.
+- If data was read:
+  - If it is the last chunk (length < chunk size):
+    - Send a POST request with `X-Goog-Upload-Command: upload, finalize` and `X-Goog-Upload-Offset: offset`.
+  - If it is an intermediate chunk:
+    - Send a POST request with `X-Goog-Upload-Command: upload` and `X-Goog-Upload-Offset: offset`.
+- Update the progress listener upon successful responses.
+- If the server replies with status `final` (even on `upload` command): parse the response and complete the upload.
+- If exception occurs: Categorize exception. If Category 2 (Mismatch) or socket drop, transition to **Query State**.
 
 #### Step 3: Query State
 - Execute POST to `uploadUrl` with `X-Goog-Upload-Command: query`.
+- If response is `final`: parse the response and complete the upload (via `UploadAlreadyFinalizedException` handling).
 - If response is `active`:
   - Extract `X-Goog-Upload-Size-Received` -> `newOffset`.
   - If `newOffset == offset`: apply backoff (to avoid spamming server).
-  - Update `offset = newOffset` and transition back to **Upload Loop**.
-- If response is `final`: return response.
+  - Update `offset = newOffset` and transition back to **Upload Loop** (which will automatically retrieve the correct chunk from cache or recreate and seek the stream).
 - If Category 1 (Transient) error: retry query with backoff.
 - If Category 3 (Fatal) error: fail immediately.
