@@ -45,16 +45,28 @@ This is a standard Maven project.
 4. Avoid unnecessary formatting changes to keep diffs clean.
 5. Use `mvn` for everything other than the `test/integration` folder.
 
-## 5. Dependency Management
+## 5. Nullness Annotation Guidelines
+To enforce compile-time null-safety and eliminate NullPointerExceptions, this repository is adopting JSpecify annotations.
+
+### 5.1 Handwritten vs. Generated Code Handling
+- **Handwritten Modules**: Annotations are added to source files directly.
+- **Generated Modules**: Do not edit generated class files manually! Instead, update the code generator engine (`gapic-generator-java`) to automatically produce the annotations during the generation phase.
+
+### 5.2 Annotation Usage & Type-Use Semantics
+Prefer JSpecify annotations (`org.jspecify.annotations.NullMarked` and `org.jspecify.annotations.Nullable`) over legacy declaration annotations (like `javax.annotation.Nullable`).
+- **Default semantics**: Annotate classes with `@NullMarked` to declare that all unannotated types exclude null.
+- **Nullable types**: Annotate fields, return types, or parameters with `@Nullable` if they are allowed to be null.
+
+## 6. Dependency Management
 - Do not bump external dependency versions unless for CVE or critical bug fix.
 - Avoid introducing new external dependencies if possible. Prefer Java standard library, then opt for existing dependencies.
 
-## 6. Contribution Guidelines
+## 7. Contribution Guidelines
 - **Commits**: Conventional Commits `<type>(<scope>): <description>`.
 - **Pull Requests**: Submitted via PR, require review. Pull latest from main and resolve conflicts.
 - **Testing**: All new logic should be accompanied by tests.
 
-## 7. Specialized Development Guides
+## 8. Specialized Development Guides
 For development on core components, refer to the following guides in `sdk-platform-java`:
 - **GAPIC Generator**: [sdk-platform-java/gapic-generator-java/DEVELOPMENT.md](sdk-platform-java/gapic-generator-java/DEVELOPMENT.md)
 - **GAX**: [sdk-platform-java/gax-java/DEVELOPMENT.md](sdk-platform-java/gax-java/DEVELOPMENT.md)
