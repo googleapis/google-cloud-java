@@ -220,7 +220,7 @@ class AgentIdentityUtilsTest {
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
-    assertEquals(tempDir.resolve("certificates.pem").toAbsolutePath().toString(), info.path);
+    assertEquals(new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8), info.certContent);
   }
 
   @Test

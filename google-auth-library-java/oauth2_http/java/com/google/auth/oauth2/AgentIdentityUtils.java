@@ -133,11 +133,11 @@ public final class AgentIdentityUtils {
 
   static class CertInfo {
     final X509Certificate certificate;
-    final String path;
+    final String certContent;
 
-    CertInfo(X509Certificate certificate, String path) {
+    CertInfo(X509Certificate certificate, String certContent) {
       this.certificate = certificate;
-      this.path = path;
+      this.certContent = certContent;
     }
   }
 
@@ -168,7 +168,7 @@ public final class AgentIdentityUtils {
    *     verification fails after retries.
    */
   static CertInfo getAgentIdentityCertInfo() throws IOException {
-    if (isOptedOut()) {
+    if (!isTokenBindingEnabled()) {
       return null;
     }
     String certConfigPath = envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG);
@@ -232,6 +232,7 @@ public final class AgentIdentityUtils {
   static CertInfo loadAndVerifyCredentials(String certPath, String keyPath) throws IOException {
     X509Certificate cert = null;
     PrivateKey privateKey = null;
+    String certContent = null;
 
     if (!Strings.isNullOrEmpty(certPath)
         && !Strings.isNullOrEmpty(keyPath)
@@ -242,7 +243,8 @@ public final class AgentIdentityUtils {
       boolean matched = false;
       while (retries < 3) {
         try {
-          cert = parseCertificate(certPath);
+          certContent = readCertificateChain(certPath);
+          cert = parseCertificateContent(certContent);
           privateKey = readPrivateKey(keyPath, cert.getPublicKey().getAlgorithm());
 
           if (verifyKeyPair(cert, privateKey)) {
@@ -271,18 +273,19 @@ public final class AgentIdentityUtils {
       }
     } else if (!Strings.isNullOrEmpty(certPath)) {
       // Bundle or only cert available
-      cert = parseCertificate(certPath);
+      certContent = readCertificateChain(certPath);
+      cert = parseCertificateContent(certContent);
     }
 
-    return new CertInfo(cert, certPath);
+    return new CertInfo(cert, certContent);
   }
 
   /**
-   * Checks if the user has opted out of token sharing by setting the environment variable to true.
+   * Checks if the user has disabled token binding by setting the environment variable to false.
    */
-  private static boolean isOptedOut() {
-    String optOut = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
-    return "true".equalsIgnoreCase(optOut);
+  private static boolean isTokenBindingEnabled() {
+    String preventSharing = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
+    return !("false".equalsIgnoreCase(preventSharing));
   }
 
   /**
@@ -465,7 +468,7 @@ public final class AgentIdentityUtils {
   static String getBoundTokenPayload() throws IOException {
     CertInfo info = getAgentIdentityCertInfo();
     if (info != null && shouldRequestBoundToken(info.certificate)) {
-      return readCertificateChain(info.path);
+      return info.certContent;
     }
     return null;
   }
@@ -499,9 +502,9 @@ public final class AgentIdentityUtils {
     return null;
   }
 
-  /** Parses the X509 certificate from the specified path. */
-  private static X509Certificate parseCertificate(String certPath) throws IOException {
-    try (InputStream stream = new FileInputStream(certPath)) {
+  /** Parses the X509 certificate from the specified content string. */
+  private static X509Certificate parseCertificateContent(String certContent) throws IOException {
+    try (InputStream stream = new java.io.ByteArrayInputStream(certContent.getBytes(StandardCharsets.UTF_8))) {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
       return (X509Certificate) cf.generateCertificate(stream);
     } catch (GeneralSecurityException e) {
