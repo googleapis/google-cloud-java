@@ -35,14 +35,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
 import java.security.Provider;
+import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Collections;
 import java.util.List;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
-import org.conscrypt.Conscrypt;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -103,51 +100,21 @@ public class ITPostQuantumCryptography {
   private static final String SECURE_ENDPOINT =
       System.getProperty("showcase.secure.endpoint", "localhost:7470");
 
-  private static SSLContext originalSslContext;
-
   @BeforeAll
   static void setUp() throws Exception {
     File certFile = new File(DEFAULT_CA_CERT_PATH);
     assertWithMessage("CA certificate file not found at " + DEFAULT_CA_CERT_PATH)
         .that(certFile.isFile())
         .isTrue();
-
-    try {
-      originalSslContext = SSLContext.getDefault();
-    } catch (Throwable t) {
-      // Ignore if default SSLContext cannot be retrieved
-    }
-
-    // Register local Showcase CA cert in default SSLContext so the default NetHttpTransport trusts
-    // the server
-    KeyStore trustStore = loadCaCert(DEFAULT_CA_CERT_PATH);
-    TrustManagerFactory tmf =
-        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
-    tmf.init(trustStore);
-    Provider conscryptProvider = Conscrypt.newProvider();
-    SSLContext sslContext =
-        conscryptProvider != null
-            ? SSLContext.getInstance("TLS", conscryptProvider)
-            : SSLContext.getInstance("TLS");
-    sslContext.init(null, tmf.getTrustManagers(), null);
-    SSLContext.setDefault(sslContext);
-  }
-
-  @AfterAll
-  static void tearDown() {
-    if (originalSslContext != null) {
-      try {
-        SSLContext.setDefault(originalSslContext);
-      } catch (Throwable t) {
-        // Ignore during test cleanup
-      }
-    }
   }
 
   @Test
   void testHttpJsonPqc() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
+    // Construct a dedicated NetHttpTransport configured with Conscrypt security provider
+    // and explicitly trusted Showcase CA certificate. This avoids modifying the global JVM
+    // SSLContext (via SSLContext.setDefault) and ensures Conscrypt's TLS engine is used.
     NetHttpTransport transport =
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
             .trustCertificates(loadCaCert(DEFAULT_CA_CERT_PATH))
@@ -179,6 +146,47 @@ public class ITPostQuantumCryptography {
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
+    }
+  }
+
+  @Test
+  void testHttpJsonPqc_withExplicitJsseSecurityProvider() throws Exception {
+    HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
+
+    // Explicitly configure SunJSSE (standard JDK JSSE provider) on NetHttpTransport.Builder
+    // with Showcase CA cert to verify that overriding the security provider safely falls
+    // back to classical key exchange while trusting the server.
+    Provider sunJsseProvider = Security.getProvider("SunJSSE");
+    NetHttpTransport transport =
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+            .setSecurityProvider(sunJsseProvider)
+            .trustCertificates(loadCaCert(DEFAULT_CA_CERT_PATH))
+            .build();
+
+    InstantiatingHttpJsonChannelProvider transportChannelProvider =
+        EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setHttpTransport(transport)
+            .setEndpoint("https://" + SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor))
+            .build();
+
+    EchoSettings settings =
+        EchoSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(EchoRequest.newBuilder().setContent("pqc-httpjson-jsse-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-httpjson-jsse-test");
+
+      HttpJsonMetadata capturedHeaders = interceptor.metadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      // Under SunJSSE, the negotiated group is a classical curve, not PQC
+      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_PQC_GROUP);
     }
   }
 
