@@ -95,9 +95,14 @@ class BigQueryParameterHandler {
       copy.setNanos((ts.getNanos() / 1000) * 1000);
       return copy.toString();
     }
-    if (parameterValue instanceof java.sql.Date
-        || parameterValue instanceof java.sql.Time
-        || parameterValue instanceof java.util.Date) {
+    if (parameterValue instanceof java.sql.Time) {
+      String timeStr = parameterValue.toString();
+      if (timeStr.length() == 8) {
+        return timeStr + ".000000";
+      }
+      return timeStr;
+    }
+    if (parameterValue instanceof java.sql.Date || parameterValue instanceof java.util.Date) {
       return parameterValue.toString();
     }
     return parameterValue;
