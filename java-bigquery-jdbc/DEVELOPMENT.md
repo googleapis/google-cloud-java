@@ -62,7 +62,7 @@ graph TD
 
 ## 3. Build & Test Playbook
 
-Builds and test tasks are managed via the module [Makefile](file:///usr/local/google/home/neenushaji/IdeaProjects/google-cloud-java/java-bigquery-jdbc/Makefile).
+Builds and test tasks are managed via the module [Makefile](Makefile).
 
 ### Local Build Commands
 
