@@ -298,7 +298,8 @@ public final class AgentIdentityUtils {
   /**
    * Checks if a file exists, throwing AccessDeniedException if permission is denied.
    */
-  private static boolean checkExistsOrAccessDenied(java.nio.file.Path path) throws java.nio.file.AccessDeniedException {
+  private static boolean checkExistsOrAccessDenied(java.nio.file.Path path)
+      throws java.nio.file.AccessDeniedException {
     try {
       Files.readAttributes(path, java.nio.file.attribute.BasicFileAttributes.class);
       return true;
@@ -327,7 +328,9 @@ public final class AgentIdentityUtils {
       try {
         if (checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
           ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
-          if (paths != null && !Strings.isNullOrEmpty(paths.certPath) && checkExistsOrAccessDenied(Paths.get(paths.certPath))) {
+          if (paths != null
+              && !Strings.isNullOrEmpty(paths.certPath)
+              && checkExistsOrAccessDenied(Paths.get(paths.certPath))) {
             return paths;
           }
         }
