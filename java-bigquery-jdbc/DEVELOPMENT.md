@@ -4,6 +4,21 @@ This guide details the architectural design, core abstractions, coding principle
 
 ---
 
+## Table of Contents
+1. [Core Architecture & Component Map](#1-core-architecture--component-map)
+2. [Developer Guardrails & Rules of Engagement](#2-developer-guardrails--rules-of-engagement)
+3. [Build & Test Playbook](#3-build--test-playbook)
+   - [Local Build Commands](#local-build-commands)
+   - [Running Unit Tests](#running-unit-tests)
+   - [Running Integration Tests](#running-integration-tests)
+   - [Dockerized Execution](#dockerized-execution)
+4. [Logging Architecture & Developer Conventions](#4-logging-architecture--developer-conventions)
+   - [Instantiating Loggers](#instantiating-loggers)
+   - [Developer Logging Rules & Conventions](#developer-logging-rules--conventions)
+5. [Pre-PR Checklist](#5-pre-pr-checklist)
+
+---
+
 ## 1. Core Architecture & Component Map
 
 The driver is structured to provide high performance, zero-allocation MDC log tracing, strict JDBC compliance, and seamless execution over the Google Cloud BigQuery REST and Storage APIs.
