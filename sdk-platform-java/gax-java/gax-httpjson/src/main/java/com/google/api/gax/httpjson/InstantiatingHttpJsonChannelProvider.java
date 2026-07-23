@@ -211,10 +211,10 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     if (mtlsKeyStore == null) {
       return builder;
     }
+    builder.trustCertificates(null, mtlsKeyStore, "");
     Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
     if (conscryptProvider == null) {
       // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
-      builder.trustCertificates(null, mtlsKeyStore, "");
       return builder;
     }
     // Explicitly initialize SSLContext with the Conscrypt provider so that the client certificate
