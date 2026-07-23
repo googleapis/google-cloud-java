@@ -852,9 +852,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     // getUniverseDomain(), mock this behavior for test only. ServiceAccountCredentials
     // should not throw for getUniverseDomain() calls.
     ServiceAccountCredentials sourceCredentialsMock =
-        mock(
-            ServiceAccountCredentials.class,
-            withSettings().withoutAnnotations());
+        mock(ServiceAccountCredentials.class, withSettings().withoutAnnotations());
     when(sourceCredentialsMock.getUniverseDomain()).thenThrow(IOException.class);
 
     MockIAMCredentialsServiceTransportFactory transportFactory =

@@ -84,16 +84,9 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
   @BeforeEach
   void setUp() throws IOException, URISyntaxException {
     mockCredentialSource =
-        mock(
-            IdentityPoolCredentialSource.class,
-            withSettings().withoutAnnotations());
-    mockCertificateConfig =
-        mock(
-            CertificateConfig.class, withSettings().withoutAnnotations());
-    mockContext =
-        mock(
-            ExternalAccountSupplierContext.class,
-            withSettings().withoutAnnotations());
+        mock(IdentityPoolCredentialSource.class, withSettings().withoutAnnotations());
+    mockCertificateConfig = mock(CertificateConfig.class, withSettings().withoutAnnotations());
+    mockContext = mock(ExternalAccountSupplierContext.class, withSettings().withoutAnnotations());
 
     ClassLoader classLoader = getClass().getClassLoader();
     URL leafCertUrl = classLoader.getResource("x509_leaf_certificate.pem");

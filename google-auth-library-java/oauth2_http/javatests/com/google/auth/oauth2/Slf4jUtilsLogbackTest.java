@@ -142,8 +142,7 @@ class Slf4jUtilsLogbackTest {
     data.put("key1", "value1");
     data.put("token", "value2");
 
-    LoggerProvider loggerProvider =
-        mock(LoggerProvider.class, withSettings().withoutAnnotations());
+    LoggerProvider loggerProvider = mock(LoggerProvider.class, withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(LOGGER);
     LoggingUtils.logResponsePayload(data, loggerProvider, "test generic data");
 
@@ -178,8 +177,7 @@ class Slf4jUtilsLogbackTest {
     HttpRequest request =
         requestFactory.buildPostRequest(new GenericUrl(OAuth2Utils.TOKEN_SERVER_URI), content);
 
-    LoggerProvider loggerProvider =
-        mock(LoggerProvider.class, withSettings().withoutAnnotations());
+    LoggerProvider loggerProvider = mock(LoggerProvider.class, withSettings().withoutAnnotations());
     when(loggerProvider.getLogger()).thenReturn(LOGGER);
     LoggingUtils.logRequest(request, loggerProvider, "test log request");
 
