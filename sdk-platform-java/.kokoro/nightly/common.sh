@@ -13,18 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# For google-cloud-java, only test specific handwritten libraries included in the monorepo. This is to
-# help speed up the execution as building the entire repo is an expensive operation. Specify the nested
-# `google-cloud-*` path (except for grafeas as it doesn't have one) because maven -pl will only build the
-# specified folder (i.e. parent folder) and ignore all the related sub-modules inside
-google_cloud_java_handwritten_maven_args="java-grafeas,java-vertexai/google-cloud-vertexai,java-resourcemanager/google-cloud-resourcemanager,java-translate/google-cloud-translate"
-
 # Checks that the protobuf compatibility scripts provide non-empty input
 function validate_protobuf_compatibility_script_inputs {
-  # Comma-delimited list of repos to test
-  if [ -z "${REPOS_UNDER_TEST}" ]; then
-    echo "REPOS_UNDER_TEST Env Var must be set. This script expects a"
-    echo "comma-delimited list: i.e REPOS_UNDER_TEST=\"java-bigtable,java-bigquery\""
+  # Comma-delimited list of modules to test
+  if [ -z "${MODULES_UNDER_TEST}" ]; then
+    echo "MODULES_UNDER_TEST Env Var must be set. This script expects a"
+    echo "comma-delimited list: i.e MODULES_UNDER_TEST=\"java-bigtable,java-bigquery\""
     exit 1
   fi
 
