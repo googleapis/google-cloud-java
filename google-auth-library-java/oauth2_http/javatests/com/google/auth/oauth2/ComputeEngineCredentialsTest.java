@@ -533,7 +533,8 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         new MockMetadataServerTransportFactory();
     String expectedToString =
         String.format(
-            "ComputeEngineCredentials{quotaProjectId=%s, universeDomain=%s, isExplicitUniverseDomain=%s, transportFactoryClassName=%s, scopes=%s}",
+            "ComputeEngineCredentials{quotaProjectId=%s, universeDomain=%s,"
+                + " isExplicitUniverseDomain=%s, transportFactoryClassName=%s, scopes=%s}",
             "some-project",
             "some-domain",
             true,
@@ -1247,17 +1248,24 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     assertTrue(
         e.getMessage()
             .contains(
-                "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
+                "Unable to find Agent Identity certificate config or file for bound token request"
+                    + " after multiple retries."));
   }
 
   private void setupCertAndKeyConfig() throws IOException {
     java.nio.file.Path certSource =
-        java.nio.file.Paths.get(ComputeEngineCredentialsTest.class.getResource("/agent/agent_spiffe_cert.pem").getPath());
+        java.nio.file.Paths.get(
+            ComputeEngineCredentialsTest.class
+                .getResource("/agent/agent_spiffe_cert.pem")
+                .getPath());
     java.nio.file.Path certTarget = tempDir.resolve("certificates.pem");
     Files.copy(certSource, certTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
     java.nio.file.Path keySource =
-        java.nio.file.Paths.get(ComputeEngineCredentialsTest.class.getResource("/agent/agent_spiffe_key.pem").getPath());
+        java.nio.file.Paths.get(
+            ComputeEngineCredentialsTest.class
+                .getResource("/agent/agent_spiffe_key.pem")
+                .getPath());
     java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
     Files.copy(keySource, keyTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
