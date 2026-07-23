@@ -19,13 +19,7 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
-import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
-<<<<<<< HEAD
-import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
-=======
-import com.google.api.gax.grpc.GrpcTransportChannel;
->>>>>>> be36e14166c (fix(showcase): use Conscrypt.newProvider() directly in ITPostQuantumCryptography)
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;

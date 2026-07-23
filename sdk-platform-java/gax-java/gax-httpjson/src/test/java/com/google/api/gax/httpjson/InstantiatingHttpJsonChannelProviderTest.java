@@ -31,7 +31,6 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
