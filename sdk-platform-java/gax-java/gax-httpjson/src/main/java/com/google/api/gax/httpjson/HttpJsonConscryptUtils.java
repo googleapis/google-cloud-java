@@ -32,7 +32,6 @@ package com.google.api.gax.httpjson;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import java.security.Provider;
-import java.security.Security;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.conscrypt.Conscrypt;
@@ -75,9 +74,7 @@ public class HttpJsonConscryptUtils {
 
     private static Provider createProvider() {
       try {
-        Provider provider = Conscrypt.newProvider();
-        Security.insertProviderAt(provider, 1);
-        return provider;
+        return Conscrypt.newProvider();
       } catch (Throwable t) {
         LOG.log(
             Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
@@ -100,25 +97,27 @@ public class HttpJsonConscryptUtils {
     if (conscryptProvider == null) {
       return builder;
     }
-    return builder.setSslSocketConfigurator(
-        socket -> {
-          if (!Conscrypt.isConscrypt(socket)) {
-            return;
-          }
-          try {
-            Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
-          } catch (Exception e) {
-            // Native JNI linkage errors (e.g. UnsatisfiedLinkError) are caught during
-            // ConscryptProviderHolder initialization. Catching Exception here safely
-            // intercepts runtime socket configuration errors (e.g. unsupported groups or
-            // closed socket) without swallowing JVM errors like OutOfMemoryError.
-            LOG.log(
-                Level.WARNING,
-                "Failed to set PQC named groups on Conscrypt socket. Falling back to Conscrypt"
-                    + " default TLS groups.",
-                e);
-          }
-        });
+    return builder
+        .setSecurityProvider(conscryptProvider)
+        .setSslSocketConfigurator(
+            socket -> {
+              if (!Conscrypt.isConscrypt(socket)) {
+                return;
+              }
+              try {
+                Conscrypt.setNamedGroups(socket, DEFAULT_PQC_GROUPS);
+              } catch (Exception e) {
+                // Native JNI linkage errors (e.g. UnsatisfiedLinkError) are caught during
+                // ConscryptProviderHolder initialization. Catching Exception here safely
+                // intercepts runtime socket configuration errors (e.g. unsupported groups or
+                // closed socket) without swallowing JVM errors like OutOfMemoryError.
+                LOG.log(
+                    Level.WARNING,
+                    "Failed to set PQC named groups on Conscrypt socket. Falling back to Conscrypt"
+                        + " default TLS groups.",
+                    e);
+              }
+            });
   }
 
   /**

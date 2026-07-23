@@ -19,7 +19,9 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
@@ -146,10 +148,14 @@ public class ITPostQuantumCryptography {
   void testHttpJsonPqc() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
-    // Test that the Java client creates a PQC-compliant NetHttpTransport by default (no custom
-    // transport provided)
+    NetHttpTransport transport =
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+            .trustCertificates(loadCaCert(DEFAULT_CA_CERT_PATH))
+            .build();
+
     InstantiatingHttpJsonChannelProvider transportChannelProvider =
         EchoSettings.defaultHttpJsonTransportProviderBuilder()
+            .setHttpTransport(transport)
             .setEndpoint("https://" + SECURE_ENDPOINT)
             .setInterceptorProvider(() -> Collections.singletonList(interceptor))
             .build();
