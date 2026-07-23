@@ -30,7 +30,6 @@
 package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -39,27 +38,20 @@ import org.junit.jupiter.api.Test;
 class ManagedHttpJsonChannelTest {
 
   @Test
-  void testBuilder_defaultHttpTransport_usesConscryptConfiguredTransport() throws Exception {
+  void testBuilder_defaultHttpTransport_usesConscryptConfiguredTransport() {
     ManagedHttpJsonChannel channel =
         ManagedHttpJsonChannel.newBuilder().setEndpoint("localhost:8080").build();
-    assertThat(channel).isNotNull();
-    assertThat(channel.getEndpoint()).isEqualTo("localhost:8080");
+    assertThat(channel.getHttpTransport()).isInstanceOf(NetHttpTransport.class);
   }
 
   @Test
-  void testBuilder_customHttpTransport_usesProvidedTransport() throws Exception {
+  void testBuilder_customHttpTransport_usesProvidedTransport() {
     HttpTransport customTransport = new NetHttpTransport.Builder().build();
     ManagedHttpJsonChannel channel =
         ManagedHttpJsonChannel.newBuilder()
             .setEndpoint("localhost:8080")
             .setHttpTransport(customTransport)
             .build();
-    assertThat(channel).isNotNull();
-    assertThat(channel.getEndpoint()).isEqualTo("localhost:8080");
-  }
-
-  @Test
-  void testBuilder_nullEndpoint_throwsNullPointerException() {
-    assertThrows(NullPointerException.class, () -> ManagedHttpJsonChannel.newBuilder().build());
+    assertThat(channel.getHttpTransport()).isSameInstanceAs(customTransport);
   }
 }

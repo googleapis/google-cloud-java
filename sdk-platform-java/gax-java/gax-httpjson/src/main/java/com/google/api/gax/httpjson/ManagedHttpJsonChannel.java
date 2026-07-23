@@ -63,6 +63,10 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return endpoint;
   }
 
+  HttpTransport getHttpTransport() {
+    return httpTransport;
+  }
+
   private ManagedHttpJsonChannel(
       @Nullable Executor executor,
       boolean usingDefaultExecutor,

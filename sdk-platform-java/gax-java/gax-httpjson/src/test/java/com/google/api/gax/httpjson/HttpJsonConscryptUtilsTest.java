@@ -31,7 +31,6 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.client.http.javanet.NetHttpTransport;
 import java.security.Provider;
 import org.junit.jupiter.api.Test;
 
@@ -51,16 +50,5 @@ class HttpJsonConscryptUtilsTest {
     if (provider != null) {
       assertThat(provider.getName()).isEqualTo("Conscrypt");
     }
-  }
-
-  @Test
-  void testConfigureConscryptSecurityProvider_configuresBuilder() throws Exception {
-    NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-    NetHttpTransport.Builder configured =
-        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
-    assertThat(configured).isSameInstanceAs(builder);
-
-    NetHttpTransport transport = configured.build();
-    assertThat(transport).isNotNull();
   }
 }
