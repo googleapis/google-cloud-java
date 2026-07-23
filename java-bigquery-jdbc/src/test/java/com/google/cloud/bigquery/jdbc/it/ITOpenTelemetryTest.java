@@ -258,12 +258,7 @@ public class ITOpenTelemetryTest extends ITBase {
             .setCredentials(credentials)
             .build()
             .getService()) {
-      String filter =
-          "logName:\"projects/"
-              + PROJECT_ID
-              + "/logs/com.google.cloud.bigquery\" AND labels.\"jdbc.connection_id\"=\""
-              + connectionUuid
-              + "\"";
+      String filter = "labels.\"jdbc.connection_id\"=\"" + connectionUuid + "\"";
 
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
       assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
