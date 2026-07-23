@@ -50,6 +50,7 @@ import com.google.rpc.RequestInfo;
 import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
 import com.google.rpc.Status;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility for parsing Google Cloud error responses from JSON.
@@ -59,6 +60,7 @@ import com.google.rpc.Status;
  * href="https://google.aip.dev/193#http11-json-representation">AIP-193</a>. The payload typically
  * contains a top-level "error" object with a "details" list.
  */
+@NullMarked
 @InternalApi
 class HttpJsonErrorParser {
 

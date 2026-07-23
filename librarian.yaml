@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.28.0
+version: v0.29.1
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -5530,6 +5530,17 @@ libraries:
       billing_not_required: true
       rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
       rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
+  - name: sql
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/sql/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+      - path: google/cloud/sql/v1beta4
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: storage
     version: 2.71.0-SNAPSHOT
     apis:

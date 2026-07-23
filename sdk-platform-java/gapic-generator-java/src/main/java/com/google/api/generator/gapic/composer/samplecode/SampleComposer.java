@@ -35,7 +35,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class SampleComposer {
   static List<Statement> composeInlineSample(List<Statement> sampleBody) {
     return bodyWithComment(CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT, sampleBody);

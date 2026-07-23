@@ -29,6 +29,9 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public interface RequestBuilder<RequestT> {
   void appendRequest(RequestT request);
 

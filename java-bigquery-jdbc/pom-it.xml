@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+    <bigquery-jdbc.version>1.2.0-SNAPSHOT</bigquery-jdbc.version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   </properties>
 
   <dependencies>
@@ -21,7 +22,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery-jdbc</artifactId>
-      <version>1.0.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+      <version>${bigquery-jdbc.version}</version>
       <type>test-jar</type>
       <scope>compile</scope>
     </dependency>
@@ -90,6 +91,20 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>default-compile</id>
+            <phase>none</phase>
+          </execution>
+          <execution>
+            <id>default-testCompile</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.5.2</version>
         <executions>
@@ -99,21 +114,26 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <!--
-                We exclude the main bigquery-jdbc framework classes.
-                This jar should ONLY contain tests and their dependencies (Junit, Mockito, Truth),
-                plus the test classes themselves. When running, the ACTUAL JDBC driver jar
-                will be placed on the classpath. 
-              -->
               <createDependencyReducedPom>false</createDependencyReducedPom>
-              <artifactSet>
-                <excludes>
-                  <exclude>com.google.cloud:google-cloud-bigquery</exclude>
-                  <exclude>com.google.cloud:google-cloud-bigquerystorage</exclude>
-                  <exclude>io.grpc:*</exclude>
-                  <exclude>com.google.protobuf:*</exclude>
-                </excludes>
-              </artifactSet>
+              <!-- Shading everything except junit & integration tests to avoid version conflicts -->
+              <relocations>
+                <relocation>
+                  <pattern>com.</pattern>
+                  <shadedPattern>com.google.bqjdbc.shaded.com.</shadedPattern>
+                  <excludes>com.google.cloud.bigquery.jdbc.it.**</excludes>
+                </relocation>
+                <relocation>
+                  <pattern>org.</pattern>
+                  <shadedPattern>com.google.bqjdbc.shaded.org.</shadedPattern>
+                  <excludes>
+                    <exclude>org.junit.**</exclude>
+                  </excludes>
+                </relocation>
+                <relocation>
+                  <pattern>io.</pattern>
+                  <shadedPattern>com.google.bqjdbc.shaded.io.</shadedPattern>
+                </relocation>
+              </relocations>
               <filters>
                 <filter>
                   <artifact>*:*</artifact>

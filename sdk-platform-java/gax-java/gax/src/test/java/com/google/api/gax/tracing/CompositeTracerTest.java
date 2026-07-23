@@ -44,6 +44,7 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
+import org.mockito.Mockito;
 
 class CompositeTracerTest {
 
@@ -53,15 +54,17 @@ class CompositeTracerTest {
 
   @BeforeEach
   void setUp() {
-    child1 = mock(ApiTracer.class);
-    child2 = mock(ApiTracer.class);
+    child1 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    child2 = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
     compositeTracer = new CompositeTracer(Arrays.asList(child1, child2));
   }
 
   @Test
   void testInScope_lifoOrder() {
-    ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
-    ApiTracer.Scope scope2 = mock(ApiTracer.Scope.class);
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
 
     when(child1.inScope()).thenReturn(scope1);
     when(child2.inScope()).thenReturn(scope2);
@@ -79,7 +82,8 @@ class CompositeTracerTest {
 
   @Test
   void testInScope_childInScopeThrows() {
-    ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
     RuntimeException exception = new RuntimeException("Runtime Error");
 
     when(child1.inScope()).thenReturn(scope1);
@@ -95,8 +99,10 @@ class CompositeTracerTest {
 
   @Test
   void testInScope_childScopeCloseThrows() {
-    ApiTracer.Scope scope1 = mock(ApiTracer.Scope.class);
-    ApiTracer.Scope scope2 = mock(ApiTracer.Scope.class);
+    ApiTracer.Scope scope1 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
+    ApiTracer.Scope scope2 =
+        mock(ApiTracer.Scope.class, Mockito.withSettings().withoutAnnotations());
 
     RuntimeException exception2 = new RuntimeException("Scope 2 close Error");
     RuntimeException exception1 = new RuntimeException("Scope 1 close Error");

@@ -38,6 +38,7 @@ import com.google.api.gax.longrunning.OperationFutureImpl;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.RetryingFuture;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An OperationCallableImpl is an immutable object which is capable of initiating RPC calls to
@@ -46,6 +47,7 @@ import com.google.api.gax.retrying.RetryingFuture;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class OperationCallableImpl<RequestT, ResponseT, MetadataT>
     extends OperationCallable<RequestT, ResponseT, MetadataT> {
 

@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.locks.ReentrantLock;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 @BetaApi
 final class BlobAppendableUploadImpl implements BlobAppendableUpload {
@@ -133,6 +134,19 @@ final class BlobAppendableUploadImpl implements BlobAppendableUpload {
     }
 
     @Override
+    public void finalizeAndClose(@Nullable String expectedCrc32c) throws IOException {
+      lock.lock();
+      try {
+        if (buffered.isOpen()) {
+          unbuffered.nextWriteShouldFinalize(expectedCrc32c);
+          buffered.close();
+        }
+      } finally {
+        lock.unlock();
+      }
+    }
+
+    @Override
     public void closeWithoutFinalizing() throws IOException {
       lock.lock();
       try {
@@ -150,6 +164,18 @@ final class BlobAppendableUploadImpl implements BlobAppendableUpload {
         finalizeAndClose();
       } else {
         closeWithoutFinalizing();
+      }
+    }
+
+    @Override
+    public void close(@Nullable String expectedCrc32c) throws IOException {
+      if (finalizeOnClose) {
+        finalizeAndClose(expectedCrc32c);
+      } else if (expectedCrc32c == null) {
+        closeWithoutFinalizing();
+      } else {
+        throw new IllegalArgumentException(
+            "expectedCrc32c can only be provided when finalizeOnClose is true.");
       }
     }
   }

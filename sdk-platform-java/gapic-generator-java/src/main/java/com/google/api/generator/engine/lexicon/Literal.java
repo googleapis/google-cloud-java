@@ -15,7 +15,9 @@
 package com.google.api.generator.engine.lexicon;
 
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class Literal {
   private static final String BOOLEAN_TRUE = "true";
   private static final String BOOLEAN_FALSE = "false";

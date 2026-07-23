@@ -34,11 +34,14 @@ package com.google.auth.oauth2;
 import com.google.api.client.http.HttpResponseException;
 import com.google.auth.Retryable;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Base class for the standard Auth error response. It extends a default exception while keeping
  * Json response format
  */
+@NullMarked
 class GoogleAuthException extends IOException implements Retryable {
 
   private final boolean isRetryable;
@@ -117,7 +120,7 @@ class GoogleAuthException extends IOException implements Retryable {
    * @return new instance of {@link GoogleAuthException}
    */
   static GoogleAuthException createWithTokenEndpointResponseException(
-      HttpResponseException responseException, String message) {
+      HttpResponseException responseException, @Nullable String message) {
     int responseStatus = responseException.getStatusCode();
     boolean isRetryable =
         OAuth2Utils.TOKEN_ENDPOINT_RETRYABLE_STATUS_CODES.contains(responseStatus);
@@ -153,7 +156,7 @@ class GoogleAuthException extends IOException implements Retryable {
    * @return new instance of {@link GoogleAuthException}
    */
   static GoogleAuthException createWithTokenEndpointIOException(
-      IOException ioException, String message) {
+      IOException ioException, @Nullable String message) {
 
     if (message == null) {
       return new GoogleAuthException(true, OAuth2Utils.DEFAULT_NUMBER_OF_RETRIES, ioException);

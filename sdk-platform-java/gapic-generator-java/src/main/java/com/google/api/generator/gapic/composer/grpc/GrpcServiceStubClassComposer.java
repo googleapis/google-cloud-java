@@ -44,7 +44,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubClassComposer {
 
   private static final GrpcServiceStubClassComposer INSTANCE = new GrpcServiceStubClassComposer();

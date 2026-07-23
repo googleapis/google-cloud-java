@@ -35,12 +35,14 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implements PKCE using only the Java standard library. See https://www.rfc-editor.org/rfc/rfc7636.
  *
  * <p>https://developers.google.com/identity/protocols/oauth2/native-app#step1-code-verifier.
  */
+@NullMarked
 public class DefaultPKCEProvider implements PKCEProvider {
   private String codeVerifier;
   private CodeChallenge codeChallenge;

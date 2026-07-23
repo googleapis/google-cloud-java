@@ -27,10 +27,12 @@ import java.nio.file.Paths;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
+@NullMarked
 public class ServiceYamlParser {
   public static Optional<com.google.api.Service> parse(String serviceYamlFilePath) {
     if (Strings.isNullOrEmpty(serviceYamlFilePath) || !(new File(serviceYamlFilePath)).exists()) {

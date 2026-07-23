@@ -33,7 +33,10 @@ package com.google.auth.oauth2;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Encapsulates the error response's for 3rd party executables defined by the executable spec. */
+@NullMarked
 class PluggableAuthException extends OAuthException {
 
   PluggableAuthException(String errorCode, String errorDescription) {

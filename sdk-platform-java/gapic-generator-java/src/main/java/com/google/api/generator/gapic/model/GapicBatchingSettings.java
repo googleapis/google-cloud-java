@@ -17,8 +17,10 @@ package com.google.api.generator.gapic.model;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class GapicBatchingSettings {
   public enum FlowControlLimitExceededBehavior {
@@ -40,11 +42,9 @@ public abstract class GapicBatchingSettings {
 
   public abstract long delayThresholdMillis();
 
-  @Nullable
-  public abstract Integer flowControlElementLimit();
+  public abstract @Nullable Integer flowControlElementLimit();
 
-  @Nullable
-  public abstract Integer flowControlByteLimit();
+  public abstract @Nullable Integer flowControlByteLimit();
 
   public abstract FlowControlLimitExceededBehavior flowControlLimitExceededBehavior();
 
@@ -53,8 +53,7 @@ public abstract class GapicBatchingSettings {
 
   public abstract ImmutableList<String> discriminatorFieldNames();
 
-  @Nullable
-  public abstract String subresponseFieldName();
+  public abstract @Nullable String subresponseFieldName();
 
   public boolean matches(Service service, Method method) {
     return protoPakkage().equals(service.protoPakkage())

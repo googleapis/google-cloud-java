@@ -19,12 +19,14 @@ import com.google.protobuf.ExtensionRegistry;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 // Request dumper class, which dumps the CodeGeneratorRequest to a file on disk which will be
 // identical to the one passed to the Main class during normal execution. The dumped file then can
 // be used to run this gapic-generator directly (instead of relying on protoc to start the process),
 // which would give much greater flexibility in terms of debugging features, like attaching a
 // debugger, easier work with stdout and stderr etc.
+@NullMarked
 public class CodeGeneratorRequestDumper {
   public static void main(String[] args) throws IOException {
     ExtensionRegistry registry = ExtensionRegistry.newInstance();

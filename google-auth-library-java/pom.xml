@@ -90,6 +90,7 @@
     <project.commons-codec.version>1.18.0</project.commons-codec.version>
     <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
+    <project.jspecify.version>1.0.0</project.jspecify.version>
   </properties>
 
   <dependencyManagement>
@@ -183,6 +184,11 @@
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <version>${project.error-prone.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>${project.jspecify.version}</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>

@@ -34,6 +34,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiClock;
 import com.google.api.core.InternalApi;
 import java.util.concurrent.ThreadLocalRandom;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The timed retry algorithm which uses jittered exponential backoff factor for calculating the next
@@ -41,6 +42,7 @@ import java.util.concurrent.ThreadLocalRandom;
  *
  * <p>This class is thread-safe.
  */
+@NullMarked
 public class ExponentialRetryAlgorithm implements TimedRetryAlgorithmWithContext {
 
   private final RetrySettings globalSettings;

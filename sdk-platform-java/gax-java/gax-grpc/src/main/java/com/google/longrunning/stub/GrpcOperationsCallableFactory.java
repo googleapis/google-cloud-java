@@ -45,12 +45,14 @@ import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * gRPC callable factory implementation for Google Long Running Operations API.
  *
  * <p>This class is for advanced usage.
  */
+@NullMarked
 public class GrpcOperationsCallableFactory implements GrpcStubCallableFactory {
   @Override
   public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(

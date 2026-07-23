@@ -181,7 +181,9 @@ public class ITLocalSslValidationTest {
     mockServer.stop();
   }
 
-  private ProcessResult runSubprocess(String trustStore, String password) throws Exception {
+  private ProcessResult runSubprocess(
+      String trustStore, String password, boolean useSystemProperties, String type)
+      throws Exception {
     String javaHome = System.getProperty("java.home");
     String javaBin = javaHome + File.separator + "bin" + File.separator + "java";
     String classpath = System.getProperty("java.class.path");
@@ -189,16 +191,24 @@ public class ITLocalSslValidationTest {
 
     List<String> command = new ArrayList<>();
     command.add(javaBin);
-    if (trustStore != null) {
-      command.add("-Djavax.net.ssl.trustStore=" + trustStore);
-    }
-    if (password != null) {
-      command.add("-Djavax.net.ssl.trustStorePassword=" + password);
+    if (useSystemProperties) {
+      if (trustStore != null) {
+        command.add("-Djavax.net.ssl.trustStore=" + trustStore);
+      }
+      if (password != null) {
+        command.add("-Djavax.net.ssl.trustStorePassword=" + password);
+      }
     }
     command.add("-cp");
     command.add(classpath);
     command.add(className);
     command.add(String.valueOf(port));
+
+    if (!useSystemProperties) {
+      command.add(trustStore != null ? trustStore : "");
+      command.add(password != null ? password : "");
+      command.add(type != null ? type : "");
+    }
 
     ProcessBuilder builder = new ProcessBuilder(command);
     builder.redirectErrorStream(true);
@@ -226,20 +236,34 @@ public class ITLocalSslValidationTest {
 
   @Test
   public void testDefaultSslFailsForSelfSigned() throws Exception {
-    ProcessResult result = runSubprocess(null, null);
+    ProcessResult result = runSubprocess(null, null, true, null);
     assertEquals(1, result.exitCode, "Subprocess should fail. Output:\n" + result.stdout);
     assertTrue(result.stdout.contains(PKIX_ERROR_MSG));
   }
 
-  @Test
-  public void testCustomTrustStoreSucceeds() throws Exception {
+  private String getTrustStorePath() throws Exception {
     URL trustStoreUrl = getClass().getResource(TRUSTSTORE_RESOURCE);
     if (trustStoreUrl == null) {
       throw new IllegalStateException(
           "Truststore resource " + TRUSTSTORE_RESOURCE + " not found on classpath!");
     }
-    String trustStorePath = new File(trustStoreUrl.toURI()).getAbsolutePath();
-    ProcessResult result = runSubprocess(trustStorePath, PASSWORD);
+    return new File(trustStoreUrl.toURI()).getAbsolutePath();
+  }
+
+  @Test
+  public void testCustomTrustStoreSucceeds() throws Exception {
+    ProcessResult result = runSubprocess(getTrustStorePath(), PASSWORD, true, null);
+
+    assertEquals(0, result.exitCode, "Subprocess failed. Output:\n" + result.stdout);
+    assertTrue(result.stdout.contains(SUCCESS_MARKER));
+    assertFalse(
+        result.stdout.contains(PKIX_ERROR_MSG),
+        "Handshake failed with SSL error: " + result.stdout);
+  }
+
+  @Test
+  public void testCustomTrustStorePropertiesSucceeds() throws Exception {
+    ProcessResult result = runSubprocess(getTrustStorePath(), PASSWORD, false, "JKS");
 
     assertEquals(0, result.exitCode, "Subprocess failed. Output:\n" + result.stdout);
     assertTrue(result.stdout.contains(SUCCESS_MARKER));
@@ -251,13 +275,24 @@ public class ITLocalSslValidationTest {
   public static void main(String[] args) {
     int port = Integer.parseInt(args[0]);
     String baseUri = "jdbc:bigquery://https://" + HOST + ":" + port + ";";
-    String url =
+    URIBuilder uriBuilder =
         new URIBuilder(baseUri)
             .append("EndpointOverrides", "BIGQUERY=https://" + HOST + ":" + port)
             .append("ProjectId", "dummy")
             .append("OAuthType", 2)
-            .append("OAuthAccessToken", "dummy-token")
-            .toString();
+            .append("OAuthAccessToken", "dummy-token");
+
+    if (args.length > 1 && !args[1].isEmpty()) {
+      uriBuilder.append("SSLTrustStore", args[1]);
+    }
+    if (args.length > 2 && !args[2].isEmpty()) {
+      uriBuilder.append("SSLTrustStorePwd", args[2]);
+    }
+    if (args.length > 3 && !args[3].isEmpty()) {
+      uriBuilder.append("SSLTrustStoreType", args[3]);
+    }
+
+    String url = uriBuilder.toString();
     try (Connection connection = DriverManager.getConnection(url);
         Statement statement = connection.createStatement()) {
       statement.execute("SELECT 1");

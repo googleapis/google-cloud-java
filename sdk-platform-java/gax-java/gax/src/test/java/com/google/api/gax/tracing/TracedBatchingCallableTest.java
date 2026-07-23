@@ -34,6 +34,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -52,11 +53,21 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedBatchingCallableTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    batchingDescriptor =
+        mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
+    innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+  }
+
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
@@ -66,10 +77,10 @@ class TracedBatchingCallableTest {
           .setOperationType(OperationType.Batching)
           .build();
 
-  @Mock private ApiTracerFactory tracerFactory;
-  @Mock private ApiTracer tracer;
-  @Mock private BatchingDescriptor<String, String> batchingDescriptor;
-  @Mock private UnaryCallable<String, String> innerCallable;
+  private ApiTracerFactory tracerFactory;
+  private ApiTracer tracer;
+  private BatchingDescriptor<String, String> batchingDescriptor;
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   private TracedBatchingCallable<String, String> tracedBatchingCallable;

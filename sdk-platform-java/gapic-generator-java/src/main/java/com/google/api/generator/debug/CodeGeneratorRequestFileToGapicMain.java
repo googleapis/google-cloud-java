@@ -24,9 +24,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // A generator entry point class, similar to Main but reads the CodeGeneratorRequest directly from a
 // file instead of relying on protoc to pipe it in.
+@NullMarked
 public class CodeGeneratorRequestFileToGapicMain {
   public static void main(String[] args) throws IOException {
     ExtensionRegistry registry = ExtensionRegistry.newInstance();
@@ -38,7 +41,7 @@ public class CodeGeneratorRequestFileToGapicMain {
     try (InputStream inputStream = new FileInputStream(inputFile);
         OutputStream outputStream = new FileOutputStream(outputFile)) {
       CodeGeneratorRequest request = CodeGeneratorRequest.parseFrom(inputStream, registry);
-      CodeGeneratorResponse response = Generator.generateGapic(request);
+      @Nullable CodeGeneratorResponse response = Generator.generateGapic(request);
       response.writeTo(outputStream);
     }
   }

@@ -38,8 +38,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+import org.jspecify.annotations.NullMarked;
 
 /** Formats dates required for AWS Signature V4 request signing. */
+@NullMarked
 final class AwsDates {
   private static final String X_AMZ_DATE_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
   private static final String HTTP_DATE_FORMAT = "E, dd MMM yyyy HH:mm:ss z";

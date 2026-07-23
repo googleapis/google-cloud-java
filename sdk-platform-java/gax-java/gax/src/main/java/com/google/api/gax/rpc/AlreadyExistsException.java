@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when some entity that we attempted to create (e.g., file or directory) already
  * exists.
  */
+@NullMarked
 public class AlreadyExistsException extends ApiException {
   public AlreadyExistsException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

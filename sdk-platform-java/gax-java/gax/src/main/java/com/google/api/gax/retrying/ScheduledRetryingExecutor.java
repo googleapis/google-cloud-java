@@ -40,6 +40,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The retry executor which uses {@link ScheduledExecutorService} to schedule an attempt tasks.
@@ -54,6 +55,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @param <ResponseT> response type
  */
+@NullMarked
 public class ScheduledRetryingExecutor<ResponseT>
     implements RetryingExecutorWithContext<ResponseT> {
 

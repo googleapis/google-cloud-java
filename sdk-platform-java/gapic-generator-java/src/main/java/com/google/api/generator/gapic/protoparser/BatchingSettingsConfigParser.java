@@ -27,10 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
+@NullMarked
 public class BatchingSettingsConfigParser {
   private static String LIMIT_EXCEEDED_BEHAVIOR_THROW_EXCEPTION_YAML_VALUE = "THROW_EXCEPTION";
   private static String LIMIT_EXCEEDED_BEHAVIOR_BLOCK_YAML_VALUE = "BLOCK";

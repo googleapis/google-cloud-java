@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A wrapper used to send requests to the server.
  *
@@ -49,6 +51,7 @@ package com.google.api.gax.rpc;
  *
  * @param <RequestT> The type of each request.
  */
+@NullMarked
 public interface ClientStream<RequestT> {
   /** Sends a request to the server. It is an error to call this if the stream is already closed. */
   void send(RequestT request);
