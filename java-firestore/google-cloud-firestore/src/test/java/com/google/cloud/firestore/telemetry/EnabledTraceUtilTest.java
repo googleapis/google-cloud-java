@@ -17,8 +17,10 @@ package com.google.cloud.firestore.telemetry;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.core.ApiFunction;
 import com.google.cloud.firestore.FirestoreOpenTelemetryOptions;
 import com.google.cloud.firestore.FirestoreOptions;
+import io.grpc.ManagedChannelBuilder;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.trace.TracerProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -109,6 +111,28 @@ public class EnabledTraceUtilTest {
             .build();
     EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
     assertThat(traceUtil.getChannelConfigurator()).isNotNull();
+  }
+
+  // Exercises the reflection fallback that resolves either
+  // GrpcTelemetry#createClientInterceptor (>= 2.25.0) or #newClientInterceptor (< 2.25.0).
+  // See https://github.com/googleapis/google-cloud-java/issues/13095
+  @Test
+  public void channelConfiguratorAppliesInterceptorAcrossOtelGrpcVersions() {
+    OpenTelemetrySdk myOpenTelemetrySdk = OpenTelemetrySdk.builder().build();
+    FirestoreOptions firestoreOptions =
+        getBaseOptions()
+            .setOpenTelemetryOptions(
+                FirestoreOpenTelemetryOptions.newBuilder()
+                    .setOpenTelemetry(myOpenTelemetrySdk)
+                    .build())
+            .build();
+    EnabledTraceUtil traceUtil = new EnabledTraceUtil(firestoreOptions);
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> configurator =
+        traceUtil.getChannelConfigurator();
+    assertThat(configurator).isNotNull();
+
+    ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forAddress("localhost", 9999);
+    assertThat(configurator.apply(builder)).isNotNull();
   }
 
   @Test
