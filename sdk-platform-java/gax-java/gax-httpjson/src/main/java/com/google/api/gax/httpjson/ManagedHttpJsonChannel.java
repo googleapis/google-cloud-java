@@ -63,6 +63,10 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return endpoint;
   }
 
+  HttpTransport getHttpTransport() {
+    return httpTransport;
+  }
+
   private ManagedHttpJsonChannel(
       @Nullable Executor executor,
       boolean usingDefaultExecutor,
@@ -71,7 +75,12 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
-    this.httpTransport = httpTransport == null ? new NetHttpTransport() : httpTransport;
+    this.httpTransport =
+        httpTransport == null
+            ? HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+                    new NetHttpTransport.Builder())
+                .build()
+            : httpTransport;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -227,11 +236,14 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         usingDefaultExecutor = true;
       }
 
-      return new ManagedHttpJsonChannel(
-          executor,
-          usingDefaultExecutor,
-          endpoint,
-          httpTransport == null ? new NetHttpTransport() : httpTransport);
+      if (httpTransport == null) {
+        httpTransport =
+            HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+                    new NetHttpTransport.Builder())
+                .build();
+      }
+
+      return new ManagedHttpJsonChannel(executor, usingDefaultExecutor, endpoint, httpTransport);
     }
   }
 }

@@ -25,6 +25,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.EndpointContext;
@@ -41,6 +42,7 @@ import com.google.cloud.TransportOptions;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 /** Class representing service options for those services that use HTTP as the transport layer. */
 public class HttpTransportOptions implements TransportOptions {
@@ -54,6 +56,7 @@ public class HttpTransportOptions implements TransportOptions {
 
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
+    private static final Logger LOG = Logger.getLogger(DefaultHttpTransportFactory.class.getName());
     private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
 
     @Override
@@ -66,7 +69,10 @@ public class HttpTransportOptions implements TransportOptions {
           // Maybe not on App Engine
         }
       }
-      return new NetHttpTransport();
+
+      return HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+              new NetHttpTransport.Builder())
+          .build();
     }
   }
 
