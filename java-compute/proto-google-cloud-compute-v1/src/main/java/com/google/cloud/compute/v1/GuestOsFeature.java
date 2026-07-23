@@ -111,6 +111,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
     UNDEFINED_TYPE(0),
     /** <code>BARE_METAL_LINUX_COMPATIBLE = 354232740;</code> */
     BARE_METAL_LINUX_COMPATIBLE(354232740),
+    /** <code>CCA_CAPABLE = 79012270;</code> */
+    CCA_CAPABLE(79012270),
     /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
     FEATURE_TYPE_UNSPECIFIED(531767259),
     /** <code>GVNIC = 68209305;</code> */
@@ -165,6 +167,9 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
 
     /** <code>BARE_METAL_LINUX_COMPATIBLE = 354232740;</code> */
     public static final int BARE_METAL_LINUX_COMPATIBLE_VALUE = 354232740;
+
+    /** <code>CCA_CAPABLE = 79012270;</code> */
+    public static final int CCA_CAPABLE_VALUE = 79012270;
 
     /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
     public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 531767259;
@@ -236,6 +241,8 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_TYPE;
         case 354232740:
           return BARE_METAL_LINUX_COMPATIBLE;
+        case 79012270:
+          return CCA_CAPABLE;
         case 531767259:
           return FEATURE_TYPE_UNSPECIFIED;
         case 68209305:

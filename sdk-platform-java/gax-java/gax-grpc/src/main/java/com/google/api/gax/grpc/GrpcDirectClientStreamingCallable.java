@@ -36,6 +36,7 @@ import com.google.common.base.Preconditions;
 import io.grpc.ClientCall;
 import io.grpc.MethodDescriptor;
 import io.grpc.stub.ClientCalls;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code GrpcDirectClientStreamingCallable} creates client-streaming gRPC calls.
@@ -44,6 +45,7 @@ import io.grpc.stub.ClientCalls;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcDirectClientStreamingCallable<RequestT, ResponseT>
     extends ClientStreamingCallable<RequestT, ResponseT> {
   private final MethodDescriptor<RequestT, ResponseT> descriptor;

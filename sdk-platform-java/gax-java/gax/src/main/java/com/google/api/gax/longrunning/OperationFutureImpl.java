@@ -41,6 +41,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An ApiFuture which tracks polling of a service. The polling is done periodically, based on the
@@ -50,6 +51,7 @@ import java.util.concurrent.TimeoutException;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public final class OperationFutureImpl<ResponseT, MetadataT>
     implements OperationFuture<ResponseT, MetadataT> {

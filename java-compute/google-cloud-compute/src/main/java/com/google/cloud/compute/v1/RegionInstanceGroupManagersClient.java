@@ -1233,6 +1233,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1266,6 +1267,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1299,6 +1301,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteRegionInstanceGroupManagerRequest request =
    *       DeleteRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRequestId("requestId693933066")
@@ -1408,6 +1411,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1454,6 +1458,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1501,6 +1506,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   DeleteInstancesRegionInstanceGroupManagerRequest request =
    *       DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -3079,6 +3085,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -3124,6 +3131,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -3172,6 +3180,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   RecreateInstancesRegionInstanceGroupManagerRequest request =
    *       RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersRecreateRequestResource(
@@ -4242,6 +4251,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(
@@ -4296,6 +4306,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(
@@ -4351,6 +4362,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   StopInstancesRegionInstanceGroupManagerRequest request =
    *       StopInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *           .setInstanceGroupManager("instanceGroupManager-388242077")
+   *           .setNoGracefulShutdown(true)
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
    *           .setRegionInstanceGroupManagersStopInstancesRequestResource(

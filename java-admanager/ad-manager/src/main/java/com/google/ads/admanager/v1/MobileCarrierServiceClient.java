@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetMobileCarrier</td>
- *      <td><p> API to retrieve a `MobileCarrier` object.</td>
+ *      <td><p> Retrieves a `MobileCarrier` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListMobileCarriers</td>
- *      <td><p> API to retrieve a list of `MobileCarrier` objects.</td>
+ *      <td><p> Lists `MobileCarrier` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -200,7 +200,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileCarrier` object.
+   * Retrieves a `MobileCarrier` object.
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileCarrier` object.
+   * Retrieves a `MobileCarrier` object.
    *
    * <p>Sample code:
    *
@@ -257,7 +257,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileCarrier` object.
+   * Retrieves a `MobileCarrier` object.
    *
    * <p>Sample code:
    *
@@ -286,7 +286,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileCarrier` object.
+   * Retrieves a `MobileCarrier` object.
    *
    * <p>Sample code:
    *
@@ -315,7 +315,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileCarrier` objects.
+   * Lists `MobileCarrier` objects.
    *
    * <p>Sample code:
    *
@@ -349,7 +349,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileCarrier` objects.
+   * Lists `MobileCarrier` objects.
    *
    * <p>Sample code:
    *
@@ -381,7 +381,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileCarrier` objects.
+   * Lists `MobileCarrier` objects.
    *
    * <p>Sample code:
    *
@@ -419,7 +419,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileCarrier` objects.
+   * Lists `MobileCarrier` objects.
    *
    * <p>Sample code:
    *
@@ -456,7 +456,7 @@ public class MobileCarrierServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileCarrier` objects.
+   * Lists `MobileCarrier` objects.
    *
    * <p>Sample code:
    *

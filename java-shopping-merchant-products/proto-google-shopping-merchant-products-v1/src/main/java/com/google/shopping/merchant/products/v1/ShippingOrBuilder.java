@@ -499,4 +499,84 @@ public interface ShippingOrBuilder
    * @return The bytes for handlingCutoffTimezone.
    */
   com.google.protobuf.ByteString getHandlingCutoffTimezoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * program](https://support.google.com/merchants/answer/6324484).
+   * Must match one of the program labels set in
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The loyaltyProgramLabel.
+   */
+  java.lang.String getLoyaltyProgramLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * program](https://support.google.com/merchants/answer/6324484).
+   * Must match one of the program labels set in
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_tier_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_program_label = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for loyaltyProgramLabel.
+   */
+  com.google.protobuf.ByteString getLoyaltyProgramLabelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * tier](https://support.google.com/merchants/answer/6324484) within the
+   * loyalty program. Must match one of the tiers set in the
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The loyaltyTierLabel.
+   */
+  java.lang.String getLoyaltyTierLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The label of the [loyalty
+   * tier](https://support.google.com/merchants/answer/6324484) within the
+   * loyalty program. Must match one of the tiers set in the
+   * [loyalty_programs][google.shopping.merchant.products.v1.LoyaltyProgram].
+   * When set (in combination with
+   * [loyalty_program_label](https://support.google.com/merchants/answer/6324484)),
+   * this shipping option is only applicable to loyalty program members of the
+   * specified tier.
+   * </pre>
+   *
+   * <code>string loyalty_tier_label = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for loyaltyTierLabel.
+   */
+  com.google.protobuf.ByteString getLoyaltyTierLabelBytes();
 }

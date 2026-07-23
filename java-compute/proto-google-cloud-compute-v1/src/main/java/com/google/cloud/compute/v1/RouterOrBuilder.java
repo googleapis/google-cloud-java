@@ -601,6 +601,45 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return Whether the nccGateway field is set.
+   */
+  boolean hasNccGateway();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return The nccGateway.
+   */
+  java.lang.String getNccGateway();
+
+  /**
+   *
+   *
+   * <pre>
+   * URI of the ncc_gateway to which this router associated.
+   * </pre>
+   *
+   * <code>optional string ncc_gateway = 174876755;</code>
+   *
+   * @return The bytes for nccGateway.
+   */
+  com.google.protobuf.ByteString getNccGatewayBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * URI of the network to which this router belongs.
    * </pre>
    *

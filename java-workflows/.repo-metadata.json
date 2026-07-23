@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-workflows",
   "api_id": "workflows.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
   "rest_documentation": "https://cloud.google.com/workflows/docs/reference/rest"
 }

@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-vision",
   "api_id": "vision.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "issue_tracker": "https://issuetracker.google.com/issues?q=status:open%20componentid:187174",
   "rest_documentation": "https://cloud.google.com/vision/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/vision/docs/reference/rpc"

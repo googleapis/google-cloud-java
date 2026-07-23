@@ -30,10 +30,13 @@
 
 package com.google.api.gax.httpjson;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * HTTP status code in RuntimeException form, for propagating status code information via
  * exceptions.
  */
+@NullMarked
 public class HttpJsonStatusRuntimeException extends RuntimeException {
   private static final long serialVersionUID = -5390915748330242256L;
 

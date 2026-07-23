@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetLineItem</td>
- *      <td><p> API to retrieve a `LineItem` object.</td>
+ *      <td><p> Retrieves a `LineItem` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLineItems</td>
- *      <td><p> API to retrieve a list of `LineItem` objects.</td>
+ *      <td><p> Lists `LineItem` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -199,7 +199,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -309,7 +309,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -341,7 +341,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -370,7 +370,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -405,7 +405,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -441,7 +441,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *

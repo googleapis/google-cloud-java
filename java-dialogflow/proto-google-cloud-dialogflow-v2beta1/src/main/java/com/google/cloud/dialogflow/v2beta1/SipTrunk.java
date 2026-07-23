@@ -57,6 +57,8 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     expectedHostname_ = com.google.protobuf.LazyStringArrayList.emptyList();
     connections_ = java.util.Collections.emptyList();
     displayName_ = "";
+    peerHostnames_ = java.util.Collections.emptyList();
+    googleRootCertFile_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +74,155 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dialogflow.v2beta1.SipTrunk.class,
             com.google.cloud.dialogflow.v2beta1.SipTrunk.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of Google root certificate file used for mTLS.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile}
+   */
+  public enum GoogleRootCertFile implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified root certificate file.
+     * </pre>
+     *
+     * <code>CERT_FILE_UNSPECIFIED = 0;</code>
+     */
+    CERT_FILE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Use external private CA.
+     * </pre>
+     *
+     * <code>EXTERNAL_PRIVATE_CA = 5;</code>
+     */
+    EXTERNAL_PRIVATE_CA(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "GoogleRootCertFile");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified root certificate file.
+     * </pre>
+     *
+     * <code>CERT_FILE_UNSPECIFIED = 0;</code>
+     */
+    public static final int CERT_FILE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Use external private CA.
+     * </pre>
+     *
+     * <code>EXTERNAL_PRIVATE_CA = 5;</code>
+     */
+    public static final int EXTERNAL_PRIVATE_CA_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static GoogleRootCertFile valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static GoogleRootCertFile forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CERT_FILE_UNSPECIFIED;
+        case 5:
+          return EXTERNAL_PRIVATE_CA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<GoogleRootCertFile>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<GoogleRootCertFile>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<GoogleRootCertFile>() {
+              public GoogleRootCertFile findValueByNumber(int number) {
+                return GoogleRootCertFile.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SipTrunk.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final GoogleRootCertFile[] VALUES = values();
+
+    public static GoogleRootCertFile valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private GoogleRootCertFile(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -343,6 +494,137 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PEER_HOSTNAMES_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname> peerHostnames_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname> getPeerHostnamesList() {
+    return peerHostnames_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>
+      getPeerHostnamesOrBuilderList() {
+    return peerHostnames_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPeerHostnamesCount() {
+    return peerHostnames_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SipHostname getPeerHostnames(int index) {
+    return peerHostnames_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Peer hostnames of the SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder getPeerHostnamesOrBuilder(
+      int index) {
+    return peerHostnames_.get(index);
+  }
+
+  public static final int GOOGLE_ROOT_CERT_FILE_FIELD_NUMBER = 9;
+  private int googleRootCertFile_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root certificate file to use for this SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for googleRootCertFile.
+   */
+  @java.lang.Override
+  public int getGoogleRootCertFileValue() {
+    return googleRootCertFile_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The root certificate file to use for this SIP trunk.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleRootCertFile.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile getGoogleRootCertFile() {
+    com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile result =
+        com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.forNumber(
+            googleRootCertFile_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -368,6 +650,14 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, displayName_);
+    }
+    for (int i = 0; i < peerHostnames_.size(); i++) {
+      output.writeMessage(8, peerHostnames_.get(i));
+    }
+    if (googleRootCertFile_
+        != com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.CERT_FILE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, googleRootCertFile_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -395,6 +685,14 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, displayName_);
     }
+    for (int i = 0; i < peerHostnames_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, peerHostnames_.get(i));
+    }
+    if (googleRootCertFile_
+        != com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.CERT_FILE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, googleRootCertFile_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -415,6 +713,8 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     if (!getExpectedHostnameList().equals(other.getExpectedHostnameList())) return false;
     if (!getConnectionsList().equals(other.getConnectionsList())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getPeerHostnamesList().equals(other.getPeerHostnamesList())) return false;
+    if (googleRootCertFile_ != other.googleRootCertFile_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -438,6 +738,12 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (getPeerHostnamesCount() > 0) {
+      hash = (37 * hash) + PEER_HOSTNAMES_FIELD_NUMBER;
+      hash = (53 * hash) + getPeerHostnamesList().hashCode();
+    }
+    hash = (37 * hash) + GOOGLE_ROOT_CERT_FILE_FIELD_NUMBER;
+    hash = (53 * hash) + googleRootCertFile_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -589,6 +895,14 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000004);
       displayName_ = "";
+      if (peerHostnamesBuilder_ == null) {
+        peerHostnames_ = java.util.Collections.emptyList();
+      } else {
+        peerHostnames_ = null;
+        peerHostnamesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
+      googleRootCertFile_ = 0;
       return this;
     }
 
@@ -634,6 +948,15 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
       } else {
         result.connections_ = connectionsBuilder_.build();
       }
+      if (peerHostnamesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          peerHostnames_ = java.util.Collections.unmodifiableList(peerHostnames_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.peerHostnames_ = peerHostnames_;
+      } else {
+        result.peerHostnames_ = peerHostnamesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2beta1.SipTrunk result) {
@@ -647,6 +970,9 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.googleRootCertFile_ = googleRootCertFile_;
       }
     }
 
@@ -709,6 +1035,36 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (peerHostnamesBuilder_ == null) {
+        if (!other.peerHostnames_.isEmpty()) {
+          if (peerHostnames_.isEmpty()) {
+            peerHostnames_ = other.peerHostnames_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePeerHostnamesIsMutable();
+            peerHostnames_.addAll(other.peerHostnames_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.peerHostnames_.isEmpty()) {
+          if (peerHostnamesBuilder_.isEmpty()) {
+            peerHostnamesBuilder_.dispose();
+            peerHostnamesBuilder_ = null;
+            peerHostnames_ = other.peerHostnames_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            peerHostnamesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetPeerHostnamesFieldBuilder()
+                    : null;
+          } else {
+            peerHostnamesBuilder_.addAllMessages(other.peerHostnames_);
+          }
+        }
+      }
+      if (other.googleRootCertFile_ != 0) {
+        setGoogleRootCertFileValue(other.getGoogleRootCertFileValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -767,6 +1123,26 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 66:
+              {
+                com.google.cloud.dialogflow.v2beta1.SipHostname m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2beta1.SipHostname.parser(),
+                        extensionRegistry);
+                if (peerHostnamesBuilder_ == null) {
+                  ensurePeerHostnamesIsMutable();
+                  peerHostnames_.add(m);
+                } else {
+                  peerHostnamesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+            case 72:
+              {
+                googleRootCertFile_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1611,6 +1987,528 @@ public final class SipTrunk extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       displayName_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname> peerHostnames_ =
+        java.util.Collections.emptyList();
+
+    private void ensurePeerHostnamesIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        peerHostnames_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.SipHostname>(
+                peerHostnames_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.SipHostname,
+            com.google.cloud.dialogflow.v2beta1.SipHostname.Builder,
+            com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>
+        peerHostnamesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname> getPeerHostnamesList() {
+      if (peerHostnamesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(peerHostnames_);
+      } else {
+        return peerHostnamesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public int getPeerHostnamesCount() {
+      if (peerHostnamesBuilder_ == null) {
+        return peerHostnames_.size();
+      } else {
+        return peerHostnamesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipHostname getPeerHostnames(int index) {
+      if (peerHostnamesBuilder_ == null) {
+        return peerHostnames_.get(index);
+      } else {
+        return peerHostnamesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setPeerHostnames(
+        int index, com.google.cloud.dialogflow.v2beta1.SipHostname value) {
+      if (peerHostnamesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.set(index, value);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setPeerHostnames(
+        int index, com.google.cloud.dialogflow.v2beta1.SipHostname.Builder builderForValue) {
+      if (peerHostnamesBuilder_ == null) {
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addPeerHostnames(com.google.cloud.dialogflow.v2beta1.SipHostname value) {
+      if (peerHostnamesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.add(value);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addPeerHostnames(
+        int index, com.google.cloud.dialogflow.v2beta1.SipHostname value) {
+      if (peerHostnamesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.add(index, value);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addPeerHostnames(
+        com.google.cloud.dialogflow.v2beta1.SipHostname.Builder builderForValue) {
+      if (peerHostnamesBuilder_ == null) {
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.add(builderForValue.build());
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addPeerHostnames(
+        int index, com.google.cloud.dialogflow.v2beta1.SipHostname.Builder builderForValue) {
+      if (peerHostnamesBuilder_ == null) {
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addAllPeerHostnames(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.SipHostname> values) {
+      if (peerHostnamesBuilder_ == null) {
+        ensurePeerHostnamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, peerHostnames_);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearPeerHostnames() {
+      if (peerHostnamesBuilder_ == null) {
+        peerHostnames_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder removePeerHostnames(int index) {
+      if (peerHostnamesBuilder_ == null) {
+        ensurePeerHostnamesIsMutable();
+        peerHostnames_.remove(index);
+        onChanged();
+      } else {
+        peerHostnamesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipHostname.Builder getPeerHostnamesBuilder(
+        int index) {
+      return internalGetPeerHostnamesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder getPeerHostnamesOrBuilder(
+        int index) {
+      if (peerHostnamesBuilder_ == null) {
+        return peerHostnames_.get(index);
+      } else {
+        return peerHostnamesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>
+        getPeerHostnamesOrBuilderList() {
+      if (peerHostnamesBuilder_ != null) {
+        return peerHostnamesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(peerHostnames_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipHostname.Builder addPeerHostnamesBuilder() {
+      return internalGetPeerHostnamesFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.SipHostname.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipHostname.Builder addPeerHostnamesBuilder(
+        int index) {
+      return internalGetPeerHostnamesFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2beta1.SipHostname.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Peer hostnames of the SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2beta1.SipHostname peer_hostnames = 8 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.SipHostname.Builder>
+        getPeerHostnamesBuilderList() {
+      return internalGetPeerHostnamesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.SipHostname,
+            com.google.cloud.dialogflow.v2beta1.SipHostname.Builder,
+            com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>
+        internalGetPeerHostnamesFieldBuilder() {
+      if (peerHostnamesBuilder_ == null) {
+        peerHostnamesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.SipHostname,
+                com.google.cloud.dialogflow.v2beta1.SipHostname.Builder,
+                com.google.cloud.dialogflow.v2beta1.SipHostnameOrBuilder>(
+                peerHostnames_,
+                ((bitField0_ & 0x00000010) != 0),
+                getParentForChildren(),
+                isClean());
+        peerHostnames_ = null;
+      }
+      return peerHostnamesBuilder_;
+    }
+
+    private int googleRootCertFile_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root certificate file to use for this SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for googleRootCertFile.
+     */
+    @java.lang.Override
+    public int getGoogleRootCertFileValue() {
+      return googleRootCertFile_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root certificate file to use for this SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for googleRootCertFile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleRootCertFileValue(int value) {
+      googleRootCertFile_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root certificate file to use for this SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleRootCertFile.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile getGoogleRootCertFile() {
+      com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile result =
+          com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.forNumber(
+              googleRootCertFile_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root certificate file to use for this SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The googleRootCertFile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGoogleRootCertFile(
+        com.google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      googleRootCertFile_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The root certificate file to use for this SIP trunk.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.SipTrunk.GoogleRootCertFile google_root_cert_file = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGoogleRootCertFile() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      googleRootCertFile_ = 0;
       onChanged();
       return this;
     }

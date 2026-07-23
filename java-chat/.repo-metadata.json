@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-chat",
   "api_id": "chat.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rest_documentation": "https://developers.google.com/chat/api/reference/rest"
 }

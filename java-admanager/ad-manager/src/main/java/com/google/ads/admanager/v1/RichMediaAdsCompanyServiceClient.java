@@ -68,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetRichMediaAdsCompany</td>
- *      <td><p> API to retrieve a `RichMediaAdsCompany` object.</td>
+ *      <td><p> Retrieves a `RichMediaAdsCompany` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListRichMediaAdsCompanies</td>
- *      <td><p> API to retrieve a list of `RichMediaAdsCompany` objects.</td>
+ *      <td><p> Lists `RichMediaAdsCompany` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -203,7 +203,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -235,7 +235,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -265,7 +265,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `RichMediaAdsCompany` object.
+   * Retrieves a `RichMediaAdsCompany` object.
    *
    * <p>Sample code:
    *
@@ -329,7 +329,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -364,7 +364,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -396,7 +396,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -434,7 +434,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *
@@ -474,7 +474,7 @@ public class RichMediaAdsCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `RichMediaAdsCompany` objects.
+   * Lists `RichMediaAdsCompany` objects.
    *
    * <p>Sample code:
    *

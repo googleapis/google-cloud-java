@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Semaphore64 is similar to {@link java.util.concurrent.Semaphore} but allows up to {@code 2^63-1}
  * permits. It also allows adding / reducing permits to the original limit and acquire partial
@@ -38,6 +40,7 @@ package com.google.api.gax.batching;
  * encouraged to use Java's {@code Semaphore} instead. It is almost certainly faster and less error
  * prone.
  */
+@NullMarked
 interface Semaphore64 {
   boolean acquire(long permits);
 

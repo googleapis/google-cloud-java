@@ -59,6 +59,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-agentidentity-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentidentity:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-agentregistry-bom</artifactId>
         <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentregistry:current} -->
         <type>pom</type>
@@ -425,6 +432,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-cloudsupport-bom</artifactId>
         <version>0.79.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsupport:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-commerceproducer-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-commerceproducer:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -1124,6 +1138,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-productregistry-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-productregistry:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-profiler-bom</artifactId>
         <version>2.95.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-profiler:current} -->
         <type>pom</type>
@@ -1329,6 +1350,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-speech-bom</artifactId>
         <version>4.90.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-speech:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-sql-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-sql:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

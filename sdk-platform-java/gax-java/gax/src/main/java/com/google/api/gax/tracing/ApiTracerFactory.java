@@ -31,6 +31,7 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A factory to create new instances of {@link ApiTracer}s.
@@ -40,6 +41,7 @@ import com.google.api.core.InternalExtensionOnly;
  *
  * <p>For internal use only. google-cloud-java libraries should extend {@link BaseApiTracerFactory}.
  */
+@NullMarked
 @InternalApi
 @InternalExtensionOnly
 public interface ApiTracerFactory {

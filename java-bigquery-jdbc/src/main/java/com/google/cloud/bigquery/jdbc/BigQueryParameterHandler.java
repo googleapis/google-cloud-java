@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import java.math.BigInteger;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -59,6 +60,16 @@ class BigQueryParameterHandler {
 
         Object parameterValue = getParameter(i);
         StandardSQLTypeName sqlType = getSqlType(i);
+        if (parameterValue != null) {
+          if (sqlType == StandardSQLTypeName.INT64
+              && (parameterValue instanceof Short
+                  || parameterValue instanceof Byte
+                  || parameterValue instanceof BigInteger)) {
+            parameterValue = ((Number) parameterValue).longValue();
+          } else if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
+            parameterValue = ((Number) parameterValue).doubleValue();
+          }
+        }
         LOG.finest(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
             parameterValue, sqlType, i);

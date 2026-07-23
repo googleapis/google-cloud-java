@@ -50,6 +50,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of {@link ApiTracer} that uses OpenCensus.
@@ -208,13 +210,14 @@ import javax.annotation.Nonnull;
  * only one thread that invokes the operation* and attempt* methods. Please see {@link
  * com.google.api.gax.rpc.ApiStreamObserver} for more information.
  */
+@NullMarked
 @BetaApi("Surface for tracing is not yet stable")
 public class OpencensusTracer extends BaseApiTracer {
   private final Tracer tracer;
   private final Span span;
   private final OperationType operationType;
 
-  private volatile String lastConnectionId;
+  private volatile @Nullable String lastConnectionId;
   private volatile long currentAttemptId;
   private AtomicLong attemptSentMessages = new AtomicLong(0);
   private long attemptReceivedMessages = 0;

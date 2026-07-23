@@ -43,7 +43,9 @@ import com.google.api.gax.logging.LogData;
 import com.google.api.gax.logging.LoggerProvider;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @InternalApi
 public class HttpJsonLoggingInterceptor implements HttpJsonClientInterceptor {
 

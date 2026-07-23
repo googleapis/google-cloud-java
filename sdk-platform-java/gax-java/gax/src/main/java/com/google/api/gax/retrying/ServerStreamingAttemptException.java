@@ -30,6 +30,7 @@
 package com.google.api.gax.retrying;
 
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A wrapper exception thrown by {@code ServerStreamingAttemptCallable} to communicate additional
@@ -38,6 +39,7 @@ import com.google.api.core.InternalApi;
  *
  * <p>For internal use only - public for technical reasons.
  */
+@NullMarked
 @InternalApi
 public class ServerStreamingAttemptException extends RuntimeException {
   private final boolean canResume;

@@ -47,7 +47,8 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class serves as main implementation of {@link HttpJsonClientCall} for REST transport and is
@@ -60,6 +61,7 @@ import javax.annotation.Nullable;
  * @param <RequestT> call request type
  * @param <ResponseT> call response type
  */
+@NullMarked
 final class HttpJsonClientCallImpl<RequestT, ResponseT>
     extends HttpJsonClientCall<RequestT, ResponseT> implements ResultListener {
   //
@@ -110,7 +112,7 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
   // Response-specific data (received from server).
   //
   @GuardedBy("lock")
-  private HttpRequestRunnable<RequestT, ResponseT> requestRunnable;
+  private @Nullable HttpRequestRunnable<RequestT, ResponseT> requestRunnable;
 
   @GuardedBy("lock")
   private RunnableResult runnableResult;
@@ -126,7 +128,7 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
   // received before the timeout. This value may be null if the RPC does not have a
   // timeout.
   @GuardedBy("lock")
-  private volatile ScheduledFuture<?> timeoutFuture;
+  private volatile @Nullable ScheduledFuture<?> timeoutFuture;
 
   HttpJsonClientCallImpl(
       ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor,

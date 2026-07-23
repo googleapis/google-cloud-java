@@ -181,6 +181,48 @@ public interface TargetTcpProxyOrBuilder
    *
    *
    * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  boolean hasLoadBalancingScheme();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return The loadBalancingScheme.
+   */
+  java.lang.String getLoadBalancingScheme();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return The bytes for loadBalancingScheme.
+   */
+  com.google.protobuf.ByteString getLoadBalancingSchemeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created.
    * The name must be 1-63 characters long, and comply withRFC1035.
    * Specifically, the name must be 1-63 characters long and match the regular

@@ -52,6 +52,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
   }
 
   private SecurityPolicyDdosProtectionConfig() {
+    ddosAdaptiveProtection_ = "";
     ddosProtection_ = "";
   }
 
@@ -68,6 +69,169 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.class,
             com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.DdosAdaptiveProtection}
+   */
+  public enum DdosAdaptiveProtection implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DDOS_ADAPTIVE_PROTECTION = 0;</code>
+     */
+    UNDEFINED_DDOS_ADAPTIVE_PROTECTION(0),
+    /** <code>DDOS_ADAPTIVE_PROTECTION_UNSPECIFIED = 314527935;</code> */
+    DDOS_ADAPTIVE_PROTECTION_UNSPECIFIED(314527935),
+    /** <code>DISABLED = 516696700;</code> */
+    DISABLED(516696700),
+    /** <code>ENABLED = 182130465;</code> */
+    ENABLED(182130465),
+    /** <code>PREVIEW = 399798184;</code> */
+    PREVIEW(399798184),
+    /** <code>UNSPECIFIED_ADAPTIVE_PROTECTION = 86330138;</code> */
+    UNSPECIFIED_ADAPTIVE_PROTECTION(86330138),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DdosAdaptiveProtection");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DDOS_ADAPTIVE_PROTECTION = 0;</code>
+     */
+    public static final int UNDEFINED_DDOS_ADAPTIVE_PROTECTION_VALUE = 0;
+
+    /** <code>DDOS_ADAPTIVE_PROTECTION_UNSPECIFIED = 314527935;</code> */
+    public static final int DDOS_ADAPTIVE_PROTECTION_UNSPECIFIED_VALUE = 314527935;
+
+    /** <code>DISABLED = 516696700;</code> */
+    public static final int DISABLED_VALUE = 516696700;
+
+    /** <code>ENABLED = 182130465;</code> */
+    public static final int ENABLED_VALUE = 182130465;
+
+    /** <code>PREVIEW = 399798184;</code> */
+    public static final int PREVIEW_VALUE = 399798184;
+
+    /** <code>UNSPECIFIED_ADAPTIVE_PROTECTION = 86330138;</code> */
+    public static final int UNSPECIFIED_ADAPTIVE_PROTECTION_VALUE = 86330138;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DdosAdaptiveProtection valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DdosAdaptiveProtection forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_DDOS_ADAPTIVE_PROTECTION;
+        case 314527935:
+          return DDOS_ADAPTIVE_PROTECTION_UNSPECIFIED;
+        case 516696700:
+          return DISABLED;
+        case 182130465:
+          return ENABLED;
+        case 399798184:
+          return PREVIEW;
+        case 86330138:
+          return UNSPECIFIED_ADAPTIVE_PROTECTION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DdosAdaptiveProtection>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DdosAdaptiveProtection>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DdosAdaptiveProtection>() {
+              public DdosAdaptiveProtection findValueByNumber(int number) {
+                return DdosAdaptiveProtection.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final DdosAdaptiveProtection[] VALUES = values();
+
+    public static DdosAdaptiveProtection valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DdosAdaptiveProtection(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.DdosAdaptiveProtection)
   }
 
   /**
@@ -191,7 +355,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDescriptor()
           .getEnumTypes()
-          .get(0);
+          .get(1);
     }
 
     private static final DdosProtection[] VALUES = values();
@@ -216,6 +380,141 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
   }
 
   private int bitField0_;
+  public static final int DDOS_ADAPTIVE_PROTECTION_FIELD_NUMBER = 96895463;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ddosAdaptiveProtection_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return Whether the ddosAdaptiveProtection field is set.
+   */
+  @java.lang.Override
+  public boolean hasDdosAdaptiveProtection() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return The ddosAdaptiveProtection.
+   */
+  @java.lang.Override
+  public java.lang.String getDdosAdaptiveProtection() {
+    java.lang.Object ref = ddosAdaptiveProtection_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ddosAdaptiveProtection_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the DdosAdaptiveProtection enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string ddos_adaptive_protection = 96895463;</code>
+   *
+   * @return The bytes for ddosAdaptiveProtection.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDdosAdaptiveProtectionBytes() {
+    java.lang.Object ref = ddosAdaptiveProtection_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ddosAdaptiveProtection_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DDOS_IMPACTED_BASELINE_THRESHOLD_FIELD_NUMBER = 192689584;
+  private float ddosImpactedBaselineThreshold_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+   * builds DDoS mitigations that minimize collateral damage. It quantifies
+   * this as the fraction of a non-abuse baseline that's inadvertently
+   * blocked.
+   *
+   * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+   * not be deployed. Using a lower value will prioritize keeping collateral
+   * damage low, possibly at the cost of its effectiveness in rate limiting
+   * some or all of the attack. It should typically be unset, so Advanced DDoS
+   * (and Adaptive Protection) uses the best mitigation it can find. Setting
+   * the threshold is advised if there are logs for false positive detections
+   * with high collateral damage, and will cause Advanced DDoS to attempt to
+   * find a less aggressive rule that satisfies the constraint. If a suitable
+   * rule cannot be found, the system falls back to either no mitigation for
+   * smaller attacks or broader network throttles for larger ones.
+   * </pre>
+   *
+   * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+   *
+   * @return Whether the ddosImpactedBaselineThreshold field is set.
+   */
+  @java.lang.Override
+  public boolean hasDdosImpactedBaselineThreshold() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+   * builds DDoS mitigations that minimize collateral damage. It quantifies
+   * this as the fraction of a non-abuse baseline that's inadvertently
+   * blocked.
+   *
+   * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+   * not be deployed. Using a lower value will prioritize keeping collateral
+   * damage low, possibly at the cost of its effectiveness in rate limiting
+   * some or all of the attack. It should typically be unset, so Advanced DDoS
+   * (and Adaptive Protection) uses the best mitigation it can find. Setting
+   * the threshold is advised if there are logs for false positive detections
+   * with high collateral damage, and will cause Advanced DDoS to attempt to
+   * find a less aggressive rule that satisfies the constraint. If a suitable
+   * rule cannot be found, the system falls back to either no mitigation for
+   * smaller attacks or broader network throttles for larger ones.
+   * </pre>
+   *
+   * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+   *
+   * @return The ddosImpactedBaselineThreshold.
+   */
+  @java.lang.Override
+  public float getDdosImpactedBaselineThreshold() {
+    return ddosImpactedBaselineThreshold_;
+  }
+
   public static final int DDOS_PROTECTION_FIELD_NUMBER = 275173268;
 
   @SuppressWarnings("serial")
@@ -235,7 +534,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasDdosProtection() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -303,6 +602,12 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 96895463, ddosAdaptiveProtection_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeFloat(192689584, ddosImpactedBaselineThreshold_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 275173268, ddosProtection_);
     }
     getUnknownFields().writeTo(output);
@@ -315,6 +620,15 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(96895463, ddosAdaptiveProtection_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              192689584, ddosImpactedBaselineThreshold_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(275173268, ddosProtection_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -333,6 +647,16 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig other =
         (com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig) obj;
 
+    if (hasDdosAdaptiveProtection() != other.hasDdosAdaptiveProtection()) return false;
+    if (hasDdosAdaptiveProtection()) {
+      if (!getDdosAdaptiveProtection().equals(other.getDdosAdaptiveProtection())) return false;
+    }
+    if (hasDdosImpactedBaselineThreshold() != other.hasDdosImpactedBaselineThreshold())
+      return false;
+    if (hasDdosImpactedBaselineThreshold()) {
+      if (java.lang.Float.floatToIntBits(getDdosImpactedBaselineThreshold())
+          != java.lang.Float.floatToIntBits(other.getDdosImpactedBaselineThreshold())) return false;
+    }
     if (hasDdosProtection() != other.hasDdosProtection()) return false;
     if (hasDdosProtection()) {
       if (!getDdosProtection().equals(other.getDdosProtection())) return false;
@@ -348,6 +672,14 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasDdosAdaptiveProtection()) {
+      hash = (37 * hash) + DDOS_ADAPTIVE_PROTECTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDdosAdaptiveProtection().hashCode();
+    }
+    if (hasDdosImpactedBaselineThreshold()) {
+      hash = (37 * hash) + DDOS_IMPACTED_BASELINE_THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getDdosImpactedBaselineThreshold());
+    }
     if (hasDdosProtection()) {
       hash = (37 * hash) + DDOS_PROTECTION_FIELD_NUMBER;
       hash = (53 * hash) + getDdosProtection().hashCode();
@@ -492,6 +824,8 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      ddosAdaptiveProtection_ = "";
+      ddosImpactedBaselineThreshold_ = 0F;
       ddosProtection_ = "";
       return this;
     }
@@ -533,8 +867,16 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.ddosProtection_ = ddosProtection_;
+        result.ddosAdaptiveProtection_ = ddosAdaptiveProtection_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.ddosImpactedBaselineThreshold_ = ddosImpactedBaselineThreshold_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ddosProtection_ = ddosProtection_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -553,9 +895,17 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.SecurityPolicyDdosProtectionConfig.getDefaultInstance())
         return this;
+      if (other.hasDdosAdaptiveProtection()) {
+        ddosAdaptiveProtection_ = other.ddosAdaptiveProtection_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (other.hasDdosImpactedBaselineThreshold()) {
+        setDdosImpactedBaselineThreshold(other.getDdosImpactedBaselineThreshold());
+      }
       if (other.hasDdosProtection()) {
         ddosProtection_ = other.ddosProtection_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -584,10 +934,22 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
             case 0:
               done = true;
               break;
+            case 775163706:
+              {
+                ddosAdaptiveProtection_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 775163706
+            case 1541516677:
+              {
+                ddosImpactedBaselineThreshold_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 1541516677
             case -2093581150:
               {
                 ddosProtection_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -2093581150
             default:
@@ -609,6 +971,266 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
 
     private int bitField0_;
 
+    private java.lang.Object ddosAdaptiveProtection_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @return Whether the ddosAdaptiveProtection field is set.
+     */
+    public boolean hasDdosAdaptiveProtection() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @return The ddosAdaptiveProtection.
+     */
+    public java.lang.String getDdosAdaptiveProtection() {
+      java.lang.Object ref = ddosAdaptiveProtection_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ddosAdaptiveProtection_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @return The bytes for ddosAdaptiveProtection.
+     */
+    public com.google.protobuf.ByteString getDdosAdaptiveProtectionBytes() {
+      java.lang.Object ref = ddosAdaptiveProtection_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ddosAdaptiveProtection_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @param value The ddosAdaptiveProtection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDdosAdaptiveProtection(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ddosAdaptiveProtection_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDdosAdaptiveProtection() {
+      ddosAdaptiveProtection_ = getDefaultInstance().getDdosAdaptiveProtection();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     *
+     * Check the DdosAdaptiveProtection enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ddos_adaptive_protection = 96895463;</code>
+     *
+     * @param value The bytes for ddosAdaptiveProtection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDdosAdaptiveProtectionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ddosAdaptiveProtection_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private float ddosImpactedBaselineThreshold_;
+
+    /**
+     *
+     *
+     * <pre>
+     * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+     * builds DDoS mitigations that minimize collateral damage. It quantifies
+     * this as the fraction of a non-abuse baseline that's inadvertently
+     * blocked.
+     *
+     * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+     * not be deployed. Using a lower value will prioritize keeping collateral
+     * damage low, possibly at the cost of its effectiveness in rate limiting
+     * some or all of the attack. It should typically be unset, so Advanced DDoS
+     * (and Adaptive Protection) uses the best mitigation it can find. Setting
+     * the threshold is advised if there are logs for false positive detections
+     * with high collateral damage, and will cause Advanced DDoS to attempt to
+     * find a less aggressive rule that satisfies the constraint. If a suitable
+     * rule cannot be found, the system falls back to either no mitigation for
+     * smaller attacks or broader network throttles for larger ones.
+     * </pre>
+     *
+     * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+     *
+     * @return Whether the ddosImpactedBaselineThreshold field is set.
+     */
+    @java.lang.Override
+    public boolean hasDdosImpactedBaselineThreshold() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+     * builds DDoS mitigations that minimize collateral damage. It quantifies
+     * this as the fraction of a non-abuse baseline that's inadvertently
+     * blocked.
+     *
+     * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+     * not be deployed. Using a lower value will prioritize keeping collateral
+     * damage low, possibly at the cost of its effectiveness in rate limiting
+     * some or all of the attack. It should typically be unset, so Advanced DDoS
+     * (and Adaptive Protection) uses the best mitigation it can find. Setting
+     * the threshold is advised if there are logs for false positive detections
+     * with high collateral damage, and will cause Advanced DDoS to attempt to
+     * find a less aggressive rule that satisfies the constraint. If a suitable
+     * rule cannot be found, the system falls back to either no mitigation for
+     * smaller attacks or broader network throttles for larger ones.
+     * </pre>
+     *
+     * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+     *
+     * @return The ddosImpactedBaselineThreshold.
+     */
+    @java.lang.Override
+    public float getDdosImpactedBaselineThreshold() {
+      return ddosImpactedBaselineThreshold_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+     * builds DDoS mitigations that minimize collateral damage. It quantifies
+     * this as the fraction of a non-abuse baseline that's inadvertently
+     * blocked.
+     *
+     * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+     * not be deployed. Using a lower value will prioritize keeping collateral
+     * damage low, possibly at the cost of its effectiveness in rate limiting
+     * some or all of the attack. It should typically be unset, so Advanced DDoS
+     * (and Adaptive Protection) uses the best mitigation it can find. Setting
+     * the threshold is advised if there are logs for false positive detections
+     * with high collateral damage, and will cause Advanced DDoS to attempt to
+     * find a less aggressive rule that satisfies the constraint. If a suitable
+     * rule cannot be found, the system falls back to either no mitigation for
+     * smaller attacks or broader network throttles for larger ones.
+     * </pre>
+     *
+     * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+     *
+     * @param value The ddosImpactedBaselineThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDdosImpactedBaselineThreshold(float value) {
+
+      ddosImpactedBaselineThreshold_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DDoS Protection for Network Load Balancers (and VMs with public IPs)
+     * builds DDoS mitigations that minimize collateral damage. It quantifies
+     * this as the fraction of a non-abuse baseline that's inadvertently
+     * blocked.
+     *
+     * Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will
+     * not be deployed. Using a lower value will prioritize keeping collateral
+     * damage low, possibly at the cost of its effectiveness in rate limiting
+     * some or all of the attack. It should typically be unset, so Advanced DDoS
+     * (and Adaptive Protection) uses the best mitigation it can find. Setting
+     * the threshold is advised if there are logs for false positive detections
+     * with high collateral damage, and will cause Advanced DDoS to attempt to
+     * find a less aggressive rule that satisfies the constraint. If a suitable
+     * rule cannot be found, the system falls back to either no mitigation for
+     * smaller attacks or broader network throttles for larger ones.
+     * </pre>
+     *
+     * <code>optional float ddos_impacted_baseline_threshold = 192689584;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDdosImpactedBaselineThreshold() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ddosImpactedBaselineThreshold_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object ddosProtection_ = "";
 
     /**
@@ -624,7 +1246,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
      * @return Whether the ddosProtection field is set.
      */
     public boolean hasDdosProtection() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -693,7 +1315,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
         throw new NullPointerException();
       }
       ddosProtection_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -712,7 +1334,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
      */
     public Builder clearDdosProtection() {
       ddosProtection_ = getDefaultInstance().getDdosProtection();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -736,7 +1358,7 @@ public final class SecurityPolicyDdosProtectionConfig extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       ddosProtection_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

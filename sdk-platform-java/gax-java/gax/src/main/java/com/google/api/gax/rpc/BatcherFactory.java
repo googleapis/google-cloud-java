@@ -45,6 +45,7 @@ import com.google.common.collect.ImmutableList;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A Factory class which, for each unique partitionKey, creates a trio including a ThresholdBatcher,
@@ -53,6 +54,7 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public final class BatcherFactory<RequestT, ResponseT> {
   private final Map<PartitionKey, ThresholdBatcher<Batch<RequestT, ResponseT>>> batchers =

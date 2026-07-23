@@ -39,12 +39,14 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.CancellationException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Operation timed polling algorithm, which uses exponential backoff factor for determining when the
  * next polling operation should be executed. If the polling exceeds the total timeout this
  * algorithm cancels polling.
  */
+@NullMarked
 public class OperationTimedPollAlgorithm extends ExponentialRetryAlgorithm {
 
   @VisibleForTesting

@@ -21,6 +21,7 @@
     <module>java-accesscontextmanager</module>
     <module>java-admanager</module>
     <module>java-advisorynotifications</module>
+    <module>java-agentidentity</module>
     <module>java-agentregistry</module>
     <module>java-aiplatform</module>
     <module>java-alloydb</module>
@@ -79,6 +80,7 @@
     <module>java-cloudquotas</module>
     <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
+    <module>java-commerceproducer</module>
     <module>java-common-protos</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
@@ -162,6 +164,7 @@
     <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
     <module>java-maps-geocode</module>
+    <module>java-maps-isochrones</module>
     <module>java-maps-mapmanagement</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
@@ -197,6 +200,7 @@
     <module>java-policysimulator</module>
     <module>java-private-catalog</module>
     <module>java-privilegedaccessmanager</module>
+    <module>java-productregistry</module>
     <module>java-profiler</module>
     <module>java-publicca</module>
     <module>java-pubsub</module>
@@ -244,6 +248,7 @@
     <module>java-spanner-jdbc</module>
     <module>java-spanneradapter</module>
     <module>java-speech</module>
+    <module>java-sql</module>
     <module>java-storage</module>
     <module>java-storage-nio</module>
     <module>java-storage-transfer</module>

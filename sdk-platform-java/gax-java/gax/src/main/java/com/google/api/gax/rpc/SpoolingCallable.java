@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.ApiFuture;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Wraps a {@link ServerStreamingCallable} in a buffering {@link UnaryCallable}. The {@link
@@ -43,6 +44,7 @@ import java.util.List;
  * @param <RequestT> The type of the request.
  * @param <ResponseT> The type of an item in the stream.
  */
+@NullMarked
 class SpoolingCallable<RequestT, ResponseT> extends UnaryCallable<RequestT, List<ResponseT>> {
   private final ServerStreamingCallable<RequestT, ResponseT> streamingCallable;
 

@@ -869,4 +869,50 @@ public class BoundStatementTest {
     assertThat(e.getMessage())
         .contains("Attempting to build BoundStatement without binding parameter: bytesParam");
   }
+
+  @Test
+  public void statementWithStringViewParameters() {
+    Value stringVal = Value.newBuilder().setType(stringType()).setStringValue("alice").build();
+    Value locationVal = Value.newBuilder().setType(stringType()).setStringValue("us-east1").build();
+
+    BoundStatement s =
+        boundStatementBuilder()
+            .setStringViewParameter("user_id", "alice")
+            .setStringViewParameter("location", "us-east1")
+            .build();
+
+    assertThat(s.toProto(EXPECTED_PREPARED_QUERY, REQUEST_CONTEXT, NO_RESUME_TOKEN))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setPreparedQuery(EXPECTED_PREPARED_QUERY)
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .putViewParameters("user_id", stringVal)
+                .putViewParameters("location", locationVal)
+                .build());
+  }
+
+  @Test
+  public void statementWithNullStringViewParameter() {
+    Value nullStringVal = Value.newBuilder().setType(stringType()).build();
+
+    BoundStatement s =
+        boundStatementBuilder().setStringViewParameter("user_id", (String) null).build();
+
+    assertThat(s.toProto(EXPECTED_PREPARED_QUERY, REQUEST_CONTEXT, NO_RESUME_TOKEN))
+        .isEqualTo(
+            ExecuteQueryRequest.newBuilder()
+                .setPreparedQuery(EXPECTED_PREPARED_QUERY)
+                .setInstanceName(EXPECTED_INSTANCE_NAME)
+                .setAppProfileId(EXPECTED_APP_PROFILE)
+                .putViewParameters("user_id", nullStringVal)
+                .build());
+  }
+
+  @Test
+  public void setStringViewParameterNullChecks() {
+    BoundStatement.Builder builder = boundStatementBuilder();
+
+    assertThrows(NullPointerException.class, () -> builder.setStringViewParameter(null, "alice"));
+  }
 }

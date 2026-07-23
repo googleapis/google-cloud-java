@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.26.0
+version: v0.28.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: bb9551666256aa929ffe1bbe7ad17db1342f0214
-    sha256: 35f265bda422b6b86be36f0b18949722c5af13be7a313f025749863b1c5b853b
+    commit: 45c8d8a7fb65aa944e843e975a51c307c1d026fb
+    sha256: 60e3ef474dfdf92e3570ab81bd98f560b4ad3c02e4dc0ceba332fd277b81e302
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -105,6 +105,19 @@ libraries:
       api_description_override: An API for accessing Advisory Notifications in Google Cloud.
       name_pretty_override: Advisory Notifications API
       product_documentation_override: https://cloud.google.com/advisory-notifications/
+  - name: agentidentity
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/agentidentity/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
+      - path: google/cloud/agentidentity/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: agentregistry
     version: 0.2.0-SNAPSHOT
     apis:
@@ -567,6 +580,26 @@ libraries:
             - path: google/cloud/location/locations.proto
     keep:
       - google-cloud-bigquerydatatransfer/src/main/java/com/google/cloud/bigquery/datatransfer/v1/SampleApp.java
+    postprocess:
+      method_operations:
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
+          action: delete
+          func_name: public static List<DataSourceName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/DataSourceName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable DataSourceName> values)
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
+          action: delete
+          func_name: public static List<TransferConfigName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable TransferConfigName> values)
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
+          action: delete
+          func_name: public static List<RunName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable RunName> values)
     java:
       api_description_override: transfers data from partner SaaS applications to Google BigQuery on a scheduled, managed basis.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559654
@@ -732,6 +765,76 @@ libraries:
           grpc_artifact_id_override: grpc-google-cloud-bigtable-admin-v2
           proto_artifact_id_override: proto-google-cloud-bigtable-admin-v2
           samples: false
+    keep:
+      - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java
+      - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/package-info.java
+    postprocess:
+      replace:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          original: public final void close() {
+          replacement: public void close() {
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          original: package com.google.cloud.bigtable.data.v2.stub;
+          replacement: |-
+            package com.google.cloud.bigtable.data.v2.stub;
+
+            import com.google.api.core.InternalApi;
+      replace_regex:
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtable*AdminClient.java
+          pattern: public static final BaseBigtable(.*)AdminClient create\(
+          replacement: protected static BaseBigtable${1}AdminClient create(
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStub.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/BigtableStubSettings.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableCallableFactory.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+        - path: google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/stub/GrpcBigtableStub.java
+          pattern: (/\*\*(?s).+?\*/\n(?:^@[^\n]*\n)*)(public\s+(?:abstract\s+|final\s+)?class\s+\w+)
+          replacement: |
+            /** For internal use only. */
+            @Generated("by gapic-generator")
+            @InternalApi
+            $2
+      remove_file:
+        - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClient.java
+        - google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataSettings.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/BaseBigtableDataClientTest.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtable.java
+        - google-cloud-bigtable/src/test/java/com/google/cloud/bigtable/data/v2/MockBigtableImpl.java
     java:
       api_id_override: bigtable.googleapis.com
       api_description_override: API for reading and writing the contents of Bigtables associated with a cloud project.
@@ -945,6 +1048,13 @@ libraries:
       api_description_override: Manages Google Cloud technical support cases for Customer Care support offerings.
       name_pretty_override: Google Cloud Support API
       product_documentation_override: https://cloud.google.com/support/docs/reference/support-api/
+  - name: commerceproducer
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/commerceproducer/v1beta
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: common-protos
     version: 2.74.0-SNAPSHOT
     apis:
@@ -1035,6 +1145,14 @@ libraries:
           generate_gapic: false
           generate_resource_names: false
           samples: false
+    keep:
+      - README.md
+    postprocess:
+      remove_file:
+        - proto-google-common-protos/src/main/proto/google/cloud/audit/bigquery_audit_metadata.proto
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadata.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataProto.java
+        - proto-google-common-protos/src/main/java/com/google/cloud/audit/BigQueryAuditMetadataOrBuilder.java
     java:
       api_description_override: Protobuf classes for Google's common protos.
       api_shortname_override: common-protos
@@ -1149,6 +1267,27 @@ libraries:
     keep:
       - google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/GrafeasUtils.java
       - google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ITGrafeasInteropTest.java
+    postprocess:
+      replace:
+        - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
+          original: import com.google.iam.v1.TestIamPermissionsResponse;
+          replacement: |-
+            import com.google.iam.v1.TestIamPermissionsResponse;
+            import io.grafeas.v1.GrafeasClient;
+      replace_regex:
+        - path: google-cloud-containeranalysis/src/main/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClient.java
+          pattern: (\s+private final ContainerAnalysisStub stub;.*)
+          replacement: |
+            $1
+
+              /**
+               * Returns a new GrafeasClient with the same configured settings.
+               *
+               * @throws IOException
+               */
+              public GrafeasClient getGrafeasClient() throws IOException {
+                return GrafeasClient.create(GrafeasUtils.transformSettings(settings));
+              }
     java:
       api_description_override: is a service that provides vulnerability scanning and metadata storage for software artifacts. The service performs vulnerability scans on built software artifacts, such as the images in Container Registry, then stores the resulting metadata and makes it available for consumption through an API. The metadata may come from several sources, including vulnerability scanning, other Cloud services, and third-party providers.
       codeowner_team: '@googleapis/aap-dpes'
@@ -1422,6 +1561,55 @@ libraries:
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionEntityTypeName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/EnvironmentSessionName.java
       - proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/ProjectAgentName.java
+    postprocess:
+      replace:
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: public static String formatProjectName
+          replacement: public static String formatProjectAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: public static String formatProjectLocationName
+          replacement: public static String formatProjectLocationAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: ProjectBuilder
+          replacement: ProjectAgentBuilder
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: ProjectLocationBuilder
+          replacement: ProjectLocationAgentBuilder
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: return ofProjectName
+          replacement: return ofProjectAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          original: return ofProjectLocationName
+          replacement: return ofProjectLocationAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EnvironmentsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/EntityTypesClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/IntentsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+        - path: google-cloud-dialogflow/src/test/java/com/google/cloud/dialogflow/v2beta1/VersionsClientTest.java
+          original: ofProjectName
+          replacement: ofProjectAgentName
+      method_operations:
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: duplicate
+          func_name: public static AgentName ofProjectName(String project)
+          new_name: ofProjectAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: deprecate
+          func_name: public static AgentName ofProjectAgentName(String project)
+          deprecation_message: 'Please use {@link #ofProjectName()} instead'
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: duplicate
+          func_name: public static AgentName ofProjectLocationName(String project, String location)
+          new_name: ofProjectLocationAgentName
+        - path: proto-google-cloud-dialogflow-v2beta1/src/main/java/com/google/cloud/dialogflow/v2beta1/AgentName.java
+          action: deprecate
+          func_name: public static AgentName ofProjectLocationAgentName(String project, String location)
+          deprecation_message: 'Please use {@link #ofProjectLocationName()} instead'
     java:
       api_description_override: is an end-to-end, build-once deploy-everywhere development suite for creating conversational interfaces for websites, mobile applications, popular messaging platforms, and IoT devices. You can use it to build interfaces (such as chatbots and conversational IVR) that enable natural and rich interactions between your users and your business. Dialogflow Enterprise Edition users have access to Google Cloud Support and a service level agreement (SLA) for production deployments.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5300385
@@ -1496,6 +1684,26 @@ libraries:
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedDeidentifyTemplateName.java
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedInspectTemplateName.java
       - proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/UntypedStoredInfoTypeName.java
+    postprocess:
+      method_operations:
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
+          action: delete
+          func_name: public static List<InspectTemplateName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectTemplateName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable InspectTemplateName> values)
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
+          action: delete
+          func_name: public static List<DeidentifyTemplateName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable DeidentifyTemplateName> values)
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
+          action: delete
+          func_name: public static List<StoredInfoTypeName> parseList(List<String> formattedStrings)
+        - path: proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/StoredInfoTypeName.java
+          action: delete
+          func_name: public static List<String> toStringList(List<@Nullable StoredInfoTypeName> values)
     java:
       api_description_override: provides programmatic access to a powerful detection engine for personally identifiable information and other privacy-sensitive data in unstructured data streams, like text blocks and images.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5548083
@@ -1568,6 +1776,44 @@ libraries:
     keep:
       - google-cloud-errorreporting/src/test/java/com/google/devtools/clouderrorreporting/v1beta1/ITSystemTest.java
       - proto-google-cloud-error-reporting-v1beta1/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/GroupName.java
+    postprocess:
+      replace_regex:
+        - path: google-cloud-errorreporting/src/main/java/com/google/devtools/clouderrorreporting/v1beta1/ErrorGroupServiceClient.java
+          pattern: (\s+public ErrorGroupServiceStub getStub\(\) \{\n\s+return stub;\n\s+\})
+          replacement: |
+            $1
+
+              // Inserted by synthtool to preserve backwards-compatibility
+              /**
+               * Get the specified group.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+               *   GroupName groupName = GroupName.of("[PROJECT]", "[GROUP]");
+               *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
+               * }
+               * </code></pre>
+               *
+               * @param groupName Required. The group resource name. Written as
+               *     &lt;code&gt;projects/&lt;var&gt;projectID&lt;/var&gt;/groups/&lt;var&gt;group_name&lt;/var&gt;&lt;/code&gt;.
+               *     Call &lt;a href="/error-reporting/reference/rest/v1beta1/projects.groupStats/list"&gt;
+               *     &lt;code&gt;groupStats.list&lt;/code&gt;&lt;/a&gt; to return a list of groups belonging to
+               *     this project.
+               *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use ErrorGroupServiceClient#getGroup(ErrorGroupName)
+               */
+              @Deprecated
+              public final ErrorGroup getGroup(GroupName groupName) {
+
+                GetGroupRequest request =
+                    GetGroupRequest.newBuilder()
+                        .setGroupName(groupName == null ? null : groupName.toString())
+                        .build();
+                return getGroup(request);
+              }
     java:
       api_description_override: 'counts, analyzes, and aggregates the crashes in your running cloud services. A centralized error management interface displays the results with sorting and filtering capabilities. A dedicated view shows the error details: time chart, occurrences, affected user count, first- and last-seen dates and a cleaned exception stack trace. Opt in to receive email and mobile alerts on new errors.'
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559780
@@ -1674,6 +1920,23 @@ libraries:
       - proto-google-cloud-firestore-v1/src/main/java/com/google/firestore/v1/DocumentRootName.java
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/BUILD.bazel
       - proto-google-cloud-firestore-v1/src/main/proto/firestore/bundle.proto
+    postprocess:
+      replace:
+        - path: google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/FirestoreAdminStubSettings.java
+          original: Version.VERSION
+          replacement: FirestoreAdminVersion.VERSION
+        - path: .repo-metadata.json
+          original: |2-
+              "recommended_package": "com.google.cloud.firestore"
+            }
+          replacement: |2
+              "recommended_package": "com.google.cloud.firestore",
+              "library_path_overrides": {
+                "FirestoreAdminClient": "google-cloud-firestore-admin"
+              }
+            }
+      remove_file:
+        - google-cloud-firestore-admin/src/main/java/com/google/cloud/firestore/v1/stub/Version.java
     java:
       api_id_override: firestore.googleapis.com
       api_description_override: is a fully-managed NoSQL document database for mobile, web, and server development from Firebase and Google Cloud Platform.  It's backed by a multi-region replicated database that ensures once data is committed, it's durable even in the face of unexpected disasters. Not only that, but despite being a distributed database, it's also strongly consistent and offers seamless integration with other Firebase and Google Cloud Platform products, including Google Cloud Functions.
@@ -1842,6 +2105,15 @@ libraries:
           samples: false
     keep:
       - src/main/java/io/grafeas/v1/stub/Version.java
+    postprocess:
+      replace:
+        - path: src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java
+          original: '    return "containeranalysis.googleapis.com:443";'
+          replacement: '    return null;'
+      replace_regex:
+        - path: src/main/java/io/grafeas/v1/stub/GrafeasStubSettings.java
+          pattern: \s+\*.*default service address.*\n\s+\*.*
+          replacement: ""
     java:
       alternate_headers: license-header.txt
       api_description_override: n/a
@@ -1977,6 +2249,8 @@ libraries:
           proto_artifact_id_override: proto-google-iam-v2beta
           generate_gapic: false
           samples: false
+    keep:
+      - README.md
     java:
       api_description_override: Manages access control for Google Cloud Platform resources
       artifact_id: proto-google-iam-v1
@@ -2135,6 +2409,212 @@ libraries:
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyName.java
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyNames.java
       - proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/UntypedKeyName.java
+    postprocess:
+      replace:
+        - path: proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/CryptoKeyName.java
+          original: implements ResourceName
+          replacement: extends KeyName
+        - path: proto-google-cloud-kms-v1/src/main/java/com/google/cloud/kms/v1/KeyRingName.java
+          original: implements ResourceName
+          replacement: extends KeyName
+      replace_regex:
+        - path: google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // ADDED BY SYNTH
+              /**
+               * Sets the access control policy on the specified resource. Replaces any existing policy.
+               *
+               * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   Policy policy = Policy.newBuilder().build();
+               *   Policy response = keyManagementServiceClient.setIamPolicy(resource, policy);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being specified. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+               *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+               *     Platform services (such as Projects) might reject them.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final Policy setIamPolicy(KeyName resource, Policy policy) {
+                SetIamPolicyRequest request =
+                    SetIamPolicyRequest.newBuilder()
+                        .setResource(resource == null ? null : resource.toString())
+                        .setPolicy(policy)
+                        .build();
+                return setIamPolicy(request);
+              }
+
+            // ADDED BY SYNTH
+              /**
+               * Sets the access control policy on the specified resource. Replaces any existing policy.
+               *
+               * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   Policy policy = Policy.newBuilder().build();
+               *   Policy response = keyManagementServiceClient.setIamPolicy(resource.toString(), policy);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being specified. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+               *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+               *     Platform services (such as Projects) might reject them.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final Policy setIamPolicy(String resource, Policy policy) {
+                SetIamPolicyRequest request =
+                    SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+                return setIamPolicy(request);
+              }
+        - path: google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // ADDED BY SYNTH
+              /**
+               * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+               * and does not have a policy set.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   Policy response = keyManagementServiceClient.getIamPolicy(resource);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final Policy getIamPolicy(KeyName resource) {
+                GetIamPolicyRequest request =
+                    GetIamPolicyRequest.newBuilder()
+                        .setResource(resource == null ? null : resource.toString())
+                        .build();
+                return getIamPolicy(request);
+              }
+
+            // ADDED BY SYNTH
+              /**
+               * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+               * and does not have a policy set.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   Policy response = keyManagementServiceClient.getIamPolicy(resource.toString());
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final Policy getIamPolicy(String resource) {
+                GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+                return getIamPolicy(request);
+              }
+        - path: google-cloud-kms/src/main/java/com/google/cloud/kms/v1/KeyManagementServiceClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // ADDED BY SYNTH
+              /**
+               * Returns permissions that a caller has on the specified resource. If the resource does not
+               * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+               *
+               * <p>Note: This operation is designed to be used for building permission-aware UIs and
+               * command-line tools, not for authorization checking. This operation may "fail open" without
+               * warning.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+               *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource, permissions);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param permissions The set of permissions to check for the `resource`. Permissions with
+               *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+               *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final TestIamPermissionsResponse testIamPermissions(
+                  KeyName resource, List<String> permissions) {
+                TestIamPermissionsRequest request =
+                    TestIamPermissionsRequest.newBuilder()
+                        .setResource(resource == null ? null : resource.toString())
+                        .addAllPermissions(permissions)
+                        .build();
+                return testIamPermissions(request);
+              }
+
+            // ADDED BY SYNTH
+              /**
+               * Returns permissions that a caller has on the specified resource. If the resource does not
+               * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+               *
+               * <p>Note: This operation is designed to be used for building permission-aware UIs and
+               * command-line tools, not for authorization checking. This operation may "fail open" without
+               * warning.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.create()) {
+               *   KeyName resource = KeyRingName.of("[PROJECT]", "[LOCATION]", "[KEY_RING]");
+               *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+               *   TestIamPermissionsResponse response = keyManagementServiceClient.testIamPermissions(resource.toString(), permissions);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param permissions The set of permissions to check for the `resource`. Permissions with
+               *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+               *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               */
+              public final TestIamPermissionsResponse testIamPermissions(
+                  String resource, List<String> permissions) {
+                TestIamPermissionsRequest request =
+                    TestIamPermissionsRequest.newBuilder()
+                        .setResource(resource)
+                        .addAllPermissions(permissions)
+                        .build();
+                return testIamPermissions(request);
+              }
     java:
       api_description_override: a cloud-hosted key management service that lets you manage cryptographic keys for your cloud services the same way you do on-premises. You can generate, use, rotate, and destroy AES256, RSA 2048, RSA 3072, RSA 4096, EC P256, and EC P384 cryptographic keys. Cloud KMS is integrated with Cloud IAM and Cloud Audit Logging so that you can manage permissions on individual keys and monitor how these are used. Use Cloud KMS to protect secrets and other sensitive data that you need to store in Google Cloud Platform.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/5264932
@@ -2208,6 +2688,153 @@ libraries:
       - path: google/logging/v2
         java:
           samples: false
+    postprocess:
+      replace:
+        - path: google-cloud-logging/src/test/java/com/google/cloud/logging/v2/ConfigClientTest.java
+          original: CmekSettingsName.ofProjectName
+          replacement: CmekSettingsName.ofProjectCmekSettingsName
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: OrganizationBuilder
+          replacement: OrganizationCmekSettingsBuilder
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: FolderBuilder
+          replacement: FolderCmekSettingsBuilder
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: BillingAccountBuilder
+          replacement: BillingAccountCmekSettingsBuilder
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: ofProjectName(matchMap.get("project"))
+          replacement: ofProjectCmekSettingsName(matchMap.get("project"))
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: ofOrganizationName(matchMap.get("organization"))
+          replacement: ofOrganizationCmekSettingsName(matchMap.get("organization"))
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: ofFolderName(matchMap.get("folder"))
+          replacement: ofFolderCmekSettingsName(matchMap.get("folder"))
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          original: ofBillingAccountName(matchMap.get("billing_account"))
+          replacement: ofBillingAccountCmekSettingsName(matchMap.get("billing_account"))
+      replace_regex:
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static Builder newProjectBuilder\(\) \{\s*return new Builder\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #newProjectBuilder()} instead
+               */
+              @Deprecated
+              public static Builder newProjectCmekSettingsBuilder() {
+                return new Builder();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static CmekSettingsName ofProjectName\(String project\) \{\s*return newBuilder\(\)\.setProject\(project\)\.build\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #ofProjectName(String)} instead
+               */
+              @Deprecated
+              public static CmekSettingsName ofProjectCmekSettingsName(String project) {
+                return newBuilder().setProject(project).build();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static CmekSettingsName ofOrganizationName\(String organization\) \{\s*return newOrganizationCmekSettingsBuilder\(\)\.setOrganization\(organization\)\.build\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #ofOrganizationName(String)} instead
+               */
+              @Deprecated
+              public static CmekSettingsName ofOrganizationCmekSettingsName(String organization) {
+                return newOrganizationCmekSettingsBuilder().setOrganization(organization).build();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static CmekSettingsName ofFolderName\(String folder\) \{\s*return newFolderCmekSettingsBuilder\(\)\.setFolder\(folder\)\.build\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #ofFolderName(String)} instead
+               */
+              @Deprecated
+              public static CmekSettingsName ofFolderCmekSettingsName(String folder) {
+                return newFolderCmekSettingsBuilder().setFolder(folder).build();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static CmekSettingsName ofBillingAccountName\(String billingAccount\) \{\s*return newBillingAccountCmekSettingsBuilder\(\)\.setBillingAccount\(billingAccount\)\.build\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #ofBillingAccountName(String)} instead
+               */
+              @Deprecated
+              public static CmekSettingsName ofBillingAccountCmekSettingsName(String billingAccount) {
+                return newBillingAccountCmekSettingsBuilder().setBillingAccount(billingAccount).build();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static String formatProjectName\(String project\) \{\s*return newBuilder\(\)\.setProject\(project\)\.build\(\)\.toString\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #formatProjectName(String)} instead
+               */
+              @Deprecated
+              public static String formatProjectCmekSettingsName(String project) {
+                return newBuilder().setProject(project).build().toString();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static String formatOrganizationName\(String organization\) \{\s*return newOrganizationCmekSettingsBuilder\(\)\.setOrganization\(organization\)\.build\(\)\.toString\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #formatOrganizationName(String)} instead
+               */
+              @Deprecated
+              public static String formatOrganizationCmekSettingsName(String organization) {
+                return newOrganizationCmekSettingsBuilder().setOrganization(organization).build().toString();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static String formatFolderName\(String folder\) \{\s*return newFolderCmekSettingsBuilder\(\)\.setFolder\(folder\)\.build\(\)\.toString\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #formatFolderName(String)} instead
+               */
+              @Deprecated
+              public static String formatFolderCmekSettingsName(String folder) {
+                return newFolderCmekSettingsBuilder().setFolder(folder).build().toString();
+              }
+        - path: proto-google-cloud-logging-v2/src/main/java/com/google/logging/v2/CmekSettingsName.java
+          pattern: |
+            (?s)(\s*public static String formatBillingAccountName\(String billingAccount\) \{\s*return newBillingAccountCmekSettingsBuilder\(\)\s*\.setBillingAccount\(billingAccount\)\s*\.build\(\)\s*\.toString\(\);\s*\})
+          replacement: |
+            $1
+
+            /**
+               * @deprecated Please use {@link #formatBillingAccountName(String)} instead
+               */
+              @Deprecated
+              public static String formatBillingAccountCmekSettingsName(String billingAccount) {
+                return newBillingAccountCmekSettingsBuilder()
+                    .setBillingAccount(billingAccount)
+                    .build()
+                    .toString();
+              }
     java:
       api_id_override: logging.googleapis.com
       api_description_override: allows you to store, search, analyze, monitor, and alert on log data and events from Google Cloud and Amazon Web Services. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premises systems, and hybrid cloud systems. BindPlane is included with your Google Cloud project at no additional cost.
@@ -2337,6 +2964,13 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Geocoding API
       product_documentation_override: https://developers.google.com/maps/documentation/geocoding/overview
+  - name: maps-isochrones
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/maps/isochrones/v1
+    java:
+      artifact_id: google-maps-isochrones
+      group_id: com.google.maps
   - name: maps-mapmanagement
     version: 0.4.0-SNAPSHOT
     apis:
@@ -2498,6 +3132,44 @@ libraries:
       - path: google/monitoring/v3
     keep:
       - google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java
+    postprocess:
+      replace:
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClient.java
+          original: FolderName
+          replacement: ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/GroupServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/GroupServiceClient.java
+          original: FolderName
+          replacement: ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/MetricServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/MetricServiceClient.java
+          original: FolderName
+          replacement: ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/NotificationChannelServiceClient.java
+          original: FolderName
+          replacement: ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/ServiceMonitoringServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/ServiceMonitoringServiceClient.java
+          original: FolderName
+          replacement: ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClient.java
+          original: com.google.monitoring.v3.FolderName
+          replacement: com.google.api.resourcenames.ResourceName
+        - path: google-cloud-monitoring/src/main/java/com/google/cloud/monitoring/v3/UptimeCheckServiceClient.java
+          original: FolderName
+          replacement: ResourceName
     java:
       api_description_override: collects metrics, events, and metadata from Google Cloud, Amazon Web Services (AWS), hosted uptime probes, and application instrumentation. Using the BindPlane service, you can also collect this data from over 150 common application components, on-premise systems, and hybrid cloud systems. Stackdriver ingests that data and generates insights via dashboards, charts, and alerts. BindPlane is included with your Google Cloud project at no additional cost.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559785
@@ -2507,6 +3179,10 @@ libraries:
     version: 2.97.0-SNAPSHOT
     apis:
       - path: google/monitoring/dashboard/v1
+    postprocess:
+      remove_file:
+        - proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/DrilldownsProto.java
+        - proto-google-cloud-monitoring-dashboard-v1/src/main/java/com/google/monitoring/dashboard/v1/ServiceMonitoringProto.java
     java:
       api_id_override: monitoring.googleapis.com
       api_description_override: are one way for you to view and analyze metric data. The Cloud Console provides predefined dashboards that require no setup or configuration. You can also define custom dashboards. With custom dashboards, you have complete control over the charts that are displayed and their configuration.
@@ -2548,6 +3224,244 @@ libraries:
           additional_protos:
             - path: google/cloud/location/locations.proto
             - path: google/iam/v1/iam_policy.proto
+    postprocess:
+      replace:
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listVpcFlowLogsConfigsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listVpcFlowLogsConfigsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest2() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest2() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listConnectivityTestsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listConnectivityTestsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createConnectivityTestTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createConnectivityTestTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void setIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void setIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void getIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void getIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void testIamPermissionsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void testIamPermissionsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listVpcFlowLogsConfigsTest2() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listVpcFlowLogsConfigsTest2() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest3() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest3() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest4() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest4() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listVpcFlowLogsConfigsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listVpcFlowLogsConfigsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/OrganizationVpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest2() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest2() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listConnectivityTestsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listConnectivityTestsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createConnectivityTestTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createConnectivityTestTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void setIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void setIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void getIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void getIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/ReachabilityServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void testIamPermissionsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void testIamPermissionsTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |
+            import org.junit.Test;
+          replacement: |
+            import org.junit.Ignore;
+            import org.junit.Test;
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void listVpcFlowLogsConfigsTest2() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void listVpcFlowLogsConfigsTest2() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest3() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest3() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void createVpcFlowLogsConfigTest4() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void createVpcFlowLogsConfigTest4() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void setIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void setIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void getIamPolicyTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void getIamPolicyTest() throws Exception {
+        - path: google-cloud-network-management/src/test/java/com/google/cloud/networkmanagement/v1beta1/VpcFlowLogsServiceClientHttpJsonTest.java
+          original: |2
+              @Test
+              public void testIamPermissionsTest() throws Exception {
+          replacement: |2
+              @Ignore("See: https://github.com/googleapis/sdk-platform-java/issues/1839")
+              @Test
+              public void testIamPermissionsTest() throws Exception {
     java:
       api_description_override: provides a collection of network performance monitoring and diagnostic capabilities.
       name_pretty_override: Network Management API
@@ -2705,6 +3619,59 @@ libraries:
       - proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/PosixAccountName.java
       - proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/ProjectName.java
       - proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/SshPublicKeyName.java
+    postprocess:
+      replace:
+        - path: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java
+          original: package com.google.cloud.oslogin.common;
+          replacement: package com.google.cloud.oslogin.v1;
+        - path: google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java
+          original: PosixAccountName
+          replacement: ProjectName
+        - path: google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java
+          original: SshPublicKeyName
+          replacement: FingerprintName
+        - path: google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java
+          original: import com.google.cloud.oslogin.common.FingerprintName;
+          replacement: import com.google.cloud.oslogin.v1.FingerprintName;
+        - path: google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java
+          original: import com.google.cloud.oslogin.common.UserName;
+          replacement: import com.google.cloud.oslogin.v1.UserName;
+        - path: google-cloud-os-login/src/main/java/com/google/cloud/oslogin/v1/OsLoginServiceClient.java
+          original: import com.google.cloud.oslogin.common.ProjectName;
+          replacement: import com.google.cloud.oslogin.v1.ProjectName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java
+          original: PosixAccountName
+          replacement: ProjectName
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java
+          original: SshPublicKeyName
+          replacement: FingerprintName
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java
+          original: import com.google.cloud.oslogin.common.FingerprintName;
+          replacement: import com.google.cloud.oslogin.v1.FingerprintName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java
+          original: import com.google.cloud.oslogin.common.UserName;
+          replacement: import com.google.cloud.oslogin.v1.UserName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientTest.java
+          original: import com.google.cloud.oslogin.common.ProjectName;
+          replacement: import com.google.cloud.oslogin.v1.ProjectName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
+          original: PosixAccountName
+          replacement: ProjectName
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
+          original: SshPublicKeyName
+          replacement: FingerprintName
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
+          original: import com.google.cloud.oslogin.common.FingerprintName;
+          replacement: import com.google.cloud.oslogin.v1.FingerprintName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
+          original: import com.google.cloud.oslogin.common.UserName;
+          replacement: import com.google.cloud.oslogin.v1.UserName;
+        - path: google-cloud-os-login/src/test/java/com/google/cloud/oslogin/v1/OsLoginServiceClientHttpJsonTest.java
+          original: import com.google.cloud.oslogin.common.ProjectName;
+          replacement: import com.google.cloud.oslogin.v1.ProjectName;
+      copy_file:
+        - src: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java
+          dst: proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java
     java:
       api_description_override: manages OS login configuration for Directory API users.
       issue_tracker_override: https://issuetracker.google.com/savedsearches/559755
@@ -2793,6 +3760,10 @@ libraries:
       name_pretty_override: Privileged Access Manager API
       product_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-privilegedaccessmanager/latest/overview
       rpc_documentation: https://cloud.google.com/iam/docs/reference/pam/rpc
+  - name: productregistry
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/productregistry/v1
   - name: profiler
     version: 2.95.0-SNAPSHOT
     apis:
@@ -2870,6 +3841,1098 @@ libraries:
       - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/ProjectTopicName.java
       - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/TopicNames.java
       - proto-google-cloud-pubsub-v1/src/main/java/com/google/pubsub/v1/UntypedTopicName.java
+    postprocess:
+      replace:
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/stub/SubscriberStubSettings.java
+          original: setMaxInboundMessageSize(Integer.MAX_VALUE)
+          replacement: setMaxInboundMessageSize(20 << 20)
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          original: package com.google.cloud.pubsub.v1;
+          replacement: |
+            package com.google.cloud.pubsub.v1;
+
+            import com.google.pubsub.v1.ProjectSnapshotName;
+            import com.google.pubsub.v1.ProjectSubscriptionName;
+            import com.google.pubsub.v1.ProjectTopicName;
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          original: package com.google.cloud.pubsub.v1;
+          replacement: |
+            package com.google.cloud.pubsub.v1;
+
+            import com.google.pubsub.v1.ProjectSnapshotName;
+            import com.google.pubsub.v1.ProjectSubscriptionName;
+            import com.google.pubsub.v1.ProjectTopicName;
+      replace_regex:
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final Topic createTopic\(String name\) \{\s*Topic request = Topic\.newBuilder\(\)\.setName\(name\)\.build\(\);\s*return createTopic\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Creates the given topic with the given name. See the &lt;a
+               * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+               * rules&lt;/a&gt;.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   ProjectTopicName name = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+               *   Topic response = topicAdminClient.createTopic(name);
+               * }
+               * </code></pre>
+               *
+               * @param name Required. The name of the topic. It must have the format
+               *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
+               *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
+               *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
+               *     length, and it must not start with `"goog"`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #createTopic(TopicName)} instead.
+               */
+              @Deprecated
+              public final Topic createTopic(ProjectTopicName name) {
+                Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
+                return createTopic(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final Topic getTopic\(String topic\) \{\s*GetTopicRequest request = GetTopicRequest\.newBuilder\(\)\.setTopic\(topic\)\.build\(\);\s*return getTopic\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Gets the configuration of a topic.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+               *   Topic response = topicAdminClient.getTopic(topic);
+               * }
+               * </code></pre>
+               *
+               * @param topic Required. The name of the topic to get. Format is
+               *     `projects/{project}/topics/{topic}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #getTopic(TopicName)} instead.
+               */
+              @Deprecated
+              public final Topic getTopic(ProjectTopicName topic) {
+                GetTopicRequest request =
+                    GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
+                return getTopic(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions\(String topic\) \{\s*ListTopicSubscriptionsRequest request =\s*ListTopicSubscriptionsRequest\.newBuilder\(\)\.setTopic\(topic\)\.build\(\);\s*return listTopicSubscriptions\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Lists the names of the subscriptions on this topic.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+               *   for (ProjectSubscriptionName element : topicAdminClient.listTopicSubscriptions(topic).iterateAllAsProjectSubscriptionName()) {
+               *     // doThingsWith(element);
+               *   }
+               * }
+               * </code></pre>
+               *
+               * @param topic Required. The name of the topic that subscriptions are attached to. Format is
+               *     `projects/{project}/topics/{topic}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #listTopicSubscriptions(TopicName)} instead.
+               */
+              @Deprecated
+              public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(ProjectTopicName topic) {
+                ListTopicSubscriptionsRequest request =
+                    ListTopicSubscriptionsRequest.newBuilder()
+                        .setTopic(topic == null ? null : topic.toString())
+                        .build();
+                return listTopicSubscriptions(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final void deleteTopic\(String topic\) \{\s*DeleteTopicRequest request = DeleteTopicRequest\.newBuilder\(\)\.setTopic\(topic\)\.build\(\);\s*deleteTopic\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a
+               * topic is deleted, a new topic may be created with the same name; this is an entirely new topic
+               * with none of the old configuration or subscriptions. Existing subscriptions to this topic are
+               * not deleted, but their `topic` field is set to `_deleted-topic_`.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+               *   topicAdminClient.deleteTopic(topic);
+               * }
+               * </code></pre>
+               *
+               * @param topic Required. Name of the topic to delete. Format is
+               *     `projects/{project}/topics/{topic}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #deleteTopic(TopicName)} instead.
+               */
+              @Deprecated
+              public final void deleteTopic(ProjectTopicName topic) {
+                DeleteTopicRequest request =
+                    DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
+                deleteTopic(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Sets the access control policy on the specified resource. Replaces any existing policy.
+               *
+               * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   Policy policy = Policy.newBuilder().build();
+               *   Policy response = topicAdminClient.setIamPolicy(formattedResource, policy);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being specified. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+               *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+               *     Platform services (such as Projects) might reject them.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
+               */
+              @Deprecated
+              public final Policy setIamPolicy(String resource, Policy policy) {
+                SetIamPolicyRequest request =
+                    SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+                return setIamPolicy(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+               * and does not have a policy set.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   Policy response = topicAdminClient.getIamPolicy(formattedResource);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
+               */
+              @Deprecated
+              public final Policy getIamPolicy(String resource) {
+                GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+                return getIamPolicy(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/TopicAdminClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Returns permissions that a caller has on the specified resource. If the resource does not
+               * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+               *
+               * <p>Note: This operation is designed to be used for building permission-aware UIs and
+               * command-line tools, not for authorization checking. This operation may "fail open" without
+               * warning.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+               *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(formattedResource, permissions);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param permissions The set of permissions to check for the `resource`. Permissions with
+               *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+               *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
+               */
+              @Deprecated
+              public final TestIamPermissionsResponse testIamPermissions(
+                  String resource, List<String> permissions) {
+                TestIamPermissionsRequest request =
+                    TestIamPermissionsRequest.newBuilder()
+                        .setResource(resource)
+                        .addAllPermissions(permissions)
+                        .build();
+                return testIamPermissions(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Subscription createSubscription\(Subscription request\) \{\s*return createSubscriptionCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Creates a subscription to a given topic. See the &lt;a
+               * href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+               * rules&lt;/a&gt;. If the subscription already exists, returns `ALREADY_EXISTS`. If the
+               * corresponding topic doesn't exist, returns `NOT_FOUND`.
+               *
+               * <p>If the name is not provided in the request, the server will assign a random name for this
+               * subscription on the same project as the topic, conforming to the [resource name
+               * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is
+               * populated in the returned Subscription object. Note that for REST API requests, you must
+               * specify a name in the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   ProjectTopicName topic = ProjectTopicName.of("[PROJECT]", "[TOPIC]");
+               *   PushConfig pushConfig = PushConfig.newBuilder().build();
+               *   int ackDeadlineSeconds = 0;
+               *   Subscription response = subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+               * }
+               * </code></pre>
+               *
+               * @param name Required. The name of the subscription. It must have the format
+               *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
+               *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
+               *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
+               *     and 255 characters in length, and it must not start with `"goog"`.
+               * @param topic Required. The name of the topic from which this subscription is receiving
+               *     messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be
+               *     `_deleted-topic_` if the topic has been deleted.
+               * @param pushConfig If push delivery is used with this subscription, this field is used to
+               *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
+               *     messages using API methods.
+               * @param ackDeadlineSeconds The approximate amount of time (on a best-effort basis) Pub/Sub waits
+               *     for the subscriber to acknowledge receipt before resending the message. In the interval
+               *     after the message is delivered and before it is acknowledged, it is considered to be
+               *     &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the message will not be
+               *     redelivered (on a best-effort basis).
+               *     <p>For pull subscriptions, this value is used as the initial value for the ack deadline. To
+               *     override this value for a given message, call `ModifyAckDeadline` with the corresponding
+               *     `ack_id` if using non-streaming pull or send the `ack_id` in a
+               *     `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline
+               *     you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds
+               *     (10 minutes). If this parameter is 0, a default value of 10 seconds is used.
+               *     <p>For push delivery, this value is also used to set the request timeout for the call to
+               *     the push endpoint.
+               *     <p>If the subscriber never acknowledges the message, the Pub/Sub system will eventually
+               *     redeliver the message.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #createSubscription(SubscriptionName, TopicName, PushConfig, int)}
+               *     instead.
+               */
+              @Deprecated
+              public final Subscription createSubscription(
+                  ProjectSubscriptionName name,
+                  ProjectTopicName topic,
+                  PushConfig pushConfig,
+                  int ackDeadlineSeconds) {
+                Subscription request =
+                    Subscription.newBuilder()
+                        .setName(name == null ? null : name.toString())
+                        .setTopic(topic == null ? null : topic.toString())
+                        .setPushConfig(pushConfig)
+                        .setAckDeadlineSeconds(ackDeadlineSeconds)
+                        .build();
+                return createSubscription(request);
+              }
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Creates a subscription to a given topic. See the [resource name rules]
+               * (https://cloud.google.com/pubsub/docs/admin#resource_names). If the subscription already
+               * exists, returns `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns
+               * `NOT_FOUND`.
+               *
+               * <p>If the name is not provided in the request, the server will assign a random name for this
+               * subscription on the same project as the topic, conforming to the [resource name format]
+               * (https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is populated in
+               * the returned Subscription object. Note that for REST API requests, you must specify a name in
+               * the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   String topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]").toString();
+               *   PushConfig pushConfig = PushConfig.newBuilder().build();
+               *   int ackDeadlineSeconds = 2135351438;
+               *   Subscription response =
+               *       subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+               * }
+               * }</pre>
+               *
+               * @param name Required. The name of the subscription. It must have the format
+               *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
+               *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
+               *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
+               *     and 255 characters in length, and it must not start with `"goog"`.
+               * @param topic Required. The name of the topic from which this subscription is receiving
+               *     messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be
+               *     `_deleted-topic_` if the topic has been deleted.
+               * @param pushConfig If push delivery is used with this subscription, this field is used to
+               *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
+               *     messages using API methods.
+               * @param ackDeadlineSeconds The approximate amount of time (on a best-effort basis) Pub/Sub waits
+               *     for the subscriber to acknowledge receipt before resending the message. In the interval
+               *     after the message is delivered and before it is acknowledged, it is considered to be
+               *     &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the message will not be
+               *     redelivered (on a best-effort basis).
+               *     <p>For pull subscriptions, this value is used as the initial value for the ack deadline. To
+               *     override this value for a given message, call `ModifyAckDeadline` with the corresponding
+               *     `ack_id` if using non-streaming pull or send the `ack_id` in a
+               *     `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline
+               *     you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds
+               *     (10 minutes). If this parameter is 0, a default value of 10 seconds is used.
+               *     <p>For push delivery, this value is also used to set the request timeout for the call to
+               *     the push endpoint.
+               *     <p>If the subscriber never acknowledges the message, the Pub/Sub system will eventually
+               *     redeliver the message.
+               * @deprecated Use {@link #createSubscription(SubscriptionName, String, PushConfig, int)} instead.
+               */
+              @Deprecated
+              public final Subscription createSubscription(
+                  ProjectSubscriptionName name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+                Subscription request =
+                    Subscription.newBuilder()
+                        .setName(name == null ? null : name.toString())
+                        .setTopic(topic)
+                        .setPushConfig(pushConfig)
+                        .setAckDeadlineSeconds(ackDeadlineSeconds)
+                        .build();
+                return createSubscription(request);
+              }
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Creates a subscription to a given topic. See the [resource name rules]
+               * (https://cloud.google.com/pubsub/docs/admin#resource_names). If the subscription already
+               * exists, returns `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns
+               * `NOT_FOUND`.
+               *
+               * <p>If the name is not provided in the request, the server will assign a random name for this
+               * subscription on the same project as the topic, conforming to the [resource name format]
+               * (https://cloud.google.com/pubsub/docs/admin#resource_names). The generated name is populated in
+               * the returned Subscription object. Note that for REST API requests, you must specify a name in
+               * the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName name = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
+               *   PushConfig pushConfig = PushConfig.newBuilder().build();
+               *   int ackDeadlineSeconds = 2135351438;
+               *   Subscription response =
+               *       subscriptionAdminClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+               * }
+               * }</pre>
+               *
+               * @param name Required. The name of the subscription. It must have the format
+               *     `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a
+               *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
+               *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
+               *     and 255 characters in length, and it must not start with `"goog"`.
+               * @param topic Required. The name of the topic from which this subscription is receiving
+               *     messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be
+               *     `_deleted-topic_` if the topic has been deleted.
+               * @param pushConfig If push delivery is used with this subscription, this field is used to
+               *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
+               *     messages using API methods.
+               * @param ackDeadlineSeconds The approximate amount of time (on a best-effort basis) Pub/Sub waits
+               *     for the subscriber to acknowledge receipt before resending the message. In the interval
+               *     after the message is delivered and before it is acknowledged, it is considered to be
+               *     &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the message will not be
+               *     redelivered (on a best-effort basis).
+               *     <p>For pull subscriptions, this value is used as the initial value for the ack deadline. To
+               *     override this value for a given message, call `ModifyAckDeadline` with the corresponding
+               *     `ack_id` if using non-streaming pull or send the `ack_id` in a
+               *     `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline
+               *     you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds
+               *     (10 minutes). If this parameter is 0, a default value of 10 seconds is used.
+               *     <p>For push delivery, this value is also used to set the request timeout for the call to
+               *     the push endpoint.
+               *     <p>If the subscriber never acknowledges the message, the Pub/Sub system will eventually
+               *     redeliver the message.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #createSubscription(SubscriptionName, TopicName, PushConfig, int)}
+               *     instead.
+               */
+              @Deprecated
+              public final Subscription createSubscription(
+                  ProjectSubscriptionName name,
+                  TopicName topic,
+                  PushConfig pushConfig,
+                  int ackDeadlineSeconds) {
+                Subscription request =
+                    Subscription.newBuilder()
+                        .setName(name == null ? null : name.toString())
+                        .setTopic(topic == null ? null : topic.toString())
+                        .setPushConfig(pushConfig)
+                        .setAckDeadlineSeconds(ackDeadlineSeconds)
+                        .build();
+                return createSubscription(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Subscription getSubscription\(GetSubscriptionRequest request\) \{\s*return getSubscriptionCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Gets the configuration details of a subscription.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   Subscription response = subscriptionAdminClient.getSubscription(subscription);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The name of the subscription to get. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #getSubscription(SubscriptionName)} instead.
+               */
+              @Deprecated
+              public final Subscription getSubscription(ProjectSubscriptionName subscription) {
+                GetSubscriptionRequest request =
+                    GetSubscriptionRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .build();
+                return getSubscription(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final void deleteSubscription\(DeleteSubscriptionRequest request\) \{\s*deleteSubscriptionCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Deletes an existing subscription. All messages retained in the subscription are immediately
+               * dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is
+               * deleted, a new one may be created with the same name, but the new one has no association with
+               * the old subscription or its topic unless the same topic is specified.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   subscriptionAdminClient.deleteSubscription(subscription);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The subscription to delete. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #deleteSubscription(SubscriptionName)} instead.
+               */
+              @Deprecated
+              public final void deleteSubscription(ProjectSubscriptionName subscription) {
+                DeleteSubscriptionRequest request =
+                    DeleteSubscriptionRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .build();
+                deleteSubscription(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final void modifyAckDeadline\(ModifyAckDeadlineRequest request\) \{\s*modifyAckDeadlineCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Modifies the ack deadline for a specific message. This method is useful to indicate that more
+               * time is needed to process a message by the subscriber, or to make the message available for
+               * redelivery if the processing was interrupted. Note that this does not modify the
+               * subscription-level `ackDeadlineSeconds` used for subsequent messages.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   List<String> ackIds = new ArrayList<>();
+               *   int ackDeadlineSeconds = 2135351438;
+               *   subscriptionAdminClient.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The name of the subscription. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @param ackIds Required. List of acknowledgment IDs.
+               * @param ackDeadlineSeconds Required. The new ack deadline with respect to the time this request
+               *     was sent to the Pub/Sub system. For example, if the value is 10, the new ack deadline will
+               *     expire 10 seconds after the `ModifyAckDeadline` call was made. Specifying zero might
+               *     immediately make the message available for delivery to another subscriber client. This
+               *     typically results in an increase in the rate of message redeliveries (that is, duplicates).
+               *     The minimum deadline you can specify is 0 seconds. The maximum deadline you can specify is
+               *     600 seconds (10 minutes).
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #modifyAckDeadline(SubscriptionName, List<String>, int)} instead.
+               */
+              @Deprecated
+              final void modifyAckDeadline(
+                  ProjectSubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
+                ModifyAckDeadlineRequest request =
+                    ModifyAckDeadlineRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .addAllAckIds(ackIds)
+                        .setAckDeadlineSeconds(ackDeadlineSeconds)
+                        .build();
+                modifyAckDeadline(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final void acknowledge\(AcknowledgeRequest request\) \{\s*acknowledgeCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Acknowledges the messages associated with the `ack_ids` in the `AcknowledgeRequest`. The
+               * Pub/Sub system can remove the relevant messages from the subscription.
+               *
+               * <p>Acknowledging a message whose ack deadline has expired may succeed, but such a message may
+               * be redelivered later. Acknowledging a message more than once will not result in an error.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   List<String> ackIds = new ArrayList<>();
+               *   subscriptionAdminClient.acknowledge(subscription, ackIds);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The subscription whose message is being acknowledged. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @param ackIds Required. The acknowledgment ID for the messages being acknowledged that was
+               *     returned by the Pub/Sub system in the `Pull` response. Must not be empty.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #acknowledge(SubscriptionName, List<String>)} instead.
+               */
+              @Deprecated
+              public final void acknowledge(ProjectSubscriptionName subscription, List<String> ackIds) {
+                AcknowledgeRequest request =
+                    AcknowledgeRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .addAllAckIds(ackIds)
+                        .build();
+                acknowledge(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final PullResponse pull\(PullRequest request\) \{\s*return pullCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+               * concurrent pull requests pending for the given subscription.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   int maxMessages = 496131527;
+               *   PullResponse response = subscriptionAdminClient.pull(subscription, maxMessages);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The subscription from which messages should be pulled. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @param maxMessages Required. The maximum number of messages to return for this request. Must be
+               *     a positive integer. The Pub/Sub system may return fewer than the number specified.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #pull(SubscriptionName, int)} instead.
+               */
+              @Deprecated
+              public final PullResponse pull(ProjectSubscriptionName subscription, int maxMessages) {
+                PullRequest request =
+                    PullRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .setMaxMessages(maxMessages)
+                        .build();
+                return pull(request);
+              }
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Pulls messages from the server. The server may return `UNAVAILABLE` if there are too many
+               * concurrent pull requests pending for the given subscription.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   boolean returnImmediately = true;
+               *   int maxMessages = 496131527;
+               *   PullResponse response =
+               *       subscriptionAdminClient.pull(subscription, returnImmediately, maxMessages);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The subscription from which messages should be pulled. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @param returnImmediately Optional. If this field set to true, the system will respond
+               *     immediately even if it there are no messages available to return in the `Pull` response.
+               *     Otherwise, the system may wait (for a bounded amount of time) until at least one message is
+               *     available, rather than returning no messages. Warning: setting this field to `true` is
+               *     discouraged because it adversely impacts the performance of `Pull` operations. We recommend
+               *     that users do not set this field.
+               * @param maxMessages Required. The maximum number of messages to return for this request. Must be
+               *     a positive integer. The Pub/Sub system may return fewer than the number specified.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #pull(SubscriptionName, boolean, int)} instead.
+               */
+              @Deprecated
+              final PullResponse pull(
+                  ProjectSubscriptionName subscription, boolean returnImmediately, int maxMessages) {
+                PullRequest request =
+                    PullRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .setReturnImmediately(returnImmediately)
+                        .setMaxMessages(maxMessages)
+                        .build();
+                return pull(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final void modifyPushConfig\(ModifyPushConfigRequest request\) \{\s*modifyPushConfigCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Modifies the `PushConfig` for a specified subscription.
+               *
+               * <p>This may be used to change a push subscription to a pull one (signified by an empty
+               * `PushConfig`) or vice versa, or change the endpoint URL and other attributes of a push
+               * subscription. Messages will accumulate for delivery continuously through the call regardless of
+               * changes to the `PushConfig`.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   PushConfig pushConfig = PushConfig.newBuilder().build();
+               *   subscriptionAdminClient.modifyPushConfig(subscription, pushConfig);
+               * }
+               * }</pre>
+               *
+               * @param subscription Required. The name of the subscription. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @param pushConfig Required. The push configuration for future deliveries.
+               *     <p>An empty `pushConfig` indicates that the Pub/Sub system should stop pushing messages
+               *     from the given subscription and allow messages to be pulled and acknowledged - effectively
+               *     pausing the subscription if `Pull` or `StreamingPull` is not called.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #modifyPushConfig(SubscriptionName, PushConfig)} instead.
+               */
+              @Deprecated
+              public final void modifyPushConfig(ProjectSubscriptionName subscription, PushConfig pushConfig) {
+                ModifyPushConfigRequest request =
+                    ModifyPushConfigRequest.newBuilder()
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .setPushConfig(pushConfig)
+                        .build();
+                modifyPushConfig(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Snapshot getSnapshot\(GetSnapshotRequest request\) \{\s*return getSnapshotCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Gets the configuration details of a snapshot. Snapshots are used in &lt;a
+               * href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt; operations, which
+               * allow you to manage message acknowledgments in bulk. That is, you can set the acknowledgment
+               * state of messages in an existing subscription to the state captured by a snapshot.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+               *   Snapshot response = subscriptionAdminClient.getSnapshot(snapshot);
+               * }
+               * }</pre>
+               *
+               * @param snapshot Required. The name of the snapshot to get. Format is
+               *     `projects/{project}/snapshots/{snap}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use Use {@link #getSnapshot(SnapshotName)} instead.
+               */
+              @Deprecated
+              public final Snapshot getSnapshot(ProjectSnapshotName snapshot) {
+                GetSnapshotRequest request =
+                    GetSnapshotRequest.newBuilder()
+                        .setSnapshot(snapshot == null ? null : snapshot.toString())
+                        .build();
+                return getSnapshot(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Snapshot createSnapshot\(CreateSnapshotRequest request\) \{\s*return createSnapshotCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Creates a snapshot from the requested subscription. Snapshots are used in
+               * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+               * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+               * messages in an existing subscription to the state captured by a snapshot. If the snapshot
+               * already exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
+               * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
+               * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
+               * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
+               * assign a random name for this snapshot on the same project as the subscription, conforming to
+               * the [resource name format] (https://cloud.google.com/pubsub/docs/admin#resource_names). The
+               * generated name is populated in the returned Snapshot object. Note that for REST API requests,
+               * you must specify a name in the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSnapshotName name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   Snapshot response = subscriptionAdminClient.createSnapshot(name, subscription);
+               * }
+               * }</pre>
+               *
+               * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+               *     request, the server will assign a random name for this snapshot on the same project as the
+               *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
+               *     href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+               *     rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
+               * @param subscription Required. The subscription whose backlog the snapshot retains.
+               *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
+               *     subscription. More precisely, this is defined as the messages in the subscription's backlog
+               *     that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as
+               *     well as: (b) Any messages published to the subscription's topic following the successful
+               *     completion of the CreateSnapshot request. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use Use {@link #createSnapshot(SnapshotName, SubscriptionName)} instead.
+               */
+              @Deprecated
+              public final Snapshot createSnapshot(
+                  ProjectSnapshotName name, ProjectSubscriptionName subscription) {
+                CreateSnapshotRequest request =
+                    CreateSnapshotRequest.newBuilder()
+                        .setName(name == null ? null : name.toString())
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .build();
+                return createSnapshot(request);
+              }
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Creates a snapshot from the requested subscription. Snapshots are used in
+               * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+               * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+               * messages in an existing subscription to the state captured by a snapshot. If the snapshot
+               * already exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
+               * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
+               * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
+               * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
+               * assign a random name for this snapshot on the same project as the subscription, conforming to
+               * the [resource name format] (https://cloud.google.com/pubsub/docs/admin#resource_names). The
+               * generated name is populated in the returned Snapshot object. Note that for REST API requests,
+               * you must specify a name in the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   String name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]").toString();
+               *   ProjectSubscriptionName subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]");
+               *   Snapshot response = subscriptionAdminClient.createSnapshot(name, subscription);
+               * }
+               * }</pre>
+               *
+               * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+               *     request, the server will assign a random name for this snapshot on the same project as the
+               *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
+               *     href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+               *     rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
+               * @param subscription Required. The subscription whose backlog the snapshot retains.
+               *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
+               *     subscription. More precisely, this is defined as the messages in the subscription's backlog
+               *     that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as
+               *     well as: (b) Any messages published to the subscription's topic following the successful
+               *     completion of the CreateSnapshot request. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use Use {@link #createSnapshot(String, SubscriptionName)} instead.
+               */
+              @Deprecated
+              public final Snapshot createSnapshot(String name, ProjectSubscriptionName subscription) {
+                CreateSnapshotRequest request =
+                    CreateSnapshotRequest.newBuilder()
+                        .setName(name)
+                        .setSubscription(subscription == null ? null : subscription.toString())
+                        .build();
+                return createSnapshot(request);
+              }
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Creates a snapshot from the requested subscription. Snapshots are used in
+               * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to
+               * manage message acknowledgments in bulk. That is, you can set the acknowledgment state of
+               * messages in an existing subscription to the state captured by a snapshot. If the snapshot
+               * already exists, returns `ALREADY_EXISTS`. If the requested subscription doesn't exist, returns
+               * `NOT_FOUND`. If the backlog in the subscription is too old -- and the resulting snapshot would
+               * expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned. See also the
+               * `Snapshot.expire_time` field. If the name is not provided in the request, the server will
+               * assign a random name for this snapshot on the same project as the subscription, conforming to
+               * the [resource name format] (https://cloud.google.com/pubsub/docs/admin#resource_names). The
+               * generated name is populated in the returned Snapshot object. Note that for REST API requests,
+               * you must specify a name in the request.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSnapshotName name = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+               *   String subscription = ProjectSubscriptionName.of("[PROJECT]", "[SUBSCRIPTION]").toString();
+               *   Snapshot response = subscriptionAdminClient.createSnapshot(name, subscription);
+               * }
+               * }</pre>
+               *
+               * @param name Required. User-provided name for this snapshot. If the name is not provided in the
+               *     request, the server will assign a random name for this snapshot on the same project as the
+               *     subscription. Note that for REST API requests, you must specify a name. See the &lt;a
+               *     href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt; resource name
+               *     rules&lt;/a&gt;. Format is `projects/{project}/snapshots/{snap}`.
+               * @param subscription Required. The subscription whose backlog the snapshot retains.
+               *     Specifically, the created snapshot is guaranteed to retain: (a) The existing backlog on the
+               *     subscription. More precisely, this is defined as the messages in the subscription's backlog
+               *     that are unacknowledged upon the successful completion of the `CreateSnapshot` request; as
+               *     well as: (b) Any messages published to the subscription's topic following the successful
+               *     completion of the CreateSnapshot request. Format is
+               *     `projects/{project}/subscriptions/{sub}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use Use {@link #createSnapshot(SnapshotName, String)} instead.
+               */
+              @Deprecated
+              public final Snapshot createSnapshot(ProjectSnapshotName name, String subscription) {
+                CreateSnapshotRequest request =
+                    CreateSnapshotRequest.newBuilder()
+                        .setName(name == null ? null : name.toString())
+                        .setSubscription(subscription)
+                        .build();
+                return createSnapshot(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final void deleteSnapshot\(DeleteSnapshotRequest request\) \{\s*deleteSnapshotCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD.
+              /**
+               * Removes an existing snapshot. Snapshots are used in [Seek]
+               * (https://cloud.google.com/pubsub/docs/replay-overview) operations, which allow you to manage
+               * message acknowledgments in bulk. That is, you can set the acknowledgment state of messages in
+               * an existing subscription to the state captured by a snapshot. When the snapshot is deleted, all
+               * messages retained in the snapshot are immediately dropped. After a snapshot is deleted, a new
+               * one may be created with the same name, but the new one has no association with the old snapshot
+               * or its subscription, unless the same subscription is specified.
+               *
+               * <p>Sample code:
+               *
+               * <pre>{@code
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   ProjectSnapshotName snapshot = ProjectSnapshotName.of("[PROJECT]", "[SNAPSHOT]");
+               *   subscriptionAdminClient.deleteSnapshot(snapshot);
+               * }
+               * }</pre>
+               *
+               * @param snapshot Required. The name of the snapshot to delete. Format is
+               *     `projects/{project}/snapshots/{snap}`.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use Use {@link #deleteSnapshot(SnapshotName)} instead.
+               */
+              @Deprecated
+              public final void deleteSnapshot(ProjectSnapshotName snapshot) {
+                DeleteSnapshotRequest request =
+                    DeleteSnapshotRequest.newBuilder()
+                        .setSnapshot(snapshot == null ? null : snapshot.toString())
+                        .build();
+                deleteSnapshot(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Sets the access control policy on the specified resource. Replaces any existing policy.
+               *
+               * <p>Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   Policy policy = Policy.newBuilder().build();
+               *   Policy response = subscriptionAdminClient.setIamPolicy(formattedResource, policy);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being specified. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+               *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+               *     Platform services (such as Projects) might reject them.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
+               */
+              @Deprecated
+              public final Policy setIamPolicy(String resource, Policy policy) {
+                SetIamPolicyRequest request =
+                    SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+                return setIamPolicy(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Gets the access control policy for a resource. Returns an empty policy if the resource exists
+               * and does not have a policy set.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   Policy response = subscriptionAdminClient.getIamPolicy(formattedResource);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
+               */
+              @Deprecated
+              public final Policy getIamPolicy(String resource) {
+                GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+                return getIamPolicy(request);
+              }
+        - path: google-cloud-pubsub/src/main/java/com/google/cloud/pubsub/v1/SubscriptionAdminClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+            // AUTO-GENERATED DOCUMENTATION AND METHOD
+              /**
+               * Returns permissions that a caller has on the specified resource. If the resource does not
+               * exist, this will return an empty set of permissions, not a NOT_FOUND error.
+               *
+               * <p>Note: This operation is designed to be used for building permission-aware UIs and
+               * command-line tools, not for authorization checking. This operation may "fail open" without
+               * warning.
+               *
+               * <p>Sample code:
+               *
+               * <pre><code>
+               * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
+               *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
+               *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+               *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(formattedResource, permissions);
+               * }
+               * </code></pre>
+               *
+               * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
+               *     operation documentation for the appropriate value for this field.
+               * @param permissions The set of permissions to check for the `resource`. Permissions with
+               *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+               *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+               * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+               * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
+               */
+              @Deprecated
+              public final TestIamPermissionsResponse testIamPermissions(
+                  String resource, List<String> permissions) {
+                TestIamPermissionsRequest request =
+                    TestIamPermissionsRequest.newBuilder()
+                        .setResource(resource)
+                        .addAllPermissions(permissions)
+                        .build();
+                return testIamPermissions(request);
+              }
     java:
       api_id_override: pubsub.googleapis.com
       api_reference: https://cloud.google.com/pubsub/
@@ -3377,6 +5440,7 @@ libraries:
           grpc_artifact_id_override: grpc-gapic-showcase-v1beta1
           proto_artifact_id_override: proto-gapic-showcase-v1beta1
     keep:
+      - README.md
       - gapic-showcase/src/main/java/com/google/showcase/v1beta1/Version.java
       - gapic-showcase/src/test
     roots:
@@ -3466,6 +5530,17 @@ libraries:
       billing_not_required: true
       rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
       rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
+  - name: sql
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/sql/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+      - path: google/cloud/sql/v1beta4
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: storage
     version: 2.71.0-SNAPSHOT
     apis:
@@ -3487,6 +5562,9 @@ libraries:
             - source: src/main/java/com/google/storage/control/v2/gapic_metadata.json
               destination: src/main/resources/com/google/storage/control/v2/gapic_metadata.json
           samples: false
+    postprocess:
+      remove_file:
+        - gapic-google-cloud-storage-v2/src/main/java/com/google/storage/v2/gapic_metadata.json
     java:
       api_id_override: storage.googleapis.com
       api_description_override: 'is a durable and highly available object storage service. Google Cloud Storage is almost infinitely scalable and guarantees consistency: when a write succeeds, the latest copy of the object will be returned to any GET, globally.'
@@ -3565,6 +5643,92 @@ libraries:
       - proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java
       - proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/ProjectName.java
       - proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ProjectName.java
+    postprocess:
+      replace_regex:
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy getIamPolicy(QueueName queueName) {
+                return getIamPolicy((ResourceName) queueName);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy setIamPolicy(QueueName queue, Policy policy) {
+                return setIamPolicy((ResourceName) queue, policy);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final TestIamPermissionsResponse testIamPermissions(
+                  QueueName queue, List<String> permissions) {
+                return testIamPermissions((ResourceName) queue, permissions);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy getIamPolicy(QueueName queueName) {
+                return getIamPolicy((ResourceName) queueName);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy setIamPolicy(QueueName queue, Policy policy) {
+                return setIamPolicy((ResourceName) queue, policy);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta2/CloudTasksClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final TestIamPermissionsResponse testIamPermissions(
+                  QueueName queue, List<String> permissions) {
+                return testIamPermissions((ResourceName) queue, permissions);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy getIamPolicy\(GetIamPolicyRequest request\) \{\s*return getIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy getIamPolicy(QueueName queueName) {
+                return getIamPolicy((ResourceName) queueName);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java
+          pattern: |
+            (?s)(public final Policy setIamPolicy\(SetIamPolicyRequest request\) \{\s*return setIamPolicyCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final Policy setIamPolicy(QueueName queue, Policy policy) {
+                return setIamPolicy((ResourceName) queue, policy);
+              }
+        - path: google-cloud-tasks/src/main/java/com/google/cloud/tasks/v2beta3/CloudTasksClient.java
+          pattern: |
+            (?s)(public final TestIamPermissionsResponse testIamPermissions\(TestIamPermissionsRequest request\) \{\s*return testIamPermissionsCallable\(\)\.call\(request\);\s*\})
+          replacement: |
+            $1
+
+              public final TestIamPermissionsResponse testIamPermissions(
+                  QueueName queue, List<String> permissions) {
+                return testIamPermissions((ResourceName) queue, permissions);
+              }
     java:
       api_description_override: a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint.
       codeowner_team: '@googleapis/aap-dpes'

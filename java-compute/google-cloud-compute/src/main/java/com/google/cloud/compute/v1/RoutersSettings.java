@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1;
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListNamedSetsPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
@@ -136,6 +137,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return ((RoutersStubSettings) getStubSettings()).deleteOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteNamedSet. */
+  public UnaryCallSettings<DeleteNamedSetRouterRequest, Operation> deleteNamedSetSettings() {
+    return ((RoutersStubSettings) getStubSettings()).deleteNamedSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNamedSet. */
+  public OperationCallSettings<DeleteNamedSetRouterRequest, Operation, Operation>
+      deleteNamedSetOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).deleteNamedSetOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteRoutePolicy. */
   public UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicySettings() {
     return ((RoutersStubSettings) getStubSettings()).deleteRoutePolicySettings();
@@ -150,6 +162,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRouterRequest, Router> getSettings() {
     return ((RoutersStubSettings) getStubSettings()).getSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNamedSet. */
+  public UnaryCallSettings<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+      getNamedSetSettings() {
+    return ((RoutersStubSettings) getStubSettings()).getNamedSetSettings();
   }
 
   /** Returns the object with the settings used for calls to getNatIpInfo. */
@@ -201,6 +219,13 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     return ((RoutersStubSettings) getStubSettings()).listBgpRoutesSettings();
   }
 
+  /** Returns the object with the settings used for calls to listNamedSets. */
+  public PagedCallSettings<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+      listNamedSetsSettings() {
+    return ((RoutersStubSettings) getStubSettings()).listNamedSetsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listRoutePolicies. */
   public PagedCallSettings<
           ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
@@ -216,6 +241,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   /** Returns the object with the settings used for calls to patch. */
   public OperationCallSettings<PatchRouterRequest, Operation, Operation> patchOperationSettings() {
     return ((RoutersStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchNamedSet. */
+  public UnaryCallSettings<PatchNamedSetRouterRequest, Operation> patchNamedSetSettings() {
+    return ((RoutersStubSettings) getStubSettings()).patchNamedSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchNamedSet. */
+  public OperationCallSettings<PatchNamedSetRouterRequest, Operation, Operation>
+      patchNamedSetOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).patchNamedSetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to patchRoutePolicy. */
@@ -243,6 +279,17 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
   public OperationCallSettings<UpdateRouterRequest, Operation, Operation>
       updateOperationSettings() {
     return ((RoutersStubSettings) getStubSettings()).updateOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNamedSet. */
+  public UnaryCallSettings<UpdateNamedSetRouterRequest, Operation> updateNamedSetSettings() {
+    return ((RoutersStubSettings) getStubSettings()).updateNamedSetSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNamedSet. */
+  public OperationCallSettings<UpdateNamedSetRouterRequest, Operation, Operation>
+      updateNamedSetOperationSettings() {
+    return ((RoutersStubSettings) getStubSettings()).updateNamedSetOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to updateRoutePolicy. */
@@ -370,6 +417,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
       return getStubSettingsBuilder().deleteOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteNamedSet. */
+    public UnaryCallSettings.Builder<DeleteNamedSetRouterRequest, Operation>
+        deleteNamedSetSettings() {
+      return getStubSettingsBuilder().deleteNamedSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNamedSet. */
+    public OperationCallSettings.Builder<DeleteNamedSetRouterRequest, Operation, Operation>
+        deleteNamedSetOperationSettings() {
+      return getStubSettingsBuilder().deleteNamedSetOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
     public UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
         deleteRoutePolicySettings() {
@@ -385,6 +444,12 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNamedSet. */
+    public UnaryCallSettings.Builder<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+        getNamedSetSettings() {
+      return getStubSettingsBuilder().getNamedSetSettings();
     }
 
     /** Returns the builder for the settings used for calls to getNatIpInfo. */
@@ -438,6 +503,13 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
       return getStubSettingsBuilder().listBgpRoutesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listNamedSets. */
+    public PagedCallSettings.Builder<
+            ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+        listNamedSetsSettings() {
+      return getStubSettingsBuilder().listNamedSetsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listRoutePolicies. */
     public PagedCallSettings.Builder<
             ListRoutePoliciesRoutersRequest,
@@ -456,6 +528,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     public OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchNamedSet. */
+    public UnaryCallSettings.Builder<PatchNamedSetRouterRequest, Operation>
+        patchNamedSetSettings() {
+      return getStubSettingsBuilder().patchNamedSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchNamedSet. */
+    public OperationCallSettings.Builder<PatchNamedSetRouterRequest, Operation, Operation>
+        patchNamedSetOperationSettings() {
+      return getStubSettingsBuilder().patchNamedSetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchRoutePolicy. */
@@ -485,6 +569,18 @@ public class RoutersSettings extends ClientSettings<RoutersSettings> {
     public OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNamedSet. */
+    public UnaryCallSettings.Builder<UpdateNamedSetRouterRequest, Operation>
+        updateNamedSetSettings() {
+      return getStubSettingsBuilder().updateNamedSetSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNamedSet. */
+    public OperationCallSettings.Builder<UpdateNamedSetRouterRequest, Operation, Operation>
+        updateNamedSetOperationSettings() {
+      return getStubSettingsBuilder().updateNamedSetOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateRoutePolicy. */

@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.common.collect.Queues;
 import java.util.concurrent.BlockingQueue;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A back pressure aware bridge from a {@link ResponseObserver} to a {@link BlockingQueue}. The
@@ -52,6 +53,7 @@ import java.util.concurrent.BlockingQueue;
  *
  * @param <V> The item type.
  */
+@NullMarked
 final class QueuingResponseObserver<V> extends StateCheckingResponseObserver<V> {
   static final Object EOF_MARKER = new Object();
 

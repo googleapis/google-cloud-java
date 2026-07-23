@@ -30,6 +30,8 @@
 package com.google.api.gax.rpc;
 
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * BatchedRequestIssuer receives a response or an exception and waits to set the given batchedFuture
@@ -37,12 +39,13 @@ import com.google.common.base.Preconditions;
  *
  * <p>This class is designed to be used by generated code.
  */
+@NullMarked
 public final class BatchedRequestIssuer<ResponseT> {
   private final BatchedFuture<ResponseT> batchedFuture;
   private final long messageCount;
-  private ResponseT responseToSend;
+  private @Nullable ResponseT responseToSend;
   private boolean hasResponse;
-  private Throwable throwableToSend;
+  private @Nullable Throwable throwableToSend;
 
   public BatchedRequestIssuer(BatchedFuture<ResponseT> batchedFuture, long messageCount) {
     this.batchedFuture = batchedFuture;

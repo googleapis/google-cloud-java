@@ -64,6 +64,7 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     advertisedRoutes_ = com.google.protobuf.LazyStringArrayList.emptyList();
     remoteAccountId_ = "";
     peeringNetwork_ = "";
+    hub_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1299,12 +1300,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Name of the remoteTransportProfile that this Transport is
-   * connecting to.
+   * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+   * is connecting to.
    * </pre>
    *
    * <code>
-   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The remoteProfile.
@@ -1326,12 +1327,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Name of the remoteTransportProfile that this Transport is
-   * connecting to.
+   * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+   * is connecting to.
    * </pre>
    *
    * <code>
-   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for remoteProfile.
@@ -1358,12 +1359,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Key used for establishing a connection with the remote transport.
-   * This key can only be provided if the profile supports an INPUT key flow and
-   * the resource is in the PENDING_KEY state.
+   * Optional. Immutable. Key used for establishing a connection with the remote
+   * transport. This key can only be provided if the profile supports an INPUT
+   * key flow and the resource is in the PENDING_KEY state.
    * </pre>
    *
-   * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The providedActivationKey.
    */
@@ -1384,12 +1387,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Key used for establishing a connection with the remote transport.
-   * This key can only be provided if the profile supports an INPUT key flow and
-   * the resource is in the PENDING_KEY state.
+   * Optional. Immutable. Key used for establishing a connection with the remote
+   * transport. This key can only be provided if the profile supports an INPUT
+   * key flow and the resource is in the PENDING_KEY state.
    * </pre>
    *
-   * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for providedActivationKey.
    */
@@ -1652,13 +1657,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Resource URI of the Network that will be peered with this
-   * Transport. This field must be provided during resource creation and cannot
-   * be changed.
+   * Optional. Immutable. Resource URI of the Network that will be peered with
+   * this Transport. This field must be provided during resource creation and
+   * cannot be changed.
    * </pre>
    *
    * <code>
-   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The network.
@@ -1680,13 +1685,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Resource URI of the Network that will be peered with this
-   * Transport. This field must be provided during resource creation and cannot
-   * be changed.
+   * Optional. Immutable. Resource URI of the Network that will be peered with
+   * this Transport. This field must be provided during resource creation and
+   * cannot be changed.
    * </pre>
    *
    * <code>
-   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for network.
@@ -1785,11 +1790,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user supplied account id for the CSP associated with the
-   * remote profile.
+   * Optional. Immutable. The user supplied account id for the CSP associated
+   * with the remote profile.
    * </pre>
    *
-   * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The remoteAccountId.
    */
@@ -1810,11 +1817,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The user supplied account id for the CSP associated with the
-   * remote profile.
+   * Optional. Immutable. The user supplied account id for the CSP associated
+   * with the remote profile.
    * </pre>
    *
-   * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for remoteAccountId.
    */
@@ -1888,6 +1897,117 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int HUB_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object hub_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+   * hub must be in the same project as the Transport. Format:
+   * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+   * </pre>
+   *
+   * <code>
+   * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The hub.
+   */
+  @java.lang.Override
+  public java.lang.String getHub() {
+    java.lang.Object ref = hub_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      hub_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+   * hub must be in the same project as the Transport. Format:
+   * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+   * </pre>
+   *
+   * <code>
+   * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for hub.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getHubBytes() {
+    java.lang.Object ref = hub_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      hub_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PSC_ROUTING_ENABLED_FIELD_NUMBER = 20;
+  private boolean pscRoutingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Controls whether a Routing VPC Spoke should be created
+   * and attached to the NCC Hub. This will provide Private Service Connect
+   * (PSC) connectivity through NCC. This can only be set when the Transport is
+   * first created.
+   * </pre>
+   *
+   * <code>
+   * bool psc_routing_enabled = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The pscRoutingEnabled.
+   */
+  @java.lang.Override
+  public boolean getPscRoutingEnabled() {
+    return pscRoutingEnabled_;
+  }
+
+  public static final int AUTO_ACCEPT_FIELD_NUMBER = 21;
+  private boolean autoAccept_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Controls whether resources proposed by the Transport
+   * are automatically accepted on behalf of the user. List of actions that can
+   * be automatically accepted are:
+   * 1. VPC Peering creation
+   * 2. Routing VPC Spoke creation
+   * 3. Hybrid Spoke creation
+   * </pre>
+   *
+   * <code>
+   * bool auto_accept = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The autoAccept.
+   */
+  @java.lang.Override
+  public boolean getAutoAccept() {
+    return autoAccept_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1957,6 +2077,15 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(peeringNetwork_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 18, peeringNetwork_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hub_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 19, hub_);
+    }
+    if (pscRoutingEnabled_ != false) {
+      output.writeBool(20, pscRoutingEnabled_);
+    }
+    if (autoAccept_ != false) {
+      output.writeBool(21, autoAccept_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2036,6 +2165,15 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(peeringNetwork_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(18, peeringNetwork_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(hub_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(19, hub_);
+    }
+    if (pscRoutingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, pscRoutingEnabled_);
+    }
+    if (autoAccept_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, autoAccept_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2075,6 +2213,9 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     if (!getAdvertisedRoutesList().equals(other.getAdvertisedRoutesList())) return false;
     if (!getRemoteAccountId().equals(other.getRemoteAccountId())) return false;
     if (!getPeeringNetwork().equals(other.getPeeringNetwork())) return false;
+    if (!getHub().equals(other.getHub())) return false;
+    if (getPscRoutingEnabled() != other.getPscRoutingEnabled()) return false;
+    if (getAutoAccept() != other.getAutoAccept()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2128,6 +2269,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getRemoteAccountId().hashCode();
     hash = (37 * hash) + PEERING_NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getPeeringNetwork().hashCode();
+    hash = (37 * hash) + HUB_FIELD_NUMBER;
+    hash = (53 * hash) + getHub().hashCode();
+    hash = (37 * hash) + PSC_ROUTING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPscRoutingEnabled());
+    hash = (37 * hash) + AUTO_ACCEPT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoAccept());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2326,6 +2473,9 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
       advertisedRoutes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       remoteAccountId_ = "";
       peeringNetwork_ = "";
+      hub_ = "";
+      pscRoutingEnabled_ = false;
+      autoAccept_ = false;
       return this;
     }
 
@@ -2418,6 +2568,15 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.peeringNetwork_ = peeringNetwork_;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.hub_ = hub_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.pscRoutingEnabled_ = pscRoutingEnabled_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.autoAccept_ = autoAccept_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2506,6 +2665,17 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
         peeringNetwork_ = other.peeringNetwork_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (!other.getHub().isEmpty()) {
+        hub_ = other.hub_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      if (other.getPscRoutingEnabled() != false) {
+        setPscRoutingEnabled(other.getPscRoutingEnabled());
+      }
+      if (other.getAutoAccept() != false) {
+        setAutoAccept(other.getAutoAccept());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2644,6 +2814,24 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00010000;
                 break;
               } // case 146
+            case 154:
+              {
+                hub_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 154
+            case 160:
+              {
+                pscRoutingEnabled_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 160
+            case 168:
+              {
+                autoAccept_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 168
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3487,12 +3675,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the remoteTransportProfile that this Transport is
-     * connecting to.
+     * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+     * is connecting to.
      * </pre>
      *
      * <code>
-     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The remoteProfile.
@@ -3513,12 +3701,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the remoteTransportProfile that this Transport is
-     * connecting to.
+     * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+     * is connecting to.
      * </pre>
      *
      * <code>
-     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for remoteProfile.
@@ -3539,12 +3727,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the remoteTransportProfile that this Transport is
-     * connecting to.
+     * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+     * is connecting to.
      * </pre>
      *
      * <code>
-     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The remoteProfile to set.
@@ -3564,12 +3752,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the remoteTransportProfile that this Transport is
-     * connecting to.
+     * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+     * is connecting to.
      * </pre>
      *
      * <code>
-     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3585,12 +3773,12 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Name of the remoteTransportProfile that this Transport is
-     * connecting to.
+     * Optional. Immutable. Name of the remoteTransportProfile that this Transport
+     * is connecting to.
      * </pre>
      *
      * <code>
-     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string remote_profile = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for remoteProfile to set.
@@ -3613,12 +3801,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Key used for establishing a connection with the remote transport.
-     * This key can only be provided if the profile supports an INPUT key flow and
-     * the resource is in the PENDING_KEY state.
+     * Optional. Immutable. Key used for establishing a connection with the remote
+     * transport. This key can only be provided if the profile supports an INPUT
+     * key flow and the resource is in the PENDING_KEY state.
      * </pre>
      *
-     * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The providedActivationKey.
      */
@@ -3638,12 +3828,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Key used for establishing a connection with the remote transport.
-     * This key can only be provided if the profile supports an INPUT key flow and
-     * the resource is in the PENDING_KEY state.
+     * Optional. Immutable. Key used for establishing a connection with the remote
+     * transport. This key can only be provided if the profile supports an INPUT
+     * key flow and the resource is in the PENDING_KEY state.
      * </pre>
      *
-     * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for providedActivationKey.
      */
@@ -3663,12 +3855,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Key used for establishing a connection with the remote transport.
-     * This key can only be provided if the profile supports an INPUT key flow and
-     * the resource is in the PENDING_KEY state.
+     * Optional. Immutable. Key used for establishing a connection with the remote
+     * transport. This key can only be provided if the profile supports an INPUT
+     * key flow and the resource is in the PENDING_KEY state.
      * </pre>
      *
-     * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The providedActivationKey to set.
      * @return This builder for chaining.
@@ -3687,12 +3881,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Key used for establishing a connection with the remote transport.
-     * This key can only be provided if the profile supports an INPUT key flow and
-     * the resource is in the PENDING_KEY state.
+     * Optional. Immutable. Key used for establishing a connection with the remote
+     * transport. This key can only be provided if the profile supports an INPUT
+     * key flow and the resource is in the PENDING_KEY state.
      * </pre>
      *
-     * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -3707,12 +3903,14 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Key used for establishing a connection with the remote transport.
-     * This key can only be provided if the profile supports an INPUT key flow and
-     * the resource is in the PENDING_KEY state.
+     * Optional. Immutable. Key used for establishing a connection with the remote
+     * transport. This key can only be provided if the profile supports an INPUT
+     * key flow and the resource is in the PENDING_KEY state.
      * </pre>
      *
-     * <code>string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string provided_activation_key = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for providedActivationKey to set.
      * @return This builder for chaining.
@@ -4330,13 +4528,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Resource URI of the Network that will be peered with this
-     * Transport. This field must be provided during resource creation and cannot
-     * be changed.
+     * Optional. Immutable. Resource URI of the Network that will be peered with
+     * this Transport. This field must be provided during resource creation and
+     * cannot be changed.
      * </pre>
      *
      * <code>
-     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The network.
@@ -4357,13 +4555,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Resource URI of the Network that will be peered with this
-     * Transport. This field must be provided during resource creation and cannot
-     * be changed.
+     * Optional. Immutable. Resource URI of the Network that will be peered with
+     * this Transport. This field must be provided during resource creation and
+     * cannot be changed.
      * </pre>
      *
      * <code>
-     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for network.
@@ -4384,13 +4582,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Resource URI of the Network that will be peered with this
-     * Transport. This field must be provided during resource creation and cannot
-     * be changed.
+     * Optional. Immutable. Resource URI of the Network that will be peered with
+     * this Transport. This field must be provided during resource creation and
+     * cannot be changed.
      * </pre>
      *
      * <code>
-     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The network to set.
@@ -4410,13 +4608,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Resource URI of the Network that will be peered with this
-     * Transport. This field must be provided during resource creation and cannot
-     * be changed.
+     * Optional. Immutable. Resource URI of the Network that will be peered with
+     * this Transport. This field must be provided during resource creation and
+     * cannot be changed.
      * </pre>
      *
      * <code>
-     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4432,13 +4630,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Resource URI of the Network that will be peered with this
-     * Transport. This field must be provided during resource creation and cannot
-     * be changed.
+     * Optional. Immutable. Resource URI of the Network that will be peered with
+     * this Transport. This field must be provided during resource creation and
+     * cannot be changed.
      * </pre>
      *
      * <code>
-     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string network = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for network to set.
@@ -4662,11 +4860,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user supplied account id for the CSP associated with the
-     * remote profile.
+     * Optional. Immutable. The user supplied account id for the CSP associated
+     * with the remote profile.
      * </pre>
      *
-     * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The remoteAccountId.
      */
@@ -4686,11 +4886,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user supplied account id for the CSP associated with the
-     * remote profile.
+     * Optional. Immutable. The user supplied account id for the CSP associated
+     * with the remote profile.
      * </pre>
      *
-     * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for remoteAccountId.
      */
@@ -4710,11 +4912,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user supplied account id for the CSP associated with the
-     * remote profile.
+     * Optional. Immutable. The user supplied account id for the CSP associated
+     * with the remote profile.
      * </pre>
      *
-     * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The remoteAccountId to set.
      * @return This builder for chaining.
@@ -4733,11 +4937,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user supplied account id for the CSP associated with the
-     * remote profile.
+     * Optional. Immutable. The user supplied account id for the CSP associated
+     * with the remote profile.
      * </pre>
      *
-     * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -4752,11 +4958,13 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The user supplied account id for the CSP associated with the
-     * remote profile.
+     * Optional. Immutable. The user supplied account id for the CSP associated
+     * with the remote profile.
      * </pre>
      *
-     * <code>string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string remote_account_id = 17 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for remoteAccountId to set.
      * @return This builder for chaining.
@@ -4889,6 +5097,285 @@ public final class Transport extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       peeringNetwork_ = value;
       bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object hub_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+     * hub must be in the same project as the Transport. Format:
+     * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+     * </pre>
+     *
+     * <code>
+     * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The hub.
+     */
+    public java.lang.String getHub() {
+      java.lang.Object ref = hub_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        hub_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+     * hub must be in the same project as the Transport. Format:
+     * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+     * </pre>
+     *
+     * <code>
+     * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for hub.
+     */
+    public com.google.protobuf.ByteString getHubBytes() {
+      java.lang.Object ref = hub_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        hub_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+     * hub must be in the same project as the Transport. Format:
+     * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+     * </pre>
+     *
+     * <code>
+     * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The hub to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHub(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      hub_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+     * hub must be in the same project as the Transport. Format:
+     * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+     * </pre>
+     *
+     * <code>
+     * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHub() {
+      hub_ = getDefaultInstance().getHub();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The NCC Hub that the Transport should attach to. The
+     * hub must be in the same project as the Transport. Format:
+     * `{hub}` or `projects/{project}/locations/global/hubs/{hub}`
+     * </pre>
+     *
+     * <code>
+     * string hub = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for hub to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHubBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      hub_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    private boolean pscRoutingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether a Routing VPC Spoke should be created
+     * and attached to the NCC Hub. This will provide Private Service Connect
+     * (PSC) connectivity through NCC. This can only be set when the Transport is
+     * first created.
+     * </pre>
+     *
+     * <code>
+     * bool psc_routing_enabled = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The pscRoutingEnabled.
+     */
+    @java.lang.Override
+    public boolean getPscRoutingEnabled() {
+      return pscRoutingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether a Routing VPC Spoke should be created
+     * and attached to the NCC Hub. This will provide Private Service Connect
+     * (PSC) connectivity through NCC. This can only be set when the Transport is
+     * first created.
+     * </pre>
+     *
+     * <code>
+     * bool psc_routing_enabled = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The pscRoutingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscRoutingEnabled(boolean value) {
+
+      pscRoutingEnabled_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether a Routing VPC Spoke should be created
+     * and attached to the NCC Hub. This will provide Private Service Connect
+     * (PSC) connectivity through NCC. This can only be set when the Transport is
+     * first created.
+     * </pre>
+     *
+     * <code>
+     * bool psc_routing_enabled = 20 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscRoutingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      pscRoutingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean autoAccept_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether resources proposed by the Transport
+     * are automatically accepted on behalf of the user. List of actions that can
+     * be automatically accepted are:
+     * 1. VPC Peering creation
+     * 2. Routing VPC Spoke creation
+     * 3. Hybrid Spoke creation
+     * </pre>
+     *
+     * <code>
+     * bool auto_accept = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The autoAccept.
+     */
+    @java.lang.Override
+    public boolean getAutoAccept() {
+      return autoAccept_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether resources proposed by the Transport
+     * are automatically accepted on behalf of the user. List of actions that can
+     * be automatically accepted are:
+     * 1. VPC Peering creation
+     * 2. Routing VPC Spoke creation
+     * 3. Hybrid Spoke creation
+     * </pre>
+     *
+     * <code>
+     * bool auto_accept = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The autoAccept to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoAccept(boolean value) {
+
+      autoAccept_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Controls whether resources proposed by the Transport
+     * are automatically accepted on behalf of the user. List of actions that can
+     * be automatically accepted are:
+     * 1. VPC Peering creation
+     * 2. Routing VPC Spoke creation
+     * 3. Hybrid Spoke creation
+     * </pre>
+     *
+     * <code>
+     * bool auto_accept = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoAccept() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      autoAccept_ = false;
       onChanged();
       return this;
     }
