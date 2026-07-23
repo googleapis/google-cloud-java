@@ -30,6 +30,7 @@ import com.google.protobuf.Timestamp;
 import com.google.type.LatLng;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import org.junit.Test;
 
@@ -37,106 +38,168 @@ public class OrderTest {
 
   @Test
   public void verifyOrder() {
-    Value[][] groups = new Value[67][];
+    List<Value[]> groups = new ArrayList<>();
 
-    groups[0] = new Value[] {nullValue()};
+    groups.add(new Value[] {nullValue()});
 
-    groups[1] = new Value[] {booleanValue(false)};
-    groups[2] = new Value[] {booleanValue(true)};
+    groups.add(new Value[] {minKeyValue(), minKeyValue()});
+
+    groups.add(new Value[] {booleanValue(false)});
+    groups.add(new Value[] {booleanValue(true)});
 
     // numbers
-    groups[3] = new Value[] {doubleValue(Double.NaN), doubleValue(Double.NaN)};
-    groups[4] = new Value[] {doubleValue(Double.NEGATIVE_INFINITY)};
-    groups[5] = new Value[] {doubleValue((double) Long.MIN_VALUE - 100)};
-    groups[6] = new Value[] {intValue((long) Integer.MIN_VALUE - 1)};
-    groups[7] = new Value[] {intValue(Integer.MIN_VALUE)};
-    groups[8] = new Value[] {doubleValue(-1.1)};
-    // Integers and Doubles order the same.
-    groups[9] = new Value[] {intValue(-1), doubleValue(-1.0)};
-    groups[10] = new Value[] {doubleValue(-Double.MIN_VALUE)};
+    groups.add(
+        new Value[] {doubleValue(Double.NaN), doubleValue(Double.NaN), decimal128Value("NaN")});
+    groups.add(new Value[] {doubleValue(Double.NEGATIVE_INFINITY), decimal128Value("-Infinity")});
+    groups.add(new Value[] {doubleValue((double) Long.MIN_VALUE - 100)});
+    groups.add(
+        new Value[] {intValue((long) Integer.MIN_VALUE - 1), decimal128Value("-2147483649")});
+    // 64-bit and 32-bit integers order together numerically, so the same
+    // value (-2147483648) as int or long should order equally.
+    groups.add(
+        new Value[] {
+          intValue(Integer.MIN_VALUE), int32Value(Integer.MIN_VALUE), decimal128Value("-2147483648")
+        });
+    groups.add(new Value[] {doubleValue(-1.1)});
+    // Integers and Doubles and int32 order together numerically.
+    groups.add(
+        new Value[] {intValue(-1), doubleValue(-1.0), int32Value(-1), decimal128Value("-1")});
+    groups.add(new Value[] {doubleValue(-Double.MIN_VALUE)});
     // zeros all compare the same.
-    groups[11] = new Value[] {intValue(0), doubleValue(-0.0), doubleValue(0.0), doubleValue(+0.0)};
-    groups[12] = new Value[] {doubleValue(Double.MIN_VALUE)};
-    groups[13] = new Value[] {intValue(1), doubleValue(1.0)};
-    groups[14] = new Value[] {doubleValue(1.1)};
-    groups[15] = new Value[] {intValue(Integer.MAX_VALUE)};
-    groups[16] = new Value[] {intValue((long) Integer.MAX_VALUE + 1)};
-    groups[17] = new Value[] {doubleValue(((double) Long.MAX_VALUE) + 100)};
-    groups[18] = new Value[] {doubleValue(Double.POSITIVE_INFINITY)};
+    groups.add(
+        new Value[] {
+          intValue(0),
+          doubleValue(-0.0),
+          doubleValue(0.0),
+          doubleValue(+0.0),
+          int32Value(0),
+          decimal128Value("+0"),
+          decimal128Value("0"),
+          decimal128Value("-0"),
+          decimal128Value("+0.0"),
+          decimal128Value("0.0"),
+          decimal128Value("-0.0"),
+          decimal128Value("+00.000"),
+          decimal128Value("00.000"),
+          decimal128Value("-00.000"),
+          decimal128Value("-00.000e-10"),
+          decimal128Value("-00.000e-0"),
+          decimal128Value("-00.000e10"),
+        });
+    groups.add(new Value[] {doubleValue(Double.MIN_VALUE)});
+    groups.add(new Value[] {intValue(1), doubleValue(1.0), int32Value(1)});
+    groups.add(new Value[] {doubleValue(1.1)});
+    groups.add(new Value[] {doubleValue(2.0), decimal128Value("2.0")});
+    groups.add(new Value[] {int32Value(11), decimal128Value("11")});
+    groups.add(new Value[] {int32Value(12), decimal128Value("12")});
+    groups.add(
+        new Value[] {
+          intValue(Integer.MAX_VALUE), int32Value(Integer.MAX_VALUE), decimal128Value("2147483647")
+        });
+    groups.add(new Value[] {intValue((long) Integer.MAX_VALUE + 1), decimal128Value("2147483648")});
+    groups.add(new Value[] {doubleValue(((double) Long.MAX_VALUE) + 100)});
+    groups.add(new Value[] {doubleValue(Double.POSITIVE_INFINITY), decimal128Value("Infinity")});
 
-    groups[19] = new Value[] {timestampValue(123, 0)};
-    groups[20] = new Value[] {timestampValue(123, 123)};
-    groups[21] = new Value[] {timestampValue(345, 0)};
+    groups.add(new Value[] {timestampValue(123, 0)});
+    groups.add(new Value[] {timestampValue(123, 123)});
+    groups.add(new Value[] {timestampValue(345, 0)});
+
+    // BSON Timestamp
+    groups.add(new Value[] {bsonTimestampValue(123, 4)});
+    groups.add(new Value[] {bsonTimestampValue(123, 5)});
+    groups.add(new Value[] {bsonTimestampValue(124, 0)});
 
     // strings
-    groups[22] = new Value[] {stringValue("")};
-    groups[23] = new Value[] {stringValue("\u0000\ud7ff\ue000\uffff")};
-    groups[24] = new Value[] {stringValue("(╯°□°）╯︵ ┻━┻")};
-    groups[25] = new Value[] {stringValue("a")};
-    groups[26] = new Value[] {stringValue("abc def")};
+    groups.add(new Value[] {stringValue("")});
+    groups.add(new Value[] {stringValue("\u0000\ud7ff\ue000\uffff")});
+    groups.add(new Value[] {stringValue("(╯°□°）╯︵ ┻━┻")});
+    groups.add(new Value[] {stringValue("a")});
+    groups.add(new Value[] {stringValue("abc def")});
     // latin small letter e + combining acute accent + latin small letter b
-    groups[27] = new Value[] {stringValue("e\u0301b")};
-    groups[28] = new Value[] {stringValue("æ")};
+    groups.add(new Value[] {stringValue("e\u0301b")});
+    groups.add(new Value[] {stringValue("æ")});
     // latin small letter e with acute accent + latin small letter a
-    groups[29] = new Value[] {stringValue("\u00e9a")};
+    groups.add(new Value[] {stringValue("\u00e9a")});
 
     // blobs
-    groups[30] = new Value[] {blobValue(new byte[] {})};
-    groups[31] = new Value[] {blobValue(new byte[] {0})};
-    groups[32] = new Value[] {blobValue(new byte[] {0, 1, 2, 3, 4})};
-    groups[33] = new Value[] {blobValue(new byte[] {0, 1, 2, 4, 3})};
-    groups[34] = new Value[] {blobValue(new byte[] {127})};
+    groups.add(new Value[] {blobValue(new byte[] {})});
+    groups.add(new Value[] {blobValue(new byte[] {0})});
+    groups.add(new Value[] {blobValue(new byte[] {0, 1, 2, 3, 4})});
+    groups.add(new Value[] {blobValue(new byte[] {0, 1, 2, 4, 3})});
+    groups.add(new Value[] {blobValue(new byte[] {127})});
+
+    // BSON Binary Data
+    groups.add(new Value[] {bsonBinaryData(5, new byte[] {})});
+    groups.add(new Value[] {bsonBinaryData(5, new byte[] {0}), bsonBinaryData(5, new byte[] {0})});
+    groups.add(new Value[] {bsonBinaryData(7, new byte[] {0, 1, 2, 3, 4})});
+    groups.add(new Value[] {bsonBinaryData(7, new byte[] {0, 1, 2, 4, 3})});
 
     // resource names
-    groups[35] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc1")};
-    groups[36] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2")};
-    groups[37] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc1")};
-    groups[38] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc2")};
-    groups[39] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c10/doc1")};
-    groups[40] = new Value[] {referenceValue("projects/p1/databases/d1/documents/c2/doc1")};
-    groups[41] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1/doc1")};
-    groups[42] = new Value[] {referenceValue("projects/p2/databases/d2/documents/c1-/doc1")};
-    groups[43] = new Value[] {referenceValue("projects/p2/databases/d3/documents/c1-/doc1")};
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2")});
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c1/doc2/c2/doc2")});
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c10/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p1/databases/d1/documents/c2/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p2/databases/d2/documents/c1/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p2/databases/d2/documents/c1-/doc1")});
+    groups.add(new Value[] {referenceValue("projects/p2/databases/d3/documents/c1-/doc1")});
+
+    // BSON ObjectId
+    groups.add(new Value[] {bsonObjectIdValue("foo"), bsonObjectIdValue("foo")});
+    groups.add(new Value[] {bsonObjectIdValue("foo\\u0301")});
+    groups.add(new Value[] {bsonObjectIdValue("xyz")});
+    groups.add(
+        new Value[] {bsonObjectIdValue("Ḟoo")}); // with latin capital letter f with dot above
 
     // geo points
-    groups[44] = new Value[] {geoPointValue(-90, -180)};
-    groups[45] = new Value[] {geoPointValue(-90, 0)};
-    groups[46] = new Value[] {geoPointValue(-90, 180)};
-    groups[47] = new Value[] {geoPointValue(0, -180)};
-    groups[48] = new Value[] {geoPointValue(0, 0)};
-    groups[49] = new Value[] {geoPointValue(0, 180)};
-    groups[50] = new Value[] {geoPointValue(1, -180)};
-    groups[51] = new Value[] {geoPointValue(1, 0)};
-    groups[52] = new Value[] {geoPointValue(1, 180)};
-    groups[53] = new Value[] {geoPointValue(90, -180)};
-    groups[54] = new Value[] {geoPointValue(90, 0)};
-    groups[55] = new Value[] {geoPointValue(90, 180)};
+    groups.add(new Value[] {geoPointValue(-90, -180)});
+    groups.add(new Value[] {geoPointValue(-90, 0)});
+    groups.add(new Value[] {geoPointValue(-90, 180)});
+    groups.add(new Value[] {geoPointValue(0, -180)});
+    groups.add(new Value[] {geoPointValue(0, 0)});
+    groups.add(new Value[] {geoPointValue(0, 180)});
+    groups.add(new Value[] {geoPointValue(1, -180)});
+    groups.add(new Value[] {geoPointValue(1, 0)});
+    groups.add(new Value[] {geoPointValue(1, 180)});
+    groups.add(new Value[] {geoPointValue(90, -180)});
+    groups.add(new Value[] {geoPointValue(90, 0)});
+    groups.add(new Value[] {geoPointValue(90, 180)});
+
+    // Regex
+    groups.add(new Value[] {regexValue("a", "bar1"), regexValue("a", "bar1")});
+    groups.add(new Value[] {regexValue("foo", "bar1")});
+    groups.add(new Value[] {regexValue("foo", "bar2")});
+    groups.add(new Value[] {regexValue("go", "bar1")});
 
     // arrays
-    groups[56] = new Value[] {arrayValue()};
-    groups[57] = new Value[] {arrayValue(stringValue("bar"))};
-    groups[58] = new Value[] {arrayValue(stringValue("foo"))};
-    groups[59] = new Value[] {arrayValue(stringValue("foo"), intValue(0))};
-    groups[60] = new Value[] {arrayValue(stringValue("foo"), intValue(1))};
-    groups[61] = new Value[] {arrayValue(stringValue("foo"), stringValue("0"))};
+    groups.add(new Value[] {arrayValue()});
+    groups.add(new Value[] {arrayValue(stringValue("bar"))});
+    groups.add(new Value[] {arrayValue(stringValue("foo"))});
+    groups.add(new Value[] {arrayValue(stringValue("foo"), intValue(0))});
+    groups.add(new Value[] {arrayValue(stringValue("foo"), intValue(1))});
+    groups.add(new Value[] {arrayValue(stringValue("foo"), stringValue("0"))});
 
     // objects
-    groups[62] = new Value[] {objectValue("bar", intValue(0))};
-    groups[63] = new Value[] {objectValue("bar", intValue(0), "foo", intValue(1))};
-    groups[64] = new Value[] {objectValue("bar", intValue(1))};
-    groups[65] = new Value[] {objectValue("bar", intValue(2))};
-    groups[66] = new Value[] {objectValue("bar", stringValue("0"))};
+    groups.add(new Value[] {objectValue("bar", intValue(0))});
+    groups.add(new Value[] {objectValue("bar", intValue(0), "foo", intValue(1))});
+    groups.add(new Value[] {objectValue("bar", intValue(1))});
+    groups.add(new Value[] {objectValue("bar", intValue(2))});
+    groups.add(new Value[] {objectValue("bar", stringValue("0"))});
 
-    for (int left = 0; left < groups.length; left++) {
-      for (int right = 0; right < groups.length; right++) {
-        for (int i = 0; i < groups[left].length; i++) {
-          for (int j = 0; j < groups[right].length; j++) {
+    groups.add(new Value[] {maxKeyValue(), maxKeyValue()});
+
+    for (int left = 0; left < groups.size(); left++) {
+      for (int right = 0; right < groups.size(); right++) {
+        for (int i = 0; i < groups.get(left).length; i++) {
+          for (int j = 0; j < groups.get(right).length; j++) {
             assertEquals(
                 String.format(
                     "Order does not match for: groups[%d][%d] and groups[%d][%d]",
                     left, i, right, j),
                 Integer.compare(left, right),
-                Integer.compare(Order.INSTANCE.compare(groups[left][i], groups[right][j]), 0));
+                Integer.compare(
+                    Order.INSTANCE.compare(groups.get(left)[i], groups.get(right)[j]), 0));
           }
         }
       }
@@ -169,6 +232,40 @@ public class OrderTest {
 
   private Value nullValue() {
     return Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+  }
+
+  private Value minKeyValue() {
+    return Value.newBuilder().setMapValue(MinKey.instance().toProto()).build();
+  }
+
+  private Value maxKeyValue() {
+    return Value.newBuilder().setMapValue(MaxKey.instance().toProto()).build();
+  }
+
+  private Value regexValue(String pattern, String options) {
+    return Value.newBuilder().setMapValue(new RegexValue(pattern, options).toProto()).build();
+  }
+
+  private Value int32Value(int value) {
+    return Value.newBuilder().setMapValue(new Int32Value(value).toProto()).build();
+  }
+
+  private Value decimal128Value(String value) {
+    return Value.newBuilder().setMapValue(new Decimal128Value(value).toProto()).build();
+  }
+
+  private Value bsonObjectIdValue(String oid) {
+    return Value.newBuilder().setMapValue(new BsonObjectId(oid).toProto()).build();
+  }
+
+  private Value bsonTimestampValue(long seconds, long increment) {
+    return Value.newBuilder().setMapValue(new BsonTimestamp(seconds, increment).toProto()).build();
+  }
+
+  private Value bsonBinaryData(int subtype, byte[] data) {
+    return Value.newBuilder()
+        .setMapValue(BsonBinaryData.fromBytes(subtype, data).toProto())
+        .build();
   }
 
   private Value timestampValue(long seconds, int nanos) {

@@ -25,21 +25,37 @@ import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeTrue;
 
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
+import com.google.cloud.Timestamp;
+import com.google.cloud.firestore.Blob;
+import com.google.cloud.firestore.BsonBinaryData;
+import com.google.cloud.firestore.BsonObjectId;
+import com.google.cloud.firestore.BsonTimestamp;
 import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.Decimal128Value;
 import com.google.cloud.firestore.DocumentChange;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
 import com.google.cloud.firestore.FieldPath;
 import com.google.cloud.firestore.FieldValue;
+import com.google.cloud.firestore.Filter;
 import com.google.cloud.firestore.FirestoreException;
+import com.google.cloud.firestore.GeoPoint;
+import com.google.cloud.firestore.Int32Value;
 import com.google.cloud.firestore.ListenerRegistration;
 import com.google.cloud.firestore.LocalFirestoreHelper;
+import com.google.cloud.firestore.MaxKey;
+import com.google.cloud.firestore.MinKey;
 import com.google.cloud.firestore.Query;
 import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.RegexValue;
+import com.google.cloud.firestore.WriteResult;
 import com.google.cloud.firestore.it.ITQueryWatchTest.QuerySnapshotEventListener.ListenerAssertions;
 import com.google.common.base.Joiner;
 import com.google.common.base.Joiner.MapJoiner;
@@ -60,6 +76,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 import org.junit.Before;
@@ -803,6 +820,256 @@ public final class ITQueryWatchTest extends ITBaseTest {
     }
   }
 
+  private List<Map<String, Object>> toDataArray(QuerySnapshot snapshot) {
+    return snapshot.getDocuments().stream()
+        .map(queryDocumentSnapshot -> queryDocumentSnapshot.getData())
+        .collect(Collectors.toList());
+  }
+
+  private List<String> toDocumentIdArray(QuerySnapshot snapshot) {
+    return snapshot.getDocuments().stream()
+        .map(queryDocumentSnapshot -> queryDocumentSnapshot.getId())
+        .collect(Collectors.toList());
+  }
+
+  @Test
+  public void canFilterAndOrderObjectId() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", new BsonObjectId("507f191e810c19729de860ea")),
+            "doc2", map("key", new BsonObjectId("507f191e810c19729de860eb")),
+            "doc3", map("key", new BsonObjectId("507f191e810c19729de860ec")));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThan("key", new BsonObjectId("507f191e810c19729de860ea"))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+
+    snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereIn(
+                    "key",
+                    Arrays.asList(
+                        new BsonObjectId("507f191e810c19729de860ea"),
+                        new BsonObjectId("507f191e810c19729de860eb")))
+                .orderBy("key", Direction.DESCENDING));
+    resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc2"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderInt32() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", new Int32Value(-1)),
+            "doc2", map("key", new Int32Value(1)),
+            "doc3", map("key", new Int32Value(2)));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThanOrEqualTo("key", new Int32Value(1))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+
+    snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereNotIn("key", Arrays.asList(new Int32Value(1)))
+                .orderBy("key", Direction.DESCENDING));
+    resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderDecimal128() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", new Decimal128Value("-1.2e3")),
+            "doc2", map("key", new Decimal128Value("0")),
+            "doc3", map("key", new Decimal128Value("1.2e-3")));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThanOrEqualTo("key", new Decimal128Value("-1.1"))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+
+    snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereNotIn("key", Arrays.asList(new Decimal128Value("1.2e-3")))
+                .orderBy("key", Direction.DESCENDING));
+    resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc2"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderBsonTimestamp() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", new BsonTimestamp(1, 1)),
+            "doc2", map("key", new BsonTimestamp(1, 2)),
+            "doc3", map("key", new BsonTimestamp(2, 1)));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThan("key", new BsonTimestamp(1, 1))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+
+    snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereNotEqualTo("key", new BsonTimestamp(1, 1))
+                .orderBy("key", Direction.DESCENDING));
+    resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+  }
+
+  @Test
+  public void canFilterAndOrderBsonBinaryData() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3})),
+            "doc2", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 4})),
+            "doc3", map("key", BsonBinaryData.fromBytes(2, new byte[] {1, 2, 3})));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThan("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3}))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+
+    snapshot =
+        getFirstSnapshot(
+            randomColl
+                .whereGreaterThanOrEqualTo("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3}))
+                .whereLessThan("key", BsonBinaryData.fromBytes(2, new byte[] {1, 2, 3}))
+                .orderBy("key", Direction.DESCENDING));
+    resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc2"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderRegexValues() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", new RegexValue("^bar", "i")),
+            "doc2", map("key", new RegexValue("^bar", "x")),
+            "doc3", map("key", new RegexValue("^baz", "i")));
+    addDocs(data);
+
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl
+                .where(
+                    Filter.or(
+                        Filter.greaterThan("key", new RegexValue("^bar", "x")),
+                        Filter.notEqualTo("key", new RegexValue("^bar", "x"))))
+                .orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderMinKeys() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", MinKey.instance()),
+            "doc2", map("key", MinKey.instance()),
+            "doc3", map("key", MaxKey.instance()));
+    addDocs(data);
+
+    // MinKeys are equal, would sort by documentId as secondary order
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl.whereEqualTo("key", MinKey.instance()).orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc2"), data.get("doc1")));
+  }
+
+  @Test
+  public void canFilterAndOrderMaxKeys() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "doc1", map("key", MinKey.instance()),
+            "doc2", map("key", MaxKey.instance()),
+            "doc3", map("key", MaxKey.instance()));
+    addDocs(data);
+
+    // MaxKeys are equal, would sort by documentId as secondary order
+    QuerySnapshot snapshot =
+        getFirstSnapshot(
+            randomColl.whereEqualTo("key", MaxKey.instance()).orderBy("key", Direction.DESCENDING));
+    List<Map<String, Object>> resultData = toDataArray(snapshot);
+    assertThat(resultData).isEqualTo(Arrays.asList(data.get("doc3"), data.get("doc2")));
+  }
+
+  @Test
+  public void crossTypeOrder() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
+    Map<String, Map<String, Object>> data =
+        map(
+            "t", map("key", null),
+            "u", map("key", MinKey.instance()),
+            "c", map("key", true),
+            "d", map("key", Double.NaN),
+            "e", map("key", new Int32Value(1)),
+            "f", map("key", 2.0),
+            "g", map("key", new Decimal128Value("2.01e-5")),
+            "h", map("key", 3),
+            "i", map("key", Timestamp.ofTimeSecondsAndNanos(100, 123456000)),
+            "j", map("key", new BsonTimestamp(1, 2)),
+            "k", map("key", "string"),
+            "l", map("key", Blob.fromBytes(new byte[] {0, 1, 3})),
+            "m", map("key", BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3})),
+            "n", map("key", randomColl.getFirestore().collection("c1").document("doc")),
+            "o", map("key", new BsonObjectId("507f191e810c19729de860ea")),
+            "p", map("key", new GeoPoint(0, 0)),
+            "q", map("key", new RegexValue("^foo", "i")),
+            "r", map("key", Arrays.asList(1, 2)),
+            "s", map("key", FieldValue.vector(new double[] {1, 2})),
+            "a", map("key", Collections.singletonMap("a", 1)),
+            "b", map("key", MaxKey.instance()));
+    addDocs(data);
+
+    List<String> expectedResult =
+        Arrays.asList(
+            "b", "a", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "f", "e", "g",
+            "d", "c", "u", "t");
+
+    Query query = randomColl.orderBy("key", Direction.DESCENDING);
+    QuerySnapshot getResult = query.get().get();
+    QuerySnapshot listenResult = getFirstSnapshot(query);
+    assertThat(toDocumentIdArray(getResult)).isEqualTo(expectedResult);
+    assertThat(toDocumentIdArray(listenResult)).isEqualTo(expectedResult);
+  }
+
   /**
    * A tuple class used by {@code #queryWatch}. This class represents an event delivered to the
    * registered query listener.
@@ -1138,6 +1405,32 @@ public final class ITQueryWatchTest extends ITBaseTest {
     ListenResponse.Builder response = ListenResponse.newBuilder();
     response.setFilter(ExistenceFilter.newBuilder().setCount(documentCount).build());
     return response.build();
+  }
+
+  private void addDocs(Map<String, Map<String, Object>> docToData) throws Exception {
+    List<ApiFuture<WriteResult>> futures = new ArrayList<>();
+    for (Map.Entry<String, Map<String, Object>> entry : docToData.entrySet()) {
+      futures.add(randomColl.document(entry.getKey()).set(entry.getValue()));
+    }
+    ApiFutures.allAsList(futures).get();
+  }
+
+  /**
+   * Initiates a snapshot listener for the given query, and returns the first snapshot it receives.
+   */
+  private QuerySnapshot getFirstSnapshot(Query query) throws InterruptedException {
+    CountDownLatch latch = new CountDownLatch(1);
+    AtomicReference<QuerySnapshot> snapshot = new AtomicReference<>();
+    ListenerRegistration registration =
+        query.addSnapshotListener(
+            (value, error) -> {
+              snapshot.set(value);
+              latch.countDown();
+            });
+
+    latch.await();
+    registration.remove();
+    return snapshot.get();
   }
 
   @Test
