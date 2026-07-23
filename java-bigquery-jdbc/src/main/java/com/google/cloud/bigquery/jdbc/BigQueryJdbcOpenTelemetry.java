@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
@@ -372,12 +373,13 @@ public class BigQueryJdbcOpenTelemetry {
                       .addPropertiesSupplier(() -> props)
                       .addSpanExporterCustomizer(
                           (spanExporter, configProperties) -> {
-                            if (gcpTelemetryCredentials == null) {
-                              return spanExporter;
-                            }
                             try {
-                              Credentials credentials =
-                                  resolveCredentialsFromString(gcpTelemetryCredentials);
+                              Credentials credentials;
+                              if (gcpTelemetryCredentials != null) {
+                                credentials = resolveCredentialsFromString(gcpTelemetryCredentials);
+                              } else {
+                                credentials = GoogleCredentials.getApplicationDefault();
+                              }
                               if (spanExporter instanceof OtlpHttpSpanExporter) {
                                 return ((OtlpHttpSpanExporter) spanExporter)
                                     .toBuilder()
