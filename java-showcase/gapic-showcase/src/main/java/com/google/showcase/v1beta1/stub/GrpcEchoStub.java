@@ -30,8 +30,16 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonResumableUploadClient;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import java.util.HashMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -272,6 +280,22 @@ public class GrpcEchoStub extends EchoStub {
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
+  private final HttpJsonResumableUploadClient uploadClient;
+  private final HttpJsonCallSettings<EchoRequest, EchoResponse> uploadMethodSettings;
+
+  private static final ApiMethodDescriptor<EchoRequest, EchoResponse> httpJsonUploadMethodDescriptor =
+      ApiMethodDescriptor.<EchoRequest, EchoResponse>newBuilder()
+          .setFullMethodName("google.showcase.v1beta1.Echo/EchoResumableUpload")
+          .setHttpMethod("POST")
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<EchoRequest>newBuilder()
+                  .setPath("/v1beta1/echo:resumable", r -> new HashMap<>())
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<EchoResponse>newBuilder()
+                  .setDefaultInstance(EchoResponse.getDefaultInstance())
+                  .build())
+          .build();
 
   private static final PathTemplate ECHO_0_PATH_TEMPLATE = PathTemplate.create("{header=**}");
   private static final PathTemplate ECHO_1_PATH_TEMPLATE = PathTemplate.create("{routing_id=**}");
@@ -320,6 +344,21 @@ public class GrpcEchoStub extends EchoStub {
       throws IOException {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
+
+    this.uploadMethodSettings =
+        HttpJsonCallSettings.<EchoRequest, EchoResponse>newBuilder()
+            .setMethodDescriptor(httpJsonUploadMethodDescriptor)
+            .build();
+
+    if (clientContext.getCredentials() != null) {
+      TransportChannelProvider httpJsonProvider =
+          EchoStubSettings.defaultHttpJsonTransportProviderBuilder().build();
+      ClientContext backgroundHttpContext =
+          clientContext.withTransportChannelProvider(httpJsonProvider);
+      this.uploadClient = HttpJsonResumableUploadClient.create(backgroundHttpContext);
+    } else {
+      this.uploadClient = null;
+    }
 
     GrpcCallSettings<EchoRequest, EchoResponse> echoTransportSettings =
         GrpcCallSettings.<EchoRequest, EchoResponse>newBuilder()
@@ -634,9 +673,22 @@ public class GrpcEchoStub extends EchoStub {
   }
 
   @Override
+  public ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable() {
+    if (uploadClient == null) {
+      throw new IllegalStateException(
+          "Resumable uploads require HTTP/JSON transport. Credentials are not available "
+              + "on the provided gRPC channel to initialize the background HTTP client.");
+    }
+    return uploadClient.createCallable(uploadMethodSettings);
+  }
+
+  @Override
   public final void close() {
     try {
       backgroundResources.close();
+      if (uploadClient != null) {
+        uploadClient.close();
+      }
     } catch (RuntimeException e) {
       throw e;
     } catch (Exception e) {
@@ -647,6 +699,9 @@ public class GrpcEchoStub extends EchoStub {
   @Override
   public void shutdown() {
     backgroundResources.shutdown();
+    if (uploadClient != null) {
+      uploadClient.shutdown();
+    }
   }
 
   @Override
