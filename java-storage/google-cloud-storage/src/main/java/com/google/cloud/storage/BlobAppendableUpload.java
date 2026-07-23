@@ -26,6 +26,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.WritableByteChannel;
 import java.util.concurrent.TimeUnit;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * Interface representing those methods which can be used to write to and interact with an
@@ -161,6 +162,32 @@ public interface BlobAppendableUpload extends BlobWriteSession {
     /**
      * <b>This method is blocking</b>
      *
+     * <p>Finalize the upload and close this instance to further {@link #write(ByteBuffer)}ing. This
+     * will close any underlying stream and release any releasable resources once out of scope.
+     *
+     * <p>Once this method is called, and returns no more writes to the object will be allowed by
+     * GCS.
+     *
+     * <p>This method and {@link #close()} are mutually exclusive. If one of the other methods are
+     * called before this method, this method will be a no-op.
+     *
+     * @param expectedCrc32c A Base64 encoded string representing the expected CRC32c value for the
+     *     entire object. If provided, the server will validate the final object's CRC32c against
+     *     this value. If there's a mismatch, the server will return an error (such as
+     *     InvalidArgument), and this method will throw a {@link StorageException} or equivalent
+     *     exception, failing the upload.
+     * @see Storage#blobAppendableUpload(BlobInfo, BlobAppendableUploadConfig, BlobWriteOption...)
+     * @see BlobAppendableUploadConfig.CloseAction#FINALIZE_WHEN_CLOSING
+     * @see BlobAppendableUploadConfig#getCloseAction()
+     * @see BlobAppendableUploadConfig#withCloseAction(CloseAction)
+     * @since 2.51.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    void finalizeAndClose(@Nullable String expectedCrc32c) throws IOException;
+
+    /**
+     * <b>This method is blocking</b>
+     *
      * <p>Close this instance to further {@link #write(ByteBuffer)}ing without finalizing the
      * upload. This will close any underlying stream and release any releasable resources once out
      * of scope.
@@ -197,5 +224,28 @@ public interface BlobAppendableUpload extends BlobWriteSession {
      */
     @BetaApi
     void close() throws IOException;
+
+    /**
+     * <b>This method is blocking</b>
+     *
+     * <p>Close this instance to further {@link #write(ByteBuffer)}ing.
+     *
+     * <p>This method behaves like {@link #close()}, but allows passing an optional expected CRC32c
+     * checksum. If expectedCrc32c is null, it behaves identically to {@link #close()}.
+     *
+     * @param expectedCrc32c A Base64 encoded string representing the expected CRC32c value for the
+     *     entire object. If provided, the server will validate the final object's CRC32c against
+     *     this value. If there's a mismatch, the server will return an error (such as
+     *     InvalidArgument), and this method will throw a {@link StorageException} or equivalent
+     *     exception, failing the upload. May be null.
+     * @throws IllegalArgumentException if the stream was not configured with {@link
+     *     CloseAction#FINALIZE_WHEN_CLOSING} and expectedCrc32c is not null.
+     * @see Storage#blobAppendableUpload(BlobInfo, BlobAppendableUploadConfig, BlobWriteOption...)
+     * @see BlobAppendableUploadConfig#getCloseAction()
+     * @see BlobAppendableUploadConfig#withCloseAction(CloseAction)
+     * @since 2.51.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    void close(@Nullable String expectedCrc32c) throws IOException;
   }
 }
