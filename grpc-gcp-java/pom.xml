@@ -68,7 +68,7 @@
     <google-http-client.version>2.2.0</google-http-client.version>
     <gson.version>2.13.2</gson.version>
     <guava.version>33.5.0-jre</guava.version>
-    <protobuf.version>4.33.2</protobuf.version>
+    <protobuf.version>4.33.6</protobuf.version>
     <grpc.version>1.81.0</grpc.version>
     <jsr305.version>3.0.2</jsr305.version>
     <junit.version>4.13.2</junit.version>
