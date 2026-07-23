@@ -1101,6 +1101,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
       BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
+      BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+      this.openTelemetry = null;
     }
     if (exceptionToThrow != null) {
       throw exceptionToThrow;
@@ -1211,13 +1213,21 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private String resolveEffectiveCredentials() {
-    String creds = this.gcpTelemetryCredentials;
-    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
-    if (creds == null
-        && BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
-      return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
+    if (this.gcpTelemetryCredentials != null) {
+      return this.gcpTelemetryCredentials;
     }
-    return creds;
+
+    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+    if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
+      return null;
+    }
+
+    String pvtKey = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
+    if (pvtKey != null) {
+      return pvtKey;
+    }
+
+    return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME);
   }
 
   private void validateTraceConfiguration(boolean isTraceEnabled, String effectiveCredentials) {
