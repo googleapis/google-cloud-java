@@ -301,8 +301,14 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
     int attempts = 0;
-    int maxAttempts = 20; // 20 attempts * 3000ms = 60 seconds max delay
-    long delayMs = 3000; // 3000ms linear polling
+    int maxAttempts = 10;
+    long delayMs = 10000; // 10 seconds
+
+    // Async exporters (BatchSpanProcessor/BatchLogRecordProcessor) usually flush every 5s by
+    // default.
+    // We wait 10 seconds initially to give GCP time to ingest the data, reducing API calls to
+    // almost 1.
+    Thread.sleep(10000);
 
     while (attempts < maxAttempts) {
       attempts++;
