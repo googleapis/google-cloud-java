@@ -78,6 +78,8 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A factory for generating downscoped access tokens using a client-side approach.
@@ -136,6 +138,7 @@ import java.util.concurrent.ExecutionException;
  * token, allowing for automatic token refreshes by providing a {@link
  * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}.
  */
+@NullMarked
 public class ClientSideCredentialAccessBoundaryFactory {
   static final Duration DEFAULT_REFRESH_MARGIN = Duration.ofMinutes(45);
   static final Duration DEFAULT_MINIMUM_TOKEN_LIFETIME = Duration.ofMinutes(30);
@@ -144,9 +147,9 @@ public class ClientSideCredentialAccessBoundaryFactory {
   private final String tokenExchangeEndpoint;
   private final Duration minimumTokenLifetime;
   private final Duration refreshMargin;
-  private RefreshTask refreshTask;
+  private @Nullable RefreshTask refreshTask;
   private final Object refreshLock = new byte[0];
-  private volatile IntermediateCredentials intermediateCredentials = null;
+  private volatile @Nullable IntermediateCredentials intermediateCredentials = null;
   private final Clock clock;
   private final CelCompiler celCompiler;
 

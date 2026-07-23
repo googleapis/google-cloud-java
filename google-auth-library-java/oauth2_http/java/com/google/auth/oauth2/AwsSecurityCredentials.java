@@ -31,12 +31,14 @@
 
 package com.google.auth.oauth2;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Defines AWS security credentials. These are either retrieved from the AWS security_credentials
  * endpoint or AWS environment variables.
  */
+@NullMarked
 public class AwsSecurityCredentials {
 
   private final String accessKeyId;

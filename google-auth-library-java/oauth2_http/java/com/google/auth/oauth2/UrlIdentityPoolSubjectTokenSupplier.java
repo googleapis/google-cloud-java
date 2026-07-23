@@ -40,11 +40,13 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.auth.http.HttpTransportFactory;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provider for retrieving the subject tokens for {@link IdentityPoolCredentials} to exchange for
  * GCP access tokens. The subject token is retrieved by calling a URL that returns the token.
  */
+@NullMarked
 class UrlIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSupplier {
 
   private static final LoggerProvider LOGGER_PROVIDER =

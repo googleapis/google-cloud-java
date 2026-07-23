@@ -37,6 +37,8 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * IdTokenCredentials provides a Google Issued OpenIdConnect token. <br>
@@ -101,6 +103,7 @@ import java.util.Objects;
  * System.out.println(tokenCredential.getIdToken().getJsonWebSignature().getPayload().getExpirationTimeSeconds());
  * </pre>
  */
+@NullMarked
 public class IdTokenCredentials extends OAuth2Credentials {
 
   private static final long serialVersionUID = -2133257318957588431L;
@@ -140,7 +143,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof IdTokenCredentials)) {
       return false;
     }

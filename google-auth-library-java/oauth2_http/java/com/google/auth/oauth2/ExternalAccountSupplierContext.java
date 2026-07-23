@@ -34,12 +34,14 @@ package com.google.auth.oauth2;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Context object to pass relevant variables from external account credentials to suppliers. This
  * will be passed on any call made to {@link IdentityPoolSubjectTokenSupplier} or {@link
  * AwsSecurityCredentialsSupplier}.
  */
+@NullMarked
 public class ExternalAccountSupplierContext implements Serializable {
 
   private static final long serialVersionUID = -7852130853542313494L;

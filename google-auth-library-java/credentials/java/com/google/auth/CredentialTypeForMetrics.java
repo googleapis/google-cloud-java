@@ -31,6 +31,8 @@
 
 package com.google.auth;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Defines the different types of credentials that can be used for metrics.
  *
@@ -44,6 +46,7 @@ package com.google.auth;
  *
  * @see #getLabel()
  */
+@NullMarked
 public enum CredentialTypeForMetrics {
   USER_CREDENTIALS("u"),
   SERVICE_ACCOUNT_CREDENTIALS_AT("sa"),

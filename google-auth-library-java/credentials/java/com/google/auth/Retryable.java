@@ -31,7 +31,10 @@
 
 package com.google.auth;
 
+import org.jspecify.annotations.NullMarked;
+
 // an interface to identify retryable errors
+@NullMarked
 public interface Retryable {
   /**
    * A flag indicating whether the error is retryable
