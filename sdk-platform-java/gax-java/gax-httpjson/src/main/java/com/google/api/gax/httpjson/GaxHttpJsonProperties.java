@@ -31,8 +31,10 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.core.InternalApi;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides properties of the GAX-HTTPJSON library. */
+@NullMarked
 @InternalApi
 public class GaxHttpJsonProperties {
   private static final Pattern DEFAULT_API_CLIENT_HEADER_PATTERN =

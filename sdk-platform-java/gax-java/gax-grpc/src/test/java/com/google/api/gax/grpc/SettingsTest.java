@@ -31,6 +31,7 @@ package com.google.api.gax.grpc;
 
 import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.CredentialsProvider;
@@ -72,11 +73,13 @@ class SettingsTest {
 
     @SuppressWarnings("unchecked")
     private static final PagedListResponseFactory<Integer, Integer, FakePagedListResponse>
-        fakePagedListResponseFactory = Mockito.mock(PagedListResponseFactory.class);
+        fakePagedListResponseFactory =
+            Mockito.mock(
+                PagedListResponseFactory.class, Mockito.withSettings().withoutAnnotations());
 
     @SuppressWarnings("unchecked")
     private static final BatchingDescriptor<Integer, Integer> FAKE_BATCHING_DESCRIPTOR =
-        Mockito.mock(BatchingDescriptor.class);
+        Mockito.mock(BatchingDescriptor.class, Mockito.withSettings().withoutAnnotations());
 
     private static final String DEFAULT_GAPIC_NAME = "gapic";
     public static final String DEFAULT_SERVICE_ADDRESS = "pubsub-experimental.googleapis.com";
@@ -265,7 +268,7 @@ class SettingsTest {
 
   @Test
   void customCredentials() throws IOException {
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
 
     FakeStubSettings settings =
         FakeStubSettings.newBuilder()

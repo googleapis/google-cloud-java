@@ -16,8 +16,8 @@ version: v0.28.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: f63acc613f0b6f27b85c98d71cd67c764d48e908
-    sha256: 2546717261effbb9a52089b88f3b4fd2411c2a3e1f4df63ae9f601cf2827f1cf
+    commit: 45c8d8a7fb65aa944e843e975a51c307c1d026fb
+    sha256: 60e3ef474dfdf92e3570ab81bd98f560b4ad3c02e4dc0ceba332fd277b81e302
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -5530,6 +5530,17 @@ libraries:
       billing_not_required: true
       rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest
       rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
+  - name: sql
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/sql/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+      - path: google/cloud/sql/v1beta4
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: storage
     version: 2.71.0-SNAPSHOT
     apis:

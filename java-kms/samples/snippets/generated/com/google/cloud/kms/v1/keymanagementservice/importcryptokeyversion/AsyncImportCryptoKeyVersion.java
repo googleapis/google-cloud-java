@@ -54,6 +54,7 @@ public class AsyncImportCryptoKeyVersion {
                       .toString())
               .setImportJob("importJob-208547368")
               .setWrappedKey(ByteString.EMPTY)
+              .setTrustedWrappingEnabled(true)
               .build();
       ApiFuture<CryptoKeyVersion> future =
           keyManagementServiceClient.importCryptoKeyVersionCallable().futureCall(request);

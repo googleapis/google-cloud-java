@@ -33,8 +33,10 @@ import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.auto.value.AutoValue;
 import io.grpc.Status;
+import org.jspecify.annotations.NullMarked;
 
 /** A failure code specific to a gRPC call. */
+@NullMarked
 @InternalExtensionOnly
 @AutoValue
 public abstract class GrpcStatusCode implements StatusCode {

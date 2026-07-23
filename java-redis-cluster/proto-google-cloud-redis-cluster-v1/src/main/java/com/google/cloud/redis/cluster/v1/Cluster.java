@@ -5210,6 +5210,51 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         : encryptionInfo_;
   }
 
+  public static final int ASYNC_CLUSTER_ENDPOINTS_DELETION_ENABLED_FIELD_NUMBER = 44;
+  private boolean asyncClusterEndpointsDeletionEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, cluster endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such a cluster endpoint
+   * can be de-registered before the forwarding rules in the cluster endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the asyncClusterEndpointsDeletionEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasAsyncClusterEndpointsDeletionEnabled() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, cluster endpoints that are created and registered by
+   * customers can be deleted asynchronously. That is, such a cluster endpoint
+   * can be de-registered before the forwarding rules in the cluster endpoint
+   * are deleted.
+   * </pre>
+   *
+   * <code>
+   * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The asyncClusterEndpointsDeletionEnabled.
+   */
+  @java.lang.Override
+  public boolean getAsyncClusterEndpointsDeletionEnabled() {
+    return asyncClusterEndpointsDeletionEnabled_;
+  }
+
   public static final int SERVER_CA_MODE_FIELD_NUMBER = 53;
   private int serverCaMode_ = 0;
 
@@ -5228,7 +5273,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServerCaMode() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -5291,7 +5336,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasServerCaPool() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -5368,7 +5413,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRotateServerCertificate() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -5499,12 +5544,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       output.writeMessage(43, getEncryptionInfo());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      output.writeEnum(53, serverCaMode_);
+      output.writeBool(44, asyncClusterEndpointsDeletionEnabled_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 54, serverCaPool_);
+      output.writeEnum(53, serverCaMode_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 54, serverCaPool_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
       output.writeBool(55, rotateServerCertificate_);
     }
     getUnknownFields().writeTo(output);
@@ -5631,12 +5679,17 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getEncryptionInfo());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53, serverCaMode_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              44, asyncClusterEndpointsDeletionEnabled_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(54, serverCaPool_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53, serverCaMode_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(54, serverCaPool_);
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(55, rotateServerCertificate_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -5733,6 +5786,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (hasEncryptionInfo() != other.hasEncryptionInfo()) return false;
     if (hasEncryptionInfo()) {
       if (!getEncryptionInfo().equals(other.getEncryptionInfo())) return false;
+    }
+    if (hasAsyncClusterEndpointsDeletionEnabled()
+        != other.hasAsyncClusterEndpointsDeletionEnabled()) return false;
+    if (hasAsyncClusterEndpointsDeletionEnabled()) {
+      if (getAsyncClusterEndpointsDeletionEnabled()
+          != other.getAsyncClusterEndpointsDeletionEnabled()) return false;
     }
     if (hasServerCaMode() != other.hasServerCaMode()) return false;
     if (hasServerCaMode()) {
@@ -5870,6 +5929,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     if (hasEncryptionInfo()) {
       hash = (37 * hash) + ENCRYPTION_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionInfo().hashCode();
+    }
+    if (hasAsyncClusterEndpointsDeletionEnabled()) {
+      hash = (37 * hash) + ASYNC_CLUSTER_ENDPOINTS_DELETION_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getAsyncClusterEndpointsDeletionEnabled());
     }
     if (hasServerCaMode()) {
       hash = (37 * hash) + SERVER_CA_MODE_FIELD_NUMBER;
@@ -6180,6 +6245,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         encryptionInfoBuilder_.dispose();
         encryptionInfoBuilder_ = null;
       }
+      asyncClusterEndpointsDeletionEnabled_ = false;
       serverCaMode_ = 0;
       serverCaPool_ = "";
       rotateServerCertificate_ = false;
@@ -6381,11 +6447,11 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.serverCaMode_ = serverCaMode_;
+        result.asyncClusterEndpointsDeletionEnabled_ = asyncClusterEndpointsDeletionEnabled_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.serverCaPool_ = serverCaPool_;
+        result.serverCaMode_ = serverCaMode_;
         to_bitField0_ |= 0x00020000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -6395,8 +6461,12 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.rotateServerCertificate_ = rotateServerCertificate_;
+        result.serverCaPool_ = serverCaPool_;
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.rotateServerCertificate_ = rotateServerCertificate_;
+        to_bitField0_ |= 0x00080000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6635,12 +6705,15 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       if (other.hasEncryptionInfo()) {
         mergeEncryptionInfo(other.getEncryptionInfo());
       }
+      if (other.hasAsyncClusterEndpointsDeletionEnabled()) {
+        setAsyncClusterEndpointsDeletionEnabled(other.getAsyncClusterEndpointsDeletionEnabled());
+      }
       if (other.hasServerCaMode()) {
         setServerCaModeValue(other.getServerCaModeValue());
       }
       if (other.hasServerCaPool()) {
         serverCaPool_ = other.serverCaPool_;
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasRotateServerCertificate()) {
@@ -6926,22 +6999,28 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x20000000;
                 break;
               } // case 346
+            case 352:
+              {
+                asyncClusterEndpointsDeletionEnabled_ = input.readBool();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 352
             case 424:
               {
                 serverCaMode_ = input.readEnum();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 424
             case 434:
               {
                 serverCaPool_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 434
             case 440:
               {
                 rotateServerCertificate_ = input.readBool();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 440
             default:
@@ -13140,6 +13219,98 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       return encryptionInfoBuilder_;
     }
 
+    private boolean asyncClusterEndpointsDeletionEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, cluster endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such a cluster endpoint
+     * can be de-registered before the forwarding rules in the cluster endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the asyncClusterEndpointsDeletionEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasAsyncClusterEndpointsDeletionEnabled() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, cluster endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such a cluster endpoint
+     * can be de-registered before the forwarding rules in the cluster endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The asyncClusterEndpointsDeletionEnabled.
+     */
+    @java.lang.Override
+    public boolean getAsyncClusterEndpointsDeletionEnabled() {
+      return asyncClusterEndpointsDeletionEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, cluster endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such a cluster endpoint
+     * can be de-registered before the forwarding rules in the cluster endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The asyncClusterEndpointsDeletionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAsyncClusterEndpointsDeletionEnabled(boolean value) {
+
+      asyncClusterEndpointsDeletionEnabled_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, cluster endpoints that are created and registered by
+     * customers can be deleted asynchronously. That is, such a cluster endpoint
+     * can be de-registered before the forwarding rules in the cluster endpoint
+     * are deleted.
+     * </pre>
+     *
+     * <code>
+     * optional bool async_cluster_endpoints_deletion_enabled = 44 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAsyncClusterEndpointsDeletionEnabled() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      asyncClusterEndpointsDeletionEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
     private int serverCaMode_ = 0;
 
     /**
@@ -13157,7 +13328,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasServerCaMode() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -13194,7 +13365,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      */
     public Builder setServerCaModeValue(int value) {
       serverCaMode_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -13237,7 +13408,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       serverCaMode_ = value.getNumber();
       onChanged();
       return this;
@@ -13257,7 +13428,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearServerCaMode() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       serverCaMode_ = 0;
       onChanged();
       return this;
@@ -13281,7 +13452,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * @return Whether the serverCaPool field is set.
      */
     public boolean hasServerCaPool() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -13359,7 +13530,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serverCaPool_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -13381,7 +13552,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServerCaPool() {
       serverCaPool_ = getDefaultInstance().getServerCaPool();
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -13408,7 +13579,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serverCaPool_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -13430,7 +13601,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRotateServerCertificate() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -13468,7 +13639,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
     public Builder setRotateServerCertificate(boolean value) {
 
       rotateServerCertificate_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -13487,7 +13658,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRotateServerCertificate() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       rotateServerCertificate_ = false;
       onChanged();
       return this;

@@ -31,12 +31,14 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An ApiFuture to be used with batching.
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public class BatchedFuture<ResponseT> extends AbstractApiFuture<ResponseT> {
 

@@ -68,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetPrivateAuction</td>
- *      <td><p> API to retrieve a `PrivateAuction` object.</td>
+ *      <td><p> Retrieves a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListPrivateAuctions</td>
- *      <td><p> API to retrieve a list of `PrivateAuction` objects.</td>
+ *      <td><p> Lists `PrivateAuction` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -107,7 +107,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePrivateAuction</td>
- *      <td><p> API to create a `PrivateAuction` object.</td>
+ *      <td><p> Creates a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -126,7 +126,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePrivateAuction</td>
- *      <td><p> API to update a `PrivateAuction` object.</td>
+ *      <td><p> Updates a `PrivateAuction` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -238,7 +238,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -269,7 +269,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -326,7 +326,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `PrivateAuction` object.
+   * Retrieves a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -355,7 +355,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -389,7 +389,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -421,7 +421,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -459,7 +459,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -496,7 +496,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `PrivateAuction` objects.
+   * Lists `PrivateAuction` objects.
    *
    * <p>Sample code:
    *
@@ -540,7 +540,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -576,7 +576,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -611,7 +611,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -641,7 +641,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `PrivateAuction` object.
+   * Creates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -672,7 +672,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -708,7 +708,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *
@@ -738,7 +738,7 @@ public class PrivateAuctionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `PrivateAuction` object.
+   * Updates a `PrivateAuction` object.
    *
    * <p>Sample code:
    *

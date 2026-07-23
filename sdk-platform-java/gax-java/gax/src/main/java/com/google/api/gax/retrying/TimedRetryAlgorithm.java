@@ -31,12 +31,14 @@
 package com.google.api.gax.retrying;
 
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Same as {@link TimedRetryAlgorithmWithContext}, but without methods that accept a {@link
  * RetryingContext}. Use {@link TimedRetryAlgorithmWithContext} instead of this interface when
  * possible.
  */
+@NullMarked
 public interface TimedRetryAlgorithm {
 
   /**

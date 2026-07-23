@@ -43,6 +43,7 @@ public class AsyncCreateCryptoKey {
               .setCryptoKeyId("cryptoKeyId-1643185255")
               .setCryptoKey(CryptoKey.newBuilder().build())
               .setSkipInitialVersionCreation(true)
+              .setTrustedWrappingEnabled(true)
               .build();
       ApiFuture<CryptoKey> future =
           keyManagementServiceClient.createCryptoKeyCallable().futureCall(request);

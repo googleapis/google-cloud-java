@@ -55,7 +55,8 @@ import org.mockito.Mockito;
 class CancellationTest {
 
   @SuppressWarnings("unchecked")
-  private UnaryCallable<Integer, Integer> callInt = Mockito.mock(UnaryCallable.class);
+  private UnaryCallable<Integer, Integer> callInt =
+      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
 
   private static final RetrySettings FAST_RETRY_SETTINGS =
       RetrySettings.newBuilder()

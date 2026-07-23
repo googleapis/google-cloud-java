@@ -29,6 +29,9 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
 /**
  * A BidiStreamingCallable is an immutable object which is capable of making RPC calls to
  * bidirectional streaming API methods. Not all transports support streaming.
@@ -37,6 +40,7 @@ package com.google.api.gax.rpc;
  * class is intended to be created by a generated client class, and configured by instances of
  * StreamingCallSettings.Builder which are exposed through the client settings class.
  */
+@NullMarked
 public abstract class BidiStreamingCallable<RequestT, ResponseT> {
 
   protected BidiStreamingCallable() {}
@@ -99,7 +103,8 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
 
   /** Listens to server responses and send requests when the network is free. */
   public void call(
-      final BidiStreamObserver<RequestT, ResponseT> bidiObserver, ApiCallContext context) {
+      final BidiStreamObserver<RequestT, ResponseT> bidiObserver,
+      @Nullable ApiCallContext context) {
     internalCall(bidiObserver, bidiObserver, context);
   }
 
@@ -129,7 +134,7 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
    *
    * <p>This returns a live stream that must either be fully consumed or cancelled.
    */
-  public BidiStream<RequestT, ResponseT> call(ApiCallContext context) {
+  public BidiStream<RequestT, ResponseT> call(@Nullable ApiCallContext context) {
     BidiStream<RequestT, ResponseT> stream = new BidiStream<>();
     ClientStream<RequestT> clientStream = splitCall(stream.observer(), context);
     stream.setClientStream(clientStream);
@@ -172,7 +177,7 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
 
   /** Send requests to the server and listens to responses. */
   public ClientStream<RequestT> splitCall(
-      ResponseObserver<ResponseT> responseObserver, ApiCallContext context) {
+      ResponseObserver<ResponseT> responseObserver, @Nullable ApiCallContext context) {
     return internalCall(
         responseObserver,
         stream -> {
@@ -191,7 +196,7 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
    */
   @Deprecated
   public ApiStreamObserver<RequestT> bidiStreamingCall(
-      ApiStreamObserver<ResponseT> responseObserver, ApiCallContext context) {
+      ApiStreamObserver<ResponseT> responseObserver, @Nullable ApiCallContext context) {
     final ClientStream<RequestT> stream =
         splitCall(new ApiStreamObserverAdapter<>(responseObserver), context);
     return new ApiStreamObserver<RequestT>() {

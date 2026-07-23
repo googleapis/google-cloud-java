@@ -48,20 +48,29 @@ import javax.annotation.Nullable;
  * paramName, Type value) for the appropriate type. For example:
  *
  * <pre>{@code
- * BoundStatementt boundStatement = preparedStatement.bind()
+ * BoundStatement boundStatement = preparedStatement.bind()
  *     .setBytesParam("qualifier", ByteString.copyFromUtf8("test"))
  *     .setBytesParam("key", ByteString.copyFromUtf8("testKey"))
  *     .build();
  * }</pre>
+ *
+ * <p>View parameters can also be specified on the statement using {@link
+ * Builder#setStringViewParameter(String, String)}. This provides the runtime values returned by the
+ * VIEW_PARAMETERS() function calls.
  */
 public class BoundStatement {
 
   private final PreparedStatementImpl preparedStatement;
   private final Map<String, Value> params;
+  private final Map<String, Value> viewParameters;
 
-  private BoundStatement(PreparedStatementImpl preparedStatement, Map<String, Value> params) {
+  private BoundStatement(
+      PreparedStatementImpl preparedStatement,
+      Map<String, Value> params,
+      Map<String, Value> viewParameters) {
     this.preparedStatement = preparedStatement;
     this.params = params;
+    this.viewParameters = viewParameters;
   }
 
   /**
@@ -78,6 +87,7 @@ public class BoundStatement {
     private final PreparedStatementImpl preparedStatement;
     private final Map<String, SqlType<?>> paramTypes;
     private final Map<String, Value> params;
+    private final Map<String, Value> viewParameters;
 
     /**
      * Creates a builder from a {@link PreparedStatement}
@@ -90,6 +100,7 @@ public class BoundStatement {
       this.preparedStatement = preparedStatement;
       this.paramTypes = paramTypes;
       this.params = new HashMap<>();
+      this.viewParameters = new HashMap<>();
     }
 
     /** Builds a {@link BoundStatement} from the builder */
@@ -101,7 +112,19 @@ public class BoundStatement {
               "Attempting to build BoundStatement without binding parameter: " + paramName);
         }
       }
-      return new BoundStatement(preparedStatement, ImmutableMap.copyOf(params));
+      return new BoundStatement(
+          preparedStatement, ImmutableMap.copyOf(params), ImmutableMap.copyOf(viewParameters));
+    }
+
+    /**
+     * Sets a view parameter with the name {@code paramName} and the String typed value {@code
+     * value}. This map provides the runtime values returned by the VIEW_PARAMETERS() function
+     * calls.
+     */
+    public Builder setStringViewParameter(String paramName, @Nullable String value) {
+      Preconditions.checkNotNull(paramName, "paramName cannot be null");
+      viewParameters.put(paramName, stringParamOf(value));
+      return this;
     }
 
     /**
@@ -372,7 +395,8 @@ public class BoundStatement {
                     requestContext.getProjectId(), requestContext.getInstanceId()))
             .setAppProfileId(requestContext.getAppProfileId())
             .setPreparedQuery(preparedQuery)
-            .putAllParams(params);
+            .putAllParams(params)
+            .putAllViewParameters(viewParameters);
 
     if (resumeToken != null) {
       requestBuilder.setResumeToken(resumeToken);

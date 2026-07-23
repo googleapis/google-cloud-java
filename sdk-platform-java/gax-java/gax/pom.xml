@@ -20,7 +20,6 @@
     <!-- An empty argLine user property can still be expanded and won't throw an error -->
     <argLine />
   </properties>
-
   <dependencies>
     <dependency>
       <groupId>com.google.api</groupId>
@@ -29,6 +28,10 @@
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-credentials</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>

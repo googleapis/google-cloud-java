@@ -29,11 +29,14 @@
  */
 package com.google.api.gax.httpjson;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A factory which creates a subsequent polling request from a compund operation id.
  *
  * @param <RequestT> polling request type
  */
+@NullMarked
 public interface PollingRequestFactory<RequestT> {
   /**
    * Creates a polling request message from a {@code compoundOperationId}.

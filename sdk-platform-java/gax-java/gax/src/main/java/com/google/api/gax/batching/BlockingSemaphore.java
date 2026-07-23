@@ -31,8 +31,10 @@
 package com.google.api.gax.batching;
 
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /** A {@link Semaphore64} that blocks until permits become available. */
+@NullMarked
 class BlockingSemaphore implements Semaphore64 {
   private long availablePermits;
   private long limit;

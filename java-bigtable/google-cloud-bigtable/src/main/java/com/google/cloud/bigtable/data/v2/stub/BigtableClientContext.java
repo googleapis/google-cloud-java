@@ -42,7 +42,6 @@ import com.google.cloud.bigtable.data.v2.internal.dp.NoopDirectAccessChecker;
 import com.google.cloud.bigtable.data.v2.stub.metrics.CustomOpenTelemetryMetricsProvider;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
-import com.google.common.base.Preconditions;
 import io.grpc.ManagedChannelBuilder;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.StatsRecorder;
@@ -268,26 +267,35 @@ public class BigtableClientContext {
 
   public BigtableClientContext createChild(InstanceName instanceName, String appProfileId)
       throws IOException {
-    // TODO: either mark BigtableDataClientFactory as deprecated or figure out how to make it
-    //  work with Sessions
-    Preconditions.checkState(
-        sessionShim instanceof DisabledShim, "Sessions don't support BigtableDataClientFactory");
+    ClientInfo childInfo =
+        clientInfo.toBuilder().setInstanceName(instanceName).setAppProfileId(appProfileId).build();
+
+    Shim childShim = sessionShim;
+    if (sessionShim instanceof ShimImpl) {
+      ShimImpl parentShim = (ShimImpl) sessionShim;
+      childShim =
+          ShimImpl.createForFactoryChild(
+              childInfo,
+              metrics,
+              backgroundExecutorProvider.getExecutor(),
+              parentShim.getUserCallbackExecutor(),
+              parentShim.getChannelPool(),
+              parentShim.getConfigManager(),
+              parentShim.getFeatureFlags());
+    }
 
     return new BigtableClientContext(
-        true,
-        sessionShim,
-        clientInfo.toBuilder().setInstanceName(instanceName).setAppProfileId(appProfileId).build(),
-        clientContext,
-        metrics,
-        backgroundExecutorProvider);
+        true, childShim, childInfo, clientContext, metrics, backgroundExecutorProvider);
   }
 
   public void close() throws Exception {
+    // Always close the shim: no-op for DisabledShim, closes session pools for factory children.
+    sessionShim.close();
+
     if (isChild) {
+      // Shared resources (metrics, executor, transport) are owned by the parent context.
       return;
     }
-
-    sessionShim.close();
 
     for (BackgroundResource resource : clientContext.getBackgroundResources()) {
       resource.close();

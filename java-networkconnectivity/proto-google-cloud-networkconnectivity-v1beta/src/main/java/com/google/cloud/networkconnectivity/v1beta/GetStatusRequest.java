@@ -127,6 +127,26 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int SKIP_CACHE_FIELD_NUMBER = 2;
+  private boolean skipCache_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the response will bypass any caches and return
+   * the freshest possible data.
+   * </pre>
+   *
+   * <code>bool skip_cache = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipCache.
+   */
+  @java.lang.Override
+  public boolean getSkipCache() {
+    return skipCache_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -144,6 +164,9 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (skipCache_ != false) {
+      output.writeBool(2, skipCache_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -155,6 +178,9 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (skipCache_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, skipCache_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -173,6 +199,7 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.networkconnectivity.v1beta.GetStatusRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getSkipCache() != other.getSkipCache()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -186,6 +213,8 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + SKIP_CACHE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipCache());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -328,6 +357,7 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      skipCache_ = false;
       return this;
     }
 
@@ -369,6 +399,9 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.skipCache_ = skipCache_;
+      }
     }
 
     @java.lang.Override
@@ -389,6 +422,9 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.getSkipCache() != false) {
+        setSkipCache(other.getSkipCache());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -422,6 +458,12 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                skipCache_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -558,6 +600,65 @@ public final class GetStatusRequest extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipCache_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will bypass any caches and return
+     * the freshest possible data.
+     * </pre>
+     *
+     * <code>bool skip_cache = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipCache.
+     */
+    @java.lang.Override
+    public boolean getSkipCache() {
+      return skipCache_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will bypass any caches and return
+     * the freshest possible data.
+     * </pre>
+     *
+     * <code>bool skip_cache = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipCache to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipCache(boolean value) {
+
+      skipCache_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set to true, the response will bypass any caches and return
+     * the freshest possible data.
+     * </pre>
+     *
+     * <code>bool skip_cache = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipCache() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      skipCache_ = false;
       onChanged();
       return this;
     }

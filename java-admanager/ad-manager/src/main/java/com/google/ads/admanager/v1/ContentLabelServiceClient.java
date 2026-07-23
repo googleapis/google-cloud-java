@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetContentLabel</td>
- *      <td><p> API to retrieve a `ContentLabel` object.</td>
+ *      <td><p> Retrieves a `ContentLabel` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListContentLabels</td>
- *      <td><p> API to retrieve a list of `ContentLabel` objects.</td>
+ *      <td><p> Lists `ContentLabel` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -199,7 +199,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ContentLabel` object.
+   * Retrieves a `ContentLabel` object.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ContentLabel` object.
+   * Retrieves a `ContentLabel` object.
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ContentLabel` object.
+   * Retrieves a `ContentLabel` object.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ContentLabel` object.
+   * Retrieves a `ContentLabel` object.
    *
    * <p>Sample code:
    *
@@ -310,7 +310,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ContentLabel` objects.
+   * Lists `ContentLabel` objects.
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ContentLabel` objects.
+   * Lists `ContentLabel` objects.
    *
    * <p>Sample code:
    *
@@ -374,7 +374,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ContentLabel` objects.
+   * Lists `ContentLabel` objects.
    *
    * <p>Sample code:
    *
@@ -410,7 +410,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ContentLabel` objects.
+   * Lists `ContentLabel` objects.
    *
    * <p>Sample code:
    *
@@ -446,7 +446,7 @@ public class ContentLabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ContentLabel` objects.
+   * Lists `ContentLabel` objects.
    *
    * <p>Sample code:
    *

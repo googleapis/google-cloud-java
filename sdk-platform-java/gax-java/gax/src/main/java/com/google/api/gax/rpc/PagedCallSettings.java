@@ -32,11 +32,13 @@ package com.google.api.gax.rpc;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.gax.retrying.RetrySettings;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure a {@link UnaryCallable} for calls to an API method that supports
  * page streaming.
  */
+@NullMarked
 @InternalExtensionOnly
 public final class PagedCallSettings<RequestT, ResponseT, PagedListResponseT>
     extends UnaryCallSettings<RequestT, ResponseT> {

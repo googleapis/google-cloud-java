@@ -30,6 +30,8 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.developers.knowledge.v1.AnswerQueryRequest;
+import com.google.developers.knowledge.v1.AnswerQueryResponse;
 import com.google.developers.knowledge.v1.BatchGetDocumentsRequest;
 import com.google.developers.knowledge.v1.BatchGetDocumentsResponse;
 import com.google.developers.knowledge.v1.Document;
@@ -168,6 +170,42 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<AnswerQueryRequest, AnswerQueryResponse>
+      answerQueryMethodDescriptor =
+          ApiMethodDescriptor.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+              .setFullMethodName("google.developers.knowledge.v1.DeveloperKnowledge/AnswerQuery")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AnswerQueryRequest>newBuilder()
+                      .setPath(
+                          "/v1:answerQuery",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AnswerQueryRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AnswerQueryResponse>newBuilder()
+                      .setDefaultInstance(AnswerQueryResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SearchDocumentChunksRequest, SearchDocumentChunksResponse>
       searchDocumentChunksCallable;
   private final UnaryCallable<SearchDocumentChunksRequest, SearchDocumentChunksPagedResponse>
@@ -175,6 +213,7 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
   private final UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable;
+  private final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -245,6 +284,11 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
                 .setMethodDescriptor(batchGetDocumentsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQueryTransportSettings =
+        HttpJsonCallSettings.<AnswerQueryRequest, AnswerQueryResponse>newBuilder()
+            .setMethodDescriptor(answerQueryMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
 
     this.searchDocumentChunksCallable =
         callableFactory.createUnaryCallable(
@@ -264,6 +308,9 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
             batchGetDocumentsTransportSettings,
             settings.batchGetDocumentsSettings(),
             clientContext);
+    this.answerQueryCallable =
+        callableFactory.createUnaryCallable(
+            answerQueryTransportSettings, settings.answerQuerySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -275,6 +322,7 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
     methodDescriptors.add(searchDocumentChunksMethodDescriptor);
     methodDescriptors.add(getDocumentMethodDescriptor);
     methodDescriptors.add(batchGetDocumentsMethodDescriptor);
+    methodDescriptors.add(answerQueryMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -299,6 +347,11 @@ public class HttpJsonDeveloperKnowledgeStub extends DeveloperKnowledgeStub {
   public UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
     return batchGetDocumentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return answerQueryCallable;
   }
 
   @Override
