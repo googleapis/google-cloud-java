@@ -86,8 +86,10 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     if (options != null) {
       requestPb.setTransactionOptions(options);
     }
+    com.google.datastore.v1.RequestOptions requestOptions =
+        executionOptions != null ? executionOptions.getRequestOptions() : null;
     requestPb.setRequestOptions(
-        RequestOptionsHelper.createRequestOptions(datastore.getOptions(), executionOptions));
+        RequestOptionsHelper.createRequestOptions(datastore.getOptions(), requestOptions));
 
     transactionId = datastore.requestTransactionId(requestPb);
     this.readOptionProtoPreparer = new ReadOptionProtoPreparer();
@@ -162,7 +164,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public Transaction.Response commit() {
-    return commit(null);
+    return commit(DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override
@@ -179,7 +181,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public void rollback() {
-    rollback(null);
+    rollback(DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override

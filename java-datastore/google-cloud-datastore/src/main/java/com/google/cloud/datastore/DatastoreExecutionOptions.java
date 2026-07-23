@@ -19,11 +19,13 @@ package com.google.cloud.datastore;
 import com.google.api.core.BetaApi;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.RequestOptions;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * Class representing options for query execution in Google Cloud Datastore. Combines {@link
@@ -42,14 +44,17 @@ public class DatastoreExecutionOptions {
     this.readOptions = ImmutableList.copyOf(builder.readOptions);
   }
 
+  @Nullable
   public ExplainOptions getExplainOptions() {
     return explainOptions;
   }
 
+  @Nullable
   public RequestOptions getRequestOptions() {
     return requestOptions;
   }
 
+  @Nonnull
   public List<ReadOption> getReadOptions() {
     return readOptions;
   }
@@ -69,39 +74,17 @@ public class DatastoreExecutionOptions {
     return Objects.hashCode(explainOptions, requestOptions, readOptions);
   }
 
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  public static DatastoreExecutionOptions of(RequestOptions requestOptions) {
-    return newBuilder().setRequestOptions(requestOptions).build();
-  }
-
-  public static DatastoreExecutionOptions of(ExplainOptions explainOptions) {
-    return newBuilder().setExplainOptions(explainOptions).build();
-  }
-
-  public static DatastoreExecutionOptions of(List<ReadOption> readOptions) {
-    return newBuilder().setReadOptions(readOptions).build();
-  }
-
-  public static DatastoreExecutionOptions of(
-      RequestOptions requestOptions, List<ReadOption> readOptions) {
-    return newBuilder().setRequestOptions(requestOptions).setReadOptions(readOptions).build();
-  }
-
-  public static DatastoreExecutionOptions of(
-      ExplainOptions explainOptions, RequestOptions requestOptions) {
-    return newBuilder().setExplainOptions(explainOptions).setRequestOptions(requestOptions).build();
-  }
-
-  public static DatastoreExecutionOptions of(
-      ExplainOptions explainOptions, RequestOptions requestOptions, List<ReadOption> readOptions) {
-    return newBuilder()
-        .setExplainOptions(explainOptions)
-        .setRequestOptions(requestOptions)
-        .setReadOptions(readOptions)
-        .build();
+  /** Returns a default {@code DatastoreExecutionOptions} instance. */
+  public static DatastoreExecutionOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   /** Builder for {@link DatastoreExecutionOptions}. */
@@ -112,18 +95,25 @@ public class DatastoreExecutionOptions {
 
     private Builder() {}
 
-    public Builder setExplainOptions(ExplainOptions explainOptions) {
+    private Builder(DatastoreExecutionOptions options) {
+      this.explainOptions = options.explainOptions;
+      this.requestOptions = options.requestOptions;
+      this.readOptions = options.readOptions;
+    }
+
+    public Builder setExplainOptions(@Nullable ExplainOptions explainOptions) {
       this.explainOptions = explainOptions;
       return this;
     }
 
-    public Builder setRequestOptions(RequestOptions requestOptions) {
+    public Builder setRequestOptions(@Nullable RequestOptions requestOptions) {
       this.requestOptions = requestOptions;
       return this;
     }
 
-    public Builder setReadOptions(List<ReadOption> readOptions) {
-      this.readOptions = readOptions != null ? readOptions : Collections.emptyList();
+    public Builder setReadOptions(@Nonnull List<ReadOption> readOptions) {
+      Preconditions.checkNotNull(readOptions, "readOptions cannot be null");
+      this.readOptions = readOptions;
       return this;
     }
 

@@ -209,7 +209,7 @@ public class DatastoreOptionsTest {
   @Test
   public void testRequestTags() {
     assertTrue(options.build().getRequestTags().isEmpty());
-    assertThat(options.setRequestTags("tag1", "tag2").build().getRequestTags())
+    assertThat(options.setRequestTags(Arrays.asList("tag1", "tag2")).build().getRequestTags())
         .containsExactly("tag1", "tag2")
         .inOrder();
     assertThat(

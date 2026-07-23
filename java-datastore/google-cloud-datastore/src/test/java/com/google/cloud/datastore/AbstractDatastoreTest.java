@@ -1404,7 +1404,7 @@ public abstract class AbstractDatastoreTest {
   public void testRunQueryWithInstanceLevelRequestTags() {
     DatastoreOptions optionsWithTags =
         rpcMockOptions.toBuilder()
-            .setRequestTags("instance-tag")
+            .setRequestTags(ImmutableList.of("instance-tag"))
             .setServiceRpcFactory(rpcFactoryMock)
             .build();
 
@@ -1471,7 +1471,7 @@ public abstract class AbstractDatastoreTest {
             .addKind(com.google.datastore.v1.KindExpression.newBuilder().setName(KIND1))
             .build();
 
-    // 1. RunQueryRequest for run(query, DatastoreExecutionOptions.of(requestOptions))
+    // 1. RunQueryRequest with requestOptions
     RunQueryRequest expectedRequest1 =
         RunQueryRequest.newBuilder()
             .setProjectId(PROJECT_ID)
@@ -1480,7 +1480,7 @@ public abstract class AbstractDatastoreTest {
             .setRequestOptions(requestOptions)
             .build();
 
-    // 2. RunQueryRequest for run(query, DatastoreExecutionOptions.of(requestOptions, ReadOption))
+    // 2. RunQueryRequest with requestOptions and ReadOption
     RunQueryRequest expectedRequest2 =
         RunQueryRequest.newBuilder()
             .setProjectId(PROJECT_ID)
@@ -1491,7 +1491,7 @@ public abstract class AbstractDatastoreTest {
             .setRequestOptions(requestOptions)
             .build();
 
-    // 3. RunQueryRequest for run(query, DatastoreExecutionOptions.of(explainOptions, requestOptions, ReadOption))
+    // 3. RunQueryRequest with explainOptions, requestOptions, and ReadOption
     RunQueryRequest expectedRequest3 =
         RunQueryRequest.newBuilder()
             .setProjectId(PROJECT_ID)
@@ -1521,29 +1521,31 @@ public abstract class AbstractDatastoreTest {
     Datastore targetDatastore = rpcMockOptions.getService();
     Query<Entity> query = Query.newEntityQueryBuilder().setKind(KIND1).build();
 
-    // Test 1: run(query, DatastoreExecutionOptions.of(requestOptions))
     QueryResults<Entity> results1 =
-        targetDatastore.run(query, DatastoreExecutionOptions.of(requestOptions));
+        targetDatastore.run(
+            query, DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build());
     assertTrue(results1.hasNext());
     assertEquals(ENTITY1, results1.next());
 
-    // Test 2: run(query, DatastoreExecutionOptions.of(requestOptions, readOptions))
     QueryResults<Entity> results2 =
         targetDatastore.run(
             query,
-            DatastoreExecutionOptions.of(
-                requestOptions, ImmutableList.of(ReadOption.eventualConsistency())));
+            DatastoreExecutionOptions.newBuilder()
+                .setRequestOptions(requestOptions)
+                .setReadOptions(ImmutableList.of(ReadOption.eventualConsistency()))
+                .build());
     assertTrue(results2.hasNext());
     assertEquals(ENTITY1, results2.next());
 
-    // Test 3: run(query, DatastoreExecutionOptions.of(explainOptions, requestOptions, readOptions))
     QueryResults<Entity> results3 =
         targetDatastore.run(
             query,
-            DatastoreExecutionOptions.of(
-                com.google.cloud.datastore.models.ExplainOptions.newBuilder().setAnalyze(true).build(),
-                requestOptions,
-                ImmutableList.of(ReadOption.eventualConsistency())));
+            DatastoreExecutionOptions.newBuilder()
+                .setExplainOptions(
+                    com.google.cloud.datastore.models.ExplainOptions.newBuilder().setAnalyze(true).build())
+                .setRequestOptions(requestOptions)
+                .setReadOptions(ImmutableList.of(ReadOption.eventualConsistency()))
+                .build());
     assertTrue(results3.hasNext());
     assertEquals(ENTITY1, results3.next());
 
@@ -1554,7 +1556,7 @@ public abstract class AbstractDatastoreTest {
   public void testRunAggregationQueryWithInstanceLevelRequestTags() {
     DatastoreOptions optionsWithTags =
         rpcMockOptions.toBuilder()
-            .setRequestTags("instance-tag")
+            .setRequestTags(ImmutableList.of("instance-tag"))
             .setServiceRpcFactory(rpcFactoryMock)
             .build();
 
@@ -1596,7 +1598,7 @@ public abstract class AbstractDatastoreTest {
 
     RunAggregationQueryResponse aggregationQueryResponse = placeholderAggregationQueryResponse();
 
-    // 1. runAggregation(query, DatastoreExecutionOptions.of(requestOptions))
+    // 1. runAggregation with requestOptions
     EasyMock.expect(
             rpcMock.runAggregationQuery(
                 matches(
@@ -1604,7 +1606,7 @@ public abstract class AbstractDatastoreTest {
                         "total_count", requestOptions, false, false))))
         .andReturn(aggregationQueryResponse);
 
-    // 2. runAggregation(query, DatastoreExecutionOptions.of(requestOptions, options))
+    // 2. runAggregation with requestOptions and readOptions
     EasyMock.expect(
             rpcMock.runAggregationQuery(
                 matches(
@@ -1612,7 +1614,7 @@ public abstract class AbstractDatastoreTest {
                         "total_count", requestOptions, true, false))))
         .andReturn(aggregationQueryResponse);
 
-    // 3. runAggregation(query, DatastoreExecutionOptions.of(explainOptions, requestOptions))
+    // 3. runAggregation with explainOptions and requestOptions
     EasyMock.expect(
             rpcMock.runAggregationQuery(
                 matches(
@@ -1620,7 +1622,7 @@ public abstract class AbstractDatastoreTest {
                         "total_count", requestOptions, false, true))))
         .andReturn(aggregationQueryResponse);
 
-    // 4. runAggregation(query, DatastoreExecutionOptions.of(explainOptions, requestOptions, options))
+    // 4. runAggregation with explainOptions, requestOptions, and readOptions
     EasyMock.expect(
             rpcMock.runAggregationQuery(
                 matches(
@@ -1642,36 +1644,42 @@ public abstract class AbstractDatastoreTest {
     com.google.cloud.datastore.models.ExplainOptions explainOptions =
         com.google.cloud.datastore.models.ExplainOptions.newBuilder().setAnalyze(true).build();
 
-    // Test 1
     AggregationResult result1 =
         getOnlyElement(
             mockDatastore.runAggregation(
-                getCountQuery, DatastoreExecutionOptions.of(requestOptions)));
+                getCountQuery,
+                DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build()));
     assertThat(result1.getLong("total_count")).isEqualTo(209L);
 
-    // Test 2
     AggregationResult result2 =
         getOnlyElement(
             mockDatastore.runAggregation(
                 getCountQuery,
-                DatastoreExecutionOptions.of(
-                    requestOptions, ImmutableList.of(ReadOption.eventualConsistency()))));
+                DatastoreExecutionOptions.newBuilder()
+                    .setRequestOptions(requestOptions)
+                    .setReadOptions(ImmutableList.of(ReadOption.eventualConsistency()))
+                    .build()));
     assertThat(result2.getLong("total_count")).isEqualTo(209L);
 
-    // Test 3
     AggregationResult result3 =
         getOnlyElement(
             mockDatastore.runAggregation(
-                getCountQuery, DatastoreExecutionOptions.of(explainOptions, requestOptions)));
+                getCountQuery,
+                DatastoreExecutionOptions.newBuilder()
+                    .setExplainOptions(explainOptions)
+                    .setRequestOptions(requestOptions)
+                    .build()));
     assertThat(result3.getLong("total_count")).isEqualTo(209L);
 
-    // Test 4
     AggregationResult result4 =
         getOnlyElement(
             mockDatastore.runAggregation(
                 getCountQuery,
-                DatastoreExecutionOptions.of(
-                    explainOptions, requestOptions, ImmutableList.of(ReadOption.eventualConsistency()))));
+                DatastoreExecutionOptions.newBuilder()
+                    .setExplainOptions(explainOptions)
+                    .setRequestOptions(requestOptions)
+                    .setReadOptions(ImmutableList.of(ReadOption.eventualConsistency()))
+                    .build()));
     assertThat(result4.getLong("total_count")).isEqualTo(209L);
 
     EasyMock.verify(rpcFactoryMock, rpcMock);
@@ -1704,7 +1712,8 @@ public abstract class AbstractDatastoreTest {
     
     com.google.datastore.v1.RequestOptions requestOptions =
         com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
-    DatastoreExecutionOptions executionOptions = DatastoreExecutionOptions.of(requestOptions);
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
     Entity added = datastore.add(entity, executionOptions);
     assertEquals(entity, added);
@@ -1722,9 +1731,10 @@ public abstract class AbstractDatastoreTest {
     
     com.google.datastore.v1.RequestOptions requestOptions =
         com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
-    DatastoreExecutionOptions executionOptions = DatastoreExecutionOptions.of(requestOptions);
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
-    List<Entity> added = datastore.add(executionOptions, entity1, entity2);
+    List<Entity> added = datastore.add(ImmutableList.of(entity1, entity2), executionOptions);
     assertEquals(2, added.size());
     assertEquals(entity1, added.get(0));
     assertEquals(entity2, added.get(1));
@@ -1743,9 +1753,10 @@ public abstract class AbstractDatastoreTest {
     
     com.google.datastore.v1.RequestOptions requestOptions =
         com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
-    DatastoreExecutionOptions executionOptions = DatastoreExecutionOptions.of(requestOptions);
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
-    datastore.update(executionOptions, updatedEntity);
+    datastore.update(Collections.singletonList(updatedEntity), executionOptions);
     assertEquals(updatedEntity, datastore.get(key));
   }
 
@@ -1761,7 +1772,8 @@ public abstract class AbstractDatastoreTest {
     
     com.google.datastore.v1.RequestOptions requestOptions =
         com.google.datastore.v1.RequestOptions.newBuilder().addRequestTags("test-tag").build();
-    DatastoreExecutionOptions executionOptions = DatastoreExecutionOptions.of(requestOptions);
+    DatastoreExecutionOptions executionOptions =
+        DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build();
     
     List<Key> keys = ImmutableList.of(key1, key2);
     

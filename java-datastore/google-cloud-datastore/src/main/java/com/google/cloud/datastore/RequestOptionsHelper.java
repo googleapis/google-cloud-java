@@ -17,7 +17,9 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.InternalApi;
+import com.google.common.base.Preconditions;
 import com.google.datastore.v1.RequestOptions;
+import javax.annotation.Nonnull;
 
 /** Helper class for building and merging Datastore request options. */
 @InternalApi
@@ -30,14 +32,13 @@ public final class RequestOptionsHelper {
    * the request-level options from {@link DatastoreExecutionOptions}.
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags
-   * @param executionOptions the execution options containing request-level options, or {@code null}
+   * @param executionOptions the execution options containing request-level options
    * @return the merged RequestOptions proto message
    */
   public static RequestOptions createRequestOptions(
-      DatastoreOptions datastoreOptions, DatastoreExecutionOptions executionOptions) {
-    RequestOptions requestOptions =
-        executionOptions != null ? executionOptions.getRequestOptions() : null;
-    return createRequestOptions(datastoreOptions, requestOptions);
+      DatastoreOptions datastoreOptions, @Nonnull DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+    return createRequestOptions(datastoreOptions, executionOptions.getRequestOptions());
   }
 
   /**

@@ -20,8 +20,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.Service;
 import com.google.cloud.datastore.models.ExplainOptions;
-import com.google.common.collect.ImmutableList;
-import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.TransactionOptions;
 import java.util.Iterator;
 import java.util.List;
@@ -208,7 +206,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  List<Key> allocateId(DatastoreExecutionOptions executionOptions, IncompleteKey... keys);
+  List<Key> allocateId(List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions);
 
   /**
    * Reserve one or more keys, preventing them from being automatically allocated by Datastore.
@@ -233,7 +231,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  List<Key> reserveIds(DatastoreExecutionOptions executionOptions, Key... keys);
+  List<Key> reserveIds(List<Key> keys, DatastoreExecutionOptions executionOptions);
 
   /**
    * {@inheritDoc}
@@ -322,7 +320,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws IllegalArgumentException if any of the given entities is missing a key
    */
   @BetaApi
-  List<Entity> add(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities);
+  List<Entity> add(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions);
 
   /**
    * {@inheritDoc}
@@ -357,7 +355,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  void update(DatastoreExecutionOptions executionOptions, Entity... entities);
+  void update(List<Entity> entities, DatastoreExecutionOptions executionOptions);
 
   /**
    * {@inheritDoc}
@@ -389,7 +387,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  List<Entity> put(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities);
+  List<Entity> put(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions);
 
   /**
    * {@inheritDoc}
@@ -415,7 +413,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    */
   @BetaApi
-  void delete(DatastoreExecutionOptions executionOptions, Key... keys);
+  void delete(List<Key> keys, DatastoreExecutionOptions executionOptions);
 
   /**
    * Returns a new KeyFactory for this service

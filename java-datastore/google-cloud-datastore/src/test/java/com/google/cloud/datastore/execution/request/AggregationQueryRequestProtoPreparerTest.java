@@ -205,7 +205,8 @@ public class AggregationQueryRequestProtoPreparerTest {
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery =
         protoPreparer.prepare(
             QueryConfig.createWithDatastoreExecutionOptions(
-                structuredQueryWithoutNamespace, DatastoreExecutionOptions.of(explainOptions)));
+                structuredQueryWithoutNamespace,
+                DatastoreExecutionOptions.newBuilder().setExplainOptions(explainOptions).build()));
     assertThat(runAggregationQueryFromStructuredQuery.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
     assertThat(runAggregationQueryFromStructuredQuery.getExplainOptions())
@@ -214,7 +215,8 @@ public class AggregationQueryRequestProtoPreparerTest {
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery2 =
         protoPreparer.prepare(
             QueryConfig.createWithDatastoreExecutionOptions(
-                structuredQueryWithoutNamespace, DatastoreExecutionOptions.of(explainOptions)));
+                structuredQueryWithoutNamespace,
+                DatastoreExecutionOptions.newBuilder().setExplainOptions(explainOptions).build()));
     assertThat(runAggregationQueryFromStructuredQuery2.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
     assertThat(runAggregationQueryFromStructuredQuery2.getExplainOptions())
@@ -224,7 +226,10 @@ public class AggregationQueryRequestProtoPreparerTest {
   private RunAggregationQueryRequest prepareQuery(AggregationQuery query, ReadOption readOption) {
     return protoPreparer.prepare(
         QueryConfig.createWithDatastoreExecutionOptions(
-            query, DatastoreExecutionOptions.of(singletonList(readOption))));
+            query,
+            DatastoreExecutionOptions.newBuilder()
+                .setReadOptions(singletonList(readOption))
+                .build()));
   }
 
   @Test
@@ -236,7 +241,7 @@ public class AggregationQueryRequestProtoPreparerTest {
         protoPreparer.prepare(
             QueryConfig.createWithDatastoreExecutionOptions(
                 AGGREGATION_OVER_STRUCTURED_QUERY,
-                DatastoreExecutionOptions.of(requestOptions)));
+                DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build()));
 
     assertThat(request.getRequestOptions().getRequestTagsList()).containsExactly("aggregation-tag");
   }

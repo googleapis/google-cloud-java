@@ -471,7 +471,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
 
 
-  private boolean verifyIncompleteKeyType(IncompleteKey... keys) {
+  private boolean verifyIncompleteKeyType(Iterable<IncompleteKey> keys) {
     for (IncompleteKey key : keys) {
       if (key instanceof Key) {
         return false;
@@ -482,15 +482,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> allocateId(IncompleteKey... keys) {
-    return allocateId(null, keys);
+    return allocateId(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override
   @BetaApi
-  public List<Key> allocateId(DatastoreExecutionOptions executionOptions, IncompleteKey... keys) {
+  public List<Key> allocateId(List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     Preconditions.checkArgument(
         verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
-    if (keys.length == 0) {
+    if (keys.isEmpty()) {
       return Collections.emptyList();
     }
     AllocateIdsRequest.Builder requestPb = AllocateIdsRequest.newBuilder();
@@ -532,20 +533,21 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   @BetaApi
   public Entity add(FullEntity<?> entity, DatastoreExecutionOptions executionOptions) {
-    return add(executionOptions, entity).get(0);
+    return add(Collections.singletonList(entity), executionOptions).get(0);
   }
 
   @SuppressWarnings("unchecked")
   @Override
   public List<Entity> add(FullEntity<?>... entities) {
-    return add(null, entities);
+    return add(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @SuppressWarnings("unchecked")
   @Override
   @BetaApi
-  public List<Entity> add(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities) {
-    if (entities.length == 0) {
+  public List<Entity> add(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+    if (entities.isEmpty()) {
       return Collections.emptyList();
     }
     ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
@@ -643,7 +645,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   Iterator<Entity> get(Optional<ReadOptions> readOptionsPb, final Key... keys) {
-    return get(readOptionsPb, null, keys);
+    return get(readOptionsPb, DatastoreExecutionOptions.getDefaultInstance(), keys);
   }
 
   Iterator<Entity> get(
@@ -730,12 +732,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> reserveIds(Key... keys) {
-    return reserveIds((DatastoreExecutionOptions) null, keys);
+    return reserveIds(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override
   @BetaApi
-  public List<Key> reserveIds(DatastoreExecutionOptions executionOptions, Key... keys) {
+  public List<Key> reserveIds(List<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
     ReserveIdsRequest.Builder requestPb = ReserveIdsRequest.newBuilder();
     for (Key key : keys) {
       requestPb.addKeys(key.toPb());
@@ -764,13 +767,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void update(Entity... entities) {
-    update(null, entities);
+    update(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override
   @BetaApi
-  public void update(DatastoreExecutionOptions executionOptions, Entity... entities) {
-    if (entities.length > 0) {
+  public void update(List<Entity> entities, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+    if (!entities.isEmpty()) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
       for (Entity entity : entities) {
@@ -790,14 +794,15 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Entity> put(FullEntity<?>... entities) {
-    return put((DatastoreExecutionOptions) null, entities);
+    return put(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @SuppressWarnings("unchecked")
   @Override
   @BetaApi
-  public List<Entity> put(DatastoreExecutionOptions executionOptions, FullEntity<?>... entities) {
-    if (entities.length == 0) {
+  public List<Entity> put(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+    if (entities.isEmpty()) {
       return Collections.emptyList();
     }
     ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
@@ -831,15 +836,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void delete(Key... keys) {
-    delete((DatastoreExecutionOptions) null, keys);
+    delete(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
   }
 
   @Override
   @BetaApi
-  public void delete(DatastoreExecutionOptions executionOptions, Key... keys) {
-    if (keys.length > 0) {
+  public void delete(List<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Preconditions.checkNotNull(executionOptions, "executionOptions cannot be null");
+    if (!keys.isEmpty()) {
       ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
-      Set<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
+      Set<Key> dedupKeys = new LinkedHashSet<>(keys);
       for (Key key : dedupKeys) {
         mutationsPb.add(Mutation.newBuilder().setDelete(key.toPb()).build());
       }
@@ -853,7 +859,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   private CommitResponse commitMutation(ImmutableList<Mutation> mutationsPb) {
-    return commitMutation(mutationsPb, null);
+    return commitMutation(mutationsPb, DatastoreExecutionOptions.getDefaultInstance());
   }
 
   private CommitResponse commitMutation(
@@ -911,7 +917,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   void rollbackTransaction(ByteString transaction) {
-    rollbackTransaction(transaction, null);
+    rollbackTransaction(transaction, DatastoreExecutionOptions.getDefaultInstance());
   }
 
   void rollbackTransaction(ByteString transaction, DatastoreExecutionOptions executionOptions) {

@@ -269,17 +269,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return this;
     }
 
-    /**
-     * Sets the request tags to be associated with all requests sent by this client.
-     *
-     * @param requestTags the request tags to set
-     * @return the builder object
-     */
-    public Builder setRequestTags(String... requestTags) {
-      Preconditions.checkNotNull(requestTags, "Request tags cannot be null");
-      this.requestTags = ImmutableList.copyOf(requestTags);
-      return this;
-    }
 
     /**
      * Sets the {@link DatastoreOpenTelemetryOptions} to be used for this Datastore instance.
@@ -406,7 +395,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
    *
    * @return the request tags
    */
-  public ImmutableList<String> getRequestTags() {
+  public List<String> getRequestTags() {
     return requestTags;
   }
 

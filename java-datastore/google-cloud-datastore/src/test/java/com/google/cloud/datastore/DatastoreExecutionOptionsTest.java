@@ -35,6 +35,15 @@ public class DatastoreExecutionOptionsTest {
   }
 
   @Test
+  public void testGetDefaultInstance() {
+    DatastoreExecutionOptions defaultOptions = DatastoreExecutionOptions.getDefaultInstance();
+
+    assertThat(defaultOptions.getExplainOptions()).isNull();
+    assertThat(defaultOptions.getRequestOptions()).isNull();
+    assertThat(defaultOptions.getReadOptions()).isEmpty();
+  }
+
+  @Test
   public void testBuilderFull() {
     ExplainOptions explainOptions = ExplainOptions.newBuilder().setAnalyze(true).build();
     RequestOptions requestOptions = RequestOptions.newBuilder().addRequestTags("tag1").build();
@@ -53,30 +62,23 @@ public class DatastoreExecutionOptionsTest {
   }
 
   @Test
-  public void testFactoryMethods() {
-    RequestOptions requestOptions = RequestOptions.newBuilder().addRequestTags("tag1").build();
+  public void testToBuilder() {
     ExplainOptions explainOptions = ExplainOptions.newBuilder().setAnalyze(true).build();
+    RequestOptions requestOptions = RequestOptions.newBuilder().addRequestTags("tag1").build();
     ReadOption readOption = ReadOption.eventualConsistency();
 
-    DatastoreExecutionOptions opt1 = DatastoreExecutionOptions.of(requestOptions);
-    assertThat(opt1.getRequestOptions()).isEqualTo(requestOptions);
+    DatastoreExecutionOptions original =
+        DatastoreExecutionOptions.newBuilder()
+            .setExplainOptions(explainOptions)
+            .setRequestOptions(requestOptions)
+            .build();
 
-    DatastoreExecutionOptions opt2 = DatastoreExecutionOptions.of(explainOptions);
-    assertThat(opt2.getExplainOptions()).isEqualTo(explainOptions);
+    DatastoreExecutionOptions copy =
+        original.toBuilder().setReadOptions(ImmutableList.of(readOption)).build();
 
-    DatastoreExecutionOptions opt3 = DatastoreExecutionOptions.of(ImmutableList.of(readOption));
-    assertThat(opt3.getReadOptions()).containsExactly(readOption);
-
-    DatastoreExecutionOptions opt4 =
-        DatastoreExecutionOptions.of(requestOptions, ImmutableList.of(readOption));
-    assertThat(opt4.getRequestOptions()).isEqualTo(requestOptions);
-    assertThat(opt4.getReadOptions()).containsExactly(readOption);
-
-    DatastoreExecutionOptions opt5 =
-        DatastoreExecutionOptions.of(explainOptions, requestOptions, ImmutableList.of(readOption));
-    assertThat(opt5.getExplainOptions()).isEqualTo(explainOptions);
-    assertThat(opt5.getRequestOptions()).isEqualTo(requestOptions);
-    assertThat(opt5.getReadOptions()).containsExactly(readOption);
+    assertThat(copy.getExplainOptions()).isEqualTo(explainOptions);
+    assertThat(copy.getRequestOptions()).isEqualTo(requestOptions);
+    assertThat(copy.getReadOptions()).containsExactly(readOption);
   }
 
   @Test
@@ -84,8 +86,16 @@ public class DatastoreExecutionOptionsTest {
     RequestOptions reqOpts = RequestOptions.newBuilder().addRequestTags("tag1").build();
     ExplainOptions expOpts = ExplainOptions.newBuilder().setAnalyze(true).build();
 
-    DatastoreExecutionOptions opt1 = DatastoreExecutionOptions.of(expOpts, reqOpts);
-    DatastoreExecutionOptions opt2 = DatastoreExecutionOptions.of(expOpts, reqOpts);
+    DatastoreExecutionOptions opt1 =
+        DatastoreExecutionOptions.newBuilder()
+            .setExplainOptions(expOpts)
+            .setRequestOptions(reqOpts)
+            .build();
+    DatastoreExecutionOptions opt2 =
+        DatastoreExecutionOptions.newBuilder()
+            .setExplainOptions(expOpts)
+            .setRequestOptions(reqOpts)
+            .build();
 
     assertThat(opt1).isEqualTo(opt2);
     assertThat(opt1.hashCode()).isEqualTo(opt2.hashCode());
@@ -94,9 +104,10 @@ public class DatastoreExecutionOptionsTest {
   @Test
   public void testCreateRequestOptionsWithDatastoreExecutionOptions() {
     DatastoreOptions datastoreOptions =
-        DatastoreOptions.newBuilder().setRequestTags("instance-tag").build();
+        DatastoreOptions.newBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
     RequestOptions reqOpts = RequestOptions.newBuilder().addRequestTags("request-tag").build();
-    DatastoreExecutionOptions execOptions = DatastoreExecutionOptions.of(reqOpts);
+    DatastoreExecutionOptions execOptions =
+        DatastoreExecutionOptions.newBuilder().setRequestOptions(reqOpts).build();
 
     RequestOptions merged =
         RequestOptionsHelper.createRequestOptions(datastoreOptions, execOptions);
