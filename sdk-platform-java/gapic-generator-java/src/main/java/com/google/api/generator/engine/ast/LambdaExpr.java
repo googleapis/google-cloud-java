@@ -22,7 +22,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class LambdaExpr implements Expr {
   @Override

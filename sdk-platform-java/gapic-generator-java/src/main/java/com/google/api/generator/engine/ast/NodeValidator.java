@@ -18,7 +18,9 @@ import com.google.common.base.Preconditions;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class NodeValidator {
   public static void checkNoNullElements(
       Collection<?> collection, String fieldTypeName, String nodeContextInfo) {

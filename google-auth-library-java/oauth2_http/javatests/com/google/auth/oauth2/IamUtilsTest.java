@@ -56,7 +56,8 @@ class IamUtilsTest {
     // Mock this call for the Credentials because the IAM SignBlob RPC requires an access token. The
     // call is initialized with HttpCredentialsAdapter which will make a call to get the access
     // token
-    credentials = Mockito.mock(ServiceAccountCredentials.class);
+    credentials =
+        Mockito.mock(ServiceAccountCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getRequestMetadata(Mockito.any())).thenReturn(ImmutableMap.of());
     Mockito.when(credentials.getUniverseDomain()).thenReturn("googleapis.com");
   }

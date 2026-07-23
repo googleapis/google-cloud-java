@@ -32,11 +32,14 @@
 package com.google.auth;
 
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Interface for a service account signer. A signer for a service account is capable of signing
  * bytes using the private key associated with its service account.
  */
+@NullMarked
 public interface ServiceAccountSigner {
 
   class SigningException extends RuntimeException {
@@ -48,7 +51,7 @@ public interface ServiceAccountSigner {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(@Nullable Object obj) {
       if (obj == this) {
         return true;
       }

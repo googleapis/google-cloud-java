@@ -16,7 +16,9 @@ package com.google.api.generator.engine.escaper;
 
 import com.google.common.escape.Escaper;
 import com.google.common.escape.Escapers;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HtmlEscaper extends Escaper {
   private static final HtmlEscaper SINGLETON = new HtmlEscaper();
 

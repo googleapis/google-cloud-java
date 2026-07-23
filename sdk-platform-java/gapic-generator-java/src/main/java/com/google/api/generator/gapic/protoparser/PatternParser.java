@@ -17,7 +17,9 @@ package com.google.api.generator.gapic.protoparser;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.collect.ImmutableSortedSet;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class PatternParser {
 
   // This method tries to parse all named segments from pattern and sort in natual order

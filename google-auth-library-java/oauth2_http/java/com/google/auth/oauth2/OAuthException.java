@@ -37,12 +37,14 @@ import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
 import java.io.IOException;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Encapsulates the standard OAuth error response. See
  * https://tools.ietf.org/html/rfc6749#section-5.2.
  */
+@NullMarked
 class OAuthException extends GoogleAuthException {
 
   private final String errorCode;
@@ -72,13 +74,11 @@ class OAuthException extends GoogleAuthException {
     return errorCode;
   }
 
-  @Nullable
-  String getErrorDescription() {
+  @Nullable String getErrorDescription() {
     return errorDescription;
   }
 
-  @Nullable
-  String getErrorUri() {
+  @Nullable String getErrorUri() {
     return errorUri;
   }
 

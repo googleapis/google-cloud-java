@@ -31,6 +31,9 @@
 
 package com.google.auth.oauth2;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public interface PKCEProvider {
   /**
    * Get the code_challenge parameter used in PKCE.

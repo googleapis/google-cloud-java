@@ -35,7 +35,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Represents an OAuth 2.0 token exchange request, as defined in <a
@@ -49,6 +50,7 @@ import javax.annotation.Nullable;
  * <p>Instances of this class are immutable. Use the {@link #newBuilder(String, String)} method to
  * create a new builder.
  */
+@NullMarked
 public final class StsTokenExchangeRequest {
   private static final String GRANT_TYPE = "urn:ietf:params:oauth:grant-type:token-exchange";
 
