@@ -116,13 +116,16 @@ public class SwitchingChannelPool implements ChannelPool {
       case DIRECT_ACCESS_ONLY:
         return newChannelPoolFromProvider(channelProvider);
       case DIRECT_ACCESS_WITH_FALLBACK:
-        ChannelPool primaryChannelPool =
-            newChannelPoolFromProvider(
-                channelProvider,
-                "primary",
-                new DirectpathEnforcer(
-                    "Non-directpath connections are not allowed in the directpath channel "
-                        + "pool when a fallback channel pool is available."));
+        // TODO(b/session-fallback-wedge): temporarily NOT installing the DirectpathEnforcer.
+        // The enforcer rejects any non-ALTS connection on the directpath pool by throwing out of
+        // onHeaders; grpc turns that into CANCELLED "Failed to read headers", killing every session
+        // in state STARTING. On a pod whose directpath structurally negotiates a non-ALTS (CFE/TLS)
+        // connection, recovery depends entirely on FallbackChannelPool switching to cloudpath, and
+        // that error-rate switch can fail to fire (out-of-range error_rate_threshold, or a thrown
+        // metrics callback killing the sampler) -- wedging the pod indefinitely. Until that switch
+        // is hardened, drop the enforcer so such a connection is used (grpc's own directpath->CFE
+        // fallback) instead of hard-failing. Restore the enforcer once FallbackChannelPool is fixed.
+        ChannelPool primaryChannelPool = newChannelPoolFromProvider(channelProvider, "primary");
         ChannelPool fallbackChannelPool =
             newChannelPoolFromProvider(channelProvider.getFallback().get(), "fallback");
         FallbackConfiguration fallbackConfiguration =
