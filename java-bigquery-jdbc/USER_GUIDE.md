@@ -84,7 +84,7 @@ public class BigQueryQuickstart {
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
         + ";ProjectId=my-gcp-project-id"
         + ";DefaultDataset=my_dataset"
-        + ";OAuthType=0"; // 0 = Application Default Credentials (ADC)
+        + ";OAuthType=3"; // 3 = Application Default Credentials (ADC)
 
     try (Connection conn = DriverManager.getConnection(url);
          Statement stmt = conn.createStatement();
@@ -106,19 +106,17 @@ The driver supports multiple OAuth 2.0 and identity workflows specified via the 
 
 | `OAuthType` | Authentication Strategy | Required Properties |
 | :---: | :--- | :--- |
-| **`0`** | **Application Default Credentials (ADC)** / gcloud CLI | None (reads `GOOGLE_APPLICATION_CREDENTIALS` or `gcloud` context) |
-| **`1`** | **Service Account Key File** | `OAuthPvtKeyPath` (path to `.json` or `.p12` service account key) |
-| **`1`** | **Service Account Private Key String** | `OAuthServiceAcctEmail`, `OAuthPvtKey` (raw private key contents) |
-| **`2`** | **OAuth 2.0 Access Token / Refresh Token** | `OAuthRefreshToken`, `OAuthClientId`, `OAuthClientSecret` |
-| **`3`** | **User Account / Service Account Email** | `OAuthServiceAcctEmail` |
-| **`4`** | **Pre-generated Access Token** | `OAuthAccessToken` |
-| **`5`** | **Workload Identity Federation (BYOID)** | `BYOID_AudienceUri`, `BYOID_CredentialSource`, `BYOID_SubjectTokenType` |
+| **`0`** | **Service Account Key File / Key String** | `OAuthPvtKeyPath` (path to `.json`/`.p12` key) or `OAuthPvtKey` & `OAuthServiceAcctEmail` |
+| **`1`** | **User Account (Interactive 3-Legged OAuth)** | `OAuthClientId`, `OAuthClientSecret` |
+| **`2`** | **Pre-generated Access Token or Refresh Token** | `OAuthAccessToken` or `OAuthRefreshToken` (`OAuthClientId`, `OAuthClientSecret`) |
+| **`3`** | **Application Default Credentials (ADC)** / gcloud CLI | None (reads `GOOGLE_APPLICATION_CREDENTIALS` or `gcloud` context) |
+| **`4`** | **Workload Identity Federation (BYOID)** | `BYOID_AudienceUri`, `BYOID_CredentialSource`, `BYOID_SubjectTokenType` |
 
 ### Service Account Authentication Example
 ```java
 String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
     + ";ProjectId=my-gcp-project-id"
-    + ";OAuthType=1"
+    + ";OAuthType=0"
     + ";OAuthPvtKeyPath=/path/to/service-account-key.json";
 ```
 
@@ -127,7 +125,7 @@ To execute queries as an impersonated service account:
 ```java
 String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
     + ";ProjectId=my-gcp-project-id"
-    + ";OAuthType=0"
+    + ";OAuthType=3"
     + ";ServiceAccountImpersonationEmail=target-sa@my-gcp-project.iam.gserviceaccount.com";
 ```
 
