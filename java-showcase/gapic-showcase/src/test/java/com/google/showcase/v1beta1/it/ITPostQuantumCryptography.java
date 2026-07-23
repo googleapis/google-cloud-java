@@ -21,8 +21,8 @@ import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
+import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
