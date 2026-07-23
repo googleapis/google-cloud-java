@@ -38,9 +38,9 @@ import org.conscrypt.Conscrypt;
 
 /** Utility class for creating and configuring {@link NetHttpTransport} instances. */
 @InternalApi
-public class HttpJsonTransportUtils {
+public class HttpJsonConscryptUtils {
 
-  private static final Logger LOG = Logger.getLogger(HttpJsonTransportUtils.class.getName());
+  private static final Logger LOG = Logger.getLogger(HttpJsonConscryptUtils.class.getName());
 
   /**
    * Default TLS 1.3 Post-Quantum Cryptography (PQC) named groups configured when Conscrypt security
@@ -125,9 +125,9 @@ public class HttpJsonTransportUtils {
    *
    * @return the Conscrypt provider or null
    */
-  public static Provider getConscryptProvider() {
+  static Provider getConscryptProvider() {
     return ConscryptProviderHolder.INSTANCE;
   }
 
-  private HttpJsonTransportUtils() {}
+  private HttpJsonConscryptUtils() {}
 }

@@ -25,8 +25,8 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.httpjson.HttpHeadersUtils;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.HttpJsonStatusCode;
-import com.google.api.gax.httpjson.HttpJsonTransportUtils;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.HeaderProvider;
@@ -70,7 +70,7 @@ public class HttpTransportOptions implements TransportOptions {
         }
       }
 
-      return HttpJsonTransportUtils.configureConscryptSecurityProvider(
+      return HttpJsonConscryptUtils.configureConscryptSecurityProvider(
               new NetHttpTransport.Builder())
           .build();
     }

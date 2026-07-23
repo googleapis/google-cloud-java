@@ -197,7 +197,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     configureMtls(builder);
-    HttpJsonTransportUtils.configureConscryptSecurityProvider(builder);
+    HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
     return builder.build();
   }
 
@@ -210,7 +210,7 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     if (mtlsKeyStore == null) {
       return builder;
     }
-    Provider conscryptProvider = HttpJsonTransportUtils.getConscryptProvider();
+    Provider conscryptProvider = HttpJsonConscryptUtils.getConscryptProvider();
     if (conscryptProvider == null) {
       // Fall back to standard JDK JSSE if Conscrypt provider is unavailable
       builder.trustCertificates(null, mtlsKeyStore, "");

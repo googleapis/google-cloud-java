@@ -73,7 +73,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this.endpoint = endpoint;
     this.httpTransport =
         httpTransport == null
-            ? HttpJsonTransportUtils.configureConscryptSecurityProvider(
+            ? HttpJsonConscryptUtils.configureConscryptSecurityProvider(
                     new NetHttpTransport.Builder())
                 .build()
             : httpTransport;
@@ -234,7 +234,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
 
       if (httpTransport == null) {
         httpTransport =
-            HttpJsonTransportUtils.configureConscryptSecurityProvider(
+            HttpJsonConscryptUtils.configureConscryptSecurityProvider(
                     new NetHttpTransport.Builder())
                 .build();
       }

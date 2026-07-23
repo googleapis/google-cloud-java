@@ -213,7 +213,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
 
   @Test
   void testDefaultPqcGroups_containsExpectedGroups() {
-    assertThat(HttpJsonTransportUtils.DEFAULT_PQC_GROUPS)
+    assertThat(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
         .asList()
         .containsExactly("X25519MLKEM768", "SecP256r1MLKEM768", "X25519")
         .inOrder();
@@ -223,7 +223,7 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   void testConfigureConscryptSecurityProvider_returnsConfiguredBuilder() {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     NetHttpTransport.Builder result =
-        HttpJsonTransportUtils.configureConscryptSecurityProvider(builder);
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
     assertThat(result).isSameInstanceAs(builder);
   }
 }

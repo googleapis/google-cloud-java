@@ -22,7 +22,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
-import com.google.api.gax.httpjson.HttpJsonTransportUtils;
+import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -178,7 +178,7 @@ public class ITPostQuantumCryptography {
     // This test explicitly configures non-PQC classical groups (X25519, SecP256r1) on Conscrypt
     // to verify that the client falls back gracefully to classical TLS key exchange.
     NetHttpTransport transport =
-        HttpJsonTransportUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
             .setSslSocketConfigurator(
                 socket -> {
                   if (Conscrypt.isConscrypt(socket)) {
