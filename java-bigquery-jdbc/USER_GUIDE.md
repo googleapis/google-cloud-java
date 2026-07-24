@@ -24,8 +24,8 @@ This guide provides comprehensive instructions for configuring, developing with,
    - [CUJ 3: High-Throughput Result Extraction via Storage Read API](#cuj-3-high-throughput-result-extraction-via-storage-read-api)
    - [CUJ 4: Parameterized Queries with JSR-310 & Numeric Types](#cuj-4-parameterized-queries-with-jsr-310--numeric-types)
    - [CUJ 5: Nested Structs & Repeated Array Operations](#cuj-5-nested-structs--repeated-array-operations)
-   - [CUJ 6: Service Account Impersonation & Cross-Project Billing](#cuj-6-service-account-impersonation--cross-project-billing)
-   - [CUJ 7: Stored Procedure Execution](#cuj-7-stored-procedure-execution)
+   - [CUJ 6: Service Account Impersonation](#cuj-6-service-account-impersonation)
+   - [CUJ 7: Stored Procedure Execution & Procedural Results](#cuj-7-stored-procedure-execution--procedural-results)
 8. [High-Throughput & Performance Tuning](#8-high-throughput--performance-tuning)
 9. [Framework & BI Tool Integrations](#9-framework--bi-tool-integrations)
    - [Spring Boot & HikariCP](#spring-boot--hikaricp)
@@ -88,7 +88,7 @@ public class BigQueryQuickstart {
 
     try (Connection conn = DriverManager.getConnection(url);
          Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT name, age FROM users LIMIT 10")) {
+         ResultSet rs = stmt.executeQuery("SELECT name, age FROM `my-gcp-project-id.my_dataset.users` LIMIT 10")) {
       
       while (rs.next()) {
         System.out.printf("User: %s, Age: %d%n", rs.getString("name"), rs.getInt("age"));
@@ -305,7 +305,7 @@ TRANSACTION;     TRANSACTION;
 (Auto-re-executes BEGIN TRANSACTION; if setAutoCommit is still false)
 ```
 
-1. **Pre-requisite Check**: Calling `setAutoCommit(false)`, `commit()`, or `rollback()` requires `;EnableSession=true` in the connection URL. If disabled, an `IllegalStateException` is thrown.
+1. **Pre-requisite Check**: Calling `setAutoCommit(false)`, `commit()`, or `rollback()` requires `;EnableSession=true` in the connection URL. If disabled or invoked without an active transaction, an `IllegalStateException` is thrown by the driver.
 2. **Session & Transaction Start**:
    - `setAutoCommit(false)` issues `BEGIN TRANSACTION;` with `setCreateSession(true)`.
    - BigQuery assigns a unique `session_id` in the job statistics.
@@ -379,9 +379,9 @@ public class FinancialTransactionCUJ {
       // 1. Start Transaction Session
       conn.setAutoCommit(false);
       
-      String debitSql = "UPDATE finance.accounts SET balance = balance - ? WHERE account_id = ?";
-      String creditSql = "UPDATE finance.accounts SET balance = balance + ? WHERE account_id = ?";
-      String auditSql = "INSERT INTO finance.audit_log (source_id, target_id, amount, transfer_time) VALUES (?, ?, ?, CURRENT_TIMESTAMP())";
+      String debitSql = "UPDATE `my-gcp-project.finance.accounts` SET balance = balance - ? WHERE account_id = ?";
+      String creditSql = "UPDATE `my-gcp-project.finance.accounts` SET balance = balance + ? WHERE account_id = ?";
+      String auditSql = "INSERT INTO `my-gcp-project.finance.audit_log` (source_id, target_id, amount, transfer_time) VALUES (?, ?, ?, CURRENT_TIMESTAMP())";
 
       try (PreparedStatement debitStmt = conn.prepareStatement(debitSql);
            PreparedStatement creditStmt = conn.prepareStatement(creditSql);
@@ -445,7 +445,7 @@ public class EtlBatchIngestionCUJ {
         + ";EnableWriteAPI=true" // High-throughput write streaming
         + ";OAuthType=3";
 
-    String insertSql = "INSERT INTO telemetry.sensor_readings (reading_id, sensor_id, temperature, is_valid, record_time) VALUES (?, ?, ?, ?, ?)";
+    String insertSql = "INSERT INTO `my-gcp-project.telemetry.sensor_readings` (reading_id, sensor_id, temperature, is_valid, record_time) VALUES (?, ?, ?, ?, ?)";
 
     try (Connection conn = DriverManager.getConnection(url);
          PreparedStatement pstmt = conn.prepareStatement(insertSql)) {
@@ -491,7 +491,7 @@ public class HighThroughputExtractionCUJ {
 
     try (Connection conn = DriverManager.getConnection(url);
          Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT user_id, event_name, event_timestamp FROM analytics.user_events WHERE event_date >= '2026-01-01'")) {
+         ResultSet rs = stmt.executeQuery("SELECT user_id, event_name, event_timestamp FROM `my-gcp-project.analytics.user_events` WHERE event_date >= '2026-01-01'")) {
 
       long rowCount = 0;
       while (rs.next()) {
@@ -527,7 +527,7 @@ public class ParameterizedTypesCUJ {
   public static void main(String[] args) throws Exception {
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
-    String sql = "SELECT order_id FROM sales.orders "
+    String sql = "SELECT order_id FROM `my-project.sales.orders` "
         + "WHERE order_date = ? "
         + "  AND created_timestamp <= ? "
         + "  AND total_amount >= ? "
@@ -576,7 +576,7 @@ public class ComplexTypesCUJ {
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
     String query = "SELECT "
-        + "  order_id, "
+        + "  1001 AS order_id, "
         + "  STRUCT('123 Main St' AS street, 'Seattle' AS city) AS shipping_address, "
         + "  [STRUCT('Item A' AS sku, 2 AS qty), STRUCT('Item B' AS sku, 1 AS qty)] AS line_items, "
         + "  ['tag1', 'tag2', 'tag3'] AS tags";
@@ -588,7 +588,7 @@ public class ComplexTypesCUJ {
       while (rs.next()) {
         long orderId = rs.getLong("order_id");
 
-        // 1. Reading Struct with Null Safety
+        // 1. Reading Struct
         Struct addressStruct = (Struct) rs.getObject("shipping_address");
         if (addressStruct != null) {
           Object[] addressAttrs = addressStruct.getAttributes();
@@ -597,7 +597,7 @@ public class ComplexTypesCUJ {
           }
         }
 
-        // 2. Reading Array of Structs with Null Safety
+        // 2. Reading Array of Structs
         Array itemsArray = rs.getArray("line_items");
         if (itemsArray != null && itemsArray.getArray() != null) {
           Object[] itemsObj = (Object[]) itemsArray.getArray();
@@ -612,7 +612,7 @@ public class ComplexTypesCUJ {
           }
         }
 
-        // 3. Reading Primitive Array with Null Safety
+        // 3. Reading Primitive Array
         Array tagsArray = rs.getArray("tags");
         if (tagsArray != null && tagsArray.getArray() != null) {
           String[] tags = (String[]) tagsArray.getArray();
@@ -626,9 +626,14 @@ public class ComplexTypesCUJ {
 
 ---
 
-### CUJ 6: Service Account Impersonation & Cross-Project Billing
+### CUJ 6: Service Account Impersonation
 
-**Scenario**: Running a query where billing occurs under Project A (`billing-project`), while querying data located in Project B (`data-project`) via Service Account Impersonation.
+**Scenario**: An enterprise microservice running with Application Default Credentials (ADC) impersonates a central Service Account (`analytics-executor@my-gcp-project.iam.gserviceaccount.com`) to execute query jobs with elevated IAM permissions without storing or managing static private key files.
+
+> [!NOTE]
+> **IAM Roles Required for Impersonation**:
+> 1. **Caller Principal (ADC)**: Must have the `roles/iam.serviceAccountTokenCreator` role on the target Service Account.
+> 2. **Impersonated Service Account**: Must have `roles/bigquery.jobUser` (to submit query jobs) and `roles/bigquery.dataViewer` (to read target datasets).
 
 ```java
 import java.sql.Connection;
@@ -636,21 +641,20 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class CrossProjectImpersonationCUJ {
+public class ServiceAccountImpersonationCUJ {
   public static void main(String[] args) throws Exception {
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
-        + ";ProjectId=billing-project-id" // Project billed for the query
-        + ";AdditionalProjects=data-project-id" // Cross-project dataset access
-        + ";DefaultDataset=shared_dataset"
-        + ";OAuthType=3" // Use ADC context for initial authentication
-        + ";ServiceAccountImpersonationEmail=analytics-executor@billing-project-id.iam.gserviceaccount.com";
+        + ";ProjectId=my-gcp-project"
+        + ";DefaultDataset=analytics"
+        + ";OAuthType=3" // 3 = Application Default Credentials (ADC) context
+        + ";ServiceAccountImpersonationEmail=analytics-executor@my-gcp-project.iam.gserviceaccount.com";
 
     try (Connection conn = DriverManager.getConnection(url);
          Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT count(*) FROM `data-project-id.shared_dataset.global_logs`")) {
+         ResultSet rs = stmt.executeQuery("SELECT count(*) AS total_records FROM `my-gcp-project.analytics.user_events`")) {
 
       if (rs.next()) {
-        System.out.println("Cross-project log count: " + rs.getLong(1));
+        System.out.println("Total events recorded via impersonated SA: " + rs.getLong("total_records"));
       }
     }
   }
@@ -659,33 +663,74 @@ public class CrossProjectImpersonationCUJ {
 
 ---
 
-### CUJ 7: Stored Procedure Execution
+### CUJ 7: Stored Procedure Execution & Procedural Results
 
-**Scenario**: Calling a BigQuery stored procedure with input and output parameters.
+**Scenario**: Calling a BigQuery stored procedure or procedural script and extracting output results.
+
+> [!IMPORTANT]
+> **BigQuery Stored Procedure OUT Parameter Support**:
+> Traditional JDBC `CallableStatement.registerOutParameter(...)` and `cstmt.getXXX(index)` methods are **not supported** for capturing `OUT` parameters. Because BigQuery's REST API returns query execution results as tabular data (`TableResult`) rather than parameter bind response buffers, `cstmt.getXXX()` will return `null`.
+> 
+> To retrieve output variables or procedural results from BigQuery stored procedures, use one of the two supported patterns below via standard `ResultSet` extraction.
+
+#### Pattern A: Executing a Procedure that Returns a ResultSet
+If a stored procedure executes `SELECT` statements in its body, call it directly using `Statement.executeQuery()`:
 
 ```java
-import java.math.BigDecimal;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Types;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-public class StoredProcedureCUJ {
+public class StoredProcedureResultSetCUJ {
   public static void main(String[] args) throws Exception {
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
 
-    String procSql = "CALL my_dataset.calculate_tax(?, ?)";
+    try (Connection conn = DriverManager.getConnection(url);
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery("CALL `my-project.my_dataset.get_top_customers`()")) {
+
+      while (rs.next()) {
+        System.out.printf("Customer: %s, Total Spent: $%.2f%n", 
+            rs.getString("customer_name"), rs.getDouble("total_spent"));
+      }
+    }
+  }
+}
+```
+
+#### Pattern B: Retrieving Procedure OUT Parameters via Multi-Statement Script
+To retrieve `OUT` parameters from a procedure, execute a multi-statement procedural script that declares an output variable, passes it into the `CALL` statement, and selects the variable to return it as a `ResultSet`:
+
+```java
+import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class StoredProcedureOutParameterCUJ {
+  public static void main(String[] args) throws Exception {
+    String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-project;OAuthType=3";
+
+    // Multi-statement script declaring an output variable and selecting it as a ResultSet
+    String scriptSql = "DECLARE tax_out NUMERIC; "
+        + "CALL `my-project.my_dataset.calculate_tax`(?, tax_out); "
+        + "SELECT tax_out AS calculated_tax;";
 
     try (Connection conn = DriverManager.getConnection(url);
-         CallableStatement cstmt = conn.prepareCall(procSql)) {
+         PreparedStatement pstmt = conn.prepareStatement(scriptSql)) {
 
-      cstmt.setBigDecimal(1, new BigDecimal("1000.00")); // Input subtotal
-      cstmt.registerOutParameter(2, Types.DECIMAL);       // Output calculated tax
+      // Bind input parameter ($1 = subtotal)
+      pstmt.setBigDecimal(1, new BigDecimal("1000.00"));
 
-      cstmt.execute();
-
-      BigDecimal taxAmount = cstmt.getBigDecimal(2);
-      System.out.println("Calculated Tax Amount: $" + taxAmount);
+      // Execute script and read OUT variable from the returned ResultSet
+      try (ResultSet rs = pstmt.executeQuery()) {
+        if (rs.next()) {
+          BigDecimal taxAmount = rs.getBigDecimal("calculated_tax");
+          System.out.println("Calculated Tax Amount: $" + taxAmount);
+        }
+      }
     }
   }
 }
@@ -974,7 +1019,7 @@ Log files are generated inside the specified `LogPath` directory with per-connec
 
 **Standard Log Record Format**:
 ```text
-2026-07-22 14:25:10.123 [conn-bq-8f3a] INFO    12345 --- [ main          ] c.g.c.b.j.BigQueryStatement           executeQuery                  : Executing query: SELECT COUNT(*) FROM analytics.orders
+2026-07-22 14:25:10.123 [conn-bq-8f3a] INFO    12345 --- [ main          ] c.g.c.b.j.BigQueryStatement           executeQuery                  : Executing query: SELECT COUNT(*) FROM `my-project.analytics.orders`
 ```
 
 - **Timestamp**: `yyyy-MM-dd HH:mm:ss.SSS` in local time.
