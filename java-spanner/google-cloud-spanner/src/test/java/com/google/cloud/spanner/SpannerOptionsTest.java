@@ -31,6 +31,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -618,6 +619,39 @@ public class SpannerOptionsTest {
             .build();
     assertThat(options.getHost()).isEqualTo("http://localhost:1234");
     assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithoutProtocol() {
+    // The builder prepends "http://" to the host, but not to the emulator host. The emulator
+    // gate must still detect that the emulator is being used.
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithProtocol() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("http://localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithoutEmulatorHost() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setHost("http://localhost:1234")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertFalse(options.isEmulatorEnabled());
   }
 
   @Test
@@ -1449,6 +1483,39 @@ public class SpannerOptionsTest {
     assertTrue(options.getSessionPoolOptions().getUseMultiplexedSession());
     assertEquals(
         Duration.ofSeconds(42), options.getSessionPoolOptions().getAcquireSessionTimeout());
+  }
+
+  @Test
+  public void enableGrpcMetricsKeepsOneArgOverloadForCompatibility() throws Exception {
+    assertNotNull(
+        SpannerOptions.class.getMethod(
+            "enablegRPCMetrics", InstantiatingGrpcChannelProvider.Builder.class));
+  }
+
+  @Test
+  public void testCustomProviderKeepsCloudMonitoringSinkOnNonOmni() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      CustomOpenTelemetryMetricsProvider provider =
+          CustomOpenTelemetryMetricsProvider.create(OpenTelemetry.noop());
+      // Additive semantics: a custom sink on a non-OMNI client leaves the Cloud Monitoring sink on.
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("some-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setClientMetricsProvider(provider)
+              .build();
+      assertSame(provider, options.getClientMetricsProvider());
+      assertTrue(options.isEnableBuiltInMetrics());
+
+      // Disabling the built-in flag turns off only the Cloud Monitoring sink; the custom sink
+      // stays.
+      SpannerOptions customOnly = options.toBuilder().setBuiltInMetricsEnabled(false).build();
+      assertSame(provider, customOnly.getClientMetricsProvider());
+      assertFalse(customOnly.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
   }
 
   @Test
