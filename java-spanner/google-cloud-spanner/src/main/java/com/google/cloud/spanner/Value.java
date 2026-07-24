@@ -2552,6 +2552,16 @@ public abstract class Value implements Serializable {
     }
 
     @Override
+    boolean valueEquals(Value v) {
+      // Null elements are stored as the primitive default in the backing array, so the null
+      // bitmasks must be compared in addition to the backing arrays.
+      PrimitiveArrayImpl<?> that = (PrimitiveArrayImpl<?>) v;
+      return Objects.equals(nulls, that.nulls) && arrayEquals(v);
+    }
+
+    abstract boolean arrayEquals(Value v);
+
+    @Override
     int valueHash() {
       return 31 * Objects.hashCode(nulls) + arrayHash();
     }
@@ -2586,7 +2596,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    boolean valueEquals(Value v) {
+    boolean arrayEquals(Value v) {
       BoolArrayImpl that = (BoolArrayImpl) v;
       return Arrays.equals(values, that.values);
     }
@@ -2644,7 +2654,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    boolean valueEquals(Value v) {
+    boolean arrayEquals(Value v) {
       Int64ArrayImpl that = (Int64ArrayImpl) v;
       return Arrays.equals(values, that.values);
     }
@@ -2686,7 +2696,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    boolean valueEquals(Value v) {
+    boolean arrayEquals(Value v) {
       Float32ArrayImpl that = (Float32ArrayImpl) v;
       return Arrays.equals(values, that.values);
     }
@@ -2726,7 +2736,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    boolean valueEquals(Value v) {
+    boolean arrayEquals(Value v) {
       Float64ArrayImpl that = (Float64ArrayImpl) v;
       return Arrays.equals(values, that.values);
     }
@@ -2883,7 +2893,7 @@ public abstract class Value implements Serializable {
     }
 
     @Override
-    boolean valueEquals(Value v) {
+    boolean arrayEquals(Value v) {
       PgOidArrayImpl that = (PgOidArrayImpl) v;
       return Arrays.equals(values, that.values);
     }
