@@ -33,6 +33,7 @@ def migrate_file(file_path):
             lines.insert(insert_idx, "@NullMarked")
             content = "\n".join(lines) + content[class_start:]
 
+
     # 3. Replace legacy javax Nullable import
     content = content.replace("import javax.annotation.Nullable;", "import org.jspecify.annotations.Nullable;")
 
