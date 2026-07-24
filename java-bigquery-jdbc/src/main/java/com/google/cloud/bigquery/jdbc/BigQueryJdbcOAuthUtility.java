@@ -306,7 +306,7 @@ final class BigQueryJdbcOAuthUtility {
         credentials, reqGoogleDriveScopeBool, authProperties, httpTransportFactory);
   }
 
-  private static boolean isFileExists(String filename) {
+  static boolean isFileExists(String filename) {
     try {
       return filename != null && !filename.isEmpty() && Files.exists(Paths.get(filename));
     } catch (Exception e) {

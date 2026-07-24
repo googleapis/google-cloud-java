@@ -39,6 +39,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -247,8 +248,7 @@ public class BigQueryJdbcOpenTelemetry {
         BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME,
         BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name()); // Service Account
 
-    byte[] credsBytes = credsString.getBytes(StandardCharsets.UTF_8);
-    if (BigQueryJdbcOAuthUtility.isJson(credsBytes)) {
+    if (!BigQueryJdbcOAuthUtility.isFileExists(credsString)) {
       authProperties.put(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME, credsString);
     } else {
       authProperties.put(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME, credsString);
@@ -270,9 +270,10 @@ public class BigQueryJdbcOpenTelemetry {
     return connectionConfigs.values();
   }
 
-  private static Map<String, String> getAuthHeaders(Credentials credentials) {
+  private static Map<String, String> getAuthHeaders(Credentials credentials, String projectId) {
     try {
-      Map<String, List<String>> metadata = credentials.getRequestMetadata(OTLP_ENDPOINT_URI);
+
+      Map<String, List<String>> metadata = credentials.getRequestMetadata();
       Map<String, String> headers = new HashMap<>();
       metadata.forEach(
           (headerKey, headerValues) -> {
@@ -280,6 +281,11 @@ public class BigQueryJdbcOpenTelemetry {
               headers.put(headerKey, headerValues.get(0));
             }
           });
+      if (projectId != null && !projectId.isEmpty()) {
+        headers.put("x-goog-user-project", projectId);
+        headers.put("x-goog-request-params", "project=" + projectId);
+        headers.put("x-goog-request-reason", "bigquery-jdbc");
+      }
       return headers;
     } catch (Exception e) {
       // We log the warning and return an empty map, allowing the exporter to fail gracefully
@@ -310,7 +316,8 @@ public class BigQueryJdbcOpenTelemetry {
       boolean enableGcpLogExporter,
       OpenTelemetry customOpenTelemetry,
       String gcpTelemetryCredentials,
-      String gcpTelemetryProjectId) {
+      String gcpTelemetryProjectId,
+      Credentials fallbackCredentials) {
 
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
@@ -369,6 +376,16 @@ public class BigQueryJdbcOpenTelemetry {
               AutoConfiguredOpenTelemetrySdk autoConfigured =
                   AutoConfiguredOpenTelemetrySdk.builder()
                       .addPropertiesSupplier(() -> props)
+                      .addResourceCustomizer(
+                          (resource, configProperties) -> {
+                            if (gcpTelemetryProjectId != null) {
+                              return resource.merge(
+                                  io.opentelemetry.sdk.resources.Resource.builder()
+                                      .put("gcp.project_id", gcpTelemetryProjectId)
+                                      .build());
+                            }
+                            return resource;
+                          })
                       .addSpanExporterCustomizer(
                           (spanExporter, configProperties) -> {
                             try {
@@ -376,18 +393,38 @@ public class BigQueryJdbcOpenTelemetry {
                               if (gcpTelemetryCredentials != null) {
                                 credentials = resolveCredentialsFromString(gcpTelemetryCredentials);
                               } else {
-                                credentials = GoogleCredentials.getApplicationDefault();
+                                credentials = fallbackCredentials;
                               }
+
+                              if (credentials instanceof GoogleCredentials) {
+                                GoogleCredentials googleCredentials =
+                                    (GoogleCredentials) credentials;
+                                if (googleCredentials.createScopedRequired()) {
+                                  credentials =
+                                      googleCredentials.createScoped(
+                                          Collections.singletonList(
+                                              "https://www.googleapis.com/auth/cloud-platform"));
+                                }
+                              }
+
+                              final Credentials finalCredentials = credentials;
+
                               if (spanExporter instanceof OtlpHttpSpanExporter) {
                                 return ((OtlpHttpSpanExporter) spanExporter)
                                     .toBuilder()
-                                        .setHeaders(() -> getAuthHeaders(credentials))
+                                        .setHeaders(
+                                            () ->
+                                                getAuthHeaders(
+                                                    finalCredentials, gcpTelemetryProjectId))
                                         .build();
                               }
                               if (spanExporter instanceof OtlpGrpcSpanExporter) {
                                 return ((OtlpGrpcSpanExporter) spanExporter)
                                     .toBuilder()
-                                        .setHeaders(() -> getAuthHeaders(credentials))
+                                        .setHeaders(
+                                            () ->
+                                                getAuthHeaders(
+                                                    finalCredentials, gcpTelemetryProjectId))
                                         .build();
                               }
                             } catch (Exception e) {

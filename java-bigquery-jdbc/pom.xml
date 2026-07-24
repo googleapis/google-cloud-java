@@ -85,7 +85,6 @@
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
             <ignoredUnusedDeclaredDependencies combine.children="append">
-                <ignoredUnusedDeclaredDependency>io.opentelemetry.contrib:opentelemetry-gcp-auth-extension</ignoredUnusedDeclaredDependency>
                 <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
             </ignoredUnusedDeclaredDependencies>
             <ignoredDependencies>
@@ -394,11 +393,6 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-logs</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.opentelemetry.contrib</groupId>
-      <artifactId>opentelemetry-gcp-auth-extension</artifactId>
-      <version>1.56.0-alpha</version>
     </dependency>
 
     <!--  Test Dependencies  -->

@@ -633,6 +633,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                       eq(enableLog),
                       hasCustom ? eq(mockCustomOtel) : isNull(),
                       any(),
+                      any(),
                       any()))
           .thenAnswer(
               invocation -> {

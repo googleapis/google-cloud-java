@@ -1188,9 +1188,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
     String effectiveProjectId =
         (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
-    String effectiveCredentials = resolveEffectiveCredentials();
 
-    validateTraceConfiguration(this.enableGcpTraceExporter, effectiveCredentials);
+    validateTraceConfiguration(
+        this.enableGcpTraceExporter,
+        this.gcpTelemetryCredentials != null
+            ? this.gcpTelemetryCredentials
+            : resolveEffectiveCredentials());
 
     OpenTelemetry openTelemetry =
         BigQueryJdbcOpenTelemetry.getOpenTelemetry(
@@ -1198,15 +1201,16 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             this.enableGcpTraceExporter,
             this.enableGcpLogExporter,
             this.customOpenTelemetry,
-            effectiveCredentials,
-            effectiveProjectId);
+            this.gcpTelemetryCredentials,
+            effectiveProjectId,
+            this.credentials);
 
     boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
     Logging localLoggingClient = null;
     if (this.enableGcpLogExporter && !hasExternalOtel) {
       localLoggingClient =
           BigQueryJdbcOpenTelemetry.createLoggingClient(
-              true, null, effectiveCredentials, effectiveProjectId, this.credentials);
+              true, null, this.gcpTelemetryCredentials, effectiveProjectId, this.credentials);
     }
 
     if (this.enableGcpLogExporter || hasExternalOtel) {
