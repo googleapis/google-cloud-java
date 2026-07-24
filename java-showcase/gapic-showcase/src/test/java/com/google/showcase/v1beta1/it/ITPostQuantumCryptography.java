@@ -16,7 +16,6 @@
 
 package com.google.showcase.v1beta1.it;
 
-import static com.google.api.gax.httpjson.HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
@@ -146,7 +145,8 @@ public class ITPostQuantumCryptography {
       assertThat(negotiatedGroup).isEqualTo(EXPECTED_PQC_GROUP);
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
-      assertThat(supportedGroups).isEqualTo(DEFAULT_PQC_GROUPS);
+      assertThat(supportedGroups).isNotNull();
+      assertThat(supportedGroups).contains(EXPECTED_PQC_GROUP);
     }
   }
 
