@@ -372,9 +372,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
       try {
         while (!stop && hasNext) {
           try {
-            synchronized (monitor) {
-              stop = state.shouldStop;
-            }
+            stop = shouldStopProducing();
             if (!stop) {
               while (buffer.remainingCapacity() == 0 && !stop) {
                 waitIfPaused();
@@ -389,9 +387,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
                         Math.min(buffer.size() / 2 + 1, buffer.size()),
                         MAX_WAIT_FOR_BUFFER_CONSUMPTION));
                 bufferConsumptionLatch.await();
-                synchronized (monitor) {
-                  stop = state.shouldStop;
-                }
+                stop = shouldStopProducing();
               }
             }
             if (!stop) {
@@ -447,6 +443,16 @@ class AsyncResultSetImpl extends ForwardingStructReader
             result.set(null);
           }
         }
+      }
+    }
+
+    private boolean shouldStopProducing() {
+      synchronized (monitor) {
+        // A callback that throws leaves the state at CONSUMING, unlike DONE and CANCELLED, so
+        // shouldStop alone would not catch it. The callback runner is never dispatched again and
+        // bufferConsumptionLatch is left at zero, so the producer would otherwise spin on a full
+        // buffer that nothing will drain.
+        return state.shouldStop || cursorReturnedDoneOrException;
       }
     }
 
