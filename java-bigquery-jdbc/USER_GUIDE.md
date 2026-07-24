@@ -969,7 +969,7 @@ jdbc:bigquery://https://www.my-universe.cloud:443
 ```yaml
 spring:
   datasource:
-    url: jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-gcp-project;DefaultDataset=my_dataset;OAuthType=0;OAuthServiceAcctEmail=sa@my-project.iam.gserviceaccount.com;OAuthPvtKeyPath=/path/to/key.json
+    url: "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-gcp-project;DefaultDataset=my_dataset;OAuthType=0;OAuthServiceAcctEmail=sa@my-project.iam.gserviceaccount.com;OAuthPvtKeyPath=/path/to/key.json"
     driver-class-name: com.google.cloud.bigquery.jdbc.BigQueryDriver
     hikari:
       maximum-pool-size: 10
