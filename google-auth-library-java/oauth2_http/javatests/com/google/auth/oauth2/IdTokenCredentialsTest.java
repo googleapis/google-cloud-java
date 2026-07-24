@@ -34,10 +34,40 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link IdTokenCredentials}. */
 class IdTokenCredentialsTest extends BaseSerializationTest {
+
+  private static class TestEnvironmentProvider {
+    private final Map<String, String> env = new HashMap<>();
+
+    void setEnv(String key, String value) {
+      env.put(key, value);
+    }
+
+    String getEnv(String key) {
+      return env.get(key);
+    }
+  }
+
+  private TestEnvironmentProvider envProvider;
+
+  @BeforeEach
+  void setUp() {
+    envProvider = new TestEnvironmentProvider();
+    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+  }
+
+  @AfterEach
+  void tearDown() {
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   @Test
   void hashCode_equals() throws IOException {
