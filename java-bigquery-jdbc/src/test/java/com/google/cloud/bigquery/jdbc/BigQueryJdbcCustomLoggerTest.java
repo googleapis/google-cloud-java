@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -41,6 +42,7 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
 
@@ -116,6 +118,29 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     assertTrue(lazyRecord.isCallerInferred());
     assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), className);
     assertEquals("testLazyCallerInference", methodName);
+  }
+
+  @Test
+  public void testCallerInferenceWithPerConnectionFileHandler(@TempDir Path tempDir) {
+    PerConnectionFileHandler perConnHandler =
+        new PerConnectionFileHandler(tempDir.toString(), Level.ALL);
+    try {
+      logger.fine("Message through PerConnectionFileHandler");
+
+      List<LogRecord> records = testHandler.getRecords();
+      assertEquals(1, records.size());
+      LogRecord record = records.get(0);
+
+      // Publish record via PerConnectionFileHandler to put PerConnectionFileHandler on stack trace
+      perConnHandler.publish(record);
+
+      // Verify that caller inference skips PerConnectionFileHandler frame
+      assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
+      assertEquals(
+          "testCallerInferenceWithPerConnectionFileHandler", record.getSourceMethodName());
+    } finally {
+      perConnHandler.close();
+    }
   }
 
   @Test
