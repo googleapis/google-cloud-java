@@ -1253,19 +1253,27 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   }
 
   private void setupCertAndKeyConfig() throws IOException {
-    java.nio.file.Path certSource =
-        java.nio.file.Paths.get(
-            ComputeEngineCredentialsTest.class
-                .getResource("/agent/agent_spiffe_cert.pem")
-                .getPath());
+    java.nio.file.Path certSource = null;
+    try {
+      certSource = java.nio.file.Paths.get(
+          ComputeEngineCredentialsTest.class
+              .getResource("/agent/agent_spiffe_cert.pem")
+              .toURI());
+    } catch (java.net.URISyntaxException e) {
+      throw new IOException("Failed to load test resource", e);
+    }
     java.nio.file.Path certTarget = tempDir.resolve("certificates.pem");
     Files.copy(certSource, certTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 
-    java.nio.file.Path keySource =
-        java.nio.file.Paths.get(
-            ComputeEngineCredentialsTest.class
-                .getResource("/agent/agent_spiffe_key.pem")
-                .getPath());
+    java.nio.file.Path keySource = null;
+    try {
+      keySource = java.nio.file.Paths.get(
+          ComputeEngineCredentialsTest.class
+              .getResource("/agent/agent_spiffe_key.pem")
+              .toURI());
+    } catch (java.net.URISyntaxException e) {
+      throw new IOException("Failed to load test resource", e);
+    }
     java.nio.file.Path keyTarget = tempDir.resolve("private_key.pem");
     Files.copy(keySource, keyTarget, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
 

@@ -116,6 +116,21 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
+  public void shouldRequestBoundToken_certificateParsingException_returnsFalse() throws java.security.cert.CertificateParsingException {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    when(mockCert.getSubjectAlternativeNames()).thenThrow(new java.security.cert.CertificateParsingException());
+    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_nonUriSan_returnsFalse() throws java.security.cert.CertificateParsingException {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    List<?> dnsSan = Arrays.asList(2, "www.example.com");
+    when(mockCert.getSubjectAlternativeNames()).thenReturn(Collections.<List<?>>singleton(dnsSan));
+    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+  }
+
+  @Test
   public void shouldRequestBoundToken_noSan_returnsFalse() throws CertificateException {
     X509Certificate mockCert = mock(X509Certificate.class);
     when(mockCert.getSubjectAlternativeNames()).thenReturn(null);
@@ -175,6 +190,24 @@ class AgentIdentityUtilsTest {
         tempDir.resolve("missing.json").toAbsolutePath().toString());
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     AgentIdentityUtils.setTimeService(new FakeTimeService());
+    IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Unable to find Agent Identity certificate config or file for bound token request"
+                    + " after multiple retries."));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_malformedJson_throwsIOException() throws IOException {
+    File configFile = tempDir.resolve("config.json").toFile();
+    try (FileOutputStream fos = new FileOutputStream(configFile)) {
+      fos.write("{ \"cert_configs\": invalid json} ".getBytes(StandardCharsets.UTF_8));
+    }
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    AgentIdentityUtils.setTimeService(new FakeTimeService());
+
     IOException e = assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertTrue(
         e.getMessage()

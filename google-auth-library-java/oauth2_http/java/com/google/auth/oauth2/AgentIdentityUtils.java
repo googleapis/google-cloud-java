@@ -83,6 +83,9 @@ public final class AgentIdentityUtils {
   }
 
   // Polling configuration
+  private static final int CERT_KEY_MATCH_RETRIES = 3;
+  private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
+
   private static final int FAST_POLL_CYCLES = 50;
   private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
   private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
@@ -239,7 +242,7 @@ public final class AgentIdentityUtils {
       // Separate files, verify match with retry
       int retries = 0;
       boolean matched = false;
-      while (retries < 3) {
+      while (retries < CERT_KEY_MATCH_RETRIES) {
         try {
           certContent = readCertificateChain(certPath);
           cert = parseCertificateContent(certContent);
@@ -262,9 +265,9 @@ public final class AgentIdentityUtils {
         }
 
         retries++;
-        if (retries < 3) {
+        if (retries < CERT_KEY_MATCH_RETRIES) {
           try {
-            timeService.sleep(100); // 0.1 seconds backoff
+            timeService.sleep(CERT_KEY_MATCH_RETRY_INTERVAL_MS); // 0.1 seconds backoff
           } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new IOException("Interrupted while waiting for cert/key match.", e);
@@ -274,7 +277,9 @@ public final class AgentIdentityUtils {
 
       if (!matched) {
         throw new IOException(
-            "Agent Identity certificate and private key mismatch or read failure after 3 retries.");
+            String.format(
+                "Agent Identity certificate and private key mismatch or read failure after %d retries.",
+                CERT_KEY_MATCH_RETRIES));
       }
     } else if (!Strings.isNullOrEmpty(certPath)) {
       // Bundle or only cert available
