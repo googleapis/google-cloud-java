@@ -463,6 +463,366 @@ public class CommerceTransactionClientTest {
   }
 
   @Test
+  public void resolveAmendmentTargetTest() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount.toString(), actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer.toString(), actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest2() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount.toString(), actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer, actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest3() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount, actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer.toString(), actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest4() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount, actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer, actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest5() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount.toString(), actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer.toString(), actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest5() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest6() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount.toString(), actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer, actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest6() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest7() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    StandardOfferName baseStandardOffer =
+        StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount, actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer.toString(), actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest7() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      StandardOfferName baseStandardOffer =
+          StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resolveAmendmentTargetTest8() throws Exception {
+    ResolveAmendmentTargetResponse expectedResponse =
+        ResolveAmendmentTargetResponse.newBuilder().build();
+    mockCommerceTransaction.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String targetBillingAccount = "targetBillingAccount-2068776157";
+    String baseStandardOffer = "baseStandardOffer-1957740978";
+
+    ResolveAmendmentTargetResponse actualResponse =
+        client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCommerceTransaction.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ResolveAmendmentTargetRequest actualRequest =
+        ((ResolveAmendmentTargetRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(targetBillingAccount, actualRequest.getTargetBillingAccount());
+    Assert.assertEquals(baseStandardOffer, actualRequest.getBaseStandardOffer());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void resolveAmendmentTargetExceptionTest8() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCommerceTransaction.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String targetBillingAccount = "targetBillingAccount-2068776157";
+      String baseStandardOffer = "baseStandardOffer-1957740978";
+      client.resolveAmendmentTarget(parent, targetBillingAccount, baseStandardOffer);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createPrivateOfferTest() throws Exception {
     PrivateOffer expectedResponse =
         PrivateOffer.newBuilder()

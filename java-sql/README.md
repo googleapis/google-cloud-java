@@ -182,7 +182,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: 
+[product-docs]: https://cloud.google.com/sql/
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-sql/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-sql.svg

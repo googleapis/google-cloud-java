@@ -150,6 +150,31 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ResolveAmendmentTarget</td>
+ *      <td><p> Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this method to determine the correct amendment target before creating or publishing an offer.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> resolveAmendmentTarget(ResolveAmendmentTargetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> resolveAmendmentTarget(LocationName parent, BillingAccountName targetBillingAccount, StandardOfferName baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(LocationName parent, BillingAccountName targetBillingAccount, String baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(LocationName parent, String targetBillingAccount, StandardOfferName baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(LocationName parent, String targetBillingAccount, String baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(String parent, BillingAccountName targetBillingAccount, StandardOfferName baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(String parent, BillingAccountName targetBillingAccount, String baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(String parent, String targetBillingAccount, StandardOfferName baseStandardOffer)
+ *           <li><p> resolveAmendmentTarget(String parent, String targetBillingAccount, String baseStandardOffer)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> resolveAmendmentTargetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreatePrivateOffer</td>
  *      <td><p> Creates a new PrivateOffer in a given project and location.</td>
  *      <td>
@@ -1143,6 +1168,443 @@ public class CommerceTransactionClient implements BackgroundResource {
    */
   public final UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable() {
     return stub.getPrivateOfferCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   StandardOfferName baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      @Nullable LocationName parent,
+      @Nullable BillingAccountName targetBillingAccount,
+      @Nullable StandardOfferName baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTargetBillingAccount(
+                targetBillingAccount == null ? null : targetBillingAccount.toString())
+            .setBaseStandardOffer(baseStandardOffer == null ? null : baseStandardOffer.toString())
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   String baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *           .toString();
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      @Nullable LocationName parent,
+      @Nullable BillingAccountName targetBillingAccount,
+      String baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTargetBillingAccount(
+                targetBillingAccount == null ? null : targetBillingAccount.toString())
+            .setBaseStandardOffer(baseStandardOffer)
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   StandardOfferName baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      @Nullable LocationName parent,
+      String targetBillingAccount,
+      @Nullable StandardOfferName baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTargetBillingAccount(targetBillingAccount)
+            .setBaseStandardOffer(baseStandardOffer == null ? null : baseStandardOffer.toString())
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *           .toString();
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      @Nullable LocationName parent, String targetBillingAccount, String baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTargetBillingAccount(targetBillingAccount)
+            .setBaseStandardOffer(baseStandardOffer)
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   StandardOfferName baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      String parent,
+      @Nullable BillingAccountName targetBillingAccount,
+      @Nullable StandardOfferName baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent)
+            .setTargetBillingAccount(
+                targetBillingAccount == null ? null : targetBillingAccount.toString())
+            .setBaseStandardOffer(baseStandardOffer == null ? null : baseStandardOffer.toString())
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   BillingAccountName targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   String baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *           .toString();
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      String parent, @Nullable BillingAccountName targetBillingAccount, String baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent)
+            .setTargetBillingAccount(
+                targetBillingAccount == null ? null : targetBillingAccount.toString())
+            .setBaseStandardOffer(baseStandardOffer)
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   StandardOfferName baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]");
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      String parent, String targetBillingAccount, @Nullable StandardOfferName baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent)
+            .setTargetBillingAccount(targetBillingAccount)
+            .setBaseStandardOffer(baseStandardOffer == null ? null : baseStandardOffer.toString())
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String targetBillingAccount = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   String baseStandardOffer =
+   *       StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *           .toString();
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(
+   *           parent, targetBillingAccount, baseStandardOffer);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for ResolveAmendmentTargetRequest
+   * @param targetBillingAccount Required. The customer's billing account targeted by the offer.
+   *     This is the billing account for which the new private offer will be created on. Format:
+   *     billingAccounts/{billing_account}.
+   * @param baseStandardOffer Required. The base standard offer that the private offer will be based
+   *     on. Format:
+   *     projects/{project}/locations/{location}/services/{service}/standardOffers/{standard_offer}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      String parent, String targetBillingAccount, String baseStandardOffer) {
+    ResolveAmendmentTargetRequest request =
+        ResolveAmendmentTargetRequest.newBuilder()
+            .setParent(parent)
+            .setTargetBillingAccount(targetBillingAccount)
+            .setBaseStandardOffer(baseStandardOffer)
+            .build();
+    return resolveAmendmentTarget(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   ResolveAmendmentTargetRequest request =
+   *       ResolveAmendmentTargetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTargetBillingAccount(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setBaseStandardOffer(
+   *               StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *                   .toString())
+   *           .build();
+   *   ResolveAmendmentTargetResponse response =
+   *       commerceTransactionClient.resolveAmendmentTarget(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ResolveAmendmentTargetResponse resolveAmendmentTarget(
+      ResolveAmendmentTargetRequest request) {
+    return resolveAmendmentTargetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Resolves the existing offer that must be amended when creating a new PrivateOffer. Use this
+   * method to determine the correct amendment target before creating or publishing an offer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommerceTransactionClient commerceTransactionClient = CommerceTransactionClient.create()) {
+   *   ResolveAmendmentTargetRequest request =
+   *       ResolveAmendmentTargetRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTargetBillingAccount(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setBaseStandardOffer(
+   *               StandardOfferName.of("[PROJECT]", "[LOCATION]", "[SERVICE]", "[STANDARD_OFFER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ResolveAmendmentTargetResponse> future =
+   *       commerceTransactionClient.resolveAmendmentTargetCallable().futureCall(request);
+   *   // Do something.
+   *   ResolveAmendmentTargetResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable() {
+    return stub.resolveAmendmentTargetCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

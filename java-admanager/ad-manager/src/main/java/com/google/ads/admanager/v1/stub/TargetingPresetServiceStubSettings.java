@@ -22,11 +22,14 @@ import com.google.ads.admanager.v1.BatchCreateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchCreateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsResponse;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsRequest;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.CreateTargetingPresetRequest;
 import com.google.ads.admanager.v1.GetTargetingPresetRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsResponse;
 import com.google.ads.admanager.v1.TargetingPreset;
+import com.google.ads.admanager.v1.UpdateTargetingPresetRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -135,6 +138,11 @@ public class TargetingPresetServiceStubSettings
   private final UnaryCallSettings<
           BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
       batchCreateTargetingPresetsSettings;
+  private final UnaryCallSettings<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetSettings;
+  private final UnaryCallSettings<
+          BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsSettings;
   private final UnaryCallSettings<
           BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
       batchDeactivateTargetingPresetsSettings;
@@ -227,6 +235,18 @@ public class TargetingPresetServiceStubSettings
   public UnaryCallSettings<BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
       batchCreateTargetingPresetsSettings() {
     return batchCreateTargetingPresetsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateTargetingPreset. */
+  public UnaryCallSettings<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetSettings() {
+    return updateTargetingPresetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateTargetingPresets. */
+  public UnaryCallSettings<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsSettings() {
+    return batchUpdateTargetingPresetsSettings;
   }
 
   /** Returns the object with the settings used for calls to batchDeactivateTargetingPresets. */
@@ -323,6 +343,9 @@ public class TargetingPresetServiceStubSettings
     createTargetingPresetSettings = settingsBuilder.createTargetingPresetSettings().build();
     batchCreateTargetingPresetsSettings =
         settingsBuilder.batchCreateTargetingPresetsSettings().build();
+    updateTargetingPresetSettings = settingsBuilder.updateTargetingPresetSettings().build();
+    batchUpdateTargetingPresetsSettings =
+        settingsBuilder.batchUpdateTargetingPresetsSettings().build();
     batchDeactivateTargetingPresetsSettings =
         settingsBuilder.batchDeactivateTargetingPresetsSettings().build();
   }
@@ -352,6 +375,11 @@ public class TargetingPresetServiceStubSettings
     private final UnaryCallSettings.Builder<
             BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
         batchCreateTargetingPresetsSettings;
+    private final UnaryCallSettings.Builder<UpdateTargetingPresetRequest, TargetingPreset>
+        updateTargetingPresetSettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+        batchUpdateTargetingPresetsSettings;
     private final UnaryCallSettings.Builder<
             BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
         batchDeactivateTargetingPresetsSettings;
@@ -387,6 +415,8 @@ public class TargetingPresetServiceStubSettings
           PagedCallSettings.newBuilder(LIST_TARGETING_PRESETS_PAGE_STR_FACT);
       createTargetingPresetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchCreateTargetingPresetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateTargetingPresetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateTargetingPresetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeactivateTargetingPresetsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -395,6 +425,8 @@ public class TargetingPresetServiceStubSettings
               listTargetingPresetsSettings,
               createTargetingPresetSettings,
               batchCreateTargetingPresetsSettings,
+              updateTargetingPresetSettings,
+              batchUpdateTargetingPresetsSettings,
               batchDeactivateTargetingPresetsSettings);
       initDefaults(this);
     }
@@ -407,6 +439,9 @@ public class TargetingPresetServiceStubSettings
       createTargetingPresetSettings = settings.createTargetingPresetSettings.toBuilder();
       batchCreateTargetingPresetsSettings =
           settings.batchCreateTargetingPresetsSettings.toBuilder();
+      updateTargetingPresetSettings = settings.updateTargetingPresetSettings.toBuilder();
+      batchUpdateTargetingPresetsSettings =
+          settings.batchUpdateTargetingPresetsSettings.toBuilder();
       batchDeactivateTargetingPresetsSettings =
           settings.batchDeactivateTargetingPresetsSettings.toBuilder();
 
@@ -416,6 +451,8 @@ public class TargetingPresetServiceStubSettings
               listTargetingPresetsSettings,
               createTargetingPresetSettings,
               batchCreateTargetingPresetsSettings,
+              updateTargetingPresetSettings,
+              batchUpdateTargetingPresetsSettings,
               batchDeactivateTargetingPresetsSettings);
     }
 
@@ -449,6 +486,16 @@ public class TargetingPresetServiceStubSettings
 
       builder
           .batchCreateTargetingPresetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateTargetingPresetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateTargetingPresetsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -501,6 +548,19 @@ public class TargetingPresetServiceStubSettings
             BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
         batchCreateTargetingPresetsSettings() {
       return batchCreateTargetingPresetsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateTargetingPreset. */
+    public UnaryCallSettings.Builder<UpdateTargetingPresetRequest, TargetingPreset>
+        updateTargetingPresetSettings() {
+      return updateTargetingPresetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateTargetingPresets. */
+    public UnaryCallSettings.Builder<
+            BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+        batchUpdateTargetingPresetsSettings() {
+      return batchUpdateTargetingPresetsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchDeactivateTargetingPresets. */

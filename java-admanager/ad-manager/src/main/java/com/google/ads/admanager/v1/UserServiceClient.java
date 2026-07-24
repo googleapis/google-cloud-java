@@ -57,7 +57,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetUser</td>
- *      <td><p> API to retrieve a User object.
+ *      <td><p> Retrieves a `User` object.
  * <p>  To get the current user, the resource name `networks/{networkCode}/users/me` can be used.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -168,7 +168,7 @@ public class UserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a User object.
+   * Retrieves a `User` object.
    *
    * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
    *
@@ -198,7 +198,7 @@ public class UserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a User object.
+   * Retrieves a `User` object.
    *
    * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
    *
@@ -227,7 +227,7 @@ public class UserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a User object.
+   * Retrieves a `User` object.
    *
    * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
    *
@@ -257,7 +257,7 @@ public class UserServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a User object.
+   * Retrieves a `User` object.
    *
    * <p>To get the current user, the resource name `networks/{networkCode}/users/me` can be used.
    *

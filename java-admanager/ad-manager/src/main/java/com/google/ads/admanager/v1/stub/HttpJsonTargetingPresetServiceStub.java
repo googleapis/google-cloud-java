@@ -22,11 +22,14 @@ import com.google.ads.admanager.v1.BatchCreateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchCreateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsResponse;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsRequest;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.CreateTargetingPresetRequest;
 import com.google.ads.admanager.v1.GetTargetingPresetRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsResponse;
 import com.google.ads.admanager.v1.TargetingPreset;
+import com.google.ads.admanager.v1.UpdateTargetingPresetRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -215,6 +218,88 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetMethodDescriptor =
+          ApiMethodDescriptor.<UpdateTargetingPresetRequest, TargetingPreset>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.TargetingPresetService/UpdateTargetingPreset")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateTargetingPresetRequest>newBuilder()
+                      .setPath(
+                          "/v1/{targetingPreset.name=networks/*/targetingPresets/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTargetingPresetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "targetingPreset.name",
+                                request.getTargetingPreset().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateTargetingPresetRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("targetingPreset", request.getTargetingPreset(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TargetingPreset>newBuilder()
+                      .setDefaultInstance(TargetingPreset.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.TargetingPresetService/BatchUpdateTargetingPresets")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateTargetingPresetsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/targetingPresets:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateTargetingPresetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateTargetingPresetsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateTargetingPresetsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateTargetingPresetsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
       batchDeactivateTargetingPresetsMethodDescriptor =
@@ -268,6 +353,11 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
   private final UnaryCallable<
           BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
       batchCreateTargetingPresetsCallable;
+  private final UnaryCallable<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetCallable;
+  private final UnaryCallable<
+          BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsCallable;
   private final UnaryCallable<
           BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
       batchDeactivateTargetingPresetsCallable;
@@ -369,6 +459,35 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateTargetingPresetRequest, TargetingPreset>
+        updateTargetingPresetTransportSettings =
+            HttpJsonCallSettings.<UpdateTargetingPresetRequest, TargetingPreset>newBuilder()
+                .setMethodDescriptor(updateTargetingPresetMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "targeting_preset.name",
+                          String.valueOf(request.getTargetingPreset().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+        batchUpdateTargetingPresetsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchUpdateTargetingPresetsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<
             BatchDeactivateTargetingPresetsRequest, BatchDeactivateTargetingPresetsResponse>
         batchDeactivateTargetingPresetsTransportSettings =
@@ -411,6 +530,16 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
             batchCreateTargetingPresetsTransportSettings,
             settings.batchCreateTargetingPresetsSettings(),
             clientContext);
+    this.updateTargetingPresetCallable =
+        callableFactory.createUnaryCallable(
+            updateTargetingPresetTransportSettings,
+            settings.updateTargetingPresetSettings(),
+            clientContext);
+    this.batchUpdateTargetingPresetsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateTargetingPresetsTransportSettings,
+            settings.batchUpdateTargetingPresetsSettings(),
+            clientContext);
     this.batchDeactivateTargetingPresetsCallable =
         callableFactory.createUnaryCallable(
             batchDeactivateTargetingPresetsTransportSettings,
@@ -428,6 +557,8 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
     methodDescriptors.add(listTargetingPresetsMethodDescriptor);
     methodDescriptors.add(createTargetingPresetMethodDescriptor);
     methodDescriptors.add(batchCreateTargetingPresetsMethodDescriptor);
+    methodDescriptors.add(updateTargetingPresetMethodDescriptor);
+    methodDescriptors.add(batchUpdateTargetingPresetsMethodDescriptor);
     methodDescriptors.add(batchDeactivateTargetingPresetsMethodDescriptor);
     return methodDescriptors;
   }
@@ -459,6 +590,18 @@ public class HttpJsonTargetingPresetServiceStub extends TargetingPresetServiceSt
   public UnaryCallable<BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
       batchCreateTargetingPresetsCallable() {
     return batchCreateTargetingPresetsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetCallable() {
+    return updateTargetingPresetCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsCallable() {
+    return batchUpdateTargetingPresetsCallable;
   }
 
   @Override

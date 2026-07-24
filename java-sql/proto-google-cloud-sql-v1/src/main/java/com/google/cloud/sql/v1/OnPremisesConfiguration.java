@@ -886,6 +886,26 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
         : result;
   }
 
+  public static final int DMS_MANAGED_FIELD_NUMBER = 20;
+  private boolean dmsManaged_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource is managed by Database
+   * Migration Service.
+   * </pre>
+   *
+   * <code>bool dms_managed = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dmsManaged.
+   */
+  @java.lang.Override
+  public boolean getDmsManaged() {
+    return dmsManaged_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -935,6 +955,9 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
             .getNumber()) {
       output.writeEnum(18, sslOption_);
     }
+    if (dmsManaged_ != false) {
+      output.writeBool(20, dmsManaged_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -979,6 +1002,9 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, sslOption_);
     }
+    if (dmsManaged_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, dmsManaged_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1009,6 +1035,7 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
     }
     if (!getSelectedObjectsList().equals(other.getSelectedObjectsList())) return false;
     if (sslOption_ != other.sslOption_) return false;
+    if (getDmsManaged() != other.getDmsManaged()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1046,6 +1073,8 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
     }
     hash = (37 * hash) + SSL_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + sslOption_;
+    hash = (37 * hash) + DMS_MANAGED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDmsManaged());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1217,6 +1246,7 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
       }
       bitField0_ = (bitField0_ & ~0x00000200);
       sslOption_ = 0;
+      dmsManaged_ = false;
       return this;
     }
 
@@ -1299,6 +1329,9 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.sslOption_ = sslOption_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.dmsManaged_ = dmsManaged_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1388,6 +1421,9 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
       }
       if (other.sslOption_ != 0) {
         setSslOptionValue(other.getSslOptionValue());
+      }
+      if (other.getDmsManaged() != false) {
+        setDmsManaged(other.getDmsManaged());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1489,6 +1525,12 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000400;
                 break;
               } // case 144
+            case 160:
+              {
+                dmsManaged_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3124,6 +3166,65 @@ public final class OnPremisesConfiguration extends com.google.protobuf.Generated
     public Builder clearSslOption() {
       bitField0_ = (bitField0_ & ~0x00000400);
       sslOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean dmsManaged_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource is managed by Database
+     * Migration Service.
+     * </pre>
+     *
+     * <code>bool dms_managed = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The dmsManaged.
+     */
+    @java.lang.Override
+    public boolean getDmsManaged() {
+      return dmsManaged_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource is managed by Database
+     * Migration Service.
+     * </pre>
+     *
+     * <code>bool dms_managed = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The dmsManaged to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDmsManaged(boolean value) {
+
+      dmsManaged_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the resource is managed by Database
+     * Migration Service.
+     * </pre>
+     *
+     * <code>bool dms_managed = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDmsManaged() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      dmsManaged_ = false;
       onChanged();
       return this;
     }

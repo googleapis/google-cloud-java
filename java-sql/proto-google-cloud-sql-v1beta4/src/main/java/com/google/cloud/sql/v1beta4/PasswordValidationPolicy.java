@@ -548,7 +548,7 @@ public final class PasswordValidationPolicy extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.PasswordValidationPolicy.disallow_compromised_credentials
-   *     is deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3075
+   *     is deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3093
    * @return Whether the disallowCompromisedCredentials field is set.
    */
   @java.lang.Override
@@ -569,7 +569,7 @@ public final class PasswordValidationPolicy extends com.google.protobuf.Generate
    * </code>
    *
    * @deprecated google.cloud.sql.v1beta4.PasswordValidationPolicy.disallow_compromised_credentials
-   *     is deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3075
+   *     is deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3093
    * @return The disallowCompromisedCredentials.
    */
   @java.lang.Override
@@ -2270,7 +2270,7 @@ public final class PasswordValidationPolicy extends com.google.protobuf.Generate
      *
      * @deprecated
      *     google.cloud.sql.v1beta4.PasswordValidationPolicy.disallow_compromised_credentials is
-     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3075
+     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3093
      * @return Whether the disallowCompromisedCredentials field is set.
      */
     @java.lang.Deprecated
@@ -2291,7 +2291,7 @@ public final class PasswordValidationPolicy extends com.google.protobuf.Generate
      *
      * @deprecated
      *     google.cloud.sql.v1beta4.PasswordValidationPolicy.disallow_compromised_credentials is
-     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3075
+     *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=3093
      * @return The disallowCompromisedCredentials.
      */
     @java.lang.Deprecated

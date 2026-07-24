@@ -470,5 +470,59 @@ public interface UserOrBuilder
    */
   com.google.protobuf.ByteString getDatabaseRolesBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the serverRoles.
+   */
+  java.util.List<java.lang.String> getServerRolesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of serverRoles.
+   */
+  int getServerRolesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serverRoles at the given index.
+   */
+  java.lang.String getServerRoles(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serverRoles at the given index.
+   */
+  com.google.protobuf.ByteString getServerRolesBytes(int index);
+
   com.google.cloud.sql.v1.User.UserDetailsCase getUserDetailsCase();
 }

@@ -65,38 +65,44 @@ public final class CloudSqlOperationsProto extends com.google.protobuf.Generated
 
   static {
     java.lang.String[] descriptorData = {
-      "\n.google/cloud/sql/v1/cloud_sql_operatio"
+      "\n"
+          + ".google/cloud/sql/v1/cloud_sql_operatio"
           + "ns.proto\022\023google.cloud.sql.v1\032\034google/ap"
           + "i/annotations.proto\032\027google/api/client.p"
           + "roto\032\037google/api/field_behavior.proto\032-g"
-          + "oogle/cloud/sql/v1/cloud_sql_resources.p"
-          + "roto\032\033google/protobuf/empty.proto\"G\n\027Sql"
-          + "OperationsGetRequest\022\026\n\toperation\030\001 \001(\tB"
-          + "\003\340A\002\022\024\n\007project\030\002 \001(\tB\003\340A\002\"f\n\030SqlOperati"
-          + "onsListRequest\022\020\n\010instance\030\001 \001(\t\022\023\n\013max_"
-          + "results\030\002 \001(\r\022\022\n\npage_token\030\003 \001(\t\022\017\n\007pro"
-          + "ject\030\004 \001(\t\"n\n\026OperationsListResponse\022\014\n\004"
-          + "kind\030\001 \001(\t\022-\n\005items\030\002 \003(\0132\036.google.cloud"
-          + ".sql.v1.Operation\022\027\n\017next_page_token\030\003 \001"
-          + "(\t\"@\n\032SqlOperationsCancelRequest\022\021\n\toper"
-          + "ation\030\001 \001(\t\022\017\n\007project\030\002 \001(\t2\303\004\n\024SqlOper"
-          + "ationsService\022\212\001\n\003Get\022,.google.cloud.sql"
-          + ".v1.SqlOperationsGetRequest\032\036.google.clo"
-          + "ud.sql.v1.Operation\"5\202\323\344\223\002/\022-/v1/project"
-          + "s/{project}/operations/{operation}\022\215\001\n\004L"
-          + "ist\022-.google.cloud.sql.v1.SqlOperationsL"
-          + "istRequest\032+.google.cloud.sql.v1.Operati"
-          + "onsListResponse\")\202\323\344\223\002#\022!/v1/projects/{p"
-          + "roject}/operations\022\217\001\n\006Cancel\022/.google.c"
-          + "loud.sql.v1.SqlOperationsCancelRequest\032\026"
-          + ".google.protobuf.Empty\"<\202\323\344\223\0026\"4/v1/proj"
-          + "ects/{project}/operations/{operation}/ca"
-          + "ncel\032|\312A\027sqladmin.googleapis.com\322A_https"
-          + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/sqlser"
-          + "vice.adminB_\n\027com.google.cloud.sql.v1B\027C"
-          + "loudSqlOperationsProtoP\001Z)cloud.google.c"
-          + "om/go/sql/apiv1/sqlpb;sqlpbb\006proto3"
+          + "oogle/cloud/sql/v1/cloud_sql_resources.proto\032\033google/protobuf/empty.proto\"^\n"
+          + "\027SqlOperationsGetRequest\022\026\n"
+          + "\toperation\030\001 \001(\tB\003\340A\002\022\024\n"
+          + "\007project\030\002 \001(\tB\003\340A\002\022\025\n"
+          + "\010location\030\004 \001(\tB\003\340A\001\"}\n"
+          + "\030SqlOperationsListRequest\022\020\n"
+          + "\010instance\030\001 \001(\t\022\023\n"
+          + "\013max_results\030\002 \001(\r"
+          + "\022\022\n\n"
+          + "page_token\030\003 \001(\t\022\017\n"
+          + "\007project\030\004 \001(\t\022\025\n"
+          + "\010location\030\006 \001(\tB\003\340A\001\"n\n"
+          + "\026OperationsListResponse\022\014\n"
+          + "\004kind\030\001 \001(\t\022-\n"
+          + "\005items\030\002 \003(\0132\036.google.cloud.sql.v1.Operation\022\027\n"
+          + "\017next_page_token\030\003 \001(\t\"W\n"
+          + "\032SqlOperationsCancelRequest\022\021\n"
+          + "\toperation\030\001 \001(\t\022\017\n"
+          + "\007project\030\002 \001(\t\022\025\n"
+          + "\010location\030\003 \001(\tB\003\340A\0012\303\004\n"
+          + "\024SqlOperationsService\022\212\001\n"
+          + "\003Get\022,.google.cloud.sql.v1.SqlOperationsGetRequest\032\036.google.cloud.sql.v1.O"
+          + "peration\"5\202\323\344\223\002/\022-/v1/projects/{project}/operations/{operation}\022\215\001\n"
+          + "\004List\022-.google.cloud.sql.v1.SqlOperationsListRequest\032"
+          + "+.google.cloud.sql.v1.OperationsListResp"
+          + "onse\")\202\323\344\223\002#\022!/v1/projects/{project}/operations\022\217\001\n"
+          + "\006Cancel\022/.google.cloud.sql.v1.SqlOperationsCancelRequest\032\026.google.pro"
+          + "tobuf.Empty\"<\202\323\344\223\0026\"4/v1/projects/{proje"
+          + "ct}/operations/{operation}/cancel\032|\312A\027sq"
+          + "ladmin.googleapis.com\322A_https://www.googleapis.com/auth/cloud-platform,https://w"
+          + "ww.googleapis.com/auth/sqlservice.adminB_\n"
+          + "\027com.google.cloud.sql.v1B\027CloudSqlOper"
+          + "ationsProtoP\001Z)cloud.google.com/go/sql/apiv1/sqlpb;sqlpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -114,7 +120,7 @@ public final class CloudSqlOperationsProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_sql_v1_SqlOperationsGetRequest_descriptor,
             new java.lang.String[] {
-              "Operation", "Project",
+              "Operation", "Project", "Location",
             });
     internal_static_google_cloud_sql_v1_SqlOperationsListRequest_descriptor =
         getDescriptor().getMessageType(1);
@@ -122,7 +128,7 @@ public final class CloudSqlOperationsProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_sql_v1_SqlOperationsListRequest_descriptor,
             new java.lang.String[] {
-              "Instance", "MaxResults", "PageToken", "Project",
+              "Instance", "MaxResults", "PageToken", "Project", "Location",
             });
     internal_static_google_cloud_sql_v1_OperationsListResponse_descriptor =
         getDescriptor().getMessageType(2);
@@ -138,7 +144,7 @@ public final class CloudSqlOperationsProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_sql_v1_SqlOperationsCancelRequest_descriptor,
             new java.lang.String[] {
-              "Operation", "Project",
+              "Operation", "Project", "Location",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

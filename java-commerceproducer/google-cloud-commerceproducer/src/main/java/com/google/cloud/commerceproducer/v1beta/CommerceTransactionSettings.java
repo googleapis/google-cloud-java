@@ -128,6 +128,12 @@ public class CommerceTransactionSettings extends ClientSettings<CommerceTransact
     return ((CommerceTransactionStubSettings) getStubSettings()).getPrivateOfferSettings();
   }
 
+  /** Returns the object with the settings used for calls to resolveAmendmentTarget. */
+  public UnaryCallSettings<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetSettings() {
+    return ((CommerceTransactionStubSettings) getStubSettings()).resolveAmendmentTargetSettings();
+  }
+
   /** Returns the object with the settings used for calls to createPrivateOffer. */
   public UnaryCallSettings<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferSettings() {
     return ((CommerceTransactionStubSettings) getStubSettings()).createPrivateOfferSettings();
@@ -370,6 +376,12 @@ public class CommerceTransactionSettings extends ClientSettings<CommerceTransact
     public UnaryCallSettings.Builder<GetPrivateOfferRequest, PrivateOffer>
         getPrivateOfferSettings() {
       return getStubSettingsBuilder().getPrivateOfferSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resolveAmendmentTarget. */
+    public UnaryCallSettings.Builder<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+        resolveAmendmentTargetSettings() {
+      return getStubSettingsBuilder().resolveAmendmentTargetSettings();
     }
 
     /** Returns the builder for the settings used for calls to createPrivateOffer. */

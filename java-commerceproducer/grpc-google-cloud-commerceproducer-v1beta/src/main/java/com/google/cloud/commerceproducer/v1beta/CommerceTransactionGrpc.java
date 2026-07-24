@@ -223,6 +223,57 @@ public final class CommerceTransactionGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest,
+          com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+      getResolveAmendmentTargetMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResolveAmendmentTarget",
+      requestType = com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest.class,
+      responseType = com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest,
+          com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+      getResolveAmendmentTargetMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest,
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+        getResolveAmendmentTargetMethod;
+    if ((getResolveAmendmentTargetMethod = CommerceTransactionGrpc.getResolveAmendmentTargetMethod)
+        == null) {
+      synchronized (CommerceTransactionGrpc.class) {
+        if ((getResolveAmendmentTargetMethod =
+                CommerceTransactionGrpc.getResolveAmendmentTargetMethod)
+            == null) {
+          CommerceTransactionGrpc.getResolveAmendmentTargetMethod =
+              getResolveAmendmentTargetMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest,
+                          com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ResolveAmendmentTarget"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.commerceproducer.v1beta
+                                  .ResolveAmendmentTargetResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CommerceTransactionMethodDescriptorSupplier("ResolveAmendmentTarget"))
+                      .build();
+        }
+      }
+    }
+    return getResolveAmendmentTargetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.commerceproducer.v1beta.CreatePrivateOfferRequest,
           com.google.cloud.commerceproducer.v1beta.PrivateOffer>
       getCreatePrivateOfferMethod;
@@ -1147,6 +1198,24 @@ public final class CommerceTransactionGrpc {
      *
      *
      * <pre>
+     * Resolves the existing offer that must be amended when creating a new
+     * PrivateOffer. Use this method to determine the correct amendment target
+     * before creating or publishing an offer.
+     * </pre>
+     */
+    default void resolveAmendmentTarget(
+        com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResolveAmendmentTargetMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new PrivateOffer in a given project and location.
      * </pre>
      */
@@ -1480,6 +1549,26 @@ public final class CommerceTransactionGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPrivateOfferMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resolves the existing offer that must be amended when creating a new
+     * PrivateOffer. Use this method to determine the correct amendment target
+     * before creating or publishing an offer.
+     * </pre>
+     */
+    public void resolveAmendmentTarget(
+        com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResolveAmendmentTargetMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1833,6 +1922,23 @@ public final class CommerceTransactionGrpc {
      *
      *
      * <pre>
+     * Resolves the existing offer that must be amended when creating a new
+     * PrivateOffer. Use this method to determine the correct amendment target
+     * before creating or publishing an offer.
+     * </pre>
+     */
+    public com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse
+        resolveAmendmentTarget(
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getResolveAmendmentTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new PrivateOffer in a given project and location.
      * </pre>
      */
@@ -2131,6 +2237,22 @@ public final class CommerceTransactionGrpc {
      *
      *
      * <pre>
+     * Resolves the existing offer that must be amended when creating a new
+     * PrivateOffer. Use this method to determine the correct amendment target
+     * before creating or publishing an offer.
+     * </pre>
+     */
+    public com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse
+        resolveAmendmentTarget(
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResolveAmendmentTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new PrivateOffer in a given project and location.
      * </pre>
      */
@@ -2418,6 +2540,23 @@ public final class CommerceTransactionGrpc {
      *
      *
      * <pre>
+     * Resolves the existing offer that must be amended when creating a new
+     * PrivateOffer. Use this method to determine the correct amendment target
+     * before creating or publishing an offer.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>
+        resolveAmendmentTarget(
+            com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResolveAmendmentTargetMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new PrivateOffer in a given project and location.
      * </pre>
      */
@@ -2652,22 +2791,23 @@ public final class CommerceTransactionGrpc {
   private static final int METHODID_GET_SERVICE = 1;
   private static final int METHODID_LIST_PRIVATE_OFFERS = 2;
   private static final int METHODID_GET_PRIVATE_OFFER = 3;
-  private static final int METHODID_CREATE_PRIVATE_OFFER = 4;
-  private static final int METHODID_UPDATE_PRIVATE_OFFER = 5;
-  private static final int METHODID_PUBLISH_PRIVATE_OFFER = 6;
-  private static final int METHODID_CANCEL_PRIVATE_OFFER = 7;
-  private static final int METHODID_DELETE_PRIVATE_OFFER = 8;
-  private static final int METHODID_LIST_PRIVATE_OFFER_DOCUMENTS = 9;
-  private static final int METHODID_GET_PRIVATE_OFFER_DOCUMENT = 10;
-  private static final int METHODID_CREATE_PRIVATE_OFFER_DOCUMENT = 11;
-  private static final int METHODID_UPDATE_PRIVATE_OFFER_DOCUMENT = 12;
-  private static final int METHODID_DELETE_PRIVATE_OFFER_DOCUMENT = 13;
-  private static final int METHODID_LIST_STANDARD_OFFERS = 14;
-  private static final int METHODID_GET_STANDARD_OFFER = 15;
-  private static final int METHODID_GET_SKU = 16;
-  private static final int METHODID_LIST_SKUS = 17;
-  private static final int METHODID_GET_SKU_GROUP = 18;
-  private static final int METHODID_LIST_SKU_GROUPS = 19;
+  private static final int METHODID_RESOLVE_AMENDMENT_TARGET = 4;
+  private static final int METHODID_CREATE_PRIVATE_OFFER = 5;
+  private static final int METHODID_UPDATE_PRIVATE_OFFER = 6;
+  private static final int METHODID_PUBLISH_PRIVATE_OFFER = 7;
+  private static final int METHODID_CANCEL_PRIVATE_OFFER = 8;
+  private static final int METHODID_DELETE_PRIVATE_OFFER = 9;
+  private static final int METHODID_LIST_PRIVATE_OFFER_DOCUMENTS = 10;
+  private static final int METHODID_GET_PRIVATE_OFFER_DOCUMENT = 11;
+  private static final int METHODID_CREATE_PRIVATE_OFFER_DOCUMENT = 12;
+  private static final int METHODID_UPDATE_PRIVATE_OFFER_DOCUMENT = 13;
+  private static final int METHODID_DELETE_PRIVATE_OFFER_DOCUMENT = 14;
+  private static final int METHODID_LIST_STANDARD_OFFERS = 15;
+  private static final int METHODID_GET_STANDARD_OFFER = 16;
+  private static final int METHODID_GET_SKU = 17;
+  private static final int METHODID_LIST_SKUS = 18;
+  private static final int METHODID_GET_SKU_GROUP = 19;
+  private static final int METHODID_LIST_SKU_GROUPS = 20;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2710,6 +2850,13 @@ public final class CommerceTransactionGrpc {
           serviceImpl.getPrivateOffer(
               (com.google.cloud.commerceproducer.v1beta.GetPrivateOfferRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.commerceproducer.v1beta.PrivateOffer>)
+                  responseObserver);
+          break;
+        case METHODID_RESOLVE_AMENDMENT_TARGET:
+          serviceImpl.resolveAmendmentTarget(
+              (com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>)
                   responseObserver);
           break;
         case METHODID_CREATE_PRIVATE_OFFER:
@@ -2859,6 +3006,13 @@ public final class CommerceTransactionGrpc {
                     com.google.cloud.commerceproducer.v1beta.GetPrivateOfferRequest,
                     com.google.cloud.commerceproducer.v1beta.PrivateOffer>(
                     service, METHODID_GET_PRIVATE_OFFER)))
+        .addMethod(
+            getResolveAmendmentTargetMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest,
+                    com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse>(
+                    service, METHODID_RESOLVE_AMENDMENT_TARGET)))
         .addMethod(
             getCreatePrivateOfferMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3023,6 +3177,7 @@ public final class CommerceTransactionGrpc {
                       .addMethod(getGetServiceMethod())
                       .addMethod(getListPrivateOffersMethod())
                       .addMethod(getGetPrivateOfferMethod())
+                      .addMethod(getResolveAmendmentTargetMethod())
                       .addMethod(getCreatePrivateOfferMethod())
                       .addMethod(getUpdatePrivateOfferMethod())
                       .addMethod(getPublishPrivateOfferMethod())

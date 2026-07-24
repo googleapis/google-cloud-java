@@ -30,7 +30,7 @@ public interface ListQuotaPreferencesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent value of QuotaPreference resources.
+   * Required. Identifier. Parent value of QuotaPreference resources.
    * Listing across different resource containers (such as 'projects/-') is not
    * allowed.
    *
@@ -43,7 +43,7 @@ public interface ListQuotaPreferencesRequestOrBuilder
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parent.
@@ -54,7 +54,7 @@ public interface ListQuotaPreferencesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent value of QuotaPreference resources.
+   * Required. Identifier. Parent value of QuotaPreference resources.
    * Listing across different resource containers (such as 'projects/-') is not
    * allowed.
    *
@@ -67,7 +67,7 @@ public interface ListQuotaPreferencesRequestOrBuilder
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parent.

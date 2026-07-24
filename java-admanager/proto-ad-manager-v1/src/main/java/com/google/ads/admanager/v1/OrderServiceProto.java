@@ -41,6 +41,134 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchPauseOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchPauseOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchPauseOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchPauseOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchArchiveOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchArchiveOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeleteOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeleteOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeleteOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeleteOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_GetOrderRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_GetOrderRequest_fieldAccessorTable;
@@ -52,6 +180,30 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_ads_admanager_v1_ListOrdersResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_CreateOrderRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_CreateOrderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateOrderRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateOrderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchCreateOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchCreateOrdersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateOrdersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateOrdersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateOrdersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateOrdersResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -66,7 +218,108 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
           + "proto\022\027google.ads.admanager.v1\032,google/a"
           + "ds/admanager/v1/order_messages.proto\032\034go"
           + "ogle/api/annotations.proto\032\027google/api/c"
-          + "lient.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"G\n"
+          + "lient.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"\272\001\n"
+          + "$BatchApproveAndOverbookOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\022!\n"
+          + "\024skip_inventory_check\030\003 \001(\010B\003\340A\001\"\'\n"
+          + "%BatchApproveAndOverbookOrdersResponse\"\257\001\n"
+          + "\031BatchApproveOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\022!\n"
+          + "\024skip_inventory_check\030\003 \001(\010B\003\340A\001\"\034\n"
+          + "\032BatchApproveOrdersResponse\"\271\001\n"
+          + "#BatchSubmitOrdersForApprovalRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\022!\n"
+          + "\024skip_inventory_check\030\003 \001(\010B\003\340A\001\"&\n"
+          + "$BatchSubmitOrdersForApprovalResponse\"\241\001\n"
+          + ".BatchSubmitOrdersForApprovalAndOverbookRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"1\n"
+          + "/BatchSubmitOrdersForApprovalAndOverbookResponse\"\212\001\n"
+          + "\027BatchPauseOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\032\n"
+          + "\030BatchPauseOrdersResponse\"\256\001\n"
+          + "\030BatchResumeOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\022!\n"
+          + "\024skip_inventory_check\030\003 \001(\010B\003\340A\001\"\033\n"
+          + "\031BatchResumeOrdersResponse\"\226\001\n"
+          + "#BatchResumeAndOverbookOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"&\n"
+          + "$BatchResumeAndOverbookOrdersResponse\"\236\001\n"
+          + "+BatchApproveOrdersWithoutReservationRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\".\n"
+          + ",BatchApproveOrdersWithoutReservationResponse\"\214\001\n"
+          + "\031BatchArchiveOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\034\n"
+          + "\032BatchArchiveOrdersResponse\"\216\001\n"
+          + "\033BatchUnarchiveOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\036\n"
+          + "\034BatchUnarchiveOrdersResponse\"\213\001\n"
+          + "\030BatchDeleteOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\033\n"
+          + "\031BatchDeleteOrdersResponse\"\217\001\n"
+          + "\034BatchDisapproveOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\037\n"
+          + "\035BatchDisapproveOrdersResponse\"\250\001\n"
+          + "5BatchDisapproveOrdersWithoutReservationChangesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"8\n"
+          + "6BatchDisapproveOrdersWithoutReservationChangesResponse\"\214\001\n"
+          + "\031BatchRetractOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"\034\n"
+          + "\032BatchRetractOrdersResponse\"\245\001\n"
+          + "2BatchRetractOrdersWithoutReservationChangesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"5\n"
+          + "3BatchRetractOrdersWithoutReservationChangesResponse\"\257\001\n"
+          + "<BatchSubmitOrdersForApprovalWithoutReservationChangesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0225\n"
+          + "\005names\030\002 \003(\tB&\340A\002\372A \n"
+          + "\036admanager.googleapis.com/Order\"?\n"
+          + "=BatchSubmitOrdersForApprovalWithoutReservationChangesResponse\"G\n"
           + "\017GetOrderRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036admanager.googleapis.com/Order\"\275\001\n"
@@ -81,20 +334,121 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
           + "\022ListOrdersResponse\022.\n"
           + "\006orders\030\001 \003(\0132\036.google.ads.admanager.v1.Order\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\251\003\n"
+          + "total_size\030\003 \001(\005\"\202\001\n"
+          + "\022CreateOrderRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\0222\n"
+          + "\005order\030\002 \001(\0132\036.google.ads.admanager.v1.OrderB\003\340A\002\"~\n"
+          + "\022UpdateOrderRequest\0222\n"
+          + "\005order\030\001 \001(\0132\036.google.ads.admanager.v1.OrderB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\230\001\n"
+          + "\030BatchCreateOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022B\n"
+          + "\010requests\030\002 \003(\0132+."
+          + "google.ads.admanager.v1.CreateOrderRequestB\003\340A\002\"K\n"
+          + "\031BatchCreateOrdersResponse\022.\n"
+          + "\006orders\030\001 \003(\0132\036.google.ads.admanager.v1.Order\"\230\001\n"
+          + "\030BatchUpdateOrdersRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022B\n"
+          + "\010requests\030\002 \003(\0132+.google.a"
+          + "ds.admanager.v1.UpdateOrderRequestB\003\340A\002\"K\n"
+          + "\031BatchUpdateOrdersResponse\022.\n"
+          + "\006orders\030\001 \003(\0132\036.google.ads.admanager.v1.Order2\241$\n"
           + "\014OrderService\022\203\001\n"
-          + "\010GetOrder\022(.google.ads.admanager.v1.GetOrderRequ"
-          + "est\032\036.google.ads.admanager.v1.Order\"-\332A\004name\202\323\344\223\002"
+          + "\010GetOrder\022(.google.ads."
+          + "admanager.v1.GetOrderRequest\032\036.google.ads.admanager.v1.Order\"-\332A\004name\202\323\344\223\002"
           + " \022\036/v1/{name=networks/*/orders/*}\022\226\001\n\n"
-          + "ListOrders\022*.google.ads.admanager.v1.ListOrdersRequest\032+.google.ads.adman"
-          + "ager.v1.ListOrdersResponse\"/\332A\006parent\202\323\344\223\002"
-          + " \022\036/v1/{parent=networks/*}/orders\032z\312A\030"
-          + "admanager.googleapis.com\322A\\https://www.googleapis.com/auth/admanager,https://www"
-          + ".googleapis.com/auth/admanager.readonlyB\305\001\n"
-          + "\033com.google.ads.admanager.v1B\021OrderServiceProtoP\001Z@google.golang.org/genproto"
-          + "/googleapis/ads/admanager/v1;admanager\252\002"
-          + "\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\Ad"
-          + "Manager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "ListOrders\022*.google.ads.admanager.v1.ListOrdersR"
+          + "equest\032+.google.ads.admanager.v1.ListOrdersResponse\"/\332A\006parent\202\323\344\223\002"
+          + " \022\036/v1/{parent=networks/*}/orders\022\303\001\n"
+          + "\021BatchCreateOrders\0221.google.ads.admanager.v1.BatchCreate"
+          + "OrdersRequest\0322.google.ads.admanager.v1."
+          + "BatchCreateOrdersResponse\"G\332A\017parent,req"
+          + "uests\202\323\344\223\002/\"*/v1/{parent=networks/*}/orders:batchCreate:\001*\022\303\001\n"
+          + "\021BatchUpdateOrders\0221.google.ads.admanager.v1.BatchUpdateOr"
+          + "dersRequest\0322.google.ads.admanager.v1.Ba"
+          + "tchUpdateOrdersResponse\"G\332A\017parent,reque"
+          + "sts\202\323\344\223\002/\"*/v1/{parent=networks/*}/orders:batchUpdate:\001*\022\304\001\n"
+          + "\022BatchApproveOrders\0222.google.ads.admanager.v1.BatchApproveOr"
+          + "dersRequest\0323.google.ads.admanager.v1.Ba"
+          + "tchApproveOrdersResponse\"E\332A\014parent,name"
+          + "s\202\323\344\223\0020\"+/v1/{parent=networks/*}/orders:batchApprove:\001*\022\360\001\n"
+          + "\035BatchApproveAndOverbookOrders\022=.google.ads.admanager.v1.Batc"
+          + "hApproveAndOverbookOrdersRequest\032>.google.ads.admanager.v1.BatchApproveAndOverbo"
+          + "okOrdersResponse\"P\332A\014parent,names\202\323\344\223\002;\""
+          + "6/v1/{parent=networks/*}/orders:batchApproveAndOverbook:\001*\022\354\001\n"
+          + "\034BatchSubmitOrdersForApproval\022<.google.ads.admanager.v1.Ba"
+          + "tchSubmitOrdersForApprovalRequest\032=.google.ads.admanager.v1.BatchSubmitOrdersFor"
+          + "ApprovalResponse\"O\332A\014parent,names\202\323\344\223\002:\""
+          + "5/v1/{parent=networks/*}/orders:batchSubmitForApproval:\001*\022\230\002\n"
+          + "\'BatchSubmitOrdersForApprovalAndOverbook\022G.google.ads.adman"
+          + "ager.v1.BatchSubmitOrdersForApprovalAndOverbookRequest\032H.google.ads.admanager.v1"
+          + ".BatchSubmitOrdersForApprovalAndOverbook"
+          + "Response\"Z\332A\014parent,names\202\323\344\223\002E\"@/v1/{pa"
+          + "rent=networks/*}/orders:batchSubmitForApprovalAndOverbook:\001*\022\320\002\n"
+          + "5BatchSubmitOrdersForApprovalWithoutReservationChanges\022U"
+          + ".google.ads.admanager.v1.BatchSubmitOrdersForApprovalWithoutReservationChangesRe"
+          + "quest\032V.google.ads.admanager.v1.BatchSubmitOrdersForApprovalWithoutReservationCh"
+          + "angesResponse\"h\332A\014parent,names\202\323\344\223\002S\"N/v"
+          + "1/{parent=networks/*}/orders:batchSubmit"
+          + "ForApprovalWithoutReservationChanges:\001*\022\274\001\n"
+          + "\020BatchPauseOrders\0220.google.ads.admanager.v1.BatchPauseOrdersRequest\0321.google."
+          + "ads.admanager.v1.BatchPauseOrdersRespons"
+          + "e\"C\332A\014parent,names\202\323\344\223\002.\")/v1/{parent=networks/*}/orders:batchPause:\001*\022\300\001\n"
+          + "\021BatchResumeOrders\0221.google.ads.admanager.v1.B"
+          + "atchResumeOrdersRequest\0322.google.ads.adm"
+          + "anager.v1.BatchResumeOrdersResponse\"D\332A\014"
+          + "parent,names\202\323\344\223\002/\"*/v1/{parent=networks/*}/orders:batchResume:\001*\022\354\001\n"
+          + "\034BatchResumeAndOverbookOrders\022<.google.ads.admanage"
+          + "r.v1.BatchResumeAndOverbookOrdersRequest\032=.google.ads.admanager.v1.BatchResumeAn"
+          + "dOverbookOrdersResponse\"O\332A\014parent,names"
+          + "\202\323\344\223\002:\"5/v1/{parent=networks/*}/orders:batchResumeAndOverbook:\001*\022\214\002\n"
+          + "$BatchApproveOrdersWithoutReservation\022D.google.ads.a"
+          + "dmanager.v1.BatchApproveOrdersWithoutReservationRequest\032E.google.ads.admanager.v"
+          + "1.BatchApproveOrdersWithoutReservationRe"
+          + "sponse\"W\332A\014parent,names\202\323\344\223\002B\"=/v1/{pare"
+          + "nt=networks/*}/orders:batchApproveWithoutReservation:\001*\022\304\001\n"
+          + "\022BatchArchiveOrders\0222.google.ads.admanager.v1.BatchArchiveOrd"
+          + "ersRequest\0323.google.ads.admanager.v1.Bat"
+          + "chArchiveOrdersResponse\"E\332A\014parent,names"
+          + "\202\323\344\223\0020\"+/v1/{parent=networks/*}/orders:batchArchive:\001*\022\314\001\n"
+          + "\024BatchUnarchiveOrders\0224.google.ads.admanager.v1.BatchUnarchive"
+          + "OrdersRequest\0325.google.ads.admanager.v1."
+          + "BatchUnarchiveOrdersResponse\"G\332A\014parent,"
+          + "names\202\323\344\223\0022\"-/v1/{parent=networks/*}/orders:batchUnarchive:\001*\022\300\001\n"
+          + "\021BatchDeleteOrders\0221.google.ads.admanager.v1.BatchDelet"
+          + "eOrdersRequest\0322.google.ads.admanager.v1"
+          + ".BatchDeleteOrdersResponse\"D\332A\014parent,na"
+          + "mes\202\323\344\223\002/\"*/v1/{parent=networks/*}/orders:batchDelete:\001*\022\320\001\n"
+          + "\025BatchDisapproveOrders\0225.google.ads.admanager.v1.BatchDisapp"
+          + "roveOrdersRequest\0326.google.ads.admanager"
+          + ".v1.BatchDisapproveOrdersResponse\"H\332A\014pa"
+          + "rent,names\202\323\344\223\0023\"./v1/{parent=networks/*}/orders:batchDisapprove:\001*\022\264\002\n"
+          + ".BatchDisapproveOrdersWithoutReservationChanges\022N"
+          + ".google.ads.admanager.v1.BatchDisapproveOrdersWithoutReservationChangesRequest\032O"
+          + ".google.ads.admanager.v1.BatchDisapproveOrdersWithoutReservationChangesResponse\""
+          + "a\332A\014parent,names\202\323\344\223\002L\"G/v1/{parent=netw"
+          + "orks/*}/orders:batchDisapproveWithoutReservationChanges:\001*\022\304\001\n"
+          + "\022BatchRetractOrders\0222.google.ads.admanager.v1.BatchRetract"
+          + "OrdersRequest\0323.google.ads.admanager.v1."
+          + "BatchRetractOrdersResponse\"E\332A\014parent,na"
+          + "mes\202\323\344\223\0020\"+/v1/{parent=networks/*}/orders:batchRetract:\001*\022\250\002\n"
+          + "+BatchRetractOrdersWithoutReservationChanges\022K.google.ads.a"
+          + "dmanager.v1.BatchRetractOrdersWithoutReservationChangesRequest\032L.google.ads.adma"
+          + "nager.v1.BatchRetractOrdersWithoutReserv"
+          + "ationChangesResponse\"^\332A\014parent,names\202\323\344"
+          + "\223\002I\"D/v1/{parent=networks/*}/orders:batc"
+          + "hRetractWithoutReservationChanges:\001*\032z\312A"
+          + "\030admanager.googleapis.com\322A\\https://www."
+          + "googleapis.com/auth/admanager,https://ww"
+          + "w.googleapis.com/auth/admanager.readonlyB\305\001\n"
+          + "\033com.google.ads.admanager.v1B\021OrderServiceProtoP\001Z@google.golang.org/genprot"
+          + "o/googleapis/ads/admanager/v1;admanager\252"
+          + "\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\A"
+          + "dManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -105,9 +459,234 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
-    internal_static_google_ads_admanager_v1_GetOrderRequest_descriptor =
+    internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersRequest_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "SkipInventoryCheck",
+            });
+    internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersResponse_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveAndOverbookOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersRequest_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "SkipInventoryCheck",
+            });
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersResponse_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "SkipInventoryCheck",
+            });
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalResponse_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookRequest_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalAndOverbookResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchPauseOrdersRequest_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchPauseOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchPauseOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchPauseOrdersResponse_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_admanager_v1_BatchPauseOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchPauseOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchResumeOrdersRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_admanager_v1_BatchResumeOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "SkipInventoryCheck",
+            });
+    internal_static_google_ads_admanager_v1_BatchResumeOrdersResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_admanager_v1_BatchResumeOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersRequest_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersResponse_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchResumeAndOverbookOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationResponse_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchApproveOrdersWithoutReservationResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchArchiveOrdersRequest_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_ads_admanager_v1_BatchArchiveOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchArchiveOrdersResponse_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_ads_admanager_v1_BatchArchiveOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchArchiveOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersResponse_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUnarchiveOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeleteOrdersRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_ads_admanager_v1_BatchDeleteOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeleteOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeleteOrdersResponse_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_ads_admanager_v1_BatchDeleteOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeleteOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDisapproveOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersResponse_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDisapproveOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesResponse_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDisapproveOrdersWithoutReservationChangesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersRequest_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRetractOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersResponse_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRetractOrdersResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesRequest_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesResponse_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchRetractOrdersWithoutReservationChangesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesRequest_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesResponse_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchSubmitOrdersForApprovalWithoutReservationChangesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_GetOrderRequest_descriptor =
+        getDescriptor().getMessageType(32);
     internal_static_google_ads_admanager_v1_GetOrderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_GetOrderRequest_descriptor,
@@ -115,7 +694,7 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_ads_admanager_v1_ListOrdersRequest_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(33);
     internal_static_google_ads_admanager_v1_ListOrdersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListOrdersRequest_descriptor,
@@ -123,12 +702,60 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "Skip",
             });
     internal_static_google_ads_admanager_v1_ListOrdersResponse_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(34);
     internal_static_google_ads_admanager_v1_ListOrdersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListOrdersResponse_descriptor,
             new java.lang.String[] {
               "Orders", "NextPageToken", "TotalSize",
+            });
+    internal_static_google_ads_admanager_v1_CreateOrderRequest_descriptor =
+        getDescriptor().getMessageType(35);
+    internal_static_google_ads_admanager_v1_CreateOrderRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_CreateOrderRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Order",
+            });
+    internal_static_google_ads_admanager_v1_UpdateOrderRequest_descriptor =
+        getDescriptor().getMessageType(36);
+    internal_static_google_ads_admanager_v1_UpdateOrderRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateOrderRequest_descriptor,
+            new java.lang.String[] {
+              "Order", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateOrdersRequest_descriptor =
+        getDescriptor().getMessageType(37);
+    internal_static_google_ads_admanager_v1_BatchCreateOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchCreateOrdersResponse_descriptor =
+        getDescriptor().getMessageType(38);
+    internal_static_google_ads_admanager_v1_BatchCreateOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchCreateOrdersResponse_descriptor,
+            new java.lang.String[] {
+              "Orders",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateOrdersRequest_descriptor =
+        getDescriptor().getMessageType(39);
+    internal_static_google_ads_admanager_v1_BatchUpdateOrdersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateOrdersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateOrdersResponse_descriptor =
+        getDescriptor().getMessageType(40);
+    internal_static_google_ads_admanager_v1_BatchUpdateOrdersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateOrdersResponse_descriptor,
+            new java.lang.String[] {
+              "Orders",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.OrderMessagesProto.getDescriptor();
@@ -136,6 +763,7 @@ public final class OrderServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
