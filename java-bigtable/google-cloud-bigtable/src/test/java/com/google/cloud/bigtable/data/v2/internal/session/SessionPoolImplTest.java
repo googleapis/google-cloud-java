@@ -612,6 +612,108 @@ public class SessionPoolImplTest {
     }
   }
 
+  @Nested
+  class GoAwayBeforeReadyBudgetRelease {
+
+    private FakeClock fakeClock;
+    private BigtableTimer mockTimer;
+    private FakeSessionService fakeService;
+    private Server server;
+    private ChannelPool channelPool;
+    private SessionPoolImpl<OpenFakeSessionRequest> sessionPool;
+    private SessionCreationBudget budget;
+
+    private final Duration penalty = Duration.ofMinutes(1);
+
+    @BeforeEach
+    void setUp() throws Exception {
+      fakeClock = new FakeClock(Instant.now());
+      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // their own -- the budget stays quiescent after the session lifecycle completes, leaving the
+      // test thread as the only actor that touches it.
+      mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
+
+      // Budget of 1 so exactly one session goes STARTING; any extra create attempts fail to reserve
+      // and just schedule a (no-op) retry on the mock timer.
+      budget = new SessionCreationBudget(1, penalty, fakeClock);
+
+      fakeService = new FakeSessionService(executor);
+      server = FakeServiceBuilder.create(fakeService).intercept(new PeerInfoInterceptor()).start();
+
+      channelPool =
+          new SingleChannelPool(
+              Suppliers.ofInstance(
+                  Grpc.newChannelBuilderForAddress(
+                          "localhost", server.getPort(), InsecureChannelCredentials.create())
+                      .build()));
+      channelPool.start();
+
+      sessionPool =
+          new SessionPoolImpl<>(
+              metrics,
+              FeatureFlags.getDefaultInstance(),
+              CLIENT_INFO,
+              configManager,
+              channelPool,
+              CallOptions.DEFAULT,
+              FakeDescriptor.FAKE_SESSION,
+              "fake-pool",
+              mockTimer,
+              MoreExecutors.directExecutor(),
+              budget);
+    }
+
+    @AfterEach
+    void tearDown() {
+      sessionPool.close(
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+              .setDescription("close session")
+              .build());
+      channelPool.close();
+      server.shutdownNow();
+    }
+
+    @Test
+    void goAwayWhileStartingReleasesBudget() throws Exception {
+      // Drive a single session that receives a GO_AWAY before the open handshake, so it transitions
+      // STARTING -> WAIT_SERVER_CLOSE and closes with prevState == WAIT_SERVER_CLOSE. The
+      // abnormal-close branch (prevState != WAIT_SERVER_CLOSE) is skipped, so before the fix the
+      // STARTING budget slot -- which was released only on the prevState == STARTING path -- leaked
+      // permanently. The fix keys the release off the reservation set, releasing it here as a
+      // creation failure.
+      sessionPool.start(
+          OpenFakeSessionRequest.newBuilder().setGoAwayBeforeOpen(true).build(), new Metadata());
+
+      // Poll for the leaked slot to become reclaimable. onSessionClose(WAIT_SERVER_CLOSE) records a
+      // creation failure (fix only); advancing past the penalty lets tryReserveSession drain it and
+      // succeed. Access is guarded by the pool monitor (the pool's synchronized methods lock on the
+      // pool instance) so it doesn't race the session-close callback that mutates the budget. With
+      // the bug no slot is ever released and this stays false until the deadline.
+      boolean recovered = false;
+      long deadlineMs = System.currentTimeMillis() + 5_000;
+      while (System.currentTimeMillis() < deadlineMs) {
+        synchronized (sessionPool) {
+          fakeClock.increment(penalty.plusMillis(1));
+          if (budget.tryReserveSession()) {
+            recovered = true;
+            break;
+          }
+        }
+        Thread.sleep(20);
+      }
+
+      assertThat(recovered).isTrue();
+
+      // Sanity check that the client actually walked the GO_AWAY-before-open path: on receiving the
+      // GO_AWAY while STARTING it moves to WAIT_SERVER_CLOSE and sends a CloseSession.
+      boolean sentClose =
+          fakeService.getSessionRequests().stream()
+              .anyMatch(r -> r.getPayloadCase() == SessionRequest.PayloadCase.CLOSE_SESSION);
+      assertThat(sentClose).isTrue();
+    }
+  }
+
   @Test
   public void refreshConfigTest() throws Exception {
     OpenSessionRequest refreshRequest =
