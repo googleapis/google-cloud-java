@@ -95,10 +95,10 @@ public class BigQueryDatabaseMetaDataTest {
                 .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
     when(bigQueryConnection.getOtelContext()).thenReturn(Context.current());
 
-    Page<Dataset> datasetPageMock = mock(Page.class);
+    Page<Dataset> datasetPageMock = mock(Page.class, withSettings().withoutAnnotations());
     when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
 
-    Page<Table> tablePageMock = mock(Page.class);
+    Page<Table> tablePageMock = mock(Page.class, withSettings().withoutAnnotations());
     when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
 
     Table mockTable = mock(Table.class);
