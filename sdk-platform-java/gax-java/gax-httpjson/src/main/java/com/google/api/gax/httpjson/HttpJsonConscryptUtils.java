@@ -47,17 +47,17 @@ public class HttpJsonConscryptUtils {
    * provider is present:
    *
    * <ul>
-   *   <li>{@code X25519MLKEM768}: Primary preferred hybrid key exchange algorithm combining
-   *       Curve25519 ECDHE with NIST FIPS 203 (ML-KEM-768 / Kyber768).
-   *   <li>{@code SecP256r1MLKEM768}: Secondary preferred hybrid key exchange algorithm combining
-   *       NIST P-256 (SecP256r1) with NIST FIPS 203 (ML-KEM-768) for environments requiring
-   *       FIPS-compliant elliptic curves.
+   *   <li>{@code X25519MLKEM768}: Standard post-quantum hybrid group combining Curve25519 ECDHE
+   *       with NIST FIPS 203 (ML-KEM-768).
+   *   <li>{@code X25519Kyber768Draft00}: Draft 00 Kyber768 hybrid group alias for backward
+   *       compatibility with draft PQC implementations.
+   *   <li>{@code MLKEM1024}: Standalone Level 5 post-quantum ML-KEM-1024 group.
    *   <li>{@code X25519}: Classical non-quantum key exchange fallback to ensure compatibility with
-   *       standard TLS 1.3 endpoints if ML-KEM is not negotiated.
+   *       standard TLS 1.3 endpoints.
    * </ul>
    */
   public static final String[] DEFAULT_PQC_GROUPS =
-      new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
+      new String[] {"X25519MLKEM768", "X25519Kyber768Draft00", "MLKEM1024", "X25519"};
 
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.

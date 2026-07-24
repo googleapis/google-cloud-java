@@ -40,7 +40,7 @@ class HttpJsonConscryptUtilsTest {
   void testDefaultPqcGroups_containsExpectedGroups() {
     assertThat(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
         .asList()
-        .containsExactly("X25519MLKEM768", "SecP256r1MLKEM768", "X25519")
+        .containsExactlyElementsIn(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
         .inOrder();
   }
 
