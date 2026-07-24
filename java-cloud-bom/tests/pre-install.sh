@@ -35,9 +35,9 @@ set -eo pipefail
 
 if ! mvn install -pl $(cat bom_projects.txt) -am -amd -DskipTests=true -Dmaven.javadoc.skip=true -Dcheckstyle.skip=true -Denforcer.skip=true -Danimal.sniffer.skip=true -Dclirr.skip=true -Dgcloud.download.skip=true -B -V -T 1C -l java-cloud-bom/tests/mvn-install.log; then
   echo "========================================================================"
-  echo "mvn install failed! Printing the last 200 lines of mvn-install.log:"
+  echo "mvn install failed! Printing mvn-install.log:"
   echo "========================================================================"
-  tail -n 200 java-cloud-bom/tests/mvn-install.log
+  cat java-cloud-bom/tests/mvn-install.log
   exit 1
 fi
 rm bom_projects.txt
