@@ -89,6 +89,7 @@
             </ignoredUnusedDeclaredDependencies>
             <ignoredDependencies>
                 <ignoredDependency>io.opentelemetry:opentelemetry-sdk-logs</ignoredDependency>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-common</ignoredDependency>
             </ignoredDependencies>
         </configuration>
       </plugin>
