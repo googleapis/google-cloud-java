@@ -35,6 +35,7 @@ import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTI
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTION_LOOKUP;
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTION_RUN;
 import static com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_TRANSACTION_RUN_QUERY;
+import static com.google.cloud.datastore.RequestOptionsHelper.createRequestOptions;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
@@ -61,11 +62,24 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
+import com.google.datastore.v1.BeginTransactionRequest;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.CommitRequest;
 import com.google.datastore.v1.CommitResponse;
+import com.google.datastore.v1.EntityResult;
 import com.google.datastore.v1.ExplainOptions;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.Mutation;
+import com.google.datastore.v1.MutationResult;
 import com.google.datastore.v1.ReadOptions;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.ReserveIdsRequest;
+import com.google.datastore.v1.ReserveIdsResponse;
 import com.google.datastore.v1.RollbackRequest;
+import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
@@ -73,7 +87,6 @@ import io.grpc.Status;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -99,7 +112,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private static final ExceptionHandler TRANSACTION_OPERATION_EXCEPTION_HANDLER =
       TransactionOperationExceptionHandler.build();
 
-  private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
+  private final TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
   private final DatastoreMetricsRecorder metricsRecorder;
   private final OpenTelemetry builtInOpenTelemetry;
@@ -143,6 +156,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return new TransactionImpl(this);
   }
 
+  @Override
+  @BetaApi
+  public Transaction newTransaction(DatastoreExecutionOptions executionOptions) {
+    return new TransactionImpl(this, null, executionOptions);
+  }
+
+  @Override
+  @BetaApi
+  public Transaction newTransaction(
+      TransactionOptions transactionOptions, DatastoreExecutionOptions executionOptions) {
+    return new TransactionImpl(this, transactionOptions, executionOptions);
+  }
+
   /**
    * A Tracing callable that adds OpenTelemetry tracing context. Intended to be used for
    * transactions and wraps {@link ReadWriteTransactionCallable} as the delegate. All transaction
@@ -155,7 +181,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
     TracedReadWriteTransactionCallable(
         ReadWriteTransactionCallable<T> delegate,
-        @Nullable com.google.cloud.datastore.telemetry.TraceUtil.Span parentSpan) {
+        @Nullable TraceUtil.Span parentSpan) {
       this.delegate = delegate;
       this.parentSpan = parentSpan;
     }
@@ -333,11 +359,39 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return run(toReadOptionsPb(options), query, explainOptions.toPb());
   }
 
+  /** Implements run query with execution options. */
+  @Override
+  @BetaApi
+  public <T> QueryResults<T> run(Query<T> query, DatastoreExecutionOptions executionOptions) {
+    com.google.cloud.datastore.models.ExplainOptions explainOptions =
+        executionOptions.getExplainOptions();
+    return run(
+        toReadOptionsPb(executionOptions.getReadOptions().toArray(new ReadOption[0])),
+        query,
+        explainOptions != null ? explainOptions.toPb() : null,
+        executionOptions.getRequestOptions());
+  }
+
   @SuppressWarnings("unchecked")
   <T> QueryResults<T> run(
       Optional<ReadOptions> readOptionsPb, Query<T> query, ExplainOptions explainOptions) {
-    return new QueryResultsImpl<T>(
-        this, readOptionsPb, (RecordQuery<T>) query, query.getNamespace(), explainOptions);
+    return run(readOptionsPb, query, explainOptions, null);
+  }
+
+  @SuppressWarnings("unchecked")
+  <T> QueryResults<T> run(
+      Optional<ReadOptions> readOptionsPb,
+      Query<T> query,
+      ExplainOptions explainOptions,
+      RequestOptions requestOptions) {
+    return new QueryResultsImpl.Builder<T>()
+        .setDatastore(this)
+        .setReadOptionsPb(readOptionsPb)
+        .setQuery((RecordQuery<T>) query)
+        .setNamespace(query.getNamespace())
+        .setExplainOptions(explainOptions)
+        .setRequestOptions(requestOptions)
+        .build();
   }
 
   @Override
@@ -366,8 +420,15 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return aggregationQueryExecutor.execute(query, explainOptions, options);
   }
 
-  com.google.datastore.v1.RunQueryResponse runQuery(
-      final com.google.datastore.v1.RunQueryRequest requestPb) {
+  /** Implements run aggregation query with execution options. */
+  @Override
+  @BetaApi
+  public AggregationResults runAggregation(
+      AggregationQuery query, DatastoreExecutionOptions executionOptions) {
+    return aggregationQueryExecutor.execute(query, executionOptions);
+  }
+
+  RunQueryResponse runQuery(final RunQueryRequest requestPb) {
     ReadOptions readOptions = requestPb.getReadOptions();
     boolean isTransactional = readOptions.hasTransaction() || readOptions.hasNewTransaction();
     String spanName = (isTransactional ? SPAN_NAME_TRANSACTION_RUN_QUERY : SPAN_NAME_RUN_QUERY);
@@ -375,7 +436,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return runWithObservability(
         () -> {
           RunQueryResponse response = datastoreRpc.runQuery(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -409,7 +470,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.allocateId(this, key);
   }
 
-  private boolean verifyIncompleteKeyType(IncompleteKey... keys) {
+
+
+  private boolean verifyIncompleteKeyType(Iterable<IncompleteKey> keys) {
     for (IncompleteKey key : keys) {
       if (key instanceof Key) {
         return false;
@@ -420,19 +483,26 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> allocateId(IncompleteKey... keys) {
+    return allocateId(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @Override
+  @BetaApi
+  public List<Key> allocateId(List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions) {
     Preconditions.checkArgument(
         verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
-    if (keys.length == 0) {
+    if (keys.isEmpty()) {
       return Collections.emptyList();
     }
-    com.google.datastore.v1.AllocateIdsRequest.Builder requestPb =
-        com.google.datastore.v1.AllocateIdsRequest.newBuilder();
+    AllocateIdsRequest.Builder requestPb = AllocateIdsRequest.newBuilder();
     for (IncompleteKey key : keys) {
       requestPb.addKeys(trimNameOrId(key).toPb());
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    com.google.datastore.v1.AllocateIdsResponse responsePb = allocateIds(requestPb.build());
+    requestPb.setRequestOptions(
+        createRequestOptions(getOptions(), executionOptions));
+    AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (com.google.datastore.v1.Key keyPb : responsePb.getKeysList()) {
       keyList.add(Key.fromPb(keyPb));
@@ -440,8 +510,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return keyList.build();
   }
 
-  private com.google.datastore.v1.AllocateIdsResponse allocateIds(
-      final com.google.datastore.v1.AllocateIdsRequest requestPb) {
+  private AllocateIdsResponse allocateIds(final AllocateIdsRequest requestPb) {
     return runWithObservability(
         () -> datastoreRpc.allocateIds(requestPb),
         TelemetryConstants.METHOD_ALLOCATE_IDS,
@@ -461,13 +530,26 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.add(this, entity);
   }
 
+  @Override
+  @BetaApi
+  public Entity add(FullEntity<?> entity, DatastoreExecutionOptions executionOptions) {
+    return add(Collections.singletonList(entity), executionOptions).get(0);
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   public List<Entity> add(FullEntity<?>... entities) {
-    if (entities.length == 0) {
+    return add(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  @BetaApi
+  public List<Entity> add(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+    if (entities.isEmpty()) {
       return Collections.emptyList();
     }
-    List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
+    ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
     Map<Key, Entity> completeEntities = new LinkedHashMap<>();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = null;
@@ -482,12 +564,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       } else {
         Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
       }
-      mutationsPb.add(
-          com.google.datastore.v1.Mutation.newBuilder().setInsert(entity.toPb()).build());
+      mutationsPb.add(Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
-    com.google.datastore.v1.CommitResponse commitResponse = commitMutation(mutationsPb);
-    Iterator<com.google.datastore.v1.MutationResult> mutationResults =
-        commitResponse.getMutationResultsList().iterator();
+    CommitResponse commitResponse = commitMutation(mutationsPb.build());
+    Iterator<MutationResult> mutationResults = commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = completeEntities.get(entity.getKey());
@@ -513,6 +593,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
+  @BetaApi
+  public Entity get(Key key, DatastoreExecutionOptions executionOptions) {
+    Iterator<Entity> results = get(Collections.singletonList(key), executionOptions);
+    return results.hasNext() ? results.next() : null;
+  }
+
+  @Override
   public Iterator<Entity> get(Key... keys) {
     return get(Optional.empty(), keys);
   }
@@ -520,6 +607,16 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @Override
   public Iterator<Entity> get(Iterable<Key> keys, ReadOption... options) {
     return get(toReadOptionsPb(options), Iterables.toArray(keys, Key.class));
+  }
+
+  @Override
+  @BetaApi
+  public Iterator<Entity> get(Iterable<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Optional<ReadOptions> readOptionsPb =
+        executionOptions != null
+            ? toReadOptionsPb(executionOptions.getReadOptions().toArray(new ReadOption[0]))
+            : Optional.empty();
+    return get(readOptionsPb, executionOptions, Iterables.toArray(keys, Key.class));
   }
 
   private Optional<ReadOptions> toReadOptionsPb(ReadOption... options) {
@@ -539,33 +636,48 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.fetch(this, Iterables.toArray(keys, Key.class), options);
   }
 
+  @Override
+  @BetaApi
+  public List<Entity> fetch(Iterable<Key> keys, DatastoreExecutionOptions executionOptions) {
+    Iterator<Entity> results = get(keys, executionOptions);
+    return DatastoreHelper.compileEntities(Iterables.toArray(keys, Key.class), results);
+  }
+
   Iterator<Entity> get(Optional<ReadOptions> readOptionsPb, final Key... keys) {
+    return get(readOptionsPb, DatastoreExecutionOptions.getDefaultInstance(), keys);
+  }
+
+  Iterator<Entity> get(
+      Optional<ReadOptions> readOptionsPb,
+      DatastoreExecutionOptions executionOptions,
+      final Key... keys) {
     if (keys.length == 0) {
       return Collections.emptyIterator();
     }
-    com.google.datastore.v1.LookupRequest.Builder requestPb =
-        com.google.datastore.v1.LookupRequest.newBuilder();
+    LookupRequest.Builder requestPb = LookupRequest.newBuilder();
     readOptionsPb.ifPresent(requestPb::setReadOptions);
     for (Key k : Sets.newLinkedHashSet(Arrays.asList(keys))) {
       requestPb.addKeys(k.toPb());
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        createRequestOptions(getOptions(), executionOptions));
     return new ResultsIterator(requestPb);
   }
 
   final class ResultsIterator extends AbstractIterator<Entity> {
 
-    private final com.google.datastore.v1.LookupRequest.Builder requestPb;
-    Iterator<com.google.datastore.v1.EntityResult> iter;
+    private final LookupRequest.Builder requestPb;
+    Iterator<EntityResult> iter;
 
-    ResultsIterator(com.google.datastore.v1.LookupRequest.Builder requestPb) {
+    ResultsIterator(LookupRequest.Builder requestPb) {
       this.requestPb = requestPb;
       loadResults();
     }
 
     private void loadResults() {
-      com.google.datastore.v1.LookupResponse responsePb = lookup(requestPb.build());
+      LookupResponse responsePb = lookup(requestPb.build());
       iter = responsePb.getFoundList().iterator();
       requestPb.clearKeys();
       if (responsePb.getDeferredCount() > 0) {
@@ -586,16 +698,15 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
-  com.google.datastore.v1.LookupResponse lookup(
-      final com.google.datastore.v1.LookupRequest requestPb) {
+  LookupResponse lookup(final LookupRequest requestPb) {
     ReadOptions readOptions = requestPb.getReadOptions();
     boolean isTransactional = readOptions.hasTransaction() || readOptions.hasNewTransaction();
     String spanName = (isTransactional ? SPAN_NAME_TRANSACTION_LOOKUP : SPAN_NAME_LOOKUP);
 
     return runWithObservability(
         () -> {
-          com.google.datastore.v1.LookupResponse response = datastoreRpc.lookup(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          LookupResponse response = datastoreRpc.lookup(requestPb);
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -620,13 +731,21 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> reserveIds(Key... keys) {
+    return reserveIds(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @Override
+  @BetaApi
+  public List<Key> reserveIds(List<Key> keys, DatastoreExecutionOptions executionOptions) {
     ReserveIdsRequest.Builder requestPb = ReserveIdsRequest.newBuilder();
     for (Key key : keys) {
       requestPb.addKeys(key.toPb());
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    com.google.datastore.v1.ReserveIdsResponse responsePb = reserveIds(requestPb.build());
+    requestPb.setRequestOptions(
+        createRequestOptions(getOptions(), executionOptions));
+    ReserveIdsResponse responsePb = reserveIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     if (responsePb.isInitialized()) {
       for (Key key : keys) {
@@ -636,8 +755,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return keyList.build();
   }
 
-  com.google.datastore.v1.ReserveIdsResponse reserveIds(
-      final com.google.datastore.v1.ReserveIdsRequest requestPb) {
+  ReserveIdsResponse reserveIds(final ReserveIdsRequest requestPb) {
     return runWithObservability(
         () -> datastoreRpc.reserveIds(requestPb),
         TelemetryConstants.METHOD_RESERVE_IDS,
@@ -647,17 +765,22 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void update(Entity... entities) {
-    if (entities.length > 0) {
-      List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
+    update(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @Override
+  @BetaApi
+  public void update(List<Entity> entities, DatastoreExecutionOptions executionOptions) {
+    if (!entities.isEmpty()) {
+      ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
       for (Entity entity : entities) {
         dedupEntities.put(entity.getKey(), entity);
       }
       for (Entity entity : dedupEntities.values()) {
-        mutationsPb.add(
-            com.google.datastore.v1.Mutation.newBuilder().setUpdate(entity.toPb()).build());
+        mutationsPb.add(Mutation.newBuilder().setUpdate(entity.toPb()).build());
       }
-      commitMutation(mutationsPb);
+      commitMutation(mutationsPb.build());
     }
   }
 
@@ -666,13 +789,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.put(this, entity);
   }
 
-  @SuppressWarnings("unchecked")
   @Override
   public List<Entity> put(FullEntity<?>... entities) {
-    if (entities.length == 0) {
+    return put(Arrays.asList(entities), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  @BetaApi
+  public List<Entity> put(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+    if (entities.isEmpty()) {
       return Collections.emptyList();
     }
-    List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
+    ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
     Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
     for (FullEntity<?> entity : entities) {
       Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
@@ -680,17 +809,14 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         Entity completeEntity = Entity.convert((FullEntity<Key>) entity);
         dedupEntities.put(completeEntity.getKey(), completeEntity);
       } else {
-        mutationsPb.add(
-            com.google.datastore.v1.Mutation.newBuilder().setUpsert(entity.toPb()).build());
+        mutationsPb.add(Mutation.newBuilder().setUpsert(entity.toPb()).build());
       }
     }
     for (Entity entity : dedupEntities.values()) {
-      mutationsPb.add(
-          com.google.datastore.v1.Mutation.newBuilder().setUpsert(entity.toPb()).build());
+      mutationsPb.add(Mutation.newBuilder().setUpsert(entity.toPb()).build());
     }
-    com.google.datastore.v1.CommitResponse commitResponse = commitMutation(mutationsPb);
-    Iterator<com.google.datastore.v1.MutationResult> mutationResults =
-        commitResponse.getMutationResultsList().iterator();
+    CommitResponse commitResponse = commitMutation(mutationsPb.build());
+    Iterator<MutationResult> mutationResults = commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = dedupEntities.get(entity.getKey());
@@ -706,14 +832,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public void delete(Key... keys) {
-    if (keys.length > 0) {
-      List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
-      Set<Key> dedupKeys = new LinkedHashSet<>(Arrays.asList(keys));
+    delete(Arrays.asList(keys), DatastoreExecutionOptions.getDefaultInstance());
+  }
+
+  @Override
+  @BetaApi
+  public void delete(List<Key> keys, DatastoreExecutionOptions executionOptions) {
+    if (!keys.isEmpty()) {
+      ImmutableList.Builder<Mutation> mutationsPb = ImmutableList.builder();
+      Set<Key> dedupKeys = new LinkedHashSet<>(keys);
       for (Key key : dedupKeys) {
-        mutationsPb.add(
-            com.google.datastore.v1.Mutation.newBuilder().setDelete(key.toPb()).build());
+        mutationsPb.add(Mutation.newBuilder().setDelete(key.toPb()).build());
       }
-      commitMutation(mutationsPb);
+      commitMutation(mutationsPb.build());
     }
   }
 
@@ -722,19 +853,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.newKeyFactory(getOptions());
   }
 
-  private com.google.datastore.v1.CommitResponse commitMutation(
-      List<com.google.datastore.v1.Mutation> mutationsPb) {
-    com.google.datastore.v1.CommitRequest.Builder requestPb =
-        com.google.datastore.v1.CommitRequest.newBuilder();
-    requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.NON_TRANSACTIONAL);
-    requestPb.setProjectId(getOptions().getProjectId());
-    requestPb.setDatabaseId(getOptions().getDatabaseId());
-    requestPb.addAllMutations(mutationsPb);
+  private CommitResponse commitMutation(ImmutableList<Mutation> mutationsPb) {
+    CommitRequest.Builder requestPb =
+        CommitRequest.newBuilder()
+            .setMode(CommitRequest.Mode.NON_TRANSACTIONAL)
+            .setProjectId(getOptions().getProjectId())
+            .setDatabaseId(getOptions().getDatabaseId())
+            .addAllMutations(mutationsPb);
+    requestPb.setRequestOptions(
+        createRequestOptions(getOptions(), null));
     return commit(requestPb.build());
   }
 
-  com.google.datastore.v1.CommitResponse commit(
-      final com.google.datastore.v1.CommitRequest requestPb) {
+  CommitResponse commit(final CommitRequest requestPb) {
     final boolean isTransactional =
         requestPb.hasTransaction() || requestPb.hasSingleUseTransaction();
     final String spanName = isTransactional ? SPAN_NAME_TRANSACTION_COMMIT : SPAN_NAME_COMMIT;
@@ -742,7 +873,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return runWithObservability(
         () -> {
           CommitResponse response = datastoreRpc.commit(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 spanName + " complete.",
@@ -763,13 +894,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             : TRANSACTION_OPERATION_EXCEPTION_HANDLER);
   }
 
-  ByteString requestTransactionId(
-      com.google.datastore.v1.BeginTransactionRequest.Builder requestPb) {
+  ByteString requestTransactionId(BeginTransactionRequest.Builder requestPb) {
     return beginTransaction(requestPb.build()).getTransaction();
   }
 
-  com.google.datastore.v1.BeginTransactionResponse beginTransaction(
-      final com.google.datastore.v1.BeginTransactionRequest requestPb) {
+  BeginTransactionResponse beginTransaction(final BeginTransactionRequest requestPb) {
     return runWithObservability(
         () -> datastoreRpc.beginTransaction(requestPb),
         TelemetryConstants.METHOD_BEGIN_TRANSACTION,
@@ -778,11 +907,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   void rollbackTransaction(ByteString transaction) {
-    com.google.datastore.v1.RollbackRequest.Builder requestPb =
-        com.google.datastore.v1.RollbackRequest.newBuilder();
+    RollbackRequest.Builder requestPb = RollbackRequest.newBuilder();
     requestPb.setTransaction(transaction);
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
+    requestPb.setRequestOptions(
+        createRequestOptions(getOptions(), null));
     rollback(requestPb.build());
   }
 
@@ -790,7 +920,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     runWithObservability(
         () -> {
           datastoreRpc.rollback(requestPb);
-          com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
+          TraceUtil.Span span = otelTraceUtil.getCurrentSpan();
           if (span != null) {
             span.addEvent(
                 SPAN_NAME_ROLLBACK,
@@ -810,7 +940,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       String methodName,
       String spanName,
       ResultRetryAlgorithm<?> exceptionHandler) {
-    com.google.cloud.datastore.telemetry.TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
+    TraceUtil.Span span = otelTraceUtil.startSpan(spanName);
 
     Stopwatch operationStopwatch = Stopwatch.createStarted();
     String operationStatus = StatusCode.Code.OK.toString();

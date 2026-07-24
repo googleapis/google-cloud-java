@@ -33,6 +33,7 @@ import static java.util.Collections.singletonList;
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.AggregationQuery;
+import com.google.cloud.datastore.DatastoreExecutionOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.EntityQuery;
 import com.google.cloud.datastore.GqlQuery;
@@ -40,7 +41,8 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.ReadOption.QueryConfig;
 import com.google.common.collect.ImmutableMap;
-import com.google.datastore.v1.ExplainOptions;
+import com.google.cloud.datastore.models.ExplainOptions;
+import com.google.datastore.v1.RequestOptions;
 import com.google.datastore.v1.RunAggregationQueryRequest;
 import java.util.HashMap;
 import org.junit.Test;
@@ -92,7 +94,9 @@ public class AggregationQueryRequestProtoPreparerTest {
   @Test
   public void shouldPrepareAggregationQueryRequestWithGivenStructuredQuery() {
     RunAggregationQueryRequest runAggregationQueryRequest =
-        protoPreparer.prepare(QueryConfig.create(AGGREGATION_OVER_STRUCTURED_QUERY, null));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                AGGREGATION_OVER_STRUCTURED_QUERY, DatastoreExecutionOptions.getDefaultInstance()));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
     assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
@@ -116,7 +120,9 @@ public class AggregationQueryRequestProtoPreparerTest {
   @Test
   public void shouldPrepareAggregationQueryRequestWithGivenGqlQuery() {
     RunAggregationQueryRequest runAggregationQueryRequest =
-        protoPreparer.prepare(QueryConfig.create(AGGREGATION_OVER_GQL_QUERY, null));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                AGGREGATION_OVER_GQL_QUERY, DatastoreExecutionOptions.getDefaultInstance()));
 
     assertThat(runAggregationQueryRequest.getProjectId()).isEqualTo(PROJECT_ID);
     assertThat(runAggregationQueryRequest.getDatabaseId()).isEqualTo(DATABASE_ID);
@@ -175,9 +181,13 @@ public class AggregationQueryRequestProtoPreparerTest {
         Query.newAggregationQueryBuilder().over(COMPLETED_TASK_GQL_QUERY).build();
 
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery =
-        protoPreparer.prepare(QueryConfig.create(structuredQueryWithoutNamespace, null));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                structuredQueryWithoutNamespace, DatastoreExecutionOptions.getDefaultInstance()));
     RunAggregationQueryRequest runAggregationQueryFromGqlQuery =
-        protoPreparer.prepare(QueryConfig.create(gqlQueryWithoutNamespace, null));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                gqlQueryWithoutNamespace, DatastoreExecutionOptions.getDefaultInstance()));
 
     assertThat(runAggregationQueryFromStructuredQuery.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
@@ -196,21 +206,46 @@ public class AggregationQueryRequestProtoPreparerTest {
 
     ExplainOptions explainOptions = ExplainOptions.newBuilder().build();
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery =
-        protoPreparer.prepare(QueryConfig.create(structuredQueryWithoutNamespace, explainOptions));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                structuredQueryWithoutNamespace,
+                DatastoreExecutionOptions.newBuilder().setExplainOptions(explainOptions).build()));
     assertThat(runAggregationQueryFromStructuredQuery.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
     assertThat(runAggregationQueryFromStructuredQuery.getExplainOptions())
-        .isEqualTo(explainOptions);
+        .isEqualTo(explainOptions.toPb());
 
     RunAggregationQueryRequest runAggregationQueryFromStructuredQuery2 =
-        protoPreparer.prepare(QueryConfig.create(structuredQueryWithoutNamespace, explainOptions));
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                structuredQueryWithoutNamespace,
+                DatastoreExecutionOptions.newBuilder().setExplainOptions(explainOptions).build()));
     assertThat(runAggregationQueryFromStructuredQuery2.getPartitionId().getNamespaceId())
         .isEqualTo(NAMESPACE);
     assertThat(runAggregationQueryFromStructuredQuery2.getExplainOptions())
-        .isEqualTo(explainOptions);
+        .isEqualTo(explainOptions.toPb());
   }
 
   private RunAggregationQueryRequest prepareQuery(AggregationQuery query, ReadOption readOption) {
-    return protoPreparer.prepare(QueryConfig.create(query, null, singletonList(readOption)));
+    return protoPreparer.prepare(
+        QueryConfig.createWithDatastoreExecutionOptions(
+            query,
+            DatastoreExecutionOptions.newBuilder()
+                .setReadOptions(singletonList(readOption))
+                .build()));
+  }
+
+  @Test
+  public void shouldPrepareAggregationQueryRequestWithRequestOptions() {
+    RequestOptions requestOptions =
+        RequestOptions.newBuilder().addRequestTags("aggregation-tag").build();
+
+    RunAggregationQueryRequest request =
+        protoPreparer.prepare(
+            QueryConfig.createWithDatastoreExecutionOptions(
+                AGGREGATION_OVER_STRUCTURED_QUERY,
+                DatastoreExecutionOptions.newBuilder().setRequestOptions(requestOptions).build()));
+
+    assertThat(request.getRequestOptions().getRequestTagsList()).containsExactly("aggregation-tag");
   }
 }
