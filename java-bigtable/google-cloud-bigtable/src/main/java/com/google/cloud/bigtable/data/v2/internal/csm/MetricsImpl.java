@@ -56,6 +56,7 @@ import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.opentelemetry.metric.GoogleCloudMetricExporter;
 import com.google.cloud.opentelemetry.metric.MetricConfiguration;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Stopwatch;
 import com.google.common.base.Splitter;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
@@ -94,6 +95,7 @@ public class MetricsImpl implements Metrics, Closeable {
           .map(Boolean::parseBoolean)
           .orElse(false);
 
+  private final ClientInfo clientInfo;
   private final ApiTracerFactory userTracerFactory;
   private final @Nullable OpenTelemetrySdk internalOtel;
   private final @Nullable MetricRegistry.RecorderRegistry internalRecorder;
@@ -114,6 +116,7 @@ public class MetricsImpl implements Metrics, Closeable {
   private final List<SessionTracer> sessionTracers = new ArrayList<>();
 
   private final List<ScheduledFuture<?>> tasks = new ArrayList<>();
+  private final Stopwatch clientUptimeStopwatch = Stopwatch.createUnstarted();
 
   public MetricsImpl(
       MetricRegistry metricRegistry,
@@ -124,6 +127,7 @@ public class MetricsImpl implements Metrics, Closeable {
       Tagger ocTagger,
       StatsRecorder ocRecorder,
       ScheduledExecutorService executor) {
+    this.clientInfo = clientInfo;
     this.userTracerFactory = Preconditions.checkNotNull(userTracerFactory);
 
     this.internalOtel = internalOtel;
@@ -175,6 +179,10 @@ public class MetricsImpl implements Metrics, Closeable {
     for (ScheduledFuture<?> task : tasks) {
       task.cancel(false);
     }
+    if (clientUptimeStopwatch.isRunning()) {
+      clientUptimeStopwatch.stop();
+      recordAsyncClientMetrics();
+    }
     if (internalOtel != null) {
       internalOtel.close();
     }
@@ -182,6 +190,7 @@ public class MetricsImpl implements Metrics, Closeable {
 
   @Override
   public void start() {
+    clientUptimeStopwatch.start();
     if (channelPoolMetricsTracer != null) {
       tasks.add(channelPoolMetricsTracer.start(executor));
     }
@@ -190,7 +199,7 @@ public class MetricsImpl implements Metrics, Closeable {
     }
     if (internalOtel != null) {
       tasks.add(
-          executor.scheduleAtFixedRate(this::recordAsyncSessionMetrics, 1, 1, TimeUnit.MINUTES));
+          executor.scheduleAtFixedRate(this::recordAsyncMetrics, 1, 1, TimeUnit.MINUTES));
     }
   }
 
@@ -248,6 +257,17 @@ public class MetricsImpl implements Metrics, Closeable {
   private void recordAsyncSessionMetrics() {
     synchronized (sessionLock) {
       sessionTracers.removeIf(tracer -> !tracer.recordAsyncMetrics());
+    }
+  }
+
+  private void recordAsyncMetrics() {
+    recordAsyncSessionMetrics();
+    recordAsyncClientMetrics();
+  }
+
+  private void recordAsyncClientMetrics() {
+    if (internalRecorder != null) {
+      internalRecorder.clientUptime.record(clientInfo, clientUptimeStopwatch.elapsed());
     }
   }
 
