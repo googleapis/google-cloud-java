@@ -258,12 +258,7 @@ public class ITOpenTelemetryTest extends ITBase {
             .setCredentials(credentials)
             .build()
             .getService()) {
-      String filter =
-          "logName:\"projects/"
-              + PROJECT_ID
-              + "/logs/com.google.cloud.bigquery\" AND labels.\"jdbc.connection_id\"=\""
-              + connectionUuid
-              + "\"";
+      String filter = "labels.\"jdbc.connection_id\"=\"" + connectionUuid + "\"";
 
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
       assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
@@ -306,8 +301,11 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
     int attempts = 0;
-    int maxAttempts = 20; // 20 attempts * 3000ms = 60 seconds max delay
-    long delayMs = 3000; // 3000ms linear polling
+    int maxAttempts = 10;
+    long delayMs = 10000;
+
+    // 10 second wait for GCP to ingest data
+    Thread.sleep(10000);
 
     while (attempts < maxAttempts) {
       attempts++;

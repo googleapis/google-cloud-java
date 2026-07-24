@@ -206,9 +206,7 @@ public class BigQueryJdbcOpenTelemetry {
   }
 
   public static void releaseSdk(OpenTelemetry openTelemetry) {
-    if (openTelemetry == null
-        || openTelemetry == GlobalOpenTelemetry.get()
-        || openTelemetry == OpenTelemetry.noop()) {
+    if (openTelemetry == null || openTelemetry == OpenTelemetry.noop()) {
       return;
     }
 
