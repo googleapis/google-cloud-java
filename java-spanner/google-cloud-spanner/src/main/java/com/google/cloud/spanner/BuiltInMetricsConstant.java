@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.metrics.Aggregation;
+import io.opentelemetry.sdk.metrics.ExplicitBucketHistogramOptions;
 import io.opentelemetry.sdk.metrics.InstrumentSelector;
 import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.View;
@@ -40,6 +41,16 @@ import java.util.stream.Collectors;
 public class BuiltInMetricsConstant {
 
   public static final String METER_NAME = "spanner.googleapis.com/internal/client";
+
+  /**
+   * Instrument namespace used when client metrics are recorded on a caller-provided {@link
+   * io.opentelemetry.api.OpenTelemetry} via {@link CustomOpenTelemetryMetricsProvider}. This is
+   * deliberately distinct from the reserved {@code spanner.googleapis.com} namespace, so that
+   * re-exporting a caller-owned pipeline to Cloud Monitoring cannot conflict with the curated
+   * Spanner metric descriptors.
+   */
+  public static final String CUSTOM_EXPORT_METER_NAME = "spanner/client";
+
   public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
   public static final String GRPC_GCP_METER_NAME = "grpc-gcp";
   static final String SPANNER_METER_NAME = "spanner-java";
@@ -168,6 +179,14 @@ public class BuiltInMetricsConstant {
       AttributeKey.stringKey("directpath_used");
   public static final AttributeKey<String> REQUEST_ID_KEY =
       AttributeKey.stringKey(REQUEST_ID_HEADER_NAME);
+
+  /**
+   * The endpoint an attempt was routed to by the location-aware fastpath. Only produced when the
+   * experimental location API is enabled (Spanner Omni), and only allowed through the attribute
+   * filter of the custom-export views; the Cloud Monitoring views never include it.
+   */
+  public static final AttributeKey<String> ENDPOINT_KEY = AttributeKey.stringKey("endpoint");
+
   public static Set<String> ALLOWED_EXEMPLARS_ATTRIBUTES =
       new HashSet<>(Arrays.asList(REQUEST_ID_HEADER_NAME));
 
@@ -197,7 +216,8 @@ public class BuiltInMetricsConstant {
           200.0, 250.0, 300.0, 400.0, 500.0, 650.0, 800.0, 1000.0, 2000.0, 5000.0, 10000.0, 20000.0,
           50000.0, 100000.0, 200000.0, 400000.0, 800000.0, 1600000.0, 3200000.0);
   static Aggregation AGGREGATION_WITH_MILLIS_HISTOGRAM =
-      Aggregation.explicitBucketHistogram(BUCKET_BOUNDARIES);
+      Aggregation.explicitBucketHistogram(
+          ExplicitBucketHistogramOptions.builder().setBucketBoundaries(BUCKET_BOUNDARIES).build());
 
   static final Collection<String> GRPC_METRICS_ENABLED_BY_DEFAULT =
       ImmutableList.of(
@@ -208,102 +228,138 @@ public class BuiltInMetricsConstant {
 
   static Map<InstrumentSelector, View> getAllViews() {
     ImmutableMap.Builder<InstrumentSelector, View> views = ImmutableMap.builder();
+    addViews(views, METER_NAME, false);
+    defineGrpcGcpView(views);
+    return views.build();
+  }
+
+  /**
+   * Views for client metrics recorded on a caller-provided OpenTelemetry via {@link
+   * CustomOpenTelemetryMetricsProvider}. The instruments live in the {@link
+   * #CUSTOM_EXPORT_METER_NAME} namespace, and the attempt metric attribute filters additionally
+   * allow the {@link #ENDPOINT_KEY} label. The grpc-gcp DirectPath-fallback views are deliberately
+   * excluded: those metrics are only recorded on the Cloud Monitoring path, so registering their
+   * views on a custom sink would be dead configuration.
+   */
+  static Map<InstrumentSelector, View> getCustomExportViews() {
+    ImmutableMap.Builder<InstrumentSelector, View> views = ImmutableMap.builder();
+    addViews(views, CUSTOM_EXPORT_METER_NAME, true);
+    return views.build();
+  }
+
+  private static void addViews(
+      ImmutableMap.Builder<InstrumentSelector, View> views,
+      String metricPrefix,
+      boolean includeEndpointAttribute) {
     defineView(
         views,
+        metricPrefix,
         BuiltInMetricsConstant.GAX_METER_NAME,
         BuiltInMetricsConstant.OPERATION_LATENCY_NAME,
         BuiltInMetricsConstant.OPERATION_LATENCIES_NAME,
         BuiltInMetricsConstant.AGGREGATION_WITH_MILLIS_HISTOGRAM,
         InstrumentType.HISTOGRAM,
-        "ms");
+        "ms",
+        false);
     defineView(
         views,
+        metricPrefix,
         BuiltInMetricsConstant.GAX_METER_NAME,
         BuiltInMetricsConstant.ATTEMPT_LATENCY_NAME,
         BuiltInMetricsConstant.ATTEMPT_LATENCIES_NAME,
         BuiltInMetricsConstant.AGGREGATION_WITH_MILLIS_HISTOGRAM,
         InstrumentType.HISTOGRAM,
-        "ms");
+        "ms",
+        includeEndpointAttribute);
     defineView(
         views,
+        metricPrefix,
         BuiltInMetricsConstant.GAX_METER_NAME,
         BuiltInMetricsConstant.OPERATION_COUNT_NAME,
         BuiltInMetricsConstant.OPERATION_COUNT_NAME,
         Aggregation.sum(),
         InstrumentType.COUNTER,
-        "1");
+        "1",
+        false);
     defineView(
         views,
+        metricPrefix,
         BuiltInMetricsConstant.GAX_METER_NAME,
         BuiltInMetricsConstant.ATTEMPT_COUNT_NAME,
         BuiltInMetricsConstant.ATTEMPT_COUNT_NAME,
         Aggregation.sum(),
         InstrumentType.COUNTER,
-        "1");
-    defineSpannerView(views);
-    defineGRPCView(views);
-    defineGrpcGcpView(views);
-    return views.build();
+        "1",
+        includeEndpointAttribute);
+    defineSpannerView(views, false);
+    defineGRPCView(views, metricPrefix, false);
+  }
+
+  private static Set<String> baseAttributesFilter(boolean includeEndpointAttribute) {
+    Set<String> attributesFilter =
+        BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
+            .map(AttributeKey::getKey)
+            .collect(Collectors.toCollection(HashSet::new));
+    if (includeEndpointAttribute) {
+      attributesFilter.add(ENDPOINT_KEY.getKey());
+    }
+    return attributesFilter;
   }
 
   private static void defineView(
       ImmutableMap.Builder<InstrumentSelector, View> viewMap,
+      String metricPrefix,
       String meterName,
       String metricName,
       String metricViewName,
       Aggregation aggregation,
       InstrumentType type,
-      String unit) {
+      String unit,
+      boolean includeEndpointAttribute) {
     InstrumentSelector selector =
         InstrumentSelector.builder()
-            .setName(BuiltInMetricsConstant.METER_NAME + '/' + metricName)
+            .setName(metricPrefix + '/' + metricName)
             .setMeterName(meterName)
             .setType(type)
             .setUnit(unit)
             .build();
-    Set<String> attributesFilter =
-        BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
-            .map(AttributeKey::getKey)
-            .collect(Collectors.toSet());
     View view =
         View.builder()
-            .setName(BuiltInMetricsConstant.METER_NAME + '/' + metricViewName)
+            .setName(metricPrefix + '/' + metricViewName)
             .setAggregation(aggregation)
-            .setAttributeFilter(attributesFilter)
+            .setAttributeFilter(baseAttributesFilter(includeEndpointAttribute))
             .build();
     viewMap.put(selector, view);
   }
 
-  private static void defineSpannerView(ImmutableMap.Builder<InstrumentSelector, View> viewMap) {
+  private static void defineSpannerView(
+      ImmutableMap.Builder<InstrumentSelector, View> viewMap, boolean includeEndpointAttribute) {
     InstrumentSelector selector =
         InstrumentSelector.builder()
             .setMeterName(BuiltInMetricsConstant.SPANNER_METER_NAME)
             .build();
-    Set<String> attributesFilter =
-        BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
-            .map(AttributeKey::getKey)
-            .collect(Collectors.toSet());
-    View view = View.builder().setAttributeFilter(attributesFilter).build();
+    View view =
+        View.builder().setAttributeFilter(baseAttributesFilter(includeEndpointAttribute)).build();
     viewMap.put(selector, view);
   }
 
-  private static void defineGRPCView(ImmutableMap.Builder<InstrumentSelector, View> viewMap) {
+  private static void defineGRPCView(
+      ImmutableMap.Builder<InstrumentSelector, View> viewMap,
+      String metricPrefix,
+      boolean includeEndpointAttribute) {
     for (String metric : BuiltInMetricsConstant.GRPC_METRICS_TO_ENABLE) {
       InstrumentSelector selector =
           InstrumentSelector.builder()
               .setName(metric)
               .setMeterName(BuiltInMetricsConstant.GRPC_METER_NAME)
               .build();
-      Set<String> attributesFilter =
-          BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
-              .map(AttributeKey::getKey)
-              .collect(Collectors.toSet());
+      Set<String> attributesFilter = baseAttributesFilter(includeEndpointAttribute);
       attributesFilter.addAll(
           GRPC_METRIC_ADDITIONAL_ATTRIBUTES.getOrDefault(metric, ImmutableSet.of()));
 
       View view =
           View.builder()
-              .setName(BuiltInMetricsConstant.METER_NAME + '/' + metric.replace(".", "/"))
+              .setName(metricPrefix + '/' + metric.replace(".", "/"))
               .setAttributeFilter(attributesFilter)
               .build();
       viewMap.put(selector, view);
@@ -318,11 +374,7 @@ public class BuiltInMetricsConstant {
               .setMeterName(BuiltInMetricsConstant.GRPC_GCP_METER_NAME)
               .build();
 
-      Set<String> attributesFilter =
-          BuiltInMetricsConstant.COMMON_ATTRIBUTES.stream()
-              .map(AttributeKey::getKey)
-              .collect(Collectors.toSet());
-
+      Set<String> attributesFilter = baseAttributesFilter(false);
       attributesFilter.addAll(
           GRPC_GCP_METRIC_ADDITIONAL_ATTRIBUTES.getOrDefault(metric, ImmutableSet.of()));
 
