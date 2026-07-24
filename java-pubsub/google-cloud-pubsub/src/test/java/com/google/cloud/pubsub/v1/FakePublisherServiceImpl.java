@@ -81,7 +81,6 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   @Override
   public void publish(
       PublishRequest request, final StreamObserver<PublishResponse> responseObserver) {
-    requests.add(request);
     Response response;
     try {
       if (autoPublishResponse) {
@@ -98,6 +97,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
     }
     if (responseDelay == Duration.ZERO) {
       sendResponse(response, responseObserver);
+      requests.add(request);
     } else {
       final Response responseToSend = response;
       executor.schedule(
@@ -109,6 +109,7 @@ class FakePublisherServiceImpl extends PublisherImplBase {
           },
           responseDelay.toMillis(),
           TimeUnit.MILLISECONDS);
+      requests.add(request);
     }
   }
 
