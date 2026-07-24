@@ -1,7 +1,7 @@
 {
   "api_shortname": "sqladmin",
   "name_pretty": "Cloud SQL Admin",
-  "product_documentation": "",
+  "product_documentation": "https://cloud.google.com/sql/",
   "api_description": "Cloud SQL Admin API",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-sql/latest/overview",
   "release_level": "preview",

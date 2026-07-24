@@ -104,6 +104,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
         SqlOperationsGetRequest.newBuilder()
             .setOperation("operation-3971")
             .setProject("project-6911")
+            .setLocation("location1901043637")
             .build();
 
     Operation actualResponse = client.get(request);
@@ -136,6 +137,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
           SqlOperationsGetRequest.newBuilder()
               .setOperation("operation-3971")
               .setProject("project-6911")
+              .setLocation("location1901043637")
               .build();
       client.get(request);
       Assert.fail("No exception raised");
@@ -160,6 +162,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
             .setMaxResults(1128457243)
             .setPageToken("pageToken873572522")
             .setProject("project-6911")
+            .setLocation("location1901043637")
             .build();
 
     OperationsListResponse actualResponse = client.list(request);
@@ -194,6 +197,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
               .setMaxResults(1128457243)
               .setPageToken("pageToken873572522")
               .setProject("project-6911")
+              .setLocation("location1901043637")
               .build();
       client.list(request);
       Assert.fail("No exception raised");
@@ -211,6 +215,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
         SqlOperationsCancelRequest.newBuilder()
             .setOperation("operation-3971")
             .setProject("project-6911")
+            .setLocation("location1901043637")
             .build();
 
     client.cancel(request);
@@ -242,6 +247,7 @@ public class SqlOperationsServiceClientHttpJsonTest {
           SqlOperationsCancelRequest.newBuilder()
               .setOperation("operation-3971")
               .setProject("project-6911")
+              .setLocation("location1901043637")
               .build();
       client.cancel(request);
       Assert.fail("No exception raised");

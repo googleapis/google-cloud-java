@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetCompany</td>
- *      <td><p> API to retrieve a `Company` object.</td>
+ *      <td><p> Retrieves a `Company` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListCompanies</td>
- *      <td><p> API to retrieve a list of `Company` objects.</td>
+ *      <td><p> Lists `Company` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -196,7 +196,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a `Company` object.
    *
    * <p>Sample code:
    *
@@ -224,7 +224,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a `Company` object.
    *
    * <p>Sample code:
    *
@@ -251,7 +251,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a `Company` object.
    *
    * <p>Sample code:
    *
@@ -279,7 +279,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a `Company` object.
    *
    * <p>Sample code:
    *
@@ -306,7 +306,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists `Company` objects.
    *
    * <p>Sample code:
    *
@@ -338,7 +338,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists `Company` objects.
    *
    * <p>Sample code:
    *
@@ -367,7 +367,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists `Company` objects.
    *
    * <p>Sample code:
    *
@@ -402,7 +402,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists `Company` objects.
    *
    * <p>Sample code:
    *
@@ -438,7 +438,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists `Company` objects.
    *
    * <p>Sample code:
    *

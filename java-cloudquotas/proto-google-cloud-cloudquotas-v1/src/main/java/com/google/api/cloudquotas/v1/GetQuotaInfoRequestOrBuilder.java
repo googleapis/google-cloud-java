@@ -30,14 +30,14 @@ public interface GetQuotaInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the quota info.
+   * Required. Identifier. The resource name of the quota info.
    *
    * An example name:
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -48,14 +48,14 @@ public interface GetQuotaInfoRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the quota info.
+   * Required. Identifier. The resource name of the quota info.
    *
    * An example name:
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.

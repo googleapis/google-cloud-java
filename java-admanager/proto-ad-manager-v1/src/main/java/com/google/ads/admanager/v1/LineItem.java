@@ -57,8 +57,34 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     name_ = "";
     order_ = "";
     displayName_ = "";
+    externalLineItemId_ = "";
+    orderDisplayName_ = "";
+    creativeRotationType_ = 0;
+    deliveryRateType_ = 0;
+    deliveryForecastSource_ = 0;
+    roadblockingType_ = 0;
+    skippableAdType_ = 0;
+    frequencyCaps_ = java.util.Collections.emptyList();
     lineItemType_ = 0;
+    costType_ = 0;
+    creativePlaceholders_ = java.util.Collections.emptyList();
+    environmentType_ = 0;
+    companionDeliveryOption_ = 0;
+    status_ = 0;
+    reservationStatus_ = 0;
+    webPropertyCode_ = "";
+    appliedLabels_ = java.util.Collections.emptyList();
+    effectiveAppliedLabels_ = java.util.Collections.emptyList();
+    updateSource_ = "";
+    notes_ = "";
+    competitiveConstraintScope_ = 0;
     customFieldValues_ = java.util.Collections.emptyList();
+    secondaryGoals_ = java.util.Collections.emptyList();
+    viewabilityProviderCompanies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    childContentEligibility_ = 0;
+    customVastExtension_ = "";
+    creativeTargetings_ = java.util.Collections.emptyList();
+    allowedFormats_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -77,6 +103,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  private int bitField1_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -219,8 +246,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -236,8 +263,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -261,8 +288,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -276,6 +303,153 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXTERNAL_LINE_ITEM_ID_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalLineItemId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the externalLineItemId field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalLineItemId() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The externalLineItemId.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalLineItemId() {
+    java.lang.Object ref = externalLineItemId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalLineItemId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for externalLineItemId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalLineItemIdBytes() {
+    java.lang.Object ref = externalLineItemId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      externalLineItemId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_DISPLAY_NAME_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderDisplayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the orderDisplayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrderDisplayName() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The orderDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderDisplayName() {
+    java.lang.Object ref = orderDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderDisplayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for orderDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderDisplayNameBytes() {
+    java.lang.Object ref = orderDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderDisplayName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -301,7 +475,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStartTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -340,6 +514,80 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
 
+  public static final int TARGET_END_TIME_FIELD_NUMBER = 95;
+  private com.google.protobuf.Timestamp targetEndTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the targetEndTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetEndTime() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The targetEndTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getTargetEndTime() {
+    return targetEndTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : targetEndTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getTargetEndTimeOrBuilder() {
+    return targetEndTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : targetEndTime_;
+  }
+
   public static final int END_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp endTime_;
 
@@ -348,7 +596,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -359,7 +607,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -367,7 +615,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -386,7 +634,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -398,6 +646,581 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
 
+  public static final int AUTO_EXTENSION_DAYS_FIELD_NUMBER = 8;
+  private int autoExtensionDays_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of days to allow a line item to deliver past its
+   * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+   * maximum of 7 days is allowed. This is feature is only available for Ad
+   * Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the autoExtensionDays field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoExtensionDays() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of days to allow a line item to deliver past its
+   * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+   * maximum of 7 days is allowed. This is feature is only available for Ad
+   * Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoExtensionDays.
+   */
+  @java.lang.Override
+  public int getAutoExtensionDays() {
+    return autoExtensionDays_;
+  }
+
+  public static final int END_TIME_UNLIMITED_FIELD_NUMBER = 9;
+  private boolean endTimeUnlimited_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Specifies whether or not the LineItem has an
+   * end time. This attribute defaults to false. It can be be set to true for
+   * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+   * </pre>
+   *
+   * <code>
+   * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the endTimeUnlimited field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTimeUnlimited() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Specifies whether or not the LineItem has an
+   * end time. This attribute defaults to false. It can be be set to true for
+   * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+   * </pre>
+   *
+   * <code>
+   * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The endTimeUnlimited.
+   */
+  @java.lang.Override
+  public boolean getEndTimeUnlimited() {
+    return endTimeUnlimited_;
+  }
+
+  public static final int CREATIVE_ROTATION_TYPE_FIELD_NUMBER = 10;
+  private int creativeRotationType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the creativeRotationType field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreativeRotationType() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for creativeRotationType.
+   */
+  @java.lang.Override
+  public int getCreativeRotationTypeValue() {
+    return creativeRotationType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The creativeRotationType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType
+      getCreativeRotationType() {
+    com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType result =
+        com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType.forNumber(
+            creativeRotationType_);
+    return result == null
+        ? com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DELIVERY_RATE_TYPE_FIELD_NUMBER = 11;
+  private int deliveryRateType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the deliveryRateType field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeliveryRateType() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deliveryRateType.
+   */
+  @java.lang.Override
+  public int getDeliveryRateTypeValue() {
+    return deliveryRateType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The deliveryRateType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+      getDeliveryRateType() {
+    com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType result =
+        com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType.forNumber(
+            deliveryRateType_);
+    return result == null
+        ? com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DELIVERY_FORECAST_SOURCE_FIELD_NUMBER = 12;
+  private int deliveryForecastSource_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the deliveryForecastSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeliveryForecastSource() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deliveryForecastSource.
+   */
+  @java.lang.Override
+  public int getDeliveryForecastSourceValue() {
+    return deliveryForecastSource_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The deliveryForecastSource.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+          .LineItemDeliveryForecastSource
+      getDeliveryForecastSource() {
+    com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource
+        result =
+            com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+                .LineItemDeliveryForecastSource.forNumber(deliveryForecastSource_);
+    return result == null
+        ? com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+            .LineItemDeliveryForecastSource.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CUSTOM_PACING_CURVE_FIELD_NUMBER = 13;
+  private com.google.ads.admanager.v1.CustomPacingCurve customPacingCurve_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPacingCurve field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomPacingCurve() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPacingCurve.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomPacingCurve getCustomPacingCurve() {
+    return customPacingCurve_ == null
+        ? com.google.ads.admanager.v1.CustomPacingCurve.getDefaultInstance()
+        : customPacingCurve_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CustomPacingCurveOrBuilder getCustomPacingCurveOrBuilder() {
+    return customPacingCurve_ == null
+        ? com.google.ads.admanager.v1.CustomPacingCurve.getDefaultInstance()
+        : customPacingCurve_;
+  }
+
+  public static final int ROADBLOCKING_TYPE_FIELD_NUMBER = 14;
+  private int roadblockingType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the roadblockingType field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoadblockingType() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for roadblockingType.
+   */
+  @java.lang.Override
+  public int getRoadblockingTypeValue() {
+    return roadblockingType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The roadblockingType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType getRoadblockingType() {
+    com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType result =
+        com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType.forNumber(
+            roadblockingType_);
+    return result == null
+        ? com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SKIPPABLE_AD_TYPE_FIELD_NUMBER = 15;
+  private int skippableAdType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the skippableAdType field is set.
+   */
+  @java.lang.Override
+  public boolean hasSkippableAdType() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for skippableAdType.
+   */
+  @java.lang.Override
+  public int getSkippableAdTypeValue() {
+    return skippableAdType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The skippableAdType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType getSkippableAdType() {
+    com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType result =
+        com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType.forNumber(skippableAdType_);
+    return result == null
+        ? com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int FREQUENCY_CAPS_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.FrequencyCap> frequencyCaps_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.FrequencyCap> getFrequencyCapsList() {
+    return frequencyCaps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.FrequencyCapOrBuilder>
+      getFrequencyCapsOrBuilderList() {
+    return frequencyCaps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFrequencyCapsCount() {
+    return frequencyCaps_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.FrequencyCap getFrequencyCaps(int index) {
+    return frequencyCaps_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapsOrBuilder(int index) {
+    return frequencyCaps_.get(index);
+  }
+
   public static final int LINE_ITEM_TYPE_FIELD_NUMBER = 17;
   private int lineItemType_ = 0;
 
@@ -405,10 +1228,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -419,17 +1241,16 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasLineItemType() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -447,10 +1268,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -466,6 +1286,81 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return result == null
         ? com.google.ads.admanager.v1.LineItemTypeEnum.LineItemType.UNRECOGNIZED
         : result;
+  }
+
+  public static final int PRIORITY_FIELD_NUMBER = 19;
+  private int priority_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The priority for the line item. Valid values
+   * range from 1 to 16. This field defaults to the default priority of the
+   * LineItemType. The following list shows the default, minimum, and maximum
+   * priority values are for each line item type:
+   * - LineItemType: default priority (minimum priority, maximum priority)
+   * - SPONSORSHIP: 4 (2, 5)
+   * - STANDARD: 8 (6, 10)
+   * - NETWORK: 12 (11, 14)
+   * - BULK: 12 (11, 14)
+   * - PRICE_PRIORITY: 12 (11, 14)
+   * - HOUSE: 16 (15, 16)
+   * - CLICK_TRACKING: 16 (1, 16)
+   * - AD_EXCHANGE: 12 (1, 16)
+   * - ADSENSE: 12 (1, 16)
+   * - BUMPER: 16 (15, 16)
+   * - ADMOB: 21 (1, 16)
+   * - PREFERRED_DEAL: 12 (12, 12)
+   * This field can only be edited by certain networks, otherwise a
+   * PermissionError will occur.
+   * </pre>
+   *
+   * <code>
+   * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Override
+  public boolean hasPriority() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The priority for the line item. Valid values
+   * range from 1 to 16. This field defaults to the default priority of the
+   * LineItemType. The following list shows the default, minimum, and maximum
+   * priority values are for each line item type:
+   * - LineItemType: default priority (minimum priority, maximum priority)
+   * - SPONSORSHIP: 4 (2, 5)
+   * - STANDARD: 8 (6, 10)
+   * - NETWORK: 12 (11, 14)
+   * - BULK: 12 (11, 14)
+   * - PRICE_PRIORITY: 12 (11, 14)
+   * - HOUSE: 16 (15, 16)
+   * - CLICK_TRACKING: 16 (1, 16)
+   * - AD_EXCHANGE: 12 (1, 16)
+   * - ADSENSE: 12 (1, 16)
+   * - BUMPER: 16 (15, 16)
+   * - ADMOB: 21 (1, 16)
+   * - PREFERRED_DEAL: 12 (12, 12)
+   * This field can only be edited by certain networks, otherwise a
+   * PermissionError will occur.
+   * </pre>
+   *
+   * <code>
+   * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The priority.
+   */
+  @java.lang.Override
+  public int getPriority() {
+    return priority_;
   }
 
   public static final int RATE_FIELD_NUMBER = 20;
@@ -484,7 +1379,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRate() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -517,6 +1412,808 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return rate_ == null ? com.google.type.Money.getDefaultInstance() : rate_;
   }
 
+  public static final int VALUE_CPM_FIELD_NUMBER = 21;
+  private com.google.type.Money valueCpm_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the valueCpm field is set.
+   */
+  @java.lang.Override
+  public boolean hasValueCpm() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The valueCpm.
+   */
+  @java.lang.Override
+  public com.google.type.Money getValueCpm() {
+    return valueCpm_ == null ? com.google.type.Money.getDefaultInstance() : valueCpm_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.MoneyOrBuilder getValueCpmOrBuilder() {
+    return valueCpm_ == null ? com.google.type.Money.getDefaultInstance() : valueCpm_;
+  }
+
+  public static final int COST_TYPE_FIELD_NUMBER = 22;
+  private int costType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the costType field is set.
+   */
+  @java.lang.Override
+  public boolean hasCostType() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for costType.
+   */
+  @java.lang.Override
+  public int getCostTypeValue() {
+    return costType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The costType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType getCostType() {
+    com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType result =
+        com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType.forNumber(costType_);
+    return result == null
+        ? com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DISCOUNT_FIELD_NUMBER = 23;
+  private com.google.ads.admanager.v1.LineItemDiscount discount_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discount field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiscount() {
+    return ((bitField0_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discount.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDiscount getDiscount() {
+    return discount_ == null
+        ? com.google.ads.admanager.v1.LineItemDiscount.getDefaultInstance()
+        : discount_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDiscountOrBuilder getDiscountOrBuilder() {
+    return discount_ == null
+        ? com.google.ads.admanager.v1.LineItemDiscount.getDefaultInstance()
+        : discount_;
+  }
+
+  public static final int CONTRACTED_UNITS_BOUGHT_FIELD_NUMBER = 24;
+  private long contractedUnitsBought_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This attribute is only applicable for certain line item types and
+   * acts as an "FYI" or note, which does not impact adserving or other backend
+   * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+   * which is a lifetime impression volume goal for reporting purposes only. For
+   * STANDARD line items, this represent the contracted quantity, which is the
+   * number of units specified in the contract the advertiser has bought for
+   * this LineItem. This field is just a "FYI" for traffickers to manually
+   * intervene with the LineItem when needed. This attribute is only available
+   * for STANDARD line items if you have this feature enabled on your network.
+   * </pre>
+   *
+   * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contractedUnitsBought field is set.
+   */
+  @java.lang.Override
+  public boolean hasContractedUnitsBought() {
+    return ((bitField0_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This attribute is only applicable for certain line item types and
+   * acts as an "FYI" or note, which does not impact adserving or other backend
+   * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+   * which is a lifetime impression volume goal for reporting purposes only. For
+   * STANDARD line items, this represent the contracted quantity, which is the
+   * number of units specified in the contract the advertiser has bought for
+   * this LineItem. This field is just a "FYI" for traffickers to manually
+   * intervene with the LineItem when needed. This attribute is only available
+   * for STANDARD line items if you have this feature enabled on your network.
+   * </pre>
+   *
+   * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contractedUnitsBought.
+   */
+  @java.lang.Override
+  public long getContractedUnitsBought() {
+    return contractedUnitsBought_;
+  }
+
+  public static final int CREATIVE_PLACEHOLDERS_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.CreativePlaceholder> creativePlaceholders_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.CreativePlaceholder>
+      getCreativePlaceholdersList() {
+    return creativePlaceholders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>
+      getCreativePlaceholdersOrBuilderList() {
+    return creativePlaceholders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCreativePlaceholdersCount() {
+    return creativePlaceholders_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativePlaceholder getCreativePlaceholders(int index) {
+    return creativePlaceholders_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativePlaceholderOrBuilder getCreativePlaceholdersOrBuilder(
+      int index) {
+    return creativePlaceholders_.get(index);
+  }
+
+  public static final int ENVIRONMENT_TYPE_FIELD_NUMBER = 26;
+  private int environmentType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the environmentType field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvironmentType() {
+    return ((bitField0_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for environmentType.
+   */
+  @java.lang.Override
+  public int getEnvironmentTypeValue() {
+    return environmentType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The environmentType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType getEnvironmentType() {
+    com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType result =
+        com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.forNumber(environmentType_);
+    return result == null
+        ? com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int COMPANION_DELIVERY_OPTION_FIELD_NUMBER = 27;
+  private int companionDeliveryOption_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the companionDeliveryOption field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompanionDeliveryOption() {
+    return ((bitField0_ & 0x00800000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for companionDeliveryOption.
+   */
+  @java.lang.Override
+  public int getCompanionDeliveryOptionValue() {
+    return companionDeliveryOption_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The companionDeliveryOption.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption
+      getCompanionDeliveryOption() {
+    com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption result =
+        com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption.forNumber(
+            companionDeliveryOption_);
+    return result == null
+        ? com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ALLOW_OVERBOOK_FIELD_NUMBER = 28;
+  private boolean allowOverbook_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether overbooking should be allowed when
+   * creating or updating reservations of line item types SPONSORSHIP and
+   * STANDARD. When true, operations on this line item will never
+   * trigger a ForecastError, which corresponds to an overbook warning in the
+   * UI. The default value is false.  Note: this field won't persist on the
+   * line item itself, and the value will only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return Whether the allowOverbook field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowOverbook() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether overbooking should be allowed when
+   * creating or updating reservations of line item types SPONSORSHIP and
+   * STANDARD. When true, operations on this line item will never
+   * trigger a ForecastError, which corresponds to an overbook warning in the
+   * UI. The default value is false.  Note: this field won't persist on the
+   * line item itself, and the value will only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The allowOverbook.
+   */
+  @java.lang.Override
+  public boolean getAllowOverbook() {
+    return allowOverbook_;
+  }
+
+  public static final int SKIP_INVENTORY_CHECK_FIELD_NUMBER = 29;
+  private boolean skipInventoryCheck_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether the inventory check should be
+   * skipped when creating or updating a line item. The default value is false.
+   * Note: this field won't persist on the line item itself, and the value will
+   * only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the skipInventoryCheck field is set.
+   */
+  @java.lang.Override
+  public boolean hasSkipInventoryCheck() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether the inventory check should be
+   * skipped when creating or updating a line item. The default value is false.
+   * Note: this field won't persist on the line item itself, and the value will
+   * only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The skipInventoryCheck.
+   */
+  @java.lang.Override
+  public boolean getSkipInventoryCheck() {
+    return skipInventoryCheck_;
+  }
+
+  public static final int SKIP_CROSS_SELLING_RULE_WARNING_CHECKS_FIELD_NUMBER = 30;
+  private boolean skipCrossSellingRuleWarningChecks_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. True to skip checks for warnings from rules applied to line
+   * items targeting inventory shared by a distributor partner for cross selling
+   * when performing an action on this line item. The default is false. Note:
+   * this field won't persist on the line item itself, and the value will only
+   * affect the current request.
+   * </pre>
+   *
+   * <code>
+   * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the skipCrossSellingRuleWarningChecks field is set.
+   */
+  @java.lang.Override
+  public boolean hasSkipCrossSellingRuleWarningChecks() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. True to skip checks for warnings from rules applied to line
+   * items targeting inventory shared by a distributor partner for cross selling
+   * when performing an action on this line item. The default is false. Note:
+   * this field won't persist on the line item itself, and the value will only
+   * affect the current request.
+   * </pre>
+   *
+   * <code>
+   * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The skipCrossSellingRuleWarningChecks.
+   */
+  @java.lang.Override
+  public boolean getSkipCrossSellingRuleWarningChecks() {
+    return skipCrossSellingRuleWarningChecks_;
+  }
+
+  public static final int RESERVE_ON_CREATION_FIELD_NUMBER = 31;
+  private boolean reserveOnCreation_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether inventory should be reserved when
+   * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+   * Order. The default value is false.
+   * </pre>
+   *
+   * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reserveOnCreation field is set.
+   */
+  @java.lang.Override
+  public boolean hasReserveOnCreation() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether inventory should be reserved when
+   * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+   * Order. The default value is false.
+   * </pre>
+   *
+   * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The reserveOnCreation.
+   */
+  @java.lang.Override
+  public boolean getReserveOnCreation() {
+    return reserveOnCreation_;
+  }
+
+  public static final int STATS_FIELD_NUMBER = 32;
+  private com.google.ads.admanager.v1.LineItemStats stats_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stats field is set.
+   */
+  @java.lang.Override
+  public boolean hasStats() {
+    return ((bitField0_ & 0x10000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stats.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemStats getStats() {
+    return stats_ == null ? com.google.ads.admanager.v1.LineItemStats.getDefaultInstance() : stats_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemStatsOrBuilder getStatsOrBuilder() {
+    return stats_ == null ? com.google.ads.admanager.v1.LineItemStats.getDefaultInstance() : stats_;
+  }
+
+  public static final int DELIVERY_INDICATOR_FIELD_NUMBER = 33;
+  private com.google.ads.admanager.v1.DeliveryIndicator deliveryIndicator_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deliveryIndicator field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeliveryIndicator() {
+    return ((bitField0_ & 0x20000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deliveryIndicator.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeliveryIndicator getDeliveryIndicator() {
+    return deliveryIndicator_ == null
+        ? com.google.ads.admanager.v1.DeliveryIndicator.getDefaultInstance()
+        : deliveryIndicator_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder getDeliveryIndicatorOrBuilder() {
+    return deliveryIndicator_ == null
+        ? com.google.ads.admanager.v1.DeliveryIndicator.getDefaultInstance()
+        : deliveryIndicator_;
+  }
+
   public static final int BUDGET_FIELD_NUMBER = 35;
   private com.google.type.Money budget_;
 
@@ -535,7 +2232,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasBudget() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
 
   /**
@@ -570,6 +2267,793 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.type.MoneyOrBuilder getBudgetOrBuilder() {
     return budget_ == null ? com.google.type.Money.getDefaultInstance() : budget_;
+  }
+
+  public static final int STATUS_FIELD_NUMBER = 36;
+  private int status_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x80000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override
+  public int getStatusValue() {
+    return status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus getStatus() {
+    com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus result =
+        com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus.forNumber(
+            status_);
+    return result == null
+        ? com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int RESERVATION_STATUS_FIELD_NUMBER = 38;
+  private int reservationStatus_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reservationStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasReservationStatus() {
+    return ((bitField1_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reservationStatus.
+   */
+  @java.lang.Override
+  public int getReservationStatusValue() {
+    return reservationStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The reservationStatus.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+      getReservationStatus() {
+    com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus result =
+        com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+            .forNumber(reservationStatus_);
+    return result == null
+        ? com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ARCHIVED_FIELD_NUMBER = 39;
+  private boolean archived_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the LineItem.
+   * </pre>
+   *
+   * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchived() {
+    return ((bitField1_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the LineItem.
+   * </pre>
+   *
+   * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  @java.lang.Override
+  public boolean getArchived() {
+    return archived_;
+  }
+
+  public static final int WEB_PROPERTY_CODE_FIELD_NUMBER = 49;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object webPropertyCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the webPropertyCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasWebPropertyCode() {
+    return ((bitField1_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The webPropertyCode.
+   */
+  @java.lang.Override
+  public java.lang.String getWebPropertyCode() {
+    java.lang.Object ref = webPropertyCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      webPropertyCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for webPropertyCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWebPropertyCodeBytes() {
+    java.lang.Object ref = webPropertyCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      webPropertyCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int APPLIED_LABELS_FIELD_NUMBER = 50;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.AppliedLabel> appliedLabels_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList() {
+    return appliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getAppliedLabelsOrBuilderList() {
+    return appliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAppliedLabelsCount() {
+    return appliedLabels_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index) {
+    return appliedLabels_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index) {
+    return appliedLabels_.get(index);
+  }
+
+  public static final int EFFECTIVE_APPLIED_LABELS_FIELD_NUMBER = 51;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.AppliedLabel> effectiveAppliedLabels_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.AppliedLabel> getEffectiveAppliedLabelsList() {
+    return effectiveAppliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getEffectiveAppliedLabelsOrBuilderList() {
+    return effectiveAppliedLabels_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getEffectiveAppliedLabelsCount() {
+    return effectiveAppliedLabels_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabel getEffectiveAppliedLabels(int index) {
+    return effectiveAppliedLabels_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.AppliedLabelOrBuilder getEffectiveAppliedLabelsOrBuilder(
+      int index) {
+    return effectiveAppliedLabels_.get(index);
+  }
+
+  public static final int SAME_ADVERTISER_EXCEPTION_ENABLED_FIELD_NUMBER = 52;
+  private boolean sameAdvertiserExceptionEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a line item has a series of competitive exclusions on it, it
+   * could be blocked from serving with line items from the same advertiser.
+   * Setting this to true will allow line items from the same advertiser to
+   * serve regardless of the other competitive exclusion labels being applied.
+   * </pre>
+   *
+   * <code>
+   * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sameAdvertiserExceptionEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasSameAdvertiserExceptionEnabled() {
+    return ((bitField1_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a line item has a series of competitive exclusions on it, it
+   * could be blocked from serving with line items from the same advertiser.
+   * Setting this to true will allow line items from the same advertiser to
+   * serve regardless of the other competitive exclusion labels being applied.
+   * </pre>
+   *
+   * <code>
+   * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sameAdvertiserExceptionEnabled.
+   */
+  @java.lang.Override
+  public boolean getSameAdvertiserExceptionEnabled() {
+    return sameAdvertiserExceptionEnabled_;
+  }
+
+  public static final int UPDATE_SOURCE_FIELD_NUMBER = 53;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updateSource_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the updateSource field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateSource() {
+    return ((bitField1_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The updateSource.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdateSource() {
+    java.lang.Object ref = updateSource_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updateSource_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for updateSource.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUpdateSourceBytes() {
+    java.lang.Object ref = updateSource_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      updateSource_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NOTES_FIELD_NUMBER = 54;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notes_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the notes field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotes() {
+    return ((bitField1_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The notes.
+   */
+  @java.lang.Override
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for notes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int COMPETITIVE_CONSTRAINT_SCOPE_FIELD_NUMBER = 56;
+  private int competitiveConstraintScope_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the competitiveConstraintScope field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompetitiveConstraintScope() {
+    return ((bitField1_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for competitiveConstraintScope.
+   */
+  @java.lang.Override
+  public int getCompetitiveConstraintScopeValue() {
+    return competitiveConstraintScope_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The competitiveConstraintScope.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope
+      getCompetitiveConstraintScope() {
+    com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope result =
+        com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope.forNumber(
+            competitiveConstraintScope_);
+    return result == null
+        ? com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int UPDATE_TIME_FIELD_NUMBER = 57;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField1_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 58;
+  private com.google.protobuf.Timestamp createTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return ((bitField1_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int CUSTOM_FIELD_VALUES_FIELD_NUMBER = 59;
@@ -659,6 +3143,236 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return customFieldValues_.get(index);
   }
 
+  public static final int MISSING_CREATIVES_FIELD_NUMBER = 61;
+  private boolean missingCreatives_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if a LineItem is missing any Creative creatives for
+   * the creativePlaceholders specified.  Creative Creatives can be considered
+   * missing for several reasons including:
+   * - Not enough Creative creatives of a certain size have been uploaded, as
+   * determined by
+   * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+   * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+   * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+   * only one was uploaded.
+   * - The [Creative.applied_labels][] of an associated Creative don't match
+   * the
+   * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+   * of the LineItem. For example LineItem specifies 750x350 with a Foo
+   * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+   * </pre>
+   *
+   * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the missingCreatives field is set.
+   */
+  @java.lang.Override
+  public boolean hasMissingCreatives() {
+    return ((bitField1_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if a LineItem is missing any Creative creatives for
+   * the creativePlaceholders specified.  Creative Creatives can be considered
+   * missing for several reasons including:
+   * - Not enough Creative creatives of a certain size have been uploaded, as
+   * determined by
+   * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+   * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+   * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+   * only one was uploaded.
+   * - The [Creative.applied_labels][] of an associated Creative don't match
+   * the
+   * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+   * of the LineItem. For example LineItem specifies 750x350 with a Foo
+   * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+   * </pre>
+   *
+   * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The missingCreatives.
+   */
+  @java.lang.Override
+  public boolean getMissingCreatives() {
+    return missingCreatives_;
+  }
+
+  public static final int THIRD_PARTY_MEASUREMENT_SETTINGS_FIELD_NUMBER = 67;
+  private com.google.ads.admanager.v1.ThirdPartyMeasurementSettings thirdPartyMeasurementSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyMeasurementSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasThirdPartyMeasurementSettings() {
+    return ((bitField1_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyMeasurementSettings.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyMeasurementSettings
+      getThirdPartyMeasurementSettings() {
+    return thirdPartyMeasurementSettings_ == null
+        ? com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.getDefaultInstance()
+        : thirdPartyMeasurementSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder
+      getThirdPartyMeasurementSettingsOrBuilder() {
+    return thirdPartyMeasurementSettings_ == null
+        ? com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.getDefaultInstance()
+        : thirdPartyMeasurementSettings_;
+  }
+
+  public static final int YOUTUBE_KIDS_RESTRICTED_FIELD_NUMBER = 74;
+  private boolean youtubeKidsRestricted_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Designates this line item as intended for YT Kids app. If true,
+   * all creatives associated with this line item must be reviewed and approved.
+   * See the help center article for more information:
+   * https://support.google.com/yt-partner-sales/answer/10015534.
+   * </pre>
+   *
+   * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the youtubeKidsRestricted field is set.
+   */
+  @java.lang.Override
+  public boolean hasYoutubeKidsRestricted() {
+    return ((bitField1_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Designates this line item as intended for YT Kids app. If true,
+   * all creatives associated with this line item must be reviewed and approved.
+   * See the help center article for more information:
+   * https://support.google.com/yt-partner-sales/answer/10015534.
+   * </pre>
+   *
+   * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The youtubeKidsRestricted.
+   */
+  @java.lang.Override
+  public boolean getYoutubeKidsRestricted() {
+    return youtubeKidsRestricted_;
+  }
+
+  public static final int MAX_VIDEO_CREATIVE_DURATION_FIELD_NUMBER = 75;
+  private com.google.protobuf.Duration maxVideoCreativeDuration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxVideoCreativeDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxVideoCreativeDuration() {
+    return ((bitField1_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxVideoCreativeDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMaxVideoCreativeDuration() {
+    return maxVideoCreativeDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxVideoCreativeDuration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMaxVideoCreativeDurationOrBuilder() {
+    return maxVideoCreativeDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxVideoCreativeDuration_;
+  }
+
   public static final int GOAL_FIELD_NUMBER = 76;
   private com.google.ads.admanager.v1.Goal goal_;
 
@@ -678,7 +3392,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGoal() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField1_ & 0x00002000) != 0);
   }
 
   /**
@@ -717,6 +3431,855 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     return goal_ == null ? com.google.ads.admanager.v1.Goal.getDefaultInstance() : goal_;
   }
 
+  public static final int SECONDARY_GOALS_FIELD_NUMBER = 100;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.Goal> secondaryGoals_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.Goal> getSecondaryGoalsList() {
+    return secondaryGoals_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.GoalOrBuilder>
+      getSecondaryGoalsOrBuilderList() {
+    return secondaryGoals_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSecondaryGoalsCount() {
+    return secondaryGoals_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.Goal getSecondaryGoals(int index) {
+    return secondaryGoals_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.GoalOrBuilder getSecondaryGoalsOrBuilder(int index) {
+    return secondaryGoals_.get(index);
+  }
+
+  public static final int GRP_SETTINGS_FIELD_NUMBER = 78;
+  private com.google.ads.admanager.v1.GrpSettings grpSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the grpSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasGrpSettings() {
+    return ((bitField1_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The grpSettings.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.GrpSettings getGrpSettings() {
+    return grpSettings_ == null
+        ? com.google.ads.admanager.v1.GrpSettings.getDefaultInstance()
+        : grpSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.GrpSettingsOrBuilder getGrpSettingsOrBuilder() {
+    return grpSettings_ == null
+        ? com.google.ads.admanager.v1.GrpSettings.getDefaultInstance()
+        : grpSettings_;
+  }
+
+  public static final int DEAL_INFO_FIELD_NUMBER = 79;
+  private com.google.ads.admanager.v1.LineItemDealInfo dealInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dealInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasDealInfo() {
+    return ((bitField1_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dealInfo.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDealInfo getDealInfo() {
+    return dealInfo_ == null
+        ? com.google.ads.admanager.v1.LineItemDealInfo.getDefaultInstance()
+        : dealInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemDealInfoOrBuilder getDealInfoOrBuilder() {
+    return dealInfo_ == null
+        ? com.google.ads.admanager.v1.LineItemDealInfo.getDefaultInstance()
+        : dealInfo_;
+  }
+
+  public static final int VIEWABILITY_PROVIDER_COMPANIES_FIELD_NUMBER = 85;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList viewabilityProviderCompanies_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the viewabilityProviderCompanies.
+   */
+  public com.google.protobuf.ProtocolStringList getViewabilityProviderCompaniesList() {
+    return viewabilityProviderCompanies_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of viewabilityProviderCompanies.
+   */
+  public int getViewabilityProviderCompaniesCount() {
+    return viewabilityProviderCompanies_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The viewabilityProviderCompanies at the given index.
+   */
+  public java.lang.String getViewabilityProviderCompanies(int index) {
+    return viewabilityProviderCompanies_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the viewabilityProviderCompanies at the given index.
+   */
+  public com.google.protobuf.ByteString getViewabilityProviderCompaniesBytes(int index) {
+    return viewabilityProviderCompanies_.getByteString(index);
+  }
+
+  public static final int CHILD_CONTENT_ELIGIBILITY_FIELD_NUMBER = 86;
+  private int childContentEligibility_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the childContentEligibility field is set.
+   */
+  @java.lang.Override
+  public boolean hasChildContentEligibility() {
+    return ((bitField1_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for childContentEligibility.
+   */
+  @java.lang.Override
+  public int getChildContentEligibilityValue() {
+    return childContentEligibility_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The childContentEligibility.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility
+      getChildContentEligibility() {
+    com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility result =
+        com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility.forNumber(
+            childContentEligibility_);
+    return result == null
+        ? com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CUSTOM_VAST_EXTENSION_FIELD_NUMBER = 88;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customVastExtension_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customVastExtension field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomVastExtension() {
+    return ((bitField1_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customVastExtension.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomVastExtension() {
+    java.lang.Object ref = customVastExtension_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customVastExtension_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for customVastExtension.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomVastExtensionBytes() {
+    java.lang.Object ref = customVastExtension_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customVastExtension_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SPONSORSHIP_EXCLUSIVITY_ENABLED_FIELD_NUMBER = 89;
+  private boolean sponsorshipExclusivityEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+   * true, only exclusive sponsorships can be served on inventory targeted by
+   * this LineItem. This control should only be available for 100% video
+   * sponsorships.
+   * </pre>
+   *
+   * <code>
+   * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sponsorshipExclusivityEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasSponsorshipExclusivityEnabled() {
+    return ((bitField1_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+   * true, only exclusive sponsorships can be served on inventory targeted by
+   * this LineItem. This control should only be available for 100% video
+   * sponsorships.
+   * </pre>
+   *
+   * <code>
+   * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sponsorshipExclusivityEnabled.
+   */
+  @java.lang.Override
+  public boolean getSponsorshipExclusivityEnabled() {
+    return sponsorshipExclusivityEnabled_;
+  }
+
+  public static final int REPEATED_CREATIVE_SERVING_ENABLED_FIELD_NUMBER = 90;
+  private boolean repeatedCreativeServingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether repeated creative serving is enabled for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the repeatedCreativeServingEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasRepeatedCreativeServingEnabled() {
+    return ((bitField1_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether repeated creative serving is enabled for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The repeatedCreativeServingEnabled.
+   */
+  @java.lang.Override
+  public boolean getRepeatedCreativeServingEnabled() {
+    return repeatedCreativeServingEnabled_;
+  }
+
+  public static final int TARGETING_FIELD_NUMBER = 93;
+  private com.google.ads.admanager.v1.Targeting targeting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the targeting field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargeting() {
+    return ((bitField1_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The targeting.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.Targeting getTargeting() {
+    return targeting_ == null
+        ? com.google.ads.admanager.v1.Targeting.getDefaultInstance()
+        : targeting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.TargetingOrBuilder getTargetingOrBuilder() {
+    return targeting_ == null
+        ? com.google.ads.admanager.v1.Targeting.getDefaultInstance()
+        : targeting_;
+  }
+
+  public static final int CREATIVE_TARGETINGS_FIELD_NUMBER = 94;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.ads.admanager.v1.CreativeTargeting> creativeTargetings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.CreativeTargeting> getCreativeTargetingsList() {
+    return creativeTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.ads.admanager.v1.CreativeTargetingOrBuilder>
+      getCreativeTargetingsOrBuilderList() {
+    return creativeTargetings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCreativeTargetingsCount() {
+    return creativeTargetings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativeTargeting getCreativeTargetings(int index) {
+    return creativeTargetings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.CreativeTargetingOrBuilder getCreativeTargetingsOrBuilder(
+      int index) {
+    return creativeTargetings_.get(index);
+  }
+
+  public static final int ALLOWED_FORMATS_FIELD_NUMBER = 112;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList allowedFormats_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>
+      allowedFormats_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>() {
+            public com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat
+                convert(int from) {
+              com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat result =
+                  com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat
+                      .forNumber(from);
+              return result == null
+                  ? com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the allowedFormats.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>
+      getAllowedFormatsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>(
+        allowedFormats_, allowedFormats_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of allowedFormats.
+   */
+  @java.lang.Override
+  public int getAllowedFormatsCount() {
+    return allowedFormats_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedFormats at the given index.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat
+      getAllowedFormats(int index) {
+    return allowedFormats_converter_.convert(allowedFormats_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for allowedFormats.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAllowedFormatsValueList() {
+    return allowedFormats_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of allowedFormats at the given index.
+   */
+  @java.lang.Override
+  public int getAllowedFormatsValue(int index) {
+    return allowedFormats_.getInt(index);
+  }
+
+  private int allowedFormatsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -731,6 +4294,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
@@ -741,25 +4305,189 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 3, displayName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(6, getStartTime());
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, externalLineItemId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(7, getEndTime());
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, orderDisplayName_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(17, lineItemType_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeMessage(20, getRate());
+      output.writeMessage(6, getStartTime());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(7, getEndTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt32(8, autoExtensionDays_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeBool(9, endTimeUnlimited_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeEnum(10, creativeRotationType_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeEnum(11, deliveryRateType_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeEnum(12, deliveryForecastSource_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(13, getCustomPacingCurve());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeEnum(14, roadblockingType_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeEnum(15, skippableAdType_);
+    }
+    for (int i = 0; i < frequencyCaps_.size(); i++) {
+      output.writeMessage(16, frequencyCaps_.get(i));
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeEnum(17, lineItemType_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      output.writeInt32(19, priority_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      output.writeMessage(20, getRate());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(21, getValueCpm());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      output.writeEnum(22, costType_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      output.writeMessage(23, getDiscount());
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      output.writeInt64(24, contractedUnitsBought_);
+    }
+    for (int i = 0; i < creativePlaceholders_.size(); i++) {
+      output.writeMessage(25, creativePlaceholders_.get(i));
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      output.writeEnum(26, environmentType_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      output.writeEnum(27, companionDeliveryOption_);
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeBool(28, allowOverbook_);
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      output.writeBool(29, skipInventoryCheck_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      output.writeBool(30, skipCrossSellingRuleWarningChecks_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeBool(31, reserveOnCreation_);
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      output.writeMessage(32, getStats());
+    }
+    if (((bitField0_ & 0x20000000) != 0)) {
+      output.writeMessage(33, getDeliveryIndicator());
+    }
+    if (((bitField0_ & 0x40000000) != 0)) {
       output.writeMessage(35, getBudget());
+    }
+    if (((bitField0_ & 0x80000000) != 0)) {
+      output.writeEnum(36, status_);
+    }
+    if (((bitField1_ & 0x00000001) != 0)) {
+      output.writeEnum(38, reservationStatus_);
+    }
+    if (((bitField1_ & 0x00000002) != 0)) {
+      output.writeBool(39, archived_);
+    }
+    if (((bitField1_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 49, webPropertyCode_);
+    }
+    for (int i = 0; i < appliedLabels_.size(); i++) {
+      output.writeMessage(50, appliedLabels_.get(i));
+    }
+    for (int i = 0; i < effectiveAppliedLabels_.size(); i++) {
+      output.writeMessage(51, effectiveAppliedLabels_.get(i));
+    }
+    if (((bitField1_ & 0x00000008) != 0)) {
+      output.writeBool(52, sameAdvertiserExceptionEnabled_);
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 53, updateSource_);
+    }
+    if (((bitField1_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 54, notes_);
+    }
+    if (((bitField1_ & 0x00000040) != 0)) {
+      output.writeEnum(56, competitiveConstraintScope_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      output.writeMessage(57, getUpdateTime());
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      output.writeMessage(58, getCreateTime());
     }
     for (int i = 0; i < customFieldValues_.size(); i++) {
       output.writeMessage(59, customFieldValues_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
+      output.writeBool(61, missingCreatives_);
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      output.writeMessage(67, getThirdPartyMeasurementSettings());
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      output.writeBool(74, youtubeKidsRestricted_);
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      output.writeMessage(75, getMaxVideoCreativeDuration());
+    }
+    if (((bitField1_ & 0x00002000) != 0)) {
       output.writeMessage(76, getGoal());
+    }
+    if (((bitField1_ & 0x00004000) != 0)) {
+      output.writeMessage(78, getGrpSettings());
+    }
+    if (((bitField1_ & 0x00008000) != 0)) {
+      output.writeMessage(79, getDealInfo());
+    }
+    for (int i = 0; i < viewabilityProviderCompanies_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 85, viewabilityProviderCompanies_.getRaw(i));
+    }
+    if (((bitField1_ & 0x00010000) != 0)) {
+      output.writeEnum(86, childContentEligibility_);
+    }
+    if (((bitField1_ & 0x00020000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 88, customVastExtension_);
+    }
+    if (((bitField1_ & 0x00040000) != 0)) {
+      output.writeBool(89, sponsorshipExclusivityEnabled_);
+    }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      output.writeBool(90, repeatedCreativeServingEnabled_);
+    }
+    if (((bitField1_ & 0x00100000) != 0)) {
+      output.writeMessage(93, getTargeting());
+    }
+    for (int i = 0; i < creativeTargetings_.size(); i++) {
+      output.writeMessage(94, creativeTargetings_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(95, getTargetEndTime());
+    }
+    for (int i = 0; i < secondaryGoals_.size(); i++) {
+      output.writeMessage(100, secondaryGoals_.get(i));
+    }
+    if (getAllowedFormatsList().size() > 0) {
+      output.writeUInt32NoTag(898);
+      output.writeUInt32NoTag(allowedFormatsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < allowedFormats_.size(); i++) {
+      output.writeEnumNoTag(allowedFormats_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -780,26 +4508,217 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, displayName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStartTime());
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, externalLineItemId_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndTime());
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, orderDisplayName_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, lineItemType_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getRate());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getStartTime());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getEndTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, autoExtensionDays_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, endTimeUnlimited_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, creativeRotationType_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, deliveryRateType_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, deliveryForecastSource_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCustomPacingCurve());
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, roadblockingType_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, skippableAdType_);
+    }
+    for (int i = 0; i < frequencyCaps_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, frequencyCaps_.get(i));
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, lineItemType_);
+    }
+    if (((bitField0_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(19, priority_);
+    }
+    if (((bitField0_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getRate());
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getValueCpm());
+    }
+    if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, costType_);
+    }
+    if (((bitField0_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getDiscount());
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(24, contractedUnitsBought_);
+    }
+    for (int i = 0; i < creativePlaceholders_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              25, creativePlaceholders_.get(i));
+    }
+    if (((bitField0_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, environmentType_);
+    }
+    if (((bitField0_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(27, companionDeliveryOption_);
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, allowOverbook_);
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, skipInventoryCheck_);
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              30, skipCrossSellingRuleWarningChecks_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, reserveOnCreation_);
+    }
+    if (((bitField0_ & 0x10000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(32, getStats());
+    }
+    if (((bitField0_ & 0x20000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getDeliveryIndicator());
+    }
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(35, getBudget());
+    }
+    if (((bitField0_ & 0x80000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(36, status_);
+    }
+    if (((bitField1_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(38, reservationStatus_);
+    }
+    if (((bitField1_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(39, archived_);
+    }
+    if (((bitField1_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(49, webPropertyCode_);
+    }
+    for (int i = 0; i < appliedLabels_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50, appliedLabels_.get(i));
+    }
+    for (int i = 0; i < effectiveAppliedLabels_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              51, effectiveAppliedLabels_.get(i));
+    }
+    if (((bitField1_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              52, sameAdvertiserExceptionEnabled_);
+    }
+    if (((bitField1_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(53, updateSource_);
+    }
+    if (((bitField1_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(54, notes_);
+    }
+    if (((bitField1_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(56, competitiveConstraintScope_);
+    }
+    if (((bitField1_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, getUpdateTime());
+    }
+    if (((bitField1_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(58, getCreateTime());
     }
     for (int i = 0; i < customFieldValues_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(59, customFieldValues_.get(i));
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField1_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(61, missingCreatives_);
+    }
+    if (((bitField1_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              67, getThirdPartyMeasurementSettings());
+    }
+    if (((bitField1_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(74, youtubeKidsRestricted_);
+    }
+    if (((bitField1_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              75, getMaxVideoCreativeDuration());
+    }
+    if (((bitField1_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(76, getGoal());
+    }
+    if (((bitField1_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(78, getGrpSettings());
+    }
+    if (((bitField1_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(79, getDealInfo());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < viewabilityProviderCompanies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(viewabilityProviderCompanies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getViewabilityProviderCompaniesList().size();
+    }
+    if (((bitField1_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(86, childContentEligibility_);
+    }
+    if (((bitField1_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(88, customVastExtension_);
+    }
+    if (((bitField1_ & 0x00040000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(89, sponsorshipExclusivityEnabled_);
+    }
+    if (((bitField1_ & 0x00080000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              90, repeatedCreativeServingEnabled_);
+    }
+    if (((bitField1_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(93, getTargeting());
+    }
+    for (int i = 0; i < creativeTargetings_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(94, creativeTargetings_.get(i));
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(95, getTargetEndTime());
+    }
+    for (int i = 0; i < secondaryGoals_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, secondaryGoals_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < allowedFormats_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(allowedFormats_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAllowedFormatsList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      allowedFormatsMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -825,31 +4744,231 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     if (hasDisplayName()) {
       if (!getDisplayName().equals(other.getDisplayName())) return false;
     }
+    if (hasExternalLineItemId() != other.hasExternalLineItemId()) return false;
+    if (hasExternalLineItemId()) {
+      if (!getExternalLineItemId().equals(other.getExternalLineItemId())) return false;
+    }
+    if (hasOrderDisplayName() != other.hasOrderDisplayName()) return false;
+    if (hasOrderDisplayName()) {
+      if (!getOrderDisplayName().equals(other.getOrderDisplayName())) return false;
+    }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
+    }
+    if (hasTargetEndTime() != other.hasTargetEndTime()) return false;
+    if (hasTargetEndTime()) {
+      if (!getTargetEndTime().equals(other.getTargetEndTime())) return false;
     }
     if (hasEndTime() != other.hasEndTime()) return false;
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
+    if (hasAutoExtensionDays() != other.hasAutoExtensionDays()) return false;
+    if (hasAutoExtensionDays()) {
+      if (getAutoExtensionDays() != other.getAutoExtensionDays()) return false;
+    }
+    if (hasEndTimeUnlimited() != other.hasEndTimeUnlimited()) return false;
+    if (hasEndTimeUnlimited()) {
+      if (getEndTimeUnlimited() != other.getEndTimeUnlimited()) return false;
+    }
+    if (hasCreativeRotationType() != other.hasCreativeRotationType()) return false;
+    if (hasCreativeRotationType()) {
+      if (creativeRotationType_ != other.creativeRotationType_) return false;
+    }
+    if (hasDeliveryRateType() != other.hasDeliveryRateType()) return false;
+    if (hasDeliveryRateType()) {
+      if (deliveryRateType_ != other.deliveryRateType_) return false;
+    }
+    if (hasDeliveryForecastSource() != other.hasDeliveryForecastSource()) return false;
+    if (hasDeliveryForecastSource()) {
+      if (deliveryForecastSource_ != other.deliveryForecastSource_) return false;
+    }
+    if (hasCustomPacingCurve() != other.hasCustomPacingCurve()) return false;
+    if (hasCustomPacingCurve()) {
+      if (!getCustomPacingCurve().equals(other.getCustomPacingCurve())) return false;
+    }
+    if (hasRoadblockingType() != other.hasRoadblockingType()) return false;
+    if (hasRoadblockingType()) {
+      if (roadblockingType_ != other.roadblockingType_) return false;
+    }
+    if (hasSkippableAdType() != other.hasSkippableAdType()) return false;
+    if (hasSkippableAdType()) {
+      if (skippableAdType_ != other.skippableAdType_) return false;
+    }
+    if (!getFrequencyCapsList().equals(other.getFrequencyCapsList())) return false;
     if (hasLineItemType() != other.hasLineItemType()) return false;
     if (hasLineItemType()) {
       if (lineItemType_ != other.lineItemType_) return false;
+    }
+    if (hasPriority() != other.hasPriority()) return false;
+    if (hasPriority()) {
+      if (getPriority() != other.getPriority()) return false;
     }
     if (hasRate() != other.hasRate()) return false;
     if (hasRate()) {
       if (!getRate().equals(other.getRate())) return false;
     }
+    if (hasValueCpm() != other.hasValueCpm()) return false;
+    if (hasValueCpm()) {
+      if (!getValueCpm().equals(other.getValueCpm())) return false;
+    }
+    if (hasCostType() != other.hasCostType()) return false;
+    if (hasCostType()) {
+      if (costType_ != other.costType_) return false;
+    }
+    if (hasDiscount() != other.hasDiscount()) return false;
+    if (hasDiscount()) {
+      if (!getDiscount().equals(other.getDiscount())) return false;
+    }
+    if (hasContractedUnitsBought() != other.hasContractedUnitsBought()) return false;
+    if (hasContractedUnitsBought()) {
+      if (getContractedUnitsBought() != other.getContractedUnitsBought()) return false;
+    }
+    if (!getCreativePlaceholdersList().equals(other.getCreativePlaceholdersList())) return false;
+    if (hasEnvironmentType() != other.hasEnvironmentType()) return false;
+    if (hasEnvironmentType()) {
+      if (environmentType_ != other.environmentType_) return false;
+    }
+    if (hasCompanionDeliveryOption() != other.hasCompanionDeliveryOption()) return false;
+    if (hasCompanionDeliveryOption()) {
+      if (companionDeliveryOption_ != other.companionDeliveryOption_) return false;
+    }
+    if (hasAllowOverbook() != other.hasAllowOverbook()) return false;
+    if (hasAllowOverbook()) {
+      if (getAllowOverbook() != other.getAllowOverbook()) return false;
+    }
+    if (hasSkipInventoryCheck() != other.hasSkipInventoryCheck()) return false;
+    if (hasSkipInventoryCheck()) {
+      if (getSkipInventoryCheck() != other.getSkipInventoryCheck()) return false;
+    }
+    if (hasSkipCrossSellingRuleWarningChecks() != other.hasSkipCrossSellingRuleWarningChecks())
+      return false;
+    if (hasSkipCrossSellingRuleWarningChecks()) {
+      if (getSkipCrossSellingRuleWarningChecks() != other.getSkipCrossSellingRuleWarningChecks())
+        return false;
+    }
+    if (hasReserveOnCreation() != other.hasReserveOnCreation()) return false;
+    if (hasReserveOnCreation()) {
+      if (getReserveOnCreation() != other.getReserveOnCreation()) return false;
+    }
+    if (hasStats() != other.hasStats()) return false;
+    if (hasStats()) {
+      if (!getStats().equals(other.getStats())) return false;
+    }
+    if (hasDeliveryIndicator() != other.hasDeliveryIndicator()) return false;
+    if (hasDeliveryIndicator()) {
+      if (!getDeliveryIndicator().equals(other.getDeliveryIndicator())) return false;
+    }
     if (hasBudget() != other.hasBudget()) return false;
     if (hasBudget()) {
       if (!getBudget().equals(other.getBudget())) return false;
     }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasReservationStatus() != other.hasReservationStatus()) return false;
+    if (hasReservationStatus()) {
+      if (reservationStatus_ != other.reservationStatus_) return false;
+    }
+    if (hasArchived() != other.hasArchived()) return false;
+    if (hasArchived()) {
+      if (getArchived() != other.getArchived()) return false;
+    }
+    if (hasWebPropertyCode() != other.hasWebPropertyCode()) return false;
+    if (hasWebPropertyCode()) {
+      if (!getWebPropertyCode().equals(other.getWebPropertyCode())) return false;
+    }
+    if (!getAppliedLabelsList().equals(other.getAppliedLabelsList())) return false;
+    if (!getEffectiveAppliedLabelsList().equals(other.getEffectiveAppliedLabelsList()))
+      return false;
+    if (hasSameAdvertiserExceptionEnabled() != other.hasSameAdvertiserExceptionEnabled())
+      return false;
+    if (hasSameAdvertiserExceptionEnabled()) {
+      if (getSameAdvertiserExceptionEnabled() != other.getSameAdvertiserExceptionEnabled())
+        return false;
+    }
+    if (hasUpdateSource() != other.hasUpdateSource()) return false;
+    if (hasUpdateSource()) {
+      if (!getUpdateSource().equals(other.getUpdateSource())) return false;
+    }
+    if (hasNotes() != other.hasNotes()) return false;
+    if (hasNotes()) {
+      if (!getNotes().equals(other.getNotes())) return false;
+    }
+    if (hasCompetitiveConstraintScope() != other.hasCompetitiveConstraintScope()) return false;
+    if (hasCompetitiveConstraintScope()) {
+      if (competitiveConstraintScope_ != other.competitiveConstraintScope_) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (!getCustomFieldValuesList().equals(other.getCustomFieldValuesList())) return false;
+    if (hasMissingCreatives() != other.hasMissingCreatives()) return false;
+    if (hasMissingCreatives()) {
+      if (getMissingCreatives() != other.getMissingCreatives()) return false;
+    }
+    if (hasThirdPartyMeasurementSettings() != other.hasThirdPartyMeasurementSettings())
+      return false;
+    if (hasThirdPartyMeasurementSettings()) {
+      if (!getThirdPartyMeasurementSettings().equals(other.getThirdPartyMeasurementSettings()))
+        return false;
+    }
+    if (hasYoutubeKidsRestricted() != other.hasYoutubeKidsRestricted()) return false;
+    if (hasYoutubeKidsRestricted()) {
+      if (getYoutubeKidsRestricted() != other.getYoutubeKidsRestricted()) return false;
+    }
+    if (hasMaxVideoCreativeDuration() != other.hasMaxVideoCreativeDuration()) return false;
+    if (hasMaxVideoCreativeDuration()) {
+      if (!getMaxVideoCreativeDuration().equals(other.getMaxVideoCreativeDuration())) return false;
+    }
     if (hasGoal() != other.hasGoal()) return false;
     if (hasGoal()) {
       if (!getGoal().equals(other.getGoal())) return false;
     }
+    if (!getSecondaryGoalsList().equals(other.getSecondaryGoalsList())) return false;
+    if (hasGrpSettings() != other.hasGrpSettings()) return false;
+    if (hasGrpSettings()) {
+      if (!getGrpSettings().equals(other.getGrpSettings())) return false;
+    }
+    if (hasDealInfo() != other.hasDealInfo()) return false;
+    if (hasDealInfo()) {
+      if (!getDealInfo().equals(other.getDealInfo())) return false;
+    }
+    if (!getViewabilityProviderCompaniesList().equals(other.getViewabilityProviderCompaniesList()))
+      return false;
+    if (hasChildContentEligibility() != other.hasChildContentEligibility()) return false;
+    if (hasChildContentEligibility()) {
+      if (childContentEligibility_ != other.childContentEligibility_) return false;
+    }
+    if (hasCustomVastExtension() != other.hasCustomVastExtension()) return false;
+    if (hasCustomVastExtension()) {
+      if (!getCustomVastExtension().equals(other.getCustomVastExtension())) return false;
+    }
+    if (hasSponsorshipExclusivityEnabled() != other.hasSponsorshipExclusivityEnabled())
+      return false;
+    if (hasSponsorshipExclusivityEnabled()) {
+      if (getSponsorshipExclusivityEnabled() != other.getSponsorshipExclusivityEnabled())
+        return false;
+    }
+    if (hasRepeatedCreativeServingEnabled() != other.hasRepeatedCreativeServingEnabled())
+      return false;
+    if (hasRepeatedCreativeServingEnabled()) {
+      if (getRepeatedCreativeServingEnabled() != other.getRepeatedCreativeServingEnabled())
+        return false;
+    }
+    if (hasTargeting() != other.hasTargeting()) return false;
+    if (hasTargeting()) {
+      if (!getTargeting().equals(other.getTargeting())) return false;
+    }
+    if (!getCreativeTargetingsList().equals(other.getCreativeTargetingsList())) return false;
+    if (!allowedFormats_.equals(other.allowedFormats_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -871,33 +4990,253 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getDisplayName().hashCode();
     }
+    if (hasExternalLineItemId()) {
+      hash = (37 * hash) + EXTERNAL_LINE_ITEM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalLineItemId().hashCode();
+    }
+    if (hasOrderDisplayName()) {
+      hash = (37 * hash) + ORDER_DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getOrderDisplayName().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
+    }
+    if (hasTargetEndTime()) {
+      hash = (37 * hash) + TARGET_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetEndTime().hashCode();
     }
     if (hasEndTime()) {
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    if (hasAutoExtensionDays()) {
+      hash = (37 * hash) + AUTO_EXTENSION_DAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoExtensionDays();
+    }
+    if (hasEndTimeUnlimited()) {
+      hash = (37 * hash) + END_TIME_UNLIMITED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEndTimeUnlimited());
+    }
+    if (hasCreativeRotationType()) {
+      hash = (37 * hash) + CREATIVE_ROTATION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + creativeRotationType_;
+    }
+    if (hasDeliveryRateType()) {
+      hash = (37 * hash) + DELIVERY_RATE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + deliveryRateType_;
+    }
+    if (hasDeliveryForecastSource()) {
+      hash = (37 * hash) + DELIVERY_FORECAST_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + deliveryForecastSource_;
+    }
+    if (hasCustomPacingCurve()) {
+      hash = (37 * hash) + CUSTOM_PACING_CURVE_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomPacingCurve().hashCode();
+    }
+    if (hasRoadblockingType()) {
+      hash = (37 * hash) + ROADBLOCKING_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + roadblockingType_;
+    }
+    if (hasSkippableAdType()) {
+      hash = (37 * hash) + SKIPPABLE_AD_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + skippableAdType_;
+    }
+    if (getFrequencyCapsCount() > 0) {
+      hash = (37 * hash) + FREQUENCY_CAPS_FIELD_NUMBER;
+      hash = (53 * hash) + getFrequencyCapsList().hashCode();
+    }
     if (hasLineItemType()) {
       hash = (37 * hash) + LINE_ITEM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + lineItemType_;
+    }
+    if (hasPriority()) {
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
     }
     if (hasRate()) {
       hash = (37 * hash) + RATE_FIELD_NUMBER;
       hash = (53 * hash) + getRate().hashCode();
     }
+    if (hasValueCpm()) {
+      hash = (37 * hash) + VALUE_CPM_FIELD_NUMBER;
+      hash = (53 * hash) + getValueCpm().hashCode();
+    }
+    if (hasCostType()) {
+      hash = (37 * hash) + COST_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + costType_;
+    }
+    if (hasDiscount()) {
+      hash = (37 * hash) + DISCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getDiscount().hashCode();
+    }
+    if (hasContractedUnitsBought()) {
+      hash = (37 * hash) + CONTRACTED_UNITS_BOUGHT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getContractedUnitsBought());
+    }
+    if (getCreativePlaceholdersCount() > 0) {
+      hash = (37 * hash) + CREATIVE_PLACEHOLDERS_FIELD_NUMBER;
+      hash = (53 * hash) + getCreativePlaceholdersList().hashCode();
+    }
+    if (hasEnvironmentType()) {
+      hash = (37 * hash) + ENVIRONMENT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + environmentType_;
+    }
+    if (hasCompanionDeliveryOption()) {
+      hash = (37 * hash) + COMPANION_DELIVERY_OPTION_FIELD_NUMBER;
+      hash = (53 * hash) + companionDeliveryOption_;
+    }
+    if (hasAllowOverbook()) {
+      hash = (37 * hash) + ALLOW_OVERBOOK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowOverbook());
+    }
+    if (hasSkipInventoryCheck()) {
+      hash = (37 * hash) + SKIP_INVENTORY_CHECK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipInventoryCheck());
+    }
+    if (hasSkipCrossSellingRuleWarningChecks()) {
+      hash = (37 * hash) + SKIP_CROSS_SELLING_RULE_WARNING_CHECKS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getSkipCrossSellingRuleWarningChecks());
+    }
+    if (hasReserveOnCreation()) {
+      hash = (37 * hash) + RESERVE_ON_CREATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReserveOnCreation());
+    }
+    if (hasStats()) {
+      hash = (37 * hash) + STATS_FIELD_NUMBER;
+      hash = (53 * hash) + getStats().hashCode();
+    }
+    if (hasDeliveryIndicator()) {
+      hash = (37 * hash) + DELIVERY_INDICATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getDeliveryIndicator().hashCode();
+    }
     if (hasBudget()) {
       hash = (37 * hash) + BUDGET_FIELD_NUMBER;
       hash = (53 * hash) + getBudget().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasReservationStatus()) {
+      hash = (37 * hash) + RESERVATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + reservationStatus_;
+    }
+    if (hasArchived()) {
+      hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
+    }
+    if (hasWebPropertyCode()) {
+      hash = (37 * hash) + WEB_PROPERTY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getWebPropertyCode().hashCode();
+    }
+    if (getAppliedLabelsCount() > 0) {
+      hash = (37 * hash) + APPLIED_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + getAppliedLabelsList().hashCode();
+    }
+    if (getEffectiveAppliedLabelsCount() > 0) {
+      hash = (37 * hash) + EFFECTIVE_APPLIED_LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveAppliedLabelsList().hashCode();
+    }
+    if (hasSameAdvertiserExceptionEnabled()) {
+      hash = (37 * hash) + SAME_ADVERTISER_EXCEPTION_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getSameAdvertiserExceptionEnabled());
+    }
+    if (hasUpdateSource()) {
+      hash = (37 * hash) + UPDATE_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateSource().hashCode();
+    }
+    if (hasNotes()) {
+      hash = (37 * hash) + NOTES_FIELD_NUMBER;
+      hash = (53 * hash) + getNotes().hashCode();
+    }
+    if (hasCompetitiveConstraintScope()) {
+      hash = (37 * hash) + COMPETITIVE_CONSTRAINT_SCOPE_FIELD_NUMBER;
+      hash = (53 * hash) + competitiveConstraintScope_;
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
     }
     if (getCustomFieldValuesCount() > 0) {
       hash = (37 * hash) + CUSTOM_FIELD_VALUES_FIELD_NUMBER;
       hash = (53 * hash) + getCustomFieldValuesList().hashCode();
     }
+    if (hasMissingCreatives()) {
+      hash = (37 * hash) + MISSING_CREATIVES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMissingCreatives());
+    }
+    if (hasThirdPartyMeasurementSettings()) {
+      hash = (37 * hash) + THIRD_PARTY_MEASUREMENT_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getThirdPartyMeasurementSettings().hashCode();
+    }
+    if (hasYoutubeKidsRestricted()) {
+      hash = (37 * hash) + YOUTUBE_KIDS_RESTRICTED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getYoutubeKidsRestricted());
+    }
+    if (hasMaxVideoCreativeDuration()) {
+      hash = (37 * hash) + MAX_VIDEO_CREATIVE_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxVideoCreativeDuration().hashCode();
+    }
     if (hasGoal()) {
       hash = (37 * hash) + GOAL_FIELD_NUMBER;
       hash = (53 * hash) + getGoal().hashCode();
+    }
+    if (getSecondaryGoalsCount() > 0) {
+      hash = (37 * hash) + SECONDARY_GOALS_FIELD_NUMBER;
+      hash = (53 * hash) + getSecondaryGoalsList().hashCode();
+    }
+    if (hasGrpSettings()) {
+      hash = (37 * hash) + GRP_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getGrpSettings().hashCode();
+    }
+    if (hasDealInfo()) {
+      hash = (37 * hash) + DEAL_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getDealInfo().hashCode();
+    }
+    if (getViewabilityProviderCompaniesCount() > 0) {
+      hash = (37 * hash) + VIEWABILITY_PROVIDER_COMPANIES_FIELD_NUMBER;
+      hash = (53 * hash) + getViewabilityProviderCompaniesList().hashCode();
+    }
+    if (hasChildContentEligibility()) {
+      hash = (37 * hash) + CHILD_CONTENT_ELIGIBILITY_FIELD_NUMBER;
+      hash = (53 * hash) + childContentEligibility_;
+    }
+    if (hasCustomVastExtension()) {
+      hash = (37 * hash) + CUSTOM_VAST_EXTENSION_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomVastExtension().hashCode();
+    }
+    if (hasSponsorshipExclusivityEnabled()) {
+      hash = (37 * hash) + SPONSORSHIP_EXCLUSIVITY_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getSponsorshipExclusivityEnabled());
+    }
+    if (hasRepeatedCreativeServingEnabled()) {
+      hash = (37 * hash) + REPEATED_CREATIVE_SERVING_ENABLED_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getRepeatedCreativeServingEnabled());
+    }
+    if (hasTargeting()) {
+      hash = (37 * hash) + TARGETING_FIELD_NUMBER;
+      hash = (53 * hash) + getTargeting().hashCode();
+    }
+    if (getCreativeTargetingsCount() > 0) {
+      hash = (37 * hash) + CREATIVE_TARGETINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getCreativeTargetingsList().hashCode();
+    }
+    if (getAllowedFormatsCount() > 0) {
+      hash = (37 * hash) + ALLOWED_FORMATS_FIELD_NUMBER;
+      hash = (53 * hash) + allowedFormats_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1042,11 +5381,30 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetStartTimeFieldBuilder();
+        internalGetTargetEndTimeFieldBuilder();
         internalGetEndTimeFieldBuilder();
+        internalGetCustomPacingCurveFieldBuilder();
+        internalGetFrequencyCapsFieldBuilder();
         internalGetRateFieldBuilder();
+        internalGetValueCpmFieldBuilder();
+        internalGetDiscountFieldBuilder();
+        internalGetCreativePlaceholdersFieldBuilder();
+        internalGetStatsFieldBuilder();
+        internalGetDeliveryIndicatorFieldBuilder();
         internalGetBudgetFieldBuilder();
+        internalGetAppliedLabelsFieldBuilder();
+        internalGetEffectiveAppliedLabelsFieldBuilder();
+        internalGetUpdateTimeFieldBuilder();
+        internalGetCreateTimeFieldBuilder();
         internalGetCustomFieldValuesFieldBuilder();
+        internalGetThirdPartyMeasurementSettingsFieldBuilder();
+        internalGetMaxVideoCreativeDurationFieldBuilder();
         internalGetGoalFieldBuilder();
+        internalGetSecondaryGoalsFieldBuilder();
+        internalGetGrpSettingsFieldBuilder();
+        internalGetDealInfoFieldBuilder();
+        internalGetTargetingFieldBuilder();
+        internalGetCreativeTargetingsFieldBuilder();
       }
     }
 
@@ -1054,29 +5412,124 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       order_ = "";
       displayName_ = "";
+      externalLineItemId_ = "";
+      orderDisplayName_ = "";
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
         startTimeBuilder_ = null;
+      }
+      targetEndTime_ = null;
+      if (targetEndTimeBuilder_ != null) {
+        targetEndTimeBuilder_.dispose();
+        targetEndTimeBuilder_ = null;
       }
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
         endTimeBuilder_ = null;
       }
+      autoExtensionDays_ = 0;
+      endTimeUnlimited_ = false;
+      creativeRotationType_ = 0;
+      deliveryRateType_ = 0;
+      deliveryForecastSource_ = 0;
+      customPacingCurve_ = null;
+      if (customPacingCurveBuilder_ != null) {
+        customPacingCurveBuilder_.dispose();
+        customPacingCurveBuilder_ = null;
+      }
+      roadblockingType_ = 0;
+      skippableAdType_ = 0;
+      if (frequencyCapsBuilder_ == null) {
+        frequencyCaps_ = java.util.Collections.emptyList();
+      } else {
+        frequencyCaps_ = null;
+        frequencyCapsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
       lineItemType_ = 0;
+      priority_ = 0;
       rate_ = null;
       if (rateBuilder_ != null) {
         rateBuilder_.dispose();
         rateBuilder_ = null;
       }
+      valueCpm_ = null;
+      if (valueCpmBuilder_ != null) {
+        valueCpmBuilder_.dispose();
+        valueCpmBuilder_ = null;
+      }
+      costType_ = 0;
+      discount_ = null;
+      if (discountBuilder_ != null) {
+        discountBuilder_.dispose();
+        discountBuilder_ = null;
+      }
+      contractedUnitsBought_ = 0L;
+      if (creativePlaceholdersBuilder_ == null) {
+        creativePlaceholders_ = java.util.Collections.emptyList();
+      } else {
+        creativePlaceholders_ = null;
+        creativePlaceholdersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x01000000);
+      environmentType_ = 0;
+      companionDeliveryOption_ = 0;
+      allowOverbook_ = false;
+      skipInventoryCheck_ = false;
+      skipCrossSellingRuleWarningChecks_ = false;
+      reserveOnCreation_ = false;
+      stats_ = null;
+      if (statsBuilder_ != null) {
+        statsBuilder_.dispose();
+        statsBuilder_ = null;
+      }
+      deliveryIndicator_ = null;
+      if (deliveryIndicatorBuilder_ != null) {
+        deliveryIndicatorBuilder_.dispose();
+        deliveryIndicatorBuilder_ = null;
+      }
       budget_ = null;
       if (budgetBuilder_ != null) {
         budgetBuilder_.dispose();
         budgetBuilder_ = null;
+      }
+      status_ = 0;
+      reservationStatus_ = 0;
+      archived_ = false;
+      webPropertyCode_ = "";
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabels_ = java.util.Collections.emptyList();
+      } else {
+        appliedLabels_ = null;
+        appliedLabelsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000040);
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        effectiveAppliedLabels_ = java.util.Collections.emptyList();
+      } else {
+        effectiveAppliedLabels_ = null;
+        effectiveAppliedLabelsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000080);
+      sameAdvertiserExceptionEnabled_ = false;
+      updateSource_ = "";
+      notes_ = "";
+      competitiveConstraintScope_ = 0;
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
       }
       if (customFieldValuesBuilder_ == null) {
         customFieldValues_ = java.util.Collections.emptyList();
@@ -1084,12 +5537,59 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         customFieldValues_ = null;
         customFieldValuesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00004000);
+      missingCreatives_ = false;
+      thirdPartyMeasurementSettings_ = null;
+      if (thirdPartyMeasurementSettingsBuilder_ != null) {
+        thirdPartyMeasurementSettingsBuilder_.dispose();
+        thirdPartyMeasurementSettingsBuilder_ = null;
+      }
+      youtubeKidsRestricted_ = false;
+      maxVideoCreativeDuration_ = null;
+      if (maxVideoCreativeDurationBuilder_ != null) {
+        maxVideoCreativeDurationBuilder_.dispose();
+        maxVideoCreativeDurationBuilder_ = null;
+      }
       goal_ = null;
       if (goalBuilder_ != null) {
         goalBuilder_.dispose();
         goalBuilder_ = null;
       }
+      if (secondaryGoalsBuilder_ == null) {
+        secondaryGoals_ = java.util.Collections.emptyList();
+      } else {
+        secondaryGoals_ = null;
+        secondaryGoalsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00100000);
+      grpSettings_ = null;
+      if (grpSettingsBuilder_ != null) {
+        grpSettingsBuilder_.dispose();
+        grpSettingsBuilder_ = null;
+      }
+      dealInfo_ = null;
+      if (dealInfoBuilder_ != null) {
+        dealInfoBuilder_.dispose();
+        dealInfoBuilder_ = null;
+      }
+      viewabilityProviderCompanies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      childContentEligibility_ = 0;
+      customVastExtension_ = "";
+      sponsorshipExclusivityEnabled_ = false;
+      repeatedCreativeServingEnabled_ = false;
+      targeting_ = null;
+      if (targetingBuilder_ != null) {
+        targetingBuilder_.dispose();
+        targetingBuilder_ = null;
+      }
+      if (creativeTargetingsBuilder_ == null) {
+        creativeTargetings_ = java.util.Collections.emptyList();
+      } else {
+        creativeTargetings_ = null;
+        creativeTargetingsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x20000000);
+      allowedFormats_ = emptyIntList();
       return this;
     }
 
@@ -1120,19 +5620,76 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       onBuilt();
       return result;
     }
 
     private void buildPartialRepeatedFields(com.google.ads.admanager.v1.LineItem result) {
+      if (frequencyCapsBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          frequencyCaps_ = java.util.Collections.unmodifiableList(frequencyCaps_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.frequencyCaps_ = frequencyCaps_;
+      } else {
+        result.frequencyCaps_ = frequencyCapsBuilder_.build();
+      }
+      if (creativePlaceholdersBuilder_ == null) {
+        if (((bitField0_ & 0x01000000) != 0)) {
+          creativePlaceholders_ = java.util.Collections.unmodifiableList(creativePlaceholders_);
+          bitField0_ = (bitField0_ & ~0x01000000);
+        }
+        result.creativePlaceholders_ = creativePlaceholders_;
+      } else {
+        result.creativePlaceholders_ = creativePlaceholdersBuilder_.build();
+      }
+      if (appliedLabelsBuilder_ == null) {
+        if (((bitField1_ & 0x00000040) != 0)) {
+          appliedLabels_ = java.util.Collections.unmodifiableList(appliedLabels_);
+          bitField1_ = (bitField1_ & ~0x00000040);
+        }
+        result.appliedLabels_ = appliedLabels_;
+      } else {
+        result.appliedLabels_ = appliedLabelsBuilder_.build();
+      }
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        if (((bitField1_ & 0x00000080) != 0)) {
+          effectiveAppliedLabels_ = java.util.Collections.unmodifiableList(effectiveAppliedLabels_);
+          bitField1_ = (bitField1_ & ~0x00000080);
+        }
+        result.effectiveAppliedLabels_ = effectiveAppliedLabels_;
+      } else {
+        result.effectiveAppliedLabels_ = effectiveAppliedLabelsBuilder_.build();
+      }
       if (customFieldValuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField1_ & 0x00004000) != 0)) {
           customFieldValues_ = java.util.Collections.unmodifiableList(customFieldValues_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField1_ = (bitField1_ & ~0x00004000);
         }
         result.customFieldValues_ = customFieldValues_;
       } else {
         result.customFieldValues_ = customFieldValuesBuilder_.build();
+      }
+      if (secondaryGoalsBuilder_ == null) {
+        if (((bitField1_ & 0x00100000) != 0)) {
+          secondaryGoals_ = java.util.Collections.unmodifiableList(secondaryGoals_);
+          bitField1_ = (bitField1_ & ~0x00100000);
+        }
+        result.secondaryGoals_ = secondaryGoals_;
+      } else {
+        result.secondaryGoals_ = secondaryGoalsBuilder_.build();
+      }
+      if (creativeTargetingsBuilder_ == null) {
+        if (((bitField1_ & 0x20000000) != 0)) {
+          creativeTargetings_ = java.util.Collections.unmodifiableList(creativeTargetings_);
+          bitField1_ = (bitField1_ & ~0x20000000);
+        }
+        result.creativeTargetings_ = creativeTargetings_;
+      } else {
+        result.creativeTargetings_ = creativeTargetingsBuilder_.build();
       }
     }
 
@@ -1151,30 +5708,240 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        result.externalLineItemId_ = externalLineItemId_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        result.orderDisplayName_ = orderDisplayName_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.lineItemType_ = lineItemType_;
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.rate_ = rateBuilder_ == null ? rate_ : rateBuilder_.build();
+        result.targetEndTime_ =
+            targetEndTimeBuilder_ == null ? targetEndTime_ : targetEndTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.budget_ = budgetBuilder_ == null ? budget_ : budgetBuilder_.build();
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.goal_ = goalBuilder_ == null ? goal_ : goalBuilder_.build();
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.autoExtensionDays_ = autoExtensionDays_;
         to_bitField0_ |= 0x00000080;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.endTimeUnlimited_ = endTimeUnlimited_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.creativeRotationType_ = creativeRotationType_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.deliveryRateType_ = deliveryRateType_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.deliveryForecastSource_ = deliveryForecastSource_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.customPacingCurve_ =
+            customPacingCurveBuilder_ == null
+                ? customPacingCurve_
+                : customPacingCurveBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.roadblockingType_ = roadblockingType_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.skippableAdType_ = skippableAdType_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.lineItemType_ = lineItemType_;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.priority_ = priority_;
+        to_bitField0_ |= 0x00010000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.rate_ = rateBuilder_ == null ? rate_ : rateBuilder_.build();
+        to_bitField0_ |= 0x00020000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.valueCpm_ = valueCpmBuilder_ == null ? valueCpm_ : valueCpmBuilder_.build();
+        to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.costType_ = costType_;
+        to_bitField0_ |= 0x00080000;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.discount_ = discountBuilder_ == null ? discount_ : discountBuilder_.build();
+        to_bitField0_ |= 0x00100000;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.contractedUnitsBought_ = contractedUnitsBought_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.environmentType_ = environmentType_;
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.companionDeliveryOption_ = companionDeliveryOption_;
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.allowOverbook_ = allowOverbook_;
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.skipInventoryCheck_ = skipInventoryCheck_;
+        to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.skipCrossSellingRuleWarningChecks_ = skipCrossSellingRuleWarningChecks_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.reserveOnCreation_ = reserveOnCreation_;
+        to_bitField0_ |= 0x08000000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.stats_ = statsBuilder_ == null ? stats_ : statsBuilder_.build();
+        to_bitField0_ |= 0x10000000;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.ads.admanager.v1.LineItem result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.deliveryIndicator_ =
+            deliveryIndicatorBuilder_ == null
+                ? deliveryIndicator_
+                : deliveryIndicatorBuilder_.build();
+        to_bitField0_ |= 0x20000000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.budget_ = budgetBuilder_ == null ? budget_ : budgetBuilder_.build();
+        to_bitField0_ |= 0x40000000;
+      }
+      if (((from_bitField1_ & 0x00000004) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x80000000;
+      }
+      int to_bitField1_ = 0;
+      if (((from_bitField1_ & 0x00000008) != 0)) {
+        result.reservationStatus_ = reservationStatus_;
+        to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.archived_ = archived_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000020) != 0)) {
+        result.webPropertyCode_ = webPropertyCode_;
+        to_bitField1_ |= 0x00000004;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.sameAdvertiserExceptionEnabled_ = sameAdvertiserExceptionEnabled_;
+        to_bitField1_ |= 0x00000008;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
+        result.updateSource_ = updateSource_;
+        to_bitField1_ |= 0x00000010;
+      }
+      if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.notes_ = notes_;
+        to_bitField1_ |= 0x00000020;
+      }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.competitiveConstraintScope_ = competitiveConstraintScope_;
+        to_bitField1_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField1_ |= 0x00000080;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField1_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00008000) != 0)) {
+        result.missingCreatives_ = missingCreatives_;
+        to_bitField1_ |= 0x00000200;
+      }
+      if (((from_bitField1_ & 0x00010000) != 0)) {
+        result.thirdPartyMeasurementSettings_ =
+            thirdPartyMeasurementSettingsBuilder_ == null
+                ? thirdPartyMeasurementSettings_
+                : thirdPartyMeasurementSettingsBuilder_.build();
+        to_bitField1_ |= 0x00000400;
+      }
+      if (((from_bitField1_ & 0x00020000) != 0)) {
+        result.youtubeKidsRestricted_ = youtubeKidsRestricted_;
+        to_bitField1_ |= 0x00000800;
+      }
+      if (((from_bitField1_ & 0x00040000) != 0)) {
+        result.maxVideoCreativeDuration_ =
+            maxVideoCreativeDurationBuilder_ == null
+                ? maxVideoCreativeDuration_
+                : maxVideoCreativeDurationBuilder_.build();
+        to_bitField1_ |= 0x00001000;
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.goal_ = goalBuilder_ == null ? goal_ : goalBuilder_.build();
+        to_bitField1_ |= 0x00002000;
+      }
+      if (((from_bitField1_ & 0x00200000) != 0)) {
+        result.grpSettings_ =
+            grpSettingsBuilder_ == null ? grpSettings_ : grpSettingsBuilder_.build();
+        to_bitField1_ |= 0x00004000;
+      }
+      if (((from_bitField1_ & 0x00400000) != 0)) {
+        result.dealInfo_ = dealInfoBuilder_ == null ? dealInfo_ : dealInfoBuilder_.build();
+        to_bitField1_ |= 0x00008000;
+      }
+      if (((from_bitField1_ & 0x00800000) != 0)) {
+        viewabilityProviderCompanies_.makeImmutable();
+        result.viewabilityProviderCompanies_ = viewabilityProviderCompanies_;
+      }
+      if (((from_bitField1_ & 0x01000000) != 0)) {
+        result.childContentEligibility_ = childContentEligibility_;
+        to_bitField1_ |= 0x00010000;
+      }
+      if (((from_bitField1_ & 0x02000000) != 0)) {
+        result.customVastExtension_ = customVastExtension_;
+        to_bitField1_ |= 0x00020000;
+      }
+      if (((from_bitField1_ & 0x04000000) != 0)) {
+        result.sponsorshipExclusivityEnabled_ = sponsorshipExclusivityEnabled_;
+        to_bitField1_ |= 0x00040000;
+      }
+      if (((from_bitField1_ & 0x08000000) != 0)) {
+        result.repeatedCreativeServingEnabled_ = repeatedCreativeServingEnabled_;
+        to_bitField1_ |= 0x00080000;
+      }
+      if (((from_bitField1_ & 0x10000000) != 0)) {
+        result.targeting_ = targetingBuilder_ == null ? targeting_ : targetingBuilder_.build();
+        to_bitField1_ |= 0x00100000;
+      }
+      if (((from_bitField1_ & 0x40000000) != 0)) {
+        allowedFormats_.makeImmutable();
+        result.allowedFormats_ = allowedFormats_;
+      }
+      result.bitField0_ |= to_bitField0_;
+      result.bitField1_ |= to_bitField1_;
     }
 
     @java.lang.Override
@@ -1204,26 +5971,246 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasExternalLineItemId()) {
+        externalLineItemId_ = other.externalLineItemId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasOrderDisplayName()) {
+        orderDisplayName_ = other.orderDisplayName_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
+      }
+      if (other.hasTargetEndTime()) {
+        mergeTargetEndTime(other.getTargetEndTime());
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
+      if (other.hasAutoExtensionDays()) {
+        setAutoExtensionDays(other.getAutoExtensionDays());
+      }
+      if (other.hasEndTimeUnlimited()) {
+        setEndTimeUnlimited(other.getEndTimeUnlimited());
+      }
+      if (other.hasCreativeRotationType()) {
+        setCreativeRotationTypeValue(other.getCreativeRotationTypeValue());
+      }
+      if (other.hasDeliveryRateType()) {
+        setDeliveryRateTypeValue(other.getDeliveryRateTypeValue());
+      }
+      if (other.hasDeliveryForecastSource()) {
+        setDeliveryForecastSourceValue(other.getDeliveryForecastSourceValue());
+      }
+      if (other.hasCustomPacingCurve()) {
+        mergeCustomPacingCurve(other.getCustomPacingCurve());
+      }
+      if (other.hasRoadblockingType()) {
+        setRoadblockingTypeValue(other.getRoadblockingTypeValue());
+      }
+      if (other.hasSkippableAdType()) {
+        setSkippableAdTypeValue(other.getSkippableAdTypeValue());
+      }
+      if (frequencyCapsBuilder_ == null) {
+        if (!other.frequencyCaps_.isEmpty()) {
+          if (frequencyCaps_.isEmpty()) {
+            frequencyCaps_ = other.frequencyCaps_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureFrequencyCapsIsMutable();
+            frequencyCaps_.addAll(other.frequencyCaps_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.frequencyCaps_.isEmpty()) {
+          if (frequencyCapsBuilder_.isEmpty()) {
+            frequencyCapsBuilder_.dispose();
+            frequencyCapsBuilder_ = null;
+            frequencyCaps_ = other.frequencyCaps_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            frequencyCapsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetFrequencyCapsFieldBuilder()
+                    : null;
+          } else {
+            frequencyCapsBuilder_.addAllMessages(other.frequencyCaps_);
+          }
+        }
+      }
       if (other.hasLineItemType()) {
         setLineItemTypeValue(other.getLineItemTypeValue());
+      }
+      if (other.hasPriority()) {
+        setPriority(other.getPriority());
       }
       if (other.hasRate()) {
         mergeRate(other.getRate());
       }
+      if (other.hasValueCpm()) {
+        mergeValueCpm(other.getValueCpm());
+      }
+      if (other.hasCostType()) {
+        setCostTypeValue(other.getCostTypeValue());
+      }
+      if (other.hasDiscount()) {
+        mergeDiscount(other.getDiscount());
+      }
+      if (other.hasContractedUnitsBought()) {
+        setContractedUnitsBought(other.getContractedUnitsBought());
+      }
+      if (creativePlaceholdersBuilder_ == null) {
+        if (!other.creativePlaceholders_.isEmpty()) {
+          if (creativePlaceholders_.isEmpty()) {
+            creativePlaceholders_ = other.creativePlaceholders_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+          } else {
+            ensureCreativePlaceholdersIsMutable();
+            creativePlaceholders_.addAll(other.creativePlaceholders_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.creativePlaceholders_.isEmpty()) {
+          if (creativePlaceholdersBuilder_.isEmpty()) {
+            creativePlaceholdersBuilder_.dispose();
+            creativePlaceholdersBuilder_ = null;
+            creativePlaceholders_ = other.creativePlaceholders_;
+            bitField0_ = (bitField0_ & ~0x01000000);
+            creativePlaceholdersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCreativePlaceholdersFieldBuilder()
+                    : null;
+          } else {
+            creativePlaceholdersBuilder_.addAllMessages(other.creativePlaceholders_);
+          }
+        }
+      }
+      if (other.hasEnvironmentType()) {
+        setEnvironmentTypeValue(other.getEnvironmentTypeValue());
+      }
+      if (other.hasCompanionDeliveryOption()) {
+        setCompanionDeliveryOptionValue(other.getCompanionDeliveryOptionValue());
+      }
+      if (other.hasAllowOverbook()) {
+        setAllowOverbook(other.getAllowOverbook());
+      }
+      if (other.hasSkipInventoryCheck()) {
+        setSkipInventoryCheck(other.getSkipInventoryCheck());
+      }
+      if (other.hasSkipCrossSellingRuleWarningChecks()) {
+        setSkipCrossSellingRuleWarningChecks(other.getSkipCrossSellingRuleWarningChecks());
+      }
+      if (other.hasReserveOnCreation()) {
+        setReserveOnCreation(other.getReserveOnCreation());
+      }
+      if (other.hasStats()) {
+        mergeStats(other.getStats());
+      }
+      if (other.hasDeliveryIndicator()) {
+        mergeDeliveryIndicator(other.getDeliveryIndicator());
+      }
       if (other.hasBudget()) {
         mergeBudget(other.getBudget());
+      }
+      if (other.hasStatus()) {
+        setStatusValue(other.getStatusValue());
+      }
+      if (other.hasReservationStatus()) {
+        setReservationStatusValue(other.getReservationStatusValue());
+      }
+      if (other.hasArchived()) {
+        setArchived(other.getArchived());
+      }
+      if (other.hasWebPropertyCode()) {
+        webPropertyCode_ = other.webPropertyCode_;
+        bitField1_ |= 0x00000020;
+        onChanged();
+      }
+      if (appliedLabelsBuilder_ == null) {
+        if (!other.appliedLabels_.isEmpty()) {
+          if (appliedLabels_.isEmpty()) {
+            appliedLabels_ = other.appliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+          } else {
+            ensureAppliedLabelsIsMutable();
+            appliedLabels_.addAll(other.appliedLabels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.appliedLabels_.isEmpty()) {
+          if (appliedLabelsBuilder_.isEmpty()) {
+            appliedLabelsBuilder_.dispose();
+            appliedLabelsBuilder_ = null;
+            appliedLabels_ = other.appliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000040);
+            appliedLabelsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAppliedLabelsFieldBuilder()
+                    : null;
+          } else {
+            appliedLabelsBuilder_.addAllMessages(other.appliedLabels_);
+          }
+        }
+      }
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        if (!other.effectiveAppliedLabels_.isEmpty()) {
+          if (effectiveAppliedLabels_.isEmpty()) {
+            effectiveAppliedLabels_ = other.effectiveAppliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000080);
+          } else {
+            ensureEffectiveAppliedLabelsIsMutable();
+            effectiveAppliedLabels_.addAll(other.effectiveAppliedLabels_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.effectiveAppliedLabels_.isEmpty()) {
+          if (effectiveAppliedLabelsBuilder_.isEmpty()) {
+            effectiveAppliedLabelsBuilder_.dispose();
+            effectiveAppliedLabelsBuilder_ = null;
+            effectiveAppliedLabels_ = other.effectiveAppliedLabels_;
+            bitField1_ = (bitField1_ & ~0x00000080);
+            effectiveAppliedLabelsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetEffectiveAppliedLabelsFieldBuilder()
+                    : null;
+          } else {
+            effectiveAppliedLabelsBuilder_.addAllMessages(other.effectiveAppliedLabels_);
+          }
+        }
+      }
+      if (other.hasSameAdvertiserExceptionEnabled()) {
+        setSameAdvertiserExceptionEnabled(other.getSameAdvertiserExceptionEnabled());
+      }
+      if (other.hasUpdateSource()) {
+        updateSource_ = other.updateSource_;
+        bitField1_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasNotes()) {
+        notes_ = other.notes_;
+        bitField1_ |= 0x00000400;
+        onChanged();
+      }
+      if (other.hasCompetitiveConstraintScope()) {
+        setCompetitiveConstraintScopeValue(other.getCompetitiveConstraintScopeValue());
+      }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
       }
       if (customFieldValuesBuilder_ == null) {
         if (!other.customFieldValues_.isEmpty()) {
           if (customFieldValues_.isEmpty()) {
             customFieldValues_ = other.customFieldValues_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00004000);
           } else {
             ensureCustomFieldValuesIsMutable();
             customFieldValues_.addAll(other.customFieldValues_);
@@ -1236,7 +6223,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
             customFieldValuesBuilder_.dispose();
             customFieldValuesBuilder_ = null;
             customFieldValues_ = other.customFieldValues_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField1_ = (bitField1_ & ~0x00004000);
             customFieldValuesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCustomFieldValuesFieldBuilder()
@@ -1246,8 +6233,118 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (other.hasMissingCreatives()) {
+        setMissingCreatives(other.getMissingCreatives());
+      }
+      if (other.hasThirdPartyMeasurementSettings()) {
+        mergeThirdPartyMeasurementSettings(other.getThirdPartyMeasurementSettings());
+      }
+      if (other.hasYoutubeKidsRestricted()) {
+        setYoutubeKidsRestricted(other.getYoutubeKidsRestricted());
+      }
+      if (other.hasMaxVideoCreativeDuration()) {
+        mergeMaxVideoCreativeDuration(other.getMaxVideoCreativeDuration());
+      }
       if (other.hasGoal()) {
         mergeGoal(other.getGoal());
+      }
+      if (secondaryGoalsBuilder_ == null) {
+        if (!other.secondaryGoals_.isEmpty()) {
+          if (secondaryGoals_.isEmpty()) {
+            secondaryGoals_ = other.secondaryGoals_;
+            bitField1_ = (bitField1_ & ~0x00100000);
+          } else {
+            ensureSecondaryGoalsIsMutable();
+            secondaryGoals_.addAll(other.secondaryGoals_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.secondaryGoals_.isEmpty()) {
+          if (secondaryGoalsBuilder_.isEmpty()) {
+            secondaryGoalsBuilder_.dispose();
+            secondaryGoalsBuilder_ = null;
+            secondaryGoals_ = other.secondaryGoals_;
+            bitField1_ = (bitField1_ & ~0x00100000);
+            secondaryGoalsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetSecondaryGoalsFieldBuilder()
+                    : null;
+          } else {
+            secondaryGoalsBuilder_.addAllMessages(other.secondaryGoals_);
+          }
+        }
+      }
+      if (other.hasGrpSettings()) {
+        mergeGrpSettings(other.getGrpSettings());
+      }
+      if (other.hasDealInfo()) {
+        mergeDealInfo(other.getDealInfo());
+      }
+      if (!other.viewabilityProviderCompanies_.isEmpty()) {
+        if (viewabilityProviderCompanies_.isEmpty()) {
+          viewabilityProviderCompanies_ = other.viewabilityProviderCompanies_;
+          bitField1_ |= 0x00800000;
+        } else {
+          ensureViewabilityProviderCompaniesIsMutable();
+          viewabilityProviderCompanies_.addAll(other.viewabilityProviderCompanies_);
+        }
+        onChanged();
+      }
+      if (other.hasChildContentEligibility()) {
+        setChildContentEligibilityValue(other.getChildContentEligibilityValue());
+      }
+      if (other.hasCustomVastExtension()) {
+        customVastExtension_ = other.customVastExtension_;
+        bitField1_ |= 0x02000000;
+        onChanged();
+      }
+      if (other.hasSponsorshipExclusivityEnabled()) {
+        setSponsorshipExclusivityEnabled(other.getSponsorshipExclusivityEnabled());
+      }
+      if (other.hasRepeatedCreativeServingEnabled()) {
+        setRepeatedCreativeServingEnabled(other.getRepeatedCreativeServingEnabled());
+      }
+      if (other.hasTargeting()) {
+        mergeTargeting(other.getTargeting());
+      }
+      if (creativeTargetingsBuilder_ == null) {
+        if (!other.creativeTargetings_.isEmpty()) {
+          if (creativeTargetings_.isEmpty()) {
+            creativeTargetings_ = other.creativeTargetings_;
+            bitField1_ = (bitField1_ & ~0x20000000);
+          } else {
+            ensureCreativeTargetingsIsMutable();
+            creativeTargetings_.addAll(other.creativeTargetings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.creativeTargetings_.isEmpty()) {
+          if (creativeTargetingsBuilder_.isEmpty()) {
+            creativeTargetingsBuilder_.dispose();
+            creativeTargetingsBuilder_ = null;
+            creativeTargetings_ = other.creativeTargetings_;
+            bitField1_ = (bitField1_ & ~0x20000000);
+            creativeTargetingsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetCreativeTargetingsFieldBuilder()
+                    : null;
+          } else {
+            creativeTargetingsBuilder_.addAllMessages(other.creativeTargetings_);
+          }
+        }
+      }
+      if (!other.allowedFormats_.isEmpty()) {
+        if (allowedFormats_.isEmpty()) {
+          allowedFormats_ = other.allowedFormats_;
+          allowedFormats_.makeImmutable();
+          bitField1_ |= 0x40000000;
+        } else {
+          ensureAllowedFormatsIsMutable();
+          allowedFormats_.addAll(other.allowedFormats_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1293,37 +6390,294 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                externalLineItemId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                orderDisplayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(
                     internalGetStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
+            case 64:
+              {
+                autoExtensionDays_ = input.readInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 64
+            case 72:
+              {
+                endTimeUnlimited_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 72
+            case 80:
+              {
+                creativeRotationType_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 80
+            case 88:
+              {
+                deliveryRateType_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 88
+            case 96:
+              {
+                deliveryForecastSource_ = input.readEnum();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 96
+            case 106:
+              {
+                input.readMessage(
+                    internalGetCustomPacingCurveFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 106
+            case 112:
+              {
+                roadblockingType_ = input.readEnum();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 112
+            case 120:
+              {
+                skippableAdType_ = input.readEnum();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 120
+            case 130:
+              {
+                com.google.ads.admanager.v1.FrequencyCap m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.FrequencyCap.parser(), extensionRegistry);
+                if (frequencyCapsBuilder_ == null) {
+                  ensureFrequencyCapsIsMutable();
+                  frequencyCaps_.add(m);
+                } else {
+                  frequencyCapsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 130
             case 136:
               {
                 lineItemType_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 136
+            case 152:
+              {
+                priority_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
             case 162:
               {
                 input.readMessage(internalGetRateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(
+                    internalGetValueCpmFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
+            case 176:
+              {
+                costType_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 176
+            case 186:
+              {
+                input.readMessage(
+                    internalGetDiscountFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
+            case 192:
+              {
+                contractedUnitsBought_ = input.readInt64();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 192
+            case 202:
+              {
+                com.google.ads.admanager.v1.CreativePlaceholder m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.CreativePlaceholder.parser(),
+                        extensionRegistry);
+                if (creativePlaceholdersBuilder_ == null) {
+                  ensureCreativePlaceholdersIsMutable();
+                  creativePlaceholders_.add(m);
+                } else {
+                  creativePlaceholdersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 202
+            case 208:
+              {
+                environmentType_ = input.readEnum();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 208
+            case 216:
+              {
+                companionDeliveryOption_ = input.readEnum();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 216
+            case 224:
+              {
+                allowOverbook_ = input.readBool();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 224
+            case 232:
+              {
+                skipInventoryCheck_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 232
+            case 240:
+              {
+                skipCrossSellingRuleWarningChecks_ = input.readBool();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 240
+            case 248:
+              {
+                reserveOnCreation_ = input.readBool();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 248
+            case 258:
+              {
+                input.readMessage(internalGetStatsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 258
+            case 266:
+              {
+                input.readMessage(
+                    internalGetDeliveryIndicatorFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000001;
+                break;
+              } // case 266
             case 282:
               {
                 input.readMessage(internalGetBudgetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 282
+            case 288:
+              {
+                status_ = input.readEnum();
+                bitField1_ |= 0x00000004;
+                break;
+              } // case 288
+            case 304:
+              {
+                reservationStatus_ = input.readEnum();
+                bitField1_ |= 0x00000008;
+                break;
+              } // case 304
+            case 312:
+              {
+                archived_ = input.readBool();
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 312
+            case 394:
+              {
+                webPropertyCode_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000020;
+                break;
+              } // case 394
+            case 402:
+              {
+                com.google.ads.admanager.v1.AppliedLabel m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.AppliedLabel.parser(), extensionRegistry);
+                if (appliedLabelsBuilder_ == null) {
+                  ensureAppliedLabelsIsMutable();
+                  appliedLabels_.add(m);
+                } else {
+                  appliedLabelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 402
+            case 410:
+              {
+                com.google.ads.admanager.v1.AppliedLabel m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.AppliedLabel.parser(), extensionRegistry);
+                if (effectiveAppliedLabelsBuilder_ == null) {
+                  ensureEffectiveAppliedLabelsIsMutable();
+                  effectiveAppliedLabels_.add(m);
+                } else {
+                  effectiveAppliedLabelsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 410
+            case 416:
+              {
+                sameAdvertiserExceptionEnabled_ = input.readBool();
+                bitField1_ |= 0x00000100;
+                break;
+              } // case 416
+            case 426:
+              {
+                updateSource_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000200;
+                break;
+              } // case 426
+            case 434:
+              {
+                notes_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00000400;
+                break;
+              } // case 434
+            case 448:
+              {
+                competitiveConstraintScope_ = input.readEnum();
+                bitField1_ |= 0x00000800;
+                break;
+              } // case 448
+            case 458:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00001000;
+                break;
+              } // case 458
+            case 466:
+              {
+                input.readMessage(
+                    internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00002000;
+                break;
+              } // case 466
             case 474:
               {
                 com.google.ads.admanager.v1.CustomFieldValue m =
@@ -1337,12 +6691,142 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 474
+            case 488:
+              {
+                missingCreatives_ = input.readBool();
+                bitField1_ |= 0x00008000;
+                break;
+              } // case 488
+            case 538:
+              {
+                input.readMessage(
+                    internalGetThirdPartyMeasurementSettingsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00010000;
+                break;
+              } // case 538
+            case 592:
+              {
+                youtubeKidsRestricted_ = input.readBool();
+                bitField1_ |= 0x00020000;
+                break;
+              } // case 592
+            case 602:
+              {
+                input.readMessage(
+                    internalGetMaxVideoCreativeDurationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00040000;
+                break;
+              } // case 602
             case 610:
               {
                 input.readMessage(internalGetGoalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField1_ |= 0x00080000;
                 break;
               } // case 610
+            case 626:
+              {
+                input.readMessage(
+                    internalGetGrpSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00200000;
+                break;
+              } // case 626
+            case 634:
+              {
+                input.readMessage(
+                    internalGetDealInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00400000;
+                break;
+              } // case 634
+            case 682:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureViewabilityProviderCompaniesIsMutable();
+                viewabilityProviderCompanies_.add(s);
+                break;
+              } // case 682
+            case 688:
+              {
+                childContentEligibility_ = input.readEnum();
+                bitField1_ |= 0x01000000;
+                break;
+              } // case 688
+            case 706:
+              {
+                customVastExtension_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x02000000;
+                break;
+              } // case 706
+            case 712:
+              {
+                sponsorshipExclusivityEnabled_ = input.readBool();
+                bitField1_ |= 0x04000000;
+                break;
+              } // case 712
+            case 720:
+              {
+                repeatedCreativeServingEnabled_ = input.readBool();
+                bitField1_ |= 0x08000000;
+                break;
+              } // case 720
+            case 746:
+              {
+                input.readMessage(
+                    internalGetTargetingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x10000000;
+                break;
+              } // case 746
+            case 754:
+              {
+                com.google.ads.admanager.v1.CreativeTargeting m =
+                    input.readMessage(
+                        com.google.ads.admanager.v1.CreativeTargeting.parser(), extensionRegistry);
+                if (creativeTargetingsBuilder_ == null) {
+                  ensureCreativeTargetingsIsMutable();
+                  creativeTargetings_.add(m);
+                } else {
+                  creativeTargetingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 754
+            case 762:
+              {
+                input.readMessage(
+                    internalGetTargetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 762
+            case 802:
+              {
+                com.google.ads.admanager.v1.Goal m =
+                    input.readMessage(com.google.ads.admanager.v1.Goal.parser(), extensionRegistry);
+                if (secondaryGoalsBuilder_ == null) {
+                  ensureSecondaryGoalsIsMutable();
+                  secondaryGoals_.add(m);
+                } else {
+                  secondaryGoalsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 802
+            case 896:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAllowedFormatsIsMutable();
+                allowedFormats_.addInt(tmpRaw);
+                break;
+              } // case 896
+            case 898:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAllowedFormatsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  allowedFormats_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 898
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1361,6 +6845,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
 
@@ -1628,8 +7113,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1644,8 +7129,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1668,8 +7153,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1692,8 +7177,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1715,8 +7200,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1734,8 +7219,8 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The name of the line item. This attribute is required and has a
-     * maximum length of 255 characters.
+     * Required. The name of the line item. This attribute has a maximum length of
+     * 255 characters.
      * </pre>
      *
      * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1750,6 +7235,276 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       displayName_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object externalLineItemId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the externalLineItemId field is set.
+     */
+    public boolean hasExternalLineItemId() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The externalLineItemId.
+     */
+    public java.lang.String getExternalLineItemId() {
+      java.lang.Object ref = externalLineItemId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalLineItemId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for externalLineItemId.
+     */
+    public com.google.protobuf.ByteString getExternalLineItemIdBytes() {
+      java.lang.Object ref = externalLineItemId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        externalLineItemId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The externalLineItemId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalLineItemId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      externalLineItemId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalLineItemId() {
+      externalLineItemId_ = getDefaultInstance().getExternalLineItemId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An identifier for the LineItem that is meaningful to the
+     * publisher. This attribute has a maximum length of 255 characters.
+     * </pre>
+     *
+     * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for externalLineItemId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalLineItemIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      externalLineItemId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderDisplayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the orderDisplayName field is set.
+     */
+    public boolean hasOrderDisplayName() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The orderDisplayName.
+     */
+    public java.lang.String getOrderDisplayName() {
+      java.lang.Object ref = orderDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for orderDisplayName.
+     */
+    public com.google.protobuf.ByteString getOrderDisplayNameBytes() {
+      java.lang.Object ref = orderDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The orderDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderDisplayName_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderDisplayName() {
+      orderDisplayName_ = getDefaultInstance().getOrderDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The name of the Order.
+     * </pre>
+     *
+     * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for orderDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderDisplayName_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1776,7 +7531,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1822,7 +7577,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1845,7 +7600,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1864,7 +7619,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -1875,7 +7630,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1894,7 +7649,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -1917,7 +7672,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetStartTimeFieldBuilder().getBuilder();
     }
@@ -1971,6 +7726,263 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       return startTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp targetEndTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        targetEndTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the targetEndTime field is set.
+     */
+    public boolean hasTargetEndTime() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The targetEndTime.
+     */
+    public com.google.protobuf.Timestamp getTargetEndTime() {
+      if (targetEndTimeBuilder_ == null) {
+        return targetEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : targetEndTime_;
+      } else {
+        return targetEndTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTargetEndTime(com.google.protobuf.Timestamp value) {
+      if (targetEndTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetEndTime_ = value;
+      } else {
+        targetEndTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTargetEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (targetEndTimeBuilder_ == null) {
+        targetEndTime_ = builderForValue.build();
+      } else {
+        targetEndTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTargetEndTime(com.google.protobuf.Timestamp value) {
+      if (targetEndTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && targetEndTime_ != null
+            && targetEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTargetEndTimeBuilder().mergeFrom(value);
+        } else {
+          targetEndTime_ = value;
+        }
+      } else {
+        targetEndTimeBuilder_.mergeFrom(value);
+      }
+      if (targetEndTime_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTargetEndTime() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      targetEndTime_ = null;
+      if (targetEndTimeBuilder_ != null) {
+        targetEndTimeBuilder_.dispose();
+        targetEndTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getTargetEndTimeBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return internalGetTargetEndTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getTargetEndTimeOrBuilder() {
+      if (targetEndTimeBuilder_ != null) {
+        return targetEndTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return targetEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : targetEndTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The target end time of the line item. This attribute is required
+     * unless
+     * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+     * is set to true. If specified, it must be after the
+     * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+     * include auto extension days.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetTargetEndTimeFieldBuilder() {
+      if (targetEndTimeBuilder_ == null) {
+        targetEndTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getTargetEndTime(), getParentForChildren(), isClean());
+        targetEndTime_ = null;
+      }
+      return targetEndTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp endTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -1983,7 +7995,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -1993,7 +8005,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2001,7 +8013,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2023,7 +8035,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2039,7 +8051,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2049,7 +8061,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2062,7 +8074,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2072,7 +8084,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2081,7 +8093,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -2092,7 +8104,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2103,7 +8115,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2111,7 +8123,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -2126,7 +8138,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2134,7 +8146,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetEndTimeFieldBuilder().getBuilder();
     }
@@ -2144,7 +8156,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2164,7 +8176,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The timestamp when the LineItem will stop serving. This
-     * attribute is read-only and includes auto extension days.
+     * attribute includes auto extension days.
      * </pre>
      *
      * <code>
@@ -2188,16 +8200,1522 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       return endTimeBuilder_;
     }
 
+    private int autoExtensionDays_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of days to allow a line item to deliver past its
+     * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+     * maximum of 7 days is allowed. This is feature is only available for Ad
+     * Manager 360 accounts.
+     * </pre>
+     *
+     * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoExtensionDays field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoExtensionDays() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of days to allow a line item to deliver past its
+     * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+     * maximum of 7 days is allowed. This is feature is only available for Ad
+     * Manager 360 accounts.
+     * </pre>
+     *
+     * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoExtensionDays.
+     */
+    @java.lang.Override
+    public int getAutoExtensionDays() {
+      return autoExtensionDays_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of days to allow a line item to deliver past its
+     * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+     * maximum of 7 days is allowed. This is feature is only available for Ad
+     * Manager 360 accounts.
+     * </pre>
+     *
+     * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The autoExtensionDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoExtensionDays(int value) {
+
+      autoExtensionDays_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of days to allow a line item to deliver past its
+     * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+     * maximum of 7 days is allowed. This is feature is only available for Ad
+     * Manager 360 accounts.
+     * </pre>
+     *
+     * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoExtensionDays() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      autoExtensionDays_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean endTimeUnlimited_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Specifies whether or not the LineItem has an
+     * end time. This attribute defaults to false. It can be be set to true for
+     * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+     * </pre>
+     *
+     * <code>
+     * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the endTimeUnlimited field is set.
+     */
+    @java.lang.Override
+    public boolean hasEndTimeUnlimited() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Specifies whether or not the LineItem has an
+     * end time. This attribute defaults to false. It can be be set to true for
+     * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+     * </pre>
+     *
+     * <code>
+     * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The endTimeUnlimited.
+     */
+    @java.lang.Override
+    public boolean getEndTimeUnlimited() {
+      return endTimeUnlimited_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Specifies whether or not the LineItem has an
+     * end time. This attribute defaults to false. It can be be set to true for
+     * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+     * </pre>
+     *
+     * <code>
+     * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The endTimeUnlimited to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndTimeUnlimited(boolean value) {
+
+      endTimeUnlimited_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Specifies whether or not the LineItem has an
+     * end time. This attribute defaults to false. It can be be set to true for
+     * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+     * </pre>
+     *
+     * <code>
+     * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEndTimeUnlimited() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      endTimeUnlimited_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int creativeRotationType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the creativeRotationType field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreativeRotationType() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for creativeRotationType.
+     */
+    @java.lang.Override
+    public int getCreativeRotationTypeValue() {
+      return creativeRotationType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for creativeRotationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreativeRotationTypeValue(int value) {
+      creativeRotationType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The creativeRotationType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType
+        getCreativeRotationType() {
+      com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType result =
+          com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType.forNumber(
+              creativeRotationType_);
+      return result == null
+          ? com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The creativeRotationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreativeRotationType(
+        com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      creativeRotationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The strategy used for displaying multiple Creative objects that
+     * are associated with the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCreativeRotationType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      creativeRotationType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int deliveryRateType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the deliveryRateType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeliveryRateType() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deliveryRateType.
+     */
+    @java.lang.Override
+    public int getDeliveryRateTypeValue() {
+      return deliveryRateType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deliveryRateType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeliveryRateTypeValue(int value) {
+      deliveryRateType_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The deliveryRateType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+        getDeliveryRateType() {
+      com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType result =
+          com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+              .forNumber(deliveryRateType_);
+      return result == null
+          ? com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The deliveryRateType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeliveryRateType(
+        com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      deliveryRateType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for delivering ads over the
+     * course of the line item's duration. This attribute defaults to EVENLY or
+     * FRONTLOADED depending on the network's configuration.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeliveryRateType() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      deliveryRateType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int deliveryForecastSource_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the deliveryForecastSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeliveryForecastSource() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deliveryForecastSource.
+     */
+    @java.lang.Override
+    public int getDeliveryForecastSourceValue() {
+      return deliveryForecastSource_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deliveryForecastSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeliveryForecastSourceValue(int value) {
+      deliveryForecastSource_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The deliveryForecastSource.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+            .LineItemDeliveryForecastSource
+        getDeliveryForecastSource() {
+      com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource
+          result =
+              com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+                  .LineItemDeliveryForecastSource.forNumber(deliveryForecastSource_);
+      return result == null
+          ? com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+              .LineItemDeliveryForecastSource.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The deliveryForecastSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeliveryForecastSource(
+        com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum
+                .LineItemDeliveryForecastSource
+            value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00001000;
+      deliveryForecastSource_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Strategy for choosing forecasted traffic
+     * shapes to pace line items. This field defaults to HISTORICAL.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeliveryForecastSource() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      deliveryForecastSource_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.CustomPacingCurve customPacingCurve_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.CustomPacingCurve,
+            com.google.ads.admanager.v1.CustomPacingCurve.Builder,
+            com.google.ads.admanager.v1.CustomPacingCurveOrBuilder>
+        customPacingCurveBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customPacingCurve field is set.
+     */
+    public boolean hasCustomPacingCurve() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customPacingCurve.
+     */
+    public com.google.ads.admanager.v1.CustomPacingCurve getCustomPacingCurve() {
+      if (customPacingCurveBuilder_ == null) {
+        return customPacingCurve_ == null
+            ? com.google.ads.admanager.v1.CustomPacingCurve.getDefaultInstance()
+            : customPacingCurve_;
+      } else {
+        return customPacingCurveBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPacingCurve(com.google.ads.admanager.v1.CustomPacingCurve value) {
+      if (customPacingCurveBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customPacingCurve_ = value;
+      } else {
+        customPacingCurveBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomPacingCurve(
+        com.google.ads.admanager.v1.CustomPacingCurve.Builder builderForValue) {
+      if (customPacingCurveBuilder_ == null) {
+        customPacingCurve_ = builderForValue.build();
+      } else {
+        customPacingCurveBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomPacingCurve(com.google.ads.admanager.v1.CustomPacingCurve value) {
+      if (customPacingCurveBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)
+            && customPacingCurve_ != null
+            && customPacingCurve_
+                != com.google.ads.admanager.v1.CustomPacingCurve.getDefaultInstance()) {
+          getCustomPacingCurveBuilder().mergeFrom(value);
+        } else {
+          customPacingCurve_ = value;
+        }
+      } else {
+        customPacingCurveBuilder_.mergeFrom(value);
+      }
+      if (customPacingCurve_ != null) {
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomPacingCurve() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      customPacingCurve_ = null;
+      if (customPacingCurveBuilder_ != null) {
+        customPacingCurveBuilder_.dispose();
+        customPacingCurveBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomPacingCurve.Builder getCustomPacingCurveBuilder() {
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return internalGetCustomPacingCurveFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CustomPacingCurveOrBuilder getCustomPacingCurveOrBuilder() {
+      if (customPacingCurveBuilder_ != null) {
+        return customPacingCurveBuilder_.getMessageOrBuilder();
+      } else {
+        return customPacingCurve_ == null
+            ? com.google.ads.admanager.v1.CustomPacingCurve.getDefaultInstance()
+            : customPacingCurve_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The curve that is used to pace the line item's delivery. This
+     * field is required if and only if the delivery forecast source is
+     * CUSTOM_PACING_CURVE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.CustomPacingCurve,
+            com.google.ads.admanager.v1.CustomPacingCurve.Builder,
+            com.google.ads.admanager.v1.CustomPacingCurveOrBuilder>
+        internalGetCustomPacingCurveFieldBuilder() {
+      if (customPacingCurveBuilder_ == null) {
+        customPacingCurveBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.CustomPacingCurve,
+                com.google.ads.admanager.v1.CustomPacingCurve.Builder,
+                com.google.ads.admanager.v1.CustomPacingCurveOrBuilder>(
+                getCustomPacingCurve(), getParentForChildren(), isClean());
+        customPacingCurve_ = null;
+      }
+      return customPacingCurveBuilder_;
+    }
+
+    private int roadblockingType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the roadblockingType field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoadblockingType() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for roadblockingType.
+     */
+    @java.lang.Override
+    public int getRoadblockingTypeValue() {
+      return roadblockingType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for roadblockingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoadblockingTypeValue(int value) {
+      roadblockingType_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The roadblockingType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType getRoadblockingType() {
+      com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType result =
+          com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType.forNumber(
+              roadblockingType_);
+      return result == null
+          ? com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The roadblockingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoadblockingType(
+        com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00004000;
+      roadblockingType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The strategy for serving roadblocked
+     * creatives, that is, instances where multiple creatives must be served
+     * together on a single web page. This attribute defaults to ONE_OR_MORE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRoadblockingType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      roadblockingType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int skippableAdType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the skippableAdType field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkippableAdType() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for skippableAdType.
+     */
+    @java.lang.Override
+    public int getSkippableAdTypeValue() {
+      return skippableAdType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for skippableAdType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkippableAdTypeValue(int value) {
+      skippableAdType_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The skippableAdType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType getSkippableAdType() {
+      com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType result =
+          com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType.forNumber(
+              skippableAdType_);
+      return result == null
+          ? com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The skippableAdType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkippableAdType(
+        com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00008000;
+      skippableAdType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The nature of the line item's creatives'
+     * skippability. This attribute is only applicable for video line items, and
+     * defaults to NOT_SKIPPABLE.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkippableAdType() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      skippableAdType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.FrequencyCap> frequencyCaps_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFrequencyCapsIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        frequencyCaps_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.FrequencyCap>(frequencyCaps_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.FrequencyCap,
+            com.google.ads.admanager.v1.FrequencyCap.Builder,
+            com.google.ads.admanager.v1.FrequencyCapOrBuilder>
+        frequencyCapsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.FrequencyCap> getFrequencyCapsList() {
+      if (frequencyCapsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(frequencyCaps_);
+      } else {
+        return frequencyCapsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getFrequencyCapsCount() {
+      if (frequencyCapsBuilder_ == null) {
+        return frequencyCaps_.size();
+      } else {
+        return frequencyCapsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.FrequencyCap getFrequencyCaps(int index) {
+      if (frequencyCapsBuilder_ == null) {
+        return frequencyCaps_.get(index);
+      } else {
+        return frequencyCapsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFrequencyCaps(int index, com.google.ads.admanager.v1.FrequencyCap value) {
+      if (frequencyCapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.set(index, value);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFrequencyCaps(
+        int index, com.google.ads.admanager.v1.FrequencyCap.Builder builderForValue) {
+      if (frequencyCapsBuilder_ == null) {
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFrequencyCaps(com.google.ads.admanager.v1.FrequencyCap value) {
+      if (frequencyCapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.add(value);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFrequencyCaps(int index, com.google.ads.admanager.v1.FrequencyCap value) {
+      if (frequencyCapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.add(index, value);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFrequencyCaps(
+        com.google.ads.admanager.v1.FrequencyCap.Builder builderForValue) {
+      if (frequencyCapsBuilder_ == null) {
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.add(builderForValue.build());
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFrequencyCaps(
+        int index, com.google.ads.admanager.v1.FrequencyCap.Builder builderForValue) {
+      if (frequencyCapsBuilder_ == null) {
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllFrequencyCaps(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.FrequencyCap> values) {
+      if (frequencyCapsBuilder_ == null) {
+        ensureFrequencyCapsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, frequencyCaps_);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFrequencyCaps() {
+      if (frequencyCapsBuilder_ == null) {
+        frequencyCaps_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeFrequencyCaps(int index) {
+      if (frequencyCapsBuilder_ == null) {
+        ensureFrequencyCapsIsMutable();
+        frequencyCaps_.remove(index);
+        onChanged();
+      } else {
+        frequencyCapsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.FrequencyCap.Builder getFrequencyCapsBuilder(int index) {
+      return internalGetFrequencyCapsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapsOrBuilder(int index) {
+      if (frequencyCapsBuilder_ == null) {
+        return frequencyCaps_.get(index);
+      } else {
+        return frequencyCapsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.FrequencyCapOrBuilder>
+        getFrequencyCapsOrBuilderList() {
+      if (frequencyCapsBuilder_ != null) {
+        return frequencyCapsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(frequencyCaps_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.FrequencyCap.Builder addFrequencyCapsBuilder() {
+      return internalGetFrequencyCapsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.FrequencyCap.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.FrequencyCap.Builder addFrequencyCapsBuilder(int index) {
+      return internalGetFrequencyCapsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.FrequencyCap.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of frequency capping units for this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.FrequencyCap.Builder>
+        getFrequencyCapsBuilderList() {
+      return internalGetFrequencyCapsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.FrequencyCap,
+            com.google.ads.admanager.v1.FrequencyCap.Builder,
+            com.google.ads.admanager.v1.FrequencyCapOrBuilder>
+        internalGetFrequencyCapsFieldBuilder() {
+      if (frequencyCapsBuilder_ == null) {
+        frequencyCapsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.FrequencyCap,
+                com.google.ads.admanager.v1.FrequencyCap.Builder,
+                com.google.ads.admanager.v1.FrequencyCapOrBuilder>(
+                frequencyCaps_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        frequencyCaps_ = null;
+      }
+      return frequencyCapsBuilder_;
+    }
+
     private int lineItemType_ = 0;
 
     /**
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2208,17 +9726,16 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasLineItemType() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2236,10 +9753,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2251,7 +9767,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder setLineItemTypeValue(int value) {
       lineItemType_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -2260,10 +9776,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2285,10 +9800,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2303,7 +9817,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00020000;
       lineItemType_ = value.getNumber();
       onChanged();
       return this;
@@ -2313,10 +9827,9 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Indicates the line item type of a LineItem. This attribute is
-     * required. The line item type determines the default priority of the line
-     * item. More information can be found at
-     * https://support.google.com/admanager/answer/177279.
+     * Required. Indicates the line item type of a LineItem. The line item type
+     * determines the default priority of the line item. More information can be
+     * found at https://support.google.com/admanager/answer/177279.
      * </pre>
      *
      * <code>
@@ -2326,8 +9839,160 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLineItemType() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00020000);
       lineItemType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int priority_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The priority for the line item. Valid values
+     * range from 1 to 16. This field defaults to the default priority of the
+     * LineItemType. The following list shows the default, minimum, and maximum
+     * priority values are for each line item type:
+     * - LineItemType: default priority (minimum priority, maximum priority)
+     * - SPONSORSHIP: 4 (2, 5)
+     * - STANDARD: 8 (6, 10)
+     * - NETWORK: 12 (11, 14)
+     * - BULK: 12 (11, 14)
+     * - PRICE_PRIORITY: 12 (11, 14)
+     * - HOUSE: 16 (15, 16)
+     * - CLICK_TRACKING: 16 (1, 16)
+     * - AD_EXCHANGE: 12 (1, 16)
+     * - ADSENSE: 12 (1, 16)
+     * - BUMPER: 16 (15, 16)
+     * - ADMOB: 21 (1, 16)
+     * - PREFERRED_DEAL: 12 (12, 12)
+     * This field can only be edited by certain networks, otherwise a
+     * PermissionError will occur.
+     * </pre>
+     *
+     * <code>
+     * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    public boolean hasPriority() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The priority for the line item. Valid values
+     * range from 1 to 16. This field defaults to the default priority of the
+     * LineItemType. The following list shows the default, minimum, and maximum
+     * priority values are for each line item type:
+     * - LineItemType: default priority (minimum priority, maximum priority)
+     * - SPONSORSHIP: 4 (2, 5)
+     * - STANDARD: 8 (6, 10)
+     * - NETWORK: 12 (11, 14)
+     * - BULK: 12 (11, 14)
+     * - PRICE_PRIORITY: 12 (11, 14)
+     * - HOUSE: 16 (15, 16)
+     * - CLICK_TRACKING: 16 (1, 16)
+     * - AD_EXCHANGE: 12 (1, 16)
+     * - ADSENSE: 12 (1, 16)
+     * - BUMPER: 16 (15, 16)
+     * - ADMOB: 21 (1, 16)
+     * - PREFERRED_DEAL: 12 (12, 12)
+     * This field can only be edited by certain networks, otherwise a
+     * PermissionError will occur.
+     * </pre>
+     *
+     * <code>
+     * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public int getPriority() {
+      return priority_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The priority for the line item. Valid values
+     * range from 1 to 16. This field defaults to the default priority of the
+     * LineItemType. The following list shows the default, minimum, and maximum
+     * priority values are for each line item type:
+     * - LineItemType: default priority (minimum priority, maximum priority)
+     * - SPONSORSHIP: 4 (2, 5)
+     * - STANDARD: 8 (6, 10)
+     * - NETWORK: 12 (11, 14)
+     * - BULK: 12 (11, 14)
+     * - PRICE_PRIORITY: 12 (11, 14)
+     * - HOUSE: 16 (15, 16)
+     * - CLICK_TRACKING: 16 (1, 16)
+     * - AD_EXCHANGE: 12 (1, 16)
+     * - ADSENSE: 12 (1, 16)
+     * - BUMPER: 16 (15, 16)
+     * - ADMOB: 21 (1, 16)
+     * - PREFERRED_DEAL: 12 (12, 12)
+     * This field can only be edited by certain networks, otherwise a
+     * PermissionError will occur.
+     * </pre>
+     *
+     * <code>
+     * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPriority(int value) {
+
+      priority_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The priority for the line item. Valid values
+     * range from 1 to 16. This field defaults to the default priority of the
+     * LineItemType. The following list shows the default, minimum, and maximum
+     * priority values are for each line item type:
+     * - LineItemType: default priority (minimum priority, maximum priority)
+     * - SPONSORSHIP: 4 (2, 5)
+     * - STANDARD: 8 (6, 10)
+     * - NETWORK: 12 (11, 14)
+     * - BULK: 12 (11, 14)
+     * - PRICE_PRIORITY: 12 (11, 14)
+     * - HOUSE: 16 (15, 16)
+     * - CLICK_TRACKING: 16 (1, 16)
+     * - AD_EXCHANGE: 12 (1, 16)
+     * - ADSENSE: 12 (1, 16)
+     * - BUMPER: 16 (15, 16)
+     * - ADMOB: 21 (1, 16)
+     * - PREFERRED_DEAL: 12 (12, 12)
+     * This field can only be edited by certain networks, otherwise a
+     * PermissionError will occur.
+     * </pre>
+     *
+     * <code>
+     * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPriority() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      priority_ = 0;
       onChanged();
       return this;
     }
@@ -2349,7 +10014,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the rate field is set.
      */
     public boolean hasRate() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -2389,7 +10054,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         rateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -2409,7 +10074,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         rateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -2425,7 +10090,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRate(com.google.type.Money value) {
       if (rateBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && rate_ != null
             && rate_ != com.google.type.Money.getDefaultInstance()) {
           getRateBuilder().mergeFrom(value);
@@ -2436,7 +10101,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         rateBuilder_.mergeFrom(value);
       }
       if (rate_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -2452,7 +10117,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.type.Money rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearRate() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00080000);
       rate_ = null;
       if (rateBuilder_ != null) {
         rateBuilder_.dispose();
@@ -2472,7 +10137,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.type.Money rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.type.Money.Builder getRateBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetRateFieldBuilder().getBuilder();
     }
@@ -2517,6 +10182,2296 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       return rateBuilder_;
     }
 
+    private com.google.type.Money valueCpm_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        valueCpmBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the valueCpm field is set.
+     */
+    public boolean hasValueCpm() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The valueCpm.
+     */
+    public com.google.type.Money getValueCpm() {
+      if (valueCpmBuilder_ == null) {
+        return valueCpm_ == null ? com.google.type.Money.getDefaultInstance() : valueCpm_;
+      } else {
+        return valueCpmBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder setValueCpm(com.google.type.Money value) {
+      if (valueCpmBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        valueCpm_ = value;
+      } else {
+        valueCpmBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder setValueCpm(com.google.type.Money.Builder builderForValue) {
+      if (valueCpmBuilder_ == null) {
+        valueCpm_ = builderForValue.build();
+      } else {
+        valueCpmBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder mergeValueCpm(com.google.type.Money value) {
+      if (valueCpmBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && valueCpm_ != null
+            && valueCpm_ != com.google.type.Money.getDefaultInstance()) {
+          getValueCpmBuilder().mergeFrom(value);
+        } else {
+          valueCpm_ = value;
+        }
+      } else {
+        valueCpmBuilder_.mergeFrom(value);
+      }
+      if (valueCpm_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public Builder clearValueCpm() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      valueCpm_ = null;
+      if (valueCpmBuilder_ != null) {
+        valueCpmBuilder_.dispose();
+        valueCpmBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public com.google.type.Money.Builder getValueCpmBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetValueCpmFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    public com.google.type.MoneyOrBuilder getValueCpmOrBuilder() {
+      if (valueCpmBuilder_ != null) {
+        return valueCpmBuilder_.getMessageOrBuilder();
+      } else {
+        return valueCpm_ == null ? com.google.type.Money.getDefaultInstance() : valueCpm_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. An amount to help the adserver rank inventory.
+     * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+     * the value of inventory over the
+     * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+     * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+     * Money object in the local currency with units and nanos set to 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
+        internalGetValueCpmFieldBuilder() {
+      if (valueCpmBuilder_ == null) {
+        valueCpmBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.type.Money,
+                com.google.type.Money.Builder,
+                com.google.type.MoneyOrBuilder>(getValueCpm(), getParentForChildren(), isClean());
+        valueCpm_ = null;
+      }
+      return valueCpmBuilder_;
+    }
+
+    private int costType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the costType field is set.
+     */
+    @java.lang.Override
+    public boolean hasCostType() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for costType.
+     */
+    @java.lang.Override
+    public int getCostTypeValue() {
+      return costType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for costType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCostTypeValue(int value) {
+      costType_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The costType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType getCostType() {
+      com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType result =
+          com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType.forNumber(costType_);
+      return result == null
+          ? com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @param value The costType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCostType(
+        com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      costType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The method used for billing this LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCostType() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      costType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.LineItemDiscount discount_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemDiscount,
+            com.google.ads.admanager.v1.LineItemDiscount.Builder,
+            com.google.ads.admanager.v1.LineItemDiscountOrBuilder>
+        discountBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the discount field is set.
+     */
+    public boolean hasDiscount() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The discount.
+     */
+    public com.google.ads.admanager.v1.LineItemDiscount getDiscount() {
+      if (discountBuilder_ == null) {
+        return discount_ == null
+            ? com.google.ads.admanager.v1.LineItemDiscount.getDefaultInstance()
+            : discount_;
+      } else {
+        return discountBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiscount(com.google.ads.admanager.v1.LineItemDiscount value) {
+      if (discountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        discount_ = value;
+      } else {
+        discountBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDiscount(
+        com.google.ads.admanager.v1.LineItemDiscount.Builder builderForValue) {
+      if (discountBuilder_ == null) {
+        discount_ = builderForValue.build();
+      } else {
+        discountBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDiscount(com.google.ads.admanager.v1.LineItemDiscount value) {
+      if (discountBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && discount_ != null
+            && discount_ != com.google.ads.admanager.v1.LineItemDiscount.getDefaultInstance()) {
+          getDiscountBuilder().mergeFrom(value);
+        } else {
+          discount_ = value;
+        }
+      } else {
+        discountBuilder_.mergeFrom(value);
+      }
+      if (discount_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDiscount() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      discount_ = null;
+      if (discountBuilder_ != null) {
+        discountBuilder_.dispose();
+        discountBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemDiscount.Builder getDiscountBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return internalGetDiscountFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemDiscountOrBuilder getDiscountOrBuilder() {
+      if (discountBuilder_ != null) {
+        return discountBuilder_.getMessageOrBuilder();
+      } else {
+        return discount_ == null
+            ? com.google.ads.admanager.v1.LineItemDiscount.getDefaultInstance()
+            : discount_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Discount information for the line item.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemDiscount,
+            com.google.ads.admanager.v1.LineItemDiscount.Builder,
+            com.google.ads.admanager.v1.LineItemDiscountOrBuilder>
+        internalGetDiscountFieldBuilder() {
+      if (discountBuilder_ == null) {
+        discountBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.LineItemDiscount,
+                com.google.ads.admanager.v1.LineItemDiscount.Builder,
+                com.google.ads.admanager.v1.LineItemDiscountOrBuilder>(
+                getDiscount(), getParentForChildren(), isClean());
+        discount_ = null;
+      }
+      return discountBuilder_;
+    }
+
+    private long contractedUnitsBought_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This attribute is only applicable for certain line item types and
+     * acts as an "FYI" or note, which does not impact adserving or other backend
+     * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+     * which is a lifetime impression volume goal for reporting purposes only. For
+     * STANDARD line items, this represent the contracted quantity, which is the
+     * number of units specified in the contract the advertiser has bought for
+     * this LineItem. This field is just a "FYI" for traffickers to manually
+     * intervene with the LineItem when needed. This attribute is only available
+     * for STANDARD line items if you have this feature enabled on your network.
+     * </pre>
+     *
+     * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the contractedUnitsBought field is set.
+     */
+    @java.lang.Override
+    public boolean hasContractedUnitsBought() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This attribute is only applicable for certain line item types and
+     * acts as an "FYI" or note, which does not impact adserving or other backend
+     * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+     * which is a lifetime impression volume goal for reporting purposes only. For
+     * STANDARD line items, this represent the contracted quantity, which is the
+     * number of units specified in the contract the advertiser has bought for
+     * this LineItem. This field is just a "FYI" for traffickers to manually
+     * intervene with the LineItem when needed. This attribute is only available
+     * for STANDARD line items if you have this feature enabled on your network.
+     * </pre>
+     *
+     * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contractedUnitsBought.
+     */
+    @java.lang.Override
+    public long getContractedUnitsBought() {
+      return contractedUnitsBought_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This attribute is only applicable for certain line item types and
+     * acts as an "FYI" or note, which does not impact adserving or other backend
+     * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+     * which is a lifetime impression volume goal for reporting purposes only. For
+     * STANDARD line items, this represent the contracted quantity, which is the
+     * number of units specified in the contract the advertiser has bought for
+     * this LineItem. This field is just a "FYI" for traffickers to manually
+     * intervene with the LineItem when needed. This attribute is only available
+     * for STANDARD line items if you have this feature enabled on your network.
+     * </pre>
+     *
+     * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The contractedUnitsBought to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContractedUnitsBought(long value) {
+
+      contractedUnitsBought_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This attribute is only applicable for certain line item types and
+     * acts as an "FYI" or note, which does not impact adserving or other backend
+     * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+     * which is a lifetime impression volume goal for reporting purposes only. For
+     * STANDARD line items, this represent the contracted quantity, which is the
+     * number of units specified in the contract the advertiser has bought for
+     * this LineItem. This field is just a "FYI" for traffickers to manually
+     * intervene with the LineItem when needed. This attribute is only available
+     * for STANDARD line items if you have this feature enabled on your network.
+     * </pre>
+     *
+     * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContractedUnitsBought() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      contractedUnitsBought_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.CreativePlaceholder> creativePlaceholders_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCreativePlaceholdersIsMutable() {
+      if (!((bitField0_ & 0x01000000) != 0)) {
+        creativePlaceholders_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.CreativePlaceholder>(
+                creativePlaceholders_);
+        bitField0_ |= 0x01000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CreativePlaceholder,
+            com.google.ads.admanager.v1.CreativePlaceholder.Builder,
+            com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>
+        creativePlaceholdersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CreativePlaceholder>
+        getCreativePlaceholdersList() {
+      if (creativePlaceholdersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(creativePlaceholders_);
+      } else {
+        return creativePlaceholdersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public int getCreativePlaceholdersCount() {
+      if (creativePlaceholdersBuilder_ == null) {
+        return creativePlaceholders_.size();
+      } else {
+        return creativePlaceholdersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativePlaceholder getCreativePlaceholders(int index) {
+      if (creativePlaceholdersBuilder_ == null) {
+        return creativePlaceholders_.get(index);
+      } else {
+        return creativePlaceholdersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setCreativePlaceholders(
+        int index, com.google.ads.admanager.v1.CreativePlaceholder value) {
+      if (creativePlaceholdersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.set(index, value);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setCreativePlaceholders(
+        int index, com.google.ads.admanager.v1.CreativePlaceholder.Builder builderForValue) {
+      if (creativePlaceholdersBuilder_ == null) {
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addCreativePlaceholders(com.google.ads.admanager.v1.CreativePlaceholder value) {
+      if (creativePlaceholdersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.add(value);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addCreativePlaceholders(
+        int index, com.google.ads.admanager.v1.CreativePlaceholder value) {
+      if (creativePlaceholdersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.add(index, value);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addCreativePlaceholders(
+        com.google.ads.admanager.v1.CreativePlaceholder.Builder builderForValue) {
+      if (creativePlaceholdersBuilder_ == null) {
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.add(builderForValue.build());
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addCreativePlaceholders(
+        int index, com.google.ads.admanager.v1.CreativePlaceholder.Builder builderForValue) {
+      if (creativePlaceholdersBuilder_ == null) {
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder addAllCreativePlaceholders(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.CreativePlaceholder> values) {
+      if (creativePlaceholdersBuilder_ == null) {
+        ensureCreativePlaceholdersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, creativePlaceholders_);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearCreativePlaceholders() {
+      if (creativePlaceholdersBuilder_ == null) {
+        creativePlaceholders_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x01000000);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder removeCreativePlaceholders(int index) {
+      if (creativePlaceholdersBuilder_ == null) {
+        ensureCreativePlaceholdersIsMutable();
+        creativePlaceholders_.remove(index);
+        onChanged();
+      } else {
+        creativePlaceholdersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativePlaceholder.Builder getCreativePlaceholdersBuilder(
+        int index) {
+      return internalGetCreativePlaceholdersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativePlaceholderOrBuilder
+        getCreativePlaceholdersOrBuilder(int index) {
+      if (creativePlaceholdersBuilder_ == null) {
+        return creativePlaceholders_.get(index);
+      } else {
+        return creativePlaceholdersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>
+        getCreativePlaceholdersOrBuilderList() {
+      if (creativePlaceholdersBuilder_ != null) {
+        return creativePlaceholdersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(creativePlaceholders_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativePlaceholder.Builder
+        addCreativePlaceholdersBuilder() {
+      return internalGetCreativePlaceholdersFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.CreativePlaceholder.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativePlaceholder.Builder addCreativePlaceholdersBuilder(
+        int index) {
+      return internalGetCreativePlaceholdersFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.CreativePlaceholder.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Details about the creatives that are expected to serve through
+     * this LineItem.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CreativePlaceholder.Builder>
+        getCreativePlaceholdersBuilderList() {
+      return internalGetCreativePlaceholdersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CreativePlaceholder,
+            com.google.ads.admanager.v1.CreativePlaceholder.Builder,
+            com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>
+        internalGetCreativePlaceholdersFieldBuilder() {
+      if (creativePlaceholdersBuilder_ == null) {
+        creativePlaceholdersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.CreativePlaceholder,
+                com.google.ads.admanager.v1.CreativePlaceholder.Builder,
+                com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>(
+                creativePlaceholders_,
+                ((bitField0_ & 0x01000000) != 0),
+                getParentForChildren(),
+                isClean());
+        creativePlaceholders_ = null;
+      }
+      return creativePlaceholdersBuilder_;
+    }
+
+    private int environmentType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the environmentType field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnvironmentType() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for environmentType.
+     */
+    @java.lang.Override
+    public int getEnvironmentTypeValue() {
+      return environmentType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for environmentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentTypeValue(int value) {
+      environmentType_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The environmentType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType getEnvironmentType() {
+      com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType result =
+          com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.forNumber(
+              environmentType_);
+      return result == null
+          ? com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The environmentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvironmentType(
+        com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x02000000;
+      environmentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The environment that the LineItem is
+     * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+     * then this line item can only target AdUnits that have AdUnitSizes whose
+     * environmentType is also VIDEO_PLAYER.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvironmentType() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      environmentType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int companionDeliveryOption_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the companionDeliveryOption field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompanionDeliveryOption() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for companionDeliveryOption.
+     */
+    @java.lang.Override
+    public int getCompanionDeliveryOptionValue() {
+      return companionDeliveryOption_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for companionDeliveryOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompanionDeliveryOptionValue(int value) {
+      companionDeliveryOption_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The companionDeliveryOption.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption
+        getCompanionDeliveryOption() {
+      com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption result =
+          com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption.forNumber(
+              companionDeliveryOption_);
+      return result == null
+          ? com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The companionDeliveryOption to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompanionDeliveryOption(
+        com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x04000000;
+      companionDeliveryOption_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The delivery option for companions. Setting this field is only
+     * meaningful if the following conditions are met:
+     * - The "Guaranteed roadblocks" feature is enabled on your network.
+     * - One of the following is true (both cannot be true, these are mutually
+     * exclusive).
+     * - The environmentType is VIDEO_PLAYER.
+     * - The roadblockingType is CREATIVE_SET.
+     * This field defaults to OPTIONAL if the conditions are met.
+     * In all other cases it defaults to UNKNOWN and is not meaningful.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCompanionDeliveryOption() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      companionDeliveryOption_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowOverbook_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether overbooking should be allowed when
+     * creating or updating reservations of line item types SPONSORSHIP and
+     * STANDARD. When true, operations on this line item will never
+     * trigger a ForecastError, which corresponds to an overbook warning in the
+     * UI. The default value is false.  Note: this field won't persist on the
+     * line item itself, and the value will only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return Whether the allowOverbook field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowOverbook() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether overbooking should be allowed when
+     * creating or updating reservations of line item types SPONSORSHIP and
+     * STANDARD. When true, operations on this line item will never
+     * trigger a ForecastError, which corresponds to an overbook warning in the
+     * UI. The default value is false.  Note: this field won't persist on the
+     * line item itself, and the value will only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The allowOverbook.
+     */
+    @java.lang.Override
+    public boolean getAllowOverbook() {
+      return allowOverbook_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether overbooking should be allowed when
+     * creating or updating reservations of line item types SPONSORSHIP and
+     * STANDARD. When true, operations on this line item will never
+     * trigger a ForecastError, which corresponds to an overbook warning in the
+     * UI. The default value is false.  Note: this field won't persist on the
+     * line item itself, and the value will only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The allowOverbook to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowOverbook(boolean value) {
+
+      allowOverbook_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether overbooking should be allowed when
+     * creating or updating reservations of line item types SPONSORSHIP and
+     * STANDARD. When true, operations on this line item will never
+     * trigger a ForecastError, which corresponds to an overbook warning in the
+     * UI. The default value is false.  Note: this field won't persist on the
+     * line item itself, and the value will only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowOverbook() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      allowOverbook_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipInventoryCheck_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether the inventory check should be
+     * skipped when creating or updating a line item. The default value is false.
+     * Note: this field won't persist on the line item itself, and the value will
+     * only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the skipInventoryCheck field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkipInventoryCheck() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether the inventory check should be
+     * skipped when creating or updating a line item. The default value is false.
+     * Note: this field won't persist on the line item itself, and the value will
+     * only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The skipInventoryCheck.
+     */
+    @java.lang.Override
+    public boolean getSkipInventoryCheck() {
+      return skipInventoryCheck_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether the inventory check should be
+     * skipped when creating or updating a line item. The default value is false.
+     * Note: this field won't persist on the line item itself, and the value will
+     * only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The skipInventoryCheck to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipInventoryCheck(boolean value) {
+
+      skipInventoryCheck_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether the inventory check should be
+     * skipped when creating or updating a line item. The default value is false.
+     * Note: this field won't persist on the line item itself, and the value will
+     * only affect the current request.
+     * </pre>
+     *
+     * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipInventoryCheck() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      skipInventoryCheck_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipCrossSellingRuleWarningChecks_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. True to skip checks for warnings from rules applied to line
+     * items targeting inventory shared by a distributor partner for cross selling
+     * when performing an action on this line item. The default is false. Note:
+     * this field won't persist on the line item itself, and the value will only
+     * affect the current request.
+     * </pre>
+     *
+     * <code>
+     * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the skipCrossSellingRuleWarningChecks field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkipCrossSellingRuleWarningChecks() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. True to skip checks for warnings from rules applied to line
+     * items targeting inventory shared by a distributor partner for cross selling
+     * when performing an action on this line item. The default is false. Note:
+     * this field won't persist on the line item itself, and the value will only
+     * affect the current request.
+     * </pre>
+     *
+     * <code>
+     * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The skipCrossSellingRuleWarningChecks.
+     */
+    @java.lang.Override
+    public boolean getSkipCrossSellingRuleWarningChecks() {
+      return skipCrossSellingRuleWarningChecks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. True to skip checks for warnings from rules applied to line
+     * items targeting inventory shared by a distributor partner for cross selling
+     * when performing an action on this line item. The default is false. Note:
+     * this field won't persist on the line item itself, and the value will only
+     * affect the current request.
+     * </pre>
+     *
+     * <code>
+     * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The skipCrossSellingRuleWarningChecks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipCrossSellingRuleWarningChecks(boolean value) {
+
+      skipCrossSellingRuleWarningChecks_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. True to skip checks for warnings from rules applied to line
+     * items targeting inventory shared by a distributor partner for cross selling
+     * when performing an action on this line item. The default is false. Note:
+     * this field won't persist on the line item itself, and the value will only
+     * affect the current request.
+     * </pre>
+     *
+     * <code>
+     * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipCrossSellingRuleWarningChecks() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      skipCrossSellingRuleWarningChecks_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean reserveOnCreation_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether inventory should be reserved when
+     * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+     * Order. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the reserveOnCreation field is set.
+     */
+    @java.lang.Override
+    public boolean hasReserveOnCreation() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether inventory should be reserved when
+     * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+     * Order. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The reserveOnCreation.
+     */
+    @java.lang.Override
+    public boolean getReserveOnCreation() {
+      return reserveOnCreation_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether inventory should be reserved when
+     * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+     * Order. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The reserveOnCreation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReserveOnCreation(boolean value) {
+
+      reserveOnCreation_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The flag indicates whether inventory should be reserved when
+     * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+     * Order. The default value is false.
+     * </pre>
+     *
+     * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReserveOnCreation() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      reserveOnCreation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.LineItemStats stats_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemStats,
+            com.google.ads.admanager.v1.LineItemStats.Builder,
+            com.google.ads.admanager.v1.LineItemStatsOrBuilder>
+        statsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the stats field is set.
+     */
+    public boolean hasStats() {
+      return ((bitField0_ & 0x80000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The stats.
+     */
+    public com.google.ads.admanager.v1.LineItemStats getStats() {
+      if (statsBuilder_ == null) {
+        return stats_ == null
+            ? com.google.ads.admanager.v1.LineItemStats.getDefaultInstance()
+            : stats_;
+      } else {
+        return statsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStats(com.google.ads.admanager.v1.LineItemStats value) {
+      if (statsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stats_ = value;
+      } else {
+        statsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStats(com.google.ads.admanager.v1.LineItemStats.Builder builderForValue) {
+      if (statsBuilder_ == null) {
+        stats_ = builderForValue.build();
+      } else {
+        statsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeStats(com.google.ads.admanager.v1.LineItemStats value) {
+      if (statsBuilder_ == null) {
+        if (((bitField0_ & 0x80000000) != 0)
+            && stats_ != null
+            && stats_ != com.google.ads.admanager.v1.LineItemStats.getDefaultInstance()) {
+          getStatsBuilder().mergeFrom(value);
+        } else {
+          stats_ = value;
+        }
+      } else {
+        statsBuilder_.mergeFrom(value);
+      }
+      if (stats_ != null) {
+        bitField0_ |= 0x80000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearStats() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      stats_ = null;
+      if (statsBuilder_ != null) {
+        statsBuilder_.dispose();
+        statsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemStats.Builder getStatsBuilder() {
+      bitField0_ |= 0x80000000;
+      onChanged();
+      return internalGetStatsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemStatsOrBuilder getStatsOrBuilder() {
+      if (statsBuilder_ != null) {
+        return statsBuilder_.getMessageOrBuilder();
+      } else {
+        return stats_ == null
+            ? com.google.ads.admanager.v1.LineItemStats.getDefaultInstance()
+            : stats_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains trafficking statistics for the line item. This will
+     * be empty in case there are no statistics for a line item yet.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemStats,
+            com.google.ads.admanager.v1.LineItemStats.Builder,
+            com.google.ads.admanager.v1.LineItemStatsOrBuilder>
+        internalGetStatsFieldBuilder() {
+      if (statsBuilder_ == null) {
+        statsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.LineItemStats,
+                com.google.ads.admanager.v1.LineItemStats.Builder,
+                com.google.ads.admanager.v1.LineItemStatsOrBuilder>(
+                getStats(), getParentForChildren(), isClean());
+        stats_ = null;
+      }
+      return statsBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.DeliveryIndicator deliveryIndicator_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DeliveryIndicator,
+            com.google.ads.admanager.v1.DeliveryIndicator.Builder,
+            com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder>
+        deliveryIndicatorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the deliveryIndicator field is set.
+     */
+    public boolean hasDeliveryIndicator() {
+      return ((bitField1_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deliveryIndicator.
+     */
+    public com.google.ads.admanager.v1.DeliveryIndicator getDeliveryIndicator() {
+      if (deliveryIndicatorBuilder_ == null) {
+        return deliveryIndicator_ == null
+            ? com.google.ads.admanager.v1.DeliveryIndicator.getDefaultInstance()
+            : deliveryIndicator_;
+      } else {
+        return deliveryIndicatorBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeliveryIndicator(com.google.ads.admanager.v1.DeliveryIndicator value) {
+      if (deliveryIndicatorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deliveryIndicator_ = value;
+      } else {
+        deliveryIndicatorBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDeliveryIndicator(
+        com.google.ads.admanager.v1.DeliveryIndicator.Builder builderForValue) {
+      if (deliveryIndicatorBuilder_ == null) {
+        deliveryIndicator_ = builderForValue.build();
+      } else {
+        deliveryIndicatorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDeliveryIndicator(com.google.ads.admanager.v1.DeliveryIndicator value) {
+      if (deliveryIndicatorBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)
+            && deliveryIndicator_ != null
+            && deliveryIndicator_
+                != com.google.ads.admanager.v1.DeliveryIndicator.getDefaultInstance()) {
+          getDeliveryIndicatorBuilder().mergeFrom(value);
+        } else {
+          deliveryIndicator_ = value;
+        }
+      } else {
+        deliveryIndicatorBuilder_.mergeFrom(value);
+      }
+      if (deliveryIndicator_ != null) {
+        bitField1_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDeliveryIndicator() {
+      bitField1_ = (bitField1_ & ~0x00000001);
+      deliveryIndicator_ = null;
+      if (deliveryIndicatorBuilder_ != null) {
+        deliveryIndicatorBuilder_.dispose();
+        deliveryIndicatorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeliveryIndicator.Builder getDeliveryIndicatorBuilder() {
+      bitField1_ |= 0x00000001;
+      onChanged();
+      return internalGetDeliveryIndicatorFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder getDeliveryIndicatorOrBuilder() {
+      if (deliveryIndicatorBuilder_ != null) {
+        return deliveryIndicatorBuilder_.getMessageOrBuilder();
+      } else {
+        return deliveryIndicator_ == null
+            ? com.google.ads.admanager.v1.DeliveryIndicator.getDefaultInstance()
+            : deliveryIndicator_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates how well the line item has been performing. This
+     * will be empty if the delivery indicator information is not available due to
+     * one of the following reasons:
+     * - The line item is not delivering.
+     * - The line item has an unlimited goal or cap.
+     * - The line item has a percentage based goal or cap.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.DeliveryIndicator,
+            com.google.ads.admanager.v1.DeliveryIndicator.Builder,
+            com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder>
+        internalGetDeliveryIndicatorFieldBuilder() {
+      if (deliveryIndicatorBuilder_ == null) {
+        deliveryIndicatorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.DeliveryIndicator,
+                com.google.ads.admanager.v1.DeliveryIndicator.Builder,
+                com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder>(
+                getDeliveryIndicator(), getParentForChildren(), isClean());
+        deliveryIndicator_ = null;
+      }
+      return deliveryIndicatorBuilder_;
+    }
+
     private com.google.type.Money budget_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.type.Money, com.google.type.Money.Builder, com.google.type.MoneyOrBuilder>
@@ -2536,7 +12491,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the budget field is set.
      */
     public boolean hasBudget() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -2580,7 +12535,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         budgetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2602,7 +12557,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         budgetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -2620,7 +12575,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBudget(com.google.type.Money value) {
       if (budgetBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && budget_ != null
             && budget_ != com.google.type.Money.getDefaultInstance()) {
           getBudgetBuilder().mergeFrom(value);
@@ -2631,7 +12586,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         budgetBuilder_.mergeFrom(value);
       }
       if (budget_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -2649,7 +12604,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearBudget() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000002);
       budget_ = null;
       if (budgetBuilder_ != null) {
         budgetBuilder_.dispose();
@@ -2671,7 +12626,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.type.Money.Builder getBudgetBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField1_ |= 0x00000002;
       onChanged();
       return internalGetBudgetFieldBuilder().getBuilder();
     }
@@ -2720,15 +12675,2266 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       return budgetBuilder_;
     }
 
+    private int status_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField1_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override
+    public int getStatusValue() {
+      return status_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      status_ = value;
+      bitField1_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus
+        getStatus() {
+      com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus result =
+          com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus.forNumber(
+              status_);
+      return result == null
+          ? com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(
+        com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000004;
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      bitField1_ = (bitField1_ & ~0x00000004);
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int reservationStatus_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the reservationStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasReservationStatus() {
+      return ((bitField1_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for reservationStatus.
+     */
+    @java.lang.Override
+    public int getReservationStatusValue() {
+      return reservationStatus_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for reservationStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationStatusValue(int value) {
+      reservationStatus_ = value;
+      bitField1_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The reservationStatus.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+        getReservationStatus() {
+      com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus result =
+          com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+              .forNumber(reservationStatus_);
+      return result == null
+          ? com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The reservationStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationStatus(
+        com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000008;
+      reservationStatus_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether or not inventory has been reserved for the
+     * LineItem.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationStatus() {
+      bitField1_ = (bitField1_ & ~0x00000008);
+      reservationStatus_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean archived_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the LineItem.
+     * </pre>
+     *
+     * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the archived field is set.
+     */
+    @java.lang.Override
+    public boolean hasArchived() {
+      return ((bitField1_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the LineItem.
+     * </pre>
+     *
+     * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The archived.
+     */
+    @java.lang.Override
+    public boolean getArchived() {
+      return archived_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the LineItem.
+     * </pre>
+     *
+     * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The archived to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchived(boolean value) {
+
+      archived_ = value;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the LineItem.
+     * </pre>
+     *
+     * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchived() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      archived_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object webPropertyCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the webPropertyCode field is set.
+     */
+    public boolean hasWebPropertyCode() {
+      return ((bitField1_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The webPropertyCode.
+     */
+    public java.lang.String getWebPropertyCode() {
+      java.lang.Object ref = webPropertyCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        webPropertyCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for webPropertyCode.
+     */
+    public com.google.protobuf.ByteString getWebPropertyCodeBytes() {
+      java.lang.Object ref = webPropertyCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        webPropertyCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The webPropertyCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebPropertyCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      webPropertyCode_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWebPropertyCode() {
+      webPropertyCode_ = getDefaultInstance().getWebPropertyCode();
+      bitField1_ = (bitField1_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The web property code used for dynamic allocation line items.
+     * This web property is only required with line item types AD_EXCHANGE and
+     * ADSENSE.
+     * </pre>
+     *
+     * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for webPropertyCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWebPropertyCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      webPropertyCode_ = value;
+      bitField1_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.AppliedLabel> appliedLabels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAppliedLabelsIsMutable() {
+      if (!((bitField1_ & 0x00000040) != 0)) {
+        appliedLabels_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.AppliedLabel>(appliedLabels_);
+        bitField1_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        appliedLabelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList() {
+      if (appliedLabelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(appliedLabels_);
+      } else {
+        return appliedLabelsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAppliedLabelsCount() {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.size();
+      } else {
+        return appliedLabelsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.get(index);
+      } else {
+        return appliedLabelsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAppliedLabels(int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.set(index, value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (appliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(index, value);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(
+        com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAppliedLabels(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.AppliedLabel> values) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, appliedLabels_);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAppliedLabels() {
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabels_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000040);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAppliedLabels(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        ensureAppliedLabelsIsMutable();
+        appliedLabels_.remove(index);
+        onChanged();
+      } else {
+        appliedLabelsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder getAppliedLabelsBuilder(int index) {
+      return internalGetAppliedLabelsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index) {
+      if (appliedLabelsBuilder_ == null) {
+        return appliedLabels_.get(index);
+      } else {
+        return appliedLabelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        getAppliedLabelsOrBuilderList() {
+      if (appliedLabelsBuilder_ != null) {
+        return appliedLabelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(appliedLabels_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addAppliedLabelsBuilder() {
+      return internalGetAppliedLabelsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addAppliedLabelsBuilder(int index) {
+      return internalGetAppliedLabelsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of labels applied directly to this line item.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel.Builder>
+        getAppliedLabelsBuilderList() {
+      return internalGetAppliedLabelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        internalGetAppliedLabelsFieldBuilder() {
+      if (appliedLabelsBuilder_ == null) {
+        appliedLabelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.AppliedLabel,
+                com.google.ads.admanager.v1.AppliedLabel.Builder,
+                com.google.ads.admanager.v1.AppliedLabelOrBuilder>(
+                appliedLabels_,
+                ((bitField1_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        appliedLabels_ = null;
+      }
+      return appliedLabelsBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.AppliedLabel> effectiveAppliedLabels_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEffectiveAppliedLabelsIsMutable() {
+      if (!((bitField1_ & 0x00000080) != 0)) {
+        effectiveAppliedLabels_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.AppliedLabel>(
+                effectiveAppliedLabels_);
+        bitField1_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        effectiveAppliedLabelsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel>
+        getEffectiveAppliedLabelsList() {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(effectiveAppliedLabels_);
+      } else {
+        return effectiveAppliedLabelsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getEffectiveAppliedLabelsCount() {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        return effectiveAppliedLabels_.size();
+      } else {
+        return effectiveAppliedLabelsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel getEffectiveAppliedLabels(int index) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        return effectiveAppliedLabels_.get(index);
+      } else {
+        return effectiveAppliedLabelsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEffectiveAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.set(index, value);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEffectiveAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEffectiveAppliedLabels(com.google.ads.admanager.v1.AppliedLabel value) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.add(value);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEffectiveAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel value) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.add(index, value);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEffectiveAppliedLabels(
+        com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.add(builderForValue.build());
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addEffectiveAppliedLabels(
+        int index, com.google.ads.admanager.v1.AppliedLabel.Builder builderForValue) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllEffectiveAppliedLabels(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.AppliedLabel> values) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        ensureEffectiveAppliedLabelsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectiveAppliedLabels_);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEffectiveAppliedLabels() {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        effectiveAppliedLabels_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000080);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeEffectiveAppliedLabels(int index) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        ensureEffectiveAppliedLabelsIsMutable();
+        effectiveAppliedLabels_.remove(index);
+        onChanged();
+      } else {
+        effectiveAppliedLabelsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder getEffectiveAppliedLabelsBuilder(
+        int index) {
+      return internalGetEffectiveAppliedLabelsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabelOrBuilder getEffectiveAppliedLabelsOrBuilder(
+        int index) {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        return effectiveAppliedLabels_.get(index);
+      } else {
+        return effectiveAppliedLabelsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        getEffectiveAppliedLabelsOrBuilderList() {
+      if (effectiveAppliedLabelsBuilder_ != null) {
+        return effectiveAppliedLabelsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(effectiveAppliedLabels_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addEffectiveAppliedLabelsBuilder() {
+      return internalGetEffectiveAppliedLabelsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.AppliedLabel.Builder addEffectiveAppliedLabelsBuilder(
+        int index) {
+      return internalGetEffectiveAppliedLabelsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.AppliedLabel.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the set of labels inherited from the order that
+     * contains this line item and the advertiser that owns the order. If a label
+     * has been negated, only the negated label is returned.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.AppliedLabel.Builder>
+        getEffectiveAppliedLabelsBuilderList() {
+      return internalGetEffectiveAppliedLabelsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.AppliedLabel,
+            com.google.ads.admanager.v1.AppliedLabel.Builder,
+            com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+        internalGetEffectiveAppliedLabelsFieldBuilder() {
+      if (effectiveAppliedLabelsBuilder_ == null) {
+        effectiveAppliedLabelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.AppliedLabel,
+                com.google.ads.admanager.v1.AppliedLabel.Builder,
+                com.google.ads.admanager.v1.AppliedLabelOrBuilder>(
+                effectiveAppliedLabels_,
+                ((bitField1_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        effectiveAppliedLabels_ = null;
+      }
+      return effectiveAppliedLabelsBuilder_;
+    }
+
+    private boolean sameAdvertiserExceptionEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If a line item has a series of competitive exclusions on it, it
+     * could be blocked from serving with line items from the same advertiser.
+     * Setting this to true will allow line items from the same advertiser to
+     * serve regardless of the other competitive exclusion labels being applied.
+     * </pre>
+     *
+     * <code>
+     * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sameAdvertiserExceptionEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasSameAdvertiserExceptionEnabled() {
+      return ((bitField1_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If a line item has a series of competitive exclusions on it, it
+     * could be blocked from serving with line items from the same advertiser.
+     * Setting this to true will allow line items from the same advertiser to
+     * serve regardless of the other competitive exclusion labels being applied.
+     * </pre>
+     *
+     * <code>
+     * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sameAdvertiserExceptionEnabled.
+     */
+    @java.lang.Override
+    public boolean getSameAdvertiserExceptionEnabled() {
+      return sameAdvertiserExceptionEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If a line item has a series of competitive exclusions on it, it
+     * could be blocked from serving with line items from the same advertiser.
+     * Setting this to true will allow line items from the same advertiser to
+     * serve regardless of the other competitive exclusion labels being applied.
+     * </pre>
+     *
+     * <code>
+     * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The sameAdvertiserExceptionEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSameAdvertiserExceptionEnabled(boolean value) {
+
+      sameAdvertiserExceptionEnabled_ = value;
+      bitField1_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If a line item has a series of competitive exclusions on it, it
+     * could be blocked from serving with line items from the same advertiser.
+     * Setting this to true will allow line items from the same advertiser to
+     * serve regardless of the other competitive exclusion labels being applied.
+     * </pre>
+     *
+     * <code>
+     * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSameAdvertiserExceptionEnabled() {
+      bitField1_ = (bitField1_ & ~0x00000100);
+      sameAdvertiserExceptionEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object updateSource_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the updateSource field is set.
+     */
+    public boolean hasUpdateSource() {
+      return ((bitField1_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The updateSource.
+     */
+    public java.lang.String getUpdateSource() {
+      java.lang.Object ref = updateSource_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updateSource_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for updateSource.
+     */
+    public com.google.protobuf.ByteString getUpdateSourceBytes() {
+      java.lang.Object ref = updateSource_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        updateSource_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The updateSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateSource(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      updateSource_ = value;
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdateSource() {
+      updateSource_ = getDefaultInstance().getUpdateSource();
+      bitField1_ = (bitField1_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application that last modified this line item.
+     * </pre>
+     *
+     * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for updateSource to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdateSourceBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      updateSource_ = value;
+      bitField1_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notes_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the notes field is set.
+     */
+    public boolean hasNotes() {
+      return ((bitField1_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      notes_ = value;
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      notes_ = getDefaultInstance().getNotes();
+      bitField1_ = (bitField1_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the LineItem.
+     * This attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      notes_ = value;
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private int competitiveConstraintScope_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the competitiveConstraintScope field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompetitiveConstraintScope() {
+      return ((bitField1_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for competitiveConstraintScope.
+     */
+    @java.lang.Override
+    public int getCompetitiveConstraintScopeValue() {
+      return competitiveConstraintScope_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for competitiveConstraintScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompetitiveConstraintScopeValue(int value) {
+      competitiveConstraintScope_ = value;
+      bitField1_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The competitiveConstraintScope.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope
+        getCompetitiveConstraintScope() {
+      com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope result =
+          com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope.forNumber(
+              competitiveConstraintScope_);
+      return result == null
+          ? com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The competitiveConstraintScope to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCompetitiveConstraintScope(
+        com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000800;
+      competitiveConstraintScope_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. The CompetitiveConstraintScope for the
+     * competitive exclusion labels assigned to this line item. This field
+     * defaults to POD.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCompetitiveConstraintScope() {
+      bitField1_ = (bitField1_ & ~0x00000800);
+      competitiveConstraintScope_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField1_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField1_ & 0x00001000) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField1_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField1_ = (bitField1_ & ~0x00001000);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField1_ |= 0x00001000;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was last modified.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField1_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField1_ & 0x00002000) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      if (createTime_ != null) {
+        bitField1_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCreateTime() {
+      bitField1_ = (bitField1_ & ~0x00002000);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return internalGetCreateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time this line item was created.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
     private java.util.List<com.google.ads.admanager.v1.CustomFieldValue> customFieldValues_ =
         java.util.Collections.emptyList();
 
     private void ensureCustomFieldValuesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField1_ & 0x00004000) != 0)) {
         customFieldValues_ =
             new java.util.ArrayList<com.google.ads.admanager.v1.CustomFieldValue>(
                 customFieldValues_);
-        bitField0_ |= 0x00000100;
+        bitField1_ |= 0x00004000;
       }
     }
 
@@ -2978,7 +15184,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
     public Builder clearCustomFieldValues() {
       if (customFieldValuesBuilder_ == null) {
         customFieldValues_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField1_ = (bitField1_ & ~0x00004000);
         onChanged();
       } else {
         customFieldValuesBuilder_.clear();
@@ -3125,12 +15331,679 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
                 com.google.ads.admanager.v1.CustomFieldValue.Builder,
                 com.google.ads.admanager.v1.CustomFieldValueOrBuilder>(
                 customFieldValues_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField1_ & 0x00004000) != 0),
                 getParentForChildren(),
                 isClean());
         customFieldValues_ = null;
       }
       return customFieldValuesBuilder_;
+    }
+
+    private boolean missingCreatives_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if a LineItem is missing any Creative creatives for
+     * the creativePlaceholders specified.  Creative Creatives can be considered
+     * missing for several reasons including:
+     * - Not enough Creative creatives of a certain size have been uploaded, as
+     * determined by
+     * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+     * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+     * only one was uploaded.
+     * - The [Creative.applied_labels][] of an associated Creative don't match
+     * the
+     * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+     * of the LineItem. For example LineItem specifies 750x350 with a Foo
+     * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+     * </pre>
+     *
+     * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the missingCreatives field is set.
+     */
+    @java.lang.Override
+    public boolean hasMissingCreatives() {
+      return ((bitField1_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if a LineItem is missing any Creative creatives for
+     * the creativePlaceholders specified.  Creative Creatives can be considered
+     * missing for several reasons including:
+     * - Not enough Creative creatives of a certain size have been uploaded, as
+     * determined by
+     * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+     * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+     * only one was uploaded.
+     * - The [Creative.applied_labels][] of an associated Creative don't match
+     * the
+     * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+     * of the LineItem. For example LineItem specifies 750x350 with a Foo
+     * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+     * </pre>
+     *
+     * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The missingCreatives.
+     */
+    @java.lang.Override
+    public boolean getMissingCreatives() {
+      return missingCreatives_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if a LineItem is missing any Creative creatives for
+     * the creativePlaceholders specified.  Creative Creatives can be considered
+     * missing for several reasons including:
+     * - Not enough Creative creatives of a certain size have been uploaded, as
+     * determined by
+     * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+     * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+     * only one was uploaded.
+     * - The [Creative.applied_labels][] of an associated Creative don't match
+     * the
+     * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+     * of the LineItem. For example LineItem specifies 750x350 with a Foo
+     * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+     * </pre>
+     *
+     * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The missingCreatives to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMissingCreatives(boolean value) {
+
+      missingCreatives_ = value;
+      bitField1_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if a LineItem is missing any Creative creatives for
+     * the creativePlaceholders specified.  Creative Creatives can be considered
+     * missing for several reasons including:
+     * - Not enough Creative creatives of a certain size have been uploaded, as
+     * determined by
+     * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+     * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+     * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+     * only one was uploaded.
+     * - The [Creative.applied_labels][] of an associated Creative don't match
+     * the
+     * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+     * of the LineItem. For example LineItem specifies 750x350 with a Foo
+     * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+     * </pre>
+     *
+     * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMissingCreatives() {
+      bitField1_ = (bitField1_ & ~0x00008000);
+      missingCreatives_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.ThirdPartyMeasurementSettings
+        thirdPartyMeasurementSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettings,
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.Builder,
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder>
+        thirdPartyMeasurementSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the thirdPartyMeasurementSettings field is set.
+     */
+    public boolean hasThirdPartyMeasurementSettings() {
+      return ((bitField1_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The thirdPartyMeasurementSettings.
+     */
+    public com.google.ads.admanager.v1.ThirdPartyMeasurementSettings
+        getThirdPartyMeasurementSettings() {
+      if (thirdPartyMeasurementSettingsBuilder_ == null) {
+        return thirdPartyMeasurementSettings_ == null
+            ? com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.getDefaultInstance()
+            : thirdPartyMeasurementSettings_;
+      } else {
+        return thirdPartyMeasurementSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyMeasurementSettings(
+        com.google.ads.admanager.v1.ThirdPartyMeasurementSettings value) {
+      if (thirdPartyMeasurementSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        thirdPartyMeasurementSettings_ = value;
+      } else {
+        thirdPartyMeasurementSettingsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setThirdPartyMeasurementSettings(
+        com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.Builder builderForValue) {
+      if (thirdPartyMeasurementSettingsBuilder_ == null) {
+        thirdPartyMeasurementSettings_ = builderForValue.build();
+      } else {
+        thirdPartyMeasurementSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeThirdPartyMeasurementSettings(
+        com.google.ads.admanager.v1.ThirdPartyMeasurementSettings value) {
+      if (thirdPartyMeasurementSettingsBuilder_ == null) {
+        if (((bitField1_ & 0x00010000) != 0)
+            && thirdPartyMeasurementSettings_ != null
+            && thirdPartyMeasurementSettings_
+                != com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.getDefaultInstance()) {
+          getThirdPartyMeasurementSettingsBuilder().mergeFrom(value);
+        } else {
+          thirdPartyMeasurementSettings_ = value;
+        }
+      } else {
+        thirdPartyMeasurementSettingsBuilder_.mergeFrom(value);
+      }
+      if (thirdPartyMeasurementSettings_ != null) {
+        bitField1_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearThirdPartyMeasurementSettings() {
+      bitField1_ = (bitField1_ & ~0x00010000);
+      thirdPartyMeasurementSettings_ = null;
+      if (thirdPartyMeasurementSettingsBuilder_ != null) {
+        thirdPartyMeasurementSettingsBuilder_.dispose();
+        thirdPartyMeasurementSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.Builder
+        getThirdPartyMeasurementSettingsBuilder() {
+      bitField1_ |= 0x00010000;
+      onChanged();
+      return internalGetThirdPartyMeasurementSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder
+        getThirdPartyMeasurementSettingsOrBuilder() {
+      if (thirdPartyMeasurementSettingsBuilder_ != null) {
+        return thirdPartyMeasurementSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return thirdPartyMeasurementSettings_ == null
+            ? com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.getDefaultInstance()
+            : thirdPartyMeasurementSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Third party auto-pixeling settings for cross-sell Partners.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettings,
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.Builder,
+            com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder>
+        internalGetThirdPartyMeasurementSettingsFieldBuilder() {
+      if (thirdPartyMeasurementSettingsBuilder_ == null) {
+        thirdPartyMeasurementSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ThirdPartyMeasurementSettings,
+                com.google.ads.admanager.v1.ThirdPartyMeasurementSettings.Builder,
+                com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder>(
+                getThirdPartyMeasurementSettings(), getParentForChildren(), isClean());
+        thirdPartyMeasurementSettings_ = null;
+      }
+      return thirdPartyMeasurementSettingsBuilder_;
+    }
+
+    private boolean youtubeKidsRestricted_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with this line item must be reviewed and approved.
+     * See the help center article for more information:
+     * https://support.google.com/yt-partner-sales/answer/10015534.
+     * </pre>
+     *
+     * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the youtubeKidsRestricted field is set.
+     */
+    @java.lang.Override
+    public boolean hasYoutubeKidsRestricted() {
+      return ((bitField1_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with this line item must be reviewed and approved.
+     * See the help center article for more information:
+     * https://support.google.com/yt-partner-sales/answer/10015534.
+     * </pre>
+     *
+     * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The youtubeKidsRestricted.
+     */
+    @java.lang.Override
+    public boolean getYoutubeKidsRestricted() {
+      return youtubeKidsRestricted_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with this line item must be reviewed and approved.
+     * See the help center article for more information:
+     * https://support.google.com/yt-partner-sales/answer/10015534.
+     * </pre>
+     *
+     * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The youtubeKidsRestricted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setYoutubeKidsRestricted(boolean value) {
+
+      youtubeKidsRestricted_ = value;
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Designates this line item as intended for YT Kids app. If true,
+     * all creatives associated with this line item must be reviewed and approved.
+     * See the help center article for more information:
+     * https://support.google.com/yt-partner-sales/answer/10015534.
+     * </pre>
+     *
+     * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearYoutubeKidsRestricted() {
+      bitField1_ = (bitField1_ & ~0x00020000);
+      youtubeKidsRestricted_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration maxVideoCreativeDuration_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxVideoCreativeDurationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maxVideoCreativeDuration field is set.
+     */
+    public boolean hasMaxVideoCreativeDuration() {
+      return ((bitField1_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxVideoCreativeDuration.
+     */
+    public com.google.protobuf.Duration getMaxVideoCreativeDuration() {
+      if (maxVideoCreativeDurationBuilder_ == null) {
+        return maxVideoCreativeDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxVideoCreativeDuration_;
+      } else {
+        return maxVideoCreativeDurationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaxVideoCreativeDuration(com.google.protobuf.Duration value) {
+      if (maxVideoCreativeDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maxVideoCreativeDuration_ = value;
+      } else {
+        maxVideoCreativeDurationBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMaxVideoCreativeDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (maxVideoCreativeDurationBuilder_ == null) {
+        maxVideoCreativeDuration_ = builderForValue.build();
+      } else {
+        maxVideoCreativeDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeMaxVideoCreativeDuration(com.google.protobuf.Duration value) {
+      if (maxVideoCreativeDurationBuilder_ == null) {
+        if (((bitField1_ & 0x00040000) != 0)
+            && maxVideoCreativeDuration_ != null
+            && maxVideoCreativeDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getMaxVideoCreativeDurationBuilder().mergeFrom(value);
+        } else {
+          maxVideoCreativeDuration_ = value;
+        }
+      } else {
+        maxVideoCreativeDurationBuilder_.mergeFrom(value);
+      }
+      if (maxVideoCreativeDuration_ != null) {
+        bitField1_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMaxVideoCreativeDuration() {
+      bitField1_ = (bitField1_ & ~0x00040000);
+      maxVideoCreativeDuration_ = null;
+      if (maxVideoCreativeDurationBuilder_ != null) {
+        maxVideoCreativeDurationBuilder_.dispose();
+        maxVideoCreativeDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getMaxVideoCreativeDurationBuilder() {
+      bitField1_ |= 0x00040000;
+      onChanged();
+      return internalGetMaxVideoCreativeDurationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMaxVideoCreativeDurationOrBuilder() {
+      if (maxVideoCreativeDurationBuilder_ != null) {
+        return maxVideoCreativeDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return maxVideoCreativeDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxVideoCreativeDuration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The max duration of a video creative associated with this
+     * LineItem. This attribute is only meaningful for video line items. This
+     * attribute is required for video line items and must be greater than 0.
+     * </pre>
+     *
+     * <code>
+     * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetMaxVideoCreativeDurationFieldBuilder() {
+      if (maxVideoCreativeDurationBuilder_ == null) {
+        maxVideoCreativeDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxVideoCreativeDuration(), getParentForChildren(), isClean());
+        maxVideoCreativeDuration_ = null;
+      }
+      return maxVideoCreativeDurationBuilder_;
     }
 
     private com.google.ads.admanager.v1.Goal goal_;
@@ -3155,7 +16028,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * @return Whether the goal field is set.
      */
     public boolean hasGoal() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00080000) != 0);
     }
 
     /**
@@ -3201,7 +16074,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         goalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3224,7 +16097,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
       } else {
         goalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField1_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3243,7 +16116,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGoal(com.google.ads.admanager.v1.Goal value) {
       if (goalBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField1_ & 0x00080000) != 0)
             && goal_ != null
             && goal_ != com.google.ads.admanager.v1.Goal.getDefaultInstance()) {
           getGoalBuilder().mergeFrom(value);
@@ -3254,7 +16127,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         goalBuilder_.mergeFrom(value);
       }
       if (goal_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField1_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -3273,7 +16146,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearGoal() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00080000);
       goal_ = null;
       if (goalBuilder_ != null) {
         goalBuilder_.dispose();
@@ -3296,7 +16169,7 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.Goal.Builder getGoalBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField1_ |= 0x00080000;
       onChanged();
       return internalGetGoalFieldBuilder().getBuilder();
     }
@@ -3348,6 +16221,2630 @@ public final class LineItem extends com.google.protobuf.GeneratedMessage
         goal_ = null;
       }
       return goalBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.Goal> secondaryGoals_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSecondaryGoalsIsMutable() {
+      if (!((bitField1_ & 0x00100000) != 0)) {
+        secondaryGoals_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.Goal>(secondaryGoals_);
+        bitField1_ |= 0x00100000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.Goal,
+            com.google.ads.admanager.v1.Goal.Builder,
+            com.google.ads.admanager.v1.GoalOrBuilder>
+        secondaryGoalsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.Goal> getSecondaryGoalsList() {
+      if (secondaryGoalsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(secondaryGoals_);
+      } else {
+        return secondaryGoalsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getSecondaryGoalsCount() {
+      if (secondaryGoalsBuilder_ == null) {
+        return secondaryGoals_.size();
+      } else {
+        return secondaryGoalsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Goal getSecondaryGoals(int index) {
+      if (secondaryGoalsBuilder_ == null) {
+        return secondaryGoals_.get(index);
+      } else {
+        return secondaryGoalsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecondaryGoals(int index, com.google.ads.admanager.v1.Goal value) {
+      if (secondaryGoalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.set(index, value);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSecondaryGoals(
+        int index, com.google.ads.admanager.v1.Goal.Builder builderForValue) {
+      if (secondaryGoalsBuilder_ == null) {
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSecondaryGoals(com.google.ads.admanager.v1.Goal value) {
+      if (secondaryGoalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.add(value);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSecondaryGoals(int index, com.google.ads.admanager.v1.Goal value) {
+      if (secondaryGoalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.add(index, value);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSecondaryGoals(com.google.ads.admanager.v1.Goal.Builder builderForValue) {
+      if (secondaryGoalsBuilder_ == null) {
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.add(builderForValue.build());
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addSecondaryGoals(
+        int index, com.google.ads.admanager.v1.Goal.Builder builderForValue) {
+      if (secondaryGoalsBuilder_ == null) {
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllSecondaryGoals(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.Goal> values) {
+      if (secondaryGoalsBuilder_ == null) {
+        ensureSecondaryGoalsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, secondaryGoals_);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSecondaryGoals() {
+      if (secondaryGoalsBuilder_ == null) {
+        secondaryGoals_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00100000);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeSecondaryGoals(int index) {
+      if (secondaryGoalsBuilder_ == null) {
+        ensureSecondaryGoalsIsMutable();
+        secondaryGoals_.remove(index);
+        onChanged();
+      } else {
+        secondaryGoalsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Goal.Builder getSecondaryGoalsBuilder(int index) {
+      return internalGetSecondaryGoalsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.GoalOrBuilder getSecondaryGoalsOrBuilder(int index) {
+      if (secondaryGoalsBuilder_ == null) {
+        return secondaryGoals_.get(index);
+      } else {
+        return secondaryGoalsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.GoalOrBuilder>
+        getSecondaryGoalsOrBuilderList() {
+      if (secondaryGoalsBuilder_ != null) {
+        return secondaryGoalsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(secondaryGoals_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Goal.Builder addSecondaryGoalsBuilder() {
+      return internalGetSecondaryGoalsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.Goal.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Goal.Builder addSecondaryGoalsBuilder(int index) {
+      return internalGetSecondaryGoalsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.Goal.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The secondary goals that this LineItem is associated with. This
+     * is required and meaningful only if the
+     * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+     * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+     * CPM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.Goal.Builder> getSecondaryGoalsBuilderList() {
+      return internalGetSecondaryGoalsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.Goal,
+            com.google.ads.admanager.v1.Goal.Builder,
+            com.google.ads.admanager.v1.GoalOrBuilder>
+        internalGetSecondaryGoalsFieldBuilder() {
+      if (secondaryGoalsBuilder_ == null) {
+        secondaryGoalsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.Goal,
+                com.google.ads.admanager.v1.Goal.Builder,
+                com.google.ads.admanager.v1.GoalOrBuilder>(
+                secondaryGoals_,
+                ((bitField1_ & 0x00100000) != 0),
+                getParentForChildren(),
+                isClean());
+        secondaryGoals_ = null;
+      }
+      return secondaryGoalsBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.GrpSettings grpSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.GrpSettings,
+            com.google.ads.admanager.v1.GrpSettings.Builder,
+            com.google.ads.admanager.v1.GrpSettingsOrBuilder>
+        grpSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the grpSettings field is set.
+     */
+    public boolean hasGrpSettings() {
+      return ((bitField1_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The grpSettings.
+     */
+    public com.google.ads.admanager.v1.GrpSettings getGrpSettings() {
+      if (grpSettingsBuilder_ == null) {
+        return grpSettings_ == null
+            ? com.google.ads.admanager.v1.GrpSettings.getDefaultInstance()
+            : grpSettings_;
+      } else {
+        return grpSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGrpSettings(com.google.ads.admanager.v1.GrpSettings value) {
+      if (grpSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        grpSettings_ = value;
+      } else {
+        grpSettingsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGrpSettings(com.google.ads.admanager.v1.GrpSettings.Builder builderForValue) {
+      if (grpSettingsBuilder_ == null) {
+        grpSettings_ = builderForValue.build();
+      } else {
+        grpSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGrpSettings(com.google.ads.admanager.v1.GrpSettings value) {
+      if (grpSettingsBuilder_ == null) {
+        if (((bitField1_ & 0x00200000) != 0)
+            && grpSettings_ != null
+            && grpSettings_ != com.google.ads.admanager.v1.GrpSettings.getDefaultInstance()) {
+          getGrpSettingsBuilder().mergeFrom(value);
+        } else {
+          grpSettings_ = value;
+        }
+      } else {
+        grpSettingsBuilder_.mergeFrom(value);
+      }
+      if (grpSettings_ != null) {
+        bitField1_ |= 0x00200000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGrpSettings() {
+      bitField1_ = (bitField1_ & ~0x00200000);
+      grpSettings_ = null;
+      if (grpSettingsBuilder_ != null) {
+        grpSettingsBuilder_.dispose();
+        grpSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.GrpSettings.Builder getGrpSettingsBuilder() {
+      bitField1_ |= 0x00200000;
+      onChanged();
+      return internalGetGrpSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.GrpSettingsOrBuilder getGrpSettingsOrBuilder() {
+      if (grpSettingsBuilder_ != null) {
+        return grpSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return grpSettings_ == null
+            ? com.google.ads.admanager.v1.GrpSettings.getDefaultInstance()
+            : grpSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the information for a line item which has a target GRP
+     * demographic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.GrpSettings,
+            com.google.ads.admanager.v1.GrpSettings.Builder,
+            com.google.ads.admanager.v1.GrpSettingsOrBuilder>
+        internalGetGrpSettingsFieldBuilder() {
+      if (grpSettingsBuilder_ == null) {
+        grpSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.GrpSettings,
+                com.google.ads.admanager.v1.GrpSettings.Builder,
+                com.google.ads.admanager.v1.GrpSettingsOrBuilder>(
+                getGrpSettings(), getParentForChildren(), isClean());
+        grpSettings_ = null;
+      }
+      return grpSettingsBuilder_;
+    }
+
+    private com.google.ads.admanager.v1.LineItemDealInfo dealInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemDealInfo,
+            com.google.ads.admanager.v1.LineItemDealInfo.Builder,
+            com.google.ads.admanager.v1.LineItemDealInfoOrBuilder>
+        dealInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dealInfo field is set.
+     */
+    public boolean hasDealInfo() {
+      return ((bitField1_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dealInfo.
+     */
+    public com.google.ads.admanager.v1.LineItemDealInfo getDealInfo() {
+      if (dealInfoBuilder_ == null) {
+        return dealInfo_ == null
+            ? com.google.ads.admanager.v1.LineItemDealInfo.getDefaultInstance()
+            : dealInfo_;
+      } else {
+        return dealInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDealInfo(com.google.ads.admanager.v1.LineItemDealInfo value) {
+      if (dealInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dealInfo_ = value;
+      } else {
+        dealInfoBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDealInfo(
+        com.google.ads.admanager.v1.LineItemDealInfo.Builder builderForValue) {
+      if (dealInfoBuilder_ == null) {
+        dealInfo_ = builderForValue.build();
+      } else {
+        dealInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDealInfo(com.google.ads.admanager.v1.LineItemDealInfo value) {
+      if (dealInfoBuilder_ == null) {
+        if (((bitField1_ & 0x00400000) != 0)
+            && dealInfo_ != null
+            && dealInfo_ != com.google.ads.admanager.v1.LineItemDealInfo.getDefaultInstance()) {
+          getDealInfoBuilder().mergeFrom(value);
+        } else {
+          dealInfo_ = value;
+        }
+      } else {
+        dealInfoBuilder_.mergeFrom(value);
+      }
+      if (dealInfo_ != null) {
+        bitField1_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDealInfo() {
+      bitField1_ = (bitField1_ & ~0x00400000);
+      dealInfo_ = null;
+      if (dealInfoBuilder_ != null) {
+        dealInfoBuilder_.dispose();
+        dealInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemDealInfo.Builder getDealInfoBuilder() {
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return internalGetDealInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.LineItemDealInfoOrBuilder getDealInfoOrBuilder() {
+      if (dealInfoBuilder_ != null) {
+        return dealInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return dealInfo_ == null
+            ? com.google.ads.admanager.v1.LineItemDealInfo.getDefaultInstance()
+            : dealInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The deal information associated with this line item, if it is
+     * programmatic.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.LineItemDealInfo,
+            com.google.ads.admanager.v1.LineItemDealInfo.Builder,
+            com.google.ads.admanager.v1.LineItemDealInfoOrBuilder>
+        internalGetDealInfoFieldBuilder() {
+      if (dealInfoBuilder_ == null) {
+        dealInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.LineItemDealInfo,
+                com.google.ads.admanager.v1.LineItemDealInfo.Builder,
+                com.google.ads.admanager.v1.LineItemDealInfoOrBuilder>(
+                getDealInfo(), getParentForChildren(), isClean());
+        dealInfo_ = null;
+      }
+      return dealInfoBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList viewabilityProviderCompanies_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureViewabilityProviderCompaniesIsMutable() {
+      if (!viewabilityProviderCompanies_.isModifiable()) {
+        viewabilityProviderCompanies_ =
+            new com.google.protobuf.LazyStringArrayList(viewabilityProviderCompanies_);
+      }
+      bitField1_ |= 0x00800000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the viewabilityProviderCompanies.
+     */
+    public com.google.protobuf.ProtocolStringList getViewabilityProviderCompaniesList() {
+      viewabilityProviderCompanies_.makeImmutable();
+      return viewabilityProviderCompanies_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of viewabilityProviderCompanies.
+     */
+    public int getViewabilityProviderCompaniesCount() {
+      return viewabilityProviderCompanies_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The viewabilityProviderCompanies at the given index.
+     */
+    public java.lang.String getViewabilityProviderCompanies(int index) {
+      return viewabilityProviderCompanies_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the viewabilityProviderCompanies at the given index.
+     */
+    public com.google.protobuf.ByteString getViewabilityProviderCompaniesBytes(int index) {
+      return viewabilityProviderCompanies_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The viewabilityProviderCompanies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewabilityProviderCompanies(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureViewabilityProviderCompaniesIsMutable();
+      viewabilityProviderCompanies_.set(index, value);
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The viewabilityProviderCompanies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addViewabilityProviderCompanies(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureViewabilityProviderCompaniesIsMutable();
+      viewabilityProviderCompanies_.add(value);
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The viewabilityProviderCompanies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllViewabilityProviderCompanies(java.lang.Iterable<java.lang.String> values) {
+      ensureViewabilityProviderCompaniesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, viewabilityProviderCompanies_);
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearViewabilityProviderCompanies() {
+      viewabilityProviderCompanies_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField1_ = (bitField1_ & ~0x00800000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional IDs of the Company that provide ad verification for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the viewabilityProviderCompanies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addViewabilityProviderCompaniesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureViewabilityProviderCompaniesIsMutable();
+      viewabilityProviderCompanies_.add(value);
+      bitField1_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private int childContentEligibility_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the childContentEligibility field is set.
+     */
+    @java.lang.Override
+    public boolean hasChildContentEligibility() {
+      return ((bitField1_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for childContentEligibility.
+     */
+    @java.lang.Override
+    public int getChildContentEligibilityValue() {
+      return childContentEligibility_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for childContentEligibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChildContentEligibilityValue(int value) {
+      childContentEligibility_ = value;
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The childContentEligibility.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility
+        getChildContentEligibility() {
+      com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility result =
+          com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility.forNumber(
+              childContentEligibility_);
+      return result == null
+          ? com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The childContentEligibility to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChildContentEligibility(
+        com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x01000000;
+      childContentEligibility_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Child content eligibility designation for this
+     * line item. This field defaults to DISALLOWED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearChildContentEligibility() {
+      bitField1_ = (bitField1_ & ~0x01000000);
+      childContentEligibility_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object customVastExtension_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customVastExtension field is set.
+     */
+    public boolean hasCustomVastExtension() {
+      return ((bitField1_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customVastExtension.
+     */
+    public java.lang.String getCustomVastExtension() {
+      java.lang.Object ref = customVastExtension_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customVastExtension_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for customVastExtension.
+     */
+    public com.google.protobuf.ByteString getCustomVastExtensionBytes() {
+      java.lang.Object ref = customVastExtension_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customVastExtension_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The customVastExtension to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomVastExtension(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customVastExtension_ = value;
+      bitField1_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomVastExtension() {
+      customVastExtension_ = getDefaultInstance().getCustomVastExtension();
+      bitField1_ = (bitField1_ & ~0x02000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Custom XML to be rendered in a custom VAST response at serving
+     * time.
+     * </pre>
+     *
+     * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for customVastExtension to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomVastExtensionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customVastExtension_ = value;
+      bitField1_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    private boolean sponsorshipExclusivityEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+     * true, only exclusive sponsorships can be served on inventory targeted by
+     * this LineItem. This control should only be available for 100% video
+     * sponsorships.
+     * </pre>
+     *
+     * <code>
+     * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sponsorshipExclusivityEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasSponsorshipExclusivityEnabled() {
+      return ((bitField1_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+     * true, only exclusive sponsorships can be served on inventory targeted by
+     * this LineItem. This control should only be available for 100% video
+     * sponsorships.
+     * </pre>
+     *
+     * <code>
+     * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sponsorshipExclusivityEnabled.
+     */
+    @java.lang.Override
+    public boolean getSponsorshipExclusivityEnabled() {
+      return sponsorshipExclusivityEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+     * true, only exclusive sponsorships can be served on inventory targeted by
+     * this LineItem. This control should only be available for 100% video
+     * sponsorships.
+     * </pre>
+     *
+     * <code>
+     * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The sponsorshipExclusivityEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSponsorshipExclusivityEnabled(boolean value) {
+
+      sponsorshipExclusivityEnabled_ = value;
+      bitField1_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+     * true, only exclusive sponsorships can be served on inventory targeted by
+     * this LineItem. This control should only be available for 100% video
+     * sponsorships.
+     * </pre>
+     *
+     * <code>
+     * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSponsorshipExclusivityEnabled() {
+      bitField1_ = (bitField1_ & ~0x04000000);
+      sponsorshipExclusivityEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean repeatedCreativeServingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether repeated creative serving is enabled for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the repeatedCreativeServingEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasRepeatedCreativeServingEnabled() {
+      return ((bitField1_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether repeated creative serving is enabled for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The repeatedCreativeServingEnabled.
+     */
+    @java.lang.Override
+    public boolean getRepeatedCreativeServingEnabled() {
+      return repeatedCreativeServingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether repeated creative serving is enabled for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The repeatedCreativeServingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRepeatedCreativeServingEnabled(boolean value) {
+
+      repeatedCreativeServingEnabled_ = value;
+      bitField1_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether repeated creative serving is enabled for this
+     * line item.
+     * </pre>
+     *
+     * <code>
+     * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRepeatedCreativeServingEnabled() {
+      bitField1_ = (bitField1_ & ~0x08000000);
+      repeatedCreativeServingEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.ads.admanager.v1.Targeting targeting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Targeting,
+            com.google.ads.admanager.v1.Targeting.Builder,
+            com.google.ads.admanager.v1.TargetingOrBuilder>
+        targetingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return Whether the targeting field is set.
+     */
+    public boolean hasTargeting() {
+      return ((bitField1_ & 0x10000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The targeting.
+     */
+    public com.google.ads.admanager.v1.Targeting getTargeting() {
+      if (targetingBuilder_ == null) {
+        return targeting_ == null
+            ? com.google.ads.admanager.v1.Targeting.getDefaultInstance()
+            : targeting_;
+      } else {
+        return targetingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setTargeting(com.google.ads.admanager.v1.Targeting value) {
+      if (targetingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targeting_ = value;
+      } else {
+        targetingBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder setTargeting(com.google.ads.admanager.v1.Targeting.Builder builderForValue) {
+      if (targetingBuilder_ == null) {
+        targeting_ = builderForValue.build();
+      } else {
+        targetingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder mergeTargeting(com.google.ads.admanager.v1.Targeting value) {
+      if (targetingBuilder_ == null) {
+        if (((bitField1_ & 0x10000000) != 0)
+            && targeting_ != null
+            && targeting_ != com.google.ads.admanager.v1.Targeting.getDefaultInstance()) {
+          getTargetingBuilder().mergeFrom(value);
+        } else {
+          targeting_ = value;
+        }
+      } else {
+        targetingBuilder_.mergeFrom(value);
+      }
+      if (targeting_ != null) {
+        bitField1_ |= 0x10000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public Builder clearTargeting() {
+      bitField1_ = (bitField1_ & ~0x10000000);
+      targeting_ = null;
+      if (targetingBuilder_ != null) {
+        targetingBuilder_.dispose();
+        targetingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.Targeting.Builder getTargetingBuilder() {
+      bitField1_ |= 0x10000000;
+      onChanged();
+      return internalGetTargetingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.TargetingOrBuilder getTargetingOrBuilder() {
+      if (targetingBuilder_ != null) {
+        return targetingBuilder_.getMessageOrBuilder();
+      } else {
+        return targeting_ == null
+            ? com.google.ads.admanager.v1.Targeting.getDefaultInstance()
+            : targeting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. Contains the targeting criteria for the ad campaign.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.Targeting,
+            com.google.ads.admanager.v1.Targeting.Builder,
+            com.google.ads.admanager.v1.TargetingOrBuilder>
+        internalGetTargetingFieldBuilder() {
+      if (targetingBuilder_ == null) {
+        targetingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.Targeting,
+                com.google.ads.admanager.v1.Targeting.Builder,
+                com.google.ads.admanager.v1.TargetingOrBuilder>(
+                getTargeting(), getParentForChildren(), isClean());
+        targeting_ = null;
+      }
+      return targetingBuilder_;
+    }
+
+    private java.util.List<com.google.ads.admanager.v1.CreativeTargeting> creativeTargetings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCreativeTargetingsIsMutable() {
+      if (!((bitField1_ & 0x20000000) != 0)) {
+        creativeTargetings_ =
+            new java.util.ArrayList<com.google.ads.admanager.v1.CreativeTargeting>(
+                creativeTargetings_);
+        bitField1_ |= 0x20000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CreativeTargeting,
+            com.google.ads.admanager.v1.CreativeTargeting.Builder,
+            com.google.ads.admanager.v1.CreativeTargetingOrBuilder>
+        creativeTargetingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CreativeTargeting>
+        getCreativeTargetingsList() {
+      if (creativeTargetingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(creativeTargetings_);
+      } else {
+        return creativeTargetingsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCreativeTargetingsCount() {
+      if (creativeTargetingsBuilder_ == null) {
+        return creativeTargetings_.size();
+      } else {
+        return creativeTargetingsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativeTargeting getCreativeTargetings(int index) {
+      if (creativeTargetingsBuilder_ == null) {
+        return creativeTargetings_.get(index);
+      } else {
+        return creativeTargetingsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCreativeTargetings(
+        int index, com.google.ads.admanager.v1.CreativeTargeting value) {
+      if (creativeTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.set(index, value);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCreativeTargetings(
+        int index, com.google.ads.admanager.v1.CreativeTargeting.Builder builderForValue) {
+      if (creativeTargetingsBuilder_ == null) {
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCreativeTargetings(com.google.ads.admanager.v1.CreativeTargeting value) {
+      if (creativeTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.add(value);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCreativeTargetings(
+        int index, com.google.ads.admanager.v1.CreativeTargeting value) {
+      if (creativeTargetingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.add(index, value);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCreativeTargetings(
+        com.google.ads.admanager.v1.CreativeTargeting.Builder builderForValue) {
+      if (creativeTargetingsBuilder_ == null) {
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCreativeTargetings(
+        int index, com.google.ads.admanager.v1.CreativeTargeting.Builder builderForValue) {
+      if (creativeTargetingsBuilder_ == null) {
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCreativeTargetings(
+        java.lang.Iterable<? extends com.google.ads.admanager.v1.CreativeTargeting> values) {
+      if (creativeTargetingsBuilder_ == null) {
+        ensureCreativeTargetingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, creativeTargetings_);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCreativeTargetings() {
+      if (creativeTargetingsBuilder_ == null) {
+        creativeTargetings_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x20000000);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCreativeTargetings(int index) {
+      if (creativeTargetingsBuilder_ == null) {
+        ensureCreativeTargetingsIsMutable();
+        creativeTargetings_.remove(index);
+        onChanged();
+      } else {
+        creativeTargetingsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativeTargeting.Builder getCreativeTargetingsBuilder(
+        int index) {
+      return internalGetCreativeTargetingsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativeTargetingOrBuilder getCreativeTargetingsOrBuilder(
+        int index) {
+      if (creativeTargetingsBuilder_ == null) {
+        return creativeTargetings_.get(index);
+      } else {
+        return creativeTargetingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.ads.admanager.v1.CreativeTargetingOrBuilder>
+        getCreativeTargetingsOrBuilderList() {
+      if (creativeTargetingsBuilder_ != null) {
+        return creativeTargetingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(creativeTargetings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativeTargeting.Builder addCreativeTargetingsBuilder() {
+      return internalGetCreativeTargetingsFieldBuilder()
+          .addBuilder(com.google.ads.admanager.v1.CreativeTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.CreativeTargeting.Builder addCreativeTargetingsBuilder(
+        int index) {
+      return internalGetCreativeTargetingsFieldBuilder()
+          .addBuilder(index, com.google.ads.admanager.v1.CreativeTargeting.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of CreativeTargeting objects that can be used to specify
+     * creative level targeting for this line item. Creative level targeting is
+     * specified in a
+     * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+     * field by referencing the [CreativeTargeting.display_name][] field. It also
+     * needs to be re-specified in the
+     * [LineItemCreativeAssociation.targeting_display_name][] field when
+     * associating a line item with a creative that fits into that placeholder.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.ads.admanager.v1.CreativeTargeting.Builder>
+        getCreativeTargetingsBuilderList() {
+      return internalGetCreativeTargetingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.ads.admanager.v1.CreativeTargeting,
+            com.google.ads.admanager.v1.CreativeTargeting.Builder,
+            com.google.ads.admanager.v1.CreativeTargetingOrBuilder>
+        internalGetCreativeTargetingsFieldBuilder() {
+      if (creativeTargetingsBuilder_ == null) {
+        creativeTargetingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.ads.admanager.v1.CreativeTargeting,
+                com.google.ads.admanager.v1.CreativeTargeting.Builder,
+                com.google.ads.admanager.v1.CreativeTargetingOrBuilder>(
+                creativeTargetings_,
+                ((bitField1_ & 0x20000000) != 0),
+                getParentForChildren(),
+                isClean());
+        creativeTargetings_ = null;
+      }
+      return creativeTargetingsBuilder_;
+    }
+
+    private com.google.protobuf.Internal.IntList allowedFormats_ = emptyIntList();
+
+    private void ensureAllowedFormatsIsMutable() {
+      if (!allowedFormats_.isModifiable()) {
+        allowedFormats_ = makeMutableCopy(allowedFormats_);
+      }
+      bitField1_ |= 0x40000000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the allowedFormats.
+     */
+    public java.util.List<
+            com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>
+        getAllowedFormatsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>(
+          allowedFormats_, allowedFormats_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of allowedFormats.
+     */
+    public int getAllowedFormatsCount() {
+      return allowedFormats_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The allowedFormats at the given index.
+     */
+    public com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat
+        getAllowedFormats(int index) {
+      return allowedFormats_converter_.convert(allowedFormats_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The allowedFormats to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowedFormats(
+        int index,
+        com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowedFormatsIsMutable();
+      allowedFormats_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The allowedFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowedFormats(
+        com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAllowedFormatsIsMutable();
+      allowedFormats_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The allowedFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllowedFormats(
+        java.lang.Iterable<
+                ? extends
+                    com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>
+            values) {
+      ensureAllowedFormatsIsMutable();
+      for (com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat value :
+          values) {
+        allowedFormats_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowedFormats() {
+      allowedFormats_ = emptyIntList();
+      bitField1_ = (bitField1_ & ~0x40000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for allowedFormats.
+     */
+    public java.util.List<java.lang.Integer> getAllowedFormatsValueList() {
+      allowedFormats_.makeImmutable();
+      return allowedFormats_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of allowedFormats at the given index.
+     */
+    public int getAllowedFormatsValue(int index) {
+      return allowedFormats_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for allowedFormats to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowedFormatsValue(int index, int value) {
+      ensureAllowedFormatsIsMutable();
+      allowedFormats_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for allowedFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllowedFormatsValue(int value) {
+      ensureAllowedFormatsIsMutable();
+      allowedFormats_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The set of allowed formats for this line item.
+     * If empty, all formats are allowed. This property only applies
+     * to programmatic video line items.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for allowedFormats to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAllowedFormatsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAllowedFormatsIsMutable();
+      for (int value : values) {
+        allowedFormats_.addInt(value);
+      }
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.ads.admanager.v1.LineItem)

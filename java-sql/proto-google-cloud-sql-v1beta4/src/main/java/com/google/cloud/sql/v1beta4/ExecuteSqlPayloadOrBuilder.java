@@ -114,6 +114,72 @@ public interface ExecuteSqlPayloadOrBuilder
    *
    *
    * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the passwordSecretVersion field is set.
+   */
+  boolean hasPasswordSecretVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The passwordSecretVersion.
+   */
+  java.lang.String getPasswordSecretVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for passwordSecretVersion.
+   */
+  com.google.protobuf.ByteString getPasswordSecretVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. When set to true, the API caller identity associated with the
    * request is used for database authentication. The API caller must be an
    * IAM user in the database.

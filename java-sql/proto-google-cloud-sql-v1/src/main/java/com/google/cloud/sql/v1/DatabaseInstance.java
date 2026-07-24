@@ -1597,7 +1597,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>bool can_defer = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.SqlScheduledMaintenance.can_defer is
-     *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1457
+     *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1466
      * @return The canDefer.
      */
     @java.lang.Deprecated
@@ -1758,7 +1758,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>bool can_defer = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.SqlScheduledMaintenance.can_defer is
-     *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1457
+     *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1466
      * @return The canDefer.
      */
     @java.lang.Override
@@ -2461,7 +2461,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
        * <code>bool can_defer = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.sql.v1.DatabaseInstance.SqlScheduledMaintenance.can_defer is
-       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1457
+       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1466
        * @return The canDefer.
        */
       @java.lang.Override
@@ -2474,7 +2474,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
        * <code>bool can_defer = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.sql.v1.DatabaseInstance.SqlScheduledMaintenance.can_defer is
-       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1457
+       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1466
        * @param value The canDefer to set.
        * @return This builder for chaining.
        */
@@ -2491,7 +2491,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
        * <code>bool can_defer = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.sql.v1.DatabaseInstance.SqlScheduledMaintenance.can_defer is
-       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1457
+       *     deprecated. See google/cloud/sql/v1/cloud_sql_instances.proto;l=1466
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -8078,7 +8078,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
    * @return Whether the maxDiskSize field is set.
    */
   @java.lang.Override
@@ -8097,7 +8097,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
    * @return The maxDiskSize.
    */
   @java.lang.Override
@@ -8143,7 +8143,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
    * @return Whether the currentDiskSize field is set.
    */
   @java.lang.Override
@@ -8167,7 +8167,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
    * @return The currentDiskSize.
    */
   @java.lang.Override
@@ -8438,7 +8438,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>string ipv6_address = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
    * @return The ipv6Address.
    */
   @java.lang.Override
@@ -8467,7 +8467,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * <code>string ipv6_address = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
    * @return The bytes for ipv6Address.
    */
   @java.lang.Override
@@ -10038,7 +10038,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return Whether the primaryDnsName field is set.
    */
   @java.lang.Override
@@ -10059,7 +10059,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return The primaryDnsName.
    */
   @java.lang.Override
@@ -10088,7 +10088,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return The bytes for primaryDnsName.
    */
   @java.lang.Override
@@ -10864,6 +10864,68 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
     return dnsNames_.get(index);
   }
 
+  public static final int DATABASE_CENTER_INTEGRATION_ENABLED_FIELD_NUMBER = 72;
+  private com.google.protobuf.BoolValue databaseCenterIntegrationEnabled_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the databaseCenterIntegrationEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatabaseCenterIntegrationEnabled() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The databaseCenterIntegrationEnabled.
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValue getDatabaseCenterIntegrationEnabled() {
+    return databaseCenterIntegrationEnabled_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : databaseCenterIntegrationEnabled_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.BoolValueOrBuilder getDatabaseCenterIntegrationEnabledOrBuilder() {
+    return databaseCenterIntegrationEnabled_ == null
+        ? com.google.protobuf.BoolValue.getDefaultInstance()
+        : databaseCenterIntegrationEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -11041,6 +11103,9 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < dnsNames_.size(); i++) {
       output.writeMessage(67, dnsNames_.get(i));
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(72, getDatabaseCenterIntegrationEnabled());
     }
     getUnknownFields().writeTo(output);
   }
@@ -11251,6 +11316,11 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < dnsNames_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(67, dnsNames_.get(i));
     }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              72, getDatabaseCenterIntegrationEnabled());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -11397,6 +11467,12 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
     }
     if (!getNodesList().equals(other.getNodesList())) return false;
     if (!getDnsNamesList().equals(other.getDnsNamesList())) return false;
+    if (hasDatabaseCenterIntegrationEnabled() != other.hasDatabaseCenterIntegrationEnabled())
+      return false;
+    if (hasDatabaseCenterIntegrationEnabled()) {
+      if (!getDatabaseCenterIntegrationEnabled()
+          .equals(other.getDatabaseCenterIntegrationEnabled())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -11573,6 +11649,10 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
     if (getDnsNamesCount() > 0) {
       hash = (37 * hash) + DNS_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getDnsNamesList().hashCode();
+    }
+    if (hasDatabaseCenterIntegrationEnabled()) {
+      hash = (37 * hash) + DATABASE_CENTER_INTEGRATION_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabaseCenterIntegrationEnabled().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -11759,6 +11839,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
         internalGetIncludeReplicasForMajorVersionUpgradeFieldBuilder();
         internalGetNodesFieldBuilder();
         internalGetDnsNamesFieldBuilder();
+        internalGetDatabaseCenterIntegrationEnabledFieldBuilder();
       }
     }
 
@@ -11914,6 +11995,11 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
         dnsNamesBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00040000);
+      databaseCenterIntegrationEnabled_ = null;
+      if (databaseCenterIntegrationEnabledBuilder_ != null) {
+        databaseCenterIntegrationEnabledBuilder_.dispose();
+        databaseCenterIntegrationEnabledBuilder_ = null;
+      }
       return this;
     }
 
@@ -12201,6 +12287,13 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
       if (((from_bitField1_ & 0x00010000) != 0)) {
         result.nodeCount_ = nodeCount_;
         to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField1_ & 0x00080000) != 0)) {
+        result.databaseCenterIntegrationEnabled_ =
+            databaseCenterIntegrationEnabledBuilder_ == null
+                ? databaseCenterIntegrationEnabled_
+                : databaseCenterIntegrationEnabledBuilder_.build();
+        to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -12526,6 +12619,9 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
             dnsNamesBuilder_.addAllMessages(other.dnsNames_);
           }
         }
+      }
+      if (other.hasDatabaseCenterIntegrationEnabled()) {
+        mergeDatabaseCenterIntegrationEnabled(other.getDatabaseCenterIntegrationEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -12929,6 +13025,14 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 538
+            case 578:
+              {
+                input.readMessage(
+                    internalGetDatabaseCenterIntegrationEnabledFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00080000;
+                break;
+              } // case 578
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14084,7 +14188,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
      * @return Whether the maxDiskSize field is set.
      */
     @java.lang.Deprecated
@@ -14102,7 +14206,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
      * @return The maxDiskSize.
      */
     @java.lang.Deprecated
@@ -14295,7 +14399,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
      * @return Whether the currentDiskSize field is set.
      */
     @java.lang.Deprecated
@@ -14318,7 +14422,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
      * @return The currentDiskSize.
      */
     @java.lang.Deprecated
@@ -15308,7 +15412,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>string ipv6_address = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
      * @return The ipv6Address.
      */
     @java.lang.Deprecated
@@ -15336,7 +15440,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>string ipv6_address = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
      * @return The bytes for ipv6Address.
      */
     @java.lang.Deprecated
@@ -15364,7 +15468,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>string ipv6_address = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
      * @param value The ipv6Address to set.
      * @return This builder for chaining.
      */
@@ -15391,7 +15495,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>string ipv6_address = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -15414,7 +15518,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * <code>string ipv6_address = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
      * @param value The bytes for ipv6Address to set.
      * @return This builder for chaining.
      */
@@ -19698,7 +19802,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @return Whether the primaryDnsName field is set.
      */
     @java.lang.Deprecated
@@ -19718,7 +19822,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @return The primaryDnsName.
      */
     @java.lang.Deprecated
@@ -19746,7 +19850,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @return The bytes for primaryDnsName.
      */
     @java.lang.Deprecated
@@ -19774,7 +19878,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @param value The primaryDnsName to set.
      * @return This builder for chaining.
      */
@@ -19801,7 +19905,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19824,7 +19928,7 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+     *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
      * @param value The bytes for primaryDnsName to set.
      * @return This builder for chaining.
      */
@@ -22274,6 +22378,229 @@ public final class DatabaseInstance extends com.google.protobuf.GeneratedMessage
         dnsNames_ = null;
       }
       return dnsNamesBuilder_;
+    }
+
+    private com.google.protobuf.BoolValue databaseCenterIntegrationEnabled_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        databaseCenterIntegrationEnabledBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the databaseCenterIntegrationEnabled field is set.
+     */
+    public boolean hasDatabaseCenterIntegrationEnabled() {
+      return ((bitField1_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The databaseCenterIntegrationEnabled.
+     */
+    public com.google.protobuf.BoolValue getDatabaseCenterIntegrationEnabled() {
+      if (databaseCenterIntegrationEnabledBuilder_ == null) {
+        return databaseCenterIntegrationEnabled_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : databaseCenterIntegrationEnabled_;
+      } else {
+        return databaseCenterIntegrationEnabledBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseCenterIntegrationEnabled(com.google.protobuf.BoolValue value) {
+      if (databaseCenterIntegrationEnabledBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        databaseCenterIntegrationEnabled_ = value;
+      } else {
+        databaseCenterIntegrationEnabledBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDatabaseCenterIntegrationEnabled(
+        com.google.protobuf.BoolValue.Builder builderForValue) {
+      if (databaseCenterIntegrationEnabledBuilder_ == null) {
+        databaseCenterIntegrationEnabled_ = builderForValue.build();
+      } else {
+        databaseCenterIntegrationEnabledBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDatabaseCenterIntegrationEnabled(com.google.protobuf.BoolValue value) {
+      if (databaseCenterIntegrationEnabledBuilder_ == null) {
+        if (((bitField1_ & 0x00080000) != 0)
+            && databaseCenterIntegrationEnabled_ != null
+            && databaseCenterIntegrationEnabled_
+                != com.google.protobuf.BoolValue.getDefaultInstance()) {
+          getDatabaseCenterIntegrationEnabledBuilder().mergeFrom(value);
+        } else {
+          databaseCenterIntegrationEnabled_ = value;
+        }
+      } else {
+        databaseCenterIntegrationEnabledBuilder_.mergeFrom(value);
+      }
+      if (databaseCenterIntegrationEnabled_ != null) {
+        bitField1_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDatabaseCenterIntegrationEnabled() {
+      bitField1_ = (bitField1_ & ~0x00080000);
+      databaseCenterIntegrationEnabled_ = null;
+      if (databaseCenterIntegrationEnabledBuilder_ != null) {
+        databaseCenterIntegrationEnabledBuilder_.dispose();
+        databaseCenterIntegrationEnabledBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.BoolValue.Builder getDatabaseCenterIntegrationEnabledBuilder() {
+      bitField1_ |= 0x00080000;
+      onChanged();
+      return internalGetDatabaseCenterIntegrationEnabledFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.BoolValueOrBuilder getDatabaseCenterIntegrationEnabledOrBuilder() {
+      if (databaseCenterIntegrationEnabledBuilder_ != null) {
+        return databaseCenterIntegrationEnabledBuilder_.getMessageOrBuilder();
+      } else {
+        return databaseCenterIntegrationEnabled_ == null
+            ? com.google.protobuf.BoolValue.getDefaultInstance()
+            : databaseCenterIntegrationEnabled_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, instance metadata is sent to the Database Center. If
+     * false, instance metadata is not sent to the Database Center.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        internalGetDatabaseCenterIntegrationEnabledFieldBuilder() {
+      if (databaseCenterIntegrationEnabledBuilder_ == null) {
+        databaseCenterIntegrationEnabledBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>(
+                getDatabaseCenterIntegrationEnabled(), getParentForChildren(), isClean());
+        databaseCenterIntegrationEnabled_ = null;
+      }
+      return databaseCenterIntegrationEnabledBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.sql.v1.DatabaseInstance)

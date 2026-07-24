@@ -238,6 +238,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -247,6 +248,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
@@ -287,6 +290,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -296,6 +300,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
    * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
@@ -1161,6 +1167,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -1170,6 +1177,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
@@ -1209,6 +1218,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -1218,6 +1228,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
@@ -1257,6 +1269,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -1266,6 +1279,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
@@ -1304,6 +1319,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -1313,6 +1329,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;
@@ -1347,6 +1365,7 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;externalOrderId&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;impressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;orderId&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;poNumber&lt;/code&gt;&lt;/li&gt;
@@ -1356,6 +1375,8 @@ public final class ListOrdersRequest extends com.google.protobuf.GeneratedMessag
      * &lt;li&gt;&lt;code&gt;secondaryTraffickers&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalClicksDelivered&lt;/code&gt;&lt;/li&gt;
+     * &lt;li&gt;&lt;code&gt;totalViewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;trafficker&lt;/code&gt;&lt;/li&gt;
      * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
      * &lt;/ul&gt;

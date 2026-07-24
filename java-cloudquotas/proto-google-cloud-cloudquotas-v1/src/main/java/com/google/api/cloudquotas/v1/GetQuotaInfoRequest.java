@@ -79,14 +79,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the quota info.
+   * Required. Identifier. The resource name of the quota info.
    *
    * An example name:
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -108,14 +108,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. The resource name of the quota info.
+   * Required. Identifier. The resource name of the quota info.
    *
    * An example name:
    * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -449,14 +449,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the quota info.
+     * Required. Identifier. The resource name of the quota info.
      *
      * An example name:
      * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The name.
@@ -477,14 +477,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the quota info.
+     * Required. Identifier. The resource name of the quota info.
      *
      * An example name:
      * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for name.
@@ -505,14 +505,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the quota info.
+     * Required. Identifier. The resource name of the quota info.
      *
      * An example name:
      * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The name to set.
@@ -532,14 +532,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the quota info.
+     * Required. Identifier. The resource name of the quota info.
      *
      * An example name:
      * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -555,14 +555,14 @@ public final class GetQuotaInfoRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. The resource name of the quota info.
+     * Required. Identifier. The resource name of the quota info.
      *
      * An example name:
      * `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
      * </pre>
      *
      * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for name to set.

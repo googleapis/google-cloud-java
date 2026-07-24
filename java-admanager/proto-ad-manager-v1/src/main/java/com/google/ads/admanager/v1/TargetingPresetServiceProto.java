@@ -65,6 +65,18 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchCreateTargetingPresetsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateTargetingPresetRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateTargetingPresetRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_fieldAccessorTable;
@@ -90,7 +102,8 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
           + "1\0327google/ads/admanager/v1/targeting_pre"
           + "set_messages.proto\032\034google/api/annotatio"
           + "ns.proto\032\027google/api/client.proto\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/resource.proto\"[\n"
+          + "e/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"[\n"
           + "\031GetTargetingPresetRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(admanager.googleapis.com/TargetingPreset\"\307\001\n"
@@ -103,8 +116,8 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
           + "\010order_by\030\005 \001(\tB\003\340A\001\022\021\n"
           + "\004skip\030\006 \001(\005B\003\340A\001\"\220\001\n"
           + "\034ListTargetingPresetsResponse\022C\n"
-          + "\021targeting_presets\030\001"
-          + " \003(\0132(.google.ads.admanager.v1.TargetingPreset\022\027\n"
+          + "\021targeting_presets\030\001 \003"
+          + "(\0132(.google.ads.admanager.v1.TargetingPreset\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
           + "total_size\030\003 \001(\005\"\241\001\n"
           + "\034CreateTargetingPresetRequest\0228\n"
@@ -119,6 +132,19 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
           + " \003(\01325.google.ads.admanager.v1.CreateTargetingPresetRequestB\003\340A\002\"j\n"
           + "#BatchCreateTargetingPresetsResponse\022C\n"
           + "\021targeting_presets\030\001"
+          + " \003(\0132(.google.ads.admanager.v1.TargetingPreset\"\235\001\n"
+          + "\034UpdateTargetingPresetRequest\022G\n"
+          + "\020targeting_preset\030\001 \001(\0132(.go"
+          + "ogle.ads.admanager.v1.TargetingPresetB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\254\001\n"
+          + "\"BatchUpdateTargetingPresetsRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022L\n"
+          + "\010requests\030\002"
+          + " \003(\01325.google.ads.admanager.v1.UpdateTargetingPresetRequestB\003\340A\002\"j\n"
+          + "#BatchUpdateTargetingPresetsResponse\022C\n"
+          + "\021targeting_presets\030\001"
           + " \003(\0132(.google.ads.admanager.v1.TargetingPreset\"\204\001\n"
           + " DeactivateTargetingPresetRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
@@ -127,38 +153,47 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
           + "&BatchDeactivateTargetingPresetsRequest\0228\n"
           + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\022P\n"
-          + "\010requests\030\002 \003(\01329.g"
-          + "oogle.ads.admanager.v1.DeactivateTargetingPresetRequestB\003\340A\002\"?\n"
+          + "\010requests\030\002 \003(\01329.goog"
+          + "le.ads.admanager.v1.DeactivateTargetingPresetRequestB\003\340A\002\"?\n"
           + "\'BatchDeactivateTargetingPresetsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\0032\307\t\n"
+          + "\014change_count\030\001 \001(\0032\244\r\n"
           + "\026TargetingPresetService\022\253\001\n"
-          + "\022GetTargetingPreset\0222.google.ads.admanager.v"
-          + "1.GetTargetingPresetRequest\032(.google.ads"
-          + ".admanager.v1.TargetingPreset\"7\332A\004name\202\323"
-          + "\344\223\002*\022(/v1/{name=networks/*/targetingPresets/*}\022\276\001\n"
-          + "\024ListTargetingPresets\0224.google.ads.admanager.v1.ListTargetingPresetsRe"
-          + "quest\0325.google.ads.admanager.v1.ListTarg"
-          + "etingPresetsResponse\"9\332A\006parent\202\323\344\223\002*\022(/"
-          + "v1/{parent=networks/*}/targetingPresets\022\326\001\n"
-          + "\025CreateTargetingPreset\0225.google.ads.admanager.v1.CreateTargetingPresetRequest"
-          + "\032(.google.ads.admanager.v1.TargetingPres"
-          + "et\"\\\332A\027parent,targeting_preset\202\323\344\223\002<\"(/v"
-          + "1/{parent=networks/*}/targetingPresets:\020targeting_preset\022\353\001\n"
-          + "\033BatchCreateTargetingPresets\022;.google.ads.admanager.v1.Batch"
-          + "CreateTargetingPresetsRequest\032<.google.ads.admanager.v1.BatchCreateTargetingPres"
-          + "etsResponse\"Q\332A\017parent,requests\202\323\344\223\0029\"4/"
-          + "v1/{parent=networks/*}/targetingPresets:batchCreate:\001*\022\372\001\n"
-          + "\037BatchDeactivateTargetingPresets\022?.google.ads.admanager.v1.Bat"
-          + "chDeactivateTargetingPresetsRequest\032@.google.ads.admanager.v1.BatchDeactivateTar"
-          + "getingPresetsResponse\"T\332A\017parent,request"
-          + "s\202\323\344\223\002<\"7/v1/{parent=networks/*}/targeti"
-          + "ngPreset:batchDeactivate:\001*\032z\312A\030admanage"
-          + "r.googleapis.com\322A\\https://www.googleapi"
-          + "s.com/auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\317\001\n"
-          + "\033com.google.ads.admanager.v1B\033TargetingPreset"
-          + "ServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;admanager"
-          + "\252\002\027Google.Ads.AdManager.V1\312\002\027Google\\Ads\\"
-          + "AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\022GetTargetingPreset\0222.google.ads.admanager.v1.G"
+          + "etTargetingPresetRequest\032(.google.ads.ad"
+          + "manager.v1.TargetingPreset\"7\332A\004name\202\323\344\223\002"
+          + "*\022(/v1/{name=networks/*/targetingPresets/*}\022\276\001\n"
+          + "\024ListTargetingPresets\0224.google.ads.admanager.v1.ListTargetingPresetsReque"
+          + "st\0325.google.ads.admanager.v1.ListTargeti"
+          + "ngPresetsResponse\"9\332A\006parent\202\323\344\223\002*\022(/v1/{parent=networks/*}/targetingPresets\022\326\001\n"
+          + "\025CreateTargetingPreset\0225.google.ads.adma"
+          + "nager.v1.CreateTargetingPresetRequest\032(.google.ads.admanager.v1.TargetingPreset\""
+          + "\\\332A\027parent,targeting_preset\202\323\344\223\002<\"(/v1/{"
+          + "parent=networks/*}/targetingPresets:\020targeting_preset\022\353\001\n"
+          + "\033BatchCreateTargetingPresets\022;.google.ads.admanager.v1.BatchCre"
+          + "ateTargetingPresetsRequest\032<.google.ads.admanager.v1.BatchCreateTargetingPresets"
+          + "Response\"Q\332A\017parent,requests\202\323\344\223\0029\"4/v1/"
+          + "{parent=networks/*}/targetingPresets:batchCreate:\001*\022\354\001\n"
+          + "\025UpdateTargetingPreset\0225.google.ads.admanager.v1.UpdateTargetingP"
+          + "resetRequest\032(.google.ads.admanager.v1.T"
+          + "argetingPreset\"r\332A\034targeting_preset,upda"
+          + "te_mask\202\323\344\223\002M29/v1/{targeting_preset.nam"
+          + "e=networks/*/targetingPresets/*}:\020targeting_preset\022\353\001\n"
+          + "\033BatchUpdateTargetingPresets\022;.google.ads.admanager.v1.BatchUpdate"
+          + "TargetingPresetsRequest\032<.google.ads.admanager.v1.BatchUpdateTargetingPresetsRes"
+          + "ponse\"Q\332A\017parent,requests\202\323\344\223\0029\"4/v1/{pa"
+          + "rent=networks/*}/targetingPresets:batchUpdate:\001*\022\372\001\n"
+          + "\037BatchDeactivateTargetingPresets\022?.google.ads.admanager.v1.BatchDeac"
+          + "tivateTargetingPresetsRequest\032@.google.ads.admanager.v1.BatchDeactivateTargeting"
+          + "PresetsResponse\"T\332A\017parent,requests\202\323\344\223\002"
+          + "<\"7/v1/{parent=networks/*}/targetingPres"
+          + "et:batchDeactivate:\001*\032z\312A\030admanager.goog"
+          + "leapis.com\322A\\https://www.googleapis.com/"
+          + "auth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\317\001\n"
+          + "\033com.google.ads.admanager.v1B\033TargetingPresetServic"
+          + "eProtoP\001Z@google.golang.org/genproto/goo"
+          + "gleapis/ads/admanager/v1;admanager\252\002\027Goo"
+          + "gle.Ads.AdManager.V1\312\002\027Google\\Ads\\AdMana"
+          + "ger\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -169,6 +204,7 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetTargetingPresetRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -218,8 +254,32 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
             new java.lang.String[] {
               "TargetingPresets",
             });
-    internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_descriptor =
+    internal_static_google_ads_admanager_v1_UpdateTargetingPresetRequest_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateTargetingPresetRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateTargetingPresetRequest_descriptor,
+            new java.lang.String[] {
+              "TargetingPreset", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateTargetingPresetsResponse_descriptor,
+            new java.lang.String[] {
+              "TargetingPresets",
+            });
+    internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DeactivateTargetingPresetRequest_descriptor,
@@ -227,7 +287,7 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
               "Name", "TargetingPresetId",
             });
     internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(10);
     internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsRequest_descriptor,
@@ -235,7 +295,7 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
               "Parent", "Requests",
             });
     internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsResponse_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(11);
     internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateTargetingPresetsResponse_descriptor,
@@ -248,6 +308,7 @@ public final class TargetingPresetServiceProto extends com.google.protobuf.Gener
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

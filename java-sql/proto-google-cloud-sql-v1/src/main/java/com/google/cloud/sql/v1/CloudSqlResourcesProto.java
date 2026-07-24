@@ -1120,13 +1120,11 @@ public final class CloudSqlResourcesProto extends com.google.protobuf.GeneratedF
           + "\033AUTO_DNS_STATUS_UNSPECIFIED\020\000\022\017\n"
           + "\013AUTO_DNS_OK\020\001\022\023\n"
           + "\017AUTO_DNS_FAILED\020\002\022\024\n"
-          + "\020AUTO_DNS_UNKNOWN\020\003B\273\002\n"
+          + "\020AUTO_DNS_UNKNOWN\020\003B\254\001\n"
           + "\027com.google.cloud.sql.v1B\026CloudSqlResources"
-          + "ProtoP\001Z)cloud.google.com/go/sql/apiv1/sqlpb;sqlpb\352A\213\001\n"
-          + ".compute.googleapis.com/ServiceConnectionPolicy\022Yprojects/{projec"
-          + "t}/regions/{region}/serviceConnectionPolicies/{service_connection_policy}\352AK\n"
-          + " cloudsql.googleapis.com/Instance\022\'projects"
-          + "/{project}/instances/{instance}b\006proto3"
+          + "ProtoP\001Z)cloud.google.com/go/sql/apiv1/sqlpb;sqlpb\352AK\n"
+          + " cloudsql.googleapis.com/Instance\022\'projects/{project}/instances/{i"
+          + "nstance}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

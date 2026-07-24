@@ -30,14 +30,14 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Identifier. Value for parent.
    *
    * Example:
    * `projects/123/locations/global`
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The parent.
@@ -48,14 +48,14 @@ public interface CreateQuotaPreferenceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent.
+   * Required. Identifier. Value for parent.
    *
    * Example:
    * `projects/123/locations/global`
    * </pre>
    *
    * <code>
-   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for parent.
