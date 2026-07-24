@@ -27,9 +27,9 @@ This guide provides comprehensive instructions for configuring, developing with,
    - [CUJ 6: Service Account Impersonation](#cuj-6-service-account-impersonation)
    - [CUJ 7: Stored Procedure Execution & Procedural Results](#cuj-7-stored-procedure-execution--procedural-results)
 8. [High-Throughput & Performance Tuning](#8-high-throughput--performance-tuning)
-9. [Framework & BI Tool Integrations](#9-framework--bi-tool-integrations)
-   - [Spring Boot & HikariCP](#spring-boot--hikaricp)
-   - [SQL Clients (DBeaver / DataGrip)](#sql-clients-dbeaver--datagrip)
+9. [Framework Integration & Deployment](#9-framework-integration--deployment)
+   - [Spring Boot (application.yml)](#spring-boot-applicationyml)
+   - [Key Deployment Guidelines](#key-deployment-guidelines)
 10. [Logging, Diagnostics & Troubleshooting](#10-logging-diagnostics--troubleshooting)
 11. [Official Documentation References](#11-official-documentation-references)
 
@@ -969,7 +969,7 @@ jdbc:bigquery://https://www.my-universe.cloud:443
 ```yaml
 spring:
   datasource:
-    url: jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-gcp-project;DefaultDataset=my_dataset;OAuthType=0;OAuthServiceAcctEmail=sa@my-project.iam.gserviceaccount.com;OAuthPvtKeyPath=/path/to/key.json
+    url: "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=my-gcp-project;DefaultDataset=my_dataset;OAuthType=0;OAuthServiceAcctEmail=sa@my-project.iam.gserviceaccount.com;OAuthPvtKeyPath=/path/to/key.json"
     driver-class-name: com.google.cloud.bigquery.jdbc.BigQueryDriver
     hikari:
       maximum-pool-size: 10
