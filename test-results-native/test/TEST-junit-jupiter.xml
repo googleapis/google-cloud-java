@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="0" skipped="0" failures="0" errors="0" time="0" hostname="whowes.c.googlers.com" timestamp="2026-07-10T21:09:39">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="java.class.path" value=""/>
+<property name="java.class.version" value="61.0"/>
+<property name="java.endorsed.dirs" value=""/>
+<property name="java.ext.dirs" value=""/>
+<property name="java.io.tmpdir" value="/tmp"/>
+<property name="java.library.path" value="/usr/lib/mesa-diverted/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/mesa:/usr/lib/x86_64-linux-gnu/dri:/usr/lib/x86_64-linux-gnu/gallium-pipe:/usr/lib64:/lib64:/lib:/usr/lib"/>
+<property name="java.runtime.name" value="GraalVM Runtime Environment"/>
+<property name="java.runtime.version" value="17.0.9+9-jvmci-23.0-b22"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="17"/>
+<property name="java.vendor" value="GraalVM Community"/>
+<property name="java.vendor.url" value="https://www.graalvm.org/"/>
+<property name="java.vendor.version" value="GraalVM CE 17.0.9+9.1"/>
+<property name="java.version" value="17.0.9"/>
+<property name="java.version.date" value="2023-10-17"/>
+<property name="java.vm.info" value="serial gc"/>
+<property name="java.vm.name" value="Substrate VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="17"/>
+<property name="java.vm.vendor" value="GraalVM Community"/>
+<property name="java.vm.version" value="17.0.9+9"/>
+<property name="jdk.lang.Process.launchMechanism" value="FORK"/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="org.graalvm.nativeimage.imagecode" value="runtime"/>
+<property name="org.graalvm.nativeimage.kind" value="executable"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Linux"/>
+<property name="os.version" value="6.18.14-1rodete3-amd64"/>
+<property name="path.separator" value=":"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="user.dir" value="/usr/local/google/home/whowes/cloudsdk/google-cloud-java"/>
+<property name="user.home" value="/usr/local/google/home/whowes"/>
+<property name="user.name" value="whowes"/>
+<property name="user.timezone" value="Etc/UTC"/>
+</properties>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>
