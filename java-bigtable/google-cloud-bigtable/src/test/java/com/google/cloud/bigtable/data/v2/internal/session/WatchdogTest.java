@@ -60,7 +60,7 @@ public class WatchdogTest {
     sessions = new SessionList();
     watchdog =
         new Watchdog(
-            new Object(),
+            new java.util.concurrent.locks.ReentrantLock(),
             timer,
             MoreExecutors.directExecutor(),
             interval,

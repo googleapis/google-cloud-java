@@ -69,6 +69,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -86,6 +88,25 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   private static final int PROTOCOL_VERSION = 0;
 
+  // Pool-wide lock. Replaces the previous `synchronized (this)` monitor. Kept as an explicit
+  // ReentrantLock so the request-serving hot path can acquire it with a bounded timeout
+  // (tryLock) instead of blocking forever. In production we observed a pool whose monitor had
+  // no owner but many waiters (an orphaned monitor, e.g. after a thread died mid-critical-section
+  // during native-thread OOM): every incoming RPC probe (hasSession/newCall) blocked on it
+  // permanently, which piled up threads and shed 100% of traffic. With a ReentrantLock, a wedged
+  // pool degrades to a bounded fast-fail on the request path rather than an unbounded hang.
+  //
+  // Reentrancy note: several internal callbacks (createSession, onSessionGoAway, ...) acquire the
+  // lock while an outer critical section already holds it. ReentrantLock preserves the reentrant
+  // semantics the old `synchronized` relied on.
+  private final ReentrantLock poolLock = new ReentrantLock();
+
+  // How long the request-serving hot path (hasSession/newCall/PendingVRpc.start) waits to acquire
+  // the pool lock before giving up and degrading. Healthy critical sections are microseconds long,
+  // so this is only ever exhausted when the pool is wedged; keeping it bounded turns a permanent
+  // hang into a recoverable fast-fail.
+  private static final long HOT_PATH_LOCK_TIMEOUT_MILLIS = 1000;
+
   private final Metrics metrics;
   private final FeatureFlags featureFlags;
   private final SessionPoolInfo info;
@@ -96,21 +117,21 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   // Set once by start(), and read by both user & grpc threads
   private volatile OpenParams openParams;
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private PoolState poolState = PoolState.NEW;
 
   @VisibleForTesting
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   final SessionList sessions;
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private final DynamicPicker picker;
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private final PoolSizer poolSizer;
 
   // TODO: we need to close pendingVRpcs when deadline expires
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private final Deque<PendingVRpc<?, ?>> pendingRpcs = new ArrayDeque<>();
 
   private final Watchdog watchdog;
@@ -124,7 +145,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   // run pool-lock-holding work inline.
   private final Executor backgroundExecutor;
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private int consecutiveFailures = 0;
 
   /**
@@ -135,11 +156,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   private volatile int consecutiveUnimplementedFailures = 0;
 
   // Self-rescheduling AFE-prune chain. Set by scheduleNextAfePrune; cancelled by close.
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   @Nullable
   private BigtableTimer.Timeout afeListPruneTimeout;
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private boolean closed = false;
 
   // Completed when this pool has been close()d AND every session has reached the CLOSED terminal
@@ -147,11 +168,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   // onto userCallbackExecutor before that executor is shut down.
   private final CompletableFuture<Void> drainedFuture = new CompletableFuture<>();
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private BigtableTimer.Timeout retryCreateSessionFuture = null;
 
   // TODO: get the max from ClientConfiguration
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private final SessionCreationBudget budget;
 
   private final ClientConfigurationManager configManager;
@@ -159,7 +180,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   private final DebugTagTracer debugTagTracer;
 
-  // @SuppressWarnings("GuardedBy"): error-prone flags writes to @GuardedBy("this") fields
+  // @SuppressWarnings("GuardedBy"): error-prone flags writes to @GuardedBy("poolLock") fields
   // (sessions, picker, poolSizer, pendingRpcs, budget, retryCreateSessionFuture) inside the
   // constructor without holding the monitor. This is safe because the object is not yet published
   // to other threads — no external reference exists until the constructor returns.
@@ -237,7 +258,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // Watchdog checks for sessions in WAIT_SERVER_CLOSE state and runs every 5 minutes
     watchdog =
         new Watchdog(
-            this, timer, backgroundExecutor, Duration.ofMinutes(5), sessions, debugTagTracer);
+            poolLock, timer, backgroundExecutor, Duration.ofMinutes(5), sessions, debugTagTracer);
     // Heartbeat monitoring is now done per-session via SessionImpl.scheduleHeartbeatCheck.
     scheduleNextAfePrune();
 
@@ -248,15 +269,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         configManager.addListener(
             clientConfig -> clientConfig.getSessionConfiguration().getSessionPoolConfiguration(),
             newConfig -> {
-              synchronized (SessionPoolImpl.this) {
+              poolLock.lock();
+              try {
                 budget.updateConfig(newConfig);
                 poolSizer.updateConfig(newConfig);
                 picker.updateConfig(newConfig);
+              } finally {
+                poolLock.unlock();
               }
             });
   }
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private void scheduleNextAfePrune() {
     if (closed) {
       return;
@@ -270,7 +294,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   }
 
   private void runAfePruneAndReschedule() {
-    synchronized (SessionPoolImpl.this) {
+    poolLock.lock();
+    try {
       try {
         if (closed) {
           return;
@@ -281,6 +306,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       } finally {
         scheduleNextAfePrune();
       }
+    } finally {
+      poolLock.unlock();
     }
   }
 
@@ -294,7 +321,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     configListenerHandle.close();
 
     List<PendingVRpc<?, ?>> toCancel;
-    synchronized (this) {
+    poolLock.lock();
+    try {
       if (poolState == PoolState.CLOSED) {
         logger.fine(String.format("Tried to close a closed SessionPool %s", info.getLogName()));
         return;
@@ -321,6 +349,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       if (sessions.getAllSessions().isEmpty()) {
         drainedFuture.complete(null);
       }
+    } finally {
+      poolLock.unlock();
     }
 
     // cancelWithResult trampolines through ctx.getExecutor() — required because the public
@@ -354,31 +384,37 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   }
 
   @Override
-  public synchronized void start(OpenReqT openReq, Metadata md) {
-    Preconditions.checkState(poolState == PoolState.NEW);
+  public void start(OpenReqT openReq, Metadata md) {
+    poolLock.lock();
+    try {
+      Preconditions.checkState(poolState == PoolState.NEW);
 
-    Metadata mergedMd = new Metadata();
-    mergedMd.merge(md);
-    mergedMd.merge(Util.composeMetadata(featureFlags, descriptor.extractHeaderParams(openReq)));
+      Metadata mergedMd = new Metadata();
+      mergedMd.merge(md);
+      mergedMd.merge(Util.composeMetadata(featureFlags, descriptor.extractHeaderParams(openReq)));
 
-    openParams =
-        OpenParams.create(
-            mergedMd,
-            OpenSessionRequest.newBuilder()
-                .setProtocolVersion(PROTOCOL_VERSION)
-                .setFlags(featureFlags)
-                .setConsecutiveFailedConnectionAttempts(0) // will be updated each handshake attempt
-                .setRoutingCookie(ByteString.EMPTY) // set when each session is renegotiated
-                .setPayload(openReq.toByteString()) // will be set on start
-                .build());
-    poolState = PoolState.STARTED; // TODO: maybe need a READY state as well?
+      openParams =
+          OpenParams.create(
+              mergedMd,
+              OpenSessionRequest.newBuilder()
+                  .setProtocolVersion(PROTOCOL_VERSION)
+                  .setFlags(featureFlags)
+                  .setConsecutiveFailedConnectionAttempts(
+                      0) // will be updated each handshake attempt
+                  .setRoutingCookie(ByteString.EMPTY) // set when each session is renegotiated
+                  .setPayload(openReq.toByteString()) // will be set on start
+                  .build());
+      poolState = PoolState.STARTED; // TODO: maybe need a READY state as well?
 
-    // Pre-start
-    for (int i = poolSizer.getScaleDelta(); i > 0; i--) {
-      createSession(openParams);
+      // Pre-start
+      for (int i = poolSizer.getScaleDelta(); i > 0; i--) {
+        createSession(openParams);
+      }
+
+      watchdog.start();
+    } finally {
+      poolLock.unlock();
     }
-
-    watchdog.start();
   }
 
   private static SessionCreationBudget createInitialBudget(
@@ -400,7 +436,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         .getConsecutiveSessionFailureThreshold();
   }
 
-  private synchronized void createSession(OpenParams openParams) {
+  @GuardedBy("poolLock")
+  private void createSession(OpenParams openParams) {
     if (!budget.tryReserveSession()) {
       debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_pool_no_budget");
       logger.fine(
@@ -452,7 +489,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
   }
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private void maybeScheduleCreateSessionRetry() {
     if (retryCreateSessionFuture != null) {
       return;
@@ -467,11 +504,14 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     retryCreateSessionFuture =
         timer.newTimeout(
             () -> {
-              synchronized (SessionPoolImpl.this) {
+              poolLock.lock();
+              try {
                 retryCreateSessionFuture = null;
                 if (poolState != PoolState.CLOSED && poolSizer.getScaleDelta() > 0) {
                   createSession(openParams);
                 }
+              } finally {
+                poolLock.unlock();
               }
             },
             backgroundExecutor,
@@ -479,45 +519,59 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
             TimeUnit.MILLISECONDS);
   }
 
-  private synchronized void onSessionReady(SessionHandle handle, OpenSessionResponse ignored) {
-    logger.log(
-        Level.FINE,
-        "Session {0} in state {1}",
-        new Object[] {handle.getSession().getLogName(), handle.getSession().getState()});
+  private void onSessionReady(SessionHandle handle, OpenSessionResponse ignored) {
+    poolLock.lock();
+    try {
+      logger.log(
+          Level.FINE,
+          "Session {0} in state {1}",
+          new Object[] {handle.getSession().getLogName(), handle.getSession().getState()});
 
-    consecutiveFailures = 0;
-    consecutiveUnimplementedFailures = 0;
+      consecutiveFailures = 0;
+      consecutiveUnimplementedFailures = 0;
 
-    if (poolState != PoolState.STARTED) {
-      logger.fine(
-          String.format(
-              "%s Session became ready after pool transitioned to %s, ignoring",
-              handle.getSession().getLogName(), poolState));
-      // The session will be closed as part of SessionList#close
-      return;
+      if (poolState != PoolState.STARTED) {
+        logger.fine(
+            String.format(
+                "%s Session became ready after pool transitioned to %s, ignoring",
+                handle.getSession().getLogName(), poolState));
+        // The session will be closed as part of SessionList#close
+        return;
+      }
+      handle.onSessionStarted();
+
+      budget.onSessionCreationSuccess();
+
+      // handle pending rpcs
+      tryDrainPendingRpcs();
+    } finally {
+      poolLock.unlock();
     }
-    handle.onSessionStarted();
-
-    budget.onSessionCreationSuccess();
-
-    // handle pending rpcs
-    tryDrainPendingRpcs();
   }
 
-  private synchronized void onVRpcComplete(
-      SessionHandle handle, Duration elapsed, VRpcResult result) {
-    handle.onVRpcFinish(elapsed, result);
-    afterRelease(handle);
+  private void onVRpcComplete(SessionHandle handle, Duration elapsed, VRpcResult result) {
+    poolLock.lock();
+    try {
+      handle.onVRpcFinish(elapsed, result);
+      afterRelease(handle);
+    } finally {
+      poolLock.unlock();
+    }
   }
 
   // Called when a pending vRPC was drained but cancelled before it attached to a real call.
   // Mirrors onVRpcComplete; the handle reports no latency because nothing ran on it.
-  private synchronized void onPendingVRpcCancelled(SessionHandle handle) {
-    handle.onPendingVRpcCancelled();
-    afterRelease(handle);
+  private void onPendingVRpcCancelled(SessionHandle handle) {
+    poolLock.lock();
+    try {
+      handle.onPendingVRpcCancelled();
+      afterRelease(handle);
+    } finally {
+      poolLock.unlock();
+    }
   }
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private void afterRelease(SessionHandle handle) {
     // pool is shutting down, dont try to drain vrpcs
     if (poolState != PoolState.STARTED) {
@@ -530,20 +584,25 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     tryDrainPendingRpcs();
   }
 
-  private synchronized void onSessionGoAway(SessionHandle handle, GoAwayResponse msg) {
-    handle.onSessionClosing();
+  private void onSessionGoAway(SessionHandle handle, GoAwayResponse msg) {
+    poolLock.lock();
+    try {
+      handle.onSessionClosing();
 
-    // If the session received refresh config or pool requires a replacement, keep the current
-    // session and request a replacement.
-    // TODO: remove the check on if the open params is updated. In the future, server should
-    // broadcast session refresh config to all the sessions that needs reconnect and client
-    // just need to recreate sessions when pool sizer requries a replacement.
-    if (handle.getSession().isOpenParamsUpdated() || poolSizer.handleGoAway(msg)) {
-      logger.fine(
-          String.format(
-              "Adding new session to replace a going away session %s",
-              handle.getSession().getLogName()));
-      createSession(handle.getSession().getOpenParams());
+      // If the session received refresh config or pool requires a replacement, keep the current
+      // session and request a replacement.
+      // TODO: remove the check on if the open params is updated. In the future, server should
+      // broadcast session refresh config to all the sessions that needs reconnect and client
+      // just need to recreate sessions when pool sizer requries a replacement.
+      if (handle.getSession().isOpenParamsUpdated() || poolSizer.handleGoAway(msg)) {
+        logger.fine(
+            String.format(
+                "Adding new session to replace a going away session %s",
+                handle.getSession().getLogName()));
+        createSession(handle.getSession().getOpenParams());
+      }
+    } finally {
+      poolLock.unlock();
     }
   }
 
@@ -552,7 +611,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     List<PendingVRpc<?, ?>> toBeClosed = new ArrayList<>();
 
-    synchronized (this) {
+    poolLock.lock();
+    try {
       logger.fine(
           String.format("Removing closed session from pool %s", handle.getSession().getLogName()));
 
@@ -594,6 +654,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           createSession(openParams.withIncrementedAttempts());
         }
       }
+    } finally {
+      poolLock.unlock();
     }
 
     if (!toBeClosed.isEmpty()) {
@@ -616,7 +678,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
   }
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private void tryDrainPendingRpcs() {
     while (!pendingRpcs.isEmpty()) {
       Optional<SessionHandle> handle = picker.pickSession();
@@ -628,7 +690,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
   }
 
-  @GuardedBy("this")
+  @GuardedBy("poolLock")
   private List<PendingVRpc<?, ?>> popClosableRpcs() {
     List<PendingVRpc<?, ?>> toBeClosed = new ArrayList<>();
     Iterator<PendingVRpc<?, ?>> iter = pendingRpcs.iterator();
@@ -641,19 +703,57 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   }
 
   @Override
-  public synchronized <ReqT extends Message, RespT extends Message> VRpc<ReqT, RespT> newCall(
+  // @SuppressWarnings("GuardedBy"): error-prone can't see that the guarded fields are only touched
+  // inside the tryLock()-guarded region. Bounded acquisition on the request hot path; see poolLock.
+  @SuppressWarnings("GuardedBy")
+  public <ReqT extends Message, RespT extends Message> VRpc<ReqT, RespT> newCall(
       VRpcDescriptor<?, ReqT, RespT> desc) {
-    Optional<SessionHandle> handle = picker.pickSession();
-    if (handle.isPresent()) {
-      return newRealCall(desc, handle.get());
+    if (!tryAcquireHotPathLock()) {
+      // The pool lock is wedged. Degrade to a pending call instead of blocking the caller forever;
+      // PendingVRpc.start() will re-attempt the bounded acquisition and fast-fail if still wedged.
+      return new PendingVRpc<>(desc);
     }
-    if (logger.isLoggable(Level.FINE)) {
-      logger.fine(
-          String.format(
-              "%s Creating new rpc as pending, numPending: %d, %s",
-              info.getLogName(), pendingRpcs.size(), sessions.getStats()));
+    try {
+      Optional<SessionHandle> handle = picker.pickSession();
+      if (handle.isPresent()) {
+        return newRealCall(desc, handle.get());
+      }
+      if (logger.isLoggable(Level.FINE)) {
+        logger.fine(
+            String.format(
+                "%s Creating new rpc as pending, numPending: %d, %s",
+                info.getLogName(), pendingRpcs.size(), sessions.getStats()));
+      }
+      return new PendingVRpc<>(desc);
+    } finally {
+      poolLock.unlock();
     }
-    return new PendingVRpc<>(desc);
+  }
+
+  // Acquire the pool lock with a bounded timeout for the request-serving hot path. Returns false if
+  // the lock could not be acquired within HOT_PATH_LOCK_TIMEOUT_MILLIS (i.e. the pool is wedged) or
+  // the caller was interrupted. Callers that get false MUST degrade instead of accessing guarded
+  // state, and MUST NOT call poolLock.unlock().
+  private boolean tryAcquireHotPathLock() {
+    // Fast path: the uncontended lock is acquired immediately and, unlike the timed tryLock below,
+    // WITHOUT throwing if the calling thread already has its interrupt flag set. This preserves the
+    // old `synchronized` behavior for the common healthy case — a pre-existing interrupt (e.g. on a
+    // reused worker thread) must not be mistaken for a wedged pool, which would spuriously shed
+    // traffic and, via the interrupt re-assertion below, poison every later call on that thread.
+    if (poolLock.tryLock()) {
+      return true;
+    }
+    boolean locked = false;
+    try {
+      locked = poolLock.tryLock(HOT_PATH_LOCK_TIMEOUT_MILLIS, TimeUnit.MILLISECONDS);
+    } catch (InterruptedException e) {
+      // Preserve interrupt status for the caller; treat as a failed (degraded) acquisition.
+      Thread.currentThread().interrupt();
+    }
+    if (!locked) {
+      debugTagTracer.record(TelemetryConfiguration.Level.ERROR, "session_pool_lock_timeout");
+    }
+    return locked;
   }
 
   private <ReqT extends Message, RespT extends Message> VRpc<ReqT, RespT> newRealCall(
@@ -686,8 +786,21 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   // Used in the shim layer for fallback decisions. Called on every RPC.
   @Override
-  public synchronized boolean hasSession() {
-    return sessions.getStats().getReadyCount() + sessions.getStats().getInUseCount() > 0;
+  // @SuppressWarnings("GuardedBy"): sessions is only read inside the tryLock()-guarded region.
+  @SuppressWarnings("GuardedBy")
+  public boolean hasSession() {
+    if (!tryAcquireHotPathLock()) {
+      // Treat a wedged pool as "no session available" rather than blocking on the pool lock forever.
+      // Note: the shim's routing OR (unimplementedFailures < MAX || hasSession()) means returning
+      // false here does not by itself force the classic path; the wedge protection that matters is
+      // newCall()/PendingVRpc.start() fast-failing with a retriable UNAVAILABLE.
+      return false;
+    }
+    try {
+      return sessions.getStats().getReadyCount() + sessions.getStats().getInUseCount() > 0;
+    } finally {
+      poolLock.unlock();
+    }
   }
 
   class PendingVRpc<ReqT extends Message, RespT extends Message> implements VRpc<ReqT, RespT> {
@@ -707,6 +820,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     @Override
+    // @SuppressWarnings("GuardedBy"): guarded state is only touched inside the tryLock()-guarded
+    // region. Bounded acquisition on the request hot path; see poolLock.
+    @SuppressWarnings("GuardedBy")
     public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
       Preconditions.checkState(this.req == null, "request is already started");
       Preconditions.checkNotNull(req, "request can't be null");
@@ -717,7 +833,25 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       this.ctx = ctx;
       this.listener = listener;
 
-      synchronized (SessionPoolImpl.this) {
+      if (!tryAcquireHotPathLock()) {
+        // The pool lock is wedged. Fast-fail this call with UNAVAILABLE (uncommitted, so it stays
+        // retriable) instead of blocking the caller thread forever. Mark it terminal inside the
+        // op-executor (which owns isCancelled) so a subsequent cancel() is a no-op rather than
+        // delivering a second onClose.
+        VRpcResult result =
+            VRpcResult.createUncommitedError(
+                Status.UNAVAILABLE.withCause(
+                    new IllegalStateException("SessionPool lock unavailable (pool wedged)")));
+        ctx.getExecutor()
+            .execute(
+                () -> {
+                  if (isCancelled) return;
+                  isCancelled = true;
+                  listener.onClose(result);
+                });
+        return;
+      }
+      try {
         if (SessionPoolImpl.this.poolState != PoolState.STARTED) {
           VRpcResult result =
               VRpcResult.createUncommitedError(
@@ -745,6 +879,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         }
 
         tryDrainPendingRpcs();
+      } finally {
+        poolLock.unlock();
       }
     }
 
@@ -762,9 +898,22 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     // cancel() and drainTo() are sequenced via ctx.getExecutor() (a per-op SerializingExecutor),
     // so isCancelled and realCall are owned exclusively by that executor — no pool lock needed.
+    // @SuppressWarnings("GuardedBy"): pendingRpcs is only touched inside the tryLock()-guarded
+    // region below.
+    @SuppressWarnings("GuardedBy")
     private void cancel(Status status, boolean onlyCancelPendingCall) {
-      synchronized (SessionPoolImpl.this) {
-        pendingRpcs.remove(this); // eager removal; no-op if already drained
+      // The eager removal is only an optimization to skip a wasted session pick in tryDrainPendingRpcs.
+      // Use the bounded hot-path acquisition instead of a blocking lock(): this runs on a callback
+      // (op-executor) thread, and an orphaned/wedged poolLock would otherwise park that thread forever
+      // — the exact thread pile-up that wedged pods in production. If we can't get the lock, skip the
+      // removal; drainTo()'s isCancelled guard is the correctness backstop (it releases the session
+      // via onPendingVRpcCancelled instead of starting the real call). See poolLock.
+      if (tryAcquireHotPathLock()) {
+        try {
+          pendingRpcs.remove(this); // eager removal; no-op if already drained
+        } finally {
+          poolLock.unlock();
+        }
       }
       ctx.getExecutor()
           .execute(
@@ -844,7 +993,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   static class Watchdog implements Runnable {
     private static final Logger LOG = Logger.getLogger(Watchdog.class.getName());
 
-    private final Object lock;
+    private final Lock lock;
     private final BigtableTimer timer;
     private final Executor backgroundExecutor;
     private final Duration interval;
@@ -862,12 +1011,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     @GuardedBy("scheduleLock")
     private boolean watchdogClosed = false;
 
-    // The `lock` parameter is the pool-wide monitor (SessionPoolImpl.this). It is typed as Object
-    // because Watchdog is a static nested class and cannot reference the outer instance type in its
-    // constructor signature without creating a circular dependency. Phase 5 will replace this with
-    // a properly typed lock once the per-AFE sharding model is established.
+    // The `lock` parameter is the pool-wide lock (SessionPoolImpl.poolLock).
     public Watchdog(
-        Object lock,
+        Lock lock,
         BigtableTimer timer,
         Executor backgroundExecutor,
         Duration interval,
@@ -885,7 +1031,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     @VisibleForTesting
     Watchdog(
-        Object lock,
+        Lock lock,
         BigtableTimer timer,
         Executor backgroundExecutor,
         Duration interval,
@@ -938,8 +1084,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // ConcurrentModificationException. Most common trigger is a heartbeat-miss cascade that
       // churns sessions while the watchdog is walking the list.
       Set<SessionHandle> allSessions;
-      synchronized (lock) {
+      lock.lock();
+      try {
         allSessions = new HashSet<>(sessions.getAllSessions());
+      } finally {
+        lock.unlock();
       }
 
       for (SessionHandle handle : allSessions) {
