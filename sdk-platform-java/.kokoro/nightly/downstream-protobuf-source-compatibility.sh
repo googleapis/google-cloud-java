@@ -20,13 +20,19 @@ source "${scriptDir}/common.sh"
 
 validate_protobuf_compatibility_script_inputs
 
-# REPOS_UNDER_TEST Env Var accepts a comma separated list of googleapis repos to test. For Github CI,
-# this will be a single repo as Github will build a matrix of repos with each repo being tested in parallel.
-# For local invocation, you can pass a list of repos to test multiple repos together.
-for repo in ${REPOS_UNDER_TEST//,/ }; do # Split on comma
-  # Perform source-compatibility testing on main (latest changes)
-  git clone "https://github.com/googleapis/$repo.git" --depth=1
-  pushd "$repo"
+monorepoRoot=$(realpath "${scriptDir}/../../..")
+
+# MODULES_UNDER_TEST Env Var accepts a comma separated list of monorepo submodules to test. For Github CI,
+# this will be a single module as Github will build a matrix of modules with each being tested in parallel.
+# For local invocation, you can pass a list of modules to test multiple modules together.
+for module in ${MODULES_UNDER_TEST//,/ }; do # Split on comma
+  module_dir="${monorepoRoot}/${module}"
+  if [ ! -d "${module_dir}" ]; then
+    echo "Directory ${module_dir} does not exist. Skipping or failed."
+    exit 1
+  fi
+
+  pushd "${module_dir}"
 
   # Compile with Java 11 and run the tests with Java 8 JVM
   mvn compile -T 1C
@@ -39,29 +45,15 @@ for repo in ${REPOS_UNDER_TEST//,/ }; do # Split on comma
     surefire_opt="-Djvm=${JAVA_HOME}/bin/java"
   fi
 
-  # Compile the Handwritten Library with the Protobuf-Java version to test source compatibility
+  # Compile the library with the Protobuf-Java version to test source compatibility
   # Run unit tests to help check for any behavior differences (dependant on coverage)
-  if [ "${repo}" == "google-cloud-java" ]; then
-    # The `-am` command also builds anything these libraries depend on (i.e. proto-* and grpc-* sub modules)
-    mvn test -B -V -ntp \
-      -Dclirr.skip \
-      -Denforcer.skip \
-      -Dmaven.javadoc.skip \
-      -Denforcer.skip \
-      -Dprotobuf.version=${PROTOBUF_RUNTIME_VERSION} \
-      -pl "${google_cloud_java_handwritten_maven_args}" -am \
-      "${surefire_opt}" \
-      -T 1C
-  else
-    mvn test -B -V -ntp \
-      -Dclirr.skip \
-      -Denforcer.skip \
-      -Dmaven.javadoc.skip \
-      -Denforcer.skip \
-      -Dprotobuf.version=${PROTOBUF_RUNTIME_VERSION} \
-      "${surefire_opt}" \
-      -T 1C
-  fi
+  mvn test -B -V -ntp \
+    -Dclirr.skip \
+    -Denforcer.skip \
+    -Dmaven.javadoc.skip \
+    -Dprotobuf.version=${PROTOBUF_RUNTIME_VERSION} \
+    "${surefire_opt}" \
+    -T 1C
 
   popd
 done
