@@ -136,8 +136,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
 
       // Verify that caller inference skips PerConnectionFileHandler frame
       assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
-      assertEquals(
-          "testCallerInferenceWithPerConnectionFileHandler", record.getSourceMethodName());
+      assertEquals("testCallerInferenceWithPerConnectionFileHandler", record.getSourceMethodName());
     } finally {
       perConnHandler.close();
     }
