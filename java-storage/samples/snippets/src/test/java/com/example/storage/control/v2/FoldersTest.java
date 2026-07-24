@@ -140,6 +140,27 @@ public final class FoldersTest {
   }
 
   @Test
+  public void deleteFolderRecursive()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    String parentFolderName = UUID.randomUUID().toString();
+    FolderName parentFolder = FolderName.of("_", bucket.getName(), parentFolderName);
+    storageControl.createFolder(
+        BucketName.of("_", bucket.getName()),
+        Folder.getDefaultInstance(),
+        parentFolder.getFolder());
+
+    String childFolderName = parentFolderName + "/" + UUID.randomUUID().toString();
+    FolderName childFolder = FolderName.of("_", bucket.getName(), childFolderName);
+    storageControl.createFolder(
+        BucketName.of("_", bucket.getName()), Folder.getDefaultInstance(), childFolder.getFolder());
+
+    DeleteFolderRecursive.deleteFolderRecursive(bucket.getName(), parentFolder.getFolder());
+    assertThat(stdOut.getCapturedOutputAsUtf8String()).contains(parentFolder.toString());
+    assertThrows(NotFoundException.class, () -> storageControl.getFolder(parentFolder));
+    assertThrows(NotFoundException.class, () -> storageControl.getFolder(childFolder));
+  }
+
+  @Test
   public void listFolder() throws IOException {
     FolderName folderName = FolderName.of("_", bucket.getName(), UUID.randomUUID().toString());
     Folder gen1 =
