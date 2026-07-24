@@ -141,6 +141,23 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
         throw new RuntimeException(e);
       }
 
+      if (oReq.getGoAwayBeforeOpen()) {
+        // Send a GO_AWAY before the SessionParameters / OpenSession handshake, so the client
+        // receives it while the session is still STARTING. The client will transition to
+        // WAIT_SERVER_CLOSE, send a CloseSession, and half-close; RunningState terminates the
+        // stream successfully on either of those. goAwayDelay is left large so RunningState's own
+        // lifecycle GO_AWAY timer never fires during the test.
+        handler.writeResponse(
+            SessionResponse.newBuilder()
+                .setGoAway(
+                    GoAwayResponse.newBuilder()
+                        .setReason("session_expiry")
+                        .setDescription("go away before open handshake")
+                        .build())
+                .build());
+        return new RunningState(handler, Duration.ofMinutes(1), oReq);
+      }
+
       if (oReq.hasStreamError()) {
         Status status =
             Status.fromCodeValue(oReq.getStreamError().getStatus().getCode())
