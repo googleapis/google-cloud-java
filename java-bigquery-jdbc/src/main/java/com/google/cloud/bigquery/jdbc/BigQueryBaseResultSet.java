@@ -30,6 +30,10 @@ import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
@@ -67,6 +71,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   private SQLWarning warnings;
   private boolean warningsLoaded = false;
   protected final BigQueryTypeCoercer bigQueryTypeCoercer = BigQueryTypeCoercionUtility.INSTANCE;
+  protected final SpanContext originalSpanContext;
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested) {
@@ -80,6 +85,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
+    this.originalSpanContext = Span.current().getSpanContext();
     this.job = job;
     if (job != null) {
       this.jobId = job.getJobId();
@@ -87,6 +93,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.LOG =
         BigQueryJdbcResultSetLogger.getLogger(
             this.getClass(), statement != null ? statement.connectionId : null);
+  }
+
+  protected Scope makeOriginalContextCurrent() {
+    return Context.current().with(Span.wrap(this.originalSpanContext)).makeCurrent();
   }
 
   public QueryStatistics getQueryStatistics() {
