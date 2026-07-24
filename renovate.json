@@ -4,27 +4,47 @@
   ],
   "packageRules": [
     {
-      "matchUpdateTypes": [
-        "major"
-      ],
-      "enabled": false,
-      "matchPackageNames": [
+      "matchPackagePatterns": [
         "*"
-      ]
+      ],
+      "enabled": false
     },
     {
-      "semanticCommitType": "fix",
-      "semanticCommitScope": null,
-      "matchPackageNames": [
-        "/^com.google.cloud:sdk-platform-java-config/"
-      ]
+      "matchPackagePatterns": [
+        "^com.google.cloud:",
+        "^com.google.api:",
+        "^com.google.http-client:",
+        "^com.google.api-client:"
+      ],
+      "enabled": true,
+      "semanticCommitType": "deps"
     },
     {
-      "groupName": "First-party storage dependencies",
-      "matchPackageNames": [
-        "/^com.google.cloud:google-cloud-storage/",
-        "/^com.google.apis:google-api-services-storage/"
-      ]
+      "matchPackagePatterns": [
+        "^junit:junit",
+        "^org.junit.vintage:junit-vintage-engine",
+        "^org.junit.jupiter:junit-jupiter-api",
+        "^org.junit.jupiter:junit-jupiter-engine",
+        "^org.junit.jupiter:junit-jupiter-params",
+        "^com.google.truth:truth",
+        "^org.mockito:mockito-core",
+        "^org.mockito:mockito-inline",
+        "^org.objenesis:objenesis",
+        "^com.google.cloud:google-cloud-conformance-tests",
+        "^org.graalvm.buildtools:junit-platform-native"
+      ],
+      "groupName": "test dependencies",
+      "enabled": true,
+      "semanticCommitType": "test"
+    },
+    {
+      "matchPackagePatterns": [
+        "^org.apache.maven.plugins",
+        "^org.jacoco:jacoco-maven-plugin",
+        "^org.codehaus.mojo:"
+      ],
+      "enabled": true,
+      "semanticCommitType": "build"
     },
     {
       "matchManagers": [
@@ -121,5 +141,9 @@
       "matchStrings": ["(?<depName>.*),(.*)=(?<currentValue>.*)"],
       "datasourceTemplate": "maven"
     }
-  ]
+  ],
+  "semanticCommits": true,
+  "dependencyDashboard": true,
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0
 }
