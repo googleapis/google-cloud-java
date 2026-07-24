@@ -1019,14 +1019,14 @@ Log files are generated inside the specified `LogPath` directory with per-connec
 
 **Standard Log Record Format**:
 ```text
-2026-07-22 14:25:10.123 [conn-bq-8f3a] INFO    12345 --- [ main          ] c.g.c.b.j.BigQueryStatement           executeQuery                  : Executing query: SELECT COUNT(*) FROM `my-project.analytics.orders`
+2026-07-22 14:25:10.123 [conn-bq-8f3a] INFO    12345 --- [     main      ] com.google.cloud.bigquery.jdbc.BigQueryStatement                   executeQuery                  : Executing query: SELECT COUNT(*) FROM `my-project.analytics.orders`
 ```
 
 - **Timestamp**: `yyyy-MM-dd HH:mm:ss.SSS` in local time.
 - **Connection ID (`MDC`)**: Unique identifier `[conn-bq-XXXX]` isolating statements per connection context.
 - **Level**: Padded log level (`INFO`, `FINE`, `WARNING`, etc.).
 - **Process ID & Thread**: OS Process ID and centered Thread Name.
-- **Class & Method**: Abbreviated source class and method name originating the log message.
+- **Class & Method**: Fully qualified source class name and method name originating the log message.
 
 ---
 
