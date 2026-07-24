@@ -35,7 +35,7 @@ jobs:
       # runnable is true if there are changes outside the .github/workflows directory OR if ci.yaml itself (or kokoro scripts) is modified.
       runnable: ${{ fromJSON(steps.filter.outputs.all_count) > fromJSON(steps.filter.outputs.workflows_count) || fromJSON(steps.filter.outputs.ci_count) > 0 }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       with:
         persist-credentials: false
       # Use this action, rather than a file filter so that we can make this
@@ -70,7 +70,7 @@ jobs:
       id: date
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         persist-credentials: false
@@ -101,7 +101,7 @@ jobs:
       id: date
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         persist-credentials: false
@@ -144,7 +144,7 @@ jobs:
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
       with:
         persist-credentials: false
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
@@ -274,7 +274,7 @@ jobs:
     - name: Get current week within the year
       id: date
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -299,7 +299,7 @@ jobs:
     - name: Get current week within the year
       id: date
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -346,7 +346,7 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -365,7 +365,7 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -393,7 +393,7 @@ jobs:
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -411,7 +411,7 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         fetch-depth: 0
         persist-credentials: false
@@ -433,7 +433,7 @@ jobs:
     - name: Get current week within the year
       id: date
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
@@ -453,7 +453,7 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
