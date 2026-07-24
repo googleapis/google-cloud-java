@@ -936,9 +936,34 @@ public final class KeyRangeCache {
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
         SelectionState selectionStats) {
-      if (!preferLeader || hintBuilder.getOperationUid() > 0L) {
-        TabletSnapshot preferredLeader =
-            preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
+      TabletSnapshot preferredLeader =
+          preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
+      boolean retryAfterInitialRequest = !skippedTabletUids.isEmpty();
+      boolean attemptedLeaderSelection = false;
+
+      if (preferLeader
+          && !retryAfterInitialRequest
+          && preferredLeader != null
+          && preferredLeader.matches(directedReadOptions)) {
+        attemptedLeaderSelection = true;
+        selectionStats.sawMatchingReplica = true;
+        if (!shouldSkip(
+            snapshot,
+            preferredLeader,
+            hintBuilder,
+            excludedEndpoints,
+            skippedTabletUids,
+            skippedTabletDetails,
+            resolvedEndpoints,
+            selectionStats)) {
+          return preferredLeader;
+        }
+      }
+
+      if (!preferLeader
+          || retryAfterInitialRequest
+          || attemptedLeaderSelection
+          || hintBuilder.getOperationUid() > 0L) {
         return selectScoreAwareTablet(
             snapshot,
             preferLeader,
@@ -952,27 +977,8 @@ public final class KeyRangeCache {
             preferredLeader);
       }
 
-      boolean checkedLeader = false;
-      if (preferLeader
-          && !hasDirectedReadOptions
-          && snapshot.hasLeader()
-          && snapshot.leader().distance <= MAX_LOCAL_REPLICA_DISTANCE) {
-        checkedLeader = true;
-        selectionStats.sawMatchingReplica = true;
-        if (!shouldSkip(
-            snapshot,
-            snapshot.leader(),
-            hintBuilder,
-            excludedEndpoints,
-            skippedTabletUids,
-            skippedTabletDetails,
-            resolvedEndpoints,
-            selectionStats)) {
-          return snapshot.leader();
-        }
-      }
       for (int index = 0; index < snapshot.tablets.size(); index++) {
-        if (checkedLeader && index == snapshot.leaderIndex) {
+        if (preferredLeader != null && index == snapshot.leaderIndex) {
           continue;
         }
         TabletSnapshot tablet = snapshot.tablets.get(index);
