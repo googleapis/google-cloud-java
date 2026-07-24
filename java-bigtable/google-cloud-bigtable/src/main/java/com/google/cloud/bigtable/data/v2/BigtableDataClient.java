@@ -1520,6 +1520,81 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
+   * Convenience method to synchronously return a sample of row keys on the specified {@link
+   * TargetId} within the specified {@link ByteStringRange}.
+   *
+   * <p>The returned row keys will delimit contiguous sections of the table of approximately equal
+   * size, which can be used to break up the data for distributed tasks like mapreduces.
+   *
+   * <p>The returned samples are constrained by the provided {@link ByteStringRange}, and the last
+   * sample returned will always match the end key of the range.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE_ID]";
+   *   ByteStringRange range = ByteStringRange.create("[START_KEY]", "[END_KEY]");
+   *
+   *   List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeys(TableId.of(tableId), range);
+   *   for(KeyOffset keyOffset : keyOffsets) {
+   *     // Do something with keyOffset
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public List<KeyOffset> sampleRowKeys(TargetId targetId, ByteStringRange range) {
+    return ApiExceptions.callAndTranslateApiException(sampleRowKeysAsync(targetId, range));
+  }
+
+  /**
+   * Convenience method to asynchronously return a sample of row keys on the specified {@link
+   * TargetId} within the specified {@link ByteStringRange}.
+   *
+   * <p>The returned row keys will delimit contiguous sections of the table of approximately equal
+   * size, which can be used to break up the data for distributed tasks like mapreduces.
+   *
+   * <p>The returned samples are constrained by the provided {@link ByteStringRange}, and the last
+   * sample returned will always match the end key of the range.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
+   *   String tableId = "[TABLE_ID]";
+   *   ByteStringRange range = ByteStringRange.create("[START_KEY]", "[END_KEY]");
+   *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableDataClient.sampleRowKeysAsync(TableId.of(tableId), range);
+   *
+   *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to sample keys of a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(List<KeyOffset> keyOffsets) {
+   *       System.out.println("Got key offsets: " + keyOffsets);
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see com.google.cloud.bigtable.data.v2.models.AuthorizedViewId
+   * @see TableId
+   */
+  public ApiFuture<List<KeyOffset>> sampleRowKeysAsync(TargetId targetId, ByteStringRange range) {
+    com.google.common.base.Preconditions.checkNotNull(range, "range can't be null.");
+    return sampleRowKeysCallableWithRequest()
+        .futureCall(
+            SampleRowKeysRequest.newBuilder().setTargetId(targetId).setRowRange(range).build());
+  }
+
+  /**
    * Returns a sample of row keys in the table. The returned row keys will delimit contiguous
    * sections of the table of approximately equal size, which can be used to break up the data for
    * distributed tasks like mapreduces. The returned callable object allows for customization of api

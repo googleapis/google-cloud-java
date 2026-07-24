@@ -758,6 +758,42 @@ public class BigtableDataClientTests {
   }
 
   @Test
+  public void proxySampleRowKeysWithRangeTest() {
+    Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
+        .thenReturn(mockSampleRowKeysCallableWithRequest);
+
+    ByteStringRange range = ByteStringRange.create("a", "b");
+    @SuppressWarnings("VariableUnused")
+    ApiFuture<?> ignored = bigtableDataClient.sampleRowKeysAsync(TableId.of("fake-table"), range);
+
+    Mockito.verify(mockSampleRowKeysCallableWithRequest)
+        .futureCall(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of("fake-table"))
+                .setRowRange(range)
+                .build());
+  }
+
+  @Test
+  public void sampleRowKeysWithRangeTest() {
+    Mockito.when(mockStub.sampleRowKeysCallableWithRequest())
+        .thenReturn(mockSampleRowKeysCallableWithRequest);
+
+    Mockito.when(
+            mockSampleRowKeysCallableWithRequest.futureCall(
+                ArgumentMatchers.any(SampleRowKeysRequest.class)))
+        .thenReturn(ApiFutures.immediateFuture(Collections.<KeyOffset>emptyList()));
+    ByteStringRange range = ByteStringRange.create("a", "b");
+    bigtableDataClient.sampleRowKeys(TableId.of("fake-table"), range);
+    Mockito.verify(mockSampleRowKeysCallableWithRequest)
+        .futureCall(
+            SampleRowKeysRequest.newBuilder()
+                .setTargetId(TableId.of("fake-table"))
+                .setRowRange(range)
+                .build());
+  }
+
+  @Test
   public void proxyMutateRowCallableTest() {
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
 
