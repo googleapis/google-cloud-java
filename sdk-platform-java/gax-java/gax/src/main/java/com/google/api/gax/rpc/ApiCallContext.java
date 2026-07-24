@@ -65,6 +65,14 @@ public interface ApiCallContext extends RetryingContext {
   /** Returns a new ApiCallContext with the given channel set. */
   ApiCallContext withTransportChannel(TransportChannel channel);
 
+  /**
+   * Returns the {@link TransportChannel} associated with this call context, or {@code null} if none
+   * is set.
+   */
+  default TransportChannel getTransportChannel() {
+    return null;
+  }
+
   /** Returns a new ApiCallContext with the given Endpoint Context. */
   ApiCallContext withEndpointContext(EndpointContext endpointContext);
 

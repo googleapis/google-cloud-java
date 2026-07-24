@@ -99,6 +99,7 @@ public final class GrpcCallContext implements ApiCallContext {
   private final ApiCallContextOptions options;
   private final EndpointContext endpointContext;
   private final boolean isDirectPath;
+  @Nullable private final TransportChannel transportChannel;
 
   /** Returns an empty instance with a null channel and default {@link CallOptions}. */
   public static GrpcCallContext createDefault() {
@@ -115,7 +116,8 @@ public final class GrpcCallContext implements ApiCallContext {
         null,
         null,
         null,
-        false);
+        false,
+        null);
   }
 
   /** Returns an instance with the given channel and {@link CallOptions}. */
@@ -133,7 +135,8 @@ public final class GrpcCallContext implements ApiCallContext {
         null,
         null,
         null,
-        false);
+        false,
+        null);
   }
 
   private GrpcCallContext(
@@ -149,7 +152,8 @@ public final class GrpcCallContext implements ApiCallContext {
       @Nullable RetrySettings retrySettings,
       @Nullable Set<StatusCode.Code> retryableCodes,
       @Nullable EndpointContext endpointContext,
-      boolean isDirectPath) {
+      boolean isDirectPath,
+      @Nullable TransportChannel transportChannel) {
     this.channel = channel;
     this.credentials = credentials;
     Preconditions.checkNotNull(callOptions);
@@ -169,6 +173,7 @@ public final class GrpcCallContext implements ApiCallContext {
     this.endpointContext =
         endpointContext == null ? EndpointContext.getDefaultInstance() : endpointContext;
     this.isDirectPath = isDirectPath;
+    this.transportChannel = transportChannel;
   }
 
   /**
@@ -210,7 +215,13 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
+  }
+
+  @Override
+  public TransportChannel getTransportChannel() {
+    return transportChannel;
   }
 
   @Override
@@ -234,7 +245,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        transportChannel.isDirectPath());
+        transportChannel.isDirectPath(),
+        inputChannel);
   }
 
   @Override
@@ -253,7 +265,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   /** This method is obsolete. Use {@link #withTimeoutDuration(java.time.Duration)} instead. */
@@ -288,7 +301,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @Override
@@ -334,7 +348,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   /**
@@ -369,7 +384,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @BetaApi("The surface for channel affinity is not stable yet and may change in the future.")
@@ -387,7 +403,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @BetaApi("The surface for extra headers is not stable yet and may change in the future.")
@@ -409,7 +426,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @Override
@@ -432,7 +450,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @Override
@@ -455,7 +474,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   @Override
@@ -557,7 +577,8 @@ public final class GrpcCallContext implements ApiCallContext {
         newRetrySettings,
         newRetryableCodes,
         endpointContext,
-        newIsDirectPath);
+        newIsDirectPath,
+        transportChannel);
   }
 
   /** The {@link Channel} set on this context. */
@@ -635,7 +656,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   /** Returns a new instance with the call options set to the given call options. */
@@ -653,7 +675,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   public GrpcCallContext withRequestParamsDynamicHeaderOption(String requestParams) {
@@ -698,7 +721,8 @@ public final class GrpcCallContext implements ApiCallContext {
         retrySettings,
         retryableCodes,
         endpointContext,
-        isDirectPath);
+        isDirectPath,
+        transportChannel);
   }
 
   /** {@inheritDoc} */
