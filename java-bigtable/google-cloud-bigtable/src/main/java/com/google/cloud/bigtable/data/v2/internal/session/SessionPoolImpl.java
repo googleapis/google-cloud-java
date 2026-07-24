@@ -154,6 +154,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("this")
   private final SessionCreationBudget budget;
 
+  // Handles that reserved a session-creation budget slot in createSession() and have not yet
+  // released it. A slot is released exactly once: as a success when the session reaches READY
+  // (onSessionReady), or as a failure when the session terminates without ever becoming READY
+  // (onSessionClose). Tracking the reservation on the handle -- instead of inferring it from the
+  // close-time prevState -- is what makes the release exactly-once: a session that goes
+  // STARTING -> WAIT_SERVER_CLOSE (e.g. a server GO_AWAY before the open handshake completes)
+  // closes with prevState == WAIT_SERVER_CLOSE, which the abnormal-close branch skips, so the
+  // prevState == STARTING check alone would leak the slot forever. SessionHandle uses identity
+  // equality, so a plain HashSet keys on the handle instance.
+  @GuardedBy("this")
+  private final Set<SessionHandle> sessionsHoldingBudget = new HashSet<>();
+
   private final ClientConfigurationManager configManager;
   private final ClientConfigurationManager.ListenerHandle configListenerHandle;
 
@@ -424,6 +436,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         SessionStream stream = factory.createNew();
         Session session = new SessionImpl(metrics, info, sessionNum++, stream, timer);
         SessionHandle handle = sessions.newHandle(session);
+        // Bind the budget reservation made by tryReserveSession() above to this handle so it is
+        // released exactly once when the session becomes READY or terminates.
+        sessionsHoldingBudget.add(handle);
 
         Metadata localMd = new Metadata();
         localMd.merge(openParams.metadata());
@@ -498,7 +513,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
     handle.onSessionStarted();
 
-    budget.onSessionCreationSuccess();
+    // Release the reservation as a success. Guarded by the set so we release exactly once even if
+    // onSessionReady were ever delivered more than once.
+    if (sessionsHoldingBudget.remove(handle)) {
+      budget.onSessionCreationSuccess();
+    }
 
     // handle pending rpcs
     tryDrainPendingRpcs();
@@ -558,6 +577,17 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
       handle.onSessionClosed(prevState);
 
+      // Release the budget reservation as a failure if this session still holds one, i.e. it
+      // terminated without ever reaching READY. Done here -- before the pool-state and
+      // abnormal-close gates below -- because a session that received a GO_AWAY / was force-closed
+      // while STARTING closes with prevState == WAIT_SERVER_CLOSE, which the abnormal-close branch
+      // skips; keying off the reservation instead of prevState is what prevents the slot from
+      // leaking. Sessions that reached READY were already removed from the set in onSessionReady,
+      // so this never double-releases.
+      if (sessionsHoldingBudget.remove(handle)) {
+        budget.onSessionCreationFailure();
+      }
+
       // If the pool is closed then there is nothing else to do
       // dont need to create a replacement session and pending vRpcs get cleaned up in close()
       if (poolState == PoolState.CLOSED) {
@@ -582,9 +612,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           toBeClosed = popClosableRpcs();
         }
 
-        if (prevState == SessionState.STARTING) {
-          budget.onSessionCreationFailure();
-        }
+        // Budget release for STARTING-phase closes is handled above via sessionsHoldingBudget,
+        // which also covers the STARTING -> WAIT_SERVER_CLOSE (GO_AWAY) path this branch skips.
 
         // TODO: backoff creating a new session when consecutive failures > max?
         if (poolSizer.handleSessionClose(StatusProto.fromStatusAndTrailers(status, trailers))) {
