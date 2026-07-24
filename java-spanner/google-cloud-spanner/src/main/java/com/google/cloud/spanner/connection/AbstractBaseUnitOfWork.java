@@ -388,7 +388,11 @@ abstract class AbstractBaseUnitOfWork implements UnitOfWork {
                     if (remainingTimeout <= 0) {
                       remainingTimeout = 1;
                     }
-                    return GrpcCallContext.createDefault()
+                    // Build from the input context so existing call options
+                    // (e.g. grpc-gcp's AFFINITY_KEY set by GapicSpannerRpc.newCallContext)
+                    // survive the GrpcCallContext.merge() — merge rebuilds CallOptions from
+                    // the configurator result, dropping any options it does not carry.
+                    return ((GrpcCallContext) context)
                         .withTimeoutDuration(Duration.ofNanos(remainingTimeout));
                   }
                   return null;
