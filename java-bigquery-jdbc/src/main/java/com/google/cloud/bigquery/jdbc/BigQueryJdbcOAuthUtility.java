@@ -306,7 +306,7 @@ final class BigQueryJdbcOAuthUtility {
         credentials, reqGoogleDriveScopeBool, authProperties, httpTransportFactory);
   }
 
-  private static boolean isFileExists(String filename) {
+  static boolean isFileExists(String filename) {
     try {
       return filename != null && !filename.isEmpty() && Files.exists(Paths.get(filename));
     } catch (Exception e) {
@@ -315,7 +315,7 @@ final class BigQueryJdbcOAuthUtility {
     }
   }
 
-  private static boolean isJson(byte[] value) {
+  static boolean isJson(byte[] value) {
     try {
       // This is done this way to ensure strict Json parsing
       // https://github.com/google/gson/issues/1208#issuecomment-2120764686

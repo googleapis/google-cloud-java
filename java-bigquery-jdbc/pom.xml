@@ -84,6 +84,13 @@
                 <ignoredUsedUndeclaredDependency>org.apache.httpcomponents.*:*</ignoredUsedUndeclaredDependency>
                 <ignoredUsedUndeclaredDependency>io.grpc:*</ignoredUsedUndeclaredDependency>
             </ignoredUsedUndeclaredDependencies>
+            <ignoredUnusedDeclaredDependencies combine.children="append">
+                <ignoredUnusedDeclaredDependency>io.opentelemetry:opentelemetry-exporter-otlp</ignoredUnusedDeclaredDependency>
+            </ignoredUnusedDeclaredDependencies>
+            <ignoredDependencies>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-logs</ignoredDependency>
+                <ignoredDependency>io.opentelemetry:opentelemetry-sdk-common</ignoredDependency>
+            </ignoredDependencies>
         </configuration>
       </plugin>
       <plugin>
@@ -173,6 +180,17 @@
                     <relocation>
                       <pattern>io.opentelemetry</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io.opentelemetry</shadedPattern>
+                      <excludes>
+                        <!-- 
+                          OpenTelemetry API and Context must remain unshaded to ensure interoperability.
+                          Shading these would prevent the driver from participating in the application's 
+                          existing tracing context. We are aware that unshaded dependencies can lead to 
+                          version mismatches, but this is a necessary trade-off for the OpenTelemetry 
+                          integration to function correctly across different applications.
+                        -->
+                        <exclude>io.opentelemetry.api.**</exclude>
+                        <exclude>io.opentelemetry.context.**</exclude>
+                      </excludes>
                     </relocation>
                     <relocation>
                       <pattern>io.perfmark</pattern>
@@ -222,6 +240,11 @@
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
       <version>3.31.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-logging</artifactId>
+      <version>3.32.0</version><!-- {x-version-update:google-cloud-logging:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -310,6 +333,16 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-opentelemetry</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>io.opentelemetry</groupId>
+          <artifactId>opentelemetry-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
     <dependency>
       <groupId>org.apache.arrow</groupId>
@@ -326,6 +359,41 @@
     <dependency>
       <groupId>org.apache.httpcomponents.core5</groupId>
       <artifactId>httpcore5</artifactId>
+    </dependency>
+
+    <!-- OpenTelemetry APIs (unshaded) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
+    </dependency>
+    <!-- OpenTelemetry SDK and Exporters (will be shaded via existing 'io' relocation) -->
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-trace</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-exporter-otlp</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-extension-autoconfigure-spi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-logs</artifactId>
     </dependency>
 
     <!--  Test Dependencies  -->
@@ -375,6 +443,17 @@
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-suite-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-sdk-testing</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-trace</artifactId>
+      <version>2.92.0</version><!-- {x-version-update:google-cloud-trace:current} -->
       <scope>test</scope>
     </dependency>
   </dependencies>

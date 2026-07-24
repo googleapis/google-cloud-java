@@ -60,7 +60,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
@@ -141,8 +140,7 @@ public class BigQueryArrowStructTest {
                 LocalDateTime.parse("2023-03-30T11:15:19.820227")),
             arrowArraySchemaAndValue(
                 GEOGRAPHY, new Text("POINT(-122 47)"), new Text("POINT(-122 48)")),
-            arrowArraySchemaAndValue(
-                BYTES, Stream.of("one", "two").map(String::getBytes).toArray(byte[][]::new)));
+            arrowArraySchemaAndValue(BYTES, "one".getBytes(), "two".getBytes()));
 
     List<Field> orderedSchemas =
         schemaAndValues.stream().map(Tuple::x).collect(Collectors.toList());

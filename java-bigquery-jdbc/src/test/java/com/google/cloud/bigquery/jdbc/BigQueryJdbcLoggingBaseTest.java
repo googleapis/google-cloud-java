@@ -30,10 +30,13 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
   private Handler handler;
   private Logger logger;
   private long threadId;
+  private java.util.logging.Level originalLevel;
 
   @BeforeEach
   public void setUpLogValidator() {
     logger = BigQueryJdbcRootLogger.getRootLogger();
+    originalLevel = logger.getLevel();
+    logger.setLevel(java.util.logging.Level.ALL);
     capturedLogs.clear();
     threadId = Thread.currentThread().getId();
     handler =
@@ -58,6 +61,7 @@ public abstract class BigQueryJdbcLoggingBaseTest extends BigQueryJdbcBaseTest {
   public void tearDownLogValidator() {
     if (logger != null && handler != null) {
       logger.removeHandler(handler);
+      logger.setLevel(originalLevel);
     }
     try {
       BigQueryJdbcRootLogger.setLevel(java.util.logging.Level.OFF, null);

@@ -99,6 +99,8 @@ final class BigQueryJdbcUrlUtility {
   static final String BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME = "BIGQUERY";
   static final String STS_ENDPOINT_OVERRIDE_PROPERTY_NAME = "STS";
   static final String OAUTH_ACCESS_TOKEN_PROPERTY_NAME = "OAuthAccessToken";
+  static final String GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME = "gcpTelemetryProjectId";
+  static final String GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME = "gcpTelemetryCredentials";
   static final String OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME = "OAuthAccessTokenReadonly";
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
@@ -164,6 +166,12 @@ final class BigQueryJdbcUrlUtility {
   static final int DEFAULT_SWA_APPEND_ROW_COUNT_VALUE = 1000;
   static final String SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME = "SWA_ActivationRowCount";
   static final int DEFAULT_SWA_ACTIVATION_ROW_COUNT_VALUE = 3;
+  static final String ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME = "enableGcpTraceExporter";
+  static final boolean DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE = false;
+  static final String ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME = "enableGcpLogExporter";
+  static final boolean DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE = false;
+  static final String USE_GLOBAL_OTEL_PROPERTY_NAME = "useGlobalOpenTelemetry";
+  static final boolean DEFAULT_USE_GLOBAL_OTEL_VALUE = false;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -636,6 +644,32 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Reason for the request, which is passed as the x-goog-request-reason"
                               + " header.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables GCP OpenTelemetry Trace exporter. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables GCP OpenTelemetry Log exporter. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME)
+                      .setDescription("Path or raw JSON of credentials for OTel exporter.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME)
+                      .setDescription("GCP Project ID for OTel exporter.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(USE_GLOBAL_OTEL_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables usage of the Global OpenTelemetry instance when true. Default is false.")
+                      .setDefaultValue(String.valueOf(DEFAULT_USE_GLOBAL_OTEL_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =

@@ -46,12 +46,15 @@ public class PerConnectionFileHandlerTest {
 
   private PerConnectionFileHandler handler;
   private BigQueryConnection mockConnection;
+  private Level originalLevel;
 
   @BeforeEach
   public void setUp() {
     handler = new PerConnectionFileHandler(tempDir.toString(), Level.INFO);
     mockConnection = Mockito.mock(BigQueryConnection.class);
     BigQueryJdbcMdc.clear();
+    originalLevel = BigQueryJdbcRootLogger.getRootLogger().getLevel();
+    BigQueryJdbcRootLogger.getRootLogger().setLevel(Level.ALL);
   }
 
   @AfterEach
@@ -60,6 +63,7 @@ public class PerConnectionFileHandlerTest {
       handler.close();
     }
     BigQueryJdbcMdc.clear();
+    BigQueryJdbcRootLogger.getRootLogger().setLevel(originalLevel);
   }
 
   private Optional<Path> findLogFile(String suffix) throws IOException {

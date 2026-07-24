@@ -32,8 +32,11 @@ import static org.mockito.Mockito.withSettings;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -61,31 +64,53 @@ import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+import io.opentelemetry.api.baggage.Baggage;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryStatementTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private static final String PROJECT = "project";
@@ -138,9 +163,41 @@ public class BigQueryStatementTest {
     return job;
   }
 
+  private TableResult setupMockQueryResults(JobId jobId, StatementType type, Long affectedRows)
+      throws Exception {
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(jobId).when(tableResultMock).getJobId();
+    doReturn(Schema.of()).when(tableResultMock).getSchema();
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    Job jobMock = getJobMock(tableResultMock, null, type);
+    if (affectedRows != null) {
+      JobStatistics.QueryStatistics stats = (JobStatistics.QueryStatistics) jobMock.getStatistics();
+      doReturn(affectedRows).when(stats).getNumDmlAffectedRows();
+    }
+    doReturn(jobMock).when(bigquery).getJob(any(JobId.class));
+    doReturn(jobMock).when(jobMock).waitFor();
+
+    Job dryRunJobMock = getJobMock(null, null, type);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+    return tableResultMock;
+  }
+
+  private ExecutorService testExecutorService;
+
   @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
+    doReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME))
+        .when(bigQueryConnection)
+        .getTracer();
+    doReturn(Context.current()).when(bigQueryConnection).getOtelContext();
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
     bigquery = mock(BigQuery.class);
     bigQueryConnection.bigQuery = bigquery;
@@ -148,6 +205,7 @@ public class BigQueryStatementTest {
     jobId = JobId.newBuilder().setJob(jobIdVal).build();
 
     doReturn(bigquery).when(bigQueryConnection).getBigQuery();
+    doReturn("test-connection-id").when(bigQueryConnection).getConnectionId();
     doReturn(10L).when(bigQueryConnection).getJobTimeoutInSeconds();
     doReturn(10L).when(bigQueryConnection).getMaxBytesBilled();
     doReturn(LABELS).when(bigQueryConnection).getLabels();
@@ -155,8 +213,8 @@ public class BigQueryStatementTest {
         .when(bigQueryConnection)
         .getQueryDialect();
     doReturn(1000L).when(bigQueryConnection).getMaxResults();
-    ExecutorService executorService = mock(ExecutorService.class);
-    doReturn(executorService).when(bigQueryConnection).getExecutorService();
+    testExecutorService = Executors.newSingleThreadExecutor();
+    doReturn(testExecutorService).when(bigQueryConnection).getExecutorService();
     bigQueryStatement = new BigQueryStatement(bigQueryConnection);
     VectorSchemaRoot vectorSchemaRoot = getTestVectorSchemaRoot();
     arrowSchema =
@@ -165,6 +223,13 @@ public class BigQueryStatementTest {
             .build();
     // bigQueryConnection.addOpenStatements(bigQueryStatement);
 
+  }
+
+  @AfterEach
+  public void tearDown() {
+    if (testExecutorService != null) {
+      testExecutorService.shutdownNow();
+    }
   }
 
   private VectorSchemaRoot getTestVectorSchemaRoot() {
@@ -459,20 +524,10 @@ public class BigQueryStatementTest {
   }
 
   @Test
-  public void testCancelWithJoblessQuery() throws SQLException, InterruptedException {
-    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+  public void testCancelWithJoblessQuery() throws Exception {
+    TableResult tableResultMock = setupMockQueryResults(null, StatementType.SELECT, null);
     BigQueryStatement joblessStatement = new BigQueryStatement(bigQueryConnection);
     BigQueryStatement joblessStatementSpy = Mockito.spy(joblessStatement);
-
-    TableResult tableResultMock = mock(TableResult.class);
-    doReturn(null).when(tableResultMock).getJobId();
-
-    doReturn(tableResultMock)
-        .when(bigquery)
-        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
-
-    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
-    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
 
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
     doReturn(resultSetMock)
@@ -491,6 +546,126 @@ public class BigQueryStatementTest {
 
     // And no backend cancellation was attempted
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
+  }
+
+  @Test
+  public void testFetchNextPages_addsLinkToParent() throws Exception {
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+
+      BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue = new LinkedBlockingDeque<>();
+      BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue =
+          new LinkedBlockingDeque<>();
+      TableResult mockResult = mock(TableResult.class);
+      JobId mockJobId = JobId.of("job");
+
+      Job mockJob = mock(Job.class);
+      QueryJobConfiguration realConfig =
+          QueryJobConfiguration.newBuilder("SELECT 1")
+              .setDestinationTable(TableId.of("project", "dataset", "table"))
+              .build();
+      doReturn(mockJob).when(bigquery).getJob(any(JobId.class));
+      doReturn(realConfig).when(mockJob).getConfiguration();
+
+      TableResult mockNextResult = mock(TableResult.class);
+      doReturn(mockNextResult)
+          .when(bigquery)
+          .listTableData(
+              any(TableId.class), any(TableDataListOption.class), any(TableDataListOption.class));
+      doReturn(null).when(mockNextResult).getNextPageToken();
+
+      Future<?> workerThread =
+          bigQueryStatement.runNextPageTaskAsync(
+              mockResult,
+              "token",
+              mockJobId,
+              rpcResponseQueue,
+              bigQueryFieldValueListWrapperBlockingQueue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.get();
+
+      OpenTelemetryTestUtility.assertSpanLinkedToParent(
+          otelTesting.getSpans(), "BigQueryStatement.pagination", parentSpan);
+    } finally {
+      parentSpan.end();
+    }
+  }
+
+  @ParameterizedTest
+  @MethodSource("statementOperationProvider")
+  public void testExecuteOperation_generatesSpan(
+      StatementOperation operation,
+      String expectedSpanName,
+      StatementType type,
+      Map<AttributeKey<?>, Object> expectedAttributes)
+      throws Exception {
+    setupMockQueryResults(JobId.of("job"), type, 1L);
+    operation.run();
+
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, io.opentelemetry.api.trace.StatusCode.UNSET);
+
+    if (expectedAttributes != null) {
+      for (Map.Entry<AttributeKey<?>, Object> entry : expectedAttributes.entrySet()) {
+        OpenTelemetryTestUtility.assertSpanHasAttribute(
+            span, (AttributeKey<Object>) entry.getKey(), entry.getValue());
+      }
+    }
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
+  }
+
+  Stream<Arguments> statementOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (StatementOperation) () -> bigQueryStatement.executeQuery("SELECT 1"),
+            "BigQueryStatement.executeQuery",
+            StatementType.SELECT,
+            Collections.singletonMap(AttributeKey.stringKey("db.statement"), "SELECT 1")),
+        Arguments.of(
+            (StatementOperation) () -> bigQueryStatement.execute("SELECT 1"),
+            "BigQueryStatement.execute",
+            StatementType.SELECT,
+            Collections.singletonMap(AttributeKey.stringKey("db.statement"), "SELECT 1")),
+        Arguments.of(
+            (StatementOperation)
+                () -> bigQueryStatement.executeLargeUpdate("UPDATE table SET col = 1"),
+            "BigQueryStatement.executeLargeUpdate",
+            StatementType.UPDATE,
+            Collections.singletonMap(
+                AttributeKey.stringKey("db.statement"), "UPDATE table SET col = 1")),
+        Arguments.of(
+            (StatementOperation)
+                () -> {
+                  bigQueryStatement.addBatch("UPDATE table SET col = 1");
+                  bigQueryStatement.executeBatch();
+                },
+            "BigQueryStatement.executeBatch",
+            StatementType.UPDATE,
+            new HashMap<AttributeKey<?>, Object>() {
+              {
+                put(AttributeKey.longKey("db.statement.count"), 1L);
+                put(
+                    AttributeKey.stringArrayKey("db.batch.statements"),
+                    Collections.singletonList("UPDATE table SET col = 1; "));
+              }
+            }));
+  }
+
+  @FunctionalInterface
+  interface StatementOperation {
+    void run() throws Exception;
   }
 
   @Test
@@ -696,6 +871,72 @@ public class BigQueryStatementTest {
     // This should not throw ArithmeticException (/ by zero) and should evaluate safely
     boolean useReadApi = statement.useReadAPI(tableResult);
     assertThat(useReadApi).isTrue(); // ratio = 500 / 1 = 500 > 2 -> true
+  }
+
+  @Test
+  public void testExecute_registersException() throws Exception {
+    // Mock bigquery to throw a backend exception
+    BigQueryException expectedException = new BigQueryException(500, "Backend Error");
+    Mockito.doThrow(expectedException)
+        .when(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+
+    BigQueryStatement spiedStatement = Mockito.spy(bigQueryStatement);
+
+    // Execute and expect the exception to be propagated to JDBC
+    Assertions.assertThrows(SQLException.class, () -> spiedStatement.executeQuery("SELECT 1"));
+
+    // Retrieve the exported span from OTel extension
+    List<SpanData> spans = otelTesting.getSpans();
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(spans, "BigQueryStatement.executeQuery");
+
+    // Assert that the span recorded the error correctly
+    OpenTelemetryTestUtility.assertSpanStatus(span, io.opentelemetry.api.trace.StatusCode.ERROR);
+    OpenTelemetryTestUtility.assertSpanHasException(span, BigQueryJdbcException.class);
+  }
+
+  @Test
+  public void testExecute_propagatesContextAndBaggage() throws Exception {
+    // Mock bigquery using thenAnswer to hook into the call and assert Context/Baggage
+    Mockito.doAnswer(
+            invocation -> {
+              // This code runs on the execution thread during the SDK call
+              String connectionIdBaggage =
+                  Baggage.current()
+                      .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
+              assertEquals("test-connection-id", connectionIdBaggage);
+
+              Span currentSpan = Span.current();
+              assertTrue(currentSpan.getSpanContext().isValid());
+
+              // Return a mock TableResult to allow the execution to proceed
+              TableResult tableResultMock = mock(TableResult.class);
+              doReturn(jobId).when(tableResultMock).getJobId();
+              doReturn(Schema.of()).when(tableResultMock).getSchema();
+              return tableResultMock;
+            })
+        .when(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+
+    BigQueryStatement spiedStatement = Mockito.spy(bigQueryStatement);
+
+    // Setup connection mocks to allow the statement to execute successfully
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(Mockito.any(JobInfo.class));
+
+    BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
+    doReturn(resultSetMock)
+        .when(spiedStatement)
+        .processJsonResultSet(Mockito.any(TableResult.class), Mockito.any());
+
+    // Execute query
+    spiedStatement.executeQuery("SELECT 1");
+
+    // Verify the SDK call actually occurred
+    verify(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
   }
 
   @Test
