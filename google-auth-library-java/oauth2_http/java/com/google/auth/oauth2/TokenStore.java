@@ -32,8 +32,10 @@
 package com.google.auth.oauth2;
 
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /** Interface for long term storage of tokens */
+@NullMarked
 public interface TokenStore {
 
   /**

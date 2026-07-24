@@ -16,7 +16,9 @@ package com.google.api.generator.gapic.utils;
 
 import java.util.Arrays;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public final class ResourceReferenceUtils {
 
   private static final String SLASH = "/";

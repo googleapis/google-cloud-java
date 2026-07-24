@@ -48,9 +48,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.logging.Level;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.Logger;
 
 /** Contains helper methods to log auth requests and responses */
+@NullMarked
 class Slf4jLoggingHelpers {
   private static final Gson gson = new Gson();
   private static final Set<String> SENSITIVE_KEYS = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);

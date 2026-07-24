@@ -78,7 +78,9 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceStubClassComposer {
   private static final HttpJsonServiceStubClassComposer INSTANCE =
       new HttpJsonServiceStubClassComposer();

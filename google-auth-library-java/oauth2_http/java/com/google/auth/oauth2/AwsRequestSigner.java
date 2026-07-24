@@ -50,9 +50,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import javax.annotation.Nullable;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal utility that signs AWS API requests based on the AWS Signature Version 4 signing
@@ -61,6 +62,7 @@ import javax.crypto.spec.SecretKeySpec;
  * @see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
  *     Signature V4</a>
  */
+@NullMarked
 class AwsRequestSigner {
 
   // AWS Signature Version 4 signing algorithm identifier.

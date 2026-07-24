@@ -23,7 +23,9 @@ import com.google.api.RoutingProto;
 import com.google.cloud.ExtendedOperationsProto;
 import com.google.longrunning.OperationsProto;
 import com.google.protobuf.ExtensionRegistry;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ProtoRegistry {
   /** Register all extensions needed to process API protofiles. */
   public static void registerAllExtensions(ExtensionRegistry extensionRegistry) {

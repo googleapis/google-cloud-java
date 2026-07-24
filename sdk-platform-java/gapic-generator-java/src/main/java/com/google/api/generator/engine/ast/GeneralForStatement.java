@@ -19,7 +19,9 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Collections;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class GeneralForStatement implements Statement {
   public abstract Expr initializationExpr();

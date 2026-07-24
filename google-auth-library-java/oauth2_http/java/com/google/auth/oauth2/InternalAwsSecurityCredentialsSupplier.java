@@ -47,13 +47,15 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Internal provider for retrieving AWS security credentials for {@link AwsCredentials} to exchange
  * for GCP access tokens. The credentials are retrieved either via environment variables or metadata
  * endpoints.
  */
+@NullMarked
 class InternalAwsSecurityCredentialsSupplier implements AwsSecurityCredentialsSupplier {
   private static final long serialVersionUID = 4438370785261365013L;
 

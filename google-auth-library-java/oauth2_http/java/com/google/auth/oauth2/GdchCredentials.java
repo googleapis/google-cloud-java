@@ -79,7 +79,10 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class GdchCredentials extends GoogleCredentials {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(GdchCredentials.class);
@@ -454,7 +457,7 @@ public class GdchCredentials extends GoogleCredentials {
    *     been set or if the audience string is not a valid URI.
    */
   @ObsoleteApi("Use getGdchAudience() instead.")
-  public final URI getApiAudience() {
+  public final @Nullable URI getApiAudience() {
     if (Strings.isNullOrEmpty(apiAudience)) {
       return null;
     }
@@ -518,7 +521,7 @@ public class GdchCredentials extends GoogleCredentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof GdchCredentials)) {
       return false;
     }

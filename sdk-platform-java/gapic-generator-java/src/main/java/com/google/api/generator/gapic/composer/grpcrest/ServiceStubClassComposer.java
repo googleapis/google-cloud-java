@@ -22,7 +22,9 @@ import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.gapic.composer.common.AbstractServiceStubClassComposer;
 import com.google.api.generator.gapic.composer.store.TypeStore;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceStubClassComposer extends AbstractServiceStubClassComposer {
   private static final ServiceStubClassComposer INSTANCE = new ServiceStubClassComposer();
 

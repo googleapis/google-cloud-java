@@ -19,7 +19,9 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class SynchronizedStatement implements Statement {
   public abstract Expr lock();
