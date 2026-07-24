@@ -33,12 +33,16 @@ public class SyncChatShouldGenerateAsInternalFoobarname {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-        EchoServiceShouldGeneratePartialUsualClient.create()) {
-      FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
-      EchoResponse response =
-          echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
-    }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+        EchoServiceShouldGeneratePartialUsualClient.create();
+    FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
+    EchoResponse response =
+        echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
   }
 }
 // [END goldensample_generated_EchoServiceShouldGeneratePartialUsual_ChatShouldGenerateAsInternal_Foobarname_sync]
