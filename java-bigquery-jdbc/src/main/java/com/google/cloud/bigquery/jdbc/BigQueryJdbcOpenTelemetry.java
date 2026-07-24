@@ -51,7 +51,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
 
-public class BigQueryJdbcOpenTelemetry {
+class BigQueryJdbcOpenTelemetry {
 
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
   static final String BIGQUERY_NAMESPACE = "com.google.cloud.bigquery";
@@ -336,109 +336,118 @@ public class BigQueryJdbcOpenTelemetry {
             gcpTelemetryProjectId,
             getCredentialsIdentifier(gcpTelemetryCredentials),
             enableGcpTraceExporter);
+    CachedSdk fastCheck = sdkCache.get(key);
+    if (fastCheck != null) {
+      CachedSdk result =
+          sdkCache.computeIfPresent(
+              key,
+              (k, cachedSdk) -> {
+                cachedSdk.refCount.incrementAndGet();
+                return cachedSdk;
+              });
+      if (result != null) {
+        return result.sdk;
+      }
+    }
+
+    Map<String, String> props = new HashMap<>();
+
+    if (enableGcpTraceExporter) {
+      props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
+      props.put(OTEL_EXPORTER_OTLP_ENDPOINT, OTLP_ENDPOINT_VALUE);
+    } else {
+      props.put(OTEL_TRACES_EXPORTER, EXPORTER_NONE);
+    }
+
+    // Logs are handled directly via GCP logging
+    props.put(OTEL_LOGS_EXPORTER, EXPORTER_NONE);
+    // Metrics are deferred to a future phase
+    props.put(OTEL_METRICS_EXPORTER, EXPORTER_NONE);
+
+    if (gcpTelemetryProjectId != null) {
+      props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
+    }
+
+    // Set safe, generous default limits on attribute value lengths (32KB) to protect
+    // customers from GCP Cloud Trace 64KB span ingestion failures when logging massive
+    // exception stack traces or database schema metadata.
+    // Respect any existing user configuration overrides.
+    if (!props.containsKey(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
+      props.put(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
+    }
+    if (!props.containsKey(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
+      props.put(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
+    }
+
+    AutoConfiguredOpenTelemetrySdk autoConfigured =
+        AutoConfiguredOpenTelemetrySdk.builder()
+            .addPropertiesSupplier(() -> props)
+            .addResourceCustomizer(
+                (resource, configProperties) -> {
+                  if (gcpTelemetryProjectId != null) {
+                    return resource.merge(
+                        io.opentelemetry.sdk.resources.Resource.builder()
+                            .put("gcp.project_id", gcpTelemetryProjectId)
+                            .build());
+                  }
+                  return resource;
+                })
+            .addSpanExporterCustomizer(
+                (spanExporter, configProperties) -> {
+                  try {
+                    Credentials credentials;
+                    if (gcpTelemetryCredentials != null) {
+                      credentials = resolveCredentialsFromString(gcpTelemetryCredentials);
+                    } else {
+                      credentials = fallbackCredentials;
+                    }
+
+                    if (credentials instanceof GoogleCredentials) {
+                      GoogleCredentials googleCredentials = (GoogleCredentials) credentials;
+                      if (googleCredentials.createScopedRequired()) {
+                        credentials =
+                            googleCredentials.createScoped(
+                                Collections.singletonList(
+                                    "https://www.googleapis.com/auth/cloud-platform"));
+                      }
+                    }
+
+                    final Credentials finalCredentials = credentials;
+
+                    if (spanExporter instanceof OtlpHttpSpanExporter) {
+                      return ((OtlpHttpSpanExporter) spanExporter)
+                          .toBuilder()
+                              .setHeaders(
+                                  () -> getAuthHeaders(finalCredentials, gcpTelemetryProjectId))
+                              .build();
+                    }
+                    if (spanExporter instanceof OtlpGrpcSpanExporter) {
+                      return ((OtlpGrpcSpanExporter) spanExporter)
+                          .toBuilder()
+                              .setHeaders(
+                                  () -> getAuthHeaders(finalCredentials, gcpTelemetryProjectId))
+                              .build();
+                    }
+                  } catch (Exception e) {
+                    LOG.warning(
+                        e,
+                        "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
+                  }
+                  return spanExporter;
+                })
+            .build();
+
+    OpenTelemetrySdk newSdk = autoConfigured.getOpenTelemetrySdk();
+
     return sdkCache.compute(
             key,
             (k, cachedSdk) -> {
               if (cachedSdk != null) {
                 cachedSdk.refCount.incrementAndGet();
+                newSdk.close(); // Clean up the duplicate we just made
                 return cachedSdk;
               }
-
-              Map<String, String> props = new HashMap<>();
-
-              if (enableGcpTraceExporter) {
-                props.put(OTEL_TRACES_EXPORTER, EXPORTER_OTLP);
-                props.put(OTEL_EXPORTER_OTLP_ENDPOINT, OTLP_ENDPOINT_VALUE);
-              } else {
-                props.put(OTEL_TRACES_EXPORTER, EXPORTER_NONE);
-              }
-
-              // Logs are handled directly via GCP logging
-              props.put(OTEL_LOGS_EXPORTER, EXPORTER_NONE);
-              // Metrics are deferred to a future phase
-              props.put(OTEL_METRICS_EXPORTER, EXPORTER_NONE);
-
-              if (gcpTelemetryProjectId != null) {
-                props.put(GOOGLE_CLOUD_PROJECT, gcpTelemetryProjectId);
-              }
-
-              // Set safe, generous default limits on attribute value lengths (32KB) to protect
-              // customers from GCP Cloud Trace 64KB span ingestion failures when logging massive
-              // exception stack traces or database schema metadata.
-              // Respect any existing user configuration overrides.
-              if (!props.containsKey(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
-                props.put(OTEL_SPAN_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
-              }
-              if (!props.containsKey(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT)) {
-                props.put(OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT, DEFAULT_ATTRIBUTE_LENGTH_LIMIT);
-              }
-
-              AutoConfiguredOpenTelemetrySdk autoConfigured =
-                  AutoConfiguredOpenTelemetrySdk.builder()
-                      .addPropertiesSupplier(() -> props)
-                      .addResourceCustomizer(
-                          (resource, configProperties) -> {
-                            if (gcpTelemetryProjectId != null) {
-                              return resource.merge(
-                                  io.opentelemetry.sdk.resources.Resource.builder()
-                                      .put("gcp.project_id", gcpTelemetryProjectId)
-                                      .build());
-                            }
-                            return resource;
-                          })
-                      .addSpanExporterCustomizer(
-                          (spanExporter, configProperties) -> {
-                            try {
-                              Credentials credentials;
-                              if (gcpTelemetryCredentials != null) {
-                                credentials = resolveCredentialsFromString(gcpTelemetryCredentials);
-                              } else {
-                                credentials = fallbackCredentials;
-                              }
-
-                              if (credentials instanceof GoogleCredentials) {
-                                GoogleCredentials googleCredentials =
-                                    (GoogleCredentials) credentials;
-                                if (googleCredentials.createScopedRequired()) {
-                                  credentials =
-                                      googleCredentials.createScoped(
-                                          Collections.singletonList(
-                                              "https://www.googleapis.com/auth/cloud-platform"));
-                                }
-                              }
-
-                              final Credentials finalCredentials = credentials;
-
-                              if (spanExporter instanceof OtlpHttpSpanExporter) {
-                                return ((OtlpHttpSpanExporter) spanExporter)
-                                    .toBuilder()
-                                        .setHeaders(
-                                            () ->
-                                                getAuthHeaders(
-                                                    finalCredentials, gcpTelemetryProjectId))
-                                        .build();
-                              }
-                              if (spanExporter instanceof OtlpGrpcSpanExporter) {
-                                return ((OtlpGrpcSpanExporter) spanExporter)
-                                    .toBuilder()
-                                        .setHeaders(
-                                            () ->
-                                                getAuthHeaders(
-                                                    finalCredentials, gcpTelemetryProjectId))
-                                        .build();
-                              }
-                            } catch (Exception e) {
-                              LOG.warning(
-                                  e,
-                                  "Failed to resolve telemetry credentials. Telemetry will be exported using default OpenTelemetry configuration (custom authentication headers will not be injected).");
-                            }
-                            return spanExporter;
-                          })
-                      .build();
-
-              OpenTelemetrySdk sdk = autoConfigured.getOpenTelemetrySdk();
-
-              return new CachedSdk(sdk);
+              return new CachedSdk(newSdk);
             })
         .sdk;
   }

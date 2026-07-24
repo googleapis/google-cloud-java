@@ -58,7 +58,11 @@ public class OpenTelemetryJulHandler extends Handler {
           Baggage.fromContext(Context.current())
               .getEntryValue(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY);
 
-      if (connectionId == null) {
+      if (connectionId == null || connectionId.isEmpty()) {
+        connectionId = BigQueryJdbcMdc.getConnectionId();
+      }
+
+      if (connectionId == null || connectionId.isEmpty()) {
         return;
       }
 
@@ -94,7 +98,7 @@ public class OpenTelemetryJulHandler extends Handler {
     LogEntry.Builder builder =
         LogEntry.newBuilder(Payload.StringPayload.of(formatMessage(record)))
             .setSeverity(mapGcpSeverity(record.getLevel()))
-            .setTimestamp(record.getMillis())
+            .setTimestamp(Instant.ofEpochMilli(record.getMillis()))
             .setLogName(logId);
 
     if (traceId != null) {
