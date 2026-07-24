@@ -29,22 +29,16 @@ import static org.mockito.Mockito.when;
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.OpenFakeSessionRequest;
-import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
-import com.google.bigtable.v2.OpenFakeSessionRequest.ActionList;
 import com.google.bigtable.v2.OpenFakeSessionRequest.StreamError;
 import com.google.bigtable.v2.OpenSessionRequest;
-import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionRefreshConfig;
 import com.google.bigtable.v2.SessionRequest;
-import com.google.bigtable.v2.SessionResponse;
-import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.api.UnaryResponseFuture;
 import com.google.cloud.bigtable.data.v2.internal.api.VRpcException;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
-import com.google.cloud.bigtable.data.v2.internal.channels.SessionStream;
 import com.google.cloud.bigtable.data.v2.internal.channels.SingleChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
@@ -97,8 +91,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.LongPredicate;
 import org.junit.jupiter.api.AfterEach;
@@ -704,9 +696,7 @@ public class SessionPoolImplTest {
       f.get(15, TimeUnit.SECONDS);
     } catch (TimeoutException e) {
       throw new AssertionError(
-          "pool did not serve a vRPC ("
-              + label
-              + ") within 15s — the pool monitor appears wedged",
+          "pool did not serve a vRPC (" + label + ") within 15s — the pool monitor appears wedged",
           e);
     }
   }
@@ -721,13 +711,13 @@ public class SessionPoolImplTest {
    * incoming request then blocked on that lock forever, threads piled up, and the pod shed 100% of
    * traffic with no recovery.
    *
-   * <p>A truly orphaned intrinsic monitor cannot be produced inside a JVM unit test (a dead thread's
-   * {@code synchronized} block always unwinds), so we simulate the dead owner faithfully: a helper
-   * thread grabs the pool lock and never lets go. Under the old {@code synchronized (this)} design
-   * every call below would block on that held monitor indefinitely and this test would fail on its
-   * timeout. With the {@link java.util.concurrent.locks.ReentrantLock} + bounded {@code tryLock} fix,
-   * the request-serving hot path degrades to a bounded fast-fail instead of hanging, and the pool
-   * fully recovers once the lock is released.
+   * <p>A truly orphaned intrinsic monitor cannot be produced inside a JVM unit test (a dead
+   * thread's {@code synchronized} block always unwinds), so we simulate the dead owner faithfully:
+   * a helper thread grabs the pool lock and never lets go. Under the old {@code synchronized
+   * (this)} design every call below would block on that held monitor indefinitely and this test
+   * would fail on its timeout. With the {@link java.util.concurrent.locks.ReentrantLock} + bounded
+   * {@code tryLock} fix, the request-serving hot path degrades to a bounded fast-fail instead of
+   * hanging, and the pool fully recovers once the lock is released.
    */
   @Test
   @Timeout(60)

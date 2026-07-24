@@ -790,7 +790,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @SuppressWarnings("GuardedBy")
   public boolean hasSession() {
     if (!tryAcquireHotPathLock()) {
-      // Treat a wedged pool as "no session available" rather than blocking on the pool lock forever.
+      // Treat a wedged pool as "no session available" rather than blocking on the pool lock
+      // forever.
       // Note: the shim's routing OR (unimplementedFailures < MAX || hasSession()) means returning
       // false here does not by itself force the classic path; the wedge protection that matters is
       // newCall()/PendingVRpc.start() fast-failing with a retriable UNAVAILABLE.
@@ -902,10 +903,13 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // region below.
     @SuppressWarnings("GuardedBy")
     private void cancel(Status status, boolean onlyCancelPendingCall) {
-      // The eager removal is only an optimization to skip a wasted session pick in tryDrainPendingRpcs.
+      // The eager removal is only an optimization to skip a wasted session pick in
+      // tryDrainPendingRpcs.
       // Use the bounded hot-path acquisition instead of a blocking lock(): this runs on a callback
-      // (op-executor) thread, and an orphaned/wedged poolLock would otherwise park that thread forever
-      // — the exact thread pile-up that wedged pods in production. If we can't get the lock, skip the
+      // (op-executor) thread, and an orphaned/wedged poolLock would otherwise park that thread
+      // forever
+      // — the exact thread pile-up that wedged pods in production. If we can't get the lock, skip
+      // the
       // removal; drainTo()'s isCancelled guard is the correctness backstop (it releases the session
       // via onPendingVRpcCancelled instead of starting the real call). See poolLock.
       if (tryAcquireHotPathLock()) {
