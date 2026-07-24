@@ -55,6 +55,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-spanner-parent</site.installationModule>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -157,15 +158,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
-  </profiles>
 
 </project>

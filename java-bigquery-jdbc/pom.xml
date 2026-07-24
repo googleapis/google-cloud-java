@@ -32,6 +32,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-jdbc</site.installationModule>
     <skipShade>false</skipShade>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <build>
@@ -410,14 +411,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
     </profile>
 
     <!-- Profile used inside docker -->

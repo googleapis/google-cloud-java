@@ -56,6 +56,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquery-parent</site.installationModule>
     <google-api-services-bigquery.version>v2-rev20251012-2.0.0</google-api-services-bigquery.version>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -161,13 +162,6 @@
       <modules>
         <module>benchmark</module>
       </modules>
-    </profile>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
     </profile>
   </profiles>
 </project>

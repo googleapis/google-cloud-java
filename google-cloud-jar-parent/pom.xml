@@ -19,7 +19,22 @@
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
-    <skipUnitTests>false</skipUnitTests>
+    <!--
+      Defaults to true: most modules under this parent are pure GAPIC-generated clients whose
+      generated tests aren't worth the CI time. Libraries with handwritten tests worth
+      running (java-spanner, java-bigtable, java-storage, ...) override this back to false in
+      their own top-level pom.xml.
+
+      Wired only into surefire's <skip> (below), not Maven's built-in skipTests, so it skips
+      unit tests without also skipping failsafe/ITs.
+    -->
+    <skipUnitTests>true</skipUnitTests>
+    <!--
+      Mirrors skipUnitTests, so test compilation is skipped along with execution. The
+      enable-integration-tests profile overrides this to false so ITs still compile and run
+      when -DskipUnitTests=true is set.
+    -->
+    <maven.test.skip>${skipUnitTests}</maven.test.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
@@ -170,6 +185,12 @@
           <scope>provided</scope>
         </dependency>
       </dependencies>
+    </profile>
+    <profile>
+      <id>enable-integration-tests</id>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
     </profile>
     <profile>
       <id>java17</id>

@@ -56,6 +56,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-storage-parent</site.installationModule>
     <google.cloud.shared-dependencies.version>3.31.0</google.cloud.shared-dependencies.version>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -186,12 +187,6 @@
       <modules>
         <module>storage-shared-benchmarking</module>
       </modules>
-    </profile>
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
     </profile>
     <profile>
       <!--

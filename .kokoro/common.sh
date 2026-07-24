@@ -311,6 +311,11 @@ function run_integration_tests() {
   parse_all_submodules "$1"
   printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
 
+  # Skip only unit tests, not ITs: -DskipUnitTests=true for client-library modules (see
+  # google-cloud-jar-parent/pom.xml for how that's wired) and -PbulkTests for the handful of
+  # modules (google-auth-library-java, java-cloud-bom, java-shared-config,
+  # sdk-platform-java) that predate and sit outside that mechanism. Both flags are passed
+  # unconditionally; Maven ignores whichever one a given module doesn't recognize.
   mvn verify -Penable-integration-tests -Pquick-build --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
@@ -416,6 +421,7 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      'grpc-gcp-java'
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
       'google-auth-library-java/appengine'

@@ -144,6 +144,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-firestore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -246,12 +247,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
     </profile>
   </profiles>
 </project>
