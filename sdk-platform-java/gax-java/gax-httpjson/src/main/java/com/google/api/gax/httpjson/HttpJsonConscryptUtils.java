@@ -56,7 +56,7 @@ public class HttpJsonConscryptUtils {
    *       standard TLS 1.3 endpoints if ML-KEM is not negotiated.
    * </ul>
    */
-  static final String[] DEFAULT_PQC_GROUPS =
+  public static final String[] DEFAULT_PQC_GROUPS =
       new String[] {"X25519MLKEM768", "SecP256r1MLKEM768", "X25519"};
 
   /**
@@ -75,7 +75,7 @@ public class HttpJsonConscryptUtils {
     private static Provider createProvider() {
       try {
         return Conscrypt.newProvider();
-      } catch (Throwable t) {
+      } catch (SecurityException | LinkageError t) {
         LOG.log(
             Level.WARNING, "Conscrypt native libraries not available. Falling back to JDK TLS.", t);
         return null;

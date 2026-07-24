@@ -63,6 +63,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     return endpoint;
   }
 
+  @VisibleForTesting
   HttpTransport getHttpTransport() {
     return httpTransport;
   }
