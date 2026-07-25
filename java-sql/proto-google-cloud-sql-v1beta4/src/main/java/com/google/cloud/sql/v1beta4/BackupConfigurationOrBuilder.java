@@ -161,37 +161,59 @@ public interface BackupConfigurationOrBuilder
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+   *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
    * @return Whether the replicationLogArchivingEnabled field is set.
    */
+  @java.lang.Deprecated
   boolean hasReplicationLogArchivingEnabled();
 
   /**
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.sql.v1beta4.BackupConfiguration.replication_log_archiving_enabled is
+   *     deprecated. See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=183
    * @return The replicationLogArchivingEnabled.
    */
+  @java.lang.Deprecated
   com.google.protobuf.BoolValue getReplicationLogArchivingEnabled();
 
   /**
    *
    *
    * <pre>
-   * Reserved for future use.
+   * Optional. Deprecated: replication_log_archiving_enabled is deprecated and
+   * will be removed from a future version of the API. Use
+   * [point_in_time_recovery_enabled][google.cloud.sql.v1beta4.BackupConfiguration.point_in_time_recovery_enabled]
+   * instead.
    * </pre>
    *
-   * <code>.google.protobuf.BoolValue replication_log_archiving_enabled = 5;</code>
+   * <code>
+   * .google.protobuf.BoolValue replication_log_archiving_enabled = 5 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.BoolValueOrBuilder getReplicationLogArchivingEnabledOrBuilder();
 
   /**

@@ -64,6 +64,7 @@ public final class User extends com.google.protobuf.GeneratedMessage
     dualPasswordType_ = 0;
     iamStatus_ = 0;
     databaseRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1540,6 +1541,74 @@ public final class User extends com.google.protobuf.GeneratedMessage
     return databaseRoles_.getByteString(index);
   }
 
+  public static final int SERVER_ROLES_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList serverRoles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the serverRoles.
+   */
+  public com.google.protobuf.ProtocolStringList getServerRolesList() {
+    return serverRoles_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of serverRoles.
+   */
+  public int getServerRolesCount() {
+    return serverRoles_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serverRoles at the given index.
+   */
+  public java.lang.String getServerRoles(int index) {
+    return serverRoles_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles for the SQL Server login.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serverRoles at the given index.
+   */
+  public com.google.protobuf.ByteString getServerRolesBytes(int index) {
+    return serverRoles_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1595,6 +1664,9 @@ public final class User extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < databaseRoles_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 15, databaseRoles_.getRaw(i));
+    }
+    for (int i = 0; i < serverRoles_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, serverRoles_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1654,6 +1726,14 @@ public final class User extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getDatabaseRolesList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < serverRoles_.size(); i++) {
+        dataSize += computeStringSizeNoTag(serverRoles_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getServerRolesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1691,6 +1771,7 @@ public final class User extends com.google.protobuf.GeneratedMessage
       if (iamStatus_ != other.iamStatus_) return false;
     }
     if (!getDatabaseRolesList().equals(other.getDatabaseRolesList())) return false;
+    if (!getServerRolesList().equals(other.getServerRolesList())) return false;
     if (!getUserDetailsCase().equals(other.getUserDetailsCase())) return false;
     switch (userDetailsCase_) {
       case 9:
@@ -1743,6 +1824,10 @@ public final class User extends com.google.protobuf.GeneratedMessage
     if (getDatabaseRolesCount() > 0) {
       hash = (37 * hash) + DATABASE_ROLES_FIELD_NUMBER;
       hash = (53 * hash) + getDatabaseRolesList().hashCode();
+    }
+    if (getServerRolesCount() > 0) {
+      hash = (37 * hash) + SERVER_ROLES_FIELD_NUMBER;
+      hash = (53 * hash) + getServerRolesList().hashCode();
     }
     switch (userDetailsCase_) {
       case 9:
@@ -1920,6 +2005,7 @@ public final class User extends com.google.protobuf.GeneratedMessage
       dualPasswordType_ = 0;
       iamStatus_ = 0;
       databaseRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       userDetailsCase_ = 0;
       userDetails_ = null;
       return this;
@@ -2003,6 +2089,10 @@ public final class User extends com.google.protobuf.GeneratedMessage
         databaseRoles_.makeImmutable();
         result.databaseRoles_ = databaseRoles_;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        serverRoles_.makeImmutable();
+        result.serverRoles_ = serverRoles_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2085,6 +2175,16 @@ public final class User extends com.google.protobuf.GeneratedMessage
         } else {
           ensureDatabaseRolesIsMutable();
           databaseRoles_.addAll(other.databaseRoles_);
+        }
+        onChanged();
+      }
+      if (!other.serverRoles_.isEmpty()) {
+        if (serverRoles_.isEmpty()) {
+          serverRoles_ = other.serverRoles_;
+          bitField0_ |= 0x00004000;
+        } else {
+          ensureServerRolesIsMutable();
+          serverRoles_.addAll(other.serverRoles_);
         }
         onChanged();
       }
@@ -2212,6 +2312,13 @@ public final class User extends com.google.protobuf.GeneratedMessage
                 databaseRoles_.add(s);
                 break;
               } // case 122
+            case 130:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureServerRolesIsMutable();
+                serverRoles_.add(s);
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4052,6 +4159,189 @@ public final class User extends com.google.protobuf.GeneratedMessage
       ensureDatabaseRolesIsMutable();
       databaseRoles_.add(value);
       bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList serverRoles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureServerRolesIsMutable() {
+      if (!serverRoles_.isModifiable()) {
+        serverRoles_ = new com.google.protobuf.LazyStringArrayList(serverRoles_);
+      }
+      bitField0_ |= 0x00004000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the serverRoles.
+     */
+    public com.google.protobuf.ProtocolStringList getServerRolesList() {
+      serverRoles_.makeImmutable();
+      return serverRoles_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of serverRoles.
+     */
+    public int getServerRolesCount() {
+      return serverRoles_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The serverRoles at the given index.
+     */
+    public java.lang.String getServerRoles(int index) {
+      return serverRoles_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the serverRoles at the given index.
+     */
+    public com.google.protobuf.ByteString getServerRolesBytes(int index) {
+      return serverRoles_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The serverRoles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerRoles(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServerRolesIsMutable();
+      serverRoles_.set(index, value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServerRoles(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServerRolesIsMutable();
+      serverRoles_.add(value);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllServerRoles(java.lang.Iterable<java.lang.String> values) {
+      ensureServerRolesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serverRoles_);
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerRoles() {
+      serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00004000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles for the SQL Server login.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServerRolesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureServerRolesIsMutable();
+      serverRoles_.add(value);
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

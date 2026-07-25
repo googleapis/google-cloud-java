@@ -313,8 +313,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaInfo resources. Listing across different resource
-   *     containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaInfo resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>Example names: `projects/123/locations/global/services/compute.googleapis.com`
    *     `folders/234/locations/global/services/compute.googleapis.com`
    *     `organizations/345/locations/global/services/compute.googleapis.com`
@@ -350,8 +350,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaInfo resources. Listing across different resource
-   *     containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaInfo resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>Example names: `projects/123/locations/global/services/compute.googleapis.com`
    *     `folders/234/locations/global/services/compute.googleapis.com`
    *     `organizations/345/locations/global/services/compute.googleapis.com`
@@ -492,7 +492,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the quota info.
+   * @param name Required. Identifier. The resource name of the quota info.
    *     <p>An example name:
    *     `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -524,7 +524,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. The resource name of the quota info.
+   * @param name Required. Identifier. The resource name of the quota info.
    *     <p>An example name:
    *     `projects/123/locations/global/services/compute.googleapis.com/quotaInfos/CpusPerProjectPerRegion`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -615,8 +615,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaPreference resources. Listing across different
-   *     resource containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaPreference resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>When the value starts with 'folders' or 'organizations', it lists the QuotaPreferences
    *     for org quotas in the container. It does not list the QuotaPreferences in the descendant
    *     projects of the container.
@@ -652,8 +652,8 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value of QuotaPreference resources. Listing across different
-   *     resource containers (such as 'projects/-') is not allowed.
+   * @param parent Required. Identifier. Parent value of QuotaPreference resources. Listing across
+   *     different resource containers (such as 'projects/-') is not allowed.
    *     <p>When the value starts with 'folders' or 'organizations', it lists the QuotaPreferences
    *     for org quotas in the container. It does not list the QuotaPreferences in the descendant
    *     projects of the container.
@@ -798,7 +798,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Identifier. Name of the resource
    *     <p>Example name: `projects/123/locations/global/quota_preferences/my-config-for-us-east1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -831,7 +831,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the resource
+   * @param name Required. Identifier. Name of the resource
    *     <p>Example name: `projects/123/locations/global/quota_preferences/my-config-for-us-east1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -923,7 +923,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -957,7 +957,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -993,7 +993,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @param quotaPreferenceId Optional. Id of the requesting object, must be unique under its
@@ -1032,7 +1032,7 @@ public class CloudQuotasClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent.
+   * @param parent Required. Identifier. Value for parent.
    *     <p>Example: `projects/123/locations/global`
    * @param quotaPreference Required. The resource being created
    * @param quotaPreferenceId Optional. Id of the requesting object, must be unique under its

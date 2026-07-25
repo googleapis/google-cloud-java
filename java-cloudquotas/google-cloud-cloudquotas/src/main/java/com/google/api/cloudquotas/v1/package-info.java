@@ -43,6 +43,31 @@
  *   QuotaInfo response = cloudQuotasClient.getQuotaInfo(name);
  * }
  * }</pre>
+ *
+ * <p>======================= QuotaAdjusterSettingsManagerClient =======================
+ *
+ * <p>Service Description: The Quotas Adjuster Settings API is an infrastructure service for Google
+ * Cloud that lets service consumers view and update their quota adjuster settings.
+ *
+ * <p>- Update quota adjuster settings. - Get the name of the configurations.
+ *
+ * <p>Sample for QuotaAdjusterSettingsManagerClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (QuotaAdjusterSettingsManagerClient quotaAdjusterSettingsManagerClient =
+ *     QuotaAdjusterSettingsManagerClient.create()) {
+ *   QuotaAdjusterSettings quotaAdjusterSettings = QuotaAdjusterSettings.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   QuotaAdjusterSettings response =
+ *       quotaAdjusterSettingsManagerClient.updateQuotaAdjusterSettings(
+ *           quotaAdjusterSettings, updateMask);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.api.cloudquotas.v1;

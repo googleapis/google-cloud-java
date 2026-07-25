@@ -81,12 +81,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier. The resource name of `IntelligenceFindingRevision`.
+   * Output only. The resource name of `IntelligenceFindingRevision`.
    * Format:
    * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -107,12 +107,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Identifier. The resource name of `IntelligenceFindingRevision`.
+   * Output only. The resource name of `IntelligenceFindingRevision`.
    * Format:
    * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -642,12 +642,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of `IntelligenceFindingRevision`.
+     * Output only. The resource name of `IntelligenceFindingRevision`.
      * Format:
      * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
      */
@@ -667,12 +667,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of `IntelligenceFindingRevision`.
+     * Output only. The resource name of `IntelligenceFindingRevision`.
      * Format:
      * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
      */
@@ -692,12 +692,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of `IntelligenceFindingRevision`.
+     * Output only. The resource name of `IntelligenceFindingRevision`.
      * Format:
      * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -716,12 +716,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of `IntelligenceFindingRevision`.
+     * Output only. The resource name of `IntelligenceFindingRevision`.
      * Format:
      * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -736,12 +736,12 @@ public final class IntelligenceFindingRevision extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Identifier. The resource name of `IntelligenceFindingRevision`.
+     * Output only. The resource name of `IntelligenceFindingRevision`.
      * Format:
      * `projects/{project}/locations/{location}/intelligenceFindings/{intelligence_finding}/revisions/{revision}`
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

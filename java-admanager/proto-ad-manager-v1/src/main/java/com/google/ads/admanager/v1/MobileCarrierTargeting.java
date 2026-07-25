@@ -26,8 +26,7 @@ package com.google.ads.admanager.v1;
  * <pre>
  * Mobile Carrier Targeting.
  *
- * Can be used to target/exclude a variety of mobile carriers, such as AT&amp;T,
- * Verizon, or T-Mobile.
+ * Used to target or exclude mobile carriers.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.MobileCarrierTargeting}
@@ -423,8 +422,7 @@ public final class MobileCarrierTargeting extends com.google.protobuf.GeneratedM
    * <pre>
    * Mobile Carrier Targeting.
    *
-   * Can be used to target/exclude a variety of mobile carriers, such as AT&amp;T,
-   * Verizon, or T-Mobile.
+   * Used to target or exclude mobile carriers.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.MobileCarrierTargeting}

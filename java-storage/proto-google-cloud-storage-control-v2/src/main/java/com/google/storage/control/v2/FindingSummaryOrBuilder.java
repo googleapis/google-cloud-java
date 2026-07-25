@@ -209,9 +209,7 @@ public interface FindingSummaryOrBuilder
    * Severity of the finding.
    * </pre>
    *
-   * <code>
-   * .google.storage.control.v2.FindingSeverity severity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.storage.control.v2.FindingSeverity severity = 7;</code>
    *
    * @return The enum numeric value on the wire for severity.
    */
@@ -224,9 +222,7 @@ public interface FindingSummaryOrBuilder
    * Severity of the finding.
    * </pre>
    *
-   * <code>
-   * .google.storage.control.v2.FindingSeverity severity = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
+   * <code>.google.storage.control.v2.FindingSeverity severity = 7;</code>
    *
    * @return The severity.
    */

@@ -52,6 +52,22 @@ public final class ContentBundleServiceProto extends com.google.protobuf.Generat
       internal_static_google_ads_admanager_v1_ListContentBundlesResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListContentBundlesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateContentBundlesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateContentBundlesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchActivateContentBundlesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchActivateContentBundlesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,15 +98,35 @@ public final class ContentBundleServiceProto extends com.google.protobuf.Generat
           + "\017content_bundles\030\001"
           + " \003(\0132&.google.ads.admanager.v1.ContentBundle\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\361\003\n"
+          + "total_size\030\003 \001(\005\"\235\001\n"
+          + "\"BatchActivateContentBundlesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022=\n"
+          + "\005names\030\002 \003(\tB.\340A\002\372A(\n"
+          + "&admanager.googleapis.com/ContentBundle\"%\n"
+          + "#BatchActivateContentBundlesResponse\"\237\001\n"
+          + "$BatchDeactivateContentBundlesRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022=\n"
+          + "\005names\030\002 \003(\tB.\340A\002\372A(\n"
+          + "&admanager.googleapis.com/ContentBundle\"\'\n"
+          + "%BatchDeactivateContentBundlesResponse2\317\007\n"
           + "\024ContentBundleService\022\243\001\n"
-          + "\020GetContentBundle\0220.google.ads.admanager.v1.GetConte"
-          + "ntBundleRequest\032&.google.ads.admanager.v"
-          + "1.ContentBundle\"5\332A\004name\202\323\344\223\002(\022&/v1/{name=networks/*/contentBundles/*}\022\266\001\n"
-          + "\022ListContentBundles\0222.google.ads.admanager.v1."
-          + "ListContentBundlesRequest\0323.google.ads.admanager.v1.ListContentBundlesResponse\"7"
-          + "\332A\006parent\202\323\344\223\002(\022&/v1/{parent=networks/*}"
-          + "/contentBundles\032z\312A\030admanager.googleapis"
+          + "\020GetContentBundle\0220.google.ads.admanager.v1.GetCon"
+          + "tentBundleRequest\032&.google.ads.admanager"
+          + ".v1.ContentBundle\"5\332A\004name\202\323\344\223\002(\022&/v1/{name=networks/*/contentBundles/*}\022\266\001\n"
+          + "\022ListContentBundles\0222.google.ads.admanager.v"
+          + "1.ListContentBundlesRequest\0323.google.ads.admanager.v1.ListContentBundlesResponse"
+          + "\"7\332A\006parent\202\323\344\223\002(\022&/v1/{parent=networks/*}/contentBundles\022\350\001\n"
+          + "\033BatchActivateContentBundles\022;.google.ads.admanager.v1.Batc"
+          + "hActivateContentBundlesRequest\032<.google.ads.admanager.v1.BatchActivateContentBun"
+          + "dlesResponse\"N\332A\014parent,names\202\323\344\223\0029\"4/v1"
+          + "/{parent=networks/*}/contentBundles:batchActivate:\001*\022\360\001\n"
+          + "\035BatchDeactivateContentBundles\022=.google.ads.admanager.v1.BatchDe"
+          + "activateContentBundlesRequest\032>.google.ads.admanager.v1.BatchDeactivateContentBu"
+          + "ndlesResponse\"P\332A\014parent,names\202\323\344\223\002;\"6/v"
+          + "1/{parent=networks/*}/contentBundles:bat"
+          + "chDeactivate:\001*\032z\312A\030admanager.googleapis"
           + ".com\322A\\https://www.googleapis.com/auth/a"
           + "dmanager,https://www.googleapis.com/auth/admanager.readonlyB\315\001\n"
           + "\033com.google.ads.admanager.v1B\031ContentBundleServiceProtoP\001"
@@ -133,6 +169,34 @@ public final class ContentBundleServiceProto extends com.google.protobuf.Generat
             new java.lang.String[] {
               "ContentBundles", "NextPageToken", "TotalSize",
             });
+    internal_static_google_ads_admanager_v1_BatchActivateContentBundlesRequest_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_BatchActivateContentBundlesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateContentBundlesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateContentBundlesResponse_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_BatchActivateContentBundlesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchActivateContentBundlesResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names",
+            });
+    internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesResponse_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchDeactivateContentBundlesResponse_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.ContentBundleMessagesProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();

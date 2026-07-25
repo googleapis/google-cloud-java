@@ -49,6 +49,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     name_ = "";
     project_ = "";
     databaseRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -390,6 +391,123 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     return revokeExistingRoles_;
   }
 
+  public static final int SERVER_ROLES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList serverRoles_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the serverRoles.
+   */
+  public com.google.protobuf.ProtocolStringList getServerRolesList() {
+    return serverRoles_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of serverRoles.
+   */
+  public int getServerRolesCount() {
+    return serverRoles_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The serverRoles at the given index.
+   */
+  public java.lang.String getServerRoles(int index) {
+    return serverRoles_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The server roles to grant to the SQL Server login. Existing
+   * server roles will not be revoked if revoke_existing_roles is false.
+   * body.server_roles will be ignored for update request.
+   * </pre>
+   *
+   * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the serverRoles at the given index.
+   */
+  public com.google.protobuf.ByteString getServerRolesBytes(int index) {
+    return serverRoles_.getByteString(index);
+  }
+
+  public static final int REVOKE_EXISTING_SERVER_ROLES_FIELD_NUMBER = 8;
+  private boolean revokeExistingServerRoles_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether to revoke existing roles that are not present
+   * in the `server_roles` field. If `false` or unset, the server roles
+   * specified in `server_roles` are added to the user's existing server roles.
+   * </pre>
+   *
+   * <code>optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the revokeExistingServerRoles field is set.
+   */
+  @java.lang.Override
+  public boolean hasRevokeExistingServerRoles() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether to revoke existing roles that are not present
+   * in the `server_roles` field. If `false` or unset, the server roles
+   * specified in `server_roles` are added to the user's existing server roles.
+   * </pre>
+   *
+   * <code>optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The revokeExistingServerRoles.
+   */
+  @java.lang.Override
+  public boolean getRevokeExistingServerRoles() {
+    return revokeExistingServerRoles_;
+  }
+
   public static final int BODY_FIELD_NUMBER = 100;
   private com.google.cloud.sql.v1beta4.User body_;
 
@@ -400,7 +518,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
    */
   @java.lang.Override
   public boolean hasBody() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -451,7 +569,13 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(6, revokeExistingRoles_);
     }
+    for (int i = 0; i < serverRoles_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, serverRoles_.getRaw(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(8, revokeExistingServerRoles_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(100, getBody());
     }
     getUnknownFields().writeTo(output);
@@ -486,7 +610,18 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, revokeExistingRoles_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < serverRoles_.size(); i++) {
+        dataSize += computeStringSizeNoTag(serverRoles_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getServerRolesList().size();
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, revokeExistingServerRoles_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, getBody());
     }
     size += getUnknownFields().getSerializedSize();
@@ -513,6 +648,11 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     if (hasRevokeExistingRoles() != other.hasRevokeExistingRoles()) return false;
     if (hasRevokeExistingRoles()) {
       if (getRevokeExistingRoles() != other.getRevokeExistingRoles()) return false;
+    }
+    if (!getServerRolesList().equals(other.getServerRolesList())) return false;
+    if (hasRevokeExistingServerRoles() != other.hasRevokeExistingServerRoles()) return false;
+    if (hasRevokeExistingServerRoles()) {
+      if (getRevokeExistingServerRoles() != other.getRevokeExistingServerRoles()) return false;
     }
     if (hasBody() != other.hasBody()) return false;
     if (hasBody()) {
@@ -544,6 +684,14 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     if (hasRevokeExistingRoles()) {
       hash = (37 * hash) + REVOKE_EXISTING_ROLES_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRevokeExistingRoles());
+    }
+    if (getServerRolesCount() > 0) {
+      hash = (37 * hash) + SERVER_ROLES_FIELD_NUMBER;
+      hash = (53 * hash) + getServerRolesList().hashCode();
+    }
+    if (hasRevokeExistingServerRoles()) {
+      hash = (37 * hash) + REVOKE_EXISTING_SERVER_ROLES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRevokeExistingServerRoles());
     }
     if (hasBody()) {
       hash = (37 * hash) + BODY_FIELD_NUMBER;
@@ -696,6 +844,8 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
       project_ = "";
       databaseRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
       revokeExistingRoles_ = false;
+      serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      revokeExistingServerRoles_ = false;
       body_ = null;
       if (bodyBuilder_ != null) {
         bodyBuilder_.dispose();
@@ -759,8 +909,16 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.body_ = bodyBuilder_ == null ? body_ : bodyBuilder_.build();
+        serverRoles_.makeImmutable();
+        result.serverRoles_ = serverRoles_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.revokeExistingServerRoles_ = revokeExistingServerRoles_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.body_ = bodyBuilder_ == null ? body_ : bodyBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -810,6 +968,19 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasRevokeExistingRoles()) {
         setRevokeExistingRoles(other.getRevokeExistingRoles());
+      }
+      if (!other.serverRoles_.isEmpty()) {
+        if (serverRoles_.isEmpty()) {
+          serverRoles_ = other.serverRoles_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureServerRolesIsMutable();
+          serverRoles_.addAll(other.serverRoles_);
+        }
+        onChanged();
+      }
+      if (other.hasRevokeExistingServerRoles()) {
+        setRevokeExistingServerRoles(other.getRevokeExistingServerRoles());
       }
       if (other.hasBody()) {
         mergeBody(other.getBody());
@@ -877,10 +1048,23 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureServerRolesIsMutable();
+                serverRoles_.add(s);
+                break;
+              } // case 58
+            case 64:
+              {
+                revokeExistingServerRoles_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             case 802:
               {
                 input.readMessage(internalGetBodyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 802
             default:
@@ -1622,6 +1806,295 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList serverRoles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureServerRolesIsMutable() {
+      if (!serverRoles_.isModifiable()) {
+        serverRoles_ = new com.google.protobuf.LazyStringArrayList(serverRoles_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the serverRoles.
+     */
+    public com.google.protobuf.ProtocolStringList getServerRolesList() {
+      serverRoles_.makeImmutable();
+      return serverRoles_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of serverRoles.
+     */
+    public int getServerRolesCount() {
+      return serverRoles_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The serverRoles at the given index.
+     */
+    public java.lang.String getServerRoles(int index) {
+      return serverRoles_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the serverRoles at the given index.
+     */
+    public com.google.protobuf.ByteString getServerRolesBytes(int index) {
+      return serverRoles_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The serverRoles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerRoles(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServerRolesIsMutable();
+      serverRoles_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServerRoles(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureServerRolesIsMutable();
+      serverRoles_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllServerRoles(java.lang.Iterable<java.lang.String> values) {
+      ensureServerRolesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serverRoles_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerRoles() {
+      serverRoles_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The server roles to grant to the SQL Server login. Existing
+     * server roles will not be revoked if revoke_existing_roles is false.
+     * body.server_roles will be ignored for update request.
+     * </pre>
+     *
+     * <code>repeated string server_roles = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the serverRoles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addServerRolesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureServerRolesIsMutable();
+      serverRoles_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private boolean revokeExistingServerRoles_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to revoke existing roles that are not present
+     * in the `server_roles` field. If `false` or unset, the server roles
+     * specified in `server_roles` are added to the user's existing server roles.
+     * </pre>
+     *
+     * <code>
+     * optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the revokeExistingServerRoles field is set.
+     */
+    @java.lang.Override
+    public boolean hasRevokeExistingServerRoles() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to revoke existing roles that are not present
+     * in the `server_roles` field. If `false` or unset, the server roles
+     * specified in `server_roles` are added to the user's existing server roles.
+     * </pre>
+     *
+     * <code>
+     * optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The revokeExistingServerRoles.
+     */
+    @java.lang.Override
+    public boolean getRevokeExistingServerRoles() {
+      return revokeExistingServerRoles_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to revoke existing roles that are not present
+     * in the `server_roles` field. If `false` or unset, the server roles
+     * specified in `server_roles` are added to the user's existing server roles.
+     * </pre>
+     *
+     * <code>
+     * optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The revokeExistingServerRoles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevokeExistingServerRoles(boolean value) {
+
+      revokeExistingServerRoles_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether to revoke existing roles that are not present
+     * in the `server_roles` field. If `false` or unset, the server roles
+     * specified in `server_roles` are added to the user's existing server roles.
+     * </pre>
+     *
+     * <code>
+     * optional bool revoke_existing_server_roles = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevokeExistingServerRoles() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      revokeExistingServerRoles_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.sql.v1beta4.User body_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.sql.v1beta4.User,
@@ -1635,7 +2108,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
      * @return Whether the body field is set.
      */
     public boolean hasBody() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -1661,7 +2134,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
       } else {
         bodyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1673,7 +2146,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
       } else {
         bodyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1681,7 +2154,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
     /** <code>.google.cloud.sql.v1beta4.User body = 100;</code> */
     public Builder mergeBody(com.google.cloud.sql.v1beta4.User value) {
       if (bodyBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && body_ != null
             && body_ != com.google.cloud.sql.v1beta4.User.getDefaultInstance()) {
           getBodyBuilder().mergeFrom(value);
@@ -1692,7 +2165,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
         bodyBuilder_.mergeFrom(value);
       }
       if (body_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -1700,7 +2173,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
 
     /** <code>.google.cloud.sql.v1beta4.User body = 100;</code> */
     public Builder clearBody() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       body_ = null;
       if (bodyBuilder_ != null) {
         bodyBuilder_.dispose();
@@ -1712,7 +2185,7 @@ public final class SqlUsersUpdateRequest extends com.google.protobuf.GeneratedMe
 
     /** <code>.google.cloud.sql.v1beta4.User body = 100;</code> */
     public com.google.cloud.sql.v1beta4.User.Builder getBodyBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetBodyFieldBuilder().getBuilder();
     }
