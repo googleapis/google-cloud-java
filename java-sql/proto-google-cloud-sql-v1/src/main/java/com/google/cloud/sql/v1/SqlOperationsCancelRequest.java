@@ -54,6 +54,7 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
   private SqlOperationsCancelRequest() {
     operation_ = "";
     project_ = "";
+    location_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -177,6 +178,59 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
     }
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object location_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region of the Cloud SQL instance.
+   * </pre>
+   *
+   * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The location.
+   */
+  @java.lang.Override
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region of the Cloud SQL instance.
+   * </pre>
+   *
+   * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for location.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -197,6 +251,9 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, project_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(location_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, location_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -211,6 +268,9 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, project_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(location_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, location_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -230,6 +290,7 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
 
     if (!getOperation().equals(other.getOperation())) return false;
     if (!getProject().equals(other.getProject())) return false;
+    if (!getLocation().equals(other.getLocation())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -245,6 +306,8 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
     hash = (53 * hash) + getOperation().hashCode();
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -387,6 +450,7 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
       bitField0_ = 0;
       operation_ = "";
       project_ = "";
+      location_ = "";
       return this;
     }
 
@@ -429,6 +493,9 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.project_ = project_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.location_ = location_;
+      }
     }
 
     @java.lang.Override
@@ -452,6 +519,11 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -492,6 +564,12 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                location_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -729,6 +807,117 @@ public final class SqlOperationsCancelRequest extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       project_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region of the Cloud SQL instance.
+     * </pre>
+     *
+     * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The location.
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region of the Cloud SQL instance.
+     * </pre>
+     *
+     * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for location.
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region of the Cloud SQL instance.
+     * </pre>
+     *
+     * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      location_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region of the Cloud SQL instance.
+     * </pre>
+     *
+     * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLocation() {
+      location_ = getDefaultInstance().getLocation();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Region of the Cloud SQL instance.
+     * </pre>
+     *
+     * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for location to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      location_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

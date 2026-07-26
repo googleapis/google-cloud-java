@@ -77,4 +77,30 @@ public interface SqlOperationsCancelRequestOrBuilder
    * @return The bytes for project.
    */
   com.google.protobuf.ByteString getProjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region of the Cloud SQL instance.
+   * </pre>
+   *
+   * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The location.
+   */
+  java.lang.String getLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Region of the Cloud SQL instance.
+   * </pre>
+   *
+   * <code>string location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for location.
+   */
+  com.google.protobuf.ByteString getLocationBytes();
 }

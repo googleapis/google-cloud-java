@@ -166,7 +166,8 @@ public interface AnywhereCacheOrBuilder
    *
    *
    * <pre>
-   * Output only. Cache state including RUNNING, CREATING, DISABLED and PAUSED.
+   * Output only. Cache state including `running`, `creating`, `disabled` and
+   * `paused`.
    * </pre>
    *
    * <code>string state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -179,7 +180,8 @@ public interface AnywhereCacheOrBuilder
    *
    *
    * <pre>
-   * Output only. Cache state including RUNNING, CREATING, DISABLED and PAUSED.
+   * Output only. Cache state including `running`, `creating`, `disabled` and
+   * `paused`.
    * </pre>
    *
    * <code>string state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -285,4 +287,32 @@ public interface AnywhereCacheOrBuilder
    * @return The pendingUpdate.
    */
   boolean getPendingUpdate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether objects are ingested into the cache upon write.
+   * Defaults to false.
+   * </pre>
+   *
+   * <code>optional bool ingest_on_write = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the ingestOnWrite field is set.
+   */
+  boolean hasIngestOnWrite();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether objects are ingested into the cache upon write.
+   * Defaults to false.
+   * </pre>
+   *
+   * <code>optional bool ingest_on_write = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ingestOnWrite.
+   */
+  boolean getIngestOnWrite();
 }

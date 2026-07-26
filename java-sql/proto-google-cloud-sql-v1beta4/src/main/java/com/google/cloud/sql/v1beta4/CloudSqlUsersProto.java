@@ -113,28 +113,32 @@ public final class CloudSqlUsersProto extends com.google.protobuf.GeneratedFile 
           + "\004body\030d \001(\0132\036.google.cloud.sql.v1beta4.User\"8\n"
           + "\023SqlUsersListRequest\022\020\n"
           + "\010instance\030\001 \001(\t\022\017\n"
-          + "\007project\030\002 \001(\t\"\351\001\n"
+          + "\007project\030\002 \001(\t\"\325\002\n"
           + "\025SqlUsersUpdateRequest\022\021\n"
           + "\004host\030\001 \001(\tB\003\340A\001\022\020\n"
           + "\010instance\030\002 \001(\t\022\014\n"
           + "\004name\030\003 \001(\t\022\017\n"
           + "\007project\030\004 \001(\t\022\033\n"
           + "\016database_roles\030\005 \003(\tB\003\340A\001\022\'\n"
-          + "\025revoke_existing_roles\030\006 \001(\010B\003\340A\001H\000\210\001\001\022,\n"
+          + "\025revoke_existing_roles\030\006 \001(\010B\003\340A\001H\000\210\001\001\022\031\n"
+          + "\014server_roles\030\007 \003(\tB\003\340A\001\022.\n"
+          + "\034revoke_existing_server_roles\030\010"
+          + " \001(\010B\003\340A\001H\001\210\001\001\022,\n"
           + "\004body\030d \001(\0132\036.google.cloud.sql.v1beta4.UserB\030\n"
-          + "\026_revoke_existing_roles\"\213\002\n"
+          + "\026_revoke_existing_rolesB\037\n"
+          + "\035_revoke_existing_server_roles\"\213\002\n"
           + "\034UserPasswordValidationPolicy\022\037\n"
           + "\027allowed_failed_attempts\030\001 \001(\005\022?\n"
           + "\034password_expiration_duration\030\002"
           + " \001(\0132\031.google.protobuf.Duration\022$\n"
           + "\034enable_failed_attempts_check\030\003 \001(\010\022=\n"
-          + "\006status\030\004 \001(\0132(."
-          + "google.cloud.sql.v1beta4.PasswordStatusB\003\340A\003\022$\n"
+          + "\006status\030\004"
+          + " \001(\0132(.google.cloud.sql.v1beta4.PasswordStatusB\003\340A\003\022$\n"
           + "\034enable_password_verification\030\005 \001(\010\"^\n"
           + "\016PasswordStatus\022\016\n"
           + "\006locked\030\001 \001(\010\022<\n"
           + "\030password_expiration_time\030\002"
-          + " \001(\0132\032.google.protobuf.Timestamp\"\357\007\n"
+          + " \001(\0132\032.google.protobuf.Timestamp\"\212\010\n"
           + "\004User\022\014\n"
           + "\004kind\030\001 \001(\t\022\020\n"
           + "\010password\030\002 \001(\t\022\014\n"
@@ -144,16 +148,17 @@ public final class CloudSqlUsersProto extends com.google.protobuf.GeneratedFile 
           + "\010instance\030\006 \001(\t\022\017\n"
           + "\007project\030\007 \001(\t\0228\n"
           + "\004type\030\010 \001(\0162*.google.cloud.sql.v1beta4.User.SqlUserType\022P\n"
-          + "\026sqlserver_user_details\030\t \001(\0132..google"
-          + ".cloud.sql.v1beta4.SqlServerUserDetailsH\000\022\026\n"
+          + "\026sqlserver_user_details\030\t"
+          + " \001(\0132..google.cloud.sql.v1beta4.SqlServerUserDetailsH\000\022\026\n"
           + "\tiam_email\030\013 \001(\tB\003\340A\001\022O\n"
-          + "\017password_policy\030\014"
-          + " \001(\01326.google.cloud.sql.v1beta4.UserPasswordValidationPolicy\022P\n"
+          + "\017password_policy\030\014 \001(\01326"
+          + ".google.cloud.sql.v1beta4.UserPasswordValidationPolicy\022P\n"
           + "\022dual_password_type\030\r"
           + " \001(\0162/.google.cloud.sql.v1beta4.User.DualPasswordTypeH\001\210\001\001\022A\n\n"
-          + "iam_status\030\016"
-          + " \001(\0162(.google.cloud.sql.v1beta4.User.IamStatusH\002\210\001\001\022\033\n"
-          + "\016database_roles\030\017 \003(\tB\003\340A\001\"\326\001\n"
+          + "iam_status\030\016 \001(\0162(.g"
+          + "oogle.cloud.sql.v1beta4.User.IamStatusH\002\210\001\001\022\033\n"
+          + "\016database_roles\030\017 \003(\tB\003\340A\001\022\031\n"
+          + "\014server_roles\030\020 \003(\tB\003\340A\001\"\326\001\n"
           + "\013SqlUserType\022\014\n"
           + "\010BUILT_IN\020\000\022\022\n"
           + "\016CLOUD_IAM_USER\020\001\022\035\n"
@@ -183,27 +188,27 @@ public final class CloudSqlUsersProto extends com.google.protobuf.GeneratedFile 
           + "\005items\030\002 \003(\0132\036.google.cloud.sql.v1beta4.User\022\033\n"
           + "\017next_page_token\030\003 \001(\tB\002\030\0012\324\007\n"
           + "\017SqlUsersService\022\242\001\n"
-          + "\006Delete\022/.google.cloud.sql.v1beta4.SqlUsersDeleteRequ"
-          + "est\032#.google.cloud.sql.v1beta4.Operation"
-          + "\"B\202\323\344\223\002<*:/sql/v1beta4/projects/{project}/instances/{instance}/users\022\236\001\n"
-          + "\003Get\022,.google.cloud.sql.v1beta4.SqlUsersGetReque"
-          + "st\032\036.google.cloud.sql.v1beta4.User\"I\202\323\344\223"
-          + "\002C\022A/sql/v1beta4/projects/{project}/instances/{instance}/users/{name}\022\250\001\n"
-          + "\006Insert\022/.google.cloud.sql.v1beta4.SqlUsersInse"
-          + "rtRequest\032#.google.cloud.sql.v1beta4.Ope"
-          + "ration\"H\202\323\344\223\002B\":/sql/v1beta4/projects/{p"
-          + "roject}/instances/{instance}/users:\004body\022\246\001\n"
-          + "\004List\022-.google.cloud.sql.v1beta4.SqlUsersListRequest\032+.google.cloud.sql.v1be"
-          + "ta4.UsersListResponse\"B\202\323\344\223\002<\022:/sql/v1be"
-          + "ta4/projects/{project}/instances/{instance}/users\022\250\001\n"
-          + "\006Update\022/.google.cloud.sql.v1beta4.SqlUsersUpdateRequest\032#.google.c"
-          + "loud.sql.v1beta4.Operation\"H\202\323\344\223\002B\032:/sql"
-          + "/v1beta4/projects/{project}/instances/{i"
-          + "nstance}/users:\004body\032|\312A\027sqladmin.google"
-          + "apis.com\322A_https://www.googleapis.com/au"
-          + "th/cloud-platform,https://www.googleapis.com/auth/sqlservice.adminBd\n"
-          + "\034com.google.cloud.sql.v1beta4B\022CloudSqlUsersProtoP\001"
-          + "Z.cloud.google.com/go/sql/apiv1beta4/sqlpb;sqlpbb\006proto3"
+          + "\006Delete\022/.google.cloud.sql.v1beta4.Sql"
+          + "UsersDeleteRequest\032#.google.cloud.sql.v1"
+          + "beta4.Operation\"B\202\323\344\223\002<*:/sql/v1beta4/pr"
+          + "ojects/{project}/instances/{instance}/users\022\236\001\n"
+          + "\003Get\022,.google.cloud.sql.v1beta4.SqlUsersGetRequest\032\036.google.cloud.sql.v1b"
+          + "eta4.User\"I\202\323\344\223\002C\022A/sql/v1beta4/projects"
+          + "/{project}/instances/{instance}/users/{name}\022\250\001\n"
+          + "\006Insert\022/.google.cloud.sql.v1beta4.SqlUsersInsertRequest\032#.google.cloud."
+          + "sql.v1beta4.Operation\"H\202\323\344\223\002B\":/sql/v1be"
+          + "ta4/projects/{project}/instances/{instance}/users:\004body\022\246\001\n"
+          + "\004List\022-.google.cloud.sql.v1beta4.SqlUsersListRequest\032+.google"
+          + ".cloud.sql.v1beta4.UsersListResponse\"B\202\323"
+          + "\344\223\002<\022:/sql/v1beta4/projects/{project}/instances/{instance}/users\022\250\001\n"
+          + "\006Update\022/.google.cloud.sql.v1beta4.SqlUsersUpdateReq"
+          + "uest\032#.google.cloud.sql.v1beta4.Operatio"
+          + "n\"H\202\323\344\223\002B\032:/sql/v1beta4/projects/{projec"
+          + "t}/instances/{instance}/users:\004body\032|\312A\027"
+          + "sqladmin.googleapis.com\322A_https://www.googleapis.com/auth/cloud-platform,https:/"
+          + "/www.googleapis.com/auth/sqlservice.adminBd\n"
+          + "\034com.google.cloud.sql.v1beta4B\022CloudSqlUsersProtoP\001Z.cloud.google.com/go/sql"
+          + "/apiv1beta4/sqlpb;sqlpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -254,7 +259,15 @@ public final class CloudSqlUsersProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_sql_v1beta4_SqlUsersUpdateRequest_descriptor,
             new java.lang.String[] {
-              "Host", "Instance", "Name", "Project", "DatabaseRoles", "RevokeExistingRoles", "Body",
+              "Host",
+              "Instance",
+              "Name",
+              "Project",
+              "DatabaseRoles",
+              "RevokeExistingRoles",
+              "ServerRoles",
+              "RevokeExistingServerRoles",
+              "Body",
             });
     internal_static_google_cloud_sql_v1beta4_UserPasswordValidationPolicy_descriptor =
         getDescriptor().getMessageType(5);
@@ -295,6 +308,7 @@ public final class CloudSqlUsersProto extends com.google.protobuf.GeneratedFile 
               "DualPasswordType",
               "IamStatus",
               "DatabaseRoles",
+              "ServerRoles",
               "UserDetails",
             });
     internal_static_google_cloud_sql_v1beta4_SqlServerUserDetails_descriptor =

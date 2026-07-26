@@ -56,22 +56,6 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
       internal_static_google_ads_admanager_v1_ReportDataTable_MetricValueGroup_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ReportDataTable_MetricValueGroup_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_ads_admanager_v1_ScheduleOptions_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_ads_admanager_v1_ScheduleOptions_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor;
-  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -84,11 +68,10 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
       "\n"
           + "-google/ads/admanager/v1/report_message"
           + "s.proto\022\027google.ads.admanager.v1\032/google"
-          + "/ads/admanager/v1/report_definition.proto\032*google/ads/admanager/v1/report_value."
-          + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032\037google/protob"
-          + "uf/timestamp.proto\032\026google/type/date.pro"
-          + "to\032\033google/type/dayofweek.proto\032\033google/type/timeofday.proto\"\316\004\n"
+          + "/ads/admanager/v1/report_definition.proto\032-google/ads/admanager/v1/report_delive"
+          + "ry.proto\032*google/ads/admanager/v1/report"
+          + "_value.proto\032\037google/api/field_behavior."
+          + "proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\316\004\n"
           + "\006Report\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\026\n"
           + "\treport_id\030\003 \001(\003B\003\340A\003\022C\n\n"
@@ -101,24 +84,24 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
           + "\013create_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006locale\030\010 \001(\tB\003\340A\003\022G\n"
-          + "\020schedule_options\030\t \001(\013"
-          + "2(.google.ads.admanager.v1.ScheduleOptionsB\003\340A\001\"C\n\n"
+          + "\020schedule_options\030\t"
+          + " \001(\0132(.google.ads.admanager.v1.ScheduleOptionsB\003\340A\001\"C\n\n"
           + "Visibility\022\n\n"
           + "\006HIDDEN\020\000\022\t\n"
           + "\005DRAFT\020\001\022\013\n"
           + "\007VISIBLE\020\002\022\r\n"
           + "\005SAVED\020\002\032\002\010\001\032\002\020\001:_\352A\\\n"
-          + "\037admanager.googleapis.com/Report\022(netw"
-          + "orks/{network_code}/reports/{report}*\007reports2\006report\"\207\005\n"
+          + "\037admanager.googleapis.com/Report\022"
+          + "(networks/{network_code}/reports/{report}*\007reports2\006report\"\207\005\n"
           + "\017ReportDataTable\032\235\001\n"
           + "\003Row\022>\n"
           + "\020dimension_values\030\001 \003(\0132$.google.ads.admanager.v1.ReportValue\022V\n"
-          + "\023metric_value_groups\030\002"
-          + " \003(\01329.google.ads.admanager.v1.ReportDataTable.MetricValueGroup\032\323\003\n"
+          + "\023metric_value_groups\030\002 \003(\01329.google.ads.admanag"
+          + "er.v1.ReportDataTable.MetricValueGroup\032\323\003\n"
           + "\020MetricValueGroup\022<\n"
           + "\016primary_values\030\001 \003(\0132$.google.ads.admanager.v1.ReportValue\022M\n"
-          + "\037primary_percent_of_total_values\030\002"
-          + " \003(\0132$.google.ads.admanager.v1.ReportValue\022?\n"
+          + "\037primary_percent_of_total_values\030\002 \003"
+          + "(\0132$.google.ads.admanager.v1.ReportValue\022?\n"
           + "\021comparison_values\030\003 \003(\0132$.google.ads.admanager.v1.ReportValue\022P\n"
           + "\"comparison_percent_of_total_values\030\004"
           + " \003(\0132$.google.ads.admanager.v1.ReportValue\022D\n"
@@ -126,59 +109,23 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
           + " \003(\0132$.google.ads.admanager.v1.ReportValue\022D\n"
           + "\026relative_change_values\030\006"
           + " \003(\0132$.google.ads.admanager.v1.ReportValue\022\023\n"
-          + "\013flag_values\030\007 \003(\010\"\372\007\n"
-          + "\017ScheduleOptions\022C\n"
-          + "\010schedule\030\001"
-          + " \001(\01321.google.ads.admanager.v1.ScheduleOptions.Schedule\022V\n"
-          + "\022delivery_condition\030\002 \001(\0162:.google.ads.admana"
-          + "ger.v1.ScheduleOptions.DeliveryCondition\022B\n"
-          + "\005flags\030\003"
-          + " \003(\0132..google.ads.admanager.v1.ReportDefinition.FlagB\003\340A\001\032\273\005\n"
-          + "\010Schedule\022[\n"
-          + "\017weekly_schedule\030\006 \001(\0132@.google.ads."
-          + "admanager.v1.ScheduleOptions.Schedule.WeeklyScheduleH\000\022]\n"
-          + "\020monthly_schedule\030\007 \001(\013"
-          + "2A.google.ads.admanager.v1.ScheduleOptions.Schedule.MonthlyScheduleH\000\022%\n\n"
-          + "start_date\030\001 \001(\0132\021.google.type.Date\022#\n"
-          + "\010end_date\030\002 \001(\0132\021.google.type.Date\022N\n"
-          + "\tfrequency\030\003"
-          + " \001(\0162;.google.ads.admanager.v1.ScheduleOptions.Schedule.Frequency\022*\n\n"
-          + "start_time\030\004 \001(\0132\026.google.type.TimeOfDay\032G\n"
-          + "\016WeeklySchedule\0225\n"
-          + "\025weekly_scheduled_days\030\001 \003(\0162\026.google.type.DayOfWeek\0321\n"
-          + "\017MonthlySchedule\022\036\n"
-          + "\026monthly_scheduled_days\030\001 \003(\005\"\230\001\n"
-          + "\tFrequency\022\031\n"
-          + "\025FREQUENCY_UNSPECIFIED\020\000\022\n\n"
-          + "\006HOURLY\020\001\022\023\n"
-          + "\017TWO_TIMES_DAILY\020\002\022\025\n"
-          + "\021THREE_TIMES_DAILY\020\003\022\024\n"
-          + "\020FOUR_TIMES_DAILY\020\004\022\t\n"
-          + "\005DAILY\020\005\022\n\n"
-          + "\006WEEKLY\020\006\022\013\n"
-          + "\007MONTHLY\020\007B\024\n"
-          + "\022frequency_schedule\"H\n"
-          + "\021DeliveryCondition\022\t\n"
-          + "\005NEVER\020\000\022\n\n"
-          + "\006ALWAYS\020\001\022\034\n"
-          + "\030WHEN_FLAG_CONDITIONS_MET\020\002B\307\001\n"
-          + "\033com.google.ads.admanager.v1B\023ReportMessagesProtoP\001Z@google.golang.org/g"
-          + "enproto/googleapis/ads/admanager/v1;adma"
-          + "nager\252\002\027Google.Ads.AdManager.V1\312\002\027Google"
-          + "\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\013flag_values\030\007 \003(\010B\307\001\n"
+          + "\033com.google.ads.admanager.v1B\023ReportMessagesProt"
+          + "oP\001Z@google.golang.org/genproto/googleap"
+          + "is/ads/admanager/v1;admanager\252\002\027Google.A"
+          + "ds.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V"
+          + "1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.ads.admanager.v1.ReportDefinitionProto.getDescriptor(),
+              com.google.ads.admanager.v1.ReportDeliveryProto.getDescriptor(),
               com.google.ads.admanager.v1.ReportValueProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
-              com.google.type.DateProto.getDescriptor(),
-              com.google.type.DayOfWeekProto.getDescriptor(),
-              com.google.type.TimeOfDayProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_Report_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_ads_admanager_v1_Report_fieldAccessorTable =
@@ -223,55 +170,13 @@ public final class ReportMessagesProto extends com.google.protobuf.GeneratedFile
               "RelativeChangeValues",
               "FlagValues",
             });
-    internal_static_google_ads_admanager_v1_ScheduleOptions_descriptor =
-        getDescriptor().getMessageType(2);
-    internal_static_google_ads_admanager_v1_ScheduleOptions_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_ads_admanager_v1_ScheduleOptions_descriptor,
-            new java.lang.String[] {
-              "Schedule", "DeliveryCondition", "Flags",
-            });
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor =
-        internal_static_google_ads_admanager_v1_ScheduleOptions_descriptor.getNestedType(0);
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor,
-            new java.lang.String[] {
-              "WeeklySchedule",
-              "MonthlySchedule",
-              "StartDate",
-              "EndDate",
-              "Frequency",
-              "StartTime",
-              "FrequencySchedule",
-            });
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor =
-        internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor.getNestedType(
-            0);
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_WeeklySchedule_descriptor,
-            new java.lang.String[] {
-              "WeeklyScheduledDays",
-            });
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor =
-        internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_descriptor.getNestedType(
-            1);
-    internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_ads_admanager_v1_ScheduleOptions_Schedule_MonthlySchedule_descriptor,
-            new java.lang.String[] {
-              "MonthlyScheduledDays",
-            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.ReportDefinitionProto.getDescriptor();
+    com.google.ads.admanager.v1.ReportDeliveryProto.getDescriptor();
     com.google.ads.admanager.v1.ReportValueProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.type.DateProto.getDescriptor();
-    com.google.type.DayOfWeekProto.getDescriptor();
-    com.google.type.TimeOfDayProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -26,12 +26,6 @@ package com.google.storage.control.v2;
  * <pre>
  * Request message to update the `IntelligenceConfig` resource associated with
  * your organization.
- *
- * **IAM Permissions**:
- *
- * Requires `storage.intelligenceConfigs.update`
- * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission on
- * the organization.
  * </pre>
  *
  * Protobuf type {@code google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest}
@@ -455,12 +449,6 @@ public final class UpdateOrganizationIntelligenceConfigRequest
    * <pre>
    * Request message to update the `IntelligenceConfig` resource associated with
    * your organization.
-   *
-   * **IAM Permissions**:
-   *
-   * Requires `storage.intelligenceConfigs.update`
-   * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission on
-   * the organization.
    * </pre>
    *
    * Protobuf type {@code google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest}
