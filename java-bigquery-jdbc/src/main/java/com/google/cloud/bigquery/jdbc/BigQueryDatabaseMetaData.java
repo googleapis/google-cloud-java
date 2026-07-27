@@ -1261,6 +1261,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getTables(
       String catalog, String schemaPattern, String tableNamePattern, String[] types)
       throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getTables",
+        () -> getTablesImpl(catalog, schemaPattern, tableNamePattern, types));
+  }
+
+  private ResultSet getTablesImpl(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types)
+      throws SQLException {
     LOG.info(
         "getTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, types: %s",
         catalog, schemaPattern, tableNamePattern, Arrays.toString(types));
@@ -1496,6 +1504,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getColumns",
+        () -> getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern));
+  }
+
+  private ResultSet getColumnsImpl(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
       throws SQLException {
     LOG.info(
@@ -3173,6 +3189,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getSchemas", () -> getSchemasImpl(catalog, schemaPattern));
+  }
+
+  private ResultSet getSchemasImpl(String catalog, String schemaPattern) throws SQLException {
     LOG.info("getSchemas called for catalog: %s, schemaPattern: %s", catalog, schemaPattern);
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
