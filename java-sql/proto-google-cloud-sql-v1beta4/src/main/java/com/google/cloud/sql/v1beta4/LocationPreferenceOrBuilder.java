@@ -37,7 +37,7 @@ public interface LocationPreferenceOrBuilder
    * <code>string follow_gae_application = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
    * @return The followGaeApplication.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface LocationPreferenceOrBuilder
    * <code>string follow_gae_application = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1beta4.LocationPreference.follow_gae_application is deprecated.
-   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2484
+   *     See google/cloud/sql/v1beta4/cloud_sql_resources.proto;l=2498
    * @return The bytes for followGaeApplication.
    */
   @java.lang.Deprecated

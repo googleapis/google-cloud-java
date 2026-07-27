@@ -118,13 +118,40 @@ public interface ListLineItemsRequestOrBuilder
    *
    * &lt;b&gt;Filterable fields:&lt;/b&gt;
    * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;contractedUnitsBought&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;costType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;creativePlaceholders.size.canonicalName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;dealInfo.externalDealId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;deliveryRateType&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;environmentType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;externalLineItemId&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;goal.units&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;grpSettings.growbirdNielsenEnabled&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;grpSettings.inTargetRatioEstimateMilliPercent&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;lineItemType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;missingCreatives&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;notes&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;order&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;orderDisplayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;roadblockingType&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.clickThroughRate&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.clicksDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.impressionsDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.viewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedAdUnits.adUnit&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedPlacements&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateSource&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;webPropertyCode&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -144,13 +171,40 @@ public interface ListLineItemsRequestOrBuilder
    *
    * &lt;b&gt;Filterable fields:&lt;/b&gt;
    * &lt;ul style="list-style-type:none"&gt;
+   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;contractedUnitsBought&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;costType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;creativePlaceholders.size.canonicalName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;dealInfo.externalDealId&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;deliveryRateType&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;environmentType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;externalLineItemId&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;goal.units&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;grpSettings.growbirdNielsenEnabled&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;grpSettings.inTargetRatioEstimateMilliPercent&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;lineItemType&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;missingCreatives&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;notes&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;order&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;orderDisplayName&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;roadblockingType&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.clickThroughRate&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.clicksDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.impressionsDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;stats.viewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedAdUnits.adUnit&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedPlacements&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateSource&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;webPropertyCode&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *

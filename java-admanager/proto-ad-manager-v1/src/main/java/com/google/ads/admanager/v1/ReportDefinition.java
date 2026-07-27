@@ -4497,7 +4497,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * API fields).
      *
      * Compatible with the following report types: `HISTORICAL`, `REACH`,
-     * `REVENUE_VERIFICATION`, `AD_SPEED`
+     * `REVENUE_VERIFICATION`, `AD_SPEED`, `ON_PLATFORM_MULTICALL`
      *
      * Data format: `ENUM`
      * </pre>
@@ -4516,7 +4516,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Demand channel" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`, `REACH`,
-     * `REVENUE_VERIFICATION`, `AD_SPEED`
+     * `REVENUE_VERIFICATION`, `AD_SPEED`, `ON_PLATFORM_MULTICALL`
      *
      * Data format: `STRING`
      * </pre>
@@ -17615,7 +17615,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * API fields).
      *
      * Compatible with the following report types: `HISTORICAL`, `REACH`,
-     * `REVENUE_VERIFICATION`, `AD_SPEED`
+     * `REVENUE_VERIFICATION`, `AD_SPEED`, `ON_PLATFORM_MULTICALL`
      *
      * Data format: `ENUM`
      * </pre>
@@ -17635,7 +17635,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Demand channel" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`, `REACH`,
-     * `REVENUE_VERIFICATION`, `AD_SPEED`
+     * `REVENUE_VERIFICATION`, `AD_SPEED`, `ON_PLATFORM_MULTICALL`
      *
      * Data format: `STRING`
      * </pre>

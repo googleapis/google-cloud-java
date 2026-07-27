@@ -262,6 +262,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PASSWORD_SECRET_VERSION(5),
     AUTO_IAM_AUTHN(11),
     USERPASSWORD_NOT_SET(0);
     private final int value;
@@ -282,6 +283,8 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
 
     public static UserPasswordCase forNumber(int value) {
       switch (value) {
+        case 5:
+          return PASSWORD_SECRET_VERSION;
         case 11:
           return AUTO_IAM_AUTHN;
         case 0:
@@ -459,6 +462,106 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       database_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PASSWORD_SECRET_VERSION_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the passwordSecretVersion field is set.
+   */
+  public boolean hasPasswordSecretVersion() {
+    return userPasswordCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The passwordSecretVersion.
+   */
+  public java.lang.String getPasswordSecretVersion() {
+    java.lang.Object ref = "";
+    if (userPasswordCase_ == 5) {
+      ref = userPassword_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (userPasswordCase_ == 5) {
+        userPassword_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Secret Manager secret holding the
+   * password for the user to log into the database. The secret should be
+   * created using the regional endpoint (for API) or from the Regional
+   * Secrets page (for UI), and stored in the same region as the Cloud SQL
+   * instance. The expected resource name format is
+   * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+   * This field is used together with the `user` field.
+   * The secret resource name will not be stored.
+   * </pre>
+   *
+   * <code>
+   * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for passwordSecretVersion.
+   */
+  public com.google.protobuf.ByteString getPasswordSecretVersionBytes() {
+    java.lang.Object ref = "";
+    if (userPasswordCase_ == 5) {
+      ref = userPassword_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (userPasswordCase_ == 5) {
+        userPassword_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -653,6 +756,9 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, database_);
     }
+    if (userPasswordCase_ == 5) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, userPassword_);
+    }
     if (rowLimit_ != 0L) {
       output.writeInt64(10, rowLimit_);
     }
@@ -685,6 +791,9 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(database_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, database_);
+    }
+    if (userPasswordCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, userPassword_);
     }
     if (rowLimit_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, rowLimit_);
@@ -727,6 +836,9 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
     if (!getApplication().equals(other.getApplication())) return false;
     if (!getUserPasswordCase().equals(other.getUserPasswordCase())) return false;
     switch (userPasswordCase_) {
+      case 5:
+        if (!getPasswordSecretVersion().equals(other.getPasswordSecretVersion())) return false;
+        break;
       case 11:
         if (getAutoIamAuthn() != other.getAutoIamAuthn()) return false;
         break;
@@ -757,6 +869,10 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
     hash = (37 * hash) + APPLICATION_FIELD_NUMBER;
     hash = (53 * hash) + getApplication().hashCode();
     switch (userPasswordCase_) {
+      case 5:
+        hash = (37 * hash) + PASSWORD_SECRET_VERSION_FIELD_NUMBER;
+        hash = (53 * hash) + getPasswordSecretVersion().hashCode();
+        break;
       case 11:
         hash = (37 * hash) + AUTO_IAM_AUTHN_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoIamAuthn());
@@ -958,13 +1074,13 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.database_ = database_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.rowLimit_ = rowLimit_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.partialResultMode_ = partialResultMode_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.application_ = application_;
       }
     }
@@ -1009,10 +1125,17 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getApplication().isEmpty()) {
         application_ = other.application_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       switch (other.getUserPasswordCase()) {
+        case PASSWORD_SECRET_VERSION:
+          {
+            userPasswordCase_ = 5;
+            userPassword_ = other.userPassword_;
+            onChanged();
+            break;
+          }
         case AUTO_IAM_AUTHN:
           {
             setAutoIamAuthn(other.getAutoIamAuthn());
@@ -1067,10 +1190,17 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                userPasswordCase_ = 5;
+                userPassword_ = s;
+                break;
+              } // case 42
             case 80:
               {
                 rowLimit_ = input.readInt64();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 80
             case 88:
@@ -1082,13 +1212,13 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
             case 104:
               {
                 partialResultMode_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 104
             case 130:
               {
                 application_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 130
             default:
@@ -1476,6 +1606,199 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the passwordSecretVersion field is set.
+     */
+    @java.lang.Override
+    public boolean hasPasswordSecretVersion() {
+      return userPasswordCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The passwordSecretVersion.
+     */
+    @java.lang.Override
+    public java.lang.String getPasswordSecretVersion() {
+      java.lang.Object ref = "";
+      if (userPasswordCase_ == 5) {
+        ref = userPassword_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (userPasswordCase_ == 5) {
+          userPassword_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for passwordSecretVersion.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPasswordSecretVersionBytes() {
+      java.lang.Object ref = "";
+      if (userPasswordCase_ == 5) {
+        ref = userPassword_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (userPasswordCase_ == 5) {
+          userPassword_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The passwordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPasswordSecretVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      userPasswordCase_ = 5;
+      userPassword_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPasswordSecretVersion() {
+      if (userPasswordCase_ == 5) {
+        userPasswordCase_ = 0;
+        userPassword_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Secret Manager secret holding the
+     * password for the user to log into the database. The secret should be
+     * created using the regional endpoint (for API) or from the Regional
+     * Secrets page (for UI), and stored in the same region as the Cloud SQL
+     * instance. The expected resource name format is
+     * `projects/{project}/locations/{location}/secrets/{secret}/versions/{secret_version}`.
+     * This field is used together with the `user` field.
+     * The secret resource name will not be stored.
+     * </pre>
+     *
+     * <code>
+     * string password_secret_version = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for passwordSecretVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPasswordSecretVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      userPasswordCase_ = 5;
+      userPassword_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. When set to true, the API caller identity associated with the
      * request is used for database authentication. The API caller must be an
      * IAM user in the database.
@@ -1586,7 +1909,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
     public Builder setRowLimit(long value) {
 
       rowLimit_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1603,7 +1926,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRowLimit() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       rowLimit_ = 0L;
       onChanged();
       return this;
@@ -1649,7 +1972,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPartialResultModeValue(int value) {
       partialResultMode_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1700,7 +2023,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       partialResultMode_ = value.getNumber();
       onChanged();
       return this;
@@ -1722,7 +2045,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPartialResultMode() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       partialResultMode_ = 0;
       onChanged();
       return this;
@@ -1799,7 +2122,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       application_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1819,7 +2142,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearApplication() {
       application_ = getDefaultInstance().getApplication();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1844,7 +2167,7 @@ public final class ExecuteSqlPayload extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       application_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

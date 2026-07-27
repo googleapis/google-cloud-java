@@ -232,4 +232,32 @@ public interface CreateAnywhereCacheMetadataOrBuilder
    * @return The bytes for admissionPolicy.
    */
   com.google.protobuf.ByteString getAdmissionPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether objects are ingested into the cache upon write.
+   * Defaults to false.
+   * </pre>
+   *
+   * <code>optional bool ingest_on_write = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the ingestOnWrite field is set.
+   */
+  boolean hasIngestOnWrite();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether objects are ingested into the cache upon write.
+   * Defaults to false.
+   * </pre>
+   *
+   * <code>optional bool ingest_on_write = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ingestOnWrite.
+   */
+  boolean getIngestOnWrite();
 }
