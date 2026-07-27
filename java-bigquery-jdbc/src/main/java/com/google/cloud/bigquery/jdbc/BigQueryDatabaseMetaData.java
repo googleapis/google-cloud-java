@@ -1312,7 +1312,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   tableNamePattern,
                   true,
                   false,
-                  true,
+                  false,
                   collectedResults,
                   resultSchemaFields,
                   (bqTable, results, fields) -> {
