@@ -656,7 +656,7 @@ public class Publisher implements PublisherInterface {
     ApiFutures.addCallback(future, futureCallback, callbackExecutor);
   }
 
-  void refillTokenBucket() {
+  private void refillTokenBucket() {
     if (hedgeSettings != null) {
       while (true) {
         int current = hedgingTokenBucket.get();
@@ -684,6 +684,99 @@ public class Publisher implements PublisherInterface {
       if (hedgingTokenBucket.compareAndSet(current, next)) {
         return true;
       }
+    }
+  }
+
+  private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
+    final CancellationSharer coordinator = new CancellationSharer(outstandingBatch, this);
+
+    // Register cancellation listeners on client futures to propagate cancel to coordinator
+    final AtomicInteger cancelledCount = new AtomicInteger(0);
+    final int batchSize = outstandingBatch.outstandingPublishes.size();
+    for (final OutstandingPublish outstanding : outstandingBatch.outstandingPublishes) {
+      outstanding.publishResult.addListener(
+          new Runnable() {
+            @Override
+            public void run() {
+              if (outstanding.publishResult.isCancelled()) {
+                if (cancelledCount.incrementAndGet() == batchSize) {
+                  coordinator.cancel(true);
+                }
+              }
+            }
+          },
+          directExecutor());
+    }
+
+    ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
+    coordinator.addAttempt(1, firstAttemptFuture);
+    long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+    HedgedRequest item = new HedgedRequest(coordinator, 2, clock.millisTime() + delayMs);
+    hedgingQueue.add(item);
+    coordinator.isInQueue.set(true);
+    scheduleQueueProcessing();
+
+    return coordinator;
+  }
+
+  private void scheduleQueueProcessing() {
+    if (isQueueProcessingScheduled.compareAndSet(false, true)) {
+      HedgedRequest nextItem = hedgingQueue.peek();
+      if (nextItem == null) {
+        isQueueProcessingScheduled.set(false);
+        return;
+      }
+
+      long delay = nextItem.getSendAfterMs() - clock.millisTime();
+      delay = Math.max(0, delay);
+
+      queueProcessingFuture =
+          executor.schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  processQueue();
+                }
+              },
+              delay,
+              TimeUnit.MILLISECONDS);
+    }
+  }
+
+  private void processQueue() {
+    synchronized (queueLock) {
+      isQueueProcessingScheduled.set(false);
+      long now = clock.millisTime();
+
+      HedgedRequest item;
+      while ((item = hedgingQueue.peek()) != null && item.getSendAfterMs() <= now) {
+        hedgingQueue.poll();
+
+        CancellationSharer coordinator = item.getCoordinator();
+        if (coordinator.isDone()) {
+          coordinator.isInQueue.set(false);
+          continue;
+        }
+
+        if (tryAcquireHedgeToken()) {
+          // Clone and schedule next attempt check (Attempt + 1)
+          long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+          HedgedRequest nextItem =
+              new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
+          hedgingQueue.add(nextItem);
+
+          // Start Hedged Attempt
+          ApiFuture<PublishResponse> hedgedFuture =
+              publishCall(coordinator.getBatch(), item.getAttemptNumber());
+          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
+        } else {
+          coordinator.isInQueue.set(false);
+          coordinator.checkCompletionOnQueueExit();
+        }
+      }
+
+      // Reschedule for next items
+      scheduleQueueProcessing();
     }
   }
 
@@ -1298,99 +1391,6 @@ public class Publisher implements PublisherInterface {
       }
 
       return batchesToSend;
-    }
-  }
-
-  private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
-    final CancellationSharer coordinator = new CancellationSharer(outstandingBatch, this);
-
-    // Register cancellation listeners on client futures to propagate cancel to coordinator
-    final AtomicInteger cancelledCount = new AtomicInteger(0);
-    final int batchSize = outstandingBatch.outstandingPublishes.size();
-    for (final OutstandingPublish outstanding : outstandingBatch.outstandingPublishes) {
-      outstanding.publishResult.addListener(
-          new Runnable() {
-            @Override
-            public void run() {
-              if (outstanding.publishResult.isCancelled()) {
-                if (cancelledCount.incrementAndGet() == batchSize) {
-                  coordinator.cancel(true);
-                }
-              }
-            }
-          },
-          directExecutor());
-    }
-
-    ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
-    coordinator.addAttempt(1, firstAttemptFuture);
-    long delayMs = hedgeSettings.getHedgeDelay().toMillis();
-    HedgedRequest item = new HedgedRequest(coordinator, 2, clock.millisTime() + delayMs);
-    hedgingQueue.add(item);
-    coordinator.isInQueue.set(true);
-    scheduleQueueProcessing();
-
-    return coordinator;
-  }
-
-  private void scheduleQueueProcessing() {
-    if (isQueueProcessingScheduled.compareAndSet(false, true)) {
-      HedgedRequest nextItem = hedgingQueue.peek();
-      if (nextItem == null) {
-        isQueueProcessingScheduled.set(false);
-        return;
-      }
-
-      long delay = nextItem.getSendAfterMs() - clock.millisTime();
-      delay = Math.max(0, delay);
-
-      queueProcessingFuture =
-          executor.schedule(
-              new Runnable() {
-                @Override
-                public void run() {
-                  processQueue();
-                }
-              },
-              delay,
-              TimeUnit.MILLISECONDS);
-    }
-  }
-
-  private void processQueue() {
-    synchronized (queueLock) {
-      isQueueProcessingScheduled.set(false);
-      long now = clock.millisTime();
-
-      HedgedRequest item;
-      while ((item = hedgingQueue.peek()) != null && item.getSendAfterMs() <= now) {
-        hedgingQueue.poll();
-
-        CancellationSharer coordinator = item.getCoordinator();
-        if (coordinator.isDone()) {
-          coordinator.isInQueue.set(false);
-          continue;
-        }
-
-        if (tryAcquireHedgeToken()) {
-          // Clone and schedule next attempt check (Attempt + 1)
-          long delayMs = hedgeSettings.getHedgeDelay().toMillis();
-          HedgedRequest nextItem =
-              new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
-          hedgingQueue.add(nextItem);
-
-          // Start Hedged Attempt
-          ApiFuture<PublishResponse> hedgedFuture =
-              publishCall(coordinator.getBatch(), item.getAttemptNumber());
-          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
-        } else {
-          coordinator.isInQueue.set(false);
-          coordinator.checkCompletionOnQueueExit();
-        }
-      }
-
-      // Reschedule for next items
-      scheduleQueueProcessing();
     }
   }
 }
