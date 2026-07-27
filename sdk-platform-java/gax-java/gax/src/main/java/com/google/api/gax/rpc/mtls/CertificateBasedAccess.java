@@ -137,6 +137,9 @@ public class CertificateBasedAccess {
       if ("false".equalsIgnoreCase(useClientCertificate)) {
         return false;
       }
+      if ("true".equalsIgnoreCase(useClientCertificate)) {
+        return true;
+      }
     }
 
     // 2. Check the certificate config file path if provided via env var

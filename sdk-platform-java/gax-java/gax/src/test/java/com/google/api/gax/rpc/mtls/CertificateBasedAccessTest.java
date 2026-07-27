@@ -112,8 +112,8 @@ class CertificateBasedAccessTest {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     CertificateBasedAccess cba = createCba(env, new TestFileSystem());
-    // Explicit 'true' requires credentials to be present on disk, otherwise falls back to false
-    assertFalse(cba.useMtlsClientCertificate());
+    // Explicit 'true' overrides credential presence checks
+    assertTrue(cba.useMtlsClientCertificate());
   }
 
   @Test

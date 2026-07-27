@@ -50,8 +50,9 @@ class ApiResultRetryAlgorithm<ResponseT> extends BasicResultRetryAlgorithm<Respo
   @Override
   public boolean shouldRetry(
       RetryingContext context, Throwable previousThrowable, ResponseT previousResponse) {
-    if (previousThrowable instanceof UnauthenticatedException) {
-      return ((UnauthenticatedException) previousThrowable).isRetryable();
+    if (previousThrowable instanceof UnauthenticatedException
+        && ((UnauthenticatedException) previousThrowable).isRetryable()) {
+      return true;
     }
     if (context.getRetryableCodes() != null) {
       // Ignore the isRetryable() value of the throwable if the RetryingContext has a specific list

@@ -61,7 +61,8 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     }
   }
 
-  private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);
+  private volatile DiskCheckResult lastDiskCheck = null;
+  private final Object diskCheckLock = new Object();
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
   private final AtomicReference<ChannelEntry> activeEntry;
   // Keep track of all entries to properly await their termination
@@ -83,20 +84,20 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   private String getOrUpdateDiskFingerprint(String certPath) {
     long now = System.nanoTime();
-    DiskCheckResult cached = lastDiskCheck.get();
+    DiskCheckResult cached = lastDiskCheck;
     if (cached != null
         && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
       return cached.fingerprint;
     }
 
-    synchronized (lastDiskCheck) {
-      cached = lastDiskCheck.get();
+    synchronized (diskCheckLock) {
+      cached = lastDiskCheck;
       if (cached != null
           && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
         return cached.fingerprint;
       }
       String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
-      lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));
+      lastDiskCheck = new DiskCheckResult(fingerprint, System.nanoTime());
       return fingerprint;
     }
   }
@@ -136,6 +137,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       this.activeCertFingerprint = currentDiskFingerprint;
       LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
 
+      // Prune terminated entries to prevent memory leak
+      allEntries.removeIf(entry -> entry.channel.isTerminated());
+
       ChannelEntry newEntry = new ChannelEntry(channelFactory.get());
       allEntries.add(newEntry);
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
@@ -152,7 +156,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       if (entry.retain()) {
         return entry;
       }
-      if (entry.shutdownRequested.get()) {
+      if (entry == activeEntry.get()) {
         throw new IllegalStateException("Channel has been shut down");
       }
     }
