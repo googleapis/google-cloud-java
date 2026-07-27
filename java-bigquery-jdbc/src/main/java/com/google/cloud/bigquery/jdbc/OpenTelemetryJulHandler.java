@@ -80,7 +80,8 @@ public class OpenTelemetryJulHandler extends Handler {
       }
     } catch (Throwable t) {
       // Report internal failures using JUL's ErrorManager without crashing the caller
-      reportError("Failed to publish log record", (Exception) t, ErrorManager.WRITE_FAILURE);
+      Exception ex = t instanceof Exception ? (Exception) t : new Exception(t);
+      reportError("Failed to publish log record", ex, ErrorManager.WRITE_FAILURE);
     }
   }
 
