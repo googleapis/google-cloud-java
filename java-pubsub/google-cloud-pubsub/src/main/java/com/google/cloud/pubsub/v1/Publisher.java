@@ -151,7 +151,7 @@ public class Publisher implements PublisherInterface {
    */
   private static final int HEDGE_TOKEN_SCALE = 100;
 
-  private final AtomicInteger hedgingTokenBucket = new AtomicInteger();
+  private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
   private int scaledHedgeRefillAmount;
   private final ApiClock clock;
@@ -269,7 +269,7 @@ public class Publisher implements PublisherInterface {
       this.scaledMaxHedgeTokens = this.hedgeSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
           (int) (this.hedgeSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
-      this.hedgingTokenBucket.set(scaledMaxHedgeTokens);
+      this.hedgeTokenBucket.set(0);
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
@@ -301,7 +301,7 @@ public class Publisher implements PublisherInterface {
     if (hedgeSettings == null) {
       return null;
     }
-    return (float) hedgingTokenBucket.get() / HEDGE_TOKEN_SCALE;
+    return (float) hedgeTokenBucket.get() / HEDGE_TOKEN_SCALE;
   }
 
   /**
@@ -656,15 +656,15 @@ public class Publisher implements PublisherInterface {
     ApiFutures.addCallback(future, futureCallback, callbackExecutor);
   }
 
-  private void refillTokenBucket() {
+  void refillTokenBucket() {
     if (hedgeSettings != null) {
       while (true) {
-        int current = hedgingTokenBucket.get();
+        int current = hedgeTokenBucket.get();
         if (current >= scaledMaxHedgeTokens) {
           return;
         }
         int next = Math.min(scaledMaxHedgeTokens, current + scaledHedgeRefillAmount);
-        if (hedgingTokenBucket.compareAndSet(current, next)) {
+        if (hedgeTokenBucket.compareAndSet(current, next)) {
           return;
         }
       }
@@ -676,12 +676,12 @@ public class Publisher implements PublisherInterface {
       return false;
     }
     while (true) {
-      int current = hedgingTokenBucket.get();
+      int current = hedgeTokenBucket.get();
       if (current < HEDGE_TOKEN_SCALE) {
         return false;
       }
       int next = current - HEDGE_TOKEN_SCALE;
-      if (hedgingTokenBucket.compareAndSet(current, next)) {
+      if (hedgeTokenBucket.compareAndSet(current, next)) {
         return true;
       }
     }
@@ -727,8 +727,7 @@ public class Publisher implements PublisherInterface {
         return;
       }
 
-      long delay = nextItem.getSendAfterMs() - clock.millisTime();
-      delay = Math.max(0, delay);
+      long delay = Math.max(0, nextItem.getSendAfterMs() - clock.millisTime());
 
       queueProcessingFuture =
           executor.schedule(

@@ -161,4 +161,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   public List<PublishRequest> getCapturedRequests() {
     return new ArrayList<PublishRequest>(requests);
   }
+
+  public void clearRequests() {
+    requests.clear();
+  }
 }

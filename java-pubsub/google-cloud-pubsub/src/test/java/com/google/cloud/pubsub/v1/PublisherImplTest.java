@@ -1348,7 +1348,7 @@ public class PublisherImplTest {
 
     assertThat(publisher.getHedgeSettings()).isEqualTo(hedgeSettings);
     assertThat(publisher.getHedgeTokenBalance()).isNotNull();
-    assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(50.0f);
+    assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(0.0f);
 
     shutdownTestPublisher(publisher);
   }
@@ -1412,7 +1412,15 @@ public class PublisherImplTest {
   }
 
   private Publisher getPublisherWithHedge(Duration delay) throws Exception {
-    HedgeSettings hedgeSettings = HedgeSettings.newBuilder().setHedgeDelay(delay).build();
+    return getPublisherWithHedge(delay, 0.1f, 20);
+  }
+
+  private Publisher getPublisherWithHedge(Duration delay, float refillRatio, int maxTokens) throws Exception {
+    HedgeSettings hedgeSettings = HedgeSettings.newBuilder()
+        .setHedgeDelay(delay)
+        .setRefillRatio(refillRatio)
+        .setMaxTokens(maxTokens)
+        .build();
     return getTestPublisherBuilder()
         .setHedgeSettings(hedgeSettings)
         .setClock(fakeExecutor.getClock())
@@ -1421,6 +1429,15 @@ public class PublisherImplTest {
                 .setElementCountThreshold(1L)
                 .build())
         .build();
+  }
+
+  private void fillTokenBucket(Publisher publisher, int tokensToFill) throws Exception {
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+    for (int i = 0; i < tokensToFill; i++) {
+      ApiFuture<String> future = sendTestMessage(publisher, "warmup-msg-" + i);
+      future.get();
+    }
+    testPublisherServiceImpl.clearRequests();
   }
 
   private void waitForRequests(FakePublisherServiceImpl service, int expectedCount)
@@ -1464,7 +1481,8 @@ public class PublisherImplTest {
 
   @Test
   public void testHedgingTriggeredIfSlow() throws Exception {
-    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
 
     // Set response delay to 200ms (greater than 100ms hedge delay)
     testPublisherServiceImpl.setAutoPublishResponse(false);
@@ -1490,14 +1508,15 @@ public class PublisherImplTest {
     // Advance to 220ms to let responses complete
     fakeExecutor.advanceTime(Duration.ofMillis(100));
     fakeExecutor.advanceTime(Duration.ZERO); // Drain pending tasks
-    assertTrue(future.isDone());
+    assertEquals("1", future.get(5, TimeUnit.SECONDS));
 
     shutdownTestPublisher(publisher);
   }
 
   @Test
   public void testMultipleHedging() throws Exception {
-    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 10);
 
     // Set delay to 400ms
     testPublisherServiceImpl.setAutoPublishResponse(false);
@@ -1556,7 +1575,8 @@ public class PublisherImplTest {
 
   @Test
   public void testHedgingCancellationPropagates() throws Exception {
-    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
 
     testPublisherServiceImpl.setAutoPublishResponse(false);
     testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(200));
