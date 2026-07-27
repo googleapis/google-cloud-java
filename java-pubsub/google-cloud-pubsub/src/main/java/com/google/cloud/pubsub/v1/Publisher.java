@@ -159,7 +159,7 @@ public class Publisher implements PublisherInterface {
   private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
   private final AtomicBoolean isQueueProcessingScheduled;
   private ScheduledFuture<?> queueProcessingFuture;
-  private final Object queueLock;
+  private final Lock queueLock;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -278,7 +278,7 @@ public class Publisher implements PublisherInterface {
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
     this.hedgingQueue = new ConcurrentLinkedQueue<>();
     this.isQueueProcessingScheduled = new AtomicBoolean(false);
-    this.queueLock = new Object();
+    this.queueLock = new ReentrantLock();
     this.queueProcessingFuture = null;
   }
 
@@ -743,7 +743,8 @@ public class Publisher implements PublisherInterface {
   }
 
   private void processQueue() {
-    synchronized (queueLock) {
+    queueLock.lock();
+    try {
       isQueueProcessingScheduled.set(false);
       long now = clock.millisTime();
 
@@ -776,6 +777,8 @@ public class Publisher implements PublisherInterface {
 
       // Reschedule for next items
       scheduleQueueProcessing();
+    } finally {
+      queueLock.unlock();
     }
   }
 
