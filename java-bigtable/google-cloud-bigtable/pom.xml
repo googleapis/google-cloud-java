@@ -20,8 +20,9 @@
     <site.installationModule>google-cloud-bigtable</site.installationModule>
 
     <!-- Enable the ability to skip unit tests and only run integration tests,
-         while still respecting global skipTests override. -->
-    <skipTests>false</skipTests>
+         while still respecting global skipTests override and parent bulkTests profile.
+         Do NOT set an explicit <skipTests>false</skipTests> here, as submodule property
+         declarations override parent profile settings and prevent -PbulkTests from working. -->
     <skipUnitTests>${skipTests}</skipUnitTests>
     <skipITs>${skipTests}</skipITs>
     <!-- Configure test logging output. By default tests print info logs to stdout/err.
