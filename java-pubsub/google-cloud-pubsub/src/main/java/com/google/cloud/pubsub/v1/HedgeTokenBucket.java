@@ -29,7 +29,7 @@ final class HedgeTokenBucket {
 
   HedgeTokenBucket(HedgeSettings settings) {
     this.maxTokens = settings.getMaxTokens();
-    this.refillAmount = settings.getRefill();
+    this.refillAmount = settings.getRefillRatio();
     this.tokens = maxTokens;
   }
 
