@@ -32,10 +32,7 @@ package com.google.api.gax.httpjson;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;
-import java.io.FileInputStream;
-import java.security.MessageDigest;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
+import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -67,68 +64,38 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private final AtomicReference<DiskCheckResult> lastDiskCheck = new AtomicReference<>(null);
   private final Supplier<ManagedHttpJsonChannel> channelFactory;
   private final AtomicReference<ChannelEntry> activeEntry;
+  // Keep track of all entries to properly await their termination
+  private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =
+      new java.util.concurrent.ConcurrentLinkedQueue<>();
   private final Object lock = new Object();
   private volatile String activeCertFingerprint = "";
 
   public RefreshingHttpJsonChannel(Supplier<ManagedHttpJsonChannel> channelFactory) {
     this.channelFactory = channelFactory;
-    this.activeEntry = new AtomicReference<>(new ChannelEntry(channelFactory.get()));
-    String certPath = getWorkloadCertPath();
+    ChannelEntry initial = new ChannelEntry(channelFactory.get());
+    this.activeEntry = new AtomicReference<>(initial);
+    this.allEntries.add(initial);
+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
     if (certPath != null) {
-      this.activeCertFingerprint = getCertificateFingerprint(certPath);
-    }
-  }
-
-  private static String getWorkloadCertPath() {
-    String configPath = System.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
-    if (configPath != null && !configPath.isEmpty()) {
-      java.io.File configFile = new java.io.File(configPath);
-      if (configFile.exists() && !configFile.isDirectory()) {
-        // If it is JSON or PEM, we try to resolve it
-      }
-    }
-    java.io.File bundleFile = new java.io.File("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem");
-    if (bundleFile.exists()) {
-      return bundleFile.getAbsolutePath();
-    }
-    java.io.File certsFile = new java.io.File("/var/run/secrets/workload-spiffe-credentials/certificates.pem");
-    if (certsFile.exists()) {
-      return certsFile.getAbsolutePath();
-    }
-    return null;
-  }
-
-  private static String getCertificateFingerprint(String certPath) {
-    try (FileInputStream fis = new FileInputStream(certPath)) {
-      CertificateFactory cf = CertificateFactory.getInstance("X.509");
-      X509Certificate cert = (X509Certificate) cf.generateCertificate(fis);
-      MessageDigest md = MessageDigest.getInstance("SHA-256");
-      byte[] der = cert.getEncoded();
-      byte[] digest = md.digest(der);
-      StringBuilder sb = new StringBuilder();
-      for (byte b : digest) {
-        sb.append(String.format("%02x", b));
-      }
-      return sb.toString();
-    } catch (Exception e) {
-      LOG.log(Level.FINE, "Could not read or parse workload certificate at path " + certPath, e);
-      return "";
+      this.activeCertFingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
     }
   }
 
   private String getOrUpdateDiskFingerprint(String certPath) {
     long now = System.nanoTime();
     DiskCheckResult cached = lastDiskCheck.get();
-    if (cached != null && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
+    if (cached != null
+        && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
       return cached.fingerprint;
     }
 
     synchronized (lastDiskCheck) {
       cached = lastDiskCheck.get();
-      if (cached != null && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
+      if (cached != null
+          && (now - cached.timestampNanos < java.util.concurrent.TimeUnit.SECONDS.toNanos(1))) {
         return cached.fingerprint;
       }
-      String fingerprint = getCertificateFingerprint(certPath);
+      String fingerprint = WorkloadCertificateUtils.getCertificateFingerprint(certPath);
       lastDiskCheck.set(new DiskCheckResult(fingerprint, System.nanoTime()));
       return fingerprint;
     }
@@ -136,7 +103,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
   @Override
   public boolean shouldRefresh() {
-    String certPath = getWorkloadCertPath();
+    String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
     if (certPath == null) {
       return false;
     }
@@ -150,7 +117,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   @Override
   public void refresh() {
     synchronized (lock) {
-      String certPath = getWorkloadCertPath();
+      String certPath = WorkloadCertificateUtils.getWorkloadCertPath();
       if (certPath == null) {
         return;
       }
@@ -161,14 +128,16 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
       // Double-check inside lock
       if (currentDiskFingerprint.equals(this.activeCertFingerprint)) {
-        LOG.fine("HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh");
+        LOG.fine(
+            "HTTP/JSON channel was already refreshed by a concurrent thread, skipping duplicate refresh");
         return;
       }
 
       this.activeCertFingerprint = currentDiskFingerprint;
       LOG.info("mTLS certificate rotation detected. Triggering HTTP/JSON channel pool refresh.");
-      
+
       ChannelEntry newEntry = new ChannelEntry(channelFactory.get());
+      allEntries.add(newEntry);
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
 
       if (oldEntry != null) {
@@ -182,6 +151,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       ChannelEntry entry = activeEntry.get();
       if (entry.retain()) {
         return entry;
+      }
+      if (entry.shutdownRequested.get()) {
+        throw new IllegalStateException("Channel has been shut down");
       }
     }
   }
@@ -201,28 +173,57 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   }
 
   @Override
+  java.util.concurrent.Executor getExecutor() {
+    return activeEntry.get().channel.getExecutor();
+  }
+
+  @Override
   public void shutdown() {
-    activeEntry.get().requestShutdown();
+    for (ChannelEntry entry : allEntries) {
+      entry.requestShutdown();
+    }
   }
 
   @Override
   public boolean isShutdown() {
-    return activeEntry.get().channel.isShutdown();
+    for (ChannelEntry entry : allEntries) {
+      if (!entry.channel.isShutdown()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
   public boolean isTerminated() {
-    return activeEntry.get().channel.isTerminated();
+    for (ChannelEntry entry : allEntries) {
+      if (!entry.channel.isTerminated()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
   public void shutdownNow() {
-    activeEntry.get().channel.shutdownNow();
+    for (ChannelEntry entry : allEntries) {
+      entry.channel.shutdownNow();
+    }
   }
 
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
-    return activeEntry.get().channel.awaitTermination(duration, unit);
+    long endNanos = System.nanoTime() + unit.toNanos(duration);
+    for (ChannelEntry entry : allEntries) {
+      long remainingNanos = endNanos - System.nanoTime();
+      if (remainingNanos <= 0) {
+        return false;
+      }
+      if (!entry.channel.awaitTermination(remainingNanos, TimeUnit.NANOSECONDS)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override

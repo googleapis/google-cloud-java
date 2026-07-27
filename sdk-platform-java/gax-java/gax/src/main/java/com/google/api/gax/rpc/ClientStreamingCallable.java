@@ -88,6 +88,14 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
                   TransportChannel transportChannel = mergedContext.getTransportChannel();
                   if (transportChannel != null && transportChannel.shouldRefresh()) {
                     transportChannel.refresh();
+                    UnauthenticatedException causeEx = (UnauthenticatedException) t;
+                    t =
+                        new UnauthenticatedException(
+                            causeEx.getMessage(),
+                            causeEx.getCause(),
+                            causeEx.getStatusCode(),
+                            true, // isRetryable = true
+                            causeEx.getErrorDetails());
                   }
                 }
                 responseObserver.onError(t);
@@ -99,8 +107,7 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
               }
             };
 
-        return ClientStreamingCallable.this.clientStreamingCall(
-            refreshingObserver, mergedContext);
+        return ClientStreamingCallable.this.clientStreamingCall(refreshingObserver, mergedContext);
       }
     };
   }

@@ -64,8 +64,10 @@ public class CertificateBasedAccess {
           java.io.File file = new java.io.File(path);
           return file.exists() && file.isFile();
         },
-        path -> new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)), java.nio.charset.StandardCharsets.UTF_8)
-    );
+        path ->
+            new String(
+                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
+                java.nio.charset.StandardCharsets.UTF_8));
   }
 
   CertificateBasedAccess(
@@ -104,21 +106,22 @@ public class CertificateBasedAccess {
 
   private CertificateConfig parseCertificateConfig(String configPath) throws IOException {
     String content = fileContentReader.read(configPath);
-    
+
     String certPath = extractJsonValue(content, "cert_path");
     String keyPath = extractJsonValue(content, "key_path");
 
     if (certPath == null || keyPath == null) {
-      throw new IllegalStateException("Malformed certificate config JSON. Must contain 'cert_path' and 'key_path'.");
+      throw new IllegalStateException(
+          "Malformed certificate config JSON. Must contain 'cert_path' and 'key_path'.");
     }
 
     return new CertificateConfig(certPath, keyPath);
   }
 
   private String extractJsonValue(String json, String key) {
-    java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(
-        "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"([^\"]+)\""
-    );
+    java.util.regex.Pattern pattern =
+        java.util.regex.Pattern.compile(
+            "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"([^\"]+)\"");
     java.util.regex.Matcher matcher = pattern.matcher(json);
     if (matcher.find()) {
       return matcher.group(1);
@@ -144,14 +147,14 @@ public class CertificateBasedAccess {
 
     // 3. Fallback to well-known spiffe path
     String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials/";
-    
+
     // Check for atomic bundle containing both cert and key
     if (fileExistenceProvider.exists(wellKnownPath + "credentialbundle.pem")) {
-      return true; 
+      return true;
     }
-    
+
     // Check for separate certificate and private key files
-    if (fileExistenceProvider.exists(wellKnownPath + "certificates.pem") 
+    if (fileExistenceProvider.exists(wellKnownPath + "certificates.pem")
         && fileExistenceProvider.exists(wellKnownPath + "private_key.pem")) {
       return true;
     }
@@ -163,22 +166,23 @@ public class CertificateBasedAccess {
   private boolean validateAndResolveConfig(String configPath) {
     if (!fileExistenceProvider.exists(configPath)) {
       throw new IllegalStateException(
-          "Certificate config is configured but the file does not exist: " + configPath
-      );
+          "Certificate config is configured but the file does not exist: " + configPath);
     }
     try {
       CertificateConfig config = parseCertificateConfig(configPath);
-      if (!fileExistenceProvider.exists(config.certPath) || !fileExistenceProvider.exists(config.keyPath)) {
+      if (!fileExistenceProvider.exists(config.certPath)
+          || !fileExistenceProvider.exists(config.keyPath)) {
         throw new IllegalStateException(
-            "Certificate config points to certificate/key files that do not exist on disk: " +
-            "cert_path=" + config.certPath + ", key_path=" + config.keyPath
-        );
+            "Certificate config points to certificate/key files that do not exist on disk: "
+                + "cert_path="
+                + config.certPath
+                + ", key_path="
+                + config.keyPath);
       }
       return true;
     } catch (Exception e) {
       throw new IllegalStateException(
-          "Failed to parse or validate certificate config: " + configPath, e
-      );
+          "Failed to parse or validate certificate config: " + configPath, e);
     }
   }
 

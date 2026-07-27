@@ -258,6 +258,14 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
                   TransportChannel transportChannel = mergedContext.getTransportChannel();
                   if (transportChannel != null && transportChannel.shouldRefresh()) {
                     transportChannel.refresh();
+                    UnauthenticatedException causeEx = (UnauthenticatedException) t;
+                    t =
+                        new UnauthenticatedException(
+                            causeEx.getMessage(),
+                            causeEx.getCause(),
+                            causeEx.getStatusCode(),
+                            true, // isRetryable = true
+                            causeEx.getErrorDetails());
                   }
                 }
                 responseObserver.onError(t);
@@ -269,8 +277,7 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
               }
             };
 
-        return BidiStreamingCallable.this.internalCall(
-            refreshingObserver, onReady, mergedContext);
+        return BidiStreamingCallable.this.internalCall(refreshingObserver, onReady, mergedContext);
       }
     };
   }
