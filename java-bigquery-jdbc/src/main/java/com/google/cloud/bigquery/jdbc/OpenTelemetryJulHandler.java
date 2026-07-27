@@ -30,6 +30,7 @@ import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
 import java.time.Instant;
 import java.util.Collections;
+import java.util.logging.ErrorManager;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -78,7 +79,8 @@ public class OpenTelemetryJulHandler extends Handler {
         publishToOTel(record, connectionId, config.openTelemetry);
       }
     } catch (Throwable t) {
-      // Ignore exceptions to prevent breaking application logging or other handlers
+      // Report internal failures using JUL's ErrorManager without crashing the caller
+      reportError("Failed to publish log record", (Exception) t, ErrorManager.WRITE_FAILURE);
     }
   }
 
