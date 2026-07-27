@@ -143,7 +143,10 @@ public class Publisher implements PublisherInterface {
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private final HedgeSettings hedgeSettings;
-  private final HedgeTokenBucket hedgeTokenBucket;
+  private static final int HEDGE_TOKEN_SCALE = 100;
+  private final AtomicInteger hedgingTokenBucket = new AtomicInteger();
+  private int scaledMaxHedgeTokens;
+  private int scaledHedgeRefillAmount;
   private final ApiClock clock;
 
   private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
@@ -244,8 +247,12 @@ public class Publisher implements PublisherInterface {
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new Waiter();
     this.hedgeSettings = builder.hedgeSettings;
-    this.hedgeTokenBucket =
-        this.hedgeSettings != null ? new HedgeTokenBucket(this.hedgeSettings) : null;
+    if (this.hedgeSettings != null) {
+      this.scaledMaxHedgeTokens = this.hedgeSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
+      this.scaledHedgeRefillAmount =
+          (int) (this.hedgeSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
+      this.hedgingTokenBucket.set(scaledMaxHedgeTokens);
+    }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
     this.publishContextWithCompression =
@@ -272,8 +279,11 @@ public class Publisher implements PublisherInterface {
     return hedgeSettings;
   }
 
-  HedgeTokenBucket getHedgeTokenBucket() {
-    return hedgeTokenBucket;
+  Float getHedgeTokenBalance() {
+    if (hedgeSettings == null) {
+      return null;
+    }
+    return (float) hedgingTokenBucket.get() / HEDGE_TOKEN_SCALE;
   }
 
   /**
@@ -623,8 +633,33 @@ public class Publisher implements PublisherInterface {
   }
 
   void refillTokenBucket() {
-    if (hedgeTokenBucket != null) {
-      hedgeTokenBucket.refill();
+    if (hedgeSettings != null) {
+      while (true) {
+        int current = hedgingTokenBucket.get();
+        if (current >= scaledMaxHedgeTokens) {
+          return;
+        }
+        int next = Math.min(scaledMaxHedgeTokens, current + scaledHedgeRefillAmount);
+        if (hedgingTokenBucket.compareAndSet(current, next)) {
+          return;
+        }
+      }
+    }
+  }
+
+  boolean tryAcquireHedgeToken() {
+    if (hedgeSettings == null) {
+      return false;
+    }
+    while (true) {
+      int current = hedgingTokenBucket.get();
+      if (current < HEDGE_TOKEN_SCALE) {
+        return false;
+      }
+      int next = current - HEDGE_TOKEN_SCALE;
+      if (hedgingTokenBucket.compareAndSet(current, next)) {
+        return true;
+      }
     }
   }
 
@@ -1313,7 +1348,7 @@ public class Publisher implements PublisherInterface {
           continue;
         }
 
-        if (hedgeTokenBucket.tryAcquire()) {
+        if (tryAcquireHedgeToken()) {
           // Clone and schedule next attempt check (Attempt + 1)
           long delayMs = hedgeSettings.getHedgeDelay().toMillis();
           HedgedRequest nextItem =

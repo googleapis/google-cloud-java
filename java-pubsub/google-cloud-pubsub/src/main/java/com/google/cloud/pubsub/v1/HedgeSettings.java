@@ -94,7 +94,7 @@ public final class HedgeSettings {
       Preconditions.checkNotNull(delay);
       if (delay.toMillis() < 100 || delay.toMillis() > 10000) {
         throw new IllegalArgumentException(
-            "delay must be greater than or equal to 100ms and less than or equal to 10s");
+            "hedgeDelay must be greater than or equal to 100ms and less than or equal to 10s");
       }
       this.hedgeDelay = delay;
       return this;
@@ -125,7 +125,7 @@ public final class HedgeSettings {
     public Builder setRefillRatio(final float refillRatio) {
       if (refillRatio <= 0.0f || refillRatio > 0.2f) {
         throw new IllegalArgumentException(
-            "refill must be greater than 0.0 and less than or equal to 0.2");
+            "refillRatio must be greater than 0.0 and less than or equal to 0.2");
       }
       this.refillRatio = refillRatio;
       return this;
