@@ -208,14 +208,6 @@ class InstantiatingHttpJsonChannelProviderTest extends AbstractMtlsTransportChan
   }
 
   @Test
-  void testDefaultPqcGroups_containsExpectedGroups() {
-    assertThat(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
-        .asList()
-        .containsExactlyElementsIn(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
-        .inOrder();
-  }
-
-  @Test
   void testConfigureConscryptSecurityProvider_returnsConfiguredBuilder() {
     NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
     NetHttpTransport.Builder result =

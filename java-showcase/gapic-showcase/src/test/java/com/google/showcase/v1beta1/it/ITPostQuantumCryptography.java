@@ -16,6 +16,7 @@
 
 package com.google.showcase.v1beta1.it;
 
+import static com.google.api.gax.httpjson.HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
@@ -69,7 +70,7 @@ import org.junit.jupiter.api.Test;
  *       back gracefully to classical key exchange ({@code X25519}) instead of crashing.
  * </ol>
  */
-public class ITPostQuantumCryptography {
+class ITPostQuantumCryptography {
 
   // TLS response header names from Showcase server
   private static final String TLS_GROUP_HEADER = "x-showcase-tls-group";
@@ -146,7 +147,7 @@ public class ITPostQuantumCryptography {
 
       String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
       assertThat(supportedGroups).isNotNull();
-      assertThat(supportedGroups).contains(EXPECTED_PQC_GROUP);
+      assertThat(supportedGroups).isEqualTo(DEFAULT_PQC_GROUPS);
     }
   }
 

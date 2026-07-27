@@ -37,14 +37,6 @@ import org.junit.jupiter.api.Test;
 class HttpJsonConscryptUtilsTest {
 
   @Test
-  void testDefaultPqcGroups_containsExpectedGroups() {
-    assertThat(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
-        .asList()
-        .containsExactlyElementsIn(HttpJsonConscryptUtils.DEFAULT_PQC_GROUPS)
-        .inOrder();
-  }
-
-  @Test
   void testGetConscryptProvider_doesNotThrow() {
     Provider provider = HttpJsonConscryptUtils.getConscryptProvider();
     if (provider != null) {
