@@ -71,7 +71,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class JavaWriterVisitor implements AstNodeVisitor {
   private static final String SPACE = " ";
   private static final String NEWLINE = "\n";

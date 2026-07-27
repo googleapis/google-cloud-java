@@ -33,12 +33,14 @@ package com.google.auth;
 
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * The callback that receives the result of the asynchronous {@link
  * Credentials#getRequestMetadata(java.net.URI, java.util.concurrent.Executor,
  * RequestMetadataCallback)}. Exactly one method should be called.
  */
+@NullMarked
 public interface RequestMetadataCallback {
   /**
    * Called when metadata is successfully produced.

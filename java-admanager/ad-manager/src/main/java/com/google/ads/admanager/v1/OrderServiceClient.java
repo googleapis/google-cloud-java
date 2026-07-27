@@ -65,7 +65,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetOrder</td>
- *      <td><p> API to retrieve an Order object.</td>
+ *      <td><p> Retrieves an `Order` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +84,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListOrders</td>
- *      <td><p> API to retrieve a list of `Order` objects.
+ *      <td><p> Lists `Order` objects.
  * <p>  Fields used for literal matching in filter string:
  * <ul>
  * <li>  `order_id`
@@ -201,7 +201,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an Order object.
+   * Retrieves an `Order` object.
    *
    * <p>Sample code:
    *
@@ -229,7 +229,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an Order object.
+   * Retrieves an `Order` object.
    *
    * <p>Sample code:
    *
@@ -256,7 +256,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an Order object.
+   * Retrieves an `Order` object.
    *
    * <p>Sample code:
    *
@@ -284,7 +284,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an Order object.
+   * Retrieves an `Order` object.
    *
    * <p>Sample code:
    *
@@ -311,7 +311,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Order` objects.
+   * Lists `Order` objects.
    *
    * <p>Fields used for literal matching in filter string:
    *
@@ -349,7 +349,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Order` objects.
+   * Lists `Order` objects.
    *
    * <p>Fields used for literal matching in filter string:
    *
@@ -386,7 +386,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Order` objects.
+   * Lists `Order` objects.
    *
    * <p>Fields used for literal matching in filter string:
    *
@@ -429,7 +429,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Order` objects.
+   * Lists `Order` objects.
    *
    * <p>Fields used for literal matching in filter string:
    *
@@ -471,7 +471,7 @@ public class OrderServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Order` objects.
+   * Lists `Order` objects.
    *
    * <p>Fields used for literal matching in filter string:
    *

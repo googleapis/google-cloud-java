@@ -3139,13 +3139,58 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder
         getPlaceAnswerSourcesOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the route field is set.
+     */
+    boolean hasRoute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The route.
+     */
+    com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route getRoute();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder getRouteOrBuilder();
   }
 
   /**
    *
    *
    * <pre>
-   * Chunk from Google Maps.
+   * A `Maps` chunk is a piece of evidence that comes from Google Maps,
+   * containing information about places or routes. This is used to provide
+   * the user with rich, location-based information.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps}
@@ -5428,6 +5473,1070 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public interface RouteOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The total distance of the route, in meters.
+       * </pre>
+       *
+       * <code>int32 distance_meters = 1;</code>
+       *
+       * @return The distanceMeters.
+       */
+      int getDistanceMeters();
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      boolean hasDuration();
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      com.google.protobuf.Duration getDuration();
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       */
+      com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * An encoded polyline of the route. See
+       * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+       * </pre>
+       *
+       * <code>string encoded_polyline = 3;</code>
+       *
+       * @return The encodedPolyline.
+       */
+      java.lang.String getEncodedPolyline();
+
+      /**
+       *
+       *
+       * <pre>
+       * An encoded polyline of the route. See
+       * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+       * </pre>
+       *
+       * <code>string encoded_polyline = 3;</code>
+       *
+       * @return The bytes for encodedPolyline.
+       */
+      com.google.protobuf.ByteString getEncodedPolylineBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Route information from Google Maps.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route}
+     */
+    public static final class Route extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)
+        RouteOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Route");
+      }
+
+      // Use Route.newBuilder() to construct.
+      private Route(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Route() {
+        encodedPolyline_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.class,
+                com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int DISTANCE_METERS_FIELD_NUMBER = 1;
+      private int distanceMeters_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total distance of the route, in meters.
+       * </pre>
+       *
+       * <code>int32 distance_meters = 1;</code>
+       *
+       * @return The distanceMeters.
+       */
+      @java.lang.Override
+      public int getDistanceMeters() {
+        return distanceMeters_;
+      }
+
+      public static final int DURATION_FIELD_NUMBER = 2;
+      private com.google.protobuf.Duration duration_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return Whether the duration field is set.
+       */
+      @java.lang.Override
+      public boolean hasDuration() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       *
+       * @return The duration.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getDuration() {
+        return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The total duration of the route.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration duration = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+        return duration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : duration_;
+      }
+
+      public static final int ENCODED_POLYLINE_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object encodedPolyline_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * An encoded polyline of the route. See
+       * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+       * </pre>
+       *
+       * <code>string encoded_polyline = 3;</code>
+       *
+       * @return The encodedPolyline.
+       */
+      @java.lang.Override
+      public java.lang.String getEncodedPolyline() {
+        java.lang.Object ref = encodedPolyline_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          encodedPolyline_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * An encoded polyline of the route. See
+       * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+       * </pre>
+       *
+       * <code>string encoded_polyline = 3;</code>
+       *
+       * @return The bytes for encodedPolyline.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEncodedPolylineBytes() {
+        java.lang.Object ref = encodedPolyline_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          encodedPolyline_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (distanceMeters_ != 0) {
+          output.writeInt32(1, distanceMeters_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(2, getDuration());
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encodedPolyline_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, encodedPolyline_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (distanceMeters_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, distanceMeters_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDuration());
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(encodedPolyline_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, encodedPolyline_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route other =
+            (com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route) obj;
+
+        if (getDistanceMeters() != other.getDistanceMeters()) return false;
+        if (hasDuration() != other.hasDuration()) return false;
+        if (hasDuration()) {
+          if (!getDuration().equals(other.getDuration())) return false;
+        }
+        if (!getEncodedPolyline().equals(other.getEncodedPolyline())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + DISTANCE_METERS_FIELD_NUMBER;
+        hash = (53 * hash) + getDistanceMeters();
+        if (hasDuration()) {
+          hash = (37 * hash) + DURATION_FIELD_NUMBER;
+          hash = (53 * hash) + getDuration().hashCode();
+        }
+        hash = (37 * hash) + ENCODED_POLYLINE_FIELD_NUMBER;
+        hash = (53 * hash) + getEncodedPolyline().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Route information from Google Maps.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.class,
+                  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetDurationFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          distanceMeters_ = 0;
+          duration_ = null;
+          if (durationBuilder_ != null) {
+            durationBuilder_.dispose();
+            durationBuilder_ = null;
+          }
+          encodedPolyline_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1beta1_GroundingChunk_Maps_Route_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route build() {
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route result =
+              new com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.distanceMeters_ = distanceMeters_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.duration_ = durationBuilder_ == null ? duration_ : durationBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.encodedPolyline_ = encodedPolyline_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route) {
+            return mergeFrom((com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route other) {
+          if (other
+              == com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance())
+            return this;
+          if (other.getDistanceMeters() != 0) {
+            setDistanceMeters(other.getDistanceMeters());
+          }
+          if (other.hasDuration()) {
+            mergeDuration(other.getDuration());
+          }
+          if (!other.getEncodedPolyline().isEmpty()) {
+            encodedPolyline_ = other.encodedPolyline_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    distanceMeters_ = input.readInt32();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetDurationFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    encodedPolyline_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int distanceMeters_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The total distance of the route, in meters.
+         * </pre>
+         *
+         * <code>int32 distance_meters = 1;</code>
+         *
+         * @return The distanceMeters.
+         */
+        @java.lang.Override
+        public int getDistanceMeters() {
+          return distanceMeters_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total distance of the route, in meters.
+         * </pre>
+         *
+         * <code>int32 distance_meters = 1;</code>
+         *
+         * @param value The distanceMeters to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDistanceMeters(int value) {
+
+          distanceMeters_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total distance of the route, in meters.
+         * </pre>
+         *
+         * <code>int32 distance_meters = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDistanceMeters() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          distanceMeters_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Duration duration_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            durationBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return Whether the duration field is set.
+         */
+        public boolean hasDuration() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         *
+         * @return The duration.
+         */
+        public com.google.protobuf.Duration getDuration() {
+          if (durationBuilder_ == null) {
+            return duration_ == null
+                ? com.google.protobuf.Duration.getDefaultInstance()
+                : duration_;
+          } else {
+            return durationBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder setDuration(com.google.protobuf.Duration value) {
+          if (durationBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            duration_ = value;
+          } else {
+            durationBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder setDuration(com.google.protobuf.Duration.Builder builderForValue) {
+          if (durationBuilder_ == null) {
+            duration_ = builderForValue.build();
+          } else {
+            durationBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder mergeDuration(com.google.protobuf.Duration value) {
+          if (durationBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && duration_ != null
+                && duration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+              getDurationBuilder().mergeFrom(value);
+            } else {
+              duration_ = value;
+            }
+          } else {
+            durationBuilder_.mergeFrom(value);
+          }
+          if (duration_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public Builder clearDuration() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          duration_ = null;
+          if (durationBuilder_ != null) {
+            durationBuilder_.dispose();
+            durationBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public com.google.protobuf.Duration.Builder getDurationBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return internalGetDurationFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        public com.google.protobuf.DurationOrBuilder getDurationOrBuilder() {
+          if (durationBuilder_ != null) {
+            return durationBuilder_.getMessageOrBuilder();
+          } else {
+            return duration_ == null
+                ? com.google.protobuf.Duration.getDefaultInstance()
+                : duration_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The total duration of the route.
+         * </pre>
+         *
+         * <code>.google.protobuf.Duration duration = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>
+            internalGetDurationFieldBuilder() {
+          if (durationBuilder_ == null) {
+            durationBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.protobuf.Duration,
+                    com.google.protobuf.Duration.Builder,
+                    com.google.protobuf.DurationOrBuilder>(
+                    getDuration(), getParentForChildren(), isClean());
+            duration_ = null;
+          }
+          return durationBuilder_;
+        }
+
+        private java.lang.Object encodedPolyline_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * An encoded polyline of the route. See
+         * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+         * </pre>
+         *
+         * <code>string encoded_polyline = 3;</code>
+         *
+         * @return The encodedPolyline.
+         */
+        public java.lang.String getEncodedPolyline() {
+          java.lang.Object ref = encodedPolyline_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            encodedPolyline_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * An encoded polyline of the route. See
+         * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+         * </pre>
+         *
+         * <code>string encoded_polyline = 3;</code>
+         *
+         * @return The bytes for encodedPolyline.
+         */
+        public com.google.protobuf.ByteString getEncodedPolylineBytes() {
+          java.lang.Object ref = encodedPolyline_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            encodedPolyline_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * An encoded polyline of the route. See
+         * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+         * </pre>
+         *
+         * <code>string encoded_polyline = 3;</code>
+         *
+         * @param value The encodedPolyline to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEncodedPolyline(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          encodedPolyline_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * An encoded polyline of the route. See
+         * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+         * </pre>
+         *
+         * <code>string encoded_polyline = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEncodedPolyline() {
+          encodedPolyline_ = getDefaultInstance().getEncodedPolyline();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * An encoded polyline of the route. See
+         * https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+         * </pre>
+         *
+         * <code>string encoded_polyline = 3;</code>
+         *
+         * @param value The bytes for encodedPolyline to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEncodedPolylineBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          encodedPolyline_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route)
+      private static final com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Route> PARSER =
+          new com.google.protobuf.AbstractParser<Route>() {
+            @java.lang.Override
+            public Route parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Route> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Route> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int URI_FIELD_NUMBER = 1;
 
@@ -5778,6 +6887,66 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
           : placeAnswerSources_;
     }
 
+    public static final int ROUTE_FIELD_NUMBER = 6;
+    private com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the route field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoute() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The route.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route getRoute() {
+      return route_ == null
+          ? com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance()
+          : route_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Route information.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder
+        getRouteOrBuilder() {
+      return route_ == null
+          ? com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance()
+          : route_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5807,6 +6976,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeMessage(5, getPlaceAnswerSources());
       }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeMessage(6, getRoute());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -5831,6 +7003,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000010) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPlaceAnswerSources());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRoute());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5868,6 +7043,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       if (hasPlaceAnswerSources()) {
         if (!getPlaceAnswerSources().equals(other.getPlaceAnswerSources())) return false;
       }
+      if (hasRoute() != other.hasRoute()) return false;
+      if (hasRoute()) {
+        if (!getRoute().equals(other.getRoute())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5898,6 +7077,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       if (hasPlaceAnswerSources()) {
         hash = (37 * hash) + PLACE_ANSWER_SOURCES_FIELD_NUMBER;
         hash = (53 * hash) + getPlaceAnswerSources().hashCode();
+      }
+      if (hasRoute()) {
+        hash = (37 * hash) + ROUTE_FIELD_NUMBER;
+        hash = (53 * hash) + getRoute().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -6005,7 +7188,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Chunk from Google Maps.
+     * A `Maps` chunk is a piece of evidence that comes from Google Maps,
+     * containing information about places or routes. This is used to provide
+     * the user with rich, location-based information.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.GroundingChunk.Maps}
@@ -6042,6 +7227,7 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetPlaceAnswerSourcesFieldBuilder();
+          internalGetRouteFieldBuilder();
         }
       }
 
@@ -6057,6 +7243,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
         if (placeAnswerSourcesBuilder_ != null) {
           placeAnswerSourcesBuilder_.dispose();
           placeAnswerSourcesBuilder_ = null;
+        }
+        route_ = null;
+        if (routeBuilder_ != null) {
+          routeBuilder_.dispose();
+          routeBuilder_ = null;
         }
         return this;
       }
@@ -6118,6 +7309,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
                   : placeAnswerSourcesBuilder_.build();
           to_bitField0_ |= 0x00000010;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.route_ = routeBuilder_ == null ? route_ : routeBuilder_.build();
+          to_bitField0_ |= 0x00000020;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -6156,6 +7351,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasPlaceAnswerSources()) {
           mergePlaceAnswerSources(other.getPlaceAnswerSources());
+        }
+        if (other.hasRoute()) {
+          mergeRoute(other.getRoute());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -6214,6 +7412,12 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(internalGetRouteFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6985,6 +8189,224 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessage
           placeAnswerSources_ = null;
         }
         return placeAnswerSourcesBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route,
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder,
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder>
+          routeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the route field is set.
+       */
+      public boolean hasRoute() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The route.
+       */
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route getRoute() {
+        if (routeBuilder_ == null) {
+          return route_ == null
+              ? com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance()
+              : route_;
+        } else {
+          return routeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRoute(com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route value) {
+        if (routeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          route_ = value;
+        } else {
+          routeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRoute(
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder builderForValue) {
+        if (routeBuilder_ == null) {
+          route_ = builderForValue.build();
+        } else {
+          routeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeRoute(
+          com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route value) {
+        if (routeBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && route_ != null
+              && route_
+                  != com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route
+                      .getDefaultInstance()) {
+            getRouteBuilder().mergeFrom(value);
+          } else {
+            route_ = value;
+          }
+        } else {
+          routeBuilder_.mergeFrom(value);
+        }
+        if (route_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRoute() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        route_ = null;
+        if (routeBuilder_ != null) {
+          routeBuilder_.dispose();
+          routeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder
+          getRouteBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return internalGetRouteFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder
+          getRouteOrBuilder() {
+        if (routeBuilder_ != null) {
+          return routeBuilder_.getMessageOrBuilder();
+        } else {
+          return route_ == null
+              ? com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.getDefaultInstance()
+              : route_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Route information.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route route = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route,
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder,
+              com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder>
+          internalGetRouteFieldBuilder() {
+        if (routeBuilder_ == null) {
+          routeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route,
+                  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.Route.Builder,
+                  com.google.cloud.aiplatform.v1beta1.GroundingChunk.Maps.RouteOrBuilder>(
+                  getRoute(), getParentForChildren(), isClean());
+          route_ = null;
+        }
+        return routeBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.GroundingChunk.Maps)

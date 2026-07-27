@@ -44,6 +44,7 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class implements {@link MtlsProvider} for the Google Auth library transport layer via {@link
@@ -59,6 +60,7 @@ import java.util.concurrent.TimeUnit;
  * <p>Additionally, this implementation will replace the existing "MtlsProvider" in the Gax library.
  * The Gax library version of MtlsProvider will be marked as deprecated.
  */
+@NullMarked
 @InternalApi
 public class SecureConnectProvider implements MtlsProvider {
   interface ProcessProvider {

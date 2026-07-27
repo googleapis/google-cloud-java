@@ -326,10 +326,10 @@ public final class SkuProto extends com.google.protobuf.GeneratedFile {
           + "\010locationB\n\n"
           + "\010sku_type:z\352Aw\n"
           + "#commerceproducer.googleapis.com/Sku\022Eprojects/{project}/locations/{location}/ser"
-          + "vices/{service}/skus/{sku}*\004skus2\003skuB\263\001\n"
+          + "vices/{service}/skus/{sku}*\004skus2\003skuB\335\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\010SkuProtoP\001ZTcloud.google.com/go/comm"
           + "erceproducer/apiv1beta/commerceproducerpb;commerceproducerpb\252\002$Google.Cloud.Comm"
-          + "erceProducer.V1Betab\006proto3"
+          + "erceProducer.V1Beta\352\002\'Google::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetAdUnit</td>
- *      <td><p> API to retrieve an AdUnit object.</td>
+ *      <td><p> Retrieves an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListAdUnits</td>
- *      <td><p> API to retrieve a list of AdUnit objects.</td>
+ *      <td><p> Lists `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListAdUnitSizes</td>
- *      <td><p> API to retrieve a list of AdUnitSize objects.</td>
+ *      <td><p> Lists `AdUnitSize` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAdUnit</td>
- *      <td><p> API to create an `AdUnit` object.</td>
+ *      <td><p> Creates an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -144,7 +144,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAdUnit</td>
- *      <td><p> API to update an `AdUnit` object.</td>
+ *      <td><p> Updates an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -162,7 +162,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateAdUnits</td>
- *      <td><p> API to batch create `AdUnit` objects.</td>
+ *      <td><p> Creates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -178,7 +178,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateAdUnits</td>
- *      <td><p> API to batch update `AdUnit` objects.</td>
+ *      <td><p> Batch updates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -194,7 +194,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateAdUnits</td>
- *      <td><p> API to batch activate `AdUnit` objects.</td>
+ *      <td><p> Batch activates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -343,7 +343,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -398,7 +398,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -426,7 +426,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -453,7 +453,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -485,7 +485,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -514,7 +514,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -549,7 +549,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -584,7 +584,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -625,7 +625,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -657,7 +657,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -686,7 +686,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -721,7 +721,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -757,7 +757,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -800,7 +800,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -833,7 +833,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -863,7 +863,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -892,7 +892,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -920,7 +920,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -951,7 +951,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -980,7 +980,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -1008,7 +1008,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1045,7 +1045,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1079,7 +1079,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1108,7 +1108,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1138,7 +1138,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1175,7 +1175,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1209,7 +1209,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1238,7 +1238,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1268,7 +1268,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1303,7 +1303,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1335,7 +1335,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1365,7 +1365,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *

@@ -275,7 +275,7 @@
       </dependency>
       <dependency>
         <groupId>org.conscrypt</groupId>
-        <artifactId>conscrypt-openjdk</artifactId>
+        <artifactId>conscrypt-openjdk-uber</artifactId>
         <version>${conscrypt.version}</version>
       </dependency>
       <dependency>

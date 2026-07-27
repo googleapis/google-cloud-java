@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Exception thrown when the caller does not have permission to execute the specified operation. */
+@NullMarked
 public class PermissionDeniedException extends ApiException {
   public PermissionDeniedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

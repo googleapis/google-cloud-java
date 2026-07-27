@@ -65,6 +65,34 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_developers_knowledge_v1_BatchGetDocumentsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_AnswerQueryRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_AnswerQueryRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_AnswerQueryResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_AnswerQueryResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_Answer_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_Answer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_Answer_AnswerCitation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_Answer_AnswerCitation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_Answer_CitationSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_Answer_CitationSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_Answer_AnswerReference_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_Answer_AnswerReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_developers_knowledge_v1_Answer_DocumentReference_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_developers_knowledge_v1_Answer_DocumentReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_developers_knowledge_v1_DocumentChunk_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_developers_knowledge_v1_DocumentChunk_fieldAccessorTable;
@@ -82,7 +110,7 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
           + "wledge.v1\032\034google/api/annotations.proto\032"
           + "\027google/api/client.proto\032\037google/api/fie"
           + "ld_behavior.proto\032\031google/api/resource.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\340\002\n"
+          + "roto\032\037google/protobuf/timestamp.proto\"\203\003\n"
           + "\010Document\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\020\n"
           + "\003uri\030\002 \001(\tB\003\340A\003\022\024\n"
@@ -92,7 +120,8 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
           + "\005title\030\006 \001(\tB\003\340A\003\0224\n"
           + "\013update_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
           + "\004view\030\010"
-          + " \001(\0162,.google.developers.knowledge.v1.DocumentViewB\003\340A\003:Z\352AW\n"
+          + " \001(\0162,.google.developers.knowledge.v1.DocumentViewB\003\340A\003\022!\n"
+          + "\024content_length_bytes\030\t \001(\005B\003\340A\003:Z\352AW\n"
           + "*developerknowledge.googleapis.com/Document\022\024documents/{document}*"
           + "\tdocuments2\010document\"w\n"
           + "\033SearchDocumentChunksRequest\022\022\n"
@@ -114,7 +143,31 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
           + "\004view\030\002"
           + " \001(\0162,.google.developers.knowledge.v1.DocumentViewB\003\340A\001\"X\n"
           + "\031BatchGetDocumentsResponse\022;\n"
-          + "\tdocuments\030\001 \003(\0132(.google.developers.knowledge.v1.Document\"\273\001\n\r"
+          + "\tdocuments\030\001 \003(\0132(.google.developers.knowledge.v1.Document\"(\n"
+          + "\022AnswerQueryRequest\022\022\n"
+          + "\005query\030\001 \001(\tB\003\340A\002\"M\n"
+          + "\023AnswerQueryResponse\0226\n"
+          + "\006answer\030\001 \001(\0132&.google.developers.knowledge.v1.Answer\"\333\004\n"
+          + "\006Answer\022\023\n"
+          + "\013answer_text\030\001 \001(\t\022M\n"
+          + "\tcitations\030\002"
+          + " \003(\01325.google.developers.knowledge.v1.Answer.AnswerCitationB\003\340A\003\022O\n\n"
+          + "references\030\003"
+          + " \003(\01326.google.developers.knowledge.v1.Answer.AnswerReferenceB\003\340A\003\032\217\001\n"
+          + "\016AnswerCitation\022\030\n"
+          + "\013start_index\030\001 \001(\005B\003\340A\003\022\026\n"
+          + "\tend_index\030\002 \001(\005B\003\340A\003\022K\n"
+          + "\007sources\030\003 \003(\01325"
+          + ".google.developers.knowledge.v1.Answer.CitationSourceB\003\340A\003\032.\n"
+          + "\016CitationSource\022\034\n"
+          + "\017reference_index\030\001 \001(\005B\003\340A\003\032y\n"
+          + "\017AnswerReference\022[\n"
+          + "\022document_reference\030\001 \001(\01328.goog"
+          + "le.developers.knowledge.v1.Answer.DocumentReferenceB\003\340A\003H\000B\t\n"
+          + "\007content\032_\n"
+          + "\021DocumentReference\022J\n"
+          + "\016document_chunk\030\001 \001(\0132-.goo"
+          + "gle.developers.knowledge.v1.DocumentChunkB\003\340A\003\"\273\001\n\r"
           + "DocumentChunk\022B\n"
           + "\006parent\030\001 \001(\tB2\340A\003\372A,\n"
           + "*developerknowledge.googleapis.com/Document\022\017\n"
@@ -126,24 +179,28 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
           + "\031DOCUMENT_VIEW_UNSPECIFIED\020\000\022\027\n"
           + "\023DOCUMENT_VIEW_BASIC\020\001\022\026\n"
           + "\022DOCUMENT_VIEW_FULL\020\002\022\031\n"
-          + "\025DOCUMENT_VIEW_CONTENT\020\0032\354\004\n"
+          + "\025DOCUMENT_VIEW_CONTENT\020\0032\201\006\n"
           + "\022DeveloperKnowledge\022\275\001\n"
-          + "\024SearchDocumentChunks\022;.google.developers.knowledge.v1.S"
-          + "earchDocumentChunksRequest\032<.google.developers.knowledge.v1.SearchDocumentChunks"
-          + "Response\"*\202\323\344\223\002$\022\"/v1/documents:searchDocumentChunks\022\223\001\n"
-          + "\013GetDocument\0222.google.developers.knowledge.v1.GetDocumentRequest"
-          + "\032(.google.developers.knowledge.v1.Docume"
-          + "nt\"&\332A\004name\202\323\344\223\002\031\022\027/v1/{name=documents/**}\022\250\001\n"
-          + "\021BatchGetDocuments\0228.google.developers.knowledge.v1.BatchGetDocumentsReque"
-          + "st\0329.google.developers.knowledge.v1.Batc"
-          + "hGetDocumentsResponse\"\036\202\323\344\223\002\030\022\026/v1/docum"
-          + "ents:batchGet\032U\312A!developerknowledge.goo"
-          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\211\002\n"
-          + "\"com.google.developers.knowledge.v1B\027DeveloperKnowledgeP"
-          + "rotoP\001ZGgoogle.golang.org/genproto/googleapis/developers/knowledge/v1;knowledge\252"
-          + "\002\'Google.Developers.DeveloperKnowledge.V"
-          + "1\312\002\'Google\\Developers\\DeveloperKnowledge"
-          + "\\V1\352\002*Google::Developers::DeveloperKnowledge::V1b\006proto3"
+          + "\024SearchDocumentChunks\022;.google.developers.knowledge.v1"
+          + ".SearchDocumentChunksRequest\032<.google.developers.knowledge.v1.SearchDocumentChun"
+          + "ksResponse\"*\202\323\344\223\002$\022\"/v1/documents:searchDocumentChunks\022\223\001\n"
+          + "\013GetDocument\0222.google.developers.knowledge.v1.GetDocumentReque"
+          + "st\032(.google.developers.knowledge.v1.Docu"
+          + "ment\"&\332A\004name\202\323\344\223\002\031\022\027/v1/{name=documents/**}\022\250\001\n"
+          + "\021BatchGetDocuments\0228.google.developers.knowledge.v1.BatchGetDocumentsReq"
+          + "uest\0329.google.developers.knowledge.v1.Ba"
+          + "tchGetDocumentsResponse\"\036\202\323\344\223\002\030\022\026/v1/documents:batchGet\022\222\001\n"
+          + "\013AnswerQuery\0222.google.developers.knowledge.v1.AnswerQueryRequ"
+          + "est\0323.google.developers.knowledge.v1.Ans"
+          + "werQueryResponse\"\032\202\323\344\223\002\024\"\017/v1:answerQuer"
+          + "y:\001*\032U\312A!developerknowledge.googleapis.c"
+          + "om\322A.https://www.googleapis.com/auth/cloud-platformB\211\002\n"
+          + "\"com.google.developers.knowledge.v1B\027DeveloperKnowledgeProtoP\001ZGg"
+          + "oogle.golang.org/genproto/googleapis/dev"
+          + "elopers/knowledge/v1;knowledge\252\002\'Google."
+          + "Developers.DeveloperKnowledge.V1\312\002\'Googl"
+          + "e\\Developers\\DeveloperKnowledge\\V1\352\002*Goo"
+          + "gle::Developers::DeveloperKnowledge::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -161,7 +218,15 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_developers_knowledge_v1_Document_descriptor,
             new java.lang.String[] {
-              "Name", "Uri", "Content", "Description", "DataSource", "Title", "UpdateTime", "View",
+              "Name",
+              "Uri",
+              "Content",
+              "Description",
+              "DataSource",
+              "Title",
+              "UpdateTime",
+              "View",
+              "ContentLengthBytes",
             });
     internal_static_google_developers_knowledge_v1_SearchDocumentChunksRequest_descriptor =
         getDescriptor().getMessageType(1);
@@ -203,8 +268,64 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "Documents",
             });
-    internal_static_google_developers_knowledge_v1_DocumentChunk_descriptor =
+    internal_static_google_developers_knowledge_v1_AnswerQueryRequest_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_developers_knowledge_v1_AnswerQueryRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_AnswerQueryRequest_descriptor,
+            new java.lang.String[] {
+              "Query",
+            });
+    internal_static_google_developers_knowledge_v1_AnswerQueryResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_developers_knowledge_v1_AnswerQueryResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_AnswerQueryResponse_descriptor,
+            new java.lang.String[] {
+              "Answer",
+            });
+    internal_static_google_developers_knowledge_v1_Answer_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_developers_knowledge_v1_Answer_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_Answer_descriptor,
+            new java.lang.String[] {
+              "AnswerText", "Citations", "References",
+            });
+    internal_static_google_developers_knowledge_v1_Answer_AnswerCitation_descriptor =
+        internal_static_google_developers_knowledge_v1_Answer_descriptor.getNestedType(0);
+    internal_static_google_developers_knowledge_v1_Answer_AnswerCitation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_Answer_AnswerCitation_descriptor,
+            new java.lang.String[] {
+              "StartIndex", "EndIndex", "Sources",
+            });
+    internal_static_google_developers_knowledge_v1_Answer_CitationSource_descriptor =
+        internal_static_google_developers_knowledge_v1_Answer_descriptor.getNestedType(1);
+    internal_static_google_developers_knowledge_v1_Answer_CitationSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_Answer_CitationSource_descriptor,
+            new java.lang.String[] {
+              "ReferenceIndex",
+            });
+    internal_static_google_developers_knowledge_v1_Answer_AnswerReference_descriptor =
+        internal_static_google_developers_knowledge_v1_Answer_descriptor.getNestedType(2);
+    internal_static_google_developers_knowledge_v1_Answer_AnswerReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_Answer_AnswerReference_descriptor,
+            new java.lang.String[] {
+              "DocumentReference", "Content",
+            });
+    internal_static_google_developers_knowledge_v1_Answer_DocumentReference_descriptor =
+        internal_static_google_developers_knowledge_v1_Answer_descriptor.getNestedType(3);
+    internal_static_google_developers_knowledge_v1_Answer_DocumentReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_developers_knowledge_v1_Answer_DocumentReference_descriptor,
+            new java.lang.String[] {
+              "DocumentChunk",
+            });
+    internal_static_google_developers_knowledge_v1_DocumentChunk_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_developers_knowledge_v1_DocumentChunk_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_developers_knowledge_v1_DocumentChunk_descriptor,

@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import com.google.gson.Gson;
 import java.util.Map;
 import java.util.Map.Entry;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +42,7 @@ import org.slf4j.MDC;
 import org.slf4j.spi.LoggingEventBuilder;
 
 /** Contains util methods to get SLF4J logger and log conditionally based SLF4J major version */
+@NullMarked
 class Slf4jUtils {
 
   private static final Logger NO_OP_LOGGER = org.slf4j.helpers.NOPLogger.NOP_LOGGER;

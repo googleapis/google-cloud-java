@@ -8484,6 +8484,876 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
     }
   }
 
+  public interface UpgradeKeyTrustOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The public key associated with the 2FA key that will sign the
+     * login nonce for this operation.
+     * </pre>
+     *
+     * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The twoFactorPublicKeyPem.
+     */
+    java.lang.String getTwoFactorPublicKeyPem();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The public key associated with the 2FA key that will sign the
+     * login nonce for this operation.
+     * </pre>
+     *
+     * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for twoFactorPublicKeyPem.
+     */
+    com.google.protobuf.ByteString getTwoFactorPublicKeyPemBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust}
+   */
+  public static final class UpgradeKeyTrust extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+      UpgradeKeyTrustOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "UpgradeKeyTrust");
+    }
+
+    // Use UpgradeKeyTrust.newBuilder() to construct.
+    private UpgradeKeyTrust(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UpgradeKeyTrust() {
+      name_ = "";
+      twoFactorPublicKeyPem_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.kms.v1.HsmManagementProto
+          .internal_static_google_cloud_kms_v1_SingleTenantHsmInstanceProposal_UpgradeKeyTrust_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.kms.v1.HsmManagementProto
+          .internal_static_google_cloud_kms_v1_SingleTenantHsmInstanceProposal_UpgradeKeyTrust_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.class,
+              com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder
+                  .class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TWO_FACTOR_PUBLIC_KEY_PEM_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object twoFactorPublicKeyPem_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The public key associated with the 2FA key that will sign the
+     * login nonce for this operation.
+     * </pre>
+     *
+     * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The twoFactorPublicKeyPem.
+     */
+    @java.lang.Override
+    public java.lang.String getTwoFactorPublicKeyPem() {
+      java.lang.Object ref = twoFactorPublicKeyPem_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        twoFactorPublicKeyPem_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The public key associated with the 2FA key that will sign the
+     * login nonce for this operation.
+     * </pre>
+     *
+     * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for twoFactorPublicKeyPem.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTwoFactorPublicKeyPemBytes() {
+      java.lang.Object ref = twoFactorPublicKeyPem_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        twoFactorPublicKeyPem_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(twoFactorPublicKeyPem_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, twoFactorPublicKeyPem_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(twoFactorPublicKeyPem_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, twoFactorPublicKeyPem_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust other =
+          (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getTwoFactorPublicKeyPem().equals(other.getTwoFactorPublicKeyPem())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + TWO_FACTOR_PUBLIC_KEY_PEM_FIELD_NUMBER;
+      hash = (53 * hash) + getTwoFactorPublicKeyPem().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.kms.v1.HsmManagementProto
+            .internal_static_google_cloud_kms_v1_SingleTenantHsmInstanceProposal_UpgradeKeyTrust_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.kms.v1.HsmManagementProto
+            .internal_static_google_cloud_kms_v1_SingleTenantHsmInstanceProposal_UpgradeKeyTrust_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.class,
+                com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        twoFactorPublicKeyPem_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.kms.v1.HsmManagementProto
+            .internal_static_google_cloud_kms_v1_SingleTenantHsmInstanceProposal_UpgradeKeyTrust_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+          getDefaultInstanceForType() {
+        return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust build() {
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+          buildPartial() {
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust result =
+            new com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.twoFactorPublicKeyPem_ = twoFactorPublicKeyPem_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) {
+          return mergeFrom(
+              (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust other) {
+        if (other
+            == com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTwoFactorPublicKeyPem().isEmpty()) {
+          twoFactorPublicKeyPem_ = other.twoFactorPublicKeyPem_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  twoFactorPublicKeyPem_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+       * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+       * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+       * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+       * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+       * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to promote.
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object twoFactorPublicKeyPem_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The public key associated with the 2FA key that will sign the
+       * login nonce for this operation.
+       * </pre>
+       *
+       * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The twoFactorPublicKeyPem.
+       */
+      public java.lang.String getTwoFactorPublicKeyPem() {
+        java.lang.Object ref = twoFactorPublicKeyPem_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          twoFactorPublicKeyPem_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The public key associated with the 2FA key that will sign the
+       * login nonce for this operation.
+       * </pre>
+       *
+       * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The bytes for twoFactorPublicKeyPem.
+       */
+      public com.google.protobuf.ByteString getTwoFactorPublicKeyPemBytes() {
+        java.lang.Object ref = twoFactorPublicKeyPem_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          twoFactorPublicKeyPem_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The public key associated with the 2FA key that will sign the
+       * login nonce for this operation.
+       * </pre>
+       *
+       * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The twoFactorPublicKeyPem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTwoFactorPublicKeyPem(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        twoFactorPublicKeyPem_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The public key associated with the 2FA key that will sign the
+       * login nonce for this operation.
+       * </pre>
+       *
+       * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTwoFactorPublicKeyPem() {
+        twoFactorPublicKeyPem_ = getDefaultInstance().getTwoFactorPublicKeyPem();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The public key associated with the 2FA key that will sign the
+       * login nonce for this operation.
+       * </pre>
+       *
+       * <code>string two_factor_public_key_pem = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The bytes for twoFactorPublicKeyPem to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTwoFactorPublicKeyPemBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        twoFactorPublicKeyPem_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+    private static final com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust();
+    }
+
+    public static com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpgradeKeyTrust> PARSER =
+        new com.google.protobuf.AbstractParser<UpgradeKeyTrust>() {
+          @java.lang.Override
+          public UpgradeKeyTrust parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UpgradeKeyTrust> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpgradeKeyTrust> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int approvalParametersCase_ = 0;
 
@@ -8601,6 +9471,7 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
     ADD_QUORUM_MEMBER(12),
     REMOVE_QUORUM_MEMBER(13),
     REFRESH_SINGLE_TENANT_HSM_INSTANCE(17),
+    UPGRADE_KEY_TRUST(18),
     OPERATION_NOT_SET(0);
     private final int value;
 
@@ -8634,6 +9505,8 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
           return REMOVE_QUORUM_MEMBER;
         case 17:
           return REFRESH_SINGLE_TENANT_HSM_INSTANCE;
+        case 18:
+          return UPGRADE_KEY_TRUST;
         case 0:
           return OPERATION_NOT_SET;
         default:
@@ -9886,6 +10759,79 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
         .getDefaultInstance();
   }
 
+  public static final int UPGRADE_KEY_TRUST_FIELD_NUMBER = 18;
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   *
+   * @return Whether the upgradeKeyTrust field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpgradeKeyTrust() {
+    return operationCase_ == 18;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   *
+   * @return The upgradeKeyTrust.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+      getUpgradeKeyTrust() {
+    if (operationCase_ == 18) {
+      return (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) operation_;
+    }
+    return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder
+      getUpgradeKeyTrustOrBuilder() {
+    if (operationCase_ == 18) {
+      return (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) operation_;
+    }
+    return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -9976,6 +10922,10 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
           17,
           (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.RefreshSingleTenantHsmInstance)
               operation_);
+    }
+    if (operationCase_ == 18) {
+      output.writeMessage(
+          18, (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) operation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -10083,6 +11033,12 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
                       .RefreshSingleTenantHsmInstance)
                   operation_);
     }
+    if (operationCase_ == 18) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18,
+              (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust) operation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10164,6 +11120,9 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
       case 17:
         if (!getRefreshSingleTenantHsmInstance().equals(other.getRefreshSingleTenantHsmInstance()))
           return false;
+        break;
+      case 18:
+        if (!getUpgradeKeyTrust().equals(other.getUpgradeKeyTrust())) return false;
         break;
       case 0:
       default:
@@ -10249,6 +11208,10 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
       case 17:
         hash = (37 * hash) + REFRESH_SINGLE_TENANT_HSM_INSTANCE_FIELD_NUMBER;
         hash = (53 * hash) + getRefreshSingleTenantHsmInstance().hashCode();
+        break;
+      case 18:
+        hash = (37 * hash) + UPGRADE_KEY_TRUST_FIELD_NUMBER;
+        hash = (53 * hash) + getUpgradeKeyTrust().hashCode();
         break;
       case 0:
       default:
@@ -10459,6 +11422,9 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
       if (refreshSingleTenantHsmInstanceBuilder_ != null) {
         refreshSingleTenantHsmInstanceBuilder_.clear();
       }
+      if (upgradeKeyTrustBuilder_ != null) {
+        upgradeKeyTrustBuilder_.clear();
+      }
       approvalParametersCase_ = 0;
       approvalParameters_ = null;
       expirationCase_ = 0;
@@ -10568,6 +11534,9 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
       if (operationCase_ == 17 && refreshSingleTenantHsmInstanceBuilder_ != null) {
         result.operation_ = refreshSingleTenantHsmInstanceBuilder_.build();
       }
+      if (operationCase_ == 18 && upgradeKeyTrustBuilder_ != null) {
+        result.operation_ = upgradeKeyTrustBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -10671,6 +11640,11 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
         case REFRESH_SINGLE_TENANT_HSM_INSTANCE:
           {
             mergeRefreshSingleTenantHsmInstance(other.getRefreshSingleTenantHsmInstance());
+            break;
+          }
+        case UPGRADE_KEY_TRUST:
+          {
+            mergeUpgradeKeyTrust(other.getUpgradeKeyTrust());
             break;
           }
         case OPERATION_NOT_SET:
@@ -10825,6 +11799,13 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
                 operationCase_ = 17;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    internalGetUpgradeKeyTrustFieldBuilder().getBuilder(), extensionRegistry);
+                operationCase_ = 18;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -15300,6 +16281,286 @@ public final class SingleTenantHsmInstanceProposal extends com.google.protobuf.G
       operationCase_ = 17;
       onChanged();
       return refreshSingleTenantHsmInstanceBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust,
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder,
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder>
+        upgradeKeyTrustBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     *
+     * @return Whether the upgradeKeyTrust field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpgradeKeyTrust() {
+      return operationCase_ == 18;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     *
+     * @return The upgradeKeyTrust.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+        getUpgradeKeyTrust() {
+      if (upgradeKeyTrustBuilder_ == null) {
+        if (operationCase_ == 18) {
+          return (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+              operation_;
+        }
+        return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+            .getDefaultInstance();
+      } else {
+        if (operationCase_ == 18) {
+          return upgradeKeyTrustBuilder_.getMessage();
+        }
+        return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    public Builder setUpgradeKeyTrust(
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust value) {
+      if (upgradeKeyTrustBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        operation_ = value;
+        onChanged();
+      } else {
+        upgradeKeyTrustBuilder_.setMessage(value);
+      }
+      operationCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    public Builder setUpgradeKeyTrust(
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder
+            builderForValue) {
+      if (upgradeKeyTrustBuilder_ == null) {
+        operation_ = builderForValue.build();
+        onChanged();
+      } else {
+        upgradeKeyTrustBuilder_.setMessage(builderForValue.build());
+      }
+      operationCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    public Builder mergeUpgradeKeyTrust(
+        com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust value) {
+      if (upgradeKeyTrustBuilder_ == null) {
+        if (operationCase_ == 18
+            && operation_
+                != com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+                    .getDefaultInstance()) {
+          operation_ =
+              com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.newBuilder(
+                      (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+                          operation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          operation_ = value;
+        }
+        onChanged();
+      } else {
+        if (operationCase_ == 18) {
+          upgradeKeyTrustBuilder_.mergeFrom(value);
+        } else {
+          upgradeKeyTrustBuilder_.setMessage(value);
+        }
+      }
+      operationCase_ = 18;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    public Builder clearUpgradeKeyTrust() {
+      if (upgradeKeyTrustBuilder_ == null) {
+        if (operationCase_ == 18) {
+          operationCase_ = 0;
+          operation_ = null;
+          onChanged();
+        }
+      } else {
+        if (operationCase_ == 18) {
+          operationCase_ = 0;
+          operation_ = null;
+        }
+        upgradeKeyTrustBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder
+        getUpgradeKeyTrustBuilder() {
+      return internalGetUpgradeKeyTrustFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder
+        getUpgradeKeyTrustOrBuilder() {
+      if ((operationCase_ == 18) && (upgradeKeyTrustBuilder_ != null)) {
+        return upgradeKeyTrustBuilder_.getMessageOrBuilder();
+      } else {
+        if (operationCase_ == 18) {
+          return (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+              operation_;
+        }
+        return com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+     * The key must be in the
+     * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+     * this operation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust,
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder,
+            com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder>
+        internalGetUpgradeKeyTrustFieldBuilder() {
+      if (upgradeKeyTrustBuilder_ == null) {
+        if (!(operationCase_ == 18)) {
+          operation_ =
+              com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust
+                  .getDefaultInstance();
+        }
+        upgradeKeyTrustBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust,
+                com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust.Builder,
+                com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder>(
+                (com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust)
+                    operation_,
+                getParentForChildren(),
+                isClean());
+        operation_ = null;
+      }
+      operationCase_ = 18;
+      onChanged();
+      return upgradeKeyTrustBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.SingleTenantHsmInstanceProposal)

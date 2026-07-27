@@ -93,12 +93,12 @@ public final class DistributionProto extends com.google.protobuf.GeneratedFile {
           + "\005scale\030\003 \001(\001\032!\n"
           + "\017ExplicitBuckets\022\016\n"
           + "\006bounds\030\001 \003(\001B\017\n\r"
-          + "bucket_optionB\354\001\n"
+          + "bucket_optionB\351\001\n"
           + " com.google.api.servicecontrol.v1B\021DistributionProtoP"
           + "\001ZJcloud.google.com/go/servicecontrol/ap"
-          + "iv1/servicecontrolpb;servicecontrolpb\370\001\001"
-          + "\252\002\036Google.Cloud.ServiceControl.V1\312\002\036Goog"
-          + "le\\Cloud\\ServiceControl\\V1\352\002!Google::Cloud::ServiceControl::V1b\006proto3"
+          + "iv1/servicecontrolpb;servicecontrolpb\252\002\036"
+          + "Google.Cloud.ServiceControl.V1\312\002\036Google\\"
+          + "Cloud\\ServiceControl\\V1\352\002!Google::Cloud::ServiceControl::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

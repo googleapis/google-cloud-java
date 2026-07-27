@@ -380,6 +380,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>IAM_AUTH = 2;</code>
      */
     IAM_AUTH(2),
+    /**
+     *
+     *
+     * <pre>
+     * Token based authorization.
+     * </pre>
+     *
+     * <code>TOKEN_AUTH = 3;</code>
+     */
+    TOKEN_AUTH(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -426,6 +436,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public static final int IAM_AUTH_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Token based authorization.
+     * </pre>
+     *
+     * <code>TOKEN_AUTH = 3;</code>
+     */
+    public static final int TOKEN_AUTH_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -456,6 +477,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           return AUTH_DISABLED;
         case 2:
           return IAM_AUTH;
+        case 3:
+          return TOKEN_AUTH;
         default:
           return null;
       }
@@ -9020,7 +9043,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=655
+   *     google/cloud/memorystore/v1/memorystore.proto;l=744
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Override
@@ -9041,7 +9064,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=655
+   *     google/cloud/memorystore/v1/memorystore.proto;l=744
    * @return The ondemandMaintenance.
    */
   @java.lang.Override
@@ -9884,7 +9907,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=736
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=825
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Override
@@ -17223,7 +17246,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=655
+     *     google/cloud/memorystore/v1/memorystore.proto;l=744
      * @return Whether the ondemandMaintenance field is set.
      */
     @java.lang.Override
@@ -17244,7 +17267,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=655
+     *     google/cloud/memorystore/v1/memorystore.proto;l=744
      * @return The ondemandMaintenance.
      */
     @java.lang.Override
@@ -17265,7 +17288,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=655
+     *     google/cloud/memorystore/v1/memorystore.proto;l=744
      * @param value The ondemandMaintenance to set.
      * @return This builder for chaining.
      */
@@ -17290,7 +17313,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1/memorystore.proto;l=655
+     *     google/cloud/memorystore/v1/memorystore.proto;l=744
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19452,7 +19475,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=825
      * @return The allowFewerZonesDeployment.
      */
     @java.lang.Override
@@ -19473,7 +19496,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=825
      * @param value The allowFewerZonesDeployment to set.
      * @return This builder for chaining.
      */
@@ -19498,7 +19521,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-     *     See google/cloud/memorystore/v1/memorystore.proto;l=736
+     *     See google/cloud/memorystore/v1/memorystore.proto;l=825
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

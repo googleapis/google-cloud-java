@@ -31,7 +31,10 @@
 
 package com.google.auth.oauth2;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Interface for {@link GoogleCredentials} that return a quota project ID. */
+@NullMarked
 public interface QuotaProjectIdProvider {
   /**
    * @return the quota project ID used for quota and billing purposes

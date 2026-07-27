@@ -3270,7 +3270,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
      * @return The address.
      */
     @java.lang.Deprecated
@@ -3289,7 +3289,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
      * @return The bytes for address.
      */
     @java.lang.Deprecated
@@ -3596,7 +3596,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
      * @return The address.
      */
     @java.lang.Override
@@ -3626,7 +3626,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is deprecated.
-     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+     *     See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
      * @return The bytes for address.
      */
     @java.lang.Override
@@ -4514,7 +4514,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
        * @return The address.
        */
       @java.lang.Deprecated
@@ -4543,7 +4543,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
        * @return The bytes for address.
        */
       @java.lang.Deprecated
@@ -4572,7 +4572,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
        * @param value The address to set.
        * @return This builder for chaining.
        */
@@ -4600,7 +4600,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -4624,7 +4624,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Customer.address is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=96
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=97
        * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
@@ -5069,7 +5069,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
      * @return Whether the unlimitedRenewal field is set.
      */
     @java.lang.Deprecated
@@ -5089,7 +5089,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
      * @return The unlimitedRenewal.
      */
     @java.lang.Deprecated
@@ -6075,7 +6075,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
      * @return Whether the unlimitedRenewal field is set.
      */
     @java.lang.Override
@@ -6098,7 +6098,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+     *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
      * @return The unlimitedRenewal.
      */
     @java.lang.Override
@@ -7432,7 +7432,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
        * @return Whether the unlimitedRenewal field is set.
        */
       @java.lang.Deprecated
@@ -7454,7 +7454,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
        * @return The unlimitedRenewal.
        */
       @java.lang.Deprecated
@@ -7479,7 +7479,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
        * @param value The unlimitedRenewal to set.
        * @return This builder for chaining.
        */
@@ -7506,7 +7506,7 @@ public final class PrivateOffer extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.commerceproducer.v1beta.PrivateOffer.Term.unlimited_renewal is
-       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=245
+       *     deprecated. See google/cloud/commerceproducer/v1beta/private_offer.proto;l=246
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

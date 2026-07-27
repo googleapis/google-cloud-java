@@ -122,14 +122,13 @@ public final class ServiceControllerProto extends com.google.protobuf.GeneratedF
           + "ame}:report:\001*\032\200\001\312A\035servicecontrol.googl"
           + "eapis.com\322A]https://www.googleapis.com/a"
           + "uth/cloud-platform,https://www.googleapi"
-          + "s.com/auth/servicecontrolB\370\001\n com.google"
+          + "s.com/auth/servicecontrolB\356\001\n com.google"
           + ".api.servicecontrol.v1B\026ServiceControlle"
           + "rProtoP\001ZJcloud.google.com/go/servicecon"
           + "trol/apiv1/servicecontrolpb;servicecontr"
-          + "olpb\370\001\001\242\002\004GASC\252\002\036Google.Cloud.ServiceCon"
-          + "trol.V1\312\002\036Google\\Cloud\\ServiceControl\\V1"
-          + "\352\002!Google::Cloud::ServiceControl::V1b\006pr"
-          + "oto3"
+          + "olpb\252\002\036Google.Cloud.ServiceControl.V1\312\002\036"
+          + "Google\\Cloud\\ServiceControl\\V1\352\002!Google:"
+          + ":Cloud::ServiceControl::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

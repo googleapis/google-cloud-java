@@ -60,10 +60,11 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB\003\340A\010\022\022\n"
           + "\005title\030\002 \001(\tB\003\340A\003:{\352Ax\n"
           + "\'commerceproducer.googleapis.com/Service\022:projects/{project}/locations/{l"
-          + "ocation}/services/{service}*\010services2\007serviceB\267\001\n"
+          + "ocation}/services/{service}*\010services2\007serviceB\341\001\n"
           + "(com.google.cloud.commerceproducer.v1betaB\014ServiceProtoP\001ZTcloud.googl"
           + "e.com/go/commerceproducer/apiv1beta/commerceproducerpb;commerceproducerpb\252\002$Goog"
-          + "le.Cloud.CommerceProducer.V1Betab\006proto3"
+          + "le.Cloud.CommerceProducer.V1Beta\352\002\'Googl"
+          + "e::Cloud::CommerceProducer::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

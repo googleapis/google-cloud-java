@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetLabel</td>
- *      <td><p> API to retrieve a `Label` object.</td>
+ *      <td><p> Retrieves a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLabels</td>
- *      <td><p> API to retrieve a list of `Label` objects.</td>
+ *      <td><p> Lists `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -105,7 +105,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateLabel</td>
- *      <td><p> API to create a `Label` object.</td>
+ *      <td><p> Creates a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -124,7 +124,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateLabels</td>
- *      <td><p> API to batch create `Label` objects.</td>
+ *      <td><p> Creates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -140,7 +140,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateLabel</td>
- *      <td><p> API to update a `Label` object.</td>
+ *      <td><p> Updates a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -158,7 +158,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateLabels</td>
- *      <td><p> API to batch update `Label` objects.</td>
+ *      <td><p> Batch updates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -174,7 +174,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateLabels</td>
- *      <td><p> API to activate `Label` objects.</td>
+ *      <td><p> Activates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -193,7 +193,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateLabels</td>
- *      <td><p> API to deactivate `Label` objects.</td>
+ *      <td><p> Deactivates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -303,7 +303,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -331,7 +331,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -358,7 +358,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -386,7 +386,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -413,7 +413,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +472,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -507,7 +507,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -541,7 +541,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -582,7 +582,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -615,7 +615,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -645,7 +645,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -674,7 +674,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -702,7 +702,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -737,7 +737,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -769,7 +769,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -798,7 +798,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -828,7 +828,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -858,7 +858,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -887,7 +887,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -915,7 +915,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -950,7 +950,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -982,7 +982,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1011,7 +1011,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1041,7 +1041,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1075,7 +1075,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1105,7 +1105,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1134,7 +1134,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1164,7 +1164,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1199,7 +1199,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1231,7 +1231,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1261,7 +1261,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *

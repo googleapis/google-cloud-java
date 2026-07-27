@@ -60,7 +60,7 @@ public abstract class BigtableChannelPoolSettings {
 
   /** Load balancing strategy to use if environment variable is unset or invalid. */
   private static final LoadBalancingStrategy DEFAULT_LOAD_BALANCING_STRATEGY =
-      LoadBalancingStrategy.ROUND_ROBIN;
+      LoadBalancingStrategy.LEAST_IN_FLIGHT;
 
   /** Supported load-balancing strategies. */
   public enum LoadBalancingStrategy {

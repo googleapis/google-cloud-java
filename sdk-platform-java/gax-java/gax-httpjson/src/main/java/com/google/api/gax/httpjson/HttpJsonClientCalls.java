@@ -34,12 +34,14 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code HttpJsonClientCalls} creates a new {@code HttpJsonClientCall} from the given call context.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class HttpJsonClientCalls {
   private static final Logger LOGGER = Logger.getLogger(HttpJsonClientCalls.class.getName());
 

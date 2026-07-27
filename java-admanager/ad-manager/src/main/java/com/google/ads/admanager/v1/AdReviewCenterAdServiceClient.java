@@ -74,7 +74,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> SearchAdReviewCenterAds</td>
- *      <td><p> API to search for AdReviewCenterAds.</td>
+ *      <td><p> Searches for AdReviewCenterAds.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -94,7 +94,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchAllowAdReviewCenterAds</td>
- *      <td><p> API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
+ *      <td><p> Batch allows AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -114,7 +114,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchBlockAdReviewCenterAds</td>
- *      <td><p> API to batch block AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
+ *      <td><p> Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may succeed while others fail. Callers should check the failedRequests field in the response to determine which operations failed.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -240,7 +240,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -321,7 +321,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -360,7 +360,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -398,7 +398,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to search for AdReviewCenterAds.
+   * Searches for AdReviewCenterAds.
    *
    * <p>Sample code:
    *
@@ -443,7 +443,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -486,7 +486,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -527,7 +527,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -562,7 +562,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -601,7 +601,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch allow AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch allows AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -634,7 +634,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -677,7 +677,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -718,7 +718,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -753,7 +753,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *
@@ -792,7 +792,7 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch block AdReviewCenterAds. This method supports partial success. Some operations may
+   * Batch blocks AdReviewCenterAds. This method supports partial success. Some operations may
    * succeed while others fail. Callers should check the failedRequests field in the response to
    * determine which operations failed.
    *

@@ -66,7 +66,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetMobileDevice</td>
- *      <td><p> API to retrieve a `MobileDevice` object.</td>
+ *      <td><p> Retrieves a `MobileDevice` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -85,7 +85,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListMobileDevices</td>
- *      <td><p> API to retrieve a list of `MobileDevice` objects.</td>
+ *      <td><p> Lists `MobileDevice` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -199,7 +199,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -227,7 +227,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -254,7 +254,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -282,7 +282,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -310,7 +310,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -374,7 +374,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -410,7 +410,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -446,7 +446,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *

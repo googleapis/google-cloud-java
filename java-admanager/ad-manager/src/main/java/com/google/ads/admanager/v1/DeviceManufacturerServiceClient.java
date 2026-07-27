@@ -68,7 +68,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetDeviceManufacturer</td>
- *      <td><p> API to retrieve a `DeviceManufacturer` object.</td>
+ *      <td><p> Retrieves a `DeviceManufacturer` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +87,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListDeviceManufacturers</td>
- *      <td><p> API to retrieve a list of `DeviceManufacturer` objects.</td>
+ *      <td><p> Lists `DeviceManufacturer` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -203,7 +203,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -235,7 +235,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -264,7 +264,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -294,7 +294,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `DeviceManufacturer` object.
+   * Retrieves a `DeviceManufacturer` object.
    *
    * <p>Sample code:
    *
@@ -325,7 +325,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -360,7 +360,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -392,7 +392,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -430,7 +430,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +469,7 @@ public class DeviceManufacturerServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `DeviceManufacturer` objects.
+   * Lists `DeviceManufacturer` objects.
    *
    * <p>Sample code:
    *

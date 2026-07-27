@@ -40,12 +40,14 @@ import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implementation of LongRunningClient based on gRPC.
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class GrpcLongRunningClient implements LongRunningClient {
   private final OperationsStub operationsStub;
 

@@ -1911,7 +1911,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
    * Optional. Immutable. Indicates whether key portability is enabled for the
    * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
    * This can only be set at creation time. Key portability features are
-   * disabled by default and not yet available in GA.
+   * disabled by default.
    * </pre>
    *
    * <code>
@@ -3912,7 +3912,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
      * Optional. Immutable. Indicates whether key portability is enabled for the
      * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
      * This can only be set at creation time. Key portability features are
-     * disabled by default and not yet available in GA.
+     * disabled by default.
      * </pre>
      *
      * <code>
@@ -3933,7 +3933,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
      * Optional. Immutable. Indicates whether key portability is enabled for the
      * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
      * This can only be set at creation time. Key portability features are
-     * disabled by default and not yet available in GA.
+     * disabled by default.
      * </pre>
      *
      * <code>
@@ -3958,7 +3958,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
      * Optional. Immutable. Indicates whether key portability is enabled for the
      * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
      * This can only be set at creation time. Key portability features are
-     * disabled by default and not yet available in GA.
+     * disabled by default.
      * </pre>
      *
      * <code>

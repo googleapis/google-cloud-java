@@ -18,7 +18,9 @@ import com.google.api.generator.engine.lexicon.Keyword;
 import com.google.common.base.CaseFormat;
 import com.google.common.base.Strings;
 import java.util.stream.IntStream;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class JavaStyle {
   private static final String UNDERSCORE = "_";
 

@@ -92,4 +92,830 @@ public interface ContentOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of this `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusEnum.ContentStatus status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.ContentStatusEnum.ContentStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the contentStatusSource field is set.
+   */
+  boolean hasContentStatusSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for contentStatusSource.
+   */
+  int getContentStatusSourceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the content status was defined by the user, or by the
+   * source CMS from which the `Content` was ingested.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource content_status_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The contentStatusSource.
+   */
+  com.google.ads.admanager.v1.ContentStatusSourceEnum.ContentStatusSource getContentStatusSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hlsIngestStatus field is set.
+   */
+  boolean hasHlsIngestStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hlsIngestStatus.
+   */
+  int getHlsIngestStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the HLS media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have HLS media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus hls_ingest_status = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hlsIngestStatus.
+   */
+  com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getHlsIngestStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.DaiIngestError> getHlsIngestErrorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DaiIngestError getHlsIngestErrors(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getHlsIngestErrorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+      getHlsIngestErrorsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the HLS media. This attribute will be empty if the
+   * hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * HLS media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError hls_ingest_errors = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getHlsIngestErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastHlsIngestTime field is set.
+   */
+  boolean hasLastHlsIngestTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastHlsIngestTime.
+   */
+  com.google.protobuf.Timestamp getLastHlsIngestTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s HLS media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have HLS
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_hls_ingest_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastHlsIngestTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dashIngestStatus field is set.
+   */
+  boolean hasDashIngestStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for dashIngestStatus.
+   */
+  int getDashIngestStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current DAI ingest status of the DASH media for the
+   * `Content`. This attribute is unset if the `Content` is not eligible for
+   * dynamic ad insertion or if the `Content` does not have DASH media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus dash_ingest_status = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dashIngestStatus.
+   */
+  com.google.ads.admanager.v1.DaiIngestStatusEnum.DaiIngestStatus getDashIngestStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.DaiIngestError> getDashIngestErrorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DaiIngestError getDashIngestErrors(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getDashIngestErrorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.DaiIngestErrorOrBuilder>
+      getDashIngestErrorsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of any errors that occurred during the most recent
+   * DAI ingestion process of the DASH media. This attribute will be empty if
+   * the hlsIngestStatus is [DaiIngestStatus.SUCCESS][] or if the `Content` is
+   * not eligible for dynamic ad insertion or if the `Content` does not have
+   * DASH media.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.DaiIngestError dash_ingest_errors = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DaiIngestErrorOrBuilder getDashIngestErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastDashIngestTime field is set.
+   */
+  boolean hasLastDashIngestTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastDashIngestTime.
+   */
+  com.google.protobuf.Timestamp getLastDashIngestTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content`'s DASH media was last
+   * ingested for DAI. This attribute will be unset if the `Content` is not
+   * eligible for dynamic ad insertion or if the `Content` does not have DASH
+   * media.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp last_dash_ingest_time = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getLastDashIngestTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the importTime field is set.
+   */
+  boolean hasImportTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The importTime.
+   */
+  com.google.protobuf.Timestamp getImportTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was published.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp import_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getImportTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which this `Content` was last modified.
+   * The last modified date time will always be updated when a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle]
+   * association is changed, but will not always be updated when a
+   * [CmsMetadataValue][google.ads.admanager.v1.CmsMetadataValue]
+   * value is changed.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.CmsContent> getCmsSourcesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CmsContent getCmsSources(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getCmsSourcesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.CmsContentOrBuilder>
+      getCmsSourcesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the `Content` from the CMS it was ingested
+   * from.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CmsContent cms_sources = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CmsContentOrBuilder getCmsSourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the contentBundles.
+   */
+  java.util.List<java.lang.String> getContentBundlesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of contentBundles.
+   */
+  int getContentBundlesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The contentBundles at the given index.
+   */
+  java.lang.String getContentBundles(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the
+   * [ContentBundles][google.ads.admanager.v1.ContentBundle] of
+   * which this `Content` is a member.
+   * </pre>
+   *
+   * <code>
+   * repeated string content_bundles = 14 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the contentBundles at the given index.
+   */
+  com.google.protobuf.ByteString getContentBundlesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the cmsMetadataValues.
+   */
+  java.util.List<java.lang.String> getCmsMetadataValuesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of cmsMetadataValues.
+   */
+  int getCmsMetadataValuesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The cmsMetadataValues at the given index.
+   */
+  java.lang.String getCmsMetadataValues(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource names of the [CmsMetadataValues]
+   * [google.ads.admanager.v1.CmsMetadataValue] that
+   * are associated with this `Content`.
+   * </pre>
+   *
+   * <code>
+   * repeated string cms_metadata_values = 15 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the cmsMetadataValues at the given index.
+   */
+  com.google.protobuf.ByteString getCmsMetadataValuesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the duration field is set.
+   */
+  boolean hasDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The duration.
+   */
+  com.google.protobuf.Duration getDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The duration of the `Content`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration duration = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getDurationOrBuilder();
 }

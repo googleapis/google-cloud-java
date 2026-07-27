@@ -134,4 +134,48 @@ public interface ListIcebergCatalogsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filter expression.
+   * The only parameter currently supported is filtering based on the
+   * `IcebergCatalog.catalog_type` field.
+   *
+   * Examples:
+   * * `catalog_type = CATALOG_TYPE_BIGLAKE`
+   * * `catalog_type != CATALOG_TYPE_GCS_BUCKET`
+   * * `catalog_type = CATALOG_TYPE_BIGLAKE OR catalog_type =
+   * CATALOG_TYPE_GCS_BUCKET`
+   * * `NOT catalog_type = CATALOG_TYPE_GCS_BUCKET`
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filter expression.
+   * The only parameter currently supported is filtering based on the
+   * `IcebergCatalog.catalog_type` field.
+   *
+   * Examples:
+   * * `catalog_type = CATALOG_TYPE_BIGLAKE`
+   * * `catalog_type != CATALOG_TYPE_GCS_BUCKET`
+   * * `catalog_type = CATALOG_TYPE_BIGLAKE OR catalog_type =
+   * CATALOG_TYPE_GCS_BUCKET`
+   * * `NOT catalog_type = CATALOG_TYPE_GCS_BUCKET`
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

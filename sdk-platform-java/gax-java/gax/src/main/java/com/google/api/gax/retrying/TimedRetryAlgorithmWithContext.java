@@ -31,6 +31,7 @@
 package com.google.api.gax.retrying;
 
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A timed retry algorithm is responsible for the following operations, based on the previous
@@ -49,6 +50,7 @@ import java.util.concurrent.CancellationException;
  *
  * <p>Implementations of this interface must be be thread-save.
  */
+@NullMarked
 public interface TimedRetryAlgorithmWithContext extends TimedRetryAlgorithm {
 
   /**

@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetCmsMetadataKey</td>
- *      <td><p> API to retrieve a `CmsMetadataKey` object.</td>
+ *      <td><p> Retrieves a `CmsMetadataKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListCmsMetadataKeys</td>
- *      <td><p> API to retrieve a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Lists `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -106,7 +106,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCmsMetadataKeys</td>
- *      <td><p> API to activate a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Activates a list of `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -125,7 +125,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateCmsMetadataKeys</td>
- *      <td><p> API to deactivate a list of `CmsMetadataKey` objects.</td>
+ *      <td><p> Deactivates a list of `CmsMetadataKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -238,7 +238,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -269,7 +269,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -297,7 +297,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -326,7 +326,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataKey` object.
+   * Retrieves a `CmsMetadataKey` object.
    *
    * <p>Sample code:
    *
@@ -355,7 +355,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -389,7 +389,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -421,7 +421,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -459,7 +459,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -496,7 +496,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataKey` objects.
+   * Lists `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -540,7 +540,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -577,7 +577,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -614,7 +614,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -646,7 +646,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataKey` objects.
+   * Activates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -678,7 +678,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -715,7 +715,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -752,7 +752,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *
@@ -784,7 +784,7 @@ public class CmsMetadataKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataKey` objects.
+   * Deactivates a list of `CmsMetadataKey` objects.
    *
    * <p>Sample code:
    *

@@ -34,11 +34,8 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.google.common.collect.Sets.SetView;
 import com.google.common.collect.Streams;
-import com.google.common.io.CharStreams;
-import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +46,6 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.commons.codec.Charsets;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.artifact.DefaultArtifact;
@@ -111,14 +107,42 @@ public class ReleaseNoteGeneration {
     ReleaseNoteGeneration generation = new ReleaseNoteGeneration();
     String report = generation.generateReport(bom, googleCloudJavaVersion);
 
-    Files.asCharSink(new File(RELEASE_NOTE_FILE_NAME), Charsets.UTF_8).write(report);
+    com.google.common.io.Files.asCharSink(new File(RELEASE_NOTE_FILE_NAME), StandardCharsets.UTF_8)
+        .write(report);
     System.out.println("Wrote " + RELEASE_NOTE_FILE_NAME);
   }
 
   @VisibleForTesting final StringBuilder report = new StringBuilder();
+  private boolean monorepoReleaseExists = true;
 
   @VisibleForTesting
   ReleaseNoteGeneration() {}
+
+  private static boolean releaseExists(String repository, String tag) {
+    Process process = null;
+    try {
+      ProcessBuilder builder =
+          new ProcessBuilder(
+              "gh", "release", "--repo", GOOGLEAPIS_ORG + "/" + repository, "view", tag);
+      builder.redirectOutput(ProcessBuilder.Redirect.DISCARD);
+      builder.redirectError(ProcessBuilder.Redirect.DISCARD);
+      process = builder.start();
+      boolean finished = process.waitFor(1, TimeUnit.MINUTES);
+      if (!finished) {
+        return false;
+      }
+      return process.exitValue() == 0;
+    } catch (IOException e) {
+      return false;
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      return false;
+    } finally {
+      if (process != null && process.isAlive()) {
+        process.destroyForcibly();
+      }
+    }
+  }
 
   @VisibleForTesting
   String generateReport(Bom bom, String googleCloudJavaVersion)
@@ -126,6 +150,7 @@ public class ReleaseNoteGeneration {
           ArtifactDescriptorException,
           IOException,
           InterruptedException {
+    monorepoReleaseExists = releaseExists("google-cloud-java", "v" + googleCloudJavaVersion);
     Bom previousBom = previousBom(bom);
 
     DefaultArtifact bomArtifact = new DefaultArtifact(bom.getCoordinates());
@@ -425,10 +450,15 @@ public class ReleaseNoteGeneration {
         "https://github.com/googleapis/java-%s/releases/tag/v%s", libraryName, version);
   }
 
-  private static String releaseUrlForMonorepo(String libraryName, String version) {
-    // libraryName is unused for the monorepo release note as of Dec 2022
-    return String.format(
-        "https://github.com/googleapis/google-cloud-java/releases/tag/v%s", version);
+  private String releaseUrlForMonorepo(String libraryName, String version) {
+    if (monorepoReleaseExists) {
+      return String.format(
+          "https://github.com/googleapis/google-cloud-java/releases/tag/v%s", version);
+    } else {
+      return String.format(
+          "https://github.com/googleapis/google-cloud-java/releases/tag/v%s-%s",
+          version, libraryName);
+    }
   }
 
   /**
@@ -615,16 +645,41 @@ public class ReleaseNoteGeneration {
       throws IOException, InterruptedException {
     // gh release --repo googleapis/java-storage view v2.16.0
 
-    ProcessBuilder builder =
-        new ProcessBuilder("gh", "release", "--repo", owner + "/" + repository, "view", tag);
-    builder.redirectErrorStream(true);
-    Process process = builder.start();
-    String output =
-        CharStreams.toString(
-            new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
-    boolean finished = process.waitFor(1, TimeUnit.MINUTES);
-    Verify.verify(finished, "The process timed out");
-    Verify.verify(0 == process.exitValue(), "The command failed: %s", output);
-    return output;
+    File tempFile = java.nio.file.Files.createTempFile("gh-release-notes", ".txt").toFile();
+    tempFile.deleteOnExit();
+
+    Process process = null;
+    try {
+      ProcessBuilder builder =
+          new ProcessBuilder("gh", "release", "--repo", owner + "/" + repository, "view", tag);
+      builder.redirectErrorStream(true);
+      builder.redirectOutput(ProcessBuilder.Redirect.to(tempFile));
+
+      process = builder.start();
+      boolean finished = process.waitFor(1, TimeUnit.MINUTES);
+      if (!finished) {
+        throw new IOException("The process timed out");
+      }
+
+      String output =
+          new String(java.nio.file.Files.readAllBytes(tempFile.toPath()), StandardCharsets.UTF_8);
+
+      if (process.exitValue() != 0) {
+        String trimmedOutput = output.trim();
+        String lowerOutput = trimmedOutput.toLowerCase();
+        if (lowerOutput.contains("not found") || lowerOutput.contains("404")) {
+          System.err.println(
+              "Warning: The command failed (release likely not found): " + trimmedOutput);
+          return "";
+        }
+        throw new IOException("The command failed: " + trimmedOutput);
+      }
+      return output;
+    } finally {
+      if (process != null && process.isAlive()) {
+        process.destroyForcibly();
+      }
+      tempFile.delete();
+    }
   }
 }

@@ -252,6 +252,26 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).importCryptoKeyVersionSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to importTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .importTrustedKeyWrappedCryptoKeyVersionSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to exportTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .exportTrustedKeyWrappedCryptoKeyVersionSettings();
+  }
+
   /** Returns the object with the settings used for calls to createImportJob. */
   public UnaryCallSettings<CreateImportJobRequest, ImportJob> createImportJobSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).createImportJobSettings();
@@ -594,6 +614,27 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().importCryptoKeyVersionSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * importTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().importTrustedKeyWrappedCryptoKeyVersionSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * exportTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().exportTrustedKeyWrappedCryptoKeyVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to createImportJob. */

@@ -69,7 +69,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetCustomTargetingKey</td>
- *      <td><p> API to retrieve a `CustomTargetingKey` object.</td>
+ *      <td><p> Retrieves a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListCustomTargetingKeys</td>
- *      <td><p> API to retrieve a list of `CustomTargetingKey` objects.</td>
+ *      <td><p> Lists `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -108,7 +108,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCustomTargetingKey</td>
- *      <td><p> API to create a `CustomTargetingKey` object.</td>
+ *      <td><p> Creates a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -127,7 +127,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateCustomTargetingKeys</td>
- *      <td><p> API to batch create `CustomTargetingKey` objects.</td>
+ *      <td><p> Creates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -143,7 +143,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCustomTargetingKey</td>
- *      <td><p> API to update a `CustomTargetingKey` object.</td>
+ *      <td><p> Updates a `CustomTargetingKey` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -161,7 +161,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateCustomTargetingKeys</td>
- *      <td><p> API to batch update `CustomTargetingKey` objects.</td>
+ *      <td><p> Batch updates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -177,7 +177,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCustomTargetingKeys</td>
- *      <td><p> API to batch activate `CustomTargetingKey` objects.</td>
+ *      <td><p> Batch activates `CustomTargetingKey` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -311,7 +311,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -373,7 +373,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -403,7 +403,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CustomTargetingKey` object.
+   * Retrieves a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -434,7 +434,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +469,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -501,7 +501,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -539,7 +539,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -578,7 +578,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CustomTargetingKey` objects.
+   * Lists `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -622,7 +622,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -658,7 +658,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -694,7 +694,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -726,7 +726,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `CustomTargetingKey` object.
+   * Creates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -757,7 +757,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -795,7 +795,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -833,7 +833,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -865,7 +865,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `CustomTargetingKey` objects.
+   * Creates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -899,7 +899,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -936,7 +936,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -968,7 +968,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `CustomTargetingKey` object.
+   * Updates a `CustomTargetingKey` object.
    *
    * <p>Sample code:
    *
@@ -999,7 +999,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1037,7 +1037,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1075,7 +1075,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1107,7 +1107,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `CustomTargetingKey` objects.
+   * Batch updates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1141,7 +1141,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1177,7 +1177,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1213,7 +1213,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *
@@ -1245,7 +1245,7 @@ public class CustomTargetingKeyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `CustomTargetingKey` objects.
+   * Batch activates `CustomTargetingKey` objects.
    *
    * <p>Sample code:
    *

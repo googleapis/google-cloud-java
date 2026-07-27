@@ -588,7 +588,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      *
-     * Corresponds to "Advertiser domain" in the Ad Manager UI.
+     * Corresponds to "Landing page domain" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`
      *
@@ -3762,7 +3762,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Creative or creative set value" in the Ad Manager UI
      * (when showing API fields).
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REAL_TIME_VIDEO`
      *
      * Data format: `ENUM`
      * </pre>
@@ -3781,7 +3782,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Creative or creative set" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REAL_TIME_VIDEO`
      *
      * Data format: `STRING`
      * </pre>
@@ -4427,6 +4429,24 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>DEAL_NAME = 437;</code>
      */
     DEAL_NAME(437),
+    /**
+     *
+     *
+     * <pre>
+     * The declared domain of the advertiser.
+     *
+     *
+     *
+     * Corresponds to "Declared advertiser domain" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>DECLARED_ADVERTISER_DOMAIN = 796;</code>
+     */
+    DECLARED_ADVERTISER_DOMAIN(796),
     /**
      *
      *
@@ -5635,7 +5655,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `FUTURE_SELL_THROUGH`
      *
      * Data format: `IDENTIFIER`
      * </pre>
@@ -5653,7 +5674,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `FUTURE_SELL_THROUGH`
      *
      * Data format: `STRING`
      * </pre>
@@ -5671,7 +5693,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `FUTURE_SELL_THROUGH`
+     * Compatible with the following report types:
      *
      * Data format: `STRING_LIST`
      * </pre>
@@ -9954,7 +9976,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The duration of the ad break in seconds for a live stream event.
+     * The expected duration of the ad break in seconds for a live stream event.
      *
      *
      *
@@ -13479,7 +13501,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      *
-     * Corresponds to "Advertiser domain" in the Ad Manager UI.
+     * Corresponds to "Landing page domain" in the Ad Manager UI.
      *
      * Compatible with the following report types: `HISTORICAL`
      *
@@ -16819,7 +16841,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * Corresponds to "Creative or creative set value" in the Ad Manager UI
      * (when showing API fields).
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REAL_TIME_VIDEO`
      *
      * Data format: `ENUM`
      * </pre>
@@ -16839,7 +16862,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Creative or creative set" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `REAL_TIME_VIDEO`
      *
      * Data format: `STRING`
      * </pre>
@@ -17519,6 +17543,25 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      * <code>DEAL_NAME = 437;</code>
      */
     public static final int DEAL_NAME_VALUE = 437;
+
+    /**
+     *
+     *
+     * <pre>
+     * The declared domain of the advertiser.
+     *
+     *
+     *
+     * Corresponds to "Declared advertiser domain" in the Ad Manager UI.
+     *
+     * Compatible with the following report types: `HISTORICAL`
+     *
+     * Data format: `STRING`
+     * </pre>
+     *
+     * <code>DECLARED_ADVERTISER_DOMAIN = 796;</code>
+     */
+    public static final int DECLARED_ADVERTISER_DOMAIN_VALUE = 796;
 
     /**
      *
@@ -18791,7 +18834,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values ID" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `FUTURE_SELL_THROUGH`
      *
      * Data format: `IDENTIFIER`
      * </pre>
@@ -18810,7 +18854,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `HISTORICAL`
+     * Compatible with the following report types: `HISTORICAL`,
+     * `FUTURE_SELL_THROUGH`
      *
      * Data format: `STRING`
      * </pre>
@@ -18829,7 +18874,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      * Corresponds to "Key-values" in the Ad Manager UI.
      *
-     * Compatible with the following report types: `FUTURE_SELL_THROUGH`
+     * Compatible with the following report types:
      *
      * Data format: `STRING_LIST`
      * </pre>
@@ -23338,7 +23383,7 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The duration of the ad break in seconds for a live stream event.
+     * The expected duration of the ad break in seconds for a live stream event.
      *
      *
      *
@@ -27455,6 +27500,8 @@ public final class ReportDefinition extends com.google.protobuf.GeneratedMessage
           return DEAL_ID_ALL;
         case 437:
           return DEAL_NAME;
+        case 796:
+          return DECLARED_ADVERTISER_DOMAIN;
         case 309:
           return DELIVERED_SECURE_SIGNAL_ID;
         case 310:

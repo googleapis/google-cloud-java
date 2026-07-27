@@ -54,7 +54,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class DefaultValueComposer {
   private static final TypeNode OPERATION_TYPE =
       TypeNode.withReference(ConcreteReference.withClazz(Operation.class));
@@ -120,7 +123,7 @@ public class DefaultValueComposer {
       Map<String, ResourceName> resourceNames,
       Map<String, Message> messageTypes,
       Map<String, String> valuePatterns,
-      HttpBindings bindings) {
+      @Nullable HttpBindings bindings) {
     if (field.isRepeated()) {
       ConcreteReference.Builder refBuilder =
           ConcreteReference.builder().setClazz(field.isMap() ? HashMap.class : ArrayList.class);

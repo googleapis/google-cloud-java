@@ -70,7 +70,7 @@ package:
 	cp target/google-cloud-bigquery-jdbc-*-all.jar $(PACKAGE_DESTINATION)/
 
 build-it-standalone:
-	mvn -Dmaven.test.skip=true package -f pom-it.xml
+	mvn -Dmaven.test.skip=true package -f pom-it.xml -Dbigquery-jdbc.version=$(JDBC_DRIVER_VERSION)
 
 run-it-standalone:
 	java -cp $(JDBC_JAR):target-it/* org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests

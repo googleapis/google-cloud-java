@@ -925,6 +925,59 @@ public interface SingleTenantHsmInstanceProposalOrBuilder
   com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.RefreshSingleTenantHsmInstanceOrBuilder
       getRefreshSingleTenantHsmInstanceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   *
+   * @return Whether the upgradeKeyTrust field is set.
+   */
+  boolean hasUpgradeKeyTrust();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   *
+   * @return The upgradeKeyTrust.
+   */
+  com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust getUpgradeKeyTrust();
+
+  /**
+   *
+   *
+   * <pre>
+   * Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key.
+   * The key must be in the
+   * [ACTIVE][CryptoKeyVersion.CryptoKeyVersionState.ACTIVE] state to perform
+   * this operation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrust upgrade_key_trust = 18;
+   * </code>
+   */
+  com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.UpgradeKeyTrustOrBuilder
+      getUpgradeKeyTrustOrBuilder();
+
   com.google.cloud.kms.v1.SingleTenantHsmInstanceProposal.ApprovalParametersCase
       getApprovalParametersCase();
 

@@ -127,6 +127,20 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> AnswerQuery</td>
+ *      <td><p> Answers a query using grounded generation.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> answerQuery(AnswerQueryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> answerQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -545,6 +559,58 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
   public final UnaryCallable<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsCallable() {
     return stub.batchGetDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answers a query using grounded generation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *   AnswerQueryResponse response = developerKnowledgeClient.answerQuery(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AnswerQueryResponse answerQuery(AnswerQueryRequest request) {
+    return answerQueryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Answers a query using grounded generation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
+   *   AnswerQueryRequest request =
+   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *   ApiFuture<AnswerQueryResponse> future =
+   *       developerKnowledgeClient.answerQueryCallable().futureCall(request);
+   *   // Do something.
+   *   AnswerQueryResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
+    return stub.answerQueryCallable();
   }
 
   @Override

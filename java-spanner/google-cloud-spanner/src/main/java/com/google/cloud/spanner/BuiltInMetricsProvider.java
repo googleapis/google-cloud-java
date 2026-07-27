@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner;
 
-import static com.google.cloud.opentelemetry.detection.GCPPlatformDetector.SupportedPlatform.GOOGLE_KUBERNETES_ENGINE;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_HASH_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_NAME_KEY;
 import static com.google.cloud.spanner.BuiltInMetricsConstant.CLIENT_UID_KEY;
@@ -29,9 +28,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
-import com.google.cloud.opentelemetry.detection.AttributeKeys;
-import com.google.cloud.opentelemetry.detection.DetectedPlatform;
-import com.google.cloud.opentelemetry.detection.GCPPlatformDetector;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.hash.HashFunction;
@@ -39,8 +35,10 @@ import com.google.common.hash.Hashing;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
@@ -264,12 +262,14 @@ final class BuiltInMetricsProvider {
     if (location == null) {
       location = default_location;
       if (quickCheckIsRunningOnGcp()) {
-        GCPPlatformDetector detector = GCPPlatformDetector.DEFAULT_INSTANCE;
-        DetectedPlatform detectedPlatform = detector.detectPlatform();
-        // All platform except GKE uses "cloud_region" for region attribute.
-        String region = detectedPlatform.getAttributes().get("cloud_region");
-        if (detectedPlatform.getSupportedPlatform() == GOOGLE_KUBERNETES_ENGINE) {
-          region = detectedPlatform.getAttributes().get(AttributeKeys.GKE_CLUSTER_LOCATION);
+        Attributes detectedResourceAttributes = new GCPResourceProvider().getAttributes();
+        // All platform except GKE uses "cloud.region" for region attribute.
+        // GKE could either use "cloud.region" or "cloud.availability_zone" for region attribute.
+        String region = detectedResourceAttributes.get(AttributeKey.stringKey("cloud.region"));
+        String gkeZonalClusterLocation =
+            detectedResourceAttributes.get(AttributeKey.stringKey("cloud.availability_zone"));
+        if (region == null && gkeZonalClusterLocation != null) {
+          region = gkeZonalClusterLocation;
         }
         location = region == null ? location : region;
       }

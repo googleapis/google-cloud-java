@@ -18,13 +18,28 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.sql.Array;
+import java.sql.Date;
+import java.sql.ParameterMetaData;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -137,5 +152,121 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(mockArray, preparedStatement.parameterHandler.getParameter(1));
     assertEquals(Array.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(StandardSQLTypeName.ARRAY, preparedStatement.parameterHandler.getSqlType(1));
+  }
+
+  @Test
+  public void testGetParameterMetaData() throws Exception {
+    preparedStatement.setString(1, "test");
+    preparedStatement.setInt(2, 42);
+
+    ParameterMetaData metaData = preparedStatement.getParameterMetaData();
+    assertEquals(5, metaData.getParameterCount());
+    assertEquals(Types.NVARCHAR, metaData.getParameterType(1));
+    assertEquals("STRING", metaData.getParameterTypeName(1));
+    assertEquals(String.class.getName(), metaData.getParameterClassName(1));
+
+    assertEquals(Types.BIGINT, metaData.getParameterType(2));
+    assertEquals("INT64", metaData.getParameterTypeName(2));
+    assertEquals(Long.class.getName(), metaData.getParameterClassName(2));
+
+    assertEquals(ParameterMetaData.parameterNullable, metaData.isNullable(1));
+    assertEquals(ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
+
+    assertThrows(SQLException.class, () -> metaData.getParameterType(0));
+    assertThrows(SQLException.class, () -> metaData.getParameterType(6));
+  }
+
+  @Test
+  public void testGetParameterModeWithInOutParameters() throws Exception {
+    preparedStatement.parameterHandler.setParameter(
+        1, "inParam", String.class, BigQueryParameterHandler.BigQueryStatementParameterType.IN, 0);
+    preparedStatement.parameterHandler.setParameter(
+        2, null, Integer.class, BigQueryParameterHandler.BigQueryStatementParameterType.OUT, 0);
+    preparedStatement.parameterHandler.setParameter(
+        3,
+        "inoutParam",
+        String.class,
+        BigQueryParameterHandler.BigQueryStatementParameterType.INOUT,
+        0);
+
+    ParameterMetaData metaData = preparedStatement.getParameterMetaData();
+    assertEquals(ParameterMetaData.parameterModeIn, metaData.getParameterMode(1));
+    assertEquals(ParameterMetaData.parameterModeOut, metaData.getParameterMode(2));
+    assertEquals(ParameterMetaData.parameterModeInOut, metaData.getParameterMode(3));
+  }
+
+  @Test
+  public void testSetDateWithCalendar() throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    cal.setTimeInMillis(1000000L);
+    long originalMillis = cal.getTimeInMillis();
+    Date date = new Date(1700000000000L); // 2023-11-14
+
+    preparedStatement.setDate(1, date, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(originalMillis, cal.getTimeInMillis());
+  }
+
+  @Test
+  public void testSetTimeWithCalendar() throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    cal.setTimeInMillis(1000000L);
+    long originalMillis = cal.getTimeInMillis();
+    Time time = new Time(43200000L); // 12:00:00
+
+    preparedStatement.setTime(1, time, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(originalMillis, cal.getTimeInMillis());
+  }
+
+  @Test
+  public void testSetTimestampWithCalendar() throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    cal.setTimeInMillis(1000000L);
+    long originalMillis = cal.getTimeInMillis();
+    Timestamp ts = new Timestamp(1700000000000L);
+
+    preparedStatement.setTimestamp(1, ts, cal);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(originalMillis, cal.getTimeInMillis());
+  }
+
+  @Test
+  public void testGetMetaData() throws Exception {
+    // Before execution/insertSchema initialization, getMetaData() returns null
+    assertNull(preparedStatement.getMetaData());
+
+    // When insertSchema is present, getMetaData() returns ResultSetMetaData
+    preparedStatement.insertSchema =
+        Schema.of(
+            Field.of("col1", StandardSQLTypeName.STRING),
+            Field.of("col2", StandardSQLTypeName.INT64));
+
+    ResultSetMetaData metaData = preparedStatement.getMetaData();
+    assertNotNull(metaData);
+    assertEquals(2, metaData.getColumnCount());
+    assertEquals("col1", metaData.getColumnName(1));
+    assertEquals(Types.NVARCHAR, metaData.getColumnType(1));
+    assertEquals("col2", metaData.getColumnName(2));
+    assertEquals(Types.BIGINT, metaData.getColumnType(2));
+  }
+
+  @Test
+  public void testSetObjectWithJavaTime() throws Exception {
+    LocalDate localDate = LocalDate.of(2025, 12, 3);
+    preparedStatement.setObject(1, localDate);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+
+    LocalTime localTime = LocalTime.of(12, 30, 0);
+    preparedStatement.setObject(2, localTime);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(2));
+
+    LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
+    preparedStatement.setObject(3, localDateTime);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+
+    Instant instant = Instant.now();
+    preparedStatement.setObject(4, instant);
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(4));
   }
 }

@@ -82,8 +82,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 import javax.net.ssl.KeyManagerFactory;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * InstantiatingGrpcChannelProvider is a TransportChannelProvider which constructs a gRPC
@@ -97,6 +98,7 @@ import javax.net.ssl.KeyManagerFactory;
  * <p>The client lib header and generator header values are used to form a value that goes into the
  * http header of requests to the service.
  */
+@NullMarked
 public final class InstantiatingGrpcChannelProvider implements TransportChannelProvider {
 
   private static String systemProductName;
@@ -129,7 +131,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   private final int processorCount;
   private final Executor executor;
-  @Nullable private final ScheduledExecutorService backgroundExecutor;
+  private final @Nullable ScheduledExecutorService backgroundExecutor;
   private final HeaderProvider headerProvider;
   private final boolean useS2A;
   private final String endpoint;
@@ -138,33 +140,33 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   // during initial rollout for DirectPath. This provider will be removed once the DirectPath
   // environment is not used.
   private final EnvironmentProvider envProvider;
-  @Nullable private final GrpcInterceptorProvider interceptorProvider;
-  @Nullable private final Integer maxInboundMessageSize;
-  @Nullable private final Integer maxInboundMetadataSize;
-  @Nullable private final java.time.Duration keepAliveTime;
-  @Nullable private final java.time.Duration keepAliveTimeout;
-  @Nullable private final Boolean keepAliveWithoutCalls;
+  private final @Nullable GrpcInterceptorProvider interceptorProvider;
+  private final @Nullable Integer maxInboundMessageSize;
+  private final @Nullable Integer maxInboundMetadataSize;
+  private final java.time.@Nullable Duration keepAliveTime;
+  private final java.time.@Nullable Duration keepAliveTimeout;
+  private final @Nullable Boolean keepAliveWithoutCalls;
   private final ChannelPoolSettings channelPoolSettings;
-  @Nullable private final Credentials credentials;
-  @Nullable private final CallCredentials altsCallCredentials;
-  @Nullable private final CallCredentials mtlsS2ACallCredentials;
-  @Nullable private final ChannelPrimer channelPrimer;
-  @Nullable private final Boolean attemptDirectPath;
-  @Nullable private final Boolean attemptDirectPathXds;
-  @Nullable private final Boolean allowNonDefaultServiceAccount;
+  private final @Nullable Credentials credentials;
+  private final @Nullable CallCredentials altsCallCredentials;
+  private final @Nullable CallCredentials mtlsS2ACallCredentials;
+  private final @Nullable ChannelPrimer channelPrimer;
+  private final @Nullable Boolean attemptDirectPath;
+  private final @Nullable Boolean attemptDirectPathXds;
+  private final @Nullable Boolean allowNonDefaultServiceAccount;
   @VisibleForTesting final ImmutableMap<String, ?> directPathServiceConfig;
-  @Nullable private final MtlsProvider mtlsProvider;
+  private final @Nullable MtlsProvider mtlsProvider;
   private final CertificateBasedAccess certificateBasedAccess;
-  @Nullable private final SecureSessionAgent s2aConfigProvider;
+  private final @Nullable SecureSessionAgent s2aConfigProvider;
   private final List<HardBoundTokenTypes> allowedHardBoundTokenTypes;
   @VisibleForTesting final Map<String, String> headersWithDuplicatesRemoved = new HashMap<>();
 
-  @Nullable
-  private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
+  private final @Nullable ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
+      channelConfigurator;
 
   // This is initialized once for the lifetime of the application. This enables re-using
   // channels to S2A.
-  private static volatile ChannelCredentials s2aChannelCredentials;
+  private static volatile @Nullable ChannelCredentials s2aChannelCredentials;
 
   /**
    * Resets the s2aChannelCredentials of the {@link InstantiatingGrpcChannelProvider} class for
@@ -539,6 +541,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return endpoint.contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
   }
 
+  @Nullable
   @VisibleForTesting
   ChannelCredentials createMtlsChannelCredentials() throws IOException, GeneralSecurityException {
     if (mtlsProvider == null) {
@@ -565,7 +568,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    * @param s2aChannelCredentials the credentials to be used when connecting to the S2A.
    * @return {@code ChannelCredentials} instance.
    */
-  ChannelCredentials buildS2AChannelCredentials(
+  @Nullable ChannelCredentials buildS2AChannelCredentials(
       String s2aAddress, ChannelCredentials s2aChannelCredentials) {
     try {
       // Load the S2A API.
@@ -606,6 +609,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    * @return {@link ChannelCredentials} to use to create an mtls connection between client and S2A
    * @throws IOException on error
    */
+  @Nullable
   @VisibleForTesting
   ChannelCredentials createMtlsToS2AChannelCredentials(
       File trustBundle, File privateKey, File certChain) throws IOException {
@@ -626,7 +630,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    * @return {@link ChannelCredentials} to use to create a plaintext connection between client and
    *     S2A
    */
-  ChannelCredentials createPlaintextToS2AChannelCredentials(String plaintextAddress) {
+  @Nullable ChannelCredentials createPlaintextToS2AChannelCredentials(String plaintextAddress) {
     if (Strings.isNullOrEmpty(plaintextAddress)) {
       return null;
     }
@@ -948,24 +952,24 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     private boolean useS2A;
     private EnvironmentProvider envProvider;
     private SecureSessionAgent s2aConfigProvider = SecureSessionAgent.create();
-    @Nullable private MtlsProvider mtlsProvider;
+    private @Nullable MtlsProvider mtlsProvider;
     private CertificateBasedAccess certificateBasedAccess;
-    @Nullable private GrpcInterceptorProvider interceptorProvider;
-    @Nullable private Integer maxInboundMessageSize;
-    @Nullable private Integer maxInboundMetadataSize;
-    @Nullable private java.time.Duration keepAliveTime;
-    @Nullable private java.time.Duration keepAliveTimeout;
-    @Nullable private Boolean keepAliveWithoutCalls;
-    @Nullable private ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
-    @Nullable private Credentials credentials;
-    @Nullable private CallCredentials altsCallCredentials;
-    @Nullable private CallCredentials mtlsS2ACallCredentials;
-    @Nullable private ChannelPrimer channelPrimer;
+    private @Nullable GrpcInterceptorProvider interceptorProvider;
+    private @Nullable Integer maxInboundMessageSize;
+    private @Nullable Integer maxInboundMetadataSize;
+    private java.time.@Nullable Duration keepAliveTime;
+    private java.time.@Nullable Duration keepAliveTimeout;
+    private @Nullable Boolean keepAliveWithoutCalls;
+    private @Nullable ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
+    private @Nullable Credentials credentials;
+    private @Nullable CallCredentials altsCallCredentials;
+    private @Nullable CallCredentials mtlsS2ACallCredentials;
+    private @Nullable ChannelPrimer channelPrimer;
     private ChannelPoolSettings channelPoolSettings;
-    @Nullable private Boolean attemptDirectPath;
-    @Nullable private Boolean attemptDirectPathXds;
-    @Nullable private Boolean allowNonDefaultServiceAccount;
-    @Nullable private ImmutableMap<String, ?> directPathServiceConfig;
+    private @Nullable Boolean attemptDirectPath;
+    private @Nullable Boolean attemptDirectPathXds;
+    private @Nullable Boolean allowNonDefaultServiceAccount;
+    private @Nullable ImmutableMap<String, ?> directPathServiceConfig;
     private List<HardBoundTokenTypes> allowedHardBoundTokenTypes;
 
     private Builder() {
@@ -1361,7 +1365,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
     CallCredentials createHardBoundTokensCallCredentials(
         ComputeEngineCredentials.GoogleAuthTransport googleAuthTransport,
-        ComputeEngineCredentials.BindingEnforcement bindingEnforcement) {
+        ComputeEngineCredentials.@Nullable BindingEnforcement bindingEnforcement) {
       ComputeEngineCredentials.Builder credsBuilder =
           ((ComputeEngineCredentials) credentials).toBuilder();
       // We only set scopes and HTTP transport factory from the original credentials because
@@ -1437,8 +1441,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       return this;
     }
 
-    @Nullable
-    public ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
+    public @Nullable ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
+        getChannelConfigurator() {
       return channelConfigurator;
     }
   }

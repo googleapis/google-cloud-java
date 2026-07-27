@@ -362,7 +362,7 @@ public interface AgentGatewayOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return A list containing the protocols.
    */
   @java.lang.Deprecated
@@ -380,7 +380,7 @@ public interface AgentGatewayOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return The count of protocols.
    */
   @java.lang.Deprecated
@@ -398,7 +398,7 @@ public interface AgentGatewayOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @param index The index of the element to return.
    * @return The protocols at the given index.
    */
@@ -417,7 +417,7 @@ public interface AgentGatewayOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @return A list containing the enum numeric values on the wire for protocols.
    */
   @java.lang.Deprecated
@@ -435,7 +435,7 @@ public interface AgentGatewayOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkservices.v1.AgentGateway.protocols is deprecated. See
-   *     google/cloud/networkservices/v1/agent_gateway.proto;l=183
+   *     google/cloud/networkservices/v1/agent_gateway.proto;l=191
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of protocols at the given index.
    */

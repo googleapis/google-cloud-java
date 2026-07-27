@@ -44,6 +44,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -53,8 +54,10 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -1515,7 +1518,18 @@ public class ITBigQueryJDBCTest extends ITBase {
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 
+    ParameterMetaData paramMetaData = preparedStatement.getParameterMetaData();
+    assertNotNull(paramMetaData);
+    assertEquals(1, paramMetaData.getParameterCount());
+    assertEquals(Types.NVARCHAR, paramMetaData.getParameterType(1));
+    assertEquals("STRING", paramMetaData.getParameterTypeName(1));
+
     ResultSet jsonResultSet = preparedStatement.executeQuery();
+
+    ResultSetMetaData resultSetMetaData = preparedStatement.getMetaData();
+    if (resultSetMetaData != null) {
+      assertTrue(resultSetMetaData.getColumnCount() > 0);
+    }
 
     int rowCount = resultSetRowCount(jsonResultSet);
     assertEquals(1000, rowCount);
@@ -1643,11 +1657,22 @@ public class ITBigQueryJDBCTest extends ITBase {
     int insertStatus = insertPs.executeUpdate();
     assertEquals(1, insertStatus);
 
+    // Test Calendar overloads (setDate, setTime, setTimestamp with Calendar)
+    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    insertPs.setString(1, "refrigerator");
+    insertPs.setInt(2, 2);
+    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()), utcCal);
+    insertPs.setTime(4, Time.valueOf(LocalTime.NOON), utcCal);
+    insertPs.setDate(5, Date.valueOf("2025-12-03"), utcCal);
+
+    int insertStatus2 = insertPs.executeUpdate();
+    assertEquals(1, insertStatus2);
+
     ResultSet rs =
         bigQueryStatement.executeQuery(
             String.format("SELECT COUNT(*) AS row_count\n" + "FROM %s.%s", DATASET, TABLE_NAME1));
     rs.next();
-    assertEquals(1, rs.getInt(1));
+    assertEquals(2, rs.getInt(1));
 
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME1);
     int dropStatus = bigQueryStatement.executeUpdate(dropQuery);

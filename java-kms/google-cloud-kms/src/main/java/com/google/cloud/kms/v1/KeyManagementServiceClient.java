@@ -425,6 +425,37 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ImportTrustedKeyWrappedCryptoKeyVersion</td>
+ *      <td><p> Import wrapped key material into a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted key.
+ * <p>  All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally specified in the request, key material will be reimported into that version. Otherwise, a new version will be created, and will be assigned the next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+ * <p>  The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have trusted_wrapping_enabled set to true.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> importTrustedKeyWrappedCryptoKeyVersion(ImportTrustedKeyWrappedCryptoKeyVersionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> importTrustedKeyWrappedCryptoKeyVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ExportTrustedKeyWrappedCryptoKeyVersion</td>
+ *      <td><p> Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted key.
+ * <p>  The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have trusted_wrapping_enabled set to true. The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the [wrapping_key] must have the [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING] purpose. The [wrapping_key] must have the [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP] algorithm.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportTrustedKeyWrappedCryptoKeyVersion(ExportTrustedKeyWrappedCryptoKeyVersionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportTrustedKeyWrappedCryptoKeyVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateImportJob</td>
  *      <td><p> Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a [KeyRing][google.cloud.kms.v1.KeyRing].
  * <p>  [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is required.</td>
@@ -2868,6 +2899,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *           .setCryptoKeyId("cryptoKeyId-1643185255")
    *           .setCryptoKey(CryptoKey.newBuilder().build())
    *           .setSkipInitialVersionCreation(true)
+   *           .setTrustedWrappingEnabled(true)
    *           .build();
    *   CryptoKey response = keyManagementServiceClient.createCryptoKey(request);
    * }
@@ -2905,6 +2937,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *           .setCryptoKeyId("cryptoKeyId-1643185255")
    *           .setCryptoKey(CryptoKey.newBuilder().build())
    *           .setSkipInitialVersionCreation(true)
+   *           .setTrustedWrappingEnabled(true)
    *           .build();
    *   ApiFuture<CryptoKey> future =
    *       keyManagementServiceClient.createCryptoKeyCallable().futureCall(request);
@@ -3514,6 +3547,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setImportJob("importJob-208547368")
    *           .setWrappedKey(ByteString.EMPTY)
+   *           .setTrustedWrappingEnabled(true)
    *           .build();
    *   CryptoKeyVersion response = keyManagementServiceClient.importCryptoKeyVersion(request);
    * }
@@ -3561,6 +3595,7 @@ public class KeyManagementServiceClient implements BackgroundResource {
    *                   .toString())
    *           .setImportJob("importJob-208547368")
    *           .setWrappedKey(ByteString.EMPTY)
+   *           .setTrustedWrappingEnabled(true)
    *           .build();
    *   ApiFuture<CryptoKeyVersion> future =
    *       keyManagementServiceClient.importCryptoKeyVersionCallable().futureCall(request);
@@ -3572,6 +3607,207 @@ public class KeyManagementServiceClient implements BackgroundResource {
   public final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable() {
     return stub.importCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import wrapped key material into a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * with a trusted key.
+   *
+   * <p>All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally specified in the
+   * request, key material will be reimported into that version. Otherwise, a new version will be
+   * created, and will be assigned the next sequential id within the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+   * trusted_wrapping_enabled set to true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ImportTrustedKeyWrappedCryptoKeyVersionRequest request =
+   *       ImportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setImportingKey("importingKey-1425125630")
+   *           .setCryptoKeyVersion("cryptoKeyVersion135105818")
+   *           .setWrappedKey(ByteString.EMPTY)
+   *           .build();
+   *   CryptoKeyVersion response =
+   *       keyManagementServiceClient.importTrustedKeyWrappedCryptoKeyVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CryptoKeyVersion importTrustedKeyWrappedCryptoKeyVersion(
+      ImportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+    return importTrustedKeyWrappedCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import wrapped key material into a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * with a trusted key.
+   *
+   * <p>All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally specified in the
+   * request, key material will be reimported into that version. Otherwise, a new version will be
+   * created, and will be assigned the next sequential id within the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey].
+   *
+   * <p>The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+   * trusted_wrapping_enabled set to true.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ImportTrustedKeyWrappedCryptoKeyVersionRequest request =
+   *       ImportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setImportingKey("importingKey-1425125630")
+   *           .setCryptoKeyVersion("cryptoKeyVersion135105818")
+   *           .setWrappedKey(ByteString.EMPTY)
+   *           .build();
+   *   ApiFuture<CryptoKeyVersion> future =
+   *       keyManagementServiceClient
+   *           .importTrustedKeyWrappedCryptoKeyVersionCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   CryptoKeyVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return stub.importTrustedKeyWrappedCryptoKeyVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted key.
+   *
+   * <p>The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+   * trusted_wrapping_enabled set to true. The
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the [wrapping_key] must have the
+   * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING] purpose. The
+   * [wrapping_key] must have the
+   * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+   * algorithm.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ExportTrustedKeyWrappedCryptoKeyVersionRequest request =
+   *       ExportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .setWrappingKey(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ExportTrustedKeyWrappedCryptoKeyVersionResponse response =
+   *       keyManagementServiceClient.exportTrustedKeyWrappedCryptoKeyVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExportTrustedKeyWrappedCryptoKeyVersionResponse
+      exportTrustedKeyWrappedCryptoKeyVersion(
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+    return exportTrustedKeyWrappedCryptoKeyVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted key.
+   *
+   * <p>The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+   * trusted_wrapping_enabled set to true. The
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the [wrapping_key] must have the
+   * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING] purpose. The
+   * [wrapping_key] must have the
+   * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+   * algorithm.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   ExportTrustedKeyWrappedCryptoKeyVersionRequest request =
+   *       ExportTrustedKeyWrappedCryptoKeyVersionRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .setWrappingKey(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ExportTrustedKeyWrappedCryptoKeyVersionResponse> future =
+   *       keyManagementServiceClient
+   *           .exportTrustedKeyWrappedCryptoKeyVersionCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ExportTrustedKeyWrappedCryptoKeyVersionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return stub.exportTrustedKeyWrappedCryptoKeyVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

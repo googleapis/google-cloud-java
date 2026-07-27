@@ -87,7 +87,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This is never used in `CheckResponse`.
+     * This is the default value if error code is not explicitly set.
+     * It should not be used directly.
      * </pre>
      *
      * <code>ERROR_CODE_UNSPECIFIED = 0;</code>
@@ -98,7 +99,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The consumer's project id, network container, or resource container was
-     * not found. Same as [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND].
+     * not found. Same as
+     * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND].
      * </pre>
      *
      * <code>NOT_FOUND = 5;</code>
@@ -109,7 +111,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The consumer doesn't have access to the specified resource.
-     * Same as [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED].
+     * Same as
+     * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED].
      * </pre>
      *
      * <code>PERMISSION_DENIED = 7;</code>
@@ -119,7 +122,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quota check failed. Same as [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
+     * Quota check failed. Same as
+     * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
      * </pre>
      *
      * <code>RESOURCE_EXHAUSTED = 8;</code>
@@ -317,7 +321,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This is never used in `CheckResponse`.
+     * This is the default value if error code is not explicitly set.
+     * It should not be used directly.
      * </pre>
      *
      * <code>ERROR_CODE_UNSPECIFIED = 0;</code>
@@ -329,7 +334,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The consumer's project id, network container, or resource container was
-     * not found. Same as [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND].
+     * not found. Same as
+     * [google.rpc.Code.NOT_FOUND][google.rpc.Code.NOT_FOUND].
      * </pre>
      *
      * <code>NOT_FOUND = 5;</code>
@@ -341,7 +347,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The consumer doesn't have access to the specified resource.
-     * Same as [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED].
+     * Same as
+     * [google.rpc.Code.PERMISSION_DENIED][google.rpc.Code.PERMISSION_DENIED].
      * </pre>
      *
      * <code>PERMISSION_DENIED = 7;</code>
@@ -352,7 +359,8 @@ public final class CheckError extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Quota check failed. Same as [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
+     * Quota check failed. Same as
+     * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
      * </pre>
      *
      * <code>RESOURCE_EXHAUSTED = 8;</code>

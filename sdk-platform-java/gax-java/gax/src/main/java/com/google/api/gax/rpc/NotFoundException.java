@@ -29,7 +29,10 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Exception thrown when some requested entity (e.g., file or directory) was not found. */
+@NullMarked
 public class NotFoundException extends ApiException {
   public NotFoundException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

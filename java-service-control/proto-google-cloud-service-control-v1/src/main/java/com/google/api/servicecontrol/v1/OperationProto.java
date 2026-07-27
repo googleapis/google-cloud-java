@@ -48,6 +48,10 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_api_servicecontrol_v1_Operation_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_api_servicecontrol_v1_Operation_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,36 +61,36 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + ",google/api/servicecontrol/v1/operation"
+      "\n,google/api/servicecontrol/v1/operation"
           + ".proto\022\034google.api.servicecontrol.v1\032,go"
-          + "ogle/api/servicecontrol/v1/log_entry.proto\032/google/api/servicecontrol/v1/metric_"
-          + "value.proto\032\031google/protobuf/any.proto\032\037google/protobuf/timestamp.proto\"\271\004\n"
-          + "\tOperation\022\024\n"
-          + "\014operation_id\030\001 \001(\t\022\026\n"
-          + "\016operation_name\030\002 \001(\t\022\023\n"
-          + "\013consumer_id\030\003 \001(\t\022.\n\n"
-          + "start_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\005 \001(\0132\032.google.protobuf.Timestamp\022C\n"
-          + "\006labels\030\006"
-          + " \003(\01323.google.api.servicecontrol.v1.Operation.LabelsEntry\022G\n"
-          + "\021metric_value_sets\030\007"
-          + " \003(\0132,.google.api.servicecontrol.v1.MetricValueSet\022;\n"
-          + "\013log_entries\030\010 \003(\0132&.google.api.servicecontrol.v1.LogEntry\022F\n\n"
-          + "importance\030\013 \001(\01622.google.a"
-          + "pi.servicecontrol.v1.Operation.Importance\022(\n\n"
-          + "extensions\030\020 \003(\0132\024.google.protobuf.Any\032-\n"
-          + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\037\n\n"
-          + "Importance\022\007\n"
-          + "\003LOW\020\000\022\010\n"
-          + "\004HIGH\020\001B\351\001\n"
-          + " com.google.api.servicecontrol.v1B\016OperationProtoP\001ZJcloud.google.com/go/"
-          + "servicecontrol/apiv1/servicecontrolpb;se"
-          + "rvicecontrolpb\370\001\001\252\002\036Google.Cloud.Service"
-          + "Control.V1\312\002\036Google\\Cloud\\ServiceControl"
-          + "\\V1\352\002!Google::Cloud::ServiceControl::V1b\006proto3"
+          + "ogle/api/servicecontrol/v1/log_entry.pro"
+          + "to\032/google/api/servicecontrol/v1/metric_"
+          + "value.proto\032\031google/protobuf/any.proto\032\037"
+          + "google/protobuf/timestamp.proto\"\272\005\n\tOper"
+          + "ation\022\024\n\014operation_id\030\001 \001(\t\022\026\n\016operation"
+          + "_name\030\002 \001(\t\022\023\n\013consumer_id\030\003 \001(\t\022.\n\nstar"
+          + "t_time\030\004 \001(\0132\032.google.protobuf.Timestamp"
+          + "\022,\n\010end_time\030\005 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022C\n\006labels\030\006 \003(\01323.google.api.serv"
+          + "icecontrol.v1.Operation.LabelsEntry\022G\n\021m"
+          + "etric_value_sets\030\007 \003(\0132,.google.api.serv"
+          + "icecontrol.v1.MetricValueSet\022;\n\013log_entr"
+          + "ies\030\010 \003(\0132&.google.api.servicecontrol.v1"
+          + ".LogEntry\022F\n\nimportance\030\013 \001(\01622.google.a"
+          + "pi.servicecontrol.v1.Operation.Importanc"
+          + "e\022L\n\013user_labels\030\014 \003(\01327.google.api.serv"
+          + "icecontrol.v1.Operation.UserLabelsEntry\022"
+          + "(\n\nextensions\030\020 \003(\0132\024.google.protobuf.An"
+          + "y\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002"
+          + " \001(\t:\0028\001\0321\n\017UserLabelsEntry\022\013\n\003key\030\001 \001(\t"
+          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"\037\n\nImportance\022\007\n\003LOW"
+          + "\020\000\022\010\n\004HIGH\020\001B\346\001\n com.google.api.servicec"
+          + "ontrol.v1B\016OperationProtoP\001ZJcloud.googl"
+          + "e.com/go/servicecontrol/apiv1/servicecon"
+          + "trolpb;servicecontrolpb\252\002\036Google.Cloud.S"
+          + "erviceControl.V1\312\002\036Google\\Cloud\\ServiceC"
+          + "ontrol\\V1\352\002!Google::Cloud::ServiceContro"
+          + "l::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -112,6 +116,7 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
               "MetricValueSets",
               "LogEntries",
               "Importance",
+              "UserLabels",
               "Extensions",
             });
     internal_static_google_api_servicecontrol_v1_Operation_LabelsEntry_descriptor =
@@ -119,6 +124,14 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
     internal_static_google_api_servicecontrol_v1_Operation_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_api_servicecontrol_v1_Operation_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_descriptor =
+        internal_static_google_api_servicecontrol_v1_Operation_descriptor.getNestedType(1);
+    internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_api_servicecontrol_v1_Operation_UserLabelsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

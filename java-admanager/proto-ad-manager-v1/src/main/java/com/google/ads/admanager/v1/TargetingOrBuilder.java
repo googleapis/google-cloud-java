@@ -378,6 +378,49 @@ public interface TargetingOrBuilder
    *
    *
    * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestFormatTargeting field is set.
+   */
+  boolean hasRequestFormatTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestFormatTargeting.
+   */
+  com.google.ads.admanager.v1.RequestFormatTargeting getRequestFormatTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Used to target inventory formats.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.RequestFormatTargeting request_format_targeting = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.RequestFormatTargetingOrBuilder getRequestFormatTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Used to target content.
    * </pre>
    *

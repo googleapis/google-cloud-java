@@ -781,6 +781,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -830,6 +834,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -881,6 +889,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
    * information see
    * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
    *
+   * The value must be given as a string that indicates the length of time
+   * (in seconds) followed by `s` (for "seconds"). For more information on the
+   * format, see the documentation for
+   * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
    * `dispatch_deadline` will be truncated to the nearest millisecond. The
    * deadline is an approximate deadline.
    * </pre>
@@ -1092,6 +1104,71 @@ public final class Task extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.tasks.v2beta3.Task.View.UNRECOGNIZED : result;
   }
 
+  public static final int RETRY_CONFIG_FIELD_NUMBER = 14;
+  private com.google.cloud.tasks.v2beta3.RetryConfig retryConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level retry config.
+   *
+   * If present, this overrides the queue-level retry config for this task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retryConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetryConfig() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level retry config.
+   *
+   * If present, this overrides the queue-level retry config for this task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retryConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig() {
+    return retryConfig_ == null
+        ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+        : retryConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the task-level retry config.
+   *
+   * If present, this overrides the queue-level retry config for this task.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder getRetryConfigOrBuilder() {
+    return retryConfig_ == null
+        ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+        : retryConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1141,6 +1218,9 @@ public final class Task extends com.google.protobuf.GeneratedMessage
     }
     if (payloadTypeCase_ == 13) {
       output.writeMessage(13, (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(14, getRetryConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1193,6 +1273,9 @@ public final class Task extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               13, (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_);
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getRetryConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1232,6 +1315,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
       if (!getLastAttempt().equals(other.getLastAttempt())) return false;
     }
     if (view_ != other.view_) return false;
+    if (hasRetryConfig() != other.hasRetryConfig()) return false;
+    if (hasRetryConfig()) {
+      if (!getRetryConfig().equals(other.getRetryConfig())) return false;
+    }
     if (!getPayloadTypeCase().equals(other.getPayloadTypeCase())) return false;
     switch (payloadTypeCase_) {
       case 3:
@@ -1285,6 +1372,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + VIEW_FIELD_NUMBER;
     hash = (53 * hash) + view_;
+    if (hasRetryConfig()) {
+      hash = (37 * hash) + RETRY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getRetryConfig().hashCode();
+    }
     switch (payloadTypeCase_) {
       case 3:
         hash = (37 * hash) + APP_ENGINE_HTTP_REQUEST_FIELD_NUMBER;
@@ -1446,6 +1537,7 @@ public final class Task extends com.google.protobuf.GeneratedMessage
         internalGetDispatchDeadlineFieldBuilder();
         internalGetFirstAttemptFieldBuilder();
         internalGetLastAttemptFieldBuilder();
+        internalGetRetryConfigFieldBuilder();
       }
     }
 
@@ -1491,6 +1583,11 @@ public final class Task extends com.google.protobuf.GeneratedMessage
         lastAttemptBuilder_ = null;
       }
       view_ = 0;
+      retryConfig_ = null;
+      if (retryConfigBuilder_ != null) {
+        retryConfigBuilder_.dispose();
+        retryConfigBuilder_ = null;
+      }
       payloadTypeCase_ = 0;
       payloadType_ = null;
       return this;
@@ -1566,6 +1663,11 @@ public final class Task extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.view_ = view_;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.retryConfig_ =
+            retryConfigBuilder_ == null ? retryConfig_ : retryConfigBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1623,6 +1725,9 @@ public final class Task extends com.google.protobuf.GeneratedMessage
       }
       if (other.view_ != 0) {
         setViewValue(other.getViewValue());
+      }
+      if (other.hasRetryConfig()) {
+        mergeRetryConfig(other.getRetryConfig());
       }
       switch (other.getPayloadTypeCase()) {
         case APP_ENGINE_HTTP_REQUEST:
@@ -1751,6 +1856,13 @@ public final class Task extends com.google.protobuf.GeneratedMessage
                 payloadTypeCase_ = 13;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetRetryConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3256,6 +3368,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3304,6 +3420,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3358,6 +3478,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3414,6 +3538,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3467,6 +3595,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3528,6 +3660,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3581,6 +3717,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3629,6 +3769,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -3681,6 +3825,10 @@ public final class Task extends com.google.protobuf.GeneratedMessage
      * information see
      * [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
      *
+     * The value must be given as a string that indicates the length of time
+     * (in seconds) followed by `s` (for "seconds"). For more information on the
+     * format, see the documentation for
+     * [Duration](https://protobuf.dev/reference/protobuf/google.protobuf/#duration).
      * `dispatch_deadline` will be truncated to the nearest millisecond. The
      * deadline is an approximate deadline.
      * </pre>
@@ -4347,6 +4495,237 @@ public final class Task extends com.google.protobuf.GeneratedMessage
       view_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.tasks.v2beta3.RetryConfig retryConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.tasks.v2beta3.RetryConfig,
+            com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>
+        retryConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retryConfig field is set.
+     */
+    public boolean hasRetryConfig() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retryConfig.
+     */
+    public com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig() {
+      if (retryConfigBuilder_ == null) {
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+            : retryConfig_;
+      } else {
+        return retryConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetryConfig(com.google.cloud.tasks.v2beta3.RetryConfig value) {
+      if (retryConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retryConfig_ = value;
+      } else {
+        retryConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetryConfig(
+        com.google.cloud.tasks.v2beta3.RetryConfig.Builder builderForValue) {
+      if (retryConfigBuilder_ == null) {
+        retryConfig_ = builderForValue.build();
+      } else {
+        retryConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetryConfig(com.google.cloud.tasks.v2beta3.RetryConfig value) {
+      if (retryConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && retryConfig_ != null
+            && retryConfig_ != com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()) {
+          getRetryConfigBuilder().mergeFrom(value);
+        } else {
+          retryConfig_ = value;
+        }
+      } else {
+        retryConfigBuilder_.mergeFrom(value);
+      }
+      if (retryConfig_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetryConfig() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      retryConfig_ = null;
+      if (retryConfigBuilder_ != null) {
+        retryConfigBuilder_.dispose();
+        retryConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tasks.v2beta3.RetryConfig.Builder getRetryConfigBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetRetryConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder getRetryConfigOrBuilder() {
+      if (retryConfigBuilder_ != null) {
+        return retryConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta3.RetryConfig.getDefaultInstance()
+            : retryConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the task-level retry config.
+     *
+     * If present, this overrides the queue-level retry config for this task.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.tasks.v2beta3.RetryConfig retry_config = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.tasks.v2beta3.RetryConfig,
+            com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>
+        internalGetRetryConfigFieldBuilder() {
+      if (retryConfigBuilder_ == null) {
+        retryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.tasks.v2beta3.RetryConfig,
+                com.google.cloud.tasks.v2beta3.RetryConfig.Builder,
+                com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder>(
+                getRetryConfig(), getParentForChildren(), isClean());
+        retryConfig_ = null;
+      }
+      return retryConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta3.Task)

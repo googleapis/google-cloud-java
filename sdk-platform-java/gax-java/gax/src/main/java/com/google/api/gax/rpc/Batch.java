@@ -35,6 +35,7 @@ import com.google.api.gax.batching.ElementCounter;
 import com.google.api.gax.batching.RequestBuilder;
 import java.util.ArrayList;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A Batch contains a collection of requests that are to be batched into a single API call.
@@ -48,6 +49,7 @@ import java.util.List;
  *
  * <p>This is public only for technical reasons, for advanced usage.
  */
+@NullMarked
 @InternalApi
 public class Batch<RequestT, ResponseT> {
   private final List<BatchedRequestIssuer<ResponseT>> requestIssuerList;

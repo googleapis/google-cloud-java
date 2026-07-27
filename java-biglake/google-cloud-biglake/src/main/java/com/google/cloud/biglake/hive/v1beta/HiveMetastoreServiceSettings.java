@@ -201,6 +201,12 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
     return ((HiveMetastoreServiceStubSettings) getStubSettings()).listPartitionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to failoverHiveCatalog. */
+  public UnaryCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogSettings() {
+    return ((HiveMetastoreServiceStubSettings) getStubSettings()).failoverHiveCatalogSettings();
+  }
+
   public static final HiveMetastoreServiceSettings create(HiveMetastoreServiceStubSettings stub)
       throws IOException {
     return new HiveMetastoreServiceSettings.Builder(stub.toBuilder()).build();
@@ -423,6 +429,12 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
     public ServerStreamingCallSettings.Builder<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsSettings() {
       return getStubSettingsBuilder().listPartitionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverHiveCatalog. */
+    public UnaryCallSettings.Builder<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogSettings() {
+      return getStubSettingsBuilder().failoverHiveCatalogSettings();
     }
 
     @Override
