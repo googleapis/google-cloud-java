@@ -7,6 +7,9 @@ SRC="$(PWD)"
 skipSurefire ?= true
 skipShade ?= true
 excludedGroups ?=
+comma := ,
+empty :=
+space := $(empty) $(empty)
 JDBC_DRIVER_VERSION = $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 JDBC_JAR = $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
 
@@ -74,10 +77,10 @@ package:
 	cp target/google-cloud-bigquery-jdbc-*-all.jar $(PACKAGE_DESTINATION)/
 
 build-it-standalone:
-	mvn -Dmaven.test.skip=true package -f pom-it.xml -Dbigquery-jdbc.version=$(JDBC_DRIVER_VERSION)
+	mvn clean package -f pom-it.xml -Dmaven.test.skip=true -Dbigquery-jdbc.version=$(JDBC_DRIVER_VERSION)
 
 run-it-standalone:
-	java -cp $(JDBC_JAR):target-it/* org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests
+	java -cp "$(JDBC_JAR):target-it/*" org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests $(foreach tag,$(subst $(comma),$(space),$(excludedGroups)),--exclude-tag $(tag))
 
 
 # Commands for dockerized environments
