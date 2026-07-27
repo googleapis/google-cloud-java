@@ -39,6 +39,7 @@ import java.sql.Statement;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -133,6 +134,7 @@ public class ITAuthTests extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testValidServiceAccountAuthenticationViaEmailAndPkcs8Key()
       throws SQLException, IOException {
     final JsonObject authJson = getAuthJson();
@@ -295,6 +297,7 @@ public class ITAuthTests extends ITBase {
     "https://www.googleapis.com/auth/bigquery.readonly, true",
     "https://www.googleapis.com/auth/bigquery, false"
   })
+  @Tag("advanced")
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
@@ -358,6 +361,7 @@ public class ITAuthTests extends ITBase {
   // It requires account to have 'tokenCreator' permission, see
   // https://cloud.google.com/docs/authentication/use-service-account-impersonation#required-roles
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithImpersonation() throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();
 
@@ -373,6 +377,7 @@ public class ITAuthTests extends ITBase {
   // This test uses the same client email for the main authorization and a chain of impersonations.
   // It requires the account to have 'tokenCreator' permission on itself.
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithChainedImpersonation()
       throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();
