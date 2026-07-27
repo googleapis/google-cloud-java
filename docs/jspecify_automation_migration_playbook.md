@@ -3,46 +3,17 @@ Onboarding a large codebase to strict JSpecify null safety requires a systematic
 
 ---
 
-## 1. Generated vs. Handwritten Code Handling
-Before starting the migration, identify which parts of the codebase are generated vs. handwritten:
-* **Handwritten Modules (GAX, Auth, parent modules)**: Apply the 3-step automation workflow below directly to the source tree.
-* **Generated Modules**: Do not edit generated classes manually! Instead, update the code generator engine (`gapic-generator-java`) to output JSpecify annotations (`@NullMarked` on classes/packages and `@Nullable` on generic/nullable return methods) during its code generation phase.
+## 1. The 2-Step Automation Workflow
+ErrorProne's built-in auto-patcher (`nullaway-patch`) only operates on compilable Java files and is restricted to adding `@Nullable` annotations to sites flagged as compilation errors by NullAway analysis. It has key limitations that require prior scripting steps:
+* **No `@NullMarked` Injection**: The auto-patcher does not know how to default class-level or package-level nullability by adding `@NullMarked` annotations.
+* **No Javax/Legacy Migration**: The auto-patcher does not automatically clean up or migrate legacy javax annotations (like `javax.annotation.Nullable`) or ensure they are repositioned to type-use positions.
 
----
+### Part 1: Bulk `@NullMarked` & Legacy Javax Migration
+To prepare your source trees for compilation checks, run this combined Python script on your handwritten directories to inject class-level `@NullMarked` annotations, migrate legacy `javax.annotation.Nullable` imports to JSpecify, and reposition them to type-use positions:
+* **Migration Script PR Reference**: [PR #13889](https://github.com/googleapis/google-cloud-java/pull/13889)
 
-## 2. The 3-Step Automation Workflow
-Use these three parts in order to automate the mechanical tasks of JSpecify migration.
-
-### Part 1: Bulk `@NullMarked` Annotation (Automated Script)
-Use a python script to search Java source directories and inject `@NullMarked` at the package or class level:
-* **Package-level**: Add to `package-info.java` files.
-* **Class-level**: Prepend `@NullMarked` to top-level classes, interfaces, or enums.
-
-*Example class-level injection pattern (Python)*:
-```python
-package_match = re.search(r"^(package\s+[\w\.]+;)", content, re.MULTILINE)
-if package_match:
-    package_line = package_match.group(1)
-    content = content.replace(package_line, package_line + "\nimport org.jspecify.annotations.NullMarked;")
-# Add @NullMarked before the class/interface/enum
-content = re.sub(r"\n(public\s+)?(class|interface|enum)\s+", r"\n@NullMarked\n\2 ", content)
-```
-
----
-
-### Part 2: Legacy Javax Migration (Automated Script)
-Translate legacy annotations (e.g. `javax.annotation.Nullable`) to JSpecify `@Nullable`. If annotations are in declaration positions, programmatically reposition them to type-use positions:
-```python
-# Reposition from declaration-use to type-use position if necessary
-content = re.sub(r"@Nullable\s+public\s+(\w+)", r"public @Nullable \1", content)
-# Replace imports
-content = content.replace("import javax.annotation.Nullable;", "import org.jspecify.annotations.Nullable;")
-```
-
----
-
-### Part 3: ErrorProne Auto-Patching (`nullaway-patch`)
-For the remaining manual nullness checks, configure ErrorProne's built-in **Auto-Patching tool** to scan your project, trace assignments, and write suggested `@Nullable` annotations directly to your source files.
+### Part 2: ErrorProne Auto-Patching (`nullaway-patch`)
+For the remaining manual nullness checks, configure ErrorProne's built-in Auto-Patching tool to scan your project, trace assignments, and write suggested `@Nullable` annotations directly to your source files.
 
 #### Declare Profile B: Auto-Patching (`nullaway-patch`)
 Add this profile to your `pom.xml`:
@@ -54,7 +25,7 @@ Add this profile to your `pom.xml`:
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven-compiler-plugin.version}</version> <!-- Or omit if managed by parent POM -->
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <fork>true</fork>
           <compilerArgs>
@@ -95,6 +66,14 @@ Add this profile to your `pom.xml`:
   </build>
 </profile>
 ```
+
+**Important Configuration Detail:**
+The critical argument within the profile driving ErrorProne's in-place patching and JSpecify annotation injection is:
+```xml
+<!-- Configures ErrorProne patch checkers to write modifications IN_PLACE using JSpecify annotations -->
+<arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:FieldMissingNullable:ERROR -Xep:ParameterMissingNullable:ERROR -Xep:ReturnMissingNullable:ERROR -Xep:EqualsMissingNullable:ERROR -XepPatchChecks:FieldMissingNullable,ParameterMissingNullable,ReturnMissingNullable,EqualsMissingNullable -XepPatchLocation:IN_PLACE -XepOpt:Nullness:DefaultNullnessAnnotation=org.jspecify.annotations.Nullable</arg>
+```
+
 **Command to execute:**
 ```shell
 mvn clean compile -Pnullaway-patch
@@ -103,5 +82,5 @@ mvn clean compile -Pnullaway-patch
 
 ---
 
-## 3. Reference
-https://buganizer.corp.google.com/issues/341380807 
+## 2. References
+* [Buganizer Issue 341380807](https://buganizer.corp.google.com/issues/341380807)
