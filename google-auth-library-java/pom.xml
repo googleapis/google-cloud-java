@@ -81,7 +81,7 @@
     <project.findbugs.version>3.0.2</project.findbugs.version>
     <deploy.autorelease>false</deploy.autorelease>
     <project.error-prone.version>2.48.0</project.error-prone.version>
-    <project.protobuf.version>4.33.2</project.protobuf.version>
+    <project.protobuf.version>4.33.6</project.protobuf.version>
     <project.cel.version>0.9.0-proto3</project.cel.version>
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
