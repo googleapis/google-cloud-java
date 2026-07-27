@@ -968,7 +968,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       return;
                     }
                     processProcedureArguments(routine, columnNameRegex, results, fields);
-                  });
+                  },
+                  RoutineOption.fields(
+                      RoutineField.ROUTINE_REFERENCE,
+                      RoutineField.ARGUMENTS,
+                      RoutineField.ROUTINE_TYPE));
 
               Comparator<FieldValueList> comparator =
                   defineGetProcedureColumnsComparator(resultSchemaFields);
@@ -1560,7 +1564,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   resultSchemaFields,
                   (bqTable, results, fields) -> {
                     processTableColumns(bqTable, columnNameRegex, results, fields);
-                  });
+                  },
+                  TableOption.fields(
+                      TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
 
               Comparator<FieldValueList> comparator =
                   defineGetColumnsComparator(resultSchemaFields);
@@ -3547,7 +3553,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     }
                     processFunctionParametersAndReturnValue(
                         routine, columnNameRegex, results, fields);
-                  });
+                  },
+                  RoutineOption.fields(
+                      RoutineField.ROUTINE_REFERENCE,
+                      RoutineField.ARGUMENTS,
+                      RoutineField.ROUTINE_TYPE));
 
               Comparator<FieldValueList> comparator =
                   defineGetFunctionColumnsComparator(resultSchemaFields);
