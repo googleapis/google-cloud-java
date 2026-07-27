@@ -66,7 +66,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -379,7 +378,6 @@ class ClientConfigurationManagerTest {
     assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
-  @Disabled("https://github.com/googleapis/google-cloud-java/issues/13903")
   @Test
   void testDeadlockPrevention() throws Exception {
     // Initialize the manager and fetch the initial config to schedule polling.
