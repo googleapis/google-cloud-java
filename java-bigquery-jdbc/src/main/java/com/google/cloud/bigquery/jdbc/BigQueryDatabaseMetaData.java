@@ -20,6 +20,8 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
+import com.google.cloud.bigquery.BigQuery.RoutineField;
+import com.google.cloud.bigquery.BigQuery.RoutineOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
@@ -797,7 +799,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   targetDatasets,
                   procedureNamePattern,
                   true,
-                  false,
+                  true,
                   collectedResults,
                   resultSchemaFields,
                   (routine, results, fields) -> {
@@ -805,7 +807,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       return;
                     }
                     processProcedureInfo(routine, results, fields);
-                  });
+                  },
+                  RoutineOption.fields(
+                      RoutineField.ROUTINE_REFERENCE,
+                      RoutineField.ARGUMENTS,
+                      RoutineField.ROUTINE_TYPE));
 
               Comparator<FieldValueList> comparator =
                   defineGetProceduresComparator(resultSchemaFields);
@@ -1302,12 +1308,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   tableNamePattern,
                   true,
                   false,
-                  false,
+                  true,
                   collectedResults,
                   resultSchemaFields,
                   (bqTable, results, fields) -> {
                     processTableInfo(bqTable, requestedTypes, results, fields);
-                  });
+                  },
+                  TableOption.fields(
+                      TableField.TABLE_REFERENCE, TableField.TYPE, TableField.DESCRIPTION));
 
               Comparator<FieldValueList> comparator = defineGetTablesComparator(resultSchemaFields);
               sortResults(collectedResults, comparator, "getTables", LOG);
@@ -3385,7 +3393,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   targetDatasets,
                   functionNamePattern,
                   true,
-                  false,
+                  true,
                   collectedResults,
                   resultSchemaFields,
                   (routine, results, fields) -> {
@@ -3394,7 +3402,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       return;
                     }
                     processFunctionInfo(routine, results, fields);
-                  });
+                  },
+                  RoutineOption.fields(
+                      RoutineField.ROUTINE_REFERENCE,
+                      RoutineField.ARGUMENTS,
+                      RoutineField.ROUTINE_TYPE));
 
               Comparator<FieldValueList> comparator =
                   defineGetFunctionsComparator(resultSchemaFields);
@@ -4457,14 +4469,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean requireBaseTable,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      TableProcessor processor)
+      TableProcessor processor,
+      TableOption... options)
       throws SQLException {
     Table bqTable = preFetchedTable;
     if (bqTable == null) {
       try {
         bqTable =
             bigquery.getTable(
-                TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+                TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName), options);
       } catch (BigQueryException e) {
         if (e.getCode() == 404) {
           LOG.info(
@@ -4499,14 +4512,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Routine preFetchedRoutine,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      RoutineProcessor processor)
+      RoutineProcessor processor,
+      RoutineOption... options)
       throws SQLException {
     Routine routine = preFetchedRoutine;
     if (routine == null) {
       try {
         routine =
             bigquery.getRoutine(
-                RoutineId.of(datasetId.getProject(), datasetId.getDataset(), routineName));
+                RoutineId.of(datasetId.getProject(), datasetId.getDataset(), routineName), options);
       } catch (BigQueryException e) {
         if (e.getCode() == 404) {
           LOG.info("Routine '%s' not found. Skipping.", routineName);
@@ -4531,7 +4545,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean requiresFullRoutine,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      RoutineProcessor processor)
+      RoutineProcessor processor,
+      RoutineOption... options)
       throws SQLException {
 
     boolean hasWildcards = isPattern && hasWildcards(routineNamePattern);
@@ -4545,7 +4560,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           null,
           collectedResults,
           resultSchemaFields,
-          processor);
+          processor,
+          options);
       return;
     }
 
@@ -4565,7 +4581,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     null,
                     collectedResults,
                     resultSchemaFields,
-                    processor);
+                    processor,
+                    options);
                 return null;
               });
         }
@@ -4601,7 +4618,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                           requiresFullRoutine ? null : routine,
                                           collectedResults,
                                           resultSchemaFields,
-                                          processor);
+                                          processor,
+                                          options);
                                       return null;
                                     });
                               }
@@ -4653,7 +4671,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       boolean requiresFullTable,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
-      TableProcessor processor)
+      TableProcessor processor,
+      TableOption... options)
       throws SQLException {
 
     boolean hasWildcards = isPattern && hasWildcards(tableNamePattern);
@@ -4668,7 +4687,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           requireBaseTable,
           collectedResults,
           resultSchemaFields,
-          processor);
+          processor,
+          options);
       return;
     }
 
@@ -4689,7 +4709,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     requireBaseTable,
                     collectedResults,
                     resultSchemaFields,
-                    processor);
+                    processor,
+                    options);
                 return null;
               });
         }
@@ -4732,7 +4753,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                           requireBaseTable,
                                           collectedResults,
                                           resultSchemaFields,
-                                          processor);
+                                          processor,
+                                          options);
                                       return null;
                                     });
                               }
