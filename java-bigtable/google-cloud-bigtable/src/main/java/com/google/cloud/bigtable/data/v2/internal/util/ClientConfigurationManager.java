@@ -337,6 +337,17 @@ public class ClientConfigurationManager implements AutoCloseable {
           public void onClose(Status status, Metadata trailers) {
             if (!status.isOk()) {
               future.completeExceptionally(status.asRuntimeException());
+            } else if (!future.isDone()) {
+              // Defensive: guarantee this Listener always terminates the future. A caller blocks on
+              // this future via start().get() with no timeout, so a close that neither delivered a
+              // message nor reported an error would wedge it forever. For today's unary RPC gRPC
+              // already converts a missing response into a non-OK status, so this branch is not
+              // expected to be hit, but it keeps the bridge correct regardless of that invariant.
+              future.completeExceptionally(
+                  Status.INTERNAL
+                      .withDescription(
+                          "GetClientConfiguration stream closed without returning a configuration")
+                      .asRuntimeException());
             }
           }
         },
