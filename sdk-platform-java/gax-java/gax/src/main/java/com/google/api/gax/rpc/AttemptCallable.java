@@ -84,8 +84,27 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
           .attemptStarted(request, externalFuture.getAttemptSettings().getOverallAttemptCount());
 
       ApiFuture<ResponseT> internalFuture = callable.futureCall(request, callContext);
+      final ApiCallContext finalContext = callContext;
+      ApiFuture<ResponseT> mappedFuture =
+          ApiFutures.catching(
+              internalFuture,
+              UnauthenticatedException.class,
+              unauthenticatedException -> {
+                TransportChannel transportChannel = finalContext.getTransportChannel();
+                if (transportChannel != null && transportChannel.shouldRefresh()) {
+                  transportChannel.refresh();
+                  throw new UnauthenticatedException(
+                      unauthenticatedException.getMessage(),
+                      unauthenticatedException.getCause(),
+                      unauthenticatedException.getStatusCode(),
+                      true, // isRetryable = true
+                      unauthenticatedException.getErrorDetails());
+                }
+                throw unauthenticatedException;
+              },
+              com.google.common.util.concurrent.MoreExecutors.directExecutor());
 
-      externalFuture.setAttemptFuture(internalFuture);
+      externalFuture.setAttemptFuture(mappedFuture);
     } catch (Throwable e) {
       externalFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
     }
