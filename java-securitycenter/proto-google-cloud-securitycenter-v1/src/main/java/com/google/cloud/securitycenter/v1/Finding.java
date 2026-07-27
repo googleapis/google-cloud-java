@@ -83,6 +83,7 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     logEntries_ = java.util.Collections.emptyList();
     loadBalancers_ = java.util.Collections.emptyList();
     groupMemberships_ = java.util.Collections.emptyList();
+    agentSessions_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -7879,6 +7880,185 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         : externalExposure_;
   }
 
+  public static final int AGENT_FIELD_NUMBER = 88;
+  private com.google.cloud.securitycenter.v1.Agent agent_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   *
+   * @return Whether the agent field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgent() {
+    return ((bitField0_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   *
+   * @return The agent.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.Agent getAgent() {
+    return agent_ == null ? com.google.cloud.securitycenter.v1.Agent.getDefaultInstance() : agent_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AgentOrBuilder getAgentOrBuilder() {
+    return agent_ == null ? com.google.cloud.securitycenter.v1.Agent.getDefaultInstance() : agent_;
+  }
+
+  public static final int AGENT_SESSIONS_FIELD_NUMBER = 89;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.securitycenter.v1.AgentSession> agentSessions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.securitycenter.v1.AgentSession> getAgentSessionsList() {
+    return agentSessions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>
+      getAgentSessionsOrBuilderList() {
+    return agentSessions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  @java.lang.Override
+  public int getAgentSessionsCount() {
+    return agentSessions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AgentSession getAgentSessions(int index) {
+    return agentSessions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AgentSessionOrBuilder getAgentSessionsOrBuilder(
+      int index) {
+    return agentSessions_.get(index);
+  }
+
+  public static final int AGENT_ANOMALY_FIELD_NUMBER = 90;
+  private com.google.cloud.securitycenter.v1.AgentAnomaly agentAnomaly_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   *
+   * @return Whether the agentAnomaly field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentAnomaly() {
+    return ((bitField0_ & 0x02000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   *
+   * @return The agentAnomaly.
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AgentAnomaly getAgentAnomaly() {
+    return agentAnomaly_ == null
+        ? com.google.cloud.securitycenter.v1.AgentAnomaly.getDefaultInstance()
+        : agentAnomaly_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder getAgentAnomalyOrBuilder() {
+    return agentAnomaly_ == null
+        ? com.google.cloud.securitycenter.v1.AgentAnomaly.getDefaultInstance()
+        : agentAnomaly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -8048,6 +8228,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(84, getExternalExposure());
+    }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      output.writeMessage(88, getAgent());
+    }
+    for (int i = 0; i < agentSessions_.size(); i++) {
+      output.writeMessage(89, agentSessions_.get(i));
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      output.writeMessage(90, getAgentAnomaly());
     }
     getUnknownFields().writeTo(output);
   }
@@ -8245,6 +8434,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(84, getExternalExposure());
     }
+    if (((bitField0_ & 0x01000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(88, getAgent());
+    }
+    for (int i = 0; i < agentSessions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(89, agentSessions_.get(i));
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(90, getAgentAnomaly());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8384,6 +8582,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     if (hasExternalExposure() != other.hasExternalExposure()) return false;
     if (hasExternalExposure()) {
       if (!getExternalExposure().equals(other.getExternalExposure())) return false;
+    }
+    if (hasAgent() != other.hasAgent()) return false;
+    if (hasAgent()) {
+      if (!getAgent().equals(other.getAgent())) return false;
+    }
+    if (!getAgentSessionsList().equals(other.getAgentSessionsList())) return false;
+    if (hasAgentAnomaly() != other.hasAgentAnomaly()) return false;
+    if (hasAgentAnomaly()) {
+      if (!getAgentAnomaly().equals(other.getAgentAnomaly())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -8573,6 +8780,18 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
     if (hasExternalExposure()) {
       hash = (37 * hash) + EXTERNAL_EXPOSURE_FIELD_NUMBER;
       hash = (53 * hash) + getExternalExposure().hashCode();
+    }
+    if (hasAgent()) {
+      hash = (37 * hash) + AGENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAgent().hashCode();
+    }
+    if (getAgentSessionsCount() > 0) {
+      hash = (37 * hash) + AGENT_SESSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentSessionsList().hashCode();
+    }
+    if (hasAgentAnomaly()) {
+      hash = (37 * hash) + AGENT_ANOMALY_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentAnomaly().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -8785,6 +9004,9 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         internalGetGroupMembershipsFieldBuilder();
         internalGetChokepointFieldBuilder();
         internalGetExternalExposureFieldBuilder();
+        internalGetAgentFieldBuilder();
+        internalGetAgentSessionsFieldBuilder();
+        internalGetAgentAnomalyFieldBuilder();
       }
     }
 
@@ -9001,6 +9223,23 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         externalExposureBuilder_.dispose();
         externalExposureBuilder_ = null;
       }
+      agent_ = null;
+      if (agentBuilder_ != null) {
+        agentBuilder_.dispose();
+        agentBuilder_ = null;
+      }
+      if (agentSessionsBuilder_ == null) {
+        agentSessions_ = java.util.Collections.emptyList();
+      } else {
+        agentSessions_ = null;
+        agentSessionsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00200000);
+      agentAnomaly_ = null;
+      if (agentAnomalyBuilder_ != null) {
+        agentAnomalyBuilder_.dispose();
+        agentAnomalyBuilder_ = null;
+      }
       return this;
     }
 
@@ -9129,6 +9368,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         result.groupMemberships_ = groupMemberships_;
       } else {
         result.groupMemberships_ = groupMembershipsBuilder_.build();
+      }
+      if (agentSessionsBuilder_ == null) {
+        if (((bitField1_ & 0x00200000) != 0)) {
+          agentSessions_ = java.util.Collections.unmodifiableList(agentSessions_);
+          bitField1_ = (bitField1_ & ~0x00200000);
+        }
+        result.agentSessions_ = agentSessions_;
+      } else {
+        result.agentSessions_ = agentSessionsBuilder_.build();
       }
     }
 
@@ -9312,6 +9560,15 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         result.externalExposure_ =
             externalExposureBuilder_ == null ? externalExposure_ : externalExposureBuilder_.build();
         to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField1_ & 0x00100000) != 0)) {
+        result.agent_ = agentBuilder_ == null ? agent_ : agentBuilder_.build();
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField1_ & 0x00400000) != 0)) {
+        result.agentAnomaly_ =
+            agentAnomalyBuilder_ == null ? agentAnomaly_ : agentAnomalyBuilder_.build();
+        to_bitField0_ |= 0x02000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9742,6 +9999,39 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasExternalExposure()) {
         mergeExternalExposure(other.getExternalExposure());
+      }
+      if (other.hasAgent()) {
+        mergeAgent(other.getAgent());
+      }
+      if (agentSessionsBuilder_ == null) {
+        if (!other.agentSessions_.isEmpty()) {
+          if (agentSessions_.isEmpty()) {
+            agentSessions_ = other.agentSessions_;
+            bitField1_ = (bitField1_ & ~0x00200000);
+          } else {
+            ensureAgentSessionsIsMutable();
+            agentSessions_.addAll(other.agentSessions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.agentSessions_.isEmpty()) {
+          if (agentSessionsBuilder_.isEmpty()) {
+            agentSessionsBuilder_.dispose();
+            agentSessionsBuilder_ = null;
+            agentSessions_ = other.agentSessions_;
+            bitField1_ = (bitField1_ & ~0x00200000);
+            agentSessionsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAgentSessionsFieldBuilder()
+                    : null;
+          } else {
+            agentSessionsBuilder_.addAllMessages(other.agentSessions_);
+          }
+        }
+      }
+      if (other.hasAgentAnomaly()) {
+        mergeAgentAnomaly(other.getAgentAnomaly());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -10200,6 +10490,33 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00080000;
                 break;
               } // case 674
+            case 706:
+              {
+                input.readMessage(internalGetAgentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00100000;
+                break;
+              } // case 706
+            case 714:
+              {
+                com.google.cloud.securitycenter.v1.AgentSession m =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1.AgentSession.parser(),
+                        extensionRegistry);
+                if (agentSessionsBuilder_ == null) {
+                  ensureAgentSessionsIsMutable();
+                  agentSessions_.add(m);
+                } else {
+                  agentSessionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 714
+            case 722:
+              {
+                input.readMessage(
+                    internalGetAgentAnomalyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00400000;
+                break;
+              } // case 722
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -21663,6 +21980,773 @@ public final class Finding extends com.google.protobuf.GeneratedMessage
         externalExposure_ = null;
       }
       return externalExposureBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.Agent agent_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.Agent,
+            com.google.cloud.securitycenter.v1.Agent.Builder,
+            com.google.cloud.securitycenter.v1.AgentOrBuilder>
+        agentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     *
+     * @return Whether the agent field is set.
+     */
+    public boolean hasAgent() {
+      return ((bitField1_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     *
+     * @return The agent.
+     */
+    public com.google.cloud.securitycenter.v1.Agent getAgent() {
+      if (agentBuilder_ == null) {
+        return agent_ == null
+            ? com.google.cloud.securitycenter.v1.Agent.getDefaultInstance()
+            : agent_;
+      } else {
+        return agentBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public Builder setAgent(com.google.cloud.securitycenter.v1.Agent value) {
+      if (agentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agent_ = value;
+      } else {
+        agentBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public Builder setAgent(com.google.cloud.securitycenter.v1.Agent.Builder builderForValue) {
+      if (agentBuilder_ == null) {
+        agent_ = builderForValue.build();
+      } else {
+        agentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public Builder mergeAgent(com.google.cloud.securitycenter.v1.Agent value) {
+      if (agentBuilder_ == null) {
+        if (((bitField1_ & 0x00100000) != 0)
+            && agent_ != null
+            && agent_ != com.google.cloud.securitycenter.v1.Agent.getDefaultInstance()) {
+          getAgentBuilder().mergeFrom(value);
+        } else {
+          agent_ = value;
+        }
+      } else {
+        agentBuilder_.mergeFrom(value);
+      }
+      if (agent_ != null) {
+        bitField1_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public Builder clearAgent() {
+      bitField1_ = (bitField1_ & ~0x00100000);
+      agent_ = null;
+      if (agentBuilder_ != null) {
+        agentBuilder_.dispose();
+        agentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public com.google.cloud.securitycenter.v1.Agent.Builder getAgentBuilder() {
+      bitField1_ |= 0x00100000;
+      onChanged();
+      return internalGetAgentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentOrBuilder getAgentOrBuilder() {
+      if (agentBuilder_ != null) {
+        return agentBuilder_.getMessageOrBuilder();
+      } else {
+        return agent_ == null
+            ? com.google.cloud.securitycenter.v1.Agent.getDefaultInstance()
+            : agent_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Primary Agent that the specified finding was flagged for
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.Agent,
+            com.google.cloud.securitycenter.v1.Agent.Builder,
+            com.google.cloud.securitycenter.v1.AgentOrBuilder>
+        internalGetAgentFieldBuilder() {
+      if (agentBuilder_ == null) {
+        agentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.securitycenter.v1.Agent,
+                com.google.cloud.securitycenter.v1.Agent.Builder,
+                com.google.cloud.securitycenter.v1.AgentOrBuilder>(
+                getAgent(), getParentForChildren(), isClean());
+        agent_ = null;
+      }
+      return agentBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.securitycenter.v1.AgentSession> agentSessions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAgentSessionsIsMutable() {
+      if (!((bitField1_ & 0x00200000) != 0)) {
+        agentSessions_ =
+            new java.util.ArrayList<com.google.cloud.securitycenter.v1.AgentSession>(
+                agentSessions_);
+        bitField1_ |= 0x00200000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.securitycenter.v1.AgentSession,
+            com.google.cloud.securitycenter.v1.AgentSession.Builder,
+            com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>
+        agentSessionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.AgentSession> getAgentSessionsList() {
+      if (agentSessionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(agentSessions_);
+      } else {
+        return agentSessionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public int getAgentSessionsCount() {
+      if (agentSessionsBuilder_ == null) {
+        return agentSessions_.size();
+      } else {
+        return agentSessionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentSession getAgentSessions(int index) {
+      if (agentSessionsBuilder_ == null) {
+        return agentSessions_.get(index);
+      } else {
+        return agentSessionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder setAgentSessions(
+        int index, com.google.cloud.securitycenter.v1.AgentSession value) {
+      if (agentSessionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentSessionsIsMutable();
+        agentSessions_.set(index, value);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder setAgentSessions(
+        int index, com.google.cloud.securitycenter.v1.AgentSession.Builder builderForValue) {
+      if (agentSessionsBuilder_ == null) {
+        ensureAgentSessionsIsMutable();
+        agentSessions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        agentSessionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder addAgentSessions(com.google.cloud.securitycenter.v1.AgentSession value) {
+      if (agentSessionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentSessionsIsMutable();
+        agentSessions_.add(value);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder addAgentSessions(
+        int index, com.google.cloud.securitycenter.v1.AgentSession value) {
+      if (agentSessionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAgentSessionsIsMutable();
+        agentSessions_.add(index, value);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder addAgentSessions(
+        com.google.cloud.securitycenter.v1.AgentSession.Builder builderForValue) {
+      if (agentSessionsBuilder_ == null) {
+        ensureAgentSessionsIsMutable();
+        agentSessions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        agentSessionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder addAgentSessions(
+        int index, com.google.cloud.securitycenter.v1.AgentSession.Builder builderForValue) {
+      if (agentSessionsBuilder_ == null) {
+        ensureAgentSessionsIsMutable();
+        agentSessions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        agentSessionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder addAllAgentSessions(
+        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1.AgentSession> values) {
+      if (agentSessionsBuilder_ == null) {
+        ensureAgentSessionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, agentSessions_);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder clearAgentSessions() {
+      if (agentSessionsBuilder_ == null) {
+        agentSessions_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00200000);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public Builder removeAgentSessions(int index) {
+      if (agentSessionsBuilder_ == null) {
+        ensureAgentSessionsIsMutable();
+        agentSessions_.remove(index);
+        onChanged();
+      } else {
+        agentSessionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentSession.Builder getAgentSessionsBuilder(
+        int index) {
+      return internalGetAgentSessionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentSessionOrBuilder getAgentSessionsOrBuilder(
+        int index) {
+      if (agentSessionsBuilder_ == null) {
+        return agentSessions_.get(index);
+      } else {
+        return agentSessionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public java.util.List<? extends com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>
+        getAgentSessionsOrBuilderList() {
+      if (agentSessionsBuilder_ != null) {
+        return agentSessionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(agentSessions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentSession.Builder addAgentSessionsBuilder() {
+      return internalGetAgentSessionsFieldBuilder()
+          .addBuilder(com.google.cloud.securitycenter.v1.AgentSession.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentSession.Builder addAgentSessionsBuilder(
+        int index) {
+      return internalGetAgentSessionsFieldBuilder()
+          .addBuilder(index, com.google.cloud.securitycenter.v1.AgentSession.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Conversational session(s) where the finding occurred.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+     */
+    public java.util.List<com.google.cloud.securitycenter.v1.AgentSession.Builder>
+        getAgentSessionsBuilderList() {
+      return internalGetAgentSessionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.securitycenter.v1.AgentSession,
+            com.google.cloud.securitycenter.v1.AgentSession.Builder,
+            com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>
+        internalGetAgentSessionsFieldBuilder() {
+      if (agentSessionsBuilder_ == null) {
+        agentSessionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.securitycenter.v1.AgentSession,
+                com.google.cloud.securitycenter.v1.AgentSession.Builder,
+                com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>(
+                agentSessions_,
+                ((bitField1_ & 0x00200000) != 0),
+                getParentForChildren(),
+                isClean());
+        agentSessions_ = null;
+      }
+      return agentSessionsBuilder_;
+    }
+
+    private com.google.cloud.securitycenter.v1.AgentAnomaly agentAnomaly_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.AgentAnomaly,
+            com.google.cloud.securitycenter.v1.AgentAnomaly.Builder,
+            com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder>
+        agentAnomalyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     *
+     * @return Whether the agentAnomaly field is set.
+     */
+    public boolean hasAgentAnomaly() {
+      return ((bitField1_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     *
+     * @return The agentAnomaly.
+     */
+    public com.google.cloud.securitycenter.v1.AgentAnomaly getAgentAnomaly() {
+      if (agentAnomalyBuilder_ == null) {
+        return agentAnomaly_ == null
+            ? com.google.cloud.securitycenter.v1.AgentAnomaly.getDefaultInstance()
+            : agentAnomaly_;
+      } else {
+        return agentAnomalyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public Builder setAgentAnomaly(com.google.cloud.securitycenter.v1.AgentAnomaly value) {
+      if (agentAnomalyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentAnomaly_ = value;
+      } else {
+        agentAnomalyBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public Builder setAgentAnomaly(
+        com.google.cloud.securitycenter.v1.AgentAnomaly.Builder builderForValue) {
+      if (agentAnomalyBuilder_ == null) {
+        agentAnomaly_ = builderForValue.build();
+      } else {
+        agentAnomalyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public Builder mergeAgentAnomaly(com.google.cloud.securitycenter.v1.AgentAnomaly value) {
+      if (agentAnomalyBuilder_ == null) {
+        if (((bitField1_ & 0x00400000) != 0)
+            && agentAnomaly_ != null
+            && agentAnomaly_
+                != com.google.cloud.securitycenter.v1.AgentAnomaly.getDefaultInstance()) {
+          getAgentAnomalyBuilder().mergeFrom(value);
+        } else {
+          agentAnomaly_ = value;
+        }
+      } else {
+        agentAnomalyBuilder_.mergeFrom(value);
+      }
+      if (agentAnomaly_ != null) {
+        bitField1_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public Builder clearAgentAnomaly() {
+      bitField1_ = (bitField1_ & ~0x00400000);
+      agentAnomaly_ = null;
+      if (agentAnomalyBuilder_ != null) {
+        agentAnomalyBuilder_.dispose();
+        agentAnomalyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentAnomaly.Builder getAgentAnomalyBuilder() {
+      bitField1_ |= 0x00400000;
+      onChanged();
+      return internalGetAgentAnomalyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    public com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder getAgentAnomalyOrBuilder() {
+      if (agentAnomalyBuilder_ != null) {
+        return agentAnomalyBuilder_.getMessageOrBuilder();
+      } else {
+        return agentAnomaly_ == null
+            ? com.google.cloud.securitycenter.v1.AgentAnomaly.getDefaultInstance()
+            : agentAnomaly_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about behavior anomalies detected in AI agents.
+     * </pre>
+     *
+     * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securitycenter.v1.AgentAnomaly,
+            com.google.cloud.securitycenter.v1.AgentAnomaly.Builder,
+            com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder>
+        internalGetAgentAnomalyFieldBuilder() {
+      if (agentAnomalyBuilder_ == null) {
+        agentAnomalyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.securitycenter.v1.AgentAnomaly,
+                com.google.cloud.securitycenter.v1.AgentAnomaly.Builder,
+                com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder>(
+                getAgentAnomaly(), getParentForChildren(), isClean());
+        agentAnomaly_ = null;
+      }
+      return agentAnomalyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.Finding)

@@ -1084,6 +1084,58 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
         : serviceLatency_;
   }
 
+  public static final int CES_DEBUG_INFO_FIELD_NUMBER = 5;
+  private com.google.protobuf.Struct cesDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the cesDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasCesDebugInfo() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The cesDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getCesDebugInfo() {
+    return cesDebugInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cesDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder() {
+    return cesDebugInfo_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cesDebugInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1113,6 +1165,9 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getServiceLatency());
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getCesDebugInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1139,6 +1194,9 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getServiceLatency());
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCesDebugInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1171,6 +1229,10 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
     if (hasServiceLatency()) {
       if (!getServiceLatency().equals(other.getServiceLatency())) return false;
     }
+    if (hasCesDebugInfo() != other.hasCesDebugInfo()) return false;
+    if (hasCesDebugInfo()) {
+      if (!getCesDebugInfo().equals(other.getCesDebugInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1195,6 +1257,10 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
     if (hasServiceLatency()) {
       hash = (37 * hash) + SERVICE_LATENCY_FIELD_NUMBER;
       hash = (53 * hash) + getServiceLatency().hashCode();
+    }
+    if (hasCesDebugInfo()) {
+      hash = (37 * hash) + CES_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getCesDebugInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1341,6 +1407,7 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
         internalGetSearchKnowledgeBehaviorFieldBuilder();
         internalGetIngestedContextReferenceDebugInfoFieldBuilder();
         internalGetServiceLatencyFieldBuilder();
+        internalGetCesDebugInfoFieldBuilder();
       }
     }
 
@@ -1363,6 +1430,11 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
       if (serviceLatencyBuilder_ != null) {
         serviceLatencyBuilder_.dispose();
         serviceLatencyBuilder_ = null;
+      }
+      cesDebugInfo_ = null;
+      if (cesDebugInfoBuilder_ != null) {
+        cesDebugInfoBuilder_.dispose();
+        cesDebugInfoBuilder_ = null;
       }
       return this;
     }
@@ -1425,6 +1497,11 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
             serviceLatencyBuilder_ == null ? serviceLatency_ : serviceLatencyBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.cesDebugInfo_ =
+            cesDebugInfoBuilder_ == null ? cesDebugInfo_ : cesDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1453,6 +1530,9 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
       }
       if (other.hasServiceLatency()) {
         mergeServiceLatency(other.getServiceLatency());
+      }
+      if (other.hasCesDebugInfo()) {
+        mergeCesDebugInfo(other.getCesDebugInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1509,6 +1589,13 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetCesDebugInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2292,6 +2379,209 @@ public final class SearchKnowledgeDebugInfo extends com.google.protobuf.Generate
         serviceLatency_ = null;
       }
       return serviceLatencyBuilder_;
+    }
+
+    private com.google.protobuf.Struct cesDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        cesDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the cesDebugInfo field is set.
+     */
+    public boolean hasCesDebugInfo() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The cesDebugInfo.
+     */
+    public com.google.protobuf.Struct getCesDebugInfo() {
+      if (cesDebugInfoBuilder_ == null) {
+        return cesDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cesDebugInfo_;
+      } else {
+        return cesDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesDebugInfo(com.google.protobuf.Struct value) {
+      if (cesDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cesDebugInfo_ = value;
+      } else {
+        cesDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCesDebugInfo(com.google.protobuf.Struct.Builder builderForValue) {
+      if (cesDebugInfoBuilder_ == null) {
+        cesDebugInfo_ = builderForValue.build();
+      } else {
+        cesDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCesDebugInfo(com.google.protobuf.Struct value) {
+      if (cesDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && cesDebugInfo_ != null
+            && cesDebugInfo_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getCesDebugInfoBuilder().mergeFrom(value);
+        } else {
+          cesDebugInfo_ = value;
+        }
+      } else {
+        cesDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (cesDebugInfo_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCesDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      cesDebugInfo_ = null;
+      if (cesDebugInfoBuilder_ != null) {
+        cesDebugInfoBuilder_.dispose();
+        cesDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getCesDebugInfoBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetCesDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getCesDebugInfoOrBuilder() {
+      if (cesDebugInfoBuilder_ != null) {
+        return cesDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return cesDebugInfo_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : cesDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Debug info from the Customer Engagement Suite (CES) execution.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct ces_debug_info = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetCesDebugInfoFieldBuilder() {
+      if (cesDebugInfoBuilder_ == null) {
+        cesDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getCesDebugInfo(), getParentForChildren(), isClean());
+        cesDebugInfo_ = null;
+      }
+      return cesDebugInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.SearchKnowledgeDebugInfo)

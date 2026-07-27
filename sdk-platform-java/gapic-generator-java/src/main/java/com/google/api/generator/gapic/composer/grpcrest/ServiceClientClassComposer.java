@@ -30,7 +30,9 @@ import com.google.api.generator.gapic.model.Transport;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceClientClassComposer extends AbstractServiceClientClassComposer {
   private static final ServiceClientClassComposer INSTANCE = new ServiceClientClassComposer();
 

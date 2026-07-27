@@ -31,9 +31,12 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.Period;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 import org.apache.arrow.vector.PeriodDuration;
 import org.apache.arrow.vector.util.Text;
@@ -42,6 +45,98 @@ import org.apache.arrow.vector.util.Text;
 class BigQueryTypeCoercionUtility {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryTypeCoercionUtility.class.getName());
+
+  /** Returns a defensively cloned Calendar instance or a new default Calendar if input is null. */
+  static Calendar getSafeCalendar(Calendar cal) {
+    if (cal == null) {
+      return Calendar.getInstance();
+    }
+    Object cloned = cal.clone();
+    if (cloned instanceof Calendar) {
+      return (Calendar) cloned;
+    }
+    Calendar safeCal = Calendar.getInstance();
+    if (cal.getTimeZone() != null) {
+      safeCal.setTimeZone(cal.getTimeZone());
+    }
+    return safeCal;
+  }
+
+  /**
+   * Converts a java.sql.Date by shifting its wall-clock year, month, and day fields into the target
+   * Calendar's timezone per JDBC specification.
+   */
+  static Date convertDateWithCalendar(Date date, Calendar cal) {
+    if (date == null || cal == null) {
+      return date;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return date;
+    }
+    LocalDate localDate = date.toLocalDate();
+    ZonedDateTime zdt = localDate.atStartOfDay(targetZone);
+    return new Date(zdt.toInstant().toEpochMilli());
+  }
+
+  static Date convertDateToCalendar(Date date, Calendar cal) {
+    if (date == null || cal == null) {
+      return date;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return date;
+    }
+    LocalDate localDate = Instant.ofEpochMilli(date.getTime()).atZone(targetZone).toLocalDate();
+    ZonedDateTime zdt = localDate.atStartOfDay(systemZone);
+    return new Date(zdt.toInstant().toEpochMilli());
+  }
+
+  /**
+   * Converts a java.sql.Time by shifting its wall-clock hour, minute, second, and millisecond
+   * fields into the target Calendar's timezone per JDBC specification.
+   */
+  static Time convertTimeWithCalendar(Time time, Calendar cal) {
+    if (time == null || cal == null) {
+      return time;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return time;
+    }
+    Calendar defaultCal = Calendar.getInstance();
+    defaultCal.setTime(time);
+
+    Calendar targetCal = getSafeCalendar(cal);
+    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
+    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
+    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
+    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
+    return new Time(targetCal.getTimeInMillis());
+  }
+
+  /**
+   * Converts a java.sql.Timestamp by shifting its wall-clock fields into the target Calendar's
+   * timezone per JDBC specification while preserving nanosecond precision.
+   */
+  static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
+    if (timestamp == null || cal == null) {
+      return timestamp;
+    }
+    ZoneId systemZone = ZoneId.systemDefault();
+    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    if (systemZone.equals(targetZone)) {
+      return timestamp;
+    }
+    LocalDateTime ldt = timestamp.toLocalDateTime();
+    ZonedDateTime zdt = ldt.atZone(targetZone);
+    Timestamp adjustedTimestamp = Timestamp.from(zdt.toInstant());
+    adjustedTimestamp.setNanos(timestamp.getNanos());
+    return adjustedTimestamp;
+  }
 
   static BigQueryTypeCoercer INSTANCE;
 

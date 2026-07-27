@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -168,9 +170,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CaseAttachmentServiceClient implements BackgroundResource {
-  private final CaseAttachmentServiceSettings settings;
+  private final @Nullable CaseAttachmentServiceSettings settings;
   private final CaseAttachmentServiceStub stub;
 
   /** Constructs an instance of CaseAttachmentServiceClient with default settings. */
@@ -210,7 +213,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CaseAttachmentServiceSettings getSettings() {
+  public final @Nullable CaseAttachmentServiceSettings getSettings() {
     return settings;
   }
 
@@ -242,7 +245,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * @param parent Required. The name of the case for which attachments should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttachmentsPagedResponse listAttachments(CaseName parent) {
+  public final ListAttachmentsPagedResponse listAttachments(@Nullable CaseName parent) {
     ListAttachmentsRequest request =
         ListAttachmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -430,7 +433,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
    * @param name Required. The name of the attachment to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attachment getAttachment(AttachmentName name) {
+  public final Attachment getAttachment(@Nullable AttachmentName name) {
     GetAttachmentRequest request =
         GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAttachment(request);
@@ -646,8 +649,8 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
           ListAttachmentsRequest, ListAttachmentsResponse, Attachment, ListAttachmentsPage> {
 
     private ListAttachmentsPage(
-        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
-        ListAttachmentsResponse response) {
+        @Nullable PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        @Nullable ListAttachmentsResponse response) {
       super(context, response);
     }
 
@@ -657,14 +660,14 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAttachmentsPage createPage(
-        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
-        ListAttachmentsResponse response) {
+        @Nullable PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        @Nullable ListAttachmentsResponse response) {
       return new ListAttachmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttachmentsPage> createPageAsync(
-        PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
+        @Nullable PageContext<ListAttachmentsRequest, ListAttachmentsResponse, Attachment> context,
         ApiFuture<ListAttachmentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -679,7 +682,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
           ListAttachmentsFixedSizeCollection> {
 
     private ListAttachmentsFixedSizeCollection(
-        List<ListAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAttachmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -689,7 +692,7 @@ public class CaseAttachmentServiceClient implements BackgroundResource {
 
     @Override
     protected ListAttachmentsFixedSizeCollection createCollection(
-        List<ListAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListAttachmentsPage> pages, int collectionSize) {
       return new ListAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }

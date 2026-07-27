@@ -39,8 +39,11 @@ import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
+@NullMarked
 class OpenTelemetryTracingTracer implements ApiTracer {
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";
@@ -49,7 +52,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
   private final Map<String, Object> attemptAttributes;
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
-  private Span attemptSpan;
+  private @Nullable Span attemptSpan;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -212,7 +215,7 @@ class OpenTelemetryTracingTracer implements ApiTracer {
     recordErrorAndEndAttempt(error);
   }
 
-  private void recordErrorAndEndAttempt(Throwable error) {
+  private void recordErrorAndEndAttempt(@Nullable Throwable error) {
     if (attemptSpan == null) {
       return;
     }

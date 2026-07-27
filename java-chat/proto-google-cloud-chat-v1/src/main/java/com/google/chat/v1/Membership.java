@@ -56,6 +56,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     name_ = "";
     state_ = 0;
     role_ = 0;
+    affiliation_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -571,6 +572,211 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.chat.v1.Membership.MembershipRole)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Represents the affiliation of a user to the Google Workspace organization
+   * that owns the space. This enum may have more values added in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code google.chat.v1.Membership.Affiliation}
+   */
+  public enum Affiliation implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>AFFILIATION_UNSPECIFIED = 0;</code>
+     */
+    AFFILIATION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * An account managed by the same Google Workspace organization that owns
+     * the space.
+     * </pre>
+     *
+     * <code>INTERNAL = 1;</code>
+     */
+    INTERNAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * An account external to the Google Workspace organization that owns the
+     * space (e.g., a consumer account, or an account managed by a different
+     * Workspace organization).
+     * </pre>
+     *
+     * <code>EXTERNAL = 2;</code>
+     */
+    EXTERNAL(2),
+    /**
+     *
+     *
+     * <pre>
+     * An account managed by the Workspace organization that owns the space,
+     * but provisioned for a user who is external to the organization (e.g., a
+     * Guest user). To learn more about guests, see
+     * https://support.google.com/chat/answer/16997417.
+     * </pre>
+     *
+     * <code>MANAGED_EXTERNAL = 3;</code>
+     */
+    MANAGED_EXTERNAL(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Affiliation");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>AFFILIATION_UNSPECIFIED = 0;</code>
+     */
+    public static final int AFFILIATION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * An account managed by the same Google Workspace organization that owns
+     * the space.
+     * </pre>
+     *
+     * <code>INTERNAL = 1;</code>
+     */
+    public static final int INTERNAL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * An account external to the Google Workspace organization that owns the
+     * space (e.g., a consumer account, or an account managed by a different
+     * Workspace organization).
+     * </pre>
+     *
+     * <code>EXTERNAL = 2;</code>
+     */
+    public static final int EXTERNAL_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * An account managed by the Workspace organization that owns the space,
+     * but provisioned for a user who is external to the organization (e.g., a
+     * Guest user). To learn more about guests, see
+     * https://support.google.com/chat/answer/16997417.
+     * </pre>
+     *
+     * <code>MANAGED_EXTERNAL = 3;</code>
+     */
+    public static final int MANAGED_EXTERNAL_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Affiliation valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Affiliation forNumber(int value) {
+      switch (value) {
+        case 0:
+          return AFFILIATION_UNSPECIFIED;
+        case 1:
+          return INTERNAL;
+        case 2:
+          return EXTERNAL;
+        case 3:
+          return MANAGED_EXTERNAL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Affiliation> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Affiliation> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Affiliation>() {
+          public Affiliation findValueByNumber(int number) {
+            return Affiliation.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.chat.v1.Membership.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Affiliation[] VALUES = values();
+
+    public static Affiliation valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Affiliation(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.chat.v1.Membership.Affiliation)
+  }
+
   private int bitField0_;
   private int memberTypeCase_ = 0;
 
@@ -1021,6 +1227,51 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
 
+  public static final int AFFILIATION_FIELD_NUMBER = 9;
+  private int affiliation_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A user's relationship to the Workspace organization that owns
+   * the space. In spaces owned by consumer accounts, the affiliation of all
+   * members is `EXTERNAL`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for affiliation.
+   */
+  @java.lang.Override
+  public int getAffiliationValue() {
+    return affiliation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A user's relationship to the Workspace organization that owns
+   * the space. In spaces owned by consumer accounts, the affiliation of all
+   * members is `EXTERNAL`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The affiliation.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.Membership.Affiliation getAffiliation() {
+    com.google.chat.v1.Membership.Affiliation result =
+        com.google.chat.v1.Membership.Affiliation.forNumber(affiliation_);
+    return result == null ? com.google.chat.v1.Membership.Affiliation.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1058,6 +1309,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(8, getDeleteTime());
     }
+    if (affiliation_
+        != com.google.chat.v1.Membership.Affiliation.AFFILIATION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, affiliation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1094,6 +1349,10 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getDeleteTime());
     }
+    if (affiliation_
+        != com.google.chat.v1.Membership.Affiliation.AFFILIATION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, affiliation_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1120,6 +1379,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
     if (hasDeleteTime()) {
       if (!getDeleteTime().equals(other.getDeleteTime())) return false;
     }
+    if (affiliation_ != other.affiliation_) return false;
     if (!getMemberTypeCase().equals(other.getMemberTypeCase())) return false;
     switch (memberTypeCase_) {
       case 3:
@@ -1156,6 +1416,8 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDeleteTime().hashCode();
     }
+    hash = (37 * hash) + AFFILIATION_FIELD_NUMBER;
+    hash = (53 * hash) + affiliation_;
     switch (memberTypeCase_) {
       case 3:
         hash = (37 * hash) + MEMBER_FIELD_NUMBER;
@@ -1336,6 +1598,7 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
         deleteTimeBuilder_.dispose();
         deleteTimeBuilder_ = null;
       }
+      affiliation_ = 0;
       memberTypeCase_ = 0;
       memberType_ = null;
       return this;
@@ -1392,6 +1655,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
         result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.affiliation_ = affiliation_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1434,6 +1700,9 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
+      }
+      if (other.affiliation_ != 0) {
+        setAffiliationValue(other.getAffiliationValue());
       }
       switch (other.getMemberTypeCase()) {
         case MEMBER:
@@ -1522,6 +1791,12 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 72:
+              {
+                affiliation_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2866,6 +3141,121 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
         deleteTime_ = null;
       }
       return deleteTimeBuilder_;
+    }
+
+    private int affiliation_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A user's relationship to the Workspace organization that owns
+     * the space. In spaces owned by consumer accounts, the affiliation of all
+     * members is `EXTERNAL`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for affiliation.
+     */
+    @java.lang.Override
+    public int getAffiliationValue() {
+      return affiliation_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A user's relationship to the Workspace organization that owns
+     * the space. In spaces owned by consumer accounts, the affiliation of all
+     * members is `EXTERNAL`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for affiliation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAffiliationValue(int value) {
+      affiliation_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A user's relationship to the Workspace organization that owns
+     * the space. In spaces owned by consumer accounts, the affiliation of all
+     * members is `EXTERNAL`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The affiliation.
+     */
+    @java.lang.Override
+    public com.google.chat.v1.Membership.Affiliation getAffiliation() {
+      com.google.chat.v1.Membership.Affiliation result =
+          com.google.chat.v1.Membership.Affiliation.forNumber(affiliation_);
+      return result == null ? com.google.chat.v1.Membership.Affiliation.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A user's relationship to the Workspace organization that owns
+     * the space. In spaces owned by consumer accounts, the affiliation of all
+     * members is `EXTERNAL`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The affiliation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAffiliation(com.google.chat.v1.Membership.Affiliation value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      affiliation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A user's relationship to the Workspace organization that owns
+     * the space. In spaces owned by consumer accounts, the affiliation of all
+     * members is `EXTERNAL`.
+     * </pre>
+     *
+     * <code>
+     * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAffiliation() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      affiliation_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.chat.v1.Membership)

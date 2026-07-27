@@ -44,6 +44,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -51,9 +52,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.time.LocalTime;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
+import java.util.TimeZone;
 import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -984,11 +988,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     String TABLE_NAME = "JDBC_PREPARED_EXECUTE_TABLE_" + randomNumber;
     String createQuery =
         String.format(
-            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER);",
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING, `IntegerField` INTEGER, `ShortField` INT64, `BytesField` BYTES, `DoubleField` FLOAT64, `BooleanField` BOOL, `NullField` STRING);",
             DATASET, TABLE_NAME);
     String insertQuery =
         String.format(
-            "INSERT INTO %s.%s (StringField, IntegerField) VALUES (?,?), (?,?), (?,?), (?,?);",
+            "INSERT INTO %s.%s (StringField, IntegerField, ShortField, BytesField, DoubleField, BooleanField, NullField) VALUES (?,?,?,?,?,?,?), (?,?,?,?,?,?,?);",
             DATASET, TABLE_NAME);
     String updateQuery =
         String.format("UPDATE %s.%s SET StringField=? WHERE IntegerField=?", DATASET, TABLE_NAME);
@@ -999,14 +1003,23 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertFalse(createStatus);
 
     PreparedStatement insertStmt = bigQueryConnection.prepareStatement(insertQuery);
+    // Row 1: Testing setString, setInt, setShort, setBytes, setObject, setNull
     insertStmt.setString(1, "String1");
     insertStmt.setInt(2, 111);
-    insertStmt.setString(3, "String2");
-    insertStmt.setInt(4, 222);
-    insertStmt.setString(5, "String3");
-    insertStmt.setInt(6, 333);
-    insertStmt.setString(7, "String4");
-    insertStmt.setInt(8, 444);
+    insertStmt.setShort(3, (short) 12);
+    insertStmt.setBytes(4, new byte[] {0x1, 0x2});
+    insertStmt.setObject(5, 3.14d);
+    insertStmt.setObject(6, true, Types.BOOLEAN);
+    insertStmt.setNull(7, Types.VARCHAR);
+
+    // Row 2: Testing setString, setInt, setShort, setBytes, setObject, setNull with typeName
+    insertStmt.setString(8, "String2");
+    insertStmt.setInt(9, 222);
+    insertStmt.setShort(10, (short) 34);
+    insertStmt.setBytes(11, new byte[] {0x3, 0x4});
+    insertStmt.setObject(12, 6.28d);
+    insertStmt.setObject(13, false);
+    insertStmt.setNull(14, Types.VARCHAR, "STRING");
 
     boolean insertStatus = insertStmt.execute();
     assertFalse(insertStatus);
@@ -1505,7 +1518,18 @@ public class ITBigQueryJDBCTest extends ITBase {
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 
+    ParameterMetaData paramMetaData = preparedStatement.getParameterMetaData();
+    assertNotNull(paramMetaData);
+    assertEquals(1, paramMetaData.getParameterCount());
+    assertEquals(Types.NVARCHAR, paramMetaData.getParameterType(1));
+    assertEquals("STRING", paramMetaData.getParameterTypeName(1));
+
     ResultSet jsonResultSet = preparedStatement.executeQuery();
+
+    ResultSetMetaData resultSetMetaData = preparedStatement.getMetaData();
+    if (resultSetMetaData != null) {
+      assertTrue(resultSetMetaData.getColumnCount() > 0);
+    }
 
     int rowCount = resultSetRowCount(jsonResultSet);
     assertEquals(1000, rowCount);
@@ -1633,11 +1657,22 @@ public class ITBigQueryJDBCTest extends ITBase {
     int insertStatus = insertPs.executeUpdate();
     assertEquals(1, insertStatus);
 
+    // Test Calendar overloads (setDate, setTime, setTimestamp with Calendar)
+    Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+    insertPs.setString(1, "refrigerator");
+    insertPs.setInt(2, 2);
+    insertPs.setTimestamp(3, new Timestamp(System.currentTimeMillis()), utcCal);
+    insertPs.setTime(4, Time.valueOf(LocalTime.NOON), utcCal);
+    insertPs.setDate(5, Date.valueOf("2025-12-03"), utcCal);
+
+    int insertStatus2 = insertPs.executeUpdate();
+    assertEquals(1, insertStatus2);
+
     ResultSet rs =
         bigQueryStatement.executeQuery(
             String.format("SELECT COUNT(*) AS row_count\n" + "FROM %s.%s", DATASET, TABLE_NAME1));
     rs.next();
-    assertEquals(1, rs.getInt(1));
+    assertEquals(2, rs.getInt(1));
 
     String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME1);
     int dropStatus = bigQueryStatement.executeUpdate(dropQuery);

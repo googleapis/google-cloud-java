@@ -63,6 +63,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     etag_ = "";
     kind_ = "";
     name_ = "";
+    pauseTime_ = "";
+    resumeTime_ = "";
     rolloutPlan_ = "";
     selfLink_ = "";
     selfLinkWithId_ = "";
@@ -1210,6 +1212,144 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PAUSE_TIME_FIELD_NUMBER = 489697142;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pauseTime_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return Whether the pauseTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasPauseTime() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return The pauseTime.
+   */
+  @java.lang.Override
+  public java.lang.String getPauseTime() {
+    java.lang.Object ref = pauseTime_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pauseTime_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return The bytes for pauseTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPauseTimeBytes() {
+    java.lang.Object ref = pauseTime_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pauseTime_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESUME_TIME_FIELD_NUMBER = 457856927;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resumeTime_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return Whether the resumeTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasResumeTime() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return The resumeTime.
+   */
+  @java.lang.Override
+  public java.lang.String getResumeTime() {
+    java.lang.Object ref = resumeTime_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resumeTime_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return The bytes for resumeTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResumeTimeBytes() {
+    java.lang.Object ref = resumeTime_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resumeTime_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ROLLOUT_ENTITY_FIELD_NUMBER = 70633009;
   private com.google.cloud.compute.v1.RolloutRolloutEntity rolloutEntity_;
 
@@ -1226,7 +1366,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRolloutEntity() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1282,7 +1422,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRolloutPlan() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1353,7 +1493,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1422,7 +1562,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1492,7 +1632,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasState() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1654,13 +1794,13 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(70633009, getRolloutEntity());
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1675,11 +1815,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 457856927, resumeTime_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 459057399, rolloutPlan_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 489697142, pauseTime_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1709,14 +1855,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(70633009, getRolloutEntity());
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(109757585, state_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1731,11 +1877,17 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(457856927, resumeTime_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(459057399, rolloutPlan_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(489697142, pauseTime_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1787,6 +1939,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasPauseTime() != other.hasPauseTime()) return false;
+    if (hasPauseTime()) {
+      if (!getPauseTime().equals(other.getPauseTime())) return false;
+    }
+    if (hasResumeTime() != other.hasResumeTime()) return false;
+    if (hasResumeTime()) {
+      if (!getResumeTime().equals(other.getResumeTime())) return false;
     }
     if (hasRolloutEntity() != other.hasRolloutEntity()) return false;
     if (hasRolloutEntity()) {
@@ -1855,6 +2015,14 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasPauseTime()) {
+      hash = (37 * hash) + PAUSE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getPauseTime().hashCode();
+    }
+    if (hasResumeTime()) {
+      hash = (37 * hash) + RESUME_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getResumeTime().hashCode();
     }
     if (hasRolloutEntity()) {
       hash = (37 * hash) + ROLLOUT_ENTITY_FIELD_NUMBER;
@@ -2042,6 +2210,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       id_ = 0L;
       kind_ = "";
       name_ = "";
+      pauseTime_ = "";
+      resumeTime_ = "";
       rolloutEntity_ = null;
       if (rolloutEntityBuilder_ != null) {
         rolloutEntityBuilder_.dispose();
@@ -2057,7 +2227,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         waveDetails_ = null;
         waveDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
 
@@ -2094,9 +2264,9 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Rollout result) {
       if (waveDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)) {
+        if (((bitField0_ & 0x00010000) != 0)) {
           waveDetails_ = java.util.Collections.unmodifiableList(waveDetails_);
-          bitField0_ = (bitField0_ & ~0x00004000);
+          bitField0_ = (bitField0_ & ~0x00010000);
         }
         result.waveDetails_ = waveDetails_;
       } else {
@@ -2144,25 +2314,33 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.rolloutEntity_ =
-            rolloutEntityBuilder_ == null ? rolloutEntity_ : rolloutEntityBuilder_.build();
+        result.pauseTime_ = pauseTime_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.rolloutPlan_ = rolloutPlan_;
+        result.resumeTime_ = resumeTime_;
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.rolloutEntity_ =
+            rolloutEntityBuilder_ == null ? rolloutEntity_ : rolloutEntityBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.rolloutPlan_ = rolloutPlan_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.state_ = state_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.selfLinkWithId_ = selfLinkWithId_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.state_ = state_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2220,34 +2398,44 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (other.hasPauseTime()) {
+        pauseTime_ = other.pauseTime_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasResumeTime()) {
+        resumeTime_ = other.resumeTime_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       if (other.hasRolloutEntity()) {
         mergeRolloutEntity(other.getRolloutEntity());
       }
       if (other.hasRolloutPlan()) {
         rolloutPlan_ = other.rolloutPlan_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       if (other.hasState()) {
         state_ = other.state_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (waveDetailsBuilder_ == null) {
         if (!other.waveDetails_.isEmpty()) {
           if (waveDetails_.isEmpty()) {
             waveDetails_ = other.waveDetails_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
           } else {
             ensureWaveDetailsIsMutable();
             waveDetails_.addAll(other.waveDetails_);
@@ -2260,7 +2448,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
             waveDetailsBuilder_.dispose();
             waveDetailsBuilder_ = null;
             waveDetails_ = other.waveDetails_;
-            bitField0_ = (bitField0_ & ~0x00004000);
+            bitField0_ = (bitField0_ & ~0x00010000);
             waveDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetWaveDetailsFieldBuilder()
@@ -2342,20 +2530,20 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 356167698
             case 565064074:
               {
                 input.readMessage(
                     internalGetRolloutEntityFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 565064074
             case 878060682:
               {
                 state_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 878060682
             case 983140994:
@@ -2385,15 +2573,27 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -645248918
+            case -632111878:
+              {
+                resumeTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case -632111878
             case -622508102:
               {
                 rolloutPlan_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case -622508102
+            case -377390158:
+              {
+                pauseTime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case -377390158
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3507,6 +3707,258 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object pauseTime_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @return Whether the pauseTime field is set.
+     */
+    public boolean hasPauseTime() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @return The pauseTime.
+     */
+    public java.lang.String getPauseTime() {
+      java.lang.Object ref = pauseTime_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pauseTime_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @return The bytes for pauseTime.
+     */
+    public com.google.protobuf.ByteString getPauseTimeBytes() {
+      java.lang.Object ref = pauseTime_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pauseTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @param value The pauseTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPauseTime(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pauseTime_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPauseTime() {
+      pauseTime_ = getDefaultInstance().getPauseTime();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was paused.
+     * </pre>
+     *
+     * <code>optional string pause_time = 489697142;</code>
+     *
+     * @param value The bytes for pauseTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPauseTimeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pauseTime_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resumeTime_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @return Whether the resumeTime field is set.
+     */
+    public boolean hasResumeTime() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @return The resumeTime.
+     */
+    public java.lang.String getResumeTime() {
+      java.lang.Object ref = resumeTime_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resumeTime_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @return The bytes for resumeTime.
+     */
+    public com.google.protobuf.ByteString getResumeTimeBytes() {
+      java.lang.Object ref = resumeTime_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resumeTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @param value The resumeTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResumeTime(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resumeTime_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResumeTime() {
+      resumeTime_ = getDefaultInstance().getResumeTime();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The timestamp at which the Rollout was resumed.
+     * </pre>
+     *
+     * <code>optional string resume_time = 457856927;</code>
+     *
+     * @param value The bytes for resumeTime to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResumeTimeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resumeTime_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.RolloutRolloutEntity rolloutEntity_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.RolloutRolloutEntity,
@@ -3527,7 +3979,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the rolloutEntity field is set.
      */
     public boolean hasRolloutEntity() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3571,7 +4023,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         rolloutEntityBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3593,7 +4045,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       } else {
         rolloutEntityBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3610,7 +4062,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRolloutEntity(com.google.cloud.compute.v1.RolloutRolloutEntity value) {
       if (rolloutEntityBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && rolloutEntity_ != null
             && rolloutEntity_
                 != com.google.cloud.compute.v1.RolloutRolloutEntity.getDefaultInstance()) {
@@ -3622,7 +4074,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         rolloutEntityBuilder_.mergeFrom(value);
       }
       if (rolloutEntity_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3639,7 +4091,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRolloutEntity() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       rolloutEntity_ = null;
       if (rolloutEntityBuilder_ != null) {
         rolloutEntityBuilder_.dispose();
@@ -3660,7 +4112,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.RolloutRolloutEntity.Builder getRolloutEntityBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetRolloutEntityFieldBuilder().getBuilder();
     }
@@ -3727,7 +4179,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the rolloutPlan field is set.
      */
     public boolean hasRolloutPlan() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3796,7 +4248,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       rolloutPlan_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3815,7 +4267,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRolloutPlan() {
       rolloutPlan_ = getDefaultInstance().getRolloutPlan();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3839,7 +4291,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       rolloutPlan_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3858,7 +4310,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3924,7 +4376,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3942,7 +4394,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -3965,7 +4417,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3984,7 +4436,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4050,7 +4502,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4068,7 +4520,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -4091,7 +4543,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4111,7 +4563,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      * @return Whether the state field is set.
      */
     public boolean hasState() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4180,7 +4632,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       state_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4199,7 +4651,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearState() {
       state_ = getDefaultInstance().getState();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4223,7 +4675,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       state_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4232,10 +4684,10 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureWaveDetailsIsMutable() {
-      if (!((bitField0_ & 0x00004000) != 0)) {
+      if (!((bitField0_ & 0x00010000) != 0)) {
         waveDetails_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.RolloutWaveDetails>(waveDetails_);
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
       }
     }
 
@@ -4461,7 +4913,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
     public Builder clearWaveDetails() {
       if (waveDetailsBuilder_ == null) {
         waveDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
       } else {
         waveDetailsBuilder_.clear();
@@ -4591,7 +5043,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.RolloutWaveDetails,
                 com.google.cloud.compute.v1.RolloutWaveDetails.Builder,
                 com.google.cloud.compute.v1.RolloutWaveDetailsOrBuilder>(
-                waveDetails_, ((bitField0_ & 0x00004000) != 0), getParentForChildren(), isClean());
+                waveDetails_, ((bitField0_ & 0x00010000) != 0), getParentForChildren(), isClean());
         waveDetails_ = null;
       }
       return waveDetailsBuilder_;

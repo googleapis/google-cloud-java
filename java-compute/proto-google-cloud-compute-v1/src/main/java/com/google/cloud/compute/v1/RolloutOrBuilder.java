@@ -389,6 +389,84 @@ public interface RolloutOrBuilder
    *
    *
    * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return Whether the pauseTime field is set.
+   */
+  boolean hasPauseTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return The pauseTime.
+   */
+  java.lang.String getPauseTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was paused.
+   * </pre>
+   *
+   * <code>optional string pause_time = 489697142;</code>
+   *
+   * @return The bytes for pauseTime.
+   */
+  com.google.protobuf.ByteString getPauseTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return Whether the resumeTime field is set.
+   */
+  boolean hasResumeTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return The resumeTime.
+   */
+  java.lang.String getResumeTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp at which the Rollout was resumed.
+   * </pre>
+   *
+   * <code>optional string resume_time = 457856927;</code>
+   *
+   * @return The bytes for resumeTime.
+   */
+  com.google.protobuf.ByteString getResumeTimeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource being rolled out.
    * </pre>
    *

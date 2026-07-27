@@ -82,7 +82,7 @@ public final class MembershipProto extends com.google.protobuf.GeneratedFile {
           + "e.chat.v1\032\037google/api/field_behavior.pro"
           + "to\032\031google/api/resource.proto\032\032google/ch"
           + "at/v1/group.proto\032\031google/chat/v1/user.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\226\005\n\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\266\006\n\n"
           + "Membership\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022>\n"
           + "\005state\030\002 \001(\016"
@@ -94,7 +94,9 @@ public final class MembershipProto extends com.google.protobuf.GeneratedFile {
           + "\013create_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\006\340A\005\340A\001\0227\n"
           + "\013delete_time\030\010"
-          + " \001(\0132\032.google.protobuf.TimestampB\006\340A\005\340A\001\"^\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\006\340A\005\340A\001\022@\n"
+          + "\013affiliation\030\t"
+          + " \001(\0162&.google.chat.v1.Membership.AffiliationB\003\340A\003\"^\n"
           + "\017MembershipState\022 \n"
           + "\034MEMBERSHIP_STATE_UNSPECIFIED\020\000\022\n\n"
           + "\006JOINED\020\001\022\013\n"
@@ -104,7 +106,12 @@ public final class MembershipProto extends com.google.protobuf.GeneratedFile {
           + "\033MEMBERSHIP_ROLE_UNSPECIFIED\020\000\022\017\n"
           + "\013ROLE_MEMBER\020\001\022\020\n"
           + "\014ROLE_MANAGER\020\002\022\032\n"
-          + "\026ROLE_ASSISTANT_MANAGER\020\004:D\352AA\n"
+          + "\026ROLE_ASSISTANT_MANAGER\020\004\"\\\n"
+          + "\013Affiliation\022\033\n"
+          + "\027AFFILIATION_UNSPECIFIED\020\000\022\014\n"
+          + "\010INTERNAL\020\001\022\014\n"
+          + "\010EXTERNAL\020\002\022\024\n"
+          + "\020MANAGED_EXTERNAL\020\003:D\352AA\n"
           + "\036chat.googleapis.com/Membership\022\037spaces/{space}/members/{member}B\014\n\n"
           + "memberType\"\245\001\n"
           + "\027CreateMembershipRequest\0226\n"
@@ -166,6 +173,7 @@ public final class MembershipProto extends com.google.protobuf.GeneratedFile {
               "GroupMember",
               "CreateTime",
               "DeleteTime",
+              "Affiliation",
               "MemberType",
             });
     internal_static_google_chat_v1_CreateMembershipRequest_descriptor =

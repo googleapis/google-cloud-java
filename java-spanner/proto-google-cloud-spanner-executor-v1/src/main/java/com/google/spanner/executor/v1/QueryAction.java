@@ -61,6 +61,18 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
         .internal_static_google_spanner_executor_v1_QueryAction_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 3:
+        return internalGetSecureContext();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -1442,6 +1454,122 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
     return params_.get(index);
   }
 
+  public static final int SECURE_CONTEXT_FIELD_NUMBER = 3;
+
+  private static final class SecureContextDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.spanner.executor.v1.Value>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.spanner.executor.v1.Value>newDefaultInstance(
+                    com.google.spanner.executor.v1.CloudExecutorProto
+                        .internal_static_google_spanner_executor_v1_QueryAction_SecureContextEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.spanner.executor.v1.Value.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, com.google.spanner.executor.v1.Value>
+      secureContext_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.spanner.executor.v1.Value>
+      internalGetSecureContext() {
+    if (secureContext_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          SecureContextDefaultEntryHolder.defaultEntry);
+    }
+    return secureContext_;
+  }
+
+  public int getSecureContextCount() {
+    return internalGetSecureContext().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  @java.lang.Override
+  public boolean containsSecureContext(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetSecureContext().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getSecureContextMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContext() {
+    return getSecureContextMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+      getSecureContextMap() {
+    return internalGetSecureContext().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.spanner.executor.v1.Value defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> map =
+        internalGetSecureContext().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> map =
+        internalGetSecureContext().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1462,6 +1590,8 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < params_.size(); i++) {
       output.writeMessage(2, params_.get(i));
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetSecureContext(), SecureContextDefaultEntryHolder.defaultEntry, 3);
     getUnknownFields().writeTo(output);
   }
 
@@ -1476,6 +1606,17 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < params_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, params_.get(i));
+    }
+    for (java.util.Map.Entry<java.lang.String, com.google.spanner.executor.v1.Value> entry :
+        internalGetSecureContext().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+          secureContext__ =
+              SecureContextDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, secureContext__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1495,6 +1636,7 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
 
     if (!getSql().equals(other.getSql())) return false;
     if (!getParamsList().equals(other.getParamsList())) return false;
+    if (!internalGetSecureContext().equals(other.internalGetSecureContext())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1511,6 +1653,10 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
     if (getParamsCount() > 0) {
       hash = (37 * hash) + PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getParamsList().hashCode();
+    }
+    if (!internalGetSecureContext().getMap().isEmpty()) {
+      hash = (37 * hash) + SECURE_CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetSecureContext().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1631,6 +1777,28 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
           .internal_static_google_spanner_executor_v1_QueryAction_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetSecureContext();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableSecureContext();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1660,6 +1828,7 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
         paramsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableSecureContext().clear();
       return this;
     }
 
@@ -1712,6 +1881,10 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.sql_ = sql_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.secureContext_ =
+            internalGetSecureContext().build(SecureContextDefaultEntryHolder.defaultEntry);
+      }
     }
 
     @java.lang.Override
@@ -1758,6 +1931,8 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      internalGetMutableSecureContext().mergeFrom(other.internalGetSecureContext());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1804,6 +1979,19 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+                    secureContext__ =
+                        input.readMessage(
+                            SecureContextDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableSecureContext()
+                    .ensureBuilderMap()
+                    .put(secureContext__.getKey(), secureContext__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2306,6 +2494,252 @@ public final class QueryAction extends com.google.protobuf.GeneratedMessage
         params_ = null;
       }
       return paramsBuilder_;
+    }
+
+    private static final class SecureContextConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value> {
+      @java.lang.Override
+      public com.google.spanner.executor.v1.Value build(
+          com.google.spanner.executor.v1.ValueOrBuilder val) {
+        if (val instanceof com.google.spanner.executor.v1.Value) {
+          return (com.google.spanner.executor.v1.Value) val;
+        }
+        return ((com.google.spanner.executor.v1.Value.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<java.lang.String, com.google.spanner.executor.v1.Value>
+          defaultEntry() {
+        return SecureContextDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final SecureContextConverter secureContextConverter =
+        new SecureContextConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        secureContext_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        internalGetSecureContext() {
+      if (secureContext_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(secureContextConverter);
+      }
+      return secureContext_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.spanner.executor.v1.ValueOrBuilder,
+            com.google.spanner.executor.v1.Value,
+            com.google.spanner.executor.v1.Value.Builder>
+        internalGetMutableSecureContext() {
+      if (secureContext_ == null) {
+        secureContext_ = new com.google.protobuf.MapFieldBuilder<>(secureContextConverter);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return secureContext_;
+    }
+
+    public int getSecureContextCount() {
+      return internalGetSecureContext().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    @java.lang.Override
+    public boolean containsSecureContext(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetSecureContext().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getSecureContextMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getSecureContext() {
+      return getSecureContextMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getSecureContextMap() {
+      return internalGetSecureContext().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.spanner.executor.v1.Value defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> map =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      return map.containsKey(key) ? secureContextConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> map =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return secureContextConverter.build(map.get(key));
+    }
+
+    public Builder clearSecureContext() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableSecureContext().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    public Builder removeSecureContext(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value>
+        getMutableSecureContext() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableSecureContext().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    public Builder putSecureContext(
+        java.lang.String key, com.google.spanner.executor.v1.Value value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    public Builder putAllSecureContext(
+        java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.spanner.executor.v1.Value> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableSecureContext().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Secure context parameters.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+     */
+    public com.google.spanner.executor.v1.Value.Builder putSecureContextBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.spanner.executor.v1.ValueOrBuilder> builderMap =
+          internalGetMutableSecureContext().ensureBuilderMap();
+      com.google.spanner.executor.v1.ValueOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.spanner.executor.v1.Value.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.spanner.executor.v1.Value) {
+        entry = ((com.google.spanner.executor.v1.Value) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.spanner.executor.v1.Value.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.spanner.executor.v1.QueryAction)

@@ -32,12 +32,14 @@ package com.google.api.gax.httpjson;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An interceptor to handle custom headers.
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class HttpJsonHeaderInterceptor implements HttpJsonClientInterceptor {
 
   private final Map<String, String> staticHeaders;

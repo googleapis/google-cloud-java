@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -138,10 +140,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FeedServiceClient implements BackgroundResource {
-  private final FeedServiceSettings settings;
+  private final @Nullable FeedServiceSettings settings;
   private final FeedServiceStub stub;
 
   /** Constructs an instance of FeedServiceClient with default settings. */
@@ -180,7 +183,7 @@ public class FeedServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FeedServiceSettings getSettings() {
+  public final @Nullable FeedServiceSettings getSettings() {
     return settings;
   }
 
@@ -211,7 +214,7 @@ public class FeedServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the case for which feed items should be listed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ShowFeedPagedResponse showFeed(CaseName parent) {
+  public final ShowFeedPagedResponse showFeed(@Nullable CaseName parent) {
     ShowFeedRequest request =
         ShowFeedRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return showFeed(request);
@@ -401,8 +404,8 @@ public class FeedServiceClient implements BackgroundResource {
       extends AbstractPage<ShowFeedRequest, ShowFeedResponse, FeedItem, ShowFeedPage> {
 
     private ShowFeedPage(
-        PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
-        ShowFeedResponse response) {
+        @Nullable PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
+        @Nullable ShowFeedResponse response) {
       super(context, response);
     }
 
@@ -412,14 +415,14 @@ public class FeedServiceClient implements BackgroundResource {
 
     @Override
     protected ShowFeedPage createPage(
-        PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
-        ShowFeedResponse response) {
+        @Nullable PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
+        @Nullable ShowFeedResponse response) {
       return new ShowFeedPage(context, response);
     }
 
     @Override
     public ApiFuture<ShowFeedPage> createPageAsync(
-        PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
+        @Nullable PageContext<ShowFeedRequest, ShowFeedResponse, FeedItem> context,
         ApiFuture<ShowFeedResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -429,7 +432,7 @@ public class FeedServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ShowFeedRequest, ShowFeedResponse, FeedItem, ShowFeedPage, ShowFeedFixedSizeCollection> {
 
-    private ShowFeedFixedSizeCollection(List<ShowFeedPage> pages, int collectionSize) {
+    private ShowFeedFixedSizeCollection(@Nullable List<ShowFeedPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -439,7 +442,7 @@ public class FeedServiceClient implements BackgroundResource {
 
     @Override
     protected ShowFeedFixedSizeCollection createCollection(
-        List<ShowFeedPage> pages, int collectionSize) {
+        @Nullable List<ShowFeedPage> pages, int collectionSize) {
       return new ShowFeedFixedSizeCollection(pages, collectionSize);
     }
   }

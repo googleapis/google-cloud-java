@@ -43,6 +43,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This class computes generic metrics that can be observed in the lifecycle of an RPC operation.
@@ -50,6 +51,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * class should not have any knowledge about the observability framework used for metrics recording.
  * method_name and language will be autopopulated attributes. Default value of language is 'Java'.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public class MetricsTracer implements ApiTracer {

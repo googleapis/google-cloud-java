@@ -30,13 +30,13 @@ public interface HiveTableOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name.
+   * Identifier. The resource name.
    * Format:
    * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -47,13 +47,13 @@ public interface HiveTableOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name.
+   * Identifier. The resource name.
    * Format:
    * projects/{project_id_or_number}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = IDENTIFIER, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -312,6 +312,62 @@ public interface HiveTableOrBuilder
    *
    *
    * <pre>
+   * Optional. The original view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The viewOriginalText.
+   */
+  java.lang.String getViewOriginalText();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The original view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_original_text = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for viewOriginalText.
+   */
+  com.google.protobuf.ByteString getViewOriginalTextBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expanded view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The viewExpandedText.
+   */
+  java.lang.String getViewExpandedText();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The expanded view text. Empty for non-view. The maximum size is
+   * 16MiB.
+   * </pre>
+   *
+   * <code>string view_expanded_text = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for viewExpandedText.
+   */
+  com.google.protobuf.ByteString getViewExpandedTextBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The type of the table. This is EXTERNAL for BigLake hive
    * tables.
    * </pre>
@@ -335,4 +391,44 @@ public interface HiveTableOrBuilder
    * @return The bytes for tableType.
    */
   com.google.protobuf.ByteString getTableTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The update time of the table.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 }

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetGeoTarget</td>
- *      <td><p> API to retrieve a `GeoTarget` object.</td>
+ *      <td><p> Retrieves a `GeoTarget` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListGeoTargets</td>
- *      <td><p> API to retrieve a list of `GeoTarget` objects.</td>
+ *      <td><p> Lists `GeoTarget` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -144,9 +146,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GeoTargetServiceClient implements BackgroundResource {
-  private final GeoTargetServiceSettings settings;
+  private final @Nullable GeoTargetServiceSettings settings;
   private final GeoTargetServiceStub stub;
 
   /** Constructs an instance of GeoTargetServiceClient with default settings. */
@@ -186,7 +189,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GeoTargetServiceSettings getSettings() {
+  public final @Nullable GeoTargetServiceSettings getSettings() {
     return settings;
   }
 
@@ -196,7 +199,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -216,7 +219,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
    *     `networks/{network_code}/geoTargets/{geo_target_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GeoTarget getGeoTarget(GeoTargetName name) {
+  public final GeoTarget getGeoTarget(@Nullable GeoTargetName name) {
     GetGeoTargetRequest request =
         GetGeoTargetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getGeoTarget(request);
@@ -224,7 +227,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -251,7 +254,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -279,7 +282,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `GeoTarget` object.
+   * Retrieves a `GeoTarget` object.
    *
    * <p>Sample code:
    *
@@ -307,7 +310,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -329,7 +332,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGeoTargetsPagedResponse listGeoTargets(NetworkName parent) {
+  public final ListGeoTargetsPagedResponse listGeoTargets(@Nullable NetworkName parent) {
     ListGeoTargetsRequest request =
         ListGeoTargetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -339,7 +342,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -368,7 +371,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -403,7 +406,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -439,7 +442,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `GeoTarget` objects.
+   * Lists `GeoTarget` objects.
    *
    * <p>Sample code:
    *
@@ -539,8 +542,8 @@ public class GeoTargetServiceClient implements BackgroundResource {
           ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget, ListGeoTargetsPage> {
 
     private ListGeoTargetsPage(
-        PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
-        ListGeoTargetsResponse response) {
+        @Nullable PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
+        @Nullable ListGeoTargetsResponse response) {
       super(context, response);
     }
 
@@ -550,14 +553,14 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
     @Override
     protected ListGeoTargetsPage createPage(
-        PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
-        ListGeoTargetsResponse response) {
+        @Nullable PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
+        @Nullable ListGeoTargetsResponse response) {
       return new ListGeoTargetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGeoTargetsPage> createPageAsync(
-        PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
+        @Nullable PageContext<ListGeoTargetsRequest, ListGeoTargetsResponse, GeoTarget> context,
         ApiFuture<ListGeoTargetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -571,7 +574,8 @@ public class GeoTargetServiceClient implements BackgroundResource {
           ListGeoTargetsPage,
           ListGeoTargetsFixedSizeCollection> {
 
-    private ListGeoTargetsFixedSizeCollection(List<ListGeoTargetsPage> pages, int collectionSize) {
+    private ListGeoTargetsFixedSizeCollection(
+        @Nullable List<ListGeoTargetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -581,7 +585,7 @@ public class GeoTargetServiceClient implements BackgroundResource {
 
     @Override
     protected ListGeoTargetsFixedSizeCollection createCollection(
-        List<ListGeoTargetsPage> pages, int collectionSize) {
+        @Nullable List<ListGeoTargetsPage> pages, int collectionSize) {
       return new ListGeoTargetsFixedSizeCollection(pages, collectionSize);
     }
   }

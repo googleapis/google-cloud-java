@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1beta;
  *
  *
  * <pre>
- * Request message for [ListInstances][].
+ * Request message for `ListInstances`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1beta.ListInstancesRequest}
@@ -514,7 +514,7 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [ListInstances][].
+   * Request message for `ListInstances`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1beta.ListInstancesRequest}

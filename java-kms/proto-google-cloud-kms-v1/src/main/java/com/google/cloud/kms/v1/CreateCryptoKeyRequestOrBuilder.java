@@ -148,4 +148,25 @@ public interface CreateCryptoKeyRequestOrBuilder
    * @return The skipInitialVersionCreation.
    */
   boolean getSkipInitialVersionCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether trusted wrapping will be enabled on the first
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] created for this
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. This field is only supported
+   * for keys with
+   * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field is supported for all
+   * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] except
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  boolean getTrustedWrappingEnabled();
 }

@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Response for [ListBackupCollections].
+ * Response for `ListBackupCollections`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.ListBackupCollectionsResponse}
@@ -511,7 +511,7 @@ public final class ListBackupCollectionsResponse extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Response for [ListBackupCollections].
+   * Response for `ListBackupCollections`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.ListBackupCollectionsResponse}

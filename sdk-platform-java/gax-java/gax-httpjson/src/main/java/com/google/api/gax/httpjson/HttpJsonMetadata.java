@@ -35,18 +35,18 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 @InternalExtensionOnly
 public abstract class HttpJsonMetadata {
   public abstract Map<String, Object> getHeaders();
 
-  @Nullable
-  public abstract String getStatusMessage();
+  public abstract @Nullable String getStatusMessage();
 
-  @Nullable
-  public abstract Throwable getException();
+  public abstract @Nullable Throwable getException();
 
   public abstract Builder toBuilder();
 

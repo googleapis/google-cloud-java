@@ -84,7 +84,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
    * Name of the service as specified in the service configuration. For example,
    * `"pubsub.googleapis.com"`.
    *
-   * See [google.api.Service][google.api.Service] for the definition of a service name.
+   * See [google.api.Service][google.api.Service] for the definition of a
+   * service name.
    * </pre>
    *
    * <code>string service_name = 1;</code>
@@ -111,7 +112,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
    * Name of the service as specified in the service configuration. For example,
    * `"pubsub.googleapis.com"`.
    *
-   * See [google.api.Service][google.api.Service] for the definition of a service name.
+   * See [google.api.Service][google.api.Service] for the definition of a
+   * service name.
    * </pre>
    *
    * <code>string service_name = 1;</code>
@@ -632,7 +634,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * Name of the service as specified in the service configuration. For example,
      * `"pubsub.googleapis.com"`.
      *
-     * See [google.api.Service][google.api.Service] for the definition of a service name.
+     * See [google.api.Service][google.api.Service] for the definition of a
+     * service name.
      * </pre>
      *
      * <code>string service_name = 1;</code>
@@ -658,7 +661,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * Name of the service as specified in the service configuration. For example,
      * `"pubsub.googleapis.com"`.
      *
-     * See [google.api.Service][google.api.Service] for the definition of a service name.
+     * See [google.api.Service][google.api.Service] for the definition of a
+     * service name.
      * </pre>
      *
      * <code>string service_name = 1;</code>
@@ -684,7 +688,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * Name of the service as specified in the service configuration. For example,
      * `"pubsub.googleapis.com"`.
      *
-     * See [google.api.Service][google.api.Service] for the definition of a service name.
+     * See [google.api.Service][google.api.Service] for the definition of a
+     * service name.
      * </pre>
      *
      * <code>string service_name = 1;</code>
@@ -709,7 +714,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * Name of the service as specified in the service configuration. For example,
      * `"pubsub.googleapis.com"`.
      *
-     * See [google.api.Service][google.api.Service] for the definition of a service name.
+     * See [google.api.Service][google.api.Service] for the definition of a
+     * service name.
      * </pre>
      *
      * <code>string service_name = 1;</code>
@@ -730,7 +736,8 @@ public final class AllocateQuotaRequest extends com.google.protobuf.GeneratedMes
      * Name of the service as specified in the service configuration. For example,
      * `"pubsub.googleapis.com"`.
      *
-     * See [google.api.Service][google.api.Service] for the definition of a service name.
+     * See [google.api.Service][google.api.Service] for the definition of a
+     * service name.
      * </pre>
      *
      * <code>string service_name = 1;</code>

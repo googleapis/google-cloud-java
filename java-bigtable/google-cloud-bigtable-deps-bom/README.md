@@ -16,7 +16,7 @@ Example usage:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-bom</artifactId>
-      <version>2.79.0</version>
+      <version>2.80.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -24,7 +24,7 @@ Example usage:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigtable-deps-bom</artifactId>
-      <version>2.79.0</version>
+      <version>2.80.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

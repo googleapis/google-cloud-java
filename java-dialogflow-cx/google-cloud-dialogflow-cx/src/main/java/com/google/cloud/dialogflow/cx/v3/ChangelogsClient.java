@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -189,9 +191,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ChangelogsClient implements BackgroundResource {
-  private final ChangelogsSettings settings;
+  private final @Nullable ChangelogsSettings settings;
   private final ChangelogsStub stub;
 
   /** Constructs an instance of ChangelogsClient with default settings. */
@@ -229,7 +232,7 @@ public class ChangelogsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ChangelogsSettings getSettings() {
+  public final @Nullable ChangelogsSettings getSettings() {
     return settings;
   }
 
@@ -261,7 +264,7 @@ public class ChangelogsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListChangelogsPagedResponse listChangelogs(AgentName parent) {
+  public final ListChangelogsPagedResponse listChangelogs(@Nullable AgentName parent) {
     ListChangelogsRequest request =
         ListChangelogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -427,7 +430,7 @@ public class ChangelogsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/changelogs/&lt;ChangelogID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Changelog getChangelog(ChangelogName name) {
+  public final Changelog getChangelog(@Nullable ChangelogName name) {
     GetChangelogRequest request =
         GetChangelogRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getChangelog(request);
@@ -768,8 +771,8 @@ public class ChangelogsClient implements BackgroundResource {
           ListChangelogsRequest, ListChangelogsResponse, Changelog, ListChangelogsPage> {
 
     private ListChangelogsPage(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
-        ListChangelogsResponse response) {
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable ListChangelogsResponse response) {
       super(context, response);
     }
 
@@ -779,14 +782,14 @@ public class ChangelogsClient implements BackgroundResource {
 
     @Override
     protected ListChangelogsPage createPage(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
-        ListChangelogsResponse response) {
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable ListChangelogsResponse response) {
       return new ListChangelogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListChangelogsPage> createPageAsync(
-        PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
+        @Nullable PageContext<ListChangelogsRequest, ListChangelogsResponse, Changelog> context,
         ApiFuture<ListChangelogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -800,7 +803,8 @@ public class ChangelogsClient implements BackgroundResource {
           ListChangelogsPage,
           ListChangelogsFixedSizeCollection> {
 
-    private ListChangelogsFixedSizeCollection(List<ListChangelogsPage> pages, int collectionSize) {
+    private ListChangelogsFixedSizeCollection(
+        @Nullable List<ListChangelogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -810,7 +814,7 @@ public class ChangelogsClient implements BackgroundResource {
 
     @Override
     protected ListChangelogsFixedSizeCollection createCollection(
-        List<ListChangelogsPage> pages, int collectionSize) {
+        @Nullable List<ListChangelogsPage> pages, int collectionSize) {
       return new ListChangelogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -844,8 +848,8 @@ public class ChangelogsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -855,14 +859,14 @@ public class ChangelogsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -876,7 +880,8 @@ public class ChangelogsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -886,7 +891,7 @@ public class ChangelogsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

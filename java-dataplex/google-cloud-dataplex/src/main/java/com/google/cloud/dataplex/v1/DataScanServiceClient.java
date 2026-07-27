@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -407,9 +409,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataScanServiceClient implements BackgroundResource {
-  private final DataScanServiceSettings settings;
+  private final @Nullable DataScanServiceSettings settings;
   private final DataScanServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -457,7 +460,7 @@ public class DataScanServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataScanServiceSettings getSettings() {
+  public final @Nullable DataScanServiceSettings getSettings() {
     return settings;
   }
 
@@ -521,7 +524,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataScan, OperationMetadata> createDataScanAsync(
-      LocationName parent, DataScan dataScan, String dataScanId) {
+      @Nullable LocationName parent, DataScan dataScan, String dataScanId) {
     CreateDataScanRequest request =
         CreateDataScanRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -822,7 +825,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(DataScanName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(
+      @Nullable DataScanName name) {
     DeleteDataScanRequest request =
         DeleteDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataScanAsync(request);
@@ -970,7 +974,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataScan getDataScan(DataScanName name) {
+  public final DataScan getDataScan(@Nullable DataScanName name) {
     GetDataScanRequest request =
         GetDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataScan(request);
@@ -1086,7 +1090,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataScansPagedResponse listDataScans(LocationName parent) {
+  public final ListDataScansPagedResponse listDataScans(@Nullable LocationName parent) {
     ListDataScansRequest request =
         ListDataScansRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1260,7 +1264,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RunDataScanResponse runDataScan(DataScanName name) {
+  public final RunDataScanResponse runDataScan(@Nullable DataScanName name) {
     RunDataScanRequest request =
         RunDataScanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runDataScan(request);
@@ -1376,7 +1380,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataScanJob getDataScanJob(DataScanJobName name) {
+  public final DataScanJob getDataScanJob(@Nullable DataScanJobName name) {
     GetDataScanJobRequest request =
         GetDataScanJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataScanJob(request);
@@ -1495,7 +1499,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataScanJobsPagedResponse listDataScanJobs(DataScanName parent) {
+  public final ListDataScanJobsPagedResponse listDataScanJobs(@Nullable DataScanName parent) {
     ListDataScanJobsRequest request =
         ListDataScanJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1667,7 +1671,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *     and `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CancelDataScanJobResponse cancelDataScanJob(DataScanJobName name) {
+  public final CancelDataScanJobResponse cancelDataScanJob(@Nullable DataScanJobName name) {
     CancelDataScanJobRequest request =
         CancelDataScanJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2300,8 +2304,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScansRequest, ListDataScansResponse, DataScan, ListDataScansPage> {
 
     private ListDataScansPage(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
-        ListDataScansResponse response) {
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable ListDataScansResponse response) {
       super(context, response);
     }
 
@@ -2311,14 +2315,14 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScansPage createPage(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
-        ListDataScansResponse response) {
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable ListDataScansResponse response) {
       return new ListDataScansPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataScansPage> createPageAsync(
-        PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
+        @Nullable PageContext<ListDataScansRequest, ListDataScansResponse, DataScan> context,
         ApiFuture<ListDataScansResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2332,7 +2336,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScansPage,
           ListDataScansFixedSizeCollection> {
 
-    private ListDataScansFixedSizeCollection(List<ListDataScansPage> pages, int collectionSize) {
+    private ListDataScansFixedSizeCollection(
+        @Nullable List<ListDataScansPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2342,7 +2347,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScansFixedSizeCollection createCollection(
-        List<ListDataScansPage> pages, int collectionSize) {
+        @Nullable List<ListDataScansPage> pages, int collectionSize) {
       return new ListDataScansFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2376,8 +2381,9 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob, ListDataScanJobsPage> {
 
     private ListDataScanJobsPage(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
-        ListDataScanJobsResponse response) {
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
+        @Nullable ListDataScanJobsResponse response) {
       super(context, response);
     }
 
@@ -2387,14 +2393,16 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScanJobsPage createPage(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
-        ListDataScanJobsResponse response) {
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
+        @Nullable ListDataScanJobsResponse response) {
       return new ListDataScanJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataScanJobsPage> createPageAsync(
-        PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob> context,
+        @Nullable PageContext<ListDataScanJobsRequest, ListDataScanJobsResponse, DataScanJob>
+            context,
         ApiFuture<ListDataScanJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2409,7 +2417,7 @@ public class DataScanServiceClient implements BackgroundResource {
           ListDataScanJobsFixedSizeCollection> {
 
     private ListDataScanJobsFixedSizeCollection(
-        List<ListDataScanJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDataScanJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2419,7 +2427,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataScanJobsFixedSizeCollection createCollection(
-        List<ListDataScanJobsPage> pages, int collectionSize) {
+        @Nullable List<ListDataScanJobsPage> pages, int collectionSize) {
       return new ListDataScanJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2453,8 +2461,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2464,14 +2472,14 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2485,7 +2493,8 @@ public class DataScanServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2495,7 +2504,7 @@ public class DataScanServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

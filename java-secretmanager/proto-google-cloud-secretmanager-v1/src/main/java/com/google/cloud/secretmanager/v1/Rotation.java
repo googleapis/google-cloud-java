@@ -72,6 +72,1145 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
             com.google.cloud.secretmanager.v1.Rotation.Builder.class);
   }
 
+  public interface ManagedRotationStatusOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the Managed Rotation is active or not.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    int getStateValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the Managed Rotation is active or not.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    com.google.rpc.Status getError();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the status of a managed rotation.
+   *
+   * This is applicable only to Typed Secrets. It indicates whether the
+   * rotation is active and any errors that may have occurred during the
+   * asynchronous managed rotation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus}
+   */
+  public static final class ManagedRotationStatus extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)
+      ManagedRotationStatusOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ManagedRotationStatus");
+    }
+
+    // Use ManagedRotationStatus.newBuilder() to construct.
+    private ManagedRotationStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ManagedRotationStatus() {
+      state_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.secretmanager.v1.ResourcesProto
+          .internal_static_google_cloud_secretmanager_v1_Rotation_ManagedRotationStatus_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.secretmanager.v1.ResourcesProto
+          .internal_static_google_cloud_secretmanager_v1_Rotation_ManagedRotationStatus_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.class,
+              com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This defines the various states in which the managed rotation can be.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State}
+     */
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Not specified. This value is unused and invalid.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      STATE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the Managed rotation is ACTIVE.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      ACTIVE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the Managed rotation is INACTIVE.
+       * </pre>
+       *
+       * <code>INACTIVE = 2;</code>
+       */
+      INACTIVE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "State");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Not specified. This value is unused and invalid.
+       * </pre>
+       *
+       * <code>STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int STATE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the Managed rotation is ACTIVE.
+       * </pre>
+       *
+       * <code>ACTIVE = 1;</code>
+       */
+      public static final int ACTIVE_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that the Managed rotation is INACTIVE.
+       * </pre>
+       *
+       * <code>INACTIVE = 2;</code>
+       */
+      public static final int INACTIVE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static State valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static State forNumber(int value) {
+        switch (value) {
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return ACTIVE;
+          case 2:
+            return INACTIVE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final State[] VALUES = values();
+
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private State(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State)
+    }
+
+    private int bitField0_;
+    public static final int STATE_FIELD_NUMBER = 1;
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the Managed Rotation is active or not.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the Managed Rotation is active or not.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State getState() {
+      com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State result =
+          com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State.forNumber(state_);
+      return result == null
+          ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    private com.google.rpc.Status error_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The error.
+     */
+    @java.lang.Override
+    public com.google.rpc.Status getError() {
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Displays customer-facing issues that occurred during an
+     * asynchronous managed rotation. For example, if there are some permission
+     * errors.
+     * </pre>
+     *
+     * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+      return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (state_
+          != com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State
+              .STATE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getError());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (state_
+          != com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State
+              .STATE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getError());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus other =
+          (com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus) obj;
+
+      if (state_ != other.state_) return false;
+      if (hasError() != other.hasError()) return false;
+      if (hasError()) {
+        if (!getError().equals(other.getError())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATE_FIELD_NUMBER;
+      hash = (53 * hash) + state_;
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the status of a managed rotation.
+     *
+     * This is applicable only to Typed Secrets. It indicates whether the
+     * rotation is active and any errors that may have occurred during the
+     * asynchronous managed rotation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.secretmanager.v1.ResourcesProto
+            .internal_static_google_cloud_secretmanager_v1_Rotation_ManagedRotationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.secretmanager.v1.ResourcesProto
+            .internal_static_google_cloud_secretmanager_v1_Rotation_ManagedRotationStatus_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.class,
+                com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetErrorFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        state_ = 0;
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.secretmanager.v1.ResourcesProto
+            .internal_static_google_cloud_secretmanager_v1_Rotation_ManagedRotationStatus_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+          getDefaultInstanceForType() {
+        return com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus build() {
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus buildPartial() {
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus result =
+            new com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus) {
+          return mergeFrom(
+              (com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus other) {
+        if (other
+            == com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+                .getDefaultInstance()) return this;
+        if (other.state_ != 0) {
+          setStateValue(other.getStateValue());
+        }
+        if (other.hasError()) {
+          mergeError(other.getError());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  state_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int state_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether the Managed Rotation is active or not.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether the Managed Rotation is active or not.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStateValue(int value) {
+        state_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether the Managed Rotation is active or not.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State getState() {
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State result =
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State.forNumber(
+                state_);
+        return result == null
+            ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether the Managed Rotation is active or not.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The state to set.
+       * @return This builder for chaining.
+       */
+      public Builder setState(
+          com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates whether the Managed Rotation is active or not.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.rpc.Status error_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          errorBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return Whether the error field is set.
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The error.
+       */
+      public com.google.rpc.Status getError() {
+        if (errorBuilder_ == null) {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        } else {
+          return errorBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          error_ = value;
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          error_ = builderForValue.build();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder mergeError(com.google.rpc.Status value) {
+        if (errorBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && error_ != null
+              && error_ != com.google.rpc.Status.getDefaultInstance()) {
+            getErrorBuilder().mergeFrom(value);
+          } else {
+            error_ = value;
+          }
+        } else {
+          errorBuilder_.mergeFrom(value);
+        }
+        if (error_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public Builder clearError() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.Status.Builder getErrorBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetErrorFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+        if (errorBuilder_ != null) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Displays customer-facing issues that occurred during an
+       * asynchronous managed rotation. For example, if there are some permission
+       * errors.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+          internalGetErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          errorBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.rpc.Status,
+                  com.google.rpc.Status.Builder,
+                  com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
+          error_ = null;
+        }
+        return errorBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus)
+    private static final com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus();
+    }
+
+    public static com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ManagedRotationStatus> PARSER =
+        new com.google.protobuf.AbstractParser<ManagedRotationStatus>() {
+          @java.lang.Override
+          public ManagedRotationStatus parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ManagedRotationStatus> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ManagedRotationStatus> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NEXT_ROTATION_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp nextRotationTime_;
@@ -245,6 +1384,73 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
         : rotationPeriod_;
   }
 
+  public static final int MANAGED_ROTATION_STATUS_FIELD_NUMBER = 3;
+  private com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managedRotationStatus_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the managedRotationStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagedRotationStatus() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The managedRotationStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+      getManagedRotationStatus() {
+    return managedRotationStatus_ == null
+        ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.getDefaultInstance()
+        : managedRotationStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current status of the managed rotation.
+   * This field is only applicable to Typed Secrets.
+   * This field is set by the service and cannot be set by the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder
+      getManagedRotationStatusOrBuilder() {
+    return managedRotationStatus_ == null
+        ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.getDefaultInstance()
+        : managedRotationStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -265,6 +1471,9 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getRotationPeriod());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getManagedRotationStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -279,6 +1488,10 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRotationPeriod());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getManagedRotationStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -304,6 +1517,10 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
     if (hasRotationPeriod()) {
       if (!getRotationPeriod().equals(other.getRotationPeriod())) return false;
     }
+    if (hasManagedRotationStatus() != other.hasManagedRotationStatus()) return false;
+    if (hasManagedRotationStatus()) {
+      if (!getManagedRotationStatus().equals(other.getManagedRotationStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -322,6 +1539,10 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
     if (hasRotationPeriod()) {
       hash = (37 * hash) + ROTATION_PERIOD_FIELD_NUMBER;
       hash = (53 * hash) + getRotationPeriod().hashCode();
+    }
+    if (hasManagedRotationStatus()) {
+      hash = (37 * hash) + MANAGED_ROTATION_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getManagedRotationStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -470,6 +1691,7 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetNextRotationTimeFieldBuilder();
         internalGetRotationPeriodFieldBuilder();
+        internalGetManagedRotationStatusFieldBuilder();
       }
     }
 
@@ -486,6 +1708,11 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
       if (rotationPeriodBuilder_ != null) {
         rotationPeriodBuilder_.dispose();
         rotationPeriodBuilder_ = null;
+      }
+      managedRotationStatus_ = null;
+      if (managedRotationStatusBuilder_ != null) {
+        managedRotationStatusBuilder_.dispose();
+        managedRotationStatusBuilder_ = null;
       }
       return this;
     }
@@ -534,6 +1761,13 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
             rotationPeriodBuilder_ == null ? rotationPeriod_ : rotationPeriodBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.managedRotationStatus_ =
+            managedRotationStatusBuilder_ == null
+                ? managedRotationStatus_
+                : managedRotationStatusBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -554,6 +1788,9 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasRotationPeriod()) {
         mergeRotationPeriod(other.getRotationPeriod());
+      }
+      if (other.hasManagedRotationStatus()) {
+        mergeManagedRotationStatus(other.getManagedRotationStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -595,6 +1832,13 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetManagedRotationStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1198,6 +2442,244 @@ public final class Rotation extends com.google.protobuf.GeneratedMessage
         rotationPeriod_ = null;
       }
       return rotationPeriodBuilder_;
+    }
+
+    private com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managedRotationStatus_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus,
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder,
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder>
+        managedRotationStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the managedRotationStatus field is set.
+     */
+    public boolean hasManagedRotationStatus() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The managedRotationStatus.
+     */
+    public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+        getManagedRotationStatus() {
+      if (managedRotationStatusBuilder_ == null) {
+        return managedRotationStatus_ == null
+            ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.getDefaultInstance()
+            : managedRotationStatus_;
+      } else {
+        return managedRotationStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setManagedRotationStatus(
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus value) {
+      if (managedRotationStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        managedRotationStatus_ = value;
+      } else {
+        managedRotationStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setManagedRotationStatus(
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder builderForValue) {
+      if (managedRotationStatusBuilder_ == null) {
+        managedRotationStatus_ = builderForValue.build();
+      } else {
+        managedRotationStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeManagedRotationStatus(
+        com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus value) {
+      if (managedRotationStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && managedRotationStatus_ != null
+            && managedRotationStatus_
+                != com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus
+                    .getDefaultInstance()) {
+          getManagedRotationStatusBuilder().mergeFrom(value);
+        } else {
+          managedRotationStatus_ = value;
+        }
+      } else {
+        managedRotationStatusBuilder_.mergeFrom(value);
+      }
+      if (managedRotationStatus_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearManagedRotationStatus() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      managedRotationStatus_ = null;
+      if (managedRotationStatusBuilder_ != null) {
+        managedRotationStatusBuilder_.dispose();
+        managedRotationStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder
+        getManagedRotationStatusBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetManagedRotationStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder
+        getManagedRotationStatusOrBuilder() {
+      if (managedRotationStatusBuilder_ != null) {
+        return managedRotationStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return managedRotationStatus_ == null
+            ? com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.getDefaultInstance()
+            : managedRotationStatus_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current status of the managed rotation.
+     * This field is only applicable to Typed Secrets.
+     * This field is set by the service and cannot be set by the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus managed_rotation_status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus,
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder,
+            com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder>
+        internalGetManagedRotationStatusFieldBuilder() {
+      if (managedRotationStatusBuilder_ == null) {
+        managedRotationStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus,
+                com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatus.Builder,
+                com.google.cloud.secretmanager.v1.Rotation.ManagedRotationStatusOrBuilder>(
+                getManagedRotationStatus(), getParentForChildren(), isClean());
+        managedRotationStatus_ = null;
+      }
+      return managedRotationStatusBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.secretmanager.v1.Rotation)

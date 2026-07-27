@@ -143,6 +143,38 @@ public interface RouterNatOrBuilder
    *
    *
    * <pre>
+   * Output only. Effective timeout (in seconds) for TCP connections that are in TIME_WAIT
+   * state. This value is equal to tcp_time_wait_timeout_sec.
+   * If tcp_time_wait_timeout_sec isn't set, the effective timeout is 30s or
+   * 120s. The field is output only.
+   * </pre>
+   *
+   * <code>optional int32 effective_tcp_time_wait_timeout_sec = 248089957;</code>
+   *
+   * @return Whether the effectiveTcpTimeWaitTimeoutSec field is set.
+   */
+  boolean hasEffectiveTcpTimeWaitTimeoutSec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Effective timeout (in seconds) for TCP connections that are in TIME_WAIT
+   * state. This value is equal to tcp_time_wait_timeout_sec.
+   * If tcp_time_wait_timeout_sec isn't set, the effective timeout is 30s or
+   * 120s. The field is output only.
+   * </pre>
+   *
+   * <code>optional int32 effective_tcp_time_wait_timeout_sec = 248089957;</code>
+   *
+   * @return The effectiveTcpTimeWaitTimeoutSec.
+   */
+  int getEffectiveTcpTimeWaitTimeoutSec();
+
+  /**
+   *
+   *
+   * <pre>
    * Enable Dynamic Port Allocation.
    *
    *

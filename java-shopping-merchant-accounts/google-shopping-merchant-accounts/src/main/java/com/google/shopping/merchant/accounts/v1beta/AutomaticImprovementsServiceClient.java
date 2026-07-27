@@ -25,6 +25,8 @@ import com.google.shopping.merchant.accounts.v1beta.stub.AutomaticImprovementsSe
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,10 +157,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AutomaticImprovementsServiceClient implements BackgroundResource {
-  private final AutomaticImprovementsServiceSettings settings;
+  private final @Nullable AutomaticImprovementsServiceSettings settings;
   private final AutomaticImprovementsServiceStub stub;
 
   /** Constructs an instance of AutomaticImprovementsServiceClient with default settings. */
@@ -202,7 +205,7 @@ public class AutomaticImprovementsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AutomaticImprovementsServiceSettings getSettings() {
+  public final @Nullable AutomaticImprovementsServiceSettings getSettings() {
     return settings;
   }
 
@@ -234,7 +237,8 @@ public class AutomaticImprovementsServiceClient implements BackgroundResource {
    *     `accounts/{account}/automaticImprovements`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AutomaticImprovements getAutomaticImprovements(AutomaticImprovementsName name) {
+  public final AutomaticImprovements getAutomaticImprovements(
+      @Nullable AutomaticImprovementsName name) {
     GetAutomaticImprovementsRequest request =
         GetAutomaticImprovementsRequest.newBuilder()
             .setName(name == null ? null : name.toString())

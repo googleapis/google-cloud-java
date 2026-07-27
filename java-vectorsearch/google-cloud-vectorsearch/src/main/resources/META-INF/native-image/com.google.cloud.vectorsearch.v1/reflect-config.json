@@ -1107,6 +1107,42 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest$FieldFilter",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest$FieldFilter$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest$FieldFilter$FieldList",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest$FieldFilter$FieldList$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest$GcsExportDestination",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

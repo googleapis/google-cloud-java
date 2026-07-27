@@ -32,6 +32,7 @@ package com.google.api.gax.tracing;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -51,7 +52,7 @@ import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
@@ -65,10 +66,10 @@ class TracedCallableTest {
           .setOperationType(OperationType.Unary)
           .build();
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
-  @Mock private ApiTracer tracer;
-  @Mock private UnaryCallable<String, String> innerCallable;
+  private ApiTracer tracer;
+  private UnaryCallable<String, String> innerCallable;
   private SettableApiFuture<String> innerResult;
 
   private ApiCallContext callContext;
@@ -76,6 +77,9 @@ class TracedCallableTest {
 
   @BeforeEach
   void setUp() {
+    tracerFactory = mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
+    tracer = mock(ApiTracer.class, Mockito.withSettings().withoutAnnotations());
+    innerCallable = mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory

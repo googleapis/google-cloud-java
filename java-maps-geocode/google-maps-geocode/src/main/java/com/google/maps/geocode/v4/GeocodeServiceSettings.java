@@ -31,6 +31,8 @@ import com.google.maps.geocode.v4.stub.GeocodeServiceStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +85,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GeocodeServiceSettings extends ClientSettings<GeocodeServiceSettings> {
 
@@ -158,7 +161,7 @@ public class GeocodeServiceSettings extends ClientSettings<GeocodeServiceSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -178,7 +181,7 @@ public class GeocodeServiceSettings extends ClientSettings<GeocodeServiceSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(GeocodeServiceStubSettings.newBuilder(clientContext));
     }
 

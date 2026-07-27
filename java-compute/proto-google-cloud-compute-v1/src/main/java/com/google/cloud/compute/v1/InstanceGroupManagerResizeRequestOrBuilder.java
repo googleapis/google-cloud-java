@@ -139,6 +139,77 @@ public interface InstanceGroupManagerResizeRequestOrBuilder
    *
    *
    * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getInstancesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  com.google.cloud.compute.v1.PerInstanceConfig getInstances(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  int getInstancesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
+      getInstancesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * The names of instances to be created by this resize request. The number of
+   * names specified determines the number of instances to create. The group's
+   * target size will be increased by this number. This field cannot be used
+   * together with 'resize_by'.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig instances = 29097598;</code>
+   */
+  com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getInstancesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
    * </pre>
    *

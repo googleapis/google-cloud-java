@@ -553,6 +553,130 @@ public class OracleDatabaseClientTest {
   }
 
   @Test
+  public void configureExascaleCloudExadataInfrastructureTest() throws Exception {
+    CloudExadataInfrastructure expectedResponse =
+        CloudExadataInfrastructure.newBuilder()
+            .setName(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setEntitlementId("entitlementId-1302274264")
+            .setProperties(CloudExadataInfrastructureProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("configureExascaleCloudExadataInfrastructureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    CloudExadataInfrastructureName name =
+        CloudExadataInfrastructureName.of(
+            "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+    int totalStorageSizeGb = 1493200154;
+
+    CloudExadataInfrastructure actualResponse =
+        client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ConfigureExascaleCloudExadataInfrastructureRequest actualRequest =
+        ((ConfigureExascaleCloudExadataInfrastructureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(totalStorageSizeGb, actualRequest.getTotalStorageSizeGb());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      CloudExadataInfrastructureName name =
+          CloudExadataInfrastructureName.of(
+              "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]");
+      int totalStorageSizeGb = 1493200154;
+      client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureTest2() throws Exception {
+    CloudExadataInfrastructure expectedResponse =
+        CloudExadataInfrastructure.newBuilder()
+            .setName(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setGcpOracleZone("gcpOracleZone217860222")
+            .setEntitlementId("entitlementId-1302274264")
+            .setProperties(CloudExadataInfrastructureProperties.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("configureExascaleCloudExadataInfrastructureTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+    int totalStorageSizeGb = 1493200154;
+
+    CloudExadataInfrastructure actualResponse =
+        client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ConfigureExascaleCloudExadataInfrastructureRequest actualRequest =
+        ((ConfigureExascaleCloudExadataInfrastructureRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(totalStorageSizeGb, actualRequest.getTotalStorageSizeGb());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void configureExascaleCloudExadataInfrastructureExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      int totalStorageSizeGb = 1493200154;
+      client.configureExascaleCloudExadataInfrastructureAsync(name, totalStorageSizeGb).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listCloudVmClustersTest() throws Exception {
     CloudVmCluster responsesElement = CloudVmCluster.newBuilder().build();
     ListCloudVmClustersResponse expectedResponse =
@@ -666,6 +790,10 @@ public class OracleDatabaseClientTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -727,6 +855,10 @@ public class OracleDatabaseClientTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -786,6 +918,10 @@ public class OracleDatabaseClientTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -861,6 +997,10 @@ public class OracleDatabaseClientTest {
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
+            .setExascaleDbStorageVault(
+                ExascaleDbStorageVaultName.of(
+                        "[PROJECT]", "[LOCATION]", "[EXASCALE_DB_STORAGE_VAULT]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5073,6 +5213,10 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -5123,6 +5267,10 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     mockOracleDatabase.addResponse(expectedResponse);
 
@@ -5171,6 +5319,10 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -5240,6 +5392,10 @@ public class OracleDatabaseClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setEntitlementId("entitlementId-1302274264")
             .putAllLabels(new HashMap<String, String>())
+            .setExadataInfrastructure(
+                CloudExadataInfrastructureName.of(
+                        "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

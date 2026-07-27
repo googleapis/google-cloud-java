@@ -140,8 +140,7 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
    *
    * If unspecified, at most 5 results will be returned.
    *
-   * The maximum value is 20; values above 20 will result in an INVALID_ARGUMENT
-   * error.
+   * The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -243,6 +242,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
    * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
    * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
    *
+   * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+   * the right-hand side of filtering expressions must be string literals
+   * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
+   *
    * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
    * operators. `OR` has higher precedence than `AND`. Use parentheses for
    * explicit precedence grouping.
@@ -307,6 +310,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
    *
    * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
    * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+   *
+   * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+   * the right-hand side of filtering expressions must be string literals
+   * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
    *
    * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
    * operators. `OR` has higher precedence than `AND`. Use parentheses for
@@ -855,8 +862,7 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      *
      * If unspecified, at most 5 results will be returned.
      *
-     * The maximum value is 20; values above 20 will result in an INVALID_ARGUMENT
-     * error.
+     * The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -877,8 +883,7 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      *
      * If unspecified, at most 5 results will be returned.
      *
-     * The maximum value is 20; values above 20 will result in an INVALID_ARGUMENT
-     * error.
+     * The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -903,8 +908,7 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      *
      * If unspecified, at most 5 results will be returned.
      *
-     * The maximum value is 20; values above 20 will result in an INVALID_ARGUMENT
-     * error.
+     * The maximum value is 100; values above 100 will be coerced to 100.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1066,6 +1070,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
      * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
      *
+     * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+     * the right-hand side of filtering expressions must be string literals
+     * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
+     *
      * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
      * operators. `OR` has higher precedence than `AND`. Use parentheses for
      * explicit precedence grouping.
@@ -1129,6 +1137,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      *
      * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
      * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+     * the right-hand side of filtering expressions must be string literals
+     * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
      *
      * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
      * operators. `OR` has higher precedence than `AND`. Use parentheses for
@@ -1194,6 +1206,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
      * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
      *
+     * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+     * the right-hand side of filtering expressions must be string literals
+     * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
+     *
      * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
      * operators. `OR` has higher precedence than `AND`. Use parentheses for
      * explicit precedence grouping.
@@ -1257,6 +1273,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
      * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
      *
+     * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+     * the right-hand side of filtering expressions must be string literals
+     * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
+     *
      * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
      * operators. `OR` has higher precedence than `AND`. Use parentheses for
      * explicit precedence grouping.
@@ -1315,6 +1335,10 @@ public final class SearchDocumentChunksRequest extends com.google.protobuf.Gener
      *
      * TIMESTAMP fields support `=`, `&lt;`, `&lt;=`, `&gt;`, and `&gt;=` operators.
      * Timestamps must be in RFC-3339 format, e.g., `"2025-01-01T00:00:00Z"`.
+     *
+     * Note: Field names must be in `snake_case` (e.g., `data_source`). Values on
+     * the right-hand side of filtering expressions must be string literals
+     * enclosed in double quotes (e.g., `"docs.cloud.google.com"`).
      *
      * You can combine expressions using `AND`, `OR`, and `NOT` (or `-`) logical
      * operators. `OR` has higher precedence than `AND`. Use parentheses for

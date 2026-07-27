@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -240,9 +242,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionAutoscalersClient implements BackgroundResource {
-  private final RegionAutoscalersSettings settings;
+  private final @Nullable RegionAutoscalersSettings settings;
   private final RegionAutoscalersStub stub;
 
   /** Constructs an instance of RegionAutoscalersClient with default settings. */
@@ -282,7 +285,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionAutoscalersSettings getSettings() {
+  public final @Nullable RegionAutoscalersSettings getSettings() {
     return settings;
   }
 
@@ -1228,8 +1231,9 @@ public class RegionAutoscalersClient implements BackgroundResource {
           ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler> context,
-        RegionAutoscalerList response) {
+        @Nullable PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler>
+            context,
+        @Nullable RegionAutoscalerList response) {
       super(context, response);
     }
 
@@ -1239,14 +1243,16 @@ public class RegionAutoscalersClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler> context,
-        RegionAutoscalerList response) {
+        @Nullable PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler>
+            context,
+        @Nullable RegionAutoscalerList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler> context,
+        @Nullable PageContext<ListRegionAutoscalersRequest, RegionAutoscalerList, Autoscaler>
+            context,
         ApiFuture<RegionAutoscalerList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1260,7 +1266,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1269,7 +1275,8 @@ public class RegionAutoscalersClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -30,8 +30,10 @@
 package com.google.api.gax.httpjson;
 
 import com.google.api.client.http.HttpHeaders;
+import org.jspecify.annotations.NullMarked;
 
 /** Utility class that creates instances of {@link HttpJsonHeaderEnhancer}. */
+@NullMarked
 public class HttpJsonHeaderEnhancers {
 
   private HttpJsonHeaderEnhancers() {}

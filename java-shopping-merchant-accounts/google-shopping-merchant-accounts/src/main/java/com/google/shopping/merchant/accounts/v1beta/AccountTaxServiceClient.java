@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -184,10 +186,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AccountTaxServiceClient implements BackgroundResource {
-  private final AccountTaxServiceSettings settings;
+  private final @Nullable AccountTaxServiceSettings settings;
   private final AccountTaxServiceStub stub;
 
   /** Constructs an instance of AccountTaxServiceClient with default settings. */
@@ -227,7 +230,7 @@ public class AccountTaxServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountTaxServiceSettings getSettings() {
+  public final @Nullable AccountTaxServiceSettings getSettings() {
     return settings;
   }
 
@@ -256,7 +259,7 @@ public class AccountTaxServiceClient implements BackgroundResource {
    * @param name Required. The name from which tax settings will be retrieved
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountTax getAccountTax(AccountTaxName name) {
+  public final AccountTax getAccountTax(@Nullable AccountTaxName name) {
     GetAccountTaxRequest request =
         GetAccountTaxRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccountTax(request);
@@ -369,7 +372,7 @@ public class AccountTaxServiceClient implements BackgroundResource {
    *     accounts/{account}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountTaxPagedResponse listAccountTax(AccountName parent) {
+  public final ListAccountTaxPagedResponse listAccountTax(@Nullable AccountName parent) {
     ListAccountTaxRequest request =
         ListAccountTaxRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -691,8 +694,8 @@ public class AccountTaxServiceClient implements BackgroundResource {
           ListAccountTaxRequest, ListAccountTaxResponse, AccountTax, ListAccountTaxPage> {
 
     private ListAccountTaxPage(
-        PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
-        ListAccountTaxResponse response) {
+        @Nullable PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
+        @Nullable ListAccountTaxResponse response) {
       super(context, response);
     }
 
@@ -702,14 +705,14 @@ public class AccountTaxServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountTaxPage createPage(
-        PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
-        ListAccountTaxResponse response) {
+        @Nullable PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
+        @Nullable ListAccountTaxResponse response) {
       return new ListAccountTaxPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountTaxPage> createPageAsync(
-        PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
+        @Nullable PageContext<ListAccountTaxRequest, ListAccountTaxResponse, AccountTax> context,
         ApiFuture<ListAccountTaxResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -723,7 +726,8 @@ public class AccountTaxServiceClient implements BackgroundResource {
           ListAccountTaxPage,
           ListAccountTaxFixedSizeCollection> {
 
-    private ListAccountTaxFixedSizeCollection(List<ListAccountTaxPage> pages, int collectionSize) {
+    private ListAccountTaxFixedSizeCollection(
+        @Nullable List<ListAccountTaxPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -733,7 +737,7 @@ public class AccountTaxServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountTaxFixedSizeCollection createCollection(
-        List<ListAccountTaxPage> pages, int collectionSize) {
+        @Nullable List<ListAccountTaxPage> pages, int collectionSize) {
       return new ListAccountTaxFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -494,9 +496,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AutoMlClient implements BackgroundResource {
-  private final AutoMlSettings settings;
+  private final @Nullable AutoMlSettings settings;
   private final AutoMlStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -542,7 +545,7 @@ public class AutoMlClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AutoMlSettings getSettings() {
+  public final @Nullable AutoMlSettings getSettings() {
     return settings;
   }
 
@@ -591,7 +594,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Dataset, OperationMetadata> createDatasetAsync(
-      LocationName parent, Dataset dataset) {
+      @Nullable LocationName parent, Dataset dataset) {
     CreateDatasetRequest request =
         CreateDatasetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -739,7 +742,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. The resource name of the dataset to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Dataset getDataset(DatasetName name) {
+  public final Dataset getDataset(@Nullable DatasetName name) {
     GetDatasetRequest request =
         GetDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataset(request);
@@ -849,7 +852,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param parent Required. The resource name of the project from which to list datasets.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatasetsPagedResponse listDatasets(LocationName parent) {
+  public final ListDatasetsPagedResponse listDatasets(@Nullable LocationName parent) {
     ListDatasetsRequest request =
         ListDatasetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1099,7 +1102,8 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. The resource name of the dataset to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(DatasetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDatasetAsync(
+      @Nullable DatasetName name) {
     DeleteDatasetRequest request =
         DeleteDatasetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatasetAsync(request);
@@ -1258,7 +1262,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> importDataAsync(
-      DatasetName name, InputConfig inputConfig) {
+      @Nullable DatasetName name, InputConfig inputConfig) {
     ImportDataRequest request =
         ImportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1444,7 +1448,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportDataAsync(
-      DatasetName name, OutputConfig outputConfig) {
+      @Nullable DatasetName name, OutputConfig outputConfig) {
     ExportDataRequest request =
         ExportDataRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1597,7 +1601,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. The resource name of the annotation spec to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AnnotationSpec getAnnotationSpec(AnnotationSpecName name) {
+  public final AnnotationSpec getAnnotationSpec(@Nullable AnnotationSpecName name) {
     GetAnnotationSpecRequest request =
         GetAnnotationSpecRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1719,7 +1723,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Model, OperationMetadata> createModelAsync(
-      LocationName parent, Model model) {
+      @Nullable LocationName parent, Model model) {
     CreateModelRequest request =
         CreateModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1875,7 +1879,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. Resource name of the model.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model getModel(ModelName name) {
+  public final Model getModel(@Nullable ModelName name) {
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -1985,7 +1989,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param parent Required. Resource name of the project, from which to list the models.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelsPagedResponse listModels(LocationName parent) {
+  public final ListModelsPagedResponse listModels(@Nullable LocationName parent) {
     ListModelsRequest request =
         ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
@@ -2146,7 +2150,8 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. Resource name of the model being deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(ModelName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteModelAsync(
+      @Nullable ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
@@ -2387,7 +2392,8 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. Resource name of the model to deploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(ModelName name) {
+  public final OperationFuture<Empty, OperationMetadata> deployModelAsync(
+      @Nullable ModelName name) {
     DeployModelRequest request =
         DeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deployModelAsync(request);
@@ -2567,7 +2573,8 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. Resource name of the model to undeploy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(ModelName name) {
+  public final OperationFuture<Empty, OperationMetadata> undeployModelAsync(
+      @Nullable ModelName name) {
     UndeployModelRequest request =
         UndeployModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return undeployModelAsync(request);
@@ -2737,7 +2744,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> exportModelAsync(
-      ModelName name, ModelExportOutputConfig outputConfig) {
+      @Nullable ModelName name, ModelExportOutputConfig outputConfig) {
     ExportModelRequest request =
         ExportModelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2906,7 +2913,7 @@ public class AutoMlClient implements BackgroundResource {
    * @param name Required. Resource name for the model evaluation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
+  public final ModelEvaluation getModelEvaluation(@Nullable ModelEvaluationName name) {
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3038,7 +3045,7 @@ public class AutoMlClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationsPagedResponse listModelEvaluations(
-      ModelName parent, String filter) {
+      @Nullable ModelName parent, String filter) {
     ListModelEvaluationsRequest request =
         ListModelEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3254,8 +3261,8 @@ public class AutoMlClient implements BackgroundResource {
       extends AbstractPage<ListDatasetsRequest, ListDatasetsResponse, Dataset, ListDatasetsPage> {
 
     private ListDatasetsPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       super(context, response);
     }
 
@@ -3265,14 +3272,14 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsPage createPage(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
-        ListDatasetsResponse response) {
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable ListDatasetsResponse response) {
       return new ListDatasetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatasetsPage> createPageAsync(
-        PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
+        @Nullable PageContext<ListDatasetsRequest, ListDatasetsResponse, Dataset> context,
         ApiFuture<ListDatasetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3286,7 +3293,8 @@ public class AutoMlClient implements BackgroundResource {
           ListDatasetsPage,
           ListDatasetsFixedSizeCollection> {
 
-    private ListDatasetsFixedSizeCollection(List<ListDatasetsPage> pages, int collectionSize) {
+    private ListDatasetsFixedSizeCollection(
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3296,7 +3304,7 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListDatasetsFixedSizeCollection createCollection(
-        List<ListDatasetsPage> pages, int collectionSize) {
+        @Nullable List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3327,8 +3335,8 @@ public class AutoMlClient implements BackgroundResource {
       extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
 
     private ListModelsPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       super(context, response);
     }
 
@@ -3338,14 +3346,14 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListModelsPage createPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       return new ListModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelsPage> createPageAsync(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
         ApiFuture<ListModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3359,7 +3367,8 @@ public class AutoMlClient implements BackgroundResource {
           ListModelsPage,
           ListModelsFixedSizeCollection> {
 
-    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+    private ListModelsFixedSizeCollection(
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3369,7 +3378,7 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListModelsFixedSizeCollection createCollection(
-        List<ListModelsPage> pages, int collectionSize) {
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3407,9 +3416,10 @@ public class AutoMlClient implements BackgroundResource {
           ListModelEvaluationsPage> {
 
     private ListModelEvaluationsPage(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
-        ListModelEvaluationsResponse response) {
+        @Nullable ListModelEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -3419,15 +3429,17 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationsPage createPage(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
-        ListModelEvaluationsResponse response) {
+        @Nullable ListModelEvaluationsResponse response) {
       return new ListModelEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelEvaluationsPage> createPageAsync(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
         ApiFuture<ListModelEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3443,7 +3455,7 @@ public class AutoMlClient implements BackgroundResource {
           ListModelEvaluationsFixedSizeCollection> {
 
     private ListModelEvaluationsFixedSizeCollection(
-        List<ListModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3453,7 +3465,7 @@ public class AutoMlClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationsFixedSizeCollection createCollection(
-        List<ListModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationsPage> pages, int collectionSize) {
       return new ListModelEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }

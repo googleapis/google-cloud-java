@@ -189,6 +189,53 @@ public final class DeveloperKnowledgeGrpc {
     return getBatchGetDocumentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.developers.knowledge.v1.AnswerQueryRequest,
+          com.google.developers.knowledge.v1.AnswerQueryResponse>
+      getAnswerQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AnswerQuery",
+      requestType = com.google.developers.knowledge.v1.AnswerQueryRequest.class,
+      responseType = com.google.developers.knowledge.v1.AnswerQueryResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.developers.knowledge.v1.AnswerQueryRequest,
+          com.google.developers.knowledge.v1.AnswerQueryResponse>
+      getAnswerQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.developers.knowledge.v1.AnswerQueryRequest,
+            com.google.developers.knowledge.v1.AnswerQueryResponse>
+        getAnswerQueryMethod;
+    if ((getAnswerQueryMethod = DeveloperKnowledgeGrpc.getAnswerQueryMethod) == null) {
+      synchronized (DeveloperKnowledgeGrpc.class) {
+        if ((getAnswerQueryMethod = DeveloperKnowledgeGrpc.getAnswerQueryMethod) == null) {
+          DeveloperKnowledgeGrpc.getAnswerQueryMethod =
+              getAnswerQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.developers.knowledge.v1.AnswerQueryRequest,
+                          com.google.developers.knowledge.v1.AnswerQueryResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AnswerQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.developers.knowledge.v1.AnswerQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.developers.knowledge.v1.AnswerQueryResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperKnowledgeMethodDescriptorSupplier("AnswerQuery"))
+                      .build();
+        }
+      }
+    }
+    return getAnswerQueryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DeveloperKnowledgeStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DeveloperKnowledgeStub> factory =
@@ -318,6 +365,21 @@ public final class DeveloperKnowledgeGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBatchGetDocumentsMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answers a query using grounded generation.
+     * </pre>
+     */
+    default void answerQuery(
+        com.google.developers.knowledge.v1.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.developers.knowledge.v1.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAnswerQueryMethod(), responseObserver);
+    }
   }
 
   /**
@@ -439,6 +501,23 @@ public final class DeveloperKnowledgeGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answers a query using grounded generation.
+     * </pre>
+     */
+    public void answerQuery(
+        com.google.developers.knowledge.v1.AnswerQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.developers.knowledge.v1.AnswerQueryResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAnswerQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -525,6 +604,20 @@ public final class DeveloperKnowledgeGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBatchGetDocumentsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answers a query using grounded generation.
+     * </pre>
+     */
+    public com.google.developers.knowledge.v1.AnswerQueryResponse answerQuery(
+        com.google.developers.knowledge.v1.AnswerQueryRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -607,6 +700,19 @@ public final class DeveloperKnowledgeGrpc {
         com.google.developers.knowledge.v1.BatchGetDocumentsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchGetDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answers a query using grounded generation.
+     * </pre>
+     */
+    public com.google.developers.knowledge.v1.AnswerQueryResponse answerQuery(
+        com.google.developers.knowledge.v1.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAnswerQueryMethod(), getCallOptions(), request);
     }
   }
 
@@ -694,11 +800,26 @@ public final class DeveloperKnowledgeGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchGetDocumentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Answers a query using grounded generation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.developers.knowledge.v1.AnswerQueryResponse>
+        answerQuery(com.google.developers.knowledge.v1.AnswerQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAnswerQueryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_SEARCH_DOCUMENT_CHUNKS = 0;
   private static final int METHODID_GET_DOCUMENT = 1;
   private static final int METHODID_BATCH_GET_DOCUMENTS = 2;
+  private static final int METHODID_ANSWER_QUERY = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -735,6 +856,12 @@ public final class DeveloperKnowledgeGrpc {
               (com.google.developers.knowledge.v1.BatchGetDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.developers.knowledge.v1.BatchGetDocumentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ANSWER_QUERY:
+          serviceImpl.answerQuery(
+              (com.google.developers.knowledge.v1.AnswerQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.developers.knowledge.v1.AnswerQueryResponse>)
                   responseObserver);
           break;
         default:
@@ -775,6 +902,13 @@ public final class DeveloperKnowledgeGrpc {
                     com.google.developers.knowledge.v1.BatchGetDocumentsRequest,
                     com.google.developers.knowledge.v1.BatchGetDocumentsResponse>(
                     service, METHODID_BATCH_GET_DOCUMENTS)))
+        .addMethod(
+            getAnswerQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.developers.knowledge.v1.AnswerQueryRequest,
+                    com.google.developers.knowledge.v1.AnswerQueryResponse>(
+                    service, METHODID_ANSWER_QUERY)))
         .build();
   }
 
@@ -829,6 +963,7 @@ public final class DeveloperKnowledgeGrpc {
                       .addMethod(getSearchDocumentChunksMethod())
                       .addMethod(getGetDocumentMethod())
                       .addMethod(getBatchGetDocumentsMethod())
+                      .addMethod(getAnswerQueryMethod())
                       .build();
         }
       }

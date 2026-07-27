@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -213,9 +215,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReferenceListServiceClient implements BackgroundResource {
-  private final ReferenceListServiceSettings settings;
+  private final @Nullable ReferenceListServiceSettings settings;
   private final ReferenceListServiceStub stub;
 
   /** Constructs an instance of ReferenceListServiceClient with default settings. */
@@ -255,7 +258,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReferenceListServiceSettings getSettings() {
+  public final @Nullable ReferenceListServiceSettings getSettings() {
     return settings;
   }
 
@@ -287,7 +290,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{locations}/instances/{instance}/referenceLists/{reference_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReferenceList getReferenceList(ReferenceListName name) {
+  public final ReferenceList getReferenceList(@Nullable ReferenceListName name) {
     GetReferenceListRequest request =
         GetReferenceListRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReferenceList(request);
@@ -413,7 +416,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/instances/{instance}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReferenceListsPagedResponse listReferenceLists(InstanceName parent) {
+  public final ListReferenceListsPagedResponse listReferenceLists(@Nullable InstanceName parent) {
     ListReferenceListsRequest request =
         ListReferenceListsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -598,7 +601,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReferenceList createReferenceList(
-      InstanceName parent, ReferenceList referenceList, String referenceListId) {
+      @Nullable InstanceName parent, ReferenceList referenceList, String referenceListId) {
     CreateReferenceListRequest request =
         CreateReferenceListRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -940,8 +943,9 @@ public class ReferenceListServiceClient implements BackgroundResource {
           ListReferenceListsPage> {
 
     private ListReferenceListsPage(
-        PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList> context,
-        ListReferenceListsResponse response) {
+        @Nullable PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList>
+            context,
+        @Nullable ListReferenceListsResponse response) {
       super(context, response);
     }
 
@@ -951,14 +955,16 @@ public class ReferenceListServiceClient implements BackgroundResource {
 
     @Override
     protected ListReferenceListsPage createPage(
-        PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList> context,
-        ListReferenceListsResponse response) {
+        @Nullable PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList>
+            context,
+        @Nullable ListReferenceListsResponse response) {
       return new ListReferenceListsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReferenceListsPage> createPageAsync(
-        PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList> context,
+        @Nullable PageContext<ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList>
+            context,
         ApiFuture<ListReferenceListsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -973,7 +979,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
           ListReferenceListsFixedSizeCollection> {
 
     private ListReferenceListsFixedSizeCollection(
-        List<ListReferenceListsPage> pages, int collectionSize) {
+        @Nullable List<ListReferenceListsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -983,7 +989,7 @@ public class ReferenceListServiceClient implements BackgroundResource {
 
     @Override
     protected ListReferenceListsFixedSizeCollection createCollection(
-        List<ListReferenceListsPage> pages, int collectionSize) {
+        @Nullable List<ListReferenceListsPage> pages, int collectionSize) {
       return new ListReferenceListsFixedSizeCollection(pages, collectionSize);
     }
   }

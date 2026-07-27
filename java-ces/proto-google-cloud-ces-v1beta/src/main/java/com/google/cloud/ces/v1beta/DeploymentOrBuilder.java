@@ -315,4 +315,96 @@ public interface DeploymentOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1beta.ExperimentConfigOrBuilder getExperimentConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the whatsappCredentials field is set.
+   */
+  boolean hasWhatsappCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The whatsappCredentials.
+   */
+  com.google.cloud.ces.v1beta.WhatsAppCredentials getWhatsappCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.WhatsAppCredentialsOrBuilder getWhatsappCredentialsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instagramCredentials field is set.
+   */
+  boolean hasInstagramCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The instagramCredentials.
+   */
+  com.google.cloud.ces.v1beta.InstagramCredentials getInstagramCredentials();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.InstagramCredentialsOrBuilder getInstagramCredentialsOrBuilder();
 }

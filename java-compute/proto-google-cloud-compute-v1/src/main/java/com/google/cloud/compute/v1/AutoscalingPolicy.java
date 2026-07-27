@@ -154,6 +154,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Automatically create VMs according to the policy, but do not scale
      * the MIG in.
+     * It's recommended to use ONLY_SCALE_OUT instead of ONLY_UP.
      * </pre>
      *
      * <code>ONLY_UP = 478095374;</code>
@@ -225,6 +226,7 @@ public final class AutoscalingPolicy extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Automatically create VMs according to the policy, but do not scale
      * the MIG in.
+     * It's recommended to use ONLY_SCALE_OUT instead of ONLY_UP.
      * </pre>
      *
      * <code>ONLY_UP = 478095374;</code>

@@ -2835,4 +2835,134 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v2.VertexAi vertex_ai = 72;</code>
    */
   com.google.cloud.securitycenter.v2.VertexAiOrBuilder getVertexAiOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Agent agent = 81;</code>
+   *
+   * @return Whether the agent field is set.
+   */
+  boolean hasAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Agent agent = 81;</code>
+   *
+   * @return The agent.
+   */
+  com.google.cloud.securitycenter.v2.Agent getAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.Agent agent = 81;</code>
+   */
+  com.google.cloud.securitycenter.v2.AgentOrBuilder getAgentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.AgentSession agent_sessions = 82;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v2.AgentSession> getAgentSessionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.AgentSession agent_sessions = 82;</code>
+   */
+  com.google.cloud.securitycenter.v2.AgentSession getAgentSessions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.AgentSession agent_sessions = 82;</code>
+   */
+  int getAgentSessionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.AgentSession agent_sessions = 82;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v2.AgentSessionOrBuilder>
+      getAgentSessionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v2.AgentSession agent_sessions = 82;</code>
+   */
+  com.google.cloud.securitycenter.v2.AgentSessionOrBuilder getAgentSessionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AgentAnomaly agent_anomaly = 83;</code>
+   *
+   * @return Whether the agentAnomaly field is set.
+   */
+  boolean hasAgentAnomaly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AgentAnomaly agent_anomaly = 83;</code>
+   *
+   * @return The agentAnomaly.
+   */
+  com.google.cloud.securitycenter.v2.AgentAnomaly getAgentAnomaly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v2.AgentAnomaly agent_anomaly = 83;</code>
+   */
+  com.google.cloud.securitycenter.v2.AgentAnomalyOrBuilder getAgentAnomalyOrBuilder();
 }

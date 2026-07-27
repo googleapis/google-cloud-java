@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -285,9 +287,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class JobsClient implements BackgroundResource {
-  private final JobsSettings settings;
+  private final @Nullable JobsSettings settings;
   private final JobsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -333,7 +336,7 @@ public class JobsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final JobsSettings getSettings() {
+  public final @Nullable JobsSettings getSettings() {
     return settings;
   }
 
@@ -386,7 +389,7 @@ public class JobsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Job, Job> createJobAsync(
-      LocationName parent, Job job, String jobId) {
+      @Nullable LocationName parent, Job job, String jobId) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -544,7 +547,7 @@ public class JobsClient implements BackgroundResource {
    *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -657,7 +660,7 @@ public class JobsClient implements BackgroundResource {
    *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(LocationName parent) {
+  public final ListJobsPagedResponse listJobs(@Nullable LocationName parent) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listJobs(request);
@@ -934,7 +937,7 @@ public class JobsClient implements BackgroundResource {
    *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Job, Job> deleteJobAsync(JobName name) {
+  public final OperationFuture<Job, Job> deleteJobAsync(@Nullable JobName name) {
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteJobAsync(request);
@@ -1080,7 +1083,7 @@ public class JobsClient implements BackgroundResource {
    *     number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Execution, Execution> runJobAsync(JobName name) {
+  public final OperationFuture<Execution, Execution> runJobAsync(@Nullable JobName name) {
     RunJobRequest request =
         RunJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runJobAsync(request);
@@ -1439,7 +1442,8 @@ public class JobsClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1449,13 +1453,14 @@ public class JobsClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1465,7 +1470,7 @@ public class JobsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1475,7 +1480,7 @@ public class JobsClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }

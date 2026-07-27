@@ -28,6 +28,8 @@ import com.google.longrunning.OperationsClient;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -122,10 +124,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  private final AssetServiceSettings settings;
+  private final @Nullable AssetServiceSettings settings;
   private final AssetServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -167,7 +170,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final AssetServiceSettings getSettings() {
+  public final @Nullable AssetServiceSettings getSettings() {
     return settings;
   }
 

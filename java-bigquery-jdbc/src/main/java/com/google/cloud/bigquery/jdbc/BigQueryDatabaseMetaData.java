@@ -20,9 +20,14 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetListOption;
+import com.google.cloud.bigquery.BigQuery.RoutineField;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
+import com.google.cloud.bigquery.BigQuery.RoutineOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
+import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.ColumnReference;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Field;
@@ -30,6 +35,8 @@ import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.ForeignKey;
+import com.google.cloud.bigquery.PrimaryKey;
 import com.google.cloud.bigquery.Routine;
 import com.google.cloud.bigquery.RoutineArgument;
 import com.google.cloud.bigquery.RoutineId;
@@ -39,16 +46,20 @@ import com.google.cloud.bigquery.StandardSQLField;
 import com.google.cloud.bigquery.StandardSQLTableType;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
-import java.io.BufferedReader;
+import io.opentelemetry.context.Context;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.RowIdLifetime;
 import java.sql.SQLException;
@@ -60,7 +71,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
@@ -81,22 +91,18 @@ import javax.annotation.Nullable;
  *
  * @see BigQueryStatement
  */
-// TODO(neenu): test and verify after post MVP implementation.
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
   final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
-
   private static final String SCHEMA_TERM = "Dataset";
   private static final String CATALOG_TERM = "Project";
   private static final String PROCEDURE_TERM = "Procedure";
-  private static final String GET_PRIMARY_KEYS_SQL = "DatabaseMetaData_GetPrimaryKeys.sql";
-  private static final String GET_IMPORTED_KEYS_SQL = "DatabaseMetaData_GetImportedKeys.sql";
-  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
-  private static final String GET_CROSS_REFERENCE_SQL = "DatabaseMetaData_GetCrossReference.sql";
   private static final int DEFAULT_PAGE_SIZE = 500;
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
+  private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
+  private static String exportedKeysSqlContent;
   // Declared package-private for testing.
   static final String GOOGLE_SQL_QUOTED_IDENTIFIER = "`";
   // Does not include SQL:2003 Keywords as per JDBC spec.
@@ -831,8 +837,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           (rt) -> rt.getRoutineId().getRoutine(),
                           procedureNamePattern,
                           procedureNameRegex,
-                          LOG);
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+                          false);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingRoutines tasks.");
@@ -1056,7 +1063,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
             getRoutineDetailsExecutor = connection.getMetadataExecutor();
             List<Routine> fullRoutines =
-                fetchFullRoutineDetailsForIds(procedureIdsToGet, getRoutineDetailsExecutor, LOG);
+                fetchFullRoutineDetailsForIds(
+                    procedureIdsToGet,
+                    getRoutineDetailsExecutor,
+                    LOG,
+                    RoutineOption.fields(
+                        RoutineField.ROUTINE_REFERENCE,
+                        RoutineField.ARGUMENTS,
+                        RoutineField.ROUTINE_TYPE));
             getRoutineDetailsExecutor = null;
 
             if (fullRoutines.isEmpty() || Thread.currentThread().isInterrupted()) {
@@ -1126,8 +1140,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   procedureNamePattern,
                   procedureNameRegex,
-                  logger);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+                  false);
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -1174,7 +1188,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   List<Routine> fetchFullRoutineDetailsForIds(
       List<RoutineId> procedureIdsToGet,
       ExecutorService getRoutineDetailsExecutor,
-      BigQueryJdbcCustomLogger logger)
+      BigQueryJdbcCustomLogger logger,
+      RoutineOption... options)
       throws InterruptedException, ExecutionException {
     logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
     final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
@@ -1191,7 +1206,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Callable<Routine> getCallable =
           () -> {
             try {
-              return bigquery.getRoutine(currentProcId);
+              return bigquery.getRoutine(currentProcId, options);
             } catch (Exception e) {
               logger.warning(
                   "Failed to get full details for routine "
@@ -1201,7 +1216,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return null;
             }
           };
-      getRoutineFutures.add(getRoutineDetailsExecutor.submit(getCallable));
+      getRoutineFutures.add(getRoutineDetailsExecutor.submit(Context.current().wrap(getCallable)));
     }
     logger.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
 
@@ -1546,20 +1561,28 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTables(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getTables",
+        () -> getTablesImpl(catalog, schemaPattern, tableNamePattern, types));
+  }
+
+  private ResultSet getTablesImpl(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
 
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
-
-    if ((effectiveCatalog != null && effectiveCatalog.isEmpty())
-        || (effectiveSchemaPattern != null && effectiveSchemaPattern.isEmpty())
+    if ((catalog != null && catalog.isEmpty())
+        || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
       return new BigQueryJsonResultSet();
     }
+
+    Tuple<String, String> effectiveIdentifiers =
+        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
+    String effectiveCatalog = effectiveIdentifiers.x();
+    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     LOG.info(
         "getTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, types: %s",
@@ -1616,12 +1639,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                   TableId.of(
                                       currentDatasetId.getProject(),
                                       currentDatasetId.getDataset(),
-                                      name)),
+                                      name),
+                                  TableOption.fields(
+                                      TableField.TABLE_REFERENCE,
+                                      TableField.TYPE,
+                                      TableField.DESCRIPTION)),
                           (tbl) -> tbl.getTableId().getTable(),
                           tableNamePattern,
                           tableNameRegex,
-                          LOG);
-              Future<List<Table>> apiFuture = apiExecutor.submit(apiCallable);
+                          false);
+              Future<List<Table>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
@@ -1665,7 +1693,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(tableFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(tableFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -1792,6 +1821,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getCatalogs() throws SQLException {
+    return withTracing("BigQueryDatabaseMetaData.getCatalogs", () -> getCatalogsImpl());
+  }
+
+  private ResultSet getCatalogsImpl() throws SQLException {
     LOG.info("getCatalogs() called");
 
     final List<String> accessibleCatalogs = getAccessibleCatalogNames();
@@ -1803,11 +1836,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(catalogRows.isEmpty() ? 1 : catalogRows.size() + 1);
 
-    populateQueue(catalogRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(catalogRows, queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(
-        catalogsSchema, catalogRows.size(), queue, null, new Future<?>[0]);
+    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -1835,11 +1866,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(tableTypeRows.size() + 1);
 
-    populateQueue(tableTypeRows, queue, tableTypesSchema.getFields());
-    signalEndOfData(queue, tableTypesSchema.getFields());
+    Future<?> fetcherFuture =
+        populateQueueAsync(tableTypeRows, queue, tableTypesSchema.getFields());
 
     return BigQueryJsonResultSet.of(
-        tableTypesSchema, tableTypeRows.size(), queue, null, new Future<?>[0]);
+        tableTypesSchema, tableTypeRows.size(), queue, null, fetcherFuture);
   }
 
   static Schema defineGetTableTypesSchema() {
@@ -1863,21 +1894,29 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getColumns",
+        () -> getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern));
+  }
+
+  private ResultSet getColumnsImpl(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
 
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
-
-    if ((effectiveCatalog != null && effectiveCatalog.isEmpty())
-        || (effectiveSchemaPattern != null && effectiveSchemaPattern.isEmpty())
+    if ((catalog != null && catalog.isEmpty())
+        || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())
         || (columnNamePattern != null && columnNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
       return new BigQueryJsonResultSet();
     }
+
+    Tuple<String, String> effectiveIdentifiers =
+        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
+    String effectiveCatalog = effectiveIdentifiers.x();
+    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     LOG.info(
         "getColumns called for catalog: %s, schemaPattern: %s, tableNamePattern: %s,"
@@ -1930,11 +1969,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                               datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
                       (name) ->
                           bigquery.getTable(
-                              TableId.of(datasetId.getProject(), datasetId.getDataset(), name)),
+                              TableId.of(datasetId.getProject(), datasetId.getDataset(), name),
+                              TableOption.fields(
+                                  TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA)),
                       (tbl) -> tbl.getTableId().getTable(),
                       tableNamePattern,
                       tableNameRegex,
-                      LOG);
+                      false);
 
               for (Table table : tablesToScan) {
                 if (Thread.currentThread().isInterrupted()) {
@@ -1975,7 +2016,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(columnFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(columnFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -1999,7 +2041,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             "Schema not included in table object for "
                 + tableId
                 + ", fetching full table details...");
-        Table fullTable = bigquery.getTable(tableId);
+        Table fullTable =
+            bigquery.getTable(
+                tableId,
+                TableOption.fields(TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
         if (fullTable != null) {
           definition = fullTable.getDefinition();
           tableSchema = (definition != null) ? definition.getSchema() : null;
@@ -2391,55 +2436,211 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return Schema.of(fields);
   }
 
-  private void closeStatementIgnoreException(Statement statement) {
-    if (statement == null) {
+  @Override
+  public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
+      return new BigQueryJsonResultSet();
+    }
+
+    final Schema resultSchema = defineGetPrimaryKeysSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        table,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
+        });
+
+    Comparator<FieldValueList> comparator = defineGetPrimaryKeysComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getPrimaryKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
+  }
+
+  private Schema defineGetPrimaryKeysSchema() {
+    List<Field> fields = new ArrayList<>(6);
+    fields.add(
+        Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    fields.add(
+        Field.newBuilder("TABLE_SCHEM", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    fields.add(
+        Field.newBuilder("TABLE_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("COLUMN_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("KEY_SEQ", StandardSQLTypeName.INT64)
+            .setMode(Field.Mode.REQUIRED)
+            .build());
+    fields.add(
+        Field.newBuilder("PK_NAME", StandardSQLTypeName.STRING)
+            .setMode(Field.Mode.NULLABLE)
+            .build());
+    return Schema.of(fields);
+  }
+
+  private void processPrimaryKey(
+      TableConstraints constraints,
+      TableId tableId,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields) {
+    if (constraints == null || constraints.getPrimaryKey() == null) {
       return;
     }
-    try {
-      statement.close();
-    } catch (SQLException e) {
-      // pass
+    PrimaryKey pk = constraints.getPrimaryKey();
+    List<String> pkColumns = pk.getColumns();
+    for (int i = 0; i < pkColumns.size(); i++) {
+      List<FieldValue> row = new ArrayList<>(6);
+      row.add(createStringFieldValue(tableId.getProject())); // 1. TABLE_CAT
+      row.add(createStringFieldValue(tableId.getDataset())); // 2. TABLE_SCHEM
+      row.add(createStringFieldValue(tableId.getTable())); // 3. TABLE_NAME
+      row.add(createStringFieldValue(pkColumns.get(i))); // 4. COLUMN_NAME
+      row.add(createLongFieldValue((long) (i + 1))); // 5. KEY_SEQ
+      row.add(createNullFieldValue()); // 6. PK_NAME
+      collectedResults.add(FieldValueList.of(row, resultSchemaFields));
     }
   }
 
-  @Override
-  public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
-    String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getPrimaryKeys", e);
-    }
+  private Comparator<FieldValueList> defineGetPrimaryKeysComparator(FieldList resultSchemaFields) {
+    final int COLUMN_NAME_IDX = resultSchemaFields.getIndex("COLUMN_NAME");
+    return Comparator.comparing(
+        (FieldValueList fvl) -> getStringValueOrNull(fvl, COLUMN_NAME_IDX),
+        Comparator.nullsFirst(String::compareTo));
   }
 
   @Override
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getImportedKeys", e);
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        table,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = definePkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getImportedKeys", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    Statement stmt = this.connection.createStatement();
+    if ((catalog != null && catalog.isEmpty())
+        || (schema != null && schema.isEmpty())
+        || table == null
+        || table.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
+    }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    // Early return for PCNT catalog schemas (containing '.') as they do not support table
+    // constraints.
+    if (schema != null && schema.contains(".")) {
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
+      signalEndOfData(queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    }
+
+    // Fallback Path: If catalog or schema is null, fall back to REST API metadata scan.
+    if (catalog == null || schema == null) {
+      final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+      List<DatasetId> targetDatasets = getTargetDatasets(catalog, null);
+
+      processTargetTablesConcurrently(
+          targetDatasets,
+          null,
+          collectedResults,
+          resultSchemaFields,
+          (bqTable, results, fields) -> {
+            TableConstraints constraints = bqTable.getTableConstraints();
+            if (constraints == null || constraints.getForeignKeys() == null) {
+              return;
+            }
+            for (ForeignKey fk : constraints.getForeignKeys()) {
+              TableId pkTableId = fk.getReferencedTable();
+              if (pkTableId == null
+                  || !equalsOrNullMatchesAll(catalog, pkTableId.getProject())
+                  || !equalsOrNullMatchesAll(schema, pkTableId.getDataset())
+                  || !table.equals(pkTableId.getTable())) {
+                continue;
+              }
+              processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+            }
+          });
+
+      Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+      sortResults(collectedResults, comparator, "getExportedKeys", LOG);
+
+      final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+          new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
+    }
+
+    String sql = getExportedKeysSqlContent();
+    String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
+    PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
+    if (stmt == null) {
+      throw new BigQueryJdbcException("Failed to prepare statement for getExportedKeys");
+    }
     try {
       stmt.closeOnCompletion();
-      String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
+      return stmt.executeQuery();
     } catch (SQLException e) {
       closeStatementIgnoreException(stmt);
       throw new BigQueryJdbcException("Error executing getExportedKeys", e);
@@ -2455,24 +2656,53 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignSchema,
       String foreignTable)
       throws SQLException {
-    String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
-    Statement stmt = this.connection.createStatement();
-    try {
-      stmt.closeOnCompletion();
-      String formattedSql =
-          replaceSqlParameters(
-              sql,
-              parentCatalog,
-              parentSchema,
-              parentTable,
-              foreignCatalog,
-              foreignSchema,
-              foreignTable);
-      return stmt.executeQuery(formattedSql);
-    } catch (SQLException e) {
-      closeStatementIgnoreException(stmt);
-      throw new BigQueryJdbcException("Error executing getCrossReference", e);
+    if ((parentCatalog != null && parentCatalog.isEmpty())
+        || (parentSchema != null && parentSchema.isEmpty())
+        || parentTable == null
+        || parentTable.isEmpty()
+        || (foreignCatalog != null && foreignCatalog.isEmpty())
+        || (foreignSchema != null && foreignSchema.isEmpty())
+        || foreignTable == null
+        || foreignTable.isEmpty()) {
+      LOG.warning(
+          "Returning empty ResultSet as required parameters are null/empty, or catalog/schema parameters are empty.");
+      return new BigQueryJsonResultSet();
     }
+
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
+    final FieldList resultSchemaFields = resultSchema.getFields();
+
+    final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
+    List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema);
+
+    processTargetTablesConcurrently(
+        targetDatasets,
+        foreignTable,
+        collectedResults,
+        resultSchemaFields,
+        (bqTable, results, fields) -> {
+          TableConstraints constraints = bqTable.getTableConstraints();
+          if (constraints == null || constraints.getForeignKeys() == null) {
+            return;
+          }
+          for (ForeignKey fk : constraints.getForeignKeys()) {
+            TableId pkTableId = fk.getReferencedTable();
+            if (!equalsOrNullMatchesAll(parentCatalog, pkTableId.getProject())
+                || !equalsOrNullMatchesAll(parentSchema, pkTableId.getDataset())
+                || !parentTable.equals(pkTableId.getTable())) {
+              continue;
+            }
+            processForeignKey(fk, pkTableId, bqTable.getTableId(), results, fields);
+          }
+        });
+
+    Comparator<FieldValueList> comparator = defineFkTableSortComparator(resultSchemaFields);
+    sortResults(collectedResults, comparator, "getCrossReference", LOG);
+
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+    Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+    return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
   }
 
   @Override
@@ -2488,10 +2718,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
-    populateQueue(typeInfoRows, queue, schemaFields);
-    signalEndOfData(queue, schemaFields);
+    Future<?> fetcherFuture = populateQueueAsync(typeInfoRows, queue, schemaFields);
     return BigQueryJsonResultSet.of(
-        typeInfoSchema, typeInfoRows.size(), queue, null, new Future<?>[0]);
+        typeInfoSchema, typeInfoRows.size(), queue, null, fetcherFuture);
   }
 
   Schema defineGetTypeInfoSchema() {
@@ -3390,6 +3619,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getSchemas", () -> getSchemasImpl(catalog, schemaPattern));
+  }
+
+  private ResultSet getSchemasImpl(String catalog, String schemaPattern) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning("Returning empty ResultSet as catalog or schemaPattern is an empty string.");
@@ -3412,9 +3646,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
       Comparator<FieldValueList> comparator = defineGetSchemasComparator(resultSchemaFields);
       sortResults(collectedResults, comparator, "getSchemas", LOG);
-      populateQueue(collectedResults, queue, resultSchemaFields);
-      signalEndOfData(queue, resultSchemaFields);
-      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
+      Future<?> fetcherFuture = populateQueueAsync(collectedResults, queue, resultSchemaFields);
+      return BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
     }
 
     // Multi-Catalog Path: fan out using connection-scoped metadataExecutor
@@ -3423,49 +3656,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Runnable multiSchemaFetcher =
         () -> {
           final FieldList localResultSchemaFields = resultSchemaFields;
-          final List<Future<List<Dataset>>> apiFutures = new ArrayList<>();
-          final List<Dataset> collectedDatasets = new ArrayList<>();
           final List<FieldValueList> collectedResults = new ArrayList<>();
 
           try {
-            List<String> projectsToScanList = getAccessibleCatalogNames();
-
-            if (projectsToScanList.isEmpty()) {
-              LOG.info(
-                  "No valid projects to scan (primary, specified, or additional). Returning empty"
-                      + " resultset.");
-              return;
-            }
-
-            ExecutorService apiExecutor = connection.getMetadataExecutor();
-
-            LOG.fine("Submitting parallel fetchMatchingDatasets tasks...");
-            for (String currentProjectToScan : projectsToScanList) {
-              if (Thread.currentThread().isInterrupted()) {
-                LOG.warning("Fetcher interrupted during project iteration submission.");
-                break;
-              }
-
-              Callable<List<Dataset>> apiCallable =
-                  () -> fetchMatchingDatasets(currentProjectToScan, schemaPattern, schemaRegex);
-              Future<List<Dataset>> apiFuture = apiExecutor.submit(apiCallable);
-              apiFutures.add(apiFuture);
-            }
-            LOG.fine("Finished submitting " + apiFutures.size() + " fetchMatchingDatasets tasks.");
-
-            LOG.fine("Processing results from fetchMatchingDatasets tasks...");
-            for (Future<List<Dataset>> apiFuture : apiFutures) {
-              if (Thread.currentThread().isInterrupted()) {
-                LOG.warning("Fetcher interrupted while processing API futures.");
-                break;
-              }
-              List<Dataset> datasetsResult = apiFuture.get();
-              if (datasetsResult != null) {
-                collectedDatasets.addAll(datasetsResult);
-              }
-            }
-
-            for (Dataset dataset : collectedDatasets) {
+            List<Dataset> datasets = fetchMatchingDatasets(catalog, schemaPattern, schemaRegex);
+            for (Dataset dataset : datasets) {
               if (Thread.currentThread().isInterrupted()) {
                 break;
               }
@@ -3480,12 +3675,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           } catch (Throwable t) {
             handleFetcherException(t, queue, "getSchemas");
           } finally {
-            apiFutures.forEach(f -> f.cancel(true));
             finalizeFetcher(queue, localResultSchemaFields, "Multi-schema fetcher");
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(multiSchemaFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -3697,9 +3892,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         (rt) -> rt.getRoutineId().getRoutine(),
                         functionNamePattern,
                         functionNameRegex,
-                        LOG);
+                        false);
                   };
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine(
@@ -4048,8 +4244,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   (rt) -> rt.getRoutineId().getRoutine(),
                   functionNamePattern,
                   functionNameRegex,
-                  logger);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+                  false);
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -4429,28 +4625,25 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       // We only use the dataset part of the DefaultDataset for schema filtering
       String defaultSchemaFromConnection = this.connection.getDefaultDataset().getDataset();
 
-      boolean catalogIsNullOrEmptyOrWildcard =
-          (catalog == null || catalog.isEmpty() || catalog.equals("%"));
-      boolean schemaPatternIsNullOrEmptyOrWildcard =
-          (schemaPattern == null || schemaPattern.isEmpty() || schemaPattern.equals("%"));
+      boolean catalogIsUnspecified = (effectiveCatalog == null || effectiveCatalog.equals("%"));
+      boolean schemaIsUnspecified =
+          (effectiveSchemaPattern == null || effectiveSchemaPattern.equals("%"));
 
       final String logPrefix = "FilterTablesOnDefaultDatasetTrue: ";
-      if (catalogIsNullOrEmptyOrWildcard && schemaPatternIsNullOrEmptyOrWildcard) {
+      if (catalogIsUnspecified && schemaIsUnspecified) {
         effectiveCatalog = defaultProjectFromConnection;
         effectiveSchemaPattern = defaultSchemaFromConnection;
         LOG.info(
             logPrefix + "Using default catalog '%s' and default dataset '%s'.",
             effectiveCatalog,
             effectiveSchemaPattern);
-      } else if (catalogIsNullOrEmptyOrWildcard) {
-        effectiveCatalog = defaultProjectFromConnection;
+      } else if (catalogIsUnspecified) {
+        effectiveCatalog = null;
         LOG.info(
-            logPrefix
-                + "Using default catalog '%s' with user dataset '%s'. Default dataset '%s' ignored.",
-            effectiveCatalog,
+            logPrefix + "Using all catalogs with user dataset '%s'. Default dataset '%s' ignored.",
             effectiveSchemaPattern,
             defaultSchemaFromConnection);
-      } else if (schemaPatternIsNullOrEmptyOrWildcard) {
+      } else if (schemaIsUnspecified) {
         effectiveSchemaPattern = defaultSchemaFromConnection;
         LOG.info(
             logPrefix + "Using user catalog '%s' and default dataset '%s'.",
@@ -4487,7 +4680,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<T, String> nameExtractor,
       String pattern,
       Pattern regex,
-      BigQueryJdbcCustomLogger logger)
+      boolean throwOn404)
       throws InterruptedException {
 
     boolean needsList = needsListing(pattern);
@@ -4496,30 +4689,29 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       Iterable<T> objects;
       if (needsList) {
-        logger.info(
+        LOG.info(
             "Listing all %ss (pattern: %s)...",
             objectTypeName, pattern == null ? "<all>" : pattern);
         Page<T> firstPage = listAllOperation.get();
         objects = firstPage.iterateAll();
-        logger.fine(
-            "Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
+        LOG.fine("Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
 
       } else {
-        logger.info("Getting specific %s: '%s'", objectTypeName, pattern);
+        LOG.info("Getting specific %s: '%s'", objectTypeName, pattern);
         T specificObject = getSpecificOperation.apply(pattern);
         objects =
             (specificObject == null)
                 ? Collections.<T>emptyList()
                 : Collections.singletonList(specificObject);
         if (specificObject == null) {
-          logger.info("Specific %s not found: '%s'", objectTypeName, pattern);
+          LOG.info("Specific %s not found: '%s'", objectTypeName, pattern);
         }
       }
 
       boolean wasListing = needsList;
       for (T obj : objects) {
         if (Thread.currentThread().isInterrupted()) {
-          logger.warning("Thread interrupted during " + objectTypeName + " processing loop.");
+          LOG.warning("Thread interrupted during " + objectTypeName + " processing loop.");
           throw new InterruptedException(
               "Interrupted during " + objectTypeName + " processing loop");
         }
@@ -4536,20 +4728,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       }
 
     } catch (BigQueryException e) {
-      if (!needsList && e.getCode() == 404) {
-        logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+      if (e.getCode() == 404 && !throwOn404) {
+        LOG.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+        return Collections.emptyList();
       } else {
-        logger.warning(
+        LOG.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
             objectTypeName, pattern, e.getMessage(), e.getCode());
         throw e;
       }
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      logger.warning("Interrupted while finding " + objectTypeName + "s.");
+      LOG.warning("Interrupted while finding " + objectTypeName + "s.");
       throw e;
     } catch (Exception e) {
-      logger.severe(
+      LOG.severe(
           "Unexpected exception finding %ss for pattern '%s': %s",
           objectTypeName, pattern, e.getMessage());
       throw new RuntimeException(e);
@@ -4768,18 +4961,33 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info("Finished waiting for tasks.");
   }
 
+  private Future<?> populateQueueAsync(
+      List<FieldValueList> collectedResults,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue,
+      FieldList resultSchemaFields) {
+    return connection
+        .getMetadataExecutor()
+        .submit(
+            () -> {
+              populateQueue(collectedResults, queue, resultSchemaFields);
+              signalEndOfData(queue, resultSchemaFields);
+            });
+  }
+
   private void populateQueue(
       List<FieldValueList> collectedResults,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
       FieldList resultSchemaFields) {
     LOG.info("Populating queue with %d results...", collectedResults.size());
     try {
+      boolean[] isComplexColumn =
+          BigQueryFieldValueListWrapper.createComplexColumnFlags(resultSchemaFields);
       for (FieldValueList sortedRow : collectedResults) {
         if (Thread.currentThread().isInterrupted()) {
           LOG.warning("Interrupted during queue population.");
           break;
         }
-        queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, sortedRow));
+        queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, sortedRow, isComplexColumn));
       }
       LOG.info("Finished populating queue.");
     } catch (InterruptedException e) {
@@ -4818,7 +5026,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       LOG.info("Adding end signal to queue.");
       BigQueryFieldValueListWrapper element =
-          BigQueryFieldValueListWrapper.of(resultSchemaFields, null, true);
+          BigQueryFieldValueListWrapper.ofEndOfStream(resultSchemaFields);
       if (!queue.offer(element)) {
         boolean wasInterrupted = Thread.interrupted();
         try {
@@ -4837,35 +5045,76 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
+  private List<Dataset> fetchDatasetsForProject(
+      String project, String schemaPattern, Pattern schemaRegex, boolean throwOn404)
+      throws SQLException {
+    try {
+      List<Dataset> datasets =
+          findMatchingBigQueryObjects(
+              "Dataset",
+              () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+              (name) -> bigquery.getDataset(DatasetId.of(project, name)),
+              (ds) -> ds.getDatasetId().getDataset(),
+              schemaPattern,
+              schemaRegex,
+              throwOn404);
+      return datasets != null ? datasets : Collections.emptyList();
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new SQLException(
+          "Interrupted while fetching matching datasets for project " + project, e);
+    } catch (Exception e) {
+      throw new SQLException("Failed to fetch matching datasets for project " + project, e);
+    }
+  }
+
   private List<Dataset> fetchMatchingDatasets(
       String catalog, String schemaPattern, Pattern schemaRegex) throws SQLException {
     List<String> projects =
         (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
-    List<Dataset> allDatasets = new ArrayList<>();
-    for (String project : projects) {
-      if (Thread.currentThread().isInterrupted()) {
-        throw new SQLException("Interrupted while fetching matching datasets");
-      }
-      try {
-        List<Dataset> datasets =
-            findMatchingBigQueryObjects(
-                "Dataset",
-                () -> bigquery.listDatasets(project, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                (name) -> bigquery.getDataset(DatasetId.of(project, name)),
-                (ds) -> ds.getDatasetId().getDataset(),
-                schemaPattern,
-                schemaRegex,
-                LOG);
-        if (datasets != null) {
-          allDatasets.addAll(datasets);
-        }
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-        throw new SQLException("Interrupted while fetching matching datasets", e);
-      } catch (Exception e) {
-        throw new SQLException("Failed to fetch matching datasets for project " + project, e);
-      }
+
+    if (projects.isEmpty()) {
+      return Collections.emptyList();
     }
+
+    boolean isBroadScan = (catalog == null);
+
+    // Single project path
+    if (projects.size() == 1) {
+      return fetchDatasetsForProject(projects.get(0), schemaPattern, schemaRegex, isBroadScan);
+    }
+
+    // Multi-project path
+    final List<Dataset> allDatasets = Collections.synchronizedList(new ArrayList<>());
+    final List<Future<?>> taskFutures = new ArrayList<>();
+    ExecutorService executor = connection.getMetadataExecutor();
+
+    try {
+      for (String project : projects) {
+        Callable<Void> task =
+            () -> {
+              List<Dataset> datasets =
+                  fetchDatasetsForProject(project, schemaPattern, schemaRegex, isBroadScan);
+              allDatasets.addAll(datasets);
+              return null;
+            };
+        taskFutures.add(executor.submit(task));
+      }
+
+      waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching matching datasets");
+      }
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
+      throw new SQLException("Error parallel-fetching matching datasets", e);
+    } finally {
+      taskFutures.forEach(f -> f.cancel(true));
+    }
+
     return allDatasets;
   }
 
@@ -4899,22 +5148,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return sortedCatalogs;
   }
 
-  static String readSqlFromFile(String filename) {
-    InputStream in;
-    in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-    StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
-      while (scanner.hasNextLine()) {
-        String line = scanner.nextLine();
-        builder.append(line).append("\n");
-      }
-    }
-    return builder.toString();
-  }
-
-  String replaceSqlParameters(String sql, String... params) throws SQLException {
-    return String.format(sql, (Object[]) params);
+  private boolean equalsOrNullMatchesAll(String expected, String actual) {
+    return expected == null || expected.equals(actual);
   }
 
   private void writeErrorToQueue(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable t) {
@@ -4933,5 +5168,288 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       }
     }
+  }
+
+  private List<DatasetId> getTargetDatasets(String catalog, String schema) throws SQLException {
+    if (schema == null) {
+      List<Dataset> datasets = fetchMatchingDatasets(catalog, null, null);
+      List<DatasetId> datasetIds = new ArrayList<>(datasets.size());
+      for (Dataset dataset : datasets) {
+        datasetIds.add(dataset.getDatasetId());
+      }
+      return datasetIds;
+    }
+
+    if (schema.isEmpty()) {
+      return Collections.emptyList();
+    }
+
+    List<String> projects = resolveTargetProjects(catalog);
+    List<DatasetId> datasetIds = new ArrayList<>(projects.size());
+    for (String project : projects) {
+      datasetIds.add(DatasetId.of(project, schema));
+    }
+    return datasetIds;
+  }
+
+  private List<String> resolveTargetProjects(String catalog) throws SQLException {
+    return (catalog != null) ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
+  }
+
+  @FunctionalInterface
+  private interface TableProcessor {
+    void process(Table bqTable, List<FieldValueList> collectedResults, FieldList resultSchemaFields)
+        throws SQLException;
+  }
+
+  private void processSingleTable(
+      DatasetId datasetId,
+      String tableName,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields,
+      TableProcessor processor)
+      throws SQLException {
+    Table bqTable;
+    try {
+      bqTable =
+          bigquery.getTable(TableId.of(datasetId.getProject(), datasetId.getDataset(), tableName));
+    } catch (BigQueryException e) {
+      if (e.getCode() == 404) {
+        LOG.info(
+            "Table '%s' or dataset '%s' not found in project '%s' (API error 404). Skipping.",
+            tableName, datasetId.getDataset(), datasetId.getProject());
+        bqTable = null;
+      } else {
+        throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
+      }
+    } catch (Exception e) {
+      throw new SQLException("Error while fetching table metadata: " + e.getMessage(), e);
+    }
+    if (bqTable != null && bqTable.getDefinition() != null) {
+      processor.process(bqTable, collectedResults, resultSchemaFields);
+    }
+  }
+
+  private void processTargetTablesConcurrently(
+      List<DatasetId> targetDatasets,
+      String tableName,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields,
+      TableProcessor processor)
+      throws SQLException {
+    if (targetDatasets.size() == 1 && tableName != null) {
+      processSingleTable(
+          targetDatasets.get(0), tableName, collectedResults, resultSchemaFields, processor);
+      return;
+    }
+
+    ExecutorService executor = connection.getMetadataExecutor();
+    List<Future<?>> taskFutures = new ArrayList<>();
+
+    try {
+      List<Callable<Void>> tasks = new ArrayList<>();
+      for (DatasetId datasetId : targetDatasets) {
+        if (tableName != null) {
+          tasks.add(
+              () -> {
+                processSingleTable(
+                    datasetId, tableName, collectedResults, resultSchemaFields, processor);
+                return null;
+              });
+          continue;
+        }
+
+        try {
+          Page<Table> tablesPage =
+              bigquery.listTables(datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE));
+          if (tablesPage == null) {
+            continue;
+          }
+          for (Table table : tablesPage.iterateAll()) {
+            if (table.getDefinition() == null
+                || table.getDefinition().getType() != TableDefinition.Type.TABLE) {
+              continue;
+            }
+            tasks.add(
+                () -> {
+                  processSingleTable(
+                      datasetId,
+                      table.getTableId().getTable(),
+                      collectedResults,
+                      resultSchemaFields,
+                      processor);
+                  return null;
+                });
+          }
+        } catch (BigQueryException e) {
+          if (e.getCode() == 404) {
+            LOG.info(
+                "Dataset '%s' not found in project '%s' (API error 404). Skipping.",
+                datasetId.getDataset(), datasetId.getProject());
+            continue;
+          }
+          throw new SQLException("Error while listing tables: " + e.getMessage(), e);
+        }
+      }
+
+      for (Callable<Void> task : tasks) {
+        taskFutures.add(executor.submit(task));
+      }
+      waitForTasksCompletion(taskFutures);
+      if (Thread.currentThread().isInterrupted()) {
+        throw new SQLException("Interrupted while parallel-fetching metadata");
+      }
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof SQLException) {
+        throw (SQLException) cause;
+      }
+      throw new SQLException("Error while fetching metadata", e);
+    } finally {
+      taskFutures.forEach(future -> future.cancel(true));
+    }
+  }
+
+  private Schema defineForeignKeyResultSetSchema() {
+    return Schema.of(
+        Field.of("PKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("PKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("PKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_CAT", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_SCHEM", StandardSQLTypeName.STRING),
+        Field.of("FKTABLE_NAME", StandardSQLTypeName.STRING),
+        Field.of("FKCOLUMN_NAME", StandardSQLTypeName.STRING),
+        Field.of("KEY_SEQ", StandardSQLTypeName.INT64),
+        Field.of("UPDATE_RULE", StandardSQLTypeName.INT64),
+        Field.of("DELETE_RULE", StandardSQLTypeName.INT64),
+        Field.of("FK_NAME", StandardSQLTypeName.STRING),
+        Field.of("PK_NAME", StandardSQLTypeName.STRING),
+        Field.of("DEFERRABILITY", StandardSQLTypeName.INT64));
+  }
+
+  private void processForeignKey(
+      ForeignKey fk,
+      TableId pkTableId,
+      TableId fkTableId,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields) {
+    if (pkTableId == null) {
+      LOG.warning(
+          String.format(
+              "Skipping foreign key '%s' on table '%s' because its referenced table ID is null.",
+              fk.getName() != null ? fk.getName() : "unnamed", fkTableId.getTable()));
+      return;
+    }
+    List<ColumnReference> colRefs = fk.getColumnReferences();
+    if (colRefs != null) {
+      for (int i = 0; i < colRefs.size(); i++) {
+        ColumnReference colRef = colRefs.get(i);
+        List<FieldValue> row = new ArrayList<>();
+        row.add(createStringFieldValue(pkTableId.getProject())); // PKTABLE_CAT
+        row.add(createStringFieldValue(pkTableId.getDataset())); // PKTABLE_SCHEM
+        row.add(createStringFieldValue(pkTableId.getTable())); // PKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencedColumn())); // PKCOLUMN_NAME
+        row.add(createStringFieldValue(fkTableId.getProject())); // FKTABLE_CAT
+        row.add(createStringFieldValue(fkTableId.getDataset())); // FKTABLE_SCHEM
+        row.add(createStringFieldValue(fkTableId.getTable())); // FKTABLE_NAME
+        row.add(createStringFieldValue(colRef.getReferencingColumn())); // FKCOLUMN_NAME
+        row.add(createLongFieldValue((long) (i + 1))); // KEY_SEQ
+        row.add(createNullFieldValue()); // UPDATE_RULE
+        row.add(createNullFieldValue()); // DELETE_RULE
+        row.add(createStringFieldValue(fk.getName())); // FK_NAME
+        row.add(createNullFieldValue()); // PK_NAME
+        row.add(createNullFieldValue()); // DEFERRABILITY
+
+        collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+      }
+    }
+  }
+
+  private Comparator<FieldValueList> definePkTableSortComparator(FieldList resultSchemaFields) {
+    final int PKTABLE_CAT_IDX = resultSchemaFields.getIndex("PKTABLE_CAT");
+    final int PKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("PKTABLE_SCHEM");
+    final int PKTABLE_NAME_IDX = resultSchemaFields.getIndex("PKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, PKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
+  }
+
+  private Comparator<FieldValueList> defineFkTableSortComparator(FieldList resultSchemaFields) {
+    final int FKTABLE_CAT_IDX = resultSchemaFields.getIndex("FKTABLE_CAT");
+    final int FKTABLE_SCHEM_IDX = resultSchemaFields.getIndex("FKTABLE_SCHEM");
+    final int FKTABLE_NAME_IDX = resultSchemaFields.getIndex("FKTABLE_NAME");
+    final int KEY_SEQ_IDX = resultSchemaFields.getIndex("KEY_SEQ");
+    return Comparator.comparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_CAT_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_SCHEM_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getStringValueOrNull(fvl, FKTABLE_NAME_IDX),
+            Comparator.nullsFirst(String::compareTo))
+        .thenComparing(
+            (FieldValueList fvl) -> getLongValueOrNull(fvl, KEY_SEQ_IDX),
+            Comparator.nullsFirst(Long::compareTo));
+  }
+
+  private static synchronized String getExportedKeysSqlContent() {
+    if (exportedKeysSqlContent == null) {
+      exportedKeysSqlContent = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
+    }
+    return exportedKeysSqlContent;
+  }
+
+  static String readSqlFromFile(String filename) {
+    try (InputStream in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename)) {
+      if (in == null) {
+        throw new IllegalArgumentException("SQL file not found: " + filename);
+      }
+      ByteArrayOutputStream result = new ByteArrayOutputStream();
+      byte[] buffer = new byte[1024];
+      int length;
+      while ((length = in.read(buffer)) != -1) {
+        result.write(buffer, 0, length);
+      }
+      return result.toString(StandardCharsets.UTF_8.name());
+    } catch (IOException e) {
+      throw new RuntimeException("Failed to read SQL file: " + filename, e);
+    }
+  }
+
+  String replaceSqlParameters(String sql, String... params) throws SQLException {
+    return String.format(sql, (Object[]) params);
+  }
+
+  private void closeStatementIgnoreException(Statement stmt) {
+    if (stmt == null) {
+      return;
+    }
+    try {
+      stmt.close();
+    } catch (SQLException e) {
+      // ignore
+    }
+  }
+
+  private interface TracedMetadataOperation<T> {
+    T run() throws SQLException;
+  }
+
+  private <T> T withTracing(String spanName, TracedMetadataOperation<T> operation)
+      throws SQLException {
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        spanName, this.connection, null, () -> operation.run());
   }
 }

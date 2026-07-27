@@ -32,12 +32,14 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class with common attribute names in app-centric observability.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 @BetaApi
 public class ObservabilityAttributes {

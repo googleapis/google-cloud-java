@@ -37,6 +37,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -373,10 +375,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConversationsClient implements BackgroundResource {
-  private final ConversationsSettings settings;
+  private final @Nullable ConversationsSettings settings;
   private final ConversationsStub stub;
 
   /** Constructs an instance of ConversationsClient with default settings. */
@@ -416,7 +419,7 @@ public class ConversationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConversationsSettings getSettings() {
+  public final @Nullable ConversationsSettings getSettings() {
     return settings;
   }
 
@@ -464,7 +467,8 @@ public class ConversationsClient implements BackgroundResource {
    * @param conversation Required. The conversation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation createConversation(LocationName parent, Conversation conversation) {
+  public final Conversation createConversation(
+      @Nullable LocationName parent, Conversation conversation) {
     CreateConversationRequest request =
         CreateConversationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -513,7 +517,8 @@ public class ConversationsClient implements BackgroundResource {
    * @param conversation Required. The conversation to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation createConversation(ProjectName parent, Conversation conversation) {
+  public final Conversation createConversation(
+      @Nullable ProjectName parent, Conversation conversation) {
     CreateConversationRequest request =
         CreateConversationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -687,7 +692,7 @@ public class ConversationsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(LocationName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable LocationName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -719,7 +724,7 @@ public class ConversationsClient implements BackgroundResource {
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConversationsPagedResponse listConversations(ProjectName parent) {
+  public final ListConversationsPagedResponse listConversations(@Nullable ProjectName parent) {
     ListConversationsRequest request =
         ListConversationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -888,7 +893,7 @@ public class ConversationsClient implements BackgroundResource {
    *     ID&gt;/locations/&lt;Location ID&gt;/conversations/&lt;Conversation ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation getConversation(ConversationName name) {
+  public final Conversation getConversation(@Nullable ConversationName name) {
     GetConversationRequest request =
         GetConversationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConversation(request);
@@ -1007,7 +1012,7 @@ public class ConversationsClient implements BackgroundResource {
    *     ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Conversation completeConversation(ConversationName name) {
+  public final Conversation completeConversation(@Nullable ConversationName name) {
     CompleteConversationRequest request =
         CompleteConversationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1140,7 +1145,8 @@ public class ConversationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IngestContextReferencesResponse ingestContextReferences(
-      ConversationName conversation, Map<String, Conversation.ContextReference> contextReferences) {
+      @Nullable ConversationName conversation,
+      Map<String, Conversation.ContextReference> contextReferences) {
     IngestContextReferencesRequest request =
         IngestContextReferencesRequest.newBuilder()
             .setConversation(conversation == null ? null : conversation.toString())
@@ -1286,7 +1292,7 @@ public class ConversationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateMessagesResponse batchCreateMessages(
-      ConversationName parent, List<CreateMessageRequest> requests) {
+      @Nullable ConversationName parent, List<CreateMessageRequest> requests) {
     BatchCreateMessagesRequest request =
         BatchCreateMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1426,7 +1432,7 @@ public class ConversationsClient implements BackgroundResource {
    *     ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMessagesPagedResponse listMessages(ConversationName parent) {
+  public final ListMessagesPagedResponse listMessages(@Nullable ConversationName parent) {
     ListMessagesRequest request =
         ListMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1616,7 +1622,7 @@ public class ConversationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SuggestConversationSummaryResponse suggestConversationSummary(
-      ConversationName conversation) {
+      @Nullable ConversationName conversation) {
     SuggestConversationSummaryRequest request =
         SuggestConversationSummaryRequest.newBuilder()
             .setConversation(conversation == null ? null : conversation.toString())
@@ -1994,7 +2000,8 @@ public class ConversationsClient implements BackgroundResource {
    *     configured in it to be able to get suggestions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GenerateSuggestionsResponse generateSuggestions(ConversationName conversation) {
+  public final GenerateSuggestionsResponse generateSuggestions(
+      @Nullable ConversationName conversation) {
     GenerateSuggestionsRequest request =
         GenerateSuggestionsRequest.newBuilder()
             .setConversation(conversation == null ? null : conversation.toString())
@@ -2361,8 +2368,9 @@ public class ConversationsClient implements BackgroundResource {
           ListConversationsPage> {
 
     private ListConversationsPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       super(context, response);
     }
 
@@ -2372,14 +2380,16 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListConversationsPage createPage(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
-        ListConversationsResponse response) {
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
+        @Nullable ListConversationsResponse response) {
       return new ListConversationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConversationsPage> createPageAsync(
-        PageContext<ListConversationsRequest, ListConversationsResponse, Conversation> context,
+        @Nullable PageContext<ListConversationsRequest, ListConversationsResponse, Conversation>
+            context,
         ApiFuture<ListConversationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2394,7 +2404,7 @@ public class ConversationsClient implements BackgroundResource {
           ListConversationsFixedSizeCollection> {
 
     private ListConversationsFixedSizeCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2404,7 +2414,7 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListConversationsFixedSizeCollection createCollection(
-        List<ListConversationsPage> pages, int collectionSize) {
+        @Nullable List<ListConversationsPage> pages, int collectionSize) {
       return new ListConversationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2437,8 +2447,8 @@ public class ConversationsClient implements BackgroundResource {
       extends AbstractPage<ListMessagesRequest, ListMessagesResponse, Message, ListMessagesPage> {
 
     private ListMessagesPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       super(context, response);
     }
 
@@ -2448,14 +2458,14 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListMessagesPage createPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       return new ListMessagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessagesPage> createPageAsync(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
         ApiFuture<ListMessagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2469,7 +2479,8 @@ public class ConversationsClient implements BackgroundResource {
           ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
-    private ListMessagesFixedSizeCollection(List<ListMessagesPage> pages, int collectionSize) {
+    private ListMessagesFixedSizeCollection(
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2479,7 +2490,7 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListMessagesFixedSizeCollection createCollection(
-        List<ListMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       return new ListMessagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2513,8 +2524,8 @@ public class ConversationsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2524,14 +2535,14 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2545,7 +2556,8 @@ public class ConversationsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2555,7 +2567,7 @@ public class ConversationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

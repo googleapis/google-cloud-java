@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DbServerName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_CLOUD_EXADATA_INFRASTRUCTURE_DB_SERVER =
@@ -99,7 +102,7 @@ public class DbServerName implements ResourceName {
         .toString();
   }
 
-  public static DbServerName parse(String formattedString) {
+  public static @Nullable DbServerName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -121,7 +124,7 @@ public class DbServerName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DbServerName> values) {
+  public static List<String> toStringList(List<@Nullable DbServerName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DbServerName value : values) {
       if (value == null) {
@@ -180,7 +183,7 @@ public class DbServerName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

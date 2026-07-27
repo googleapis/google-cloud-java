@@ -97,6 +97,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -158,6 +159,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -317,6 +319,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -378,6 +381,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -439,6 +443,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -460,6 +465,7 @@ public class PrivateAuctionDealServiceClientTest {
             .setAuctionPriorityEnabled(true)
             .setBlockOverrideEnabled(true)
             .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+            .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -508,6 +514,7 @@ public class PrivateAuctionDealServiceClientTest {
               .setAuctionPriorityEnabled(true)
               .setBlockOverrideEnabled(true)
               .setBuyerData(PrivateAuctionDeal.BuyerData.newBuilder().build())
+              .setDealPriority(NonGuaranteedDealPriority.newBuilder().build())
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .build();

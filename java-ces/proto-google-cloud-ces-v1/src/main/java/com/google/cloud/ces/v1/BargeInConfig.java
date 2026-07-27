@@ -75,19 +75,19 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Disables user barge-in while the agent is speaking. If true, user
-   * input during agent response playback will be ignored.
-   *
-   * Deprecated: `disable_barge_in` is deprecated in favor of
+   * Optional. Deprecated: `disable_barge_in` is deprecated in favor of
    * [`disable_barge_in_control`][google.cloud.ces.v1.ChannelProfile.disable_barge_in_control]
    * in ChannelProfile.
+   *
+   * Disables user barge-in while the agent is speaking. If true, user input
+   * during agent response playback will be ignored.
    * </pre>
    *
    * <code>bool disable_barge_in = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @deprecated google.cloud.ces.v1.BargeInConfig.disable_barge_in is deprecated. See
-   *     google/cloud/ces/v1/app.proto;l=341
+   *     google/cloud/ces/v1/app.proto;l=348
    * @return The disableBargeIn.
    */
   @java.lang.Override
@@ -451,19 +451,19 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables user barge-in while the agent is speaking. If true, user
-     * input during agent response playback will be ignored.
-     *
-     * Deprecated: `disable_barge_in` is deprecated in favor of
+     * Optional. Deprecated: `disable_barge_in` is deprecated in favor of
      * [`disable_barge_in_control`][google.cloud.ces.v1.ChannelProfile.disable_barge_in_control]
      * in ChannelProfile.
+     *
+     * Disables user barge-in while the agent is speaking. If true, user input
+     * during agent response playback will be ignored.
      * </pre>
      *
      * <code>bool disable_barge_in = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @deprecated google.cloud.ces.v1.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=341
+     *     google/cloud/ces/v1/app.proto;l=348
      * @return The disableBargeIn.
      */
     @java.lang.Override
@@ -476,19 +476,19 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables user barge-in while the agent is speaking. If true, user
-     * input during agent response playback will be ignored.
-     *
-     * Deprecated: `disable_barge_in` is deprecated in favor of
+     * Optional. Deprecated: `disable_barge_in` is deprecated in favor of
      * [`disable_barge_in_control`][google.cloud.ces.v1.ChannelProfile.disable_barge_in_control]
      * in ChannelProfile.
+     *
+     * Disables user barge-in while the agent is speaking. If true, user input
+     * during agent response playback will be ignored.
      * </pre>
      *
      * <code>bool disable_barge_in = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @deprecated google.cloud.ces.v1.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=341
+     *     google/cloud/ces/v1/app.proto;l=348
      * @param value The disableBargeIn to set.
      * @return This builder for chaining.
      */
@@ -505,19 +505,19 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Disables user barge-in while the agent is speaking. If true, user
-     * input during agent response playback will be ignored.
-     *
-     * Deprecated: `disable_barge_in` is deprecated in favor of
+     * Optional. Deprecated: `disable_barge_in` is deprecated in favor of
      * [`disable_barge_in_control`][google.cloud.ces.v1.ChannelProfile.disable_barge_in_control]
      * in ChannelProfile.
+     *
+     * Disables user barge-in while the agent is speaking. If true, user input
+     * during agent response playback will be ignored.
      * </pre>
      *
      * <code>bool disable_barge_in = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @deprecated google.cloud.ces.v1.BargeInConfig.disable_barge_in is deprecated. See
-     *     google/cloud/ces/v1/app.proto;l=341
+     *     google/cloud/ces/v1/app.proto;l=348
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

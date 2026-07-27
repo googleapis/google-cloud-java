@@ -268,6 +268,33 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     return skipInitialVersionCreation_;
   }
 
+  public static final int TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER = 6;
+  private boolean trustedWrappingEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether trusted wrapping will be enabled on the first
+   * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] created for this
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. This field is only supported
+   * for keys with
+   * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+   * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+   * This field is supported for all
+   * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] except
+   * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+   * </pre>
+   *
+   * <code>bool trusted_wrapping_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The trustedWrappingEnabled.
+   */
+  @java.lang.Override
+  public boolean getTrustedWrappingEnabled() {
+    return trustedWrappingEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -294,6 +321,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     if (skipInitialVersionCreation_ != false) {
       output.writeBool(5, skipInitialVersionCreation_);
     }
+    if (trustedWrappingEnabled_ != false) {
+      output.writeBool(6, trustedWrappingEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -314,6 +344,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     }
     if (skipInitialVersionCreation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, skipInitialVersionCreation_);
+    }
+    if (trustedWrappingEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, trustedWrappingEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -338,6 +371,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (!getCryptoKey().equals(other.getCryptoKey())) return false;
     }
     if (getSkipInitialVersionCreation() != other.getSkipInitialVersionCreation()) return false;
+    if (getTrustedWrappingEnabled() != other.getTrustedWrappingEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -359,6 +393,8 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     }
     hash = (37 * hash) + SKIP_INITIAL_VERSION_CREATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipInitialVersionCreation());
+    hash = (37 * hash) + TRUSTED_WRAPPING_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTrustedWrappingEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -517,6 +553,7 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
         cryptoKeyBuilder_ = null;
       }
       skipInitialVersionCreation_ = false;
+      trustedWrappingEnabled_ = false;
       return this;
     }
 
@@ -567,6 +604,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.skipInitialVersionCreation_ = skipInitialVersionCreation_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.trustedWrappingEnabled_ = trustedWrappingEnabled_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -597,6 +637,9 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
       }
       if (other.getSkipInitialVersionCreation() != false) {
         setSkipInitialVersionCreation(other.getSkipInitialVersionCreation());
+      }
+      if (other.getTrustedWrappingEnabled() != false) {
+        setTrustedWrappingEnabled(other.getTrustedWrappingEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -649,6 +692,12 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000008;
                 break;
               } // case 40
+            case 48:
+              {
+                trustedWrappingEnabled_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1204,6 +1253,86 @@ public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedM
     public Builder clearSkipInitialVersionCreation() {
       bitField0_ = (bitField0_ & ~0x00000008);
       skipInitialVersionCreation_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean trustedWrappingEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the first
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] created for this
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey]. This field is only supported
+     * for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The trustedWrappingEnabled.
+     */
+    @java.lang.Override
+    public boolean getTrustedWrappingEnabled() {
+      return trustedWrappingEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the first
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] created for this
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey]. This field is only supported
+     * for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The trustedWrappingEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrustedWrappingEnabled(boolean value) {
+
+      trustedWrappingEnabled_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether trusted wrapping will be enabled on the first
+     * [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] created for this
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey]. This field is only supported
+     * for keys with
+     * [CryptoKeyVersionTemplate.protection_level][google.cloud.kms.v1.CryptoKeyVersionTemplate.protection_level]
+     * [HSM_SINGLE_TENANT][google.cloud.kms.v1.ProtectionLevel.HSM_SINGLE_TENANT].
+     * This field is supported for all
+     * [CryptoKeyPurposes][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose] except
+     * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
+     * </pre>
+     *
+     * <code>bool trusted_wrapping_enabled = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrustedWrappingEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      trustedWrappingEnabled_ = false;
       onChanged();
       return this;
     }

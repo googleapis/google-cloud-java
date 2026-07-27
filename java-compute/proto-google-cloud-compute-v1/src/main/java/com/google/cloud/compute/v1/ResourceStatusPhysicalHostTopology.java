@@ -76,6 +76,70 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
   }
 
   private int bitField0_;
+  public static final int ADDITIONAL_ATTRIBUTES_FIELD_NUMBER = 74463343;
+  private com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+      additionalAttributes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   *
+   * @return Whether the additionalAttributes field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdditionalAttributes() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   *
+   * @return The additionalAttributes.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+      getAdditionalAttributes() {
+    return additionalAttributes_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+            .getDefaultInstance()
+        : additionalAttributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] Additional location information of the running instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder
+      getAdditionalAttributesOrBuilder() {
+    return additionalAttributes_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+            .getDefaultInstance()
+        : additionalAttributes_;
+  }
+
   public static final int BLOCK_FIELD_NUMBER = 93832333;
 
   @SuppressWarnings("serial")
@@ -95,7 +159,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasBlock() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -167,7 +231,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasCluster() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -240,7 +304,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasHost() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -315,7 +379,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
    */
   @java.lang.Override
   public boolean hasSubblock() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -384,16 +448,19 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3208616, host_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 70446669, subblock_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 93832333, block_);
+      output.writeMessage(74463343, getAdditionalAttributes());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 93832333, block_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 335221242, cluster_);
     }
     getUnknownFields().writeTo(output);
@@ -405,16 +472,21 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3208616, host_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(70446669, subblock_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(93832333, block_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              74463343, getAdditionalAttributes());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(93832333, block_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(335221242, cluster_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -433,6 +505,10 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology other =
         (com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology) obj;
 
+    if (hasAdditionalAttributes() != other.hasAdditionalAttributes()) return false;
+    if (hasAdditionalAttributes()) {
+      if (!getAdditionalAttributes().equals(other.getAdditionalAttributes())) return false;
+    }
     if (hasBlock() != other.hasBlock()) return false;
     if (hasBlock()) {
       if (!getBlock().equals(other.getBlock())) return false;
@@ -460,6 +536,10 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasAdditionalAttributes()) {
+      hash = (37 * hash) + ADDITIONAL_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalAttributes().hashCode();
+    }
     if (hasBlock()) {
       hash = (37 * hash) + BLOCK_FIELD_NUMBER;
       hash = (53 * hash) + getBlock().hashCode();
@@ -608,16 +688,30 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
     }
 
     // Construct using com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetAdditionalAttributesFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      additionalAttributes_ = null;
+      if (additionalAttributesBuilder_ != null) {
+        additionalAttributesBuilder_.dispose();
+        additionalAttributesBuilder_ = null;
+      }
       block_ = "";
       cluster_ = "";
       host_ = "";
@@ -662,20 +756,27 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.block_ = block_;
+        result.additionalAttributes_ =
+            additionalAttributesBuilder_ == null
+                ? additionalAttributes_
+                : additionalAttributesBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.cluster_ = cluster_;
+        result.block_ = block_;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.host_ = host_;
+        result.cluster_ = cluster_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.subblock_ = subblock_;
+        result.host_ = host_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.subblock_ = subblock_;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -694,24 +795,27 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       if (other
           == com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology.getDefaultInstance())
         return this;
+      if (other.hasAdditionalAttributes()) {
+        mergeAdditionalAttributes(other.getAdditionalAttributes());
+      }
       if (other.hasBlock()) {
         block_ = other.block_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasCluster()) {
         cluster_ = other.cluster_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasHost()) {
         host_ = other.host_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasSubblock()) {
         subblock_ = other.subblock_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -743,25 +847,32 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
             case 25668930:
               {
                 host_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 25668930
             case 563573354:
               {
                 subblock_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 563573354
+            case 595706746:
+              {
+                input.readMessage(
+                    internalGetAdditionalAttributesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 595706746
             case 750658666:
               {
                 block_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 750658666
             case -1613197358:
               {
                 cluster_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1613197358
             default:
@@ -783,6 +894,238 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+        additionalAttributes_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes,
+            com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+                .Builder,
+            com.google.cloud.compute.v1
+                .ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder>
+        additionalAttributesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     *
+     * @return Whether the additionalAttributes field is set.
+     */
+    public boolean hasAdditionalAttributes() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     *
+     * @return The additionalAttributes.
+     */
+    public com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+        getAdditionalAttributes() {
+      if (additionalAttributesBuilder_ == null) {
+        return additionalAttributes_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+                .getDefaultInstance()
+            : additionalAttributes_;
+      } else {
+        return additionalAttributesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public Builder setAdditionalAttributes(
+        com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes value) {
+      if (additionalAttributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        additionalAttributes_ = value;
+      } else {
+        additionalAttributesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public Builder setAdditionalAttributes(
+        com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes.Builder
+            builderForValue) {
+      if (additionalAttributesBuilder_ == null) {
+        additionalAttributes_ = builderForValue.build();
+      } else {
+        additionalAttributesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public Builder mergeAdditionalAttributes(
+        com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes value) {
+      if (additionalAttributesBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && additionalAttributes_ != null
+            && additionalAttributes_
+                != com.google.cloud.compute.v1
+                    .ResourceStatusPhysicalHostTopologyAdditionalAttributes.getDefaultInstance()) {
+          getAdditionalAttributesBuilder().mergeFrom(value);
+        } else {
+          additionalAttributes_ = value;
+        }
+      } else {
+        additionalAttributesBuilder_.mergeFrom(value);
+      }
+      if (additionalAttributes_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public Builder clearAdditionalAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      additionalAttributes_ = null;
+      if (additionalAttributesBuilder_ != null) {
+        additionalAttributesBuilder_.dispose();
+        additionalAttributesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+            .Builder
+        getAdditionalAttributesBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetAdditionalAttributesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    public com.google.cloud.compute.v1
+            .ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder
+        getAdditionalAttributesOrBuilder() {
+      if (additionalAttributesBuilder_ != null) {
+        return additionalAttributesBuilder_.getMessageOrBuilder();
+      } else {
+        return additionalAttributes_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+                .getDefaultInstance()
+            : additionalAttributes_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] Additional location information of the running instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes additional_attributes = 74463343;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes,
+            com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+                .Builder,
+            com.google.cloud.compute.v1
+                .ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder>
+        internalGetAdditionalAttributesFieldBuilder() {
+      if (additionalAttributesBuilder_ == null) {
+        additionalAttributesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes,
+                com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopologyAdditionalAttributes
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .ResourceStatusPhysicalHostTopologyAdditionalAttributesOrBuilder>(
+                getAdditionalAttributes(), getParentForChildren(), isClean());
+        additionalAttributes_ = null;
+      }
+      return additionalAttributesBuilder_;
+    }
+
     private java.lang.Object block_ = "";
 
     /**
@@ -798,7 +1141,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      * @return Whether the block field is set.
      */
     public boolean hasBlock() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -867,7 +1210,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         throw new NullPointerException();
       }
       block_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -886,7 +1229,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      */
     public Builder clearBlock() {
       block_ = getDefaultInstance().getBlock();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -910,7 +1253,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       block_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -930,7 +1273,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      * @return Whether the cluster field is set.
      */
     public boolean hasCluster() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -999,7 +1342,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         throw new NullPointerException();
       }
       cluster_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1018,7 +1361,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      */
     public Builder clearCluster() {
       cluster_ = getDefaultInstance().getCluster();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1042,7 +1385,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       cluster_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1063,7 +1406,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      * @return Whether the host field is set.
      */
     public boolean hasHost() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1135,7 +1478,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         throw new NullPointerException();
       }
       host_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1155,7 +1498,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      */
     public Builder clearHost() {
       host_ = getDefaultInstance().getHost();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1180,7 +1523,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       host_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1201,7 +1544,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      * @return Whether the subblock field is set.
      */
     public boolean hasSubblock() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1273,7 +1616,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
         throw new NullPointerException();
       }
       subblock_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1293,7 +1636,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
      */
     public Builder clearSubblock() {
       subblock_ = getDefaultInstance().getSubblock();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1318,7 +1661,7 @@ public final class ResourceStatusPhysicalHostTopology extends com.google.protobu
       }
       checkByteStringIsUtf8(value);
       subblock_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

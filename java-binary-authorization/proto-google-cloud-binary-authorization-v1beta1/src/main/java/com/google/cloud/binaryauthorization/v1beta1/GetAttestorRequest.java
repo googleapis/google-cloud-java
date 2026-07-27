@@ -79,8 +79,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the
+   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -106,8 +107,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-   * `projects/&#42;&#47;attestors/&#42;`.
+   * Required. The name of the
+   * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+   * in the format `projects/&#42;&#47;attestors/&#42;`.
    * </pre>
    *
    * <code>
@@ -450,8 +452,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -476,8 +479,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -502,8 +506,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -527,8 +532,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>
@@ -548,8 +554,9 @@ public final class GetAttestorRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. The name of the [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve, in the format
-     * `projects/&#42;&#47;attestors/&#42;`.
+     * Required. The name of the
+     * [attestor][google.cloud.binaryauthorization.v1beta1.Attestor] to retrieve,
+     * in the format `projects/&#42;&#47;attestors/&#42;`.
      * </pre>
      *
      * <code>

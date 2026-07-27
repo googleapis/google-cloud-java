@@ -16,7 +16,7 @@ com.google.api:api-common:jar:2.65.0-SNAPSHOT:compile
 com.google.api:gax-grpc:jar:2.82.0-SNAPSHOT:compile
 com.google.api:gax-httpjson:jar:2.82.0-SNAPSHOT:compile
 com.google.api:gax:jar:2.82.0-SNAPSHOT:compile
-com.google.apis:google-api-services-storage:jar:v1-rev20260204-2.0.0:compile
+com.google.apis:google-api-services-storage:jar:v1-rev20260524-2.0.0:compile
 com.google.auth:google-auth-library-credentials:jar:1.49.0-SNAPSHOT:compile
 com.google.auth:google-auth-library-oauth2-http:jar:1.49.0-SNAPSHOT:compile
 com.google.auto.value:auto-value-annotations:jar:1.11.0:compile

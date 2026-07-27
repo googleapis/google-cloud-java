@@ -202,8 +202,8 @@ public interface SecurityProfileGroupOrBuilder
    *
    *
    * <pre>
-   * Output only. Identifier used by the data-path. Unique within {container,
-   * location}.
+   * Output only. Identifier used by the data-path. Unique within `{container,
+   * location}`.
    * </pre>
    *
    * <code>uint64 data_path_id = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

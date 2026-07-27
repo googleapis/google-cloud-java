@@ -1089,6 +1089,2154 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
     }
   }
 
+  public interface FieldFilterOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the includedFields field is set.
+     */
+    boolean hasIncludedFields();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includedFields.
+     */
+    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+        getIncludedFields();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldListOrBuilder
+        getIncludedFieldsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the excludedFields field is set.
+     */
+    boolean hasExcludedFields();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The excludedFields.
+     */
+    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+        getExcludedFields();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldListOrBuilder
+        getExcludedFieldsOrBuilder();
+
+    com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.SelectorCase
+        getSelectorCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Selects which top-level Data Object fields are emitted at export time.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter}
+   */
+  public static final class FieldFilter extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)
+      FieldFilterOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "FieldFilter");
+    }
+
+    // Use FieldFilter.newBuilder() to construct.
+    private FieldFilter(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FieldFilter() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+          .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.class,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder.class);
+    }
+
+    public interface FieldListOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the fields.
+       */
+      java.util.List<java.lang.String> getFieldsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of fields.
+       */
+      int getFieldsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The fields at the given index.
+       */
+      java.lang.String getFields(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the fields at the given index.
+       */
+      com.google.protobuf.ByteString getFieldsBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Wrapper for a repeated string. Wrapping in a message lets the
+     * surrounding `oneof` distinguish "field set to an empty list" (which is
+     * rejected as INVALID_ARGUMENT) from "field not set".
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList}
+     */
+    public static final class FieldList extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+        FieldListOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "FieldList");
+      }
+
+      // Use FieldList.newBuilder() to construct.
+      private FieldList(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private FieldList() {
+        fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_FieldList_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_FieldList_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .class,
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .Builder.class);
+      }
+
+      public static final int FIELDS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList fields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return A list containing the fields.
+       */
+      public com.google.protobuf.ProtocolStringList getFieldsList() {
+        return fields_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The count of fields.
+       */
+      public int getFieldsCount() {
+        return fields_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The fields at the given index.
+       */
+      public java.lang.String getFields(int index) {
+        return fields_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The list of top-level Data Object JSON field names. Allowed
+       * values are `id`, `data`, `vectors`, `etag`.
+       * </pre>
+       *
+       * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the fields at the given index.
+       */
+      public com.google.protobuf.ByteString getFieldsBytes(int index) {
+        return fields_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < fields_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, fields_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < fields_.size(); i++) {
+            dataSize += computeStringSizeNoTag(fields_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getFieldsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList other =
+            (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList) obj;
+
+        if (!getFieldsList().equals(other.getFieldsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getFieldsCount() > 0) {
+          hash = (37 * hash) + FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getFieldsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Wrapper for a repeated string. Wrapping in a message lets the
+       * surrounding `oneof` distinguish "field set to an empty list" (which is
+       * rejected as INVALID_ARGUMENT) from "field not set".
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldListOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_FieldList_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_FieldList_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .class,
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+              .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_FieldList_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+            getDefaultInstanceForType() {
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+            build() {
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+            buildPartial() {
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList result =
+              new com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            fields_.makeImmutable();
+            result.fields_ = fields_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList) {
+            return mergeFrom(
+                (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList other) {
+          if (other
+              == com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                  .getDefaultInstance()) return this;
+          if (!other.fields_.isEmpty()) {
+            if (fields_.isEmpty()) {
+              fields_ = other.fields_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureFieldsIsMutable();
+              fields_.addAll(other.fields_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureFieldsIsMutable();
+                    fields_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList fields_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureFieldsIsMutable() {
+          if (!fields_.isModifiable()) {
+            fields_ = new com.google.protobuf.LazyStringArrayList(fields_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return A list containing the fields.
+         */
+        public com.google.protobuf.ProtocolStringList getFieldsList() {
+          fields_.makeImmutable();
+          return fields_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The count of fields.
+         */
+        public int getFieldsCount() {
+          return fields_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The fields at the given index.
+         */
+        public java.lang.String getFields(int index) {
+          return fields_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the fields at the given index.
+         */
+        public com.google.protobuf.ByteString getFieldsBytes(int index) {
+          return fields_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The fields to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFields(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldsIsMutable();
+          fields_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The fields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addFields(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFieldsIsMutable();
+          fields_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param values The fields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllFields(java.lang.Iterable<java.lang.String> values) {
+          ensureFieldsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fields_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFields() {
+          fields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The list of top-level Data Object JSON field names. Allowed
+         * values are `id`, `data`, `vectors`, `etag`.
+         * </pre>
+         *
+         * <code>repeated string fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes of the fields to add.
+         * @return This builder for chaining.
+         */
+        public Builder addFieldsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureFieldsIsMutable();
+          fields_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+      private static final com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+              .FieldList
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList();
+      }
+
+      public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<FieldList> PARSER =
+          new com.google.protobuf.AbstractParser<FieldList>() {
+            @java.lang.Override
+            public FieldList parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<FieldList> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<FieldList> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int selectorCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object selector_;
+
+    public enum SelectorCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      INCLUDED_FIELDS(1),
+      EXCLUDED_FIELDS(2),
+      SELECTOR_NOT_SET(0);
+      private final int value;
+
+      private SelectorCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SelectorCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SelectorCase forNumber(int value) {
+        switch (value) {
+          case 1:
+            return INCLUDED_FIELDS;
+          case 2:
+            return EXCLUDED_FIELDS;
+          case 0:
+            return SELECTOR_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SelectorCase getSelectorCase() {
+      return SelectorCase.forNumber(selectorCase_);
+    }
+
+    public static final int INCLUDED_FIELDS_FIELD_NUMBER = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the includedFields field is set.
+     */
+    @java.lang.Override
+    public boolean hasIncludedFields() {
+      return selectorCase_ == 1;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The includedFields.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+        getIncludedFields() {
+      if (selectorCase_ == 1) {
+        return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+            selector_;
+      }
+      return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only these top-level fields will appear in each exported
+     * record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldListOrBuilder
+        getIncludedFieldsOrBuilder() {
+      if (selectorCase_ == 1) {
+        return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+            selector_;
+      }
+      return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          .getDefaultInstance();
+    }
+
+    public static final int EXCLUDED_FIELDS_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the excludedFields field is set.
+     */
+    @java.lang.Override
+    public boolean hasExcludedFields() {
+      return selectorCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The excludedFields.
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+        getExcludedFields() {
+      if (selectorCase_ == 2) {
+        return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+            selector_;
+      }
+      return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Every top-level field except these will appear in each
+     * exported record.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldListOrBuilder
+        getExcludedFieldsOrBuilder() {
+      if (selectorCase_ == 2) {
+        return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+            selector_;
+      }
+      return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          .getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (selectorCase_ == 1) {
+        output.writeMessage(
+            1,
+            (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_);
+      }
+      if (selectorCase_ == 2) {
+        output.writeMessage(
+            2,
+            (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (selectorCase_ == 1) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                    selector_);
+      }
+      if (selectorCase_ == 2) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                    selector_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter other =
+          (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter) obj;
+
+      if (!getSelectorCase().equals(other.getSelectorCase())) return false;
+      switch (selectorCase_) {
+        case 1:
+          if (!getIncludedFields().equals(other.getIncludedFields())) return false;
+          break;
+        case 2:
+          if (!getExcludedFields().equals(other.getExcludedFields())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (selectorCase_) {
+        case 1:
+          hash = (37 * hash) + INCLUDED_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getIncludedFields().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + EXCLUDED_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getExcludedFields().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Selects which top-level Data Object fields are emitted at export time.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.class,
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (includedFieldsBuilder_ != null) {
+          includedFieldsBuilder_.clear();
+        }
+        if (excludedFieldsBuilder_ != null) {
+          excludedFieldsBuilder_.clear();
+        }
+        selectorCase_ = 0;
+        selector_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vectorsearch.v1.VectorSearchServiceProto
+            .internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_FieldFilter_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+          getDefaultInstanceForType() {
+        return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter build() {
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter buildPartial() {
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter result =
+            new com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter result) {
+        result.selectorCase_ = selectorCase_;
+        result.selector_ = this.selector_;
+        if (selectorCase_ == 1 && includedFieldsBuilder_ != null) {
+          result.selector_ = includedFieldsBuilder_.build();
+        }
+        if (selectorCase_ == 2 && excludedFieldsBuilder_ != null) {
+          result.selector_ = excludedFieldsBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter) {
+          return mergeFrom(
+              (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter other) {
+        if (other
+            == com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                .getDefaultInstance()) return this;
+        switch (other.getSelectorCase()) {
+          case INCLUDED_FIELDS:
+            {
+              mergeIncludedFields(other.getIncludedFields());
+              break;
+            }
+          case EXCLUDED_FIELDS:
+            {
+              mergeExcludedFields(other.getExcludedFields());
+              break;
+            }
+          case SELECTOR_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetIncludedFieldsFieldBuilder().getBuilder(), extensionRegistry);
+                  selectorCase_ = 1;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetExcludedFieldsFieldBuilder().getBuilder(), extensionRegistry);
+                  selectorCase_ = 2;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int selectorCase_ = 0;
+      private java.lang.Object selector_;
+
+      public SelectorCase getSelectorCase() {
+        return SelectorCase.forNumber(selectorCase_);
+      }
+
+      public Builder clearSelector() {
+        selectorCase_ = 0;
+        selector_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                  .Builder,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                  .FieldListOrBuilder>
+          includedFieldsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the includedFields field is set.
+       */
+      @java.lang.Override
+      public boolean hasIncludedFields() {
+        return selectorCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The includedFields.
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          getIncludedFields() {
+        if (includedFieldsBuilder_ == null) {
+          if (selectorCase_ == 1) {
+            return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_;
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        } else {
+          if (selectorCase_ == 1) {
+            return includedFieldsBuilder_.getMessage();
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIncludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList value) {
+        if (includedFieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          selector_ = value;
+          onChanged();
+        } else {
+          includedFieldsBuilder_.setMessage(value);
+        }
+        selectorCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setIncludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList.Builder
+              builderForValue) {
+        if (includedFieldsBuilder_ == null) {
+          selector_ = builderForValue.build();
+          onChanged();
+        } else {
+          includedFieldsBuilder_.setMessage(builderForValue.build());
+        }
+        selectorCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeIncludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList value) {
+        if (includedFieldsBuilder_ == null) {
+          if (selectorCase_ == 1
+              && selector_
+                  != com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .getDefaultInstance()) {
+            selector_ =
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .newBuilder(
+                        (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                                .FieldList)
+                            selector_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            selector_ = value;
+          }
+          onChanged();
+        } else {
+          if (selectorCase_ == 1) {
+            includedFieldsBuilder_.mergeFrom(value);
+          } else {
+            includedFieldsBuilder_.setMessage(value);
+          }
+        }
+        selectorCase_ = 1;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearIncludedFields() {
+        if (includedFieldsBuilder_ == null) {
+          if (selectorCase_ == 1) {
+            selectorCase_ = 0;
+            selector_ = null;
+            onChanged();
+          }
+        } else {
+          if (selectorCase_ == 1) {
+            selectorCase_ = 0;
+            selector_ = null;
+          }
+          includedFieldsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList.Builder
+          getIncludedFieldsBuilder() {
+        return internalGetIncludedFieldsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+              .FieldListOrBuilder
+          getIncludedFieldsOrBuilder() {
+        if ((selectorCase_ == 1) && (includedFieldsBuilder_ != null)) {
+          return includedFieldsBuilder_.getMessageOrBuilder();
+        } else {
+          if (selectorCase_ == 1) {
+            return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_;
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Only these top-level fields will appear in each exported
+       * record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList included_fields = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                  .Builder,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                  .FieldListOrBuilder>
+          internalGetIncludedFieldsFieldBuilder() {
+        if (includedFieldsBuilder_ == null) {
+          if (!(selectorCase_ == 1)) {
+            selector_ =
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .getDefaultInstance();
+          }
+          includedFieldsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .Builder,
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                      .FieldListOrBuilder>(
+                  (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                      selector_,
+                  getParentForChildren(),
+                  isClean());
+          selector_ = null;
+        }
+        selectorCase_ = 1;
+        onChanged();
+        return includedFieldsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                  .Builder,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                  .FieldListOrBuilder>
+          excludedFieldsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the excludedFields field is set.
+       */
+      @java.lang.Override
+      public boolean hasExcludedFields() {
+        return selectorCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The excludedFields.
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+          getExcludedFields() {
+        if (excludedFieldsBuilder_ == null) {
+          if (selectorCase_ == 2) {
+            return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_;
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        } else {
+          if (selectorCase_ == 2) {
+            return excludedFieldsBuilder_.getMessage();
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExcludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList value) {
+        if (excludedFieldsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          selector_ = value;
+          onChanged();
+        } else {
+          excludedFieldsBuilder_.setMessage(value);
+        }
+        selectorCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExcludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList.Builder
+              builderForValue) {
+        if (excludedFieldsBuilder_ == null) {
+          selector_ = builderForValue.build();
+          onChanged();
+        } else {
+          excludedFieldsBuilder_.setMessage(builderForValue.build());
+        }
+        selectorCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeExcludedFields(
+          com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList value) {
+        if (excludedFieldsBuilder_ == null) {
+          if (selectorCase_ == 2
+              && selector_
+                  != com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .getDefaultInstance()) {
+            selector_ =
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .newBuilder(
+                        (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                                .FieldList)
+                            selector_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            selector_ = value;
+          }
+          onChanged();
+        } else {
+          if (selectorCase_ == 2) {
+            excludedFieldsBuilder_.mergeFrom(value);
+          } else {
+            excludedFieldsBuilder_.setMessage(value);
+          }
+        }
+        selectorCase_ = 2;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearExcludedFields() {
+        if (excludedFieldsBuilder_ == null) {
+          if (selectorCase_ == 2) {
+            selectorCase_ = 0;
+            selector_ = null;
+            onChanged();
+          }
+        } else {
+          if (selectorCase_ == 2) {
+            selectorCase_ = 0;
+            selector_ = null;
+          }
+          excludedFieldsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList.Builder
+          getExcludedFieldsBuilder() {
+        return internalGetExcludedFieldsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+              .FieldListOrBuilder
+          getExcludedFieldsOrBuilder() {
+        if ((selectorCase_ == 2) && (excludedFieldsBuilder_ != null)) {
+          return excludedFieldsBuilder_.getMessageOrBuilder();
+        } else {
+          if (selectorCase_ == 2) {
+            return (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                selector_;
+          }
+          return com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Every top-level field except these will appear in each
+       * exported record.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList excluded_fields = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                  .Builder,
+              com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                  .FieldListOrBuilder>
+          internalGetExcludedFieldsFieldBuilder() {
+        if (excludedFieldsBuilder_ == null) {
+          if (!(selectorCase_ == 2)) {
+            selector_ =
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                    .getDefaultInstance();
+          }
+          excludedFieldsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList,
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList
+                      .Builder,
+                  com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                      .FieldListOrBuilder>(
+                  (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.FieldList)
+                      selector_,
+                  getParentForChildren(),
+                  isClean());
+          selector_ = null;
+        }
+        selectorCase_ = 2;
+        onChanged();
+        return excludedFieldsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter)
+    private static final com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter();
+    }
+
+    public static com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FieldFilter> PARSER =
+        new com.google.protobuf.AbstractParser<FieldFilter>() {
+          @java.lang.Override
+          public FieldFilter parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FieldFilter> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FieldFilter> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   private int destinationCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1263,6 +3411,84 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int FIELD_FILTER_FIELD_NUMBER = 3;
+  private com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter fieldFilter_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fieldFilter field is set.
+   */
+  @java.lang.Override
+  public boolean hasFieldFilter() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fieldFilter.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter getFieldFilter() {
+    return fieldFilter_ == null
+        ? com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.getDefaultInstance()
+        : fieldFilter_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Restricts which top-level Data Object fields appear in each
+   * exported JSONL record. If unset, every field is exported (the existing
+   * behavior). The primary use case is excluding the per-object `etag` so
+   * that the exported records can be imported into a Collection in a
+   * different region without optimistic-concurrency conflicts.
+   *
+   * Allowed field names are `id`, `data`, `vectors`, `etag`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder
+      getFieldFilterOrBuilder() {
+    return fieldFilter_ == null
+        ? com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.getDefaultInstance()
+        : fieldFilter_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1286,6 +3512,9 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
           (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.GcsExportDestination)
               destination_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getFieldFilter());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1305,6 +3534,9 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
               (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.GcsExportDestination)
                   destination_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getFieldFilter());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1322,6 +3554,10 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
         (com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (hasFieldFilter() != other.hasFieldFilter()) return false;
+    if (hasFieldFilter()) {
+      if (!getFieldFilter().equals(other.getFieldFilter())) return false;
+    }
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 2:
@@ -1343,6 +3579,10 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasFieldFilter()) {
+      hash = (37 * hash) + FIELD_FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldFilter().hashCode();
+    }
     switch (destinationCase_) {
       case 2:
         hash = (37 * hash) + GCS_DESTINATION_FIELD_NUMBER;
@@ -1483,10 +3723,19 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
     }
 
     // Construct using com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetFieldFilterFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1497,6 +3746,11 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
         gcsDestinationBuilder_.clear();
       }
       name_ = "";
+      fieldFilter_ = null;
+      if (fieldFilterBuilder_ != null) {
+        fieldFilterBuilder_.dispose();
+        fieldFilterBuilder_ = null;
+      }
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1539,6 +3793,13 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.fieldFilter_ =
+            fieldFilterBuilder_ == null ? fieldFilter_ : fieldFilterBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -1567,6 +3828,9 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
         name_ = other.name_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (other.hasFieldFilter()) {
+        mergeFieldFilter(other.getFieldFilter());
       }
       switch (other.getDestinationCase()) {
         case GCS_DESTINATION:
@@ -1618,6 +3882,13 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
                 destinationCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetFieldFilterFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2037,6 +4308,282 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter fieldFilter_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter,
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder,
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder>
+        fieldFilterBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the fieldFilter field is set.
+     */
+    public boolean hasFieldFilter() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The fieldFilter.
+     */
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter getFieldFilter() {
+      if (fieldFilterBuilder_ == null) {
+        return fieldFilter_ == null
+            ? com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                .getDefaultInstance()
+            : fieldFilter_;
+      } else {
+        return fieldFilterBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFieldFilter(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter value) {
+      if (fieldFilterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fieldFilter_ = value;
+      } else {
+        fieldFilterBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFieldFilter(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder
+            builderForValue) {
+      if (fieldFilterBuilder_ == null) {
+        fieldFilter_ = builderForValue.build();
+      } else {
+        fieldFilterBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFieldFilter(
+        com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter value) {
+      if (fieldFilterBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && fieldFilter_ != null
+            && fieldFilter_
+                != com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                    .getDefaultInstance()) {
+          getFieldFilterBuilder().mergeFrom(value);
+        } else {
+          fieldFilter_ = value;
+        }
+      } else {
+        fieldFilterBuilder_.mergeFrom(value);
+      }
+      if (fieldFilter_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFieldFilter() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      fieldFilter_ = null;
+      if (fieldFilterBuilder_ != null) {
+        fieldFilterBuilder_.dispose();
+        fieldFilterBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder
+        getFieldFilterBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetFieldFilterFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder
+        getFieldFilterOrBuilder() {
+      if (fieldFilterBuilder_ != null) {
+        return fieldFilterBuilder_.getMessageOrBuilder();
+      } else {
+        return fieldFilter_ == null
+            ? com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter
+                .getDefaultInstance()
+            : fieldFilter_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Restricts which top-level Data Object fields appear in each
+     * exported JSONL record. If unset, every field is exported (the existing
+     * behavior). The primary use case is excluding the per-object `etag` so
+     * that the exported records can be imported into a Collection in a
+     * different region without optimistic-concurrency conflicts.
+     *
+     * Allowed field names are `id`, `data`, `vectors`, `etag`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter field_filter = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter,
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder,
+            com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder>
+        internalGetFieldFilterFieldBuilder() {
+      if (fieldFilterBuilder_ == null) {
+        fieldFilterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter,
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilter.Builder,
+                com.google.cloud.vectorsearch.v1.ExportDataObjectsRequest.FieldFilterOrBuilder>(
+                getFieldFilter(), getParentForChildren(), isClean());
+        fieldFilter_ = null;
+      }
+      return fieldFilterBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1.ExportDataObjectsRequest)

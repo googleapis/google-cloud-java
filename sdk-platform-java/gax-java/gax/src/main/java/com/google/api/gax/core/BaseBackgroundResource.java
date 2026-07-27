@@ -30,8 +30,10 @@
 package com.google.api.gax.core;
 
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** A Background resource that does nothing. */
+@NullMarked
 public class BaseBackgroundResource implements BackgroundResource {
 
   @Override

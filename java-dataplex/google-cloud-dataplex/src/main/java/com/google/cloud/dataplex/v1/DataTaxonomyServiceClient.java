@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -508,10 +510,11 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @Deprecated
 @Generated("by gapic-generator-java")
 public class DataTaxonomyServiceClient implements BackgroundResource {
-  private final DataTaxonomyServiceSettings settings;
+  private final @Nullable DataTaxonomyServiceSettings settings;
   private final DataTaxonomyServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -559,7 +562,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataTaxonomyServiceSettings getSettings() {
+  public final @Nullable DataTaxonomyServiceSettings getSettings() {
     return settings;
   }
 
@@ -623,7 +626,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<DataTaxonomy, OperationMetadata> createDataTaxonomyAsync(
-      LocationName parent, DataTaxonomy dataTaxonomy, String dataTaxonomyId) {
+      @Nullable LocationName parent, DataTaxonomy dataTaxonomy, String dataTaxonomyId) {
     CreateDataTaxonomyRequest request =
         CreateDataTaxonomyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -947,7 +950,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataTaxonomyAsync(
-      DataTaxonomyName name) {
+      @Nullable DataTaxonomyName name) {
     DeleteDataTaxonomyRequest request =
         DeleteDataTaxonomyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1117,7 +1120,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListDataTaxonomiesPagedResponse listDataTaxonomies(LocationName parent) {
+  public final ListDataTaxonomiesPagedResponse listDataTaxonomies(@Nullable LocationName parent) {
     ListDataTaxonomiesRequest request =
         ListDataTaxonomiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1303,7 +1306,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final DataTaxonomy getDataTaxonomy(DataTaxonomyName name) {
+  public final DataTaxonomy getDataTaxonomy(@Nullable DataTaxonomyName name) {
     GetDataTaxonomyRequest request =
         GetDataTaxonomyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataTaxonomy(request);
@@ -1441,7 +1444,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
   @Deprecated
   public final OperationFuture<DataAttributeBinding, OperationMetadata>
       createDataAttributeBindingAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           DataAttributeBinding dataAttributeBinding,
           String dataAttributeBindingId) {
     CreateDataAttributeBindingRequest request =
@@ -1783,7 +1786,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeBindingAsync(
-      DataAttributeBindingName name) {
+      @Nullable DataAttributeBindingName name) {
     DeleteDataAttributeBindingRequest request =
         DeleteDataAttributeBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1965,7 +1968,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final ListDataAttributeBindingsPagedResponse listDataAttributeBindings(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListDataAttributeBindingsRequest request =
         ListDataAttributeBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2153,7 +2156,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final DataAttributeBinding getDataAttributeBinding(DataAttributeBindingName name) {
+  public final DataAttributeBinding getDataAttributeBinding(
+      @Nullable DataAttributeBindingName name) {
     GetDataAttributeBindingRequest request =
         GetDataAttributeBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2303,7 +2307,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<DataAttribute, OperationMetadata> createDataAttributeAsync(
-      DataTaxonomyName parent, DataAttribute dataAttribute, String dataAttributeId) {
+      @Nullable DataTaxonomyName parent, DataAttribute dataAttribute, String dataAttributeId) {
     CreateDataAttributeRequest request =
         CreateDataAttributeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2632,7 +2636,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteDataAttributeAsync(
-      DataAttributeName name) {
+      @Nullable DataAttributeName name) {
     DeleteDataAttributeRequest request =
         DeleteDataAttributeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2806,7 +2810,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListDataAttributesPagedResponse listDataAttributes(DataTaxonomyName parent) {
+  public final ListDataAttributesPagedResponse listDataAttributes(
+      @Nullable DataTaxonomyName parent) {
     ListDataAttributesRequest request =
         ListDataAttributesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2997,7 +3002,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final DataAttribute getDataAttribute(DataAttributeName name) {
+  public final DataAttribute getDataAttribute(@Nullable DataAttributeName name) {
     GetDataAttributeRequest request =
         GetDataAttributeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataAttribute(request);
@@ -3549,8 +3554,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataTaxonomiesPage> {
 
     private ListDataTaxonomiesPage(
-        PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy> context,
-        ListDataTaxonomiesResponse response) {
+        @Nullable PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy>
+            context,
+        @Nullable ListDataTaxonomiesResponse response) {
       super(context, response);
     }
 
@@ -3560,14 +3566,16 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTaxonomiesPage createPage(
-        PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy> context,
-        ListDataTaxonomiesResponse response) {
+        @Nullable PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy>
+            context,
+        @Nullable ListDataTaxonomiesResponse response) {
       return new ListDataTaxonomiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataTaxonomiesPage> createPageAsync(
-        PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy> context,
+        @Nullable PageContext<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse, DataTaxonomy>
+            context,
         ApiFuture<ListDataTaxonomiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3582,7 +3590,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataTaxonomiesFixedSizeCollection> {
 
     private ListDataTaxonomiesFixedSizeCollection(
-        List<ListDataTaxonomiesPage> pages, int collectionSize) {
+        @Nullable List<ListDataTaxonomiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3592,7 +3600,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataTaxonomiesFixedSizeCollection createCollection(
-        List<ListDataTaxonomiesPage> pages, int collectionSize) {
+        @Nullable List<ListDataTaxonomiesPage> pages, int collectionSize) {
       return new ListDataTaxonomiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3633,12 +3641,13 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataAttributeBindingsPage> {
 
     private ListDataAttributeBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataAttributeBindingsRequest,
                 ListDataAttributeBindingsResponse,
                 DataAttributeBinding>
             context,
-        ListDataAttributeBindingsResponse response) {
+        @Nullable ListDataAttributeBindingsResponse response) {
       super(context, response);
     }
 
@@ -3648,18 +3657,20 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAttributeBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataAttributeBindingsRequest,
                 ListDataAttributeBindingsResponse,
                 DataAttributeBinding>
             context,
-        ListDataAttributeBindingsResponse response) {
+        @Nullable ListDataAttributeBindingsResponse response) {
       return new ListDataAttributeBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAttributeBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataAttributeBindingsRequest,
                 ListDataAttributeBindingsResponse,
                 DataAttributeBinding>
@@ -3678,7 +3689,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataAttributeBindingsFixedSizeCollection> {
 
     private ListDataAttributeBindingsFixedSizeCollection(
-        List<ListDataAttributeBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAttributeBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3688,7 +3699,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAttributeBindingsFixedSizeCollection createCollection(
-        List<ListDataAttributeBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAttributeBindingsPage> pages, int collectionSize) {
       return new ListDataAttributeBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3725,8 +3736,9 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataAttributesPage> {
 
     private ListDataAttributesPage(
-        PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute> context,
-        ListDataAttributesResponse response) {
+        @Nullable PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute>
+            context,
+        @Nullable ListDataAttributesResponse response) {
       super(context, response);
     }
 
@@ -3736,14 +3748,16 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAttributesPage createPage(
-        PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute> context,
-        ListDataAttributesResponse response) {
+        @Nullable PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute>
+            context,
+        @Nullable ListDataAttributesResponse response) {
       return new ListDataAttributesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAttributesPage> createPageAsync(
-        PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute> context,
+        @Nullable PageContext<ListDataAttributesRequest, ListDataAttributesResponse, DataAttribute>
+            context,
         ApiFuture<ListDataAttributesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3758,7 +3772,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListDataAttributesFixedSizeCollection> {
 
     private ListDataAttributesFixedSizeCollection(
-        List<ListDataAttributesPage> pages, int collectionSize) {
+        @Nullable List<ListDataAttributesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3768,7 +3782,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAttributesFixedSizeCollection createCollection(
-        List<ListDataAttributesPage> pages, int collectionSize) {
+        @Nullable List<ListDataAttributesPage> pages, int collectionSize) {
       return new ListDataAttributesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3802,8 +3816,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3813,14 +3827,14 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3834,7 +3848,8 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3844,7 +3859,7 @@ public class DataTaxonomyServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

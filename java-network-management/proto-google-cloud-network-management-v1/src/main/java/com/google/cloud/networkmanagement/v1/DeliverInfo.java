@@ -288,6 +288,16 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      * <code>CLOUD_RUN_JOB = 20;</code>
      */
     CLOUD_RUN_JOB(20),
+    /**
+     *
+     *
+     * <pre>
+     * Target is a DMS Private Connection. Used only for return traces.
+     * </pre>
+     *
+     * <code>DMS_PRIVATE_CONNECTION = 21;</code>
+     */
+    DMS_PRIVATE_CONNECTION(21),
     UNRECOGNIZED(-1),
     ;
 
@@ -524,6 +534,17 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
      */
     public static final int CLOUD_RUN_JOB_VALUE = 20;
 
+    /**
+     *
+     *
+     * <pre>
+     * Target is a DMS Private Connection. Used only for return traces.
+     * </pre>
+     *
+     * <code>DMS_PRIVATE_CONNECTION = 21;</code>
+     */
+    public static final int DMS_PRIVATE_CONNECTION_VALUE = 21;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -588,6 +609,8 @@ public final class DeliverInfo extends com.google.protobuf.GeneratedMessage
           return GKE_POD;
         case 20:
           return CLOUD_RUN_JOB;
+        case 21:
+          return DMS_PRIVATE_CONNECTION;
         default:
           return null;
       }

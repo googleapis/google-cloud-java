@@ -727,6 +727,41 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int RESOURCE_STATUS_FIELD_NUMBER = 249429315;
+  private com.google.cloud.compute.v1.ZoneResourceStatus resourceStatus_;
+
+  /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   *
+   * @return Whether the resourceStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceStatus() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   *
+   * @return The resourceStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ZoneResourceStatus getResourceStatus() {
+    return resourceStatus_ == null
+        ? com.google.cloud.compute.v1.ZoneResourceStatus.getDefaultInstance()
+        : resourceStatus_;
+  }
+
+  /**
+   * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder getResourceStatusOrBuilder() {
+    return resourceStatus_ == null
+        ? com.google.cloud.compute.v1.ZoneResourceStatus.getDefaultInstance()
+        : resourceStatus_;
+  }
+
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
 
   @SuppressWarnings("serial")
@@ -745,7 +780,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -815,7 +850,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -884,7 +919,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSupportsPzs() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -929,7 +964,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -939,13 +974,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(
           output, 175536531, availableCpuPlatforms_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 181260274, status_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(249429315, getResourceStatus());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -972,7 +1010,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(83983214, supportsPzs_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -986,13 +1024,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 5 * getAvailableCpuPlatformsList().size();
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(181260274, status_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(249429315, getResourceStatus());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -1041,6 +1083,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
       if (!getRegion().equals(other.getRegion())) return false;
+    }
+    if (hasResourceStatus() != other.hasResourceStatus()) return false;
+    if (hasResourceStatus()) {
+      if (!getResourceStatus().equals(other.getResourceStatus())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1096,6 +1142,10 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
       hash = (53 * hash) + getRegion().hashCode();
+    }
+    if (hasResourceStatus()) {
+      hash = (37 * hash) + RESOURCE_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceStatus().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1254,6 +1304,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetDeprecatedFieldBuilder();
+        internalGetResourceStatusFieldBuilder();
       }
     }
 
@@ -1273,6 +1324,11 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       kind_ = "";
       name_ = "";
       region_ = "";
+      resourceStatus_ = null;
+      if (resourceStatusBuilder_ != null) {
+        resourceStatusBuilder_.dispose();
+        resourceStatusBuilder_ = null;
+      }
       selfLink_ = "";
       status_ = "";
       supportsPzs_ = false;
@@ -1345,16 +1401,21 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.resourceStatus_ =
+            resourceStatusBuilder_ == null ? resourceStatus_ : resourceStatusBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.supportsPzs_ = supportsPzs_;
+        result.status_ = status_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.supportsPzs_ = supportsPzs_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1412,14 +1473,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasResourceStatus()) {
+        mergeResourceStatus(other.getResourceStatus());
+      }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSupportsPzs()) {
@@ -1478,7 +1542,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
             case 671865712:
               {
                 supportsPzs_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 671865712
             case 1111570338:
@@ -1497,9 +1561,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 1450082194
+            case 1995434522:
+              {
+                input.readMessage(
+                    internalGetResourceStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 1995434522
             case -911466526:
               {
                 description_ = input.readStringRequireUtf8();
@@ -1509,7 +1580,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -645248918
             case -173855334:
@@ -2635,6 +2706,157 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.cloud.compute.v1.ZoneResourceStatus resourceStatus_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ZoneResourceStatus,
+            com.google.cloud.compute.v1.ZoneResourceStatus.Builder,
+            com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder>
+        resourceStatusBuilder_;
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     *
+     * @return Whether the resourceStatus field is set.
+     */
+    public boolean hasResourceStatus() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     *
+     * @return The resourceStatus.
+     */
+    public com.google.cloud.compute.v1.ZoneResourceStatus getResourceStatus() {
+      if (resourceStatusBuilder_ == null) {
+        return resourceStatus_ == null
+            ? com.google.cloud.compute.v1.ZoneResourceStatus.getDefaultInstance()
+            : resourceStatus_;
+      } else {
+        return resourceStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public Builder setResourceStatus(com.google.cloud.compute.v1.ZoneResourceStatus value) {
+      if (resourceStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceStatus_ = value;
+      } else {
+        resourceStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public Builder setResourceStatus(
+        com.google.cloud.compute.v1.ZoneResourceStatus.Builder builderForValue) {
+      if (resourceStatusBuilder_ == null) {
+        resourceStatus_ = builderForValue.build();
+      } else {
+        resourceStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public Builder mergeResourceStatus(com.google.cloud.compute.v1.ZoneResourceStatus value) {
+      if (resourceStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && resourceStatus_ != null
+            && resourceStatus_
+                != com.google.cloud.compute.v1.ZoneResourceStatus.getDefaultInstance()) {
+          getResourceStatusBuilder().mergeFrom(value);
+        } else {
+          resourceStatus_ = value;
+        }
+      } else {
+        resourceStatusBuilder_.mergeFrom(value);
+      }
+      if (resourceStatus_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public Builder clearResourceStatus() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      resourceStatus_ = null;
+      if (resourceStatusBuilder_ != null) {
+        resourceStatusBuilder_.dispose();
+        resourceStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ZoneResourceStatus.Builder getResourceStatusBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetResourceStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder getResourceStatusOrBuilder() {
+      if (resourceStatusBuilder_ != null) {
+        return resourceStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceStatus_ == null
+            ? com.google.cloud.compute.v1.ZoneResourceStatus.getDefaultInstance()
+            : resourceStatus_;
+      }
+    }
+
+    /**
+     * <code>optional .google.cloud.compute.v1.ZoneResourceStatus resource_status = 249429315;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ZoneResourceStatus,
+            com.google.cloud.compute.v1.ZoneResourceStatus.Builder,
+            com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder>
+        internalGetResourceStatusFieldBuilder() {
+      if (resourceStatusBuilder_ == null) {
+        resourceStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ZoneResourceStatus,
+                com.google.cloud.compute.v1.ZoneResourceStatus.Builder,
+                com.google.cloud.compute.v1.ZoneResourceStatusOrBuilder>(
+                getResourceStatus(), getParentForChildren(), isClean());
+        resourceStatus_ = null;
+      }
+      return resourceStatusBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
 
     /**
@@ -2649,7 +2871,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2715,7 +2937,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2733,7 +2955,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2756,7 +2978,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2776,7 +2998,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2845,7 +3067,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2864,7 +3086,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2888,7 +3110,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2908,7 +3130,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSupportsPzs() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -2942,7 +3164,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
     public Builder setSupportsPzs(boolean value) {
 
       supportsPzs_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2959,7 +3181,7 @@ public final class Zone extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSupportsPzs() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       supportsPzs_ = false;
       onChanged();
       return this;

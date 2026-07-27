@@ -568,6 +568,27 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return singleUtterance_;
   }
 
+  public static final int ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER = 27;
+  private boolean enableVoiceActivityEvents_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, responses with voice activity speech events will be
+   * returned as they are detected.
+   * Note: This setting is relevant only for streaming methods.
+   * </pre>
+   *
+   * <code>bool enable_voice_activity_events = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableVoiceActivityEvents.
+   */
+  @java.lang.Override
+  public boolean getEnableVoiceActivityEvents() {
+    return enableVoiceActivityEvents_;
+  }
+
   public static final int DISABLE_NO_SPEECH_RECOGNIZED_EVENT_FIELD_NUMBER = 14;
   private boolean disableNoSpeechRecognizedEvent_ = false;
 
@@ -873,6 +894,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (optOutConformerModelMigration_ != false) {
       output.writeBool(26, optOutConformerModelMigration_);
     }
+    if (enableVoiceActivityEvents_ != false) {
+      output.writeBool(27, enableVoiceActivityEvents_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -946,6 +970,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(26, optOutConformerModelMigration_);
     }
+    if (enableVoiceActivityEvents_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(27, enableVoiceActivityEvents_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -971,6 +998,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (!getModel().equals(other.getModel())) return false;
     if (modelVariant_ != other.modelVariant_) return false;
     if (getSingleUtterance() != other.getSingleUtterance()) return false;
+    if (getEnableVoiceActivityEvents() != other.getEnableVoiceActivityEvents()) return false;
     if (getDisableNoSpeechRecognizedEvent() != other.getDisableNoSpeechRecognizedEvent())
       return false;
     if (hasBargeInConfig() != other.hasBargeInConfig()) return false;
@@ -1018,6 +1046,8 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + modelVariant_;
     hash = (37 * hash) + SINGLE_UTTERANCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSingleUtterance());
+    hash = (37 * hash) + ENABLE_VOICE_ACTIVITY_EVENTS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableVoiceActivityEvents());
     hash = (37 * hash) + DISABLE_NO_SPEECH_RECOGNIZED_EVENT_FIELD_NUMBER;
     hash =
         (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableNoSpeechRecognizedEvent());
@@ -1204,6 +1234,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       model_ = "";
       modelVariant_ = 0;
       singleUtterance_ = false;
+      enableVoiceActivityEvents_ = false;
       disableNoSpeechRecognizedEvent_ = false;
       bargeInConfig_ = null;
       if (bargeInConfigBuilder_ != null) {
@@ -1294,29 +1325,32 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         result.singleUtterance_ = singleUtterance_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.enableVoiceActivityEvents_ = enableVoiceActivityEvents_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.disableNoSpeechRecognizedEvent_ = disableNoSpeechRecognizedEvent_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.bargeInConfig_ =
             bargeInConfigBuilder_ == null ? bargeInConfig_ : bargeInConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableAutomaticPunctuation_ = enableAutomaticPunctuation_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.defaultNoSpeechTimeout_ =
             defaultNoSpeechTimeoutBuilder_ == null
                 ? defaultNoSpeechTimeout_
                 : defaultNoSpeechTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         phraseSets_.makeImmutable();
         result.phraseSets_ = phraseSets_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.optOutConformerModelMigration_ = optOutConformerModelMigration_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1397,6 +1431,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (other.getSingleUtterance() != false) {
         setSingleUtterance(other.getSingleUtterance());
       }
+      if (other.getEnableVoiceActivityEvents() != false) {
+        setEnableVoiceActivityEvents(other.getEnableVoiceActivityEvents());
+      }
       if (other.getDisableNoSpeechRecognizedEvent() != false) {
         setDisableNoSpeechRecognizedEvent(other.getDisableNoSpeechRecognizedEvent());
       }
@@ -1412,7 +1449,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!other.phraseSets_.isEmpty()) {
         if (phraseSets_.isEmpty()) {
           phraseSets_ = other.phraseSets_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensurePhraseSetsIsMutable();
           phraseSets_.addAll(other.phraseSets_);
@@ -1514,20 +1551,20 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             case 112:
               {
                 disableNoSpeechRecognizedEvent_ = input.readBool();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 112
             case 122:
               {
                 input.readMessage(
                     internalGetBargeInConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 122
             case 136:
               {
                 enableAutomaticPunctuation_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 136
             case 146:
@@ -1535,7 +1572,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetDefaultNoSpeechTimeoutFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 146
             case 162:
@@ -1548,9 +1585,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
             case 208:
               {
                 optOutConformerModelMigration_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 208
+            case 216:
+              {
+                enableVoiceActivityEvents_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 216
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3002,6 +3045,71 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean enableVoiceActivityEvents_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, responses with voice activity speech events will be
+     * returned as they are detected.
+     * Note: This setting is relevant only for streaming methods.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableVoiceActivityEvents.
+     */
+    @java.lang.Override
+    public boolean getEnableVoiceActivityEvents() {
+      return enableVoiceActivityEvents_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, responses with voice activity speech events will be
+     * returned as they are detected.
+     * Note: This setting is relevant only for streaming methods.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableVoiceActivityEvents to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableVoiceActivityEvents(boolean value) {
+
+      enableVoiceActivityEvents_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If `true`, responses with voice activity speech events will be
+     * returned as they are detected.
+     * Note: This setting is relevant only for streaming methods.
+     * </pre>
+     *
+     * <code>bool enable_voice_activity_events = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableVoiceActivityEvents() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      enableVoiceActivityEvents_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean disableNoSpeechRecognizedEvent_;
 
     /**
@@ -3045,7 +3153,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setDisableNoSpeechRecognizedEvent(boolean value) {
 
       disableNoSpeechRecognizedEvent_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3067,7 +3175,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisableNoSpeechRecognizedEvent() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       disableNoSpeechRecognizedEvent_ = false;
       onChanged();
       return this;
@@ -3092,7 +3200,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the bargeInConfig field is set.
      */
     public boolean hasBargeInConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3134,7 +3242,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       } else {
         bargeInConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3155,7 +3263,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       } else {
         bargeInConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3171,7 +3279,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeBargeInConfig(com.google.cloud.dialogflow.v2beta1.BargeInConfig value) {
       if (bargeInConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && bargeInConfig_ != null
             && bargeInConfig_
                 != com.google.cloud.dialogflow.v2beta1.BargeInConfig.getDefaultInstance()) {
@@ -3183,7 +3291,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         bargeInConfigBuilder_.mergeFrom(value);
       }
       if (bargeInConfig_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3199,7 +3307,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.v2beta1.BargeInConfig barge_in_config = 15;</code>
      */
     public Builder clearBargeInConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       bargeInConfig_ = null;
       if (bargeInConfigBuilder_ != null) {
         bargeInConfigBuilder_.dispose();
@@ -3219,7 +3327,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.dialogflow.v2beta1.BargeInConfig barge_in_config = 15;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.BargeInConfig.Builder getBargeInConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetBargeInConfigFieldBuilder().getBuilder();
     }
@@ -3302,7 +3410,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setEnableAutomaticPunctuation(boolean value) {
 
       enableAutomaticPunctuation_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3319,7 +3427,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnableAutomaticPunctuation() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
@@ -3345,7 +3453,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the defaultNoSpeechTimeout field is set.
      */
     public boolean hasDefaultNoSpeechTimeout() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -3389,7 +3497,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       } else {
         defaultNoSpeechTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3410,7 +3518,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       } else {
         defaultNoSpeechTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3427,7 +3535,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDefaultNoSpeechTimeout(com.google.protobuf.Duration value) {
       if (defaultNoSpeechTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && defaultNoSpeechTimeout_ != null
             && defaultNoSpeechTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDefaultNoSpeechTimeoutBuilder().mergeFrom(value);
@@ -3438,7 +3546,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         defaultNoSpeechTimeoutBuilder_.mergeFrom(value);
       }
       if (defaultNoSpeechTimeout_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -3455,7 +3563,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
      */
     public Builder clearDefaultNoSpeechTimeout() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       defaultNoSpeechTimeout_ = null;
       if (defaultNoSpeechTimeoutBuilder_ != null) {
         defaultNoSpeechTimeoutBuilder_.dispose();
@@ -3476,7 +3584,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Duration default_no_speech_timeout = 18;</code>
      */
     public com.google.protobuf.Duration.Builder getDefaultNoSpeechTimeoutBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetDefaultNoSpeechTimeoutFieldBuilder().getBuilder();
     }
@@ -3535,7 +3643,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (!phraseSets_.isModifiable()) {
         phraseSets_ = new com.google.protobuf.LazyStringArrayList(phraseSets_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
 
     /**
@@ -3620,7 +3728,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseSetsIsMutable();
       phraseSets_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3643,7 +3751,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       ensurePhraseSetsIsMutable();
       phraseSets_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3663,7 +3771,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder addAllPhraseSets(java.lang.Iterable<java.lang.String> values) {
       ensurePhraseSetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, phraseSets_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3681,7 +3789,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPhraseSets() {
       phraseSets_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -3706,7 +3814,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensurePhraseSetsIsMutable();
       phraseSets_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3750,7 +3858,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder setOptOutConformerModelMigration(boolean value) {
 
       optOutConformerModelMigration_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3770,7 +3878,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearOptOutConformerModelMigration() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       optOutConformerModelMigration_ = false;
       onChanged();
       return this;

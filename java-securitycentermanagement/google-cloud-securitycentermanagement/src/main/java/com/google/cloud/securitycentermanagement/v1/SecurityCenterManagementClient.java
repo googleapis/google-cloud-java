@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -576,9 +578,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SecurityCenterManagementClient implements BackgroundResource {
-  private final SecurityCenterManagementSettings settings;
+  private final @Nullable SecurityCenterManagementSettings settings;
   private final SecurityCenterManagementStub stub;
 
   /** Constructs an instance of SecurityCenterManagementClient with default settings. */
@@ -620,7 +623,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SecurityCenterManagementSettings getSettings() {
+  public final @Nullable SecurityCenterManagementSettings getSettings() {
     return settings;
   }
 
@@ -667,7 +670,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
-      listEffectiveSecurityHealthAnalyticsCustomModules(FolderLocationName parent) {
+      listEffectiveSecurityHealthAnalyticsCustomModules(@Nullable FolderLocationName parent) {
     ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
         ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -714,7 +717,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
-      listEffectiveSecurityHealthAnalyticsCustomModules(LocationName parent) {
+      listEffectiveSecurityHealthAnalyticsCustomModules(@Nullable LocationName parent) {
     ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
         ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -761,7 +764,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveSecurityHealthAnalyticsCustomModulesPagedResponse
-      listEffectiveSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent) {
+      listEffectiveSecurityHealthAnalyticsCustomModules(@Nullable OrganizationLocationName parent) {
     ListEffectiveSecurityHealthAnalyticsCustomModulesRequest request =
         ListEffectiveSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -986,7 +989,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    */
   public final EffectiveSecurityHealthAnalyticsCustomModule
       getEffectiveSecurityHealthAnalyticsCustomModule(
-          EffectiveSecurityHealthAnalyticsCustomModuleName name) {
+          @Nullable EffectiveSecurityHealthAnalyticsCustomModuleName name) {
     GetEffectiveSecurityHealthAnalyticsCustomModuleRequest request =
         GetEffectiveSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1157,7 +1160,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
-      listSecurityHealthAnalyticsCustomModules(FolderLocationName parent) {
+      listSecurityHealthAnalyticsCustomModules(@Nullable FolderLocationName parent) {
     ListSecurityHealthAnalyticsCustomModulesRequest request =
         ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1204,7 +1207,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
-      listSecurityHealthAnalyticsCustomModules(LocationName parent) {
+      listSecurityHealthAnalyticsCustomModules(@Nullable LocationName parent) {
     ListSecurityHealthAnalyticsCustomModulesRequest request =
         ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1251,7 +1254,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityHealthAnalyticsCustomModulesPagedResponse
-      listSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent) {
+      listSecurityHealthAnalyticsCustomModules(@Nullable OrganizationLocationName parent) {
     ListSecurityHealthAnalyticsCustomModulesRequest request =
         ListSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1475,7 +1478,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
-      listDescendantSecurityHealthAnalyticsCustomModules(FolderLocationName parent) {
+      listDescendantSecurityHealthAnalyticsCustomModules(@Nullable FolderLocationName parent) {
     ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
         ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1520,7 +1523,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
-      listDescendantSecurityHealthAnalyticsCustomModules(LocationName parent) {
+      listDescendantSecurityHealthAnalyticsCustomModules(@Nullable LocationName parent) {
     ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
         ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1565,7 +1568,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantSecurityHealthAnalyticsCustomModulesPagedResponse
-      listDescendantSecurityHealthAnalyticsCustomModules(OrganizationLocationName parent) {
+      listDescendantSecurityHealthAnalyticsCustomModules(
+          @Nullable OrganizationLocationName parent) {
     ListDescendantSecurityHealthAnalyticsCustomModulesRequest request =
         ListDescendantSecurityHealthAnalyticsCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1775,7 +1779,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule getSecurityHealthAnalyticsCustomModule(
-      SecurityHealthAnalyticsCustomModuleName name) {
+      @Nullable SecurityHealthAnalyticsCustomModuleName name) {
     GetSecurityHealthAnalyticsCustomModuleRequest request =
         GetSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1932,7 +1936,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
-      FolderLocationName parent,
+      @Nullable FolderLocationName parent,
       SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule) {
     CreateSecurityHealthAnalyticsCustomModuleRequest request =
         CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
@@ -1981,7 +1985,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
-      LocationName parent,
+      @Nullable LocationName parent,
       SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule) {
     CreateSecurityHealthAnalyticsCustomModuleRequest request =
         CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
@@ -2030,7 +2034,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecurityHealthAnalyticsCustomModule createSecurityHealthAnalyticsCustomModule(
-      OrganizationLocationName parent,
+      @Nullable OrganizationLocationName parent,
       SecurityHealthAnalyticsCustomModule securityHealthAnalyticsCustomModule) {
     CreateSecurityHealthAnalyticsCustomModuleRequest request =
         CreateSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
@@ -2331,7 +2335,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteSecurityHealthAnalyticsCustomModule(
-      SecurityHealthAnalyticsCustomModuleName name) {
+      @Nullable SecurityHealthAnalyticsCustomModuleName name) {
     DeleteSecurityHealthAnalyticsCustomModuleRequest request =
         DeleteSecurityHealthAnalyticsCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2621,7 +2625,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
-      listEffectiveEventThreatDetectionCustomModules(FolderLocationName parent) {
+      listEffectiveEventThreatDetectionCustomModules(@Nullable FolderLocationName parent) {
     ListEffectiveEventThreatDetectionCustomModulesRequest request =
         ListEffectiveEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2666,7 +2670,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
-      listEffectiveEventThreatDetectionCustomModules(LocationName parent) {
+      listEffectiveEventThreatDetectionCustomModules(@Nullable LocationName parent) {
     ListEffectiveEventThreatDetectionCustomModulesRequest request =
         ListEffectiveEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2711,7 +2715,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEffectiveEventThreatDetectionCustomModulesPagedResponse
-      listEffectiveEventThreatDetectionCustomModules(OrganizationLocationName parent) {
+      listEffectiveEventThreatDetectionCustomModules(@Nullable OrganizationLocationName parent) {
     ListEffectiveEventThreatDetectionCustomModulesRequest request =
         ListEffectiveEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2937,7 +2941,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    */
   public final EffectiveEventThreatDetectionCustomModule
       getEffectiveEventThreatDetectionCustomModule(
-          EffectiveEventThreatDetectionCustomModuleName name) {
+          @Nullable EffectiveEventThreatDetectionCustomModuleName name) {
     GetEffectiveEventThreatDetectionCustomModuleRequest request =
         GetEffectiveEventThreatDetectionCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3132,7 +3136,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
-      listEventThreatDetectionCustomModules(FolderLocationName parent) {
+      listEventThreatDetectionCustomModules(@Nullable FolderLocationName parent) {
     ListEventThreatDetectionCustomModulesRequest request =
         ListEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3176,7 +3180,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
-      listEventThreatDetectionCustomModules(LocationName parent) {
+      listEventThreatDetectionCustomModules(@Nullable LocationName parent) {
     ListEventThreatDetectionCustomModulesRequest request =
         ListEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3220,7 +3224,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEventThreatDetectionCustomModulesPagedResponse
-      listEventThreatDetectionCustomModules(OrganizationLocationName parent) {
+      listEventThreatDetectionCustomModules(@Nullable OrganizationLocationName parent) {
     ListEventThreatDetectionCustomModulesRequest request =
         ListEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3432,7 +3436,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
-      listDescendantEventThreatDetectionCustomModules(FolderLocationName parent) {
+      listDescendantEventThreatDetectionCustomModules(@Nullable FolderLocationName parent) {
     ListDescendantEventThreatDetectionCustomModulesRequest request =
         ListDescendantEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3475,7 +3479,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
-      listDescendantEventThreatDetectionCustomModules(LocationName parent) {
+      listDescendantEventThreatDetectionCustomModules(@Nullable LocationName parent) {
     ListDescendantEventThreatDetectionCustomModulesRequest request =
         ListDescendantEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3518,7 +3522,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDescendantEventThreatDetectionCustomModulesPagedResponse
-      listDescendantEventThreatDetectionCustomModules(OrganizationLocationName parent) {
+      listDescendantEventThreatDetectionCustomModules(@Nullable OrganizationLocationName parent) {
     ListDescendantEventThreatDetectionCustomModulesRequest request =
         ListDescendantEventThreatDetectionCustomModulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3728,7 +3732,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule getEventThreatDetectionCustomModule(
-      EventThreatDetectionCustomModuleName name) {
+      @Nullable EventThreatDetectionCustomModuleName name) {
     GetEventThreatDetectionCustomModuleRequest request =
         GetEventThreatDetectionCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3886,7 +3890,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
-      FolderLocationName parent,
+      @Nullable FolderLocationName parent,
       EventThreatDetectionCustomModule eventThreatDetectionCustomModule) {
     CreateEventThreatDetectionCustomModuleRequest request =
         CreateEventThreatDetectionCustomModuleRequest.newBuilder()
@@ -3934,7 +3938,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
-      LocationName parent, EventThreatDetectionCustomModule eventThreatDetectionCustomModule) {
+      @Nullable LocationName parent,
+      EventThreatDetectionCustomModule eventThreatDetectionCustomModule) {
     CreateEventThreatDetectionCustomModuleRequest request =
         CreateEventThreatDetectionCustomModuleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3981,7 +3986,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EventThreatDetectionCustomModule createEventThreatDetectionCustomModule(
-      OrganizationLocationName parent,
+      @Nullable OrganizationLocationName parent,
       EventThreatDetectionCustomModule eventThreatDetectionCustomModule) {
     CreateEventThreatDetectionCustomModuleRequest request =
         CreateEventThreatDetectionCustomModuleRequest.newBuilder()
@@ -4265,7 +4270,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteEventThreatDetectionCustomModule(
-      EventThreatDetectionCustomModuleName name) {
+      @Nullable EventThreatDetectionCustomModuleName name) {
     DeleteEventThreatDetectionCustomModuleRequest request =
         DeleteEventThreatDetectionCustomModuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4497,7 +4502,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SecurityCenterService getSecurityCenterService(SecurityCenterServiceName name) {
+  public final SecurityCenterService getSecurityCenterService(
+      @Nullable SecurityCenterServiceName name) {
     GetSecurityCenterServiceRequest request =
         GetSecurityCenterServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4654,7 +4660,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
-      FolderLocationName parent) {
+      @Nullable FolderLocationName parent) {
     ListSecurityCenterServicesRequest request =
         ListSecurityCenterServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4695,7 +4701,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListSecurityCenterServicesRequest request =
         ListSecurityCenterServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4736,7 +4742,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSecurityCenterServicesPagedResponse listSecurityCenterServices(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListSecurityCenterServicesRequest request =
         ListSecurityCenterServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5238,12 +5244,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEffectiveSecurityHealthAnalyticsCustomModulesPage> {
 
     private ListEffectiveSecurityHealthAnalyticsCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
                 ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
                 EffectiveSecurityHealthAnalyticsCustomModule>
             context,
-        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5253,18 +5260,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveSecurityHealthAnalyticsCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
                 ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
                 EffectiveSecurityHealthAnalyticsCustomModule>
             context,
-        ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListEffectiveSecurityHealthAnalyticsCustomModulesResponse response) {
       return new ListEffectiveSecurityHealthAnalyticsCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveSecurityHealthAnalyticsCustomModulesRequest,
                 ListEffectiveSecurityHealthAnalyticsCustomModulesResponse,
                 EffectiveSecurityHealthAnalyticsCustomModule>
@@ -5283,7 +5292,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
 
     private ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
-        List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages,
+        int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5294,7 +5304,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection createCollection(
-        List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveSecurityHealthAnalyticsCustomModulesPage> pages,
+        int collectionSize) {
       return new ListEffectiveSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
           pages, collectionSize);
     }
@@ -5340,12 +5351,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListSecurityHealthAnalyticsCustomModulesPage> {
 
     private ListSecurityHealthAnalyticsCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityHealthAnalyticsCustomModulesRequest,
                 ListSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
             context,
-        ListSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListSecurityHealthAnalyticsCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5355,18 +5367,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListSecurityHealthAnalyticsCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityHealthAnalyticsCustomModulesRequest,
                 ListSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
             context,
-        ListSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListSecurityHealthAnalyticsCustomModulesResponse response) {
       return new ListSecurityHealthAnalyticsCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityHealthAnalyticsCustomModulesRequest,
                 ListSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
@@ -5385,7 +5399,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
 
     private ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
-        List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5396,7 +5410,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection createCollection(
-        List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
       return new ListSecurityHealthAnalyticsCustomModulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5443,12 +5457,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListDescendantSecurityHealthAnalyticsCustomModulesPage> {
 
     private ListDescendantSecurityHealthAnalyticsCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
                 ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
             context,
-        ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5458,18 +5473,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListDescendantSecurityHealthAnalyticsCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
                 ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
             context,
-        ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
+        @Nullable ListDescendantSecurityHealthAnalyticsCustomModulesResponse response) {
       return new ListDescendantSecurityHealthAnalyticsCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDescendantSecurityHealthAnalyticsCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantSecurityHealthAnalyticsCustomModulesRequest,
                 ListDescendantSecurityHealthAnalyticsCustomModulesResponse,
                 SecurityHealthAnalyticsCustomModule>
@@ -5488,7 +5505,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection> {
 
     private ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
-        List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages,
+        int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5500,7 +5518,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
     @Override
     protected ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection
         createCollection(
-            List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages,
+            @Nullable List<ListDescendantSecurityHealthAnalyticsCustomModulesPage> pages,
             int collectionSize) {
       return new ListDescendantSecurityHealthAnalyticsCustomModulesFixedSizeCollection(
           pages, collectionSize);
@@ -5549,12 +5567,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEffectiveEventThreatDetectionCustomModulesPage> {
 
     private ListEffectiveEventThreatDetectionCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveEventThreatDetectionCustomModulesRequest,
                 ListEffectiveEventThreatDetectionCustomModulesResponse,
                 EffectiveEventThreatDetectionCustomModule>
             context,
-        ListEffectiveEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListEffectiveEventThreatDetectionCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5564,18 +5583,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveEventThreatDetectionCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveEventThreatDetectionCustomModulesRequest,
                 ListEffectiveEventThreatDetectionCustomModulesResponse,
                 EffectiveEventThreatDetectionCustomModule>
             context,
-        ListEffectiveEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListEffectiveEventThreatDetectionCustomModulesResponse response) {
       return new ListEffectiveEventThreatDetectionCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEffectiveEventThreatDetectionCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEffectiveEventThreatDetectionCustomModulesRequest,
                 ListEffectiveEventThreatDetectionCustomModulesResponse,
                 EffectiveEventThreatDetectionCustomModule>
@@ -5594,7 +5615,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEffectiveEventThreatDetectionCustomModulesFixedSizeCollection> {
 
     private ListEffectiveEventThreatDetectionCustomModulesFixedSizeCollection(
-        List<ListEffectiveEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveEventThreatDetectionCustomModulesPage> pages,
+        int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5605,7 +5627,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEffectiveEventThreatDetectionCustomModulesFixedSizeCollection createCollection(
-        List<ListEffectiveEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEffectiveEventThreatDetectionCustomModulesPage> pages,
+        int collectionSize) {
       return new ListEffectiveEventThreatDetectionCustomModulesFixedSizeCollection(
           pages, collectionSize);
     }
@@ -5649,12 +5672,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEventThreatDetectionCustomModulesPage> {
 
     private ListEventThreatDetectionCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEventThreatDetectionCustomModulesRequest,
                 ListEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
             context,
-        ListEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListEventThreatDetectionCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5664,18 +5688,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEventThreatDetectionCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEventThreatDetectionCustomModulesRequest,
                 ListEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
             context,
-        ListEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListEventThreatDetectionCustomModulesResponse response) {
       return new ListEventThreatDetectionCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventThreatDetectionCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEventThreatDetectionCustomModulesRequest,
                 ListEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
@@ -5694,7 +5720,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListEventThreatDetectionCustomModulesFixedSizeCollection> {
 
     private ListEventThreatDetectionCustomModulesFixedSizeCollection(
-        List<ListEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5705,7 +5731,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListEventThreatDetectionCustomModulesFixedSizeCollection createCollection(
-        List<ListEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
       return new ListEventThreatDetectionCustomModulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5752,12 +5778,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListDescendantEventThreatDetectionCustomModulesPage> {
 
     private ListDescendantEventThreatDetectionCustomModulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantEventThreatDetectionCustomModulesRequest,
                 ListDescendantEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
             context,
-        ListDescendantEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListDescendantEventThreatDetectionCustomModulesResponse response) {
       super(context, response);
     }
 
@@ -5767,18 +5794,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListDescendantEventThreatDetectionCustomModulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantEventThreatDetectionCustomModulesRequest,
                 ListDescendantEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
             context,
-        ListDescendantEventThreatDetectionCustomModulesResponse response) {
+        @Nullable ListDescendantEventThreatDetectionCustomModulesResponse response) {
       return new ListDescendantEventThreatDetectionCustomModulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDescendantEventThreatDetectionCustomModulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDescendantEventThreatDetectionCustomModulesRequest,
                 ListDescendantEventThreatDetectionCustomModulesResponse,
                 EventThreatDetectionCustomModule>
@@ -5797,7 +5826,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListDescendantEventThreatDetectionCustomModulesFixedSizeCollection> {
 
     private ListDescendantEventThreatDetectionCustomModulesFixedSizeCollection(
-        List<ListDescendantEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListDescendantEventThreatDetectionCustomModulesPage> pages,
+        int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5808,7 +5838,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListDescendantEventThreatDetectionCustomModulesFixedSizeCollection createCollection(
-        List<ListDescendantEventThreatDetectionCustomModulesPage> pages, int collectionSize) {
+        @Nullable List<ListDescendantEventThreatDetectionCustomModulesPage> pages,
+        int collectionSize) {
       return new ListDescendantEventThreatDetectionCustomModulesFixedSizeCollection(
           pages, collectionSize);
     }
@@ -5850,12 +5881,13 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListSecurityCenterServicesPage> {
 
     private ListSecurityCenterServicesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityCenterServicesRequest,
                 ListSecurityCenterServicesResponse,
                 SecurityCenterService>
             context,
-        ListSecurityCenterServicesResponse response) {
+        @Nullable ListSecurityCenterServicesResponse response) {
       super(context, response);
     }
 
@@ -5865,18 +5897,20 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListSecurityCenterServicesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityCenterServicesRequest,
                 ListSecurityCenterServicesResponse,
                 SecurityCenterService>
             context,
-        ListSecurityCenterServicesResponse response) {
+        @Nullable ListSecurityCenterServicesResponse response) {
       return new ListSecurityCenterServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSecurityCenterServicesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSecurityCenterServicesRequest,
                 ListSecurityCenterServicesResponse,
                 SecurityCenterService>
@@ -5895,7 +5929,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListSecurityCenterServicesFixedSizeCollection> {
 
     private ListSecurityCenterServicesFixedSizeCollection(
-        List<ListSecurityCenterServicesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityCenterServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5905,7 +5939,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListSecurityCenterServicesFixedSizeCollection createCollection(
-        List<ListSecurityCenterServicesPage> pages, int collectionSize) {
+        @Nullable List<ListSecurityCenterServicesPage> pages, int collectionSize) {
       return new ListSecurityCenterServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5939,8 +5973,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5950,14 +5984,14 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5971,7 +6005,8 @@ public class SecurityCenterManagementClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5981,7 +6016,7 @@ public class SecurityCenterManagementClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

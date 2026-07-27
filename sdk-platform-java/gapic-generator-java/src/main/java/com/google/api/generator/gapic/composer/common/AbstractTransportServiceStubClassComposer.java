@@ -99,7 +99,8 @@ import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 public abstract class AbstractTransportServiceStubClassComposer implements ClassComposer {
   private static final List<String> AIP_STANDARDS_METHODS =
@@ -152,7 +153,8 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             TimeUnit.class,
             TypeRegistry.class,
             UnaryCallable.class,
-            UnsupportedOperationException.class);
+            UnsupportedOperationException.class,
+            NullMarked.class);
     return new TypeStore(concreteClazzes);
   }
 
@@ -548,6 +550,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
 
   protected List<AnnotationNode> createClassAnnotations(Service service) {
     List<AnnotationNode> annotations = new ArrayList<>();
+    annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(FIXED_TYPESTORE.get("BetaApi")));
     }
@@ -909,8 +912,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     return ImmutableList.of();
   }
 
-  @Nullable
-  protected VariableExpr declareLongRunningClient() {
+  protected @Nullable VariableExpr declareLongRunningClient() {
     return null;
   }
 
@@ -1534,8 +1536,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
    * The Resource Name Extractor should only be generated if the request contains a field that has
    * resource reference (see {@link Field#hasResourceReference()})
    */
-  @Nullable
-  protected LambdaExpr createResourceNameExtractorClassInstance(
+  protected @Nullable LambdaExpr createResourceNameExtractorClassInstance(
       Service service,
       Method method,
       ImmutableMap<String, Message> messageTypes,
@@ -1676,7 +1677,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   }
 
   // Find the first field that has resource reference in a request message
-  private static Field getDestinationResourceIdField(
+  private static @Nullable Field getDestinationResourceIdField(
       Method method, ImmutableMap<String, Message> messageTypes) {
     if (method.inputType().reference() == null
         || method.inputType().reference().fullName() == null) {

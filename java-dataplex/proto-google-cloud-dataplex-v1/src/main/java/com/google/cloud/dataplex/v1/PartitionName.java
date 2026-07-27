@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PartitionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_LAKE_ZONE_ENTITY_PARTITION =
@@ -116,7 +119,7 @@ public class PartitionName implements ResourceName {
         .toString();
   }
 
-  public static PartitionName parse(String formattedString) {
+  public static @Nullable PartitionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -140,7 +143,7 @@ public class PartitionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<PartitionName> values) {
+  public static List<String> toStringList(List<@Nullable PartitionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (PartitionName value : values) {
       if (value == null) {
@@ -209,7 +212,7 @@ public class PartitionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

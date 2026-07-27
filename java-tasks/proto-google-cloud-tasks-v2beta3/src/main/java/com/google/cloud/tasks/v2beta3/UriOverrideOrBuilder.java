@@ -135,9 +135,10 @@ public interface UriOverrideOrBuilder
    * Port override.
    *
    * When specified, replaces the port part of the task URI. For instance,
-   * for a URI http://www.google.com/foo and port=123, the overridden URI
-   * becomes http://www.google.com:123/foo. Note that the port value must be a
-   * positive integer. Setting the port to 0 (Zero) clears the URI port.
+   * for a URI "https://www.example.com/example" and port=123, the overridden
+   * URI becomes "https://www.example.com:123/example". Note that the port value
+   * must be a positive integer. Setting the port to 0 (Zero) clears the URI
+   * port.
    * </pre>
    *
    * <code>optional int64 port = 3;</code>
@@ -153,9 +154,10 @@ public interface UriOverrideOrBuilder
    * Port override.
    *
    * When specified, replaces the port part of the task URI. For instance,
-   * for a URI http://www.google.com/foo and port=123, the overridden URI
-   * becomes http://www.google.com:123/foo. Note that the port value must be a
-   * positive integer. Setting the port to 0 (Zero) clears the URI port.
+   * for a URI "https://www.example.com/example" and port=123, the overridden
+   * URI becomes "https://www.example.com:123/example". Note that the port value
+   * must be a positive integer. Setting the port to 0 (Zero) clears the URI
+   * port.
    * </pre>
    *
    * <code>optional int64 port = 3;</code>

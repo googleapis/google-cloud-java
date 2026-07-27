@@ -401,7 +401,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The network where the PSC endpoints are created, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -428,7 +428,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The network where the PSC endpoints are created, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -1713,7 +1713,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1739,7 +1739,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1765,7 +1765,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1790,7 +1790,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>
@@ -1811,7 +1811,7 @@ public final class PscAutoConnection extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The network where the PSC endpoints are created, in the form of
-     * projects/{project_id}/global/networks/{network_id}.
+     * projects/{project_id}/global/networks/{network_name}.
      * </pre>
      *
      * <code>

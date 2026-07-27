@@ -46,6 +46,7 @@ import com.google.maps.mapmanagement.v2beta.UpdateMapContextConfigRequest;
 import com.google.maps.mapmanagement.v2beta.UpdateStyleConfigRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -53,6 +54,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class MapManagementStub implements BackgroundResource {

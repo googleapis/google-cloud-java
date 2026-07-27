@@ -683,11 +683,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Snapshot.StorageBytesStatus}
@@ -3413,11 +3415,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -3434,11 +3438,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -3463,11 +3469,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. [Output Only] An indicator whether storageBytes is in a
+   * Output only. [Deprecated] Instead, check the storageBytes field. After
+   * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+   * [Output Only] An indicator whether storageBytes is in a
    * stable state or it is being adjusted as a result of shared storage
-   * reallocation. This status can either be UPDATING, meaning
-   * the size of the snapshot is being updated, or UP_TO_DATE,
-   * meaning the size of the snapshot is up-to-date.
+   * reallocation. This status can either be unset, meaning the snapshot is
+   * being created, or UP_TO_DATE, meaning the size of the snapshot
+   * is up-to-date.
    * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
@@ -10895,11 +10903,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -10915,11 +10925,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -10943,11 +10955,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -10971,11 +10985,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -10998,11 +11014,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
@@ -11021,11 +11039,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. [Output Only] An indicator whether storageBytes is in a
+     * Output only. [Deprecated] Instead, check the storageBytes field. After
+     * snapshot creation, the storageBytesStatus field is alwaysUP_TO_DATE.
+     * [Output Only] An indicator whether storageBytes is in a
      * stable state or it is being adjusted as a result of shared storage
-     * reallocation. This status can either be UPDATING, meaning
-     * the size of the snapshot is being updated, or UP_TO_DATE,
-     * meaning the size of the snapshot is up-to-date.
+     * reallocation. This status can either be unset, meaning the snapshot is
+     * being created, or UP_TO_DATE, meaning the size of the snapshot
+     * is up-to-date.
      * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *

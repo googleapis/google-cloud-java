@@ -161,6 +161,16 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessage
      * <code>CSV = 7;</code>
      */
     CSV(7),
+    /**
+     *
+     *
+     * <pre>
+     * IMAGE
+     * </pre>
+     *
+     * <code>IMAGE = 8;</code>
+     */
+    IMAGE(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -262,6 +272,17 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessage
      */
     public static final int CSV_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * IMAGE
+     * </pre>
+     *
+     * <code>IMAGE = 8;</code>
+     */
+    public static final int IMAGE_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -302,6 +323,8 @@ public final class ByteDataItem extends com.google.protobuf.GeneratedMessage
           return TXT;
         case 7:
           return CSV;
+        case 8:
+          return IMAGE;
         default:
           return null;
       }

@@ -350,4 +350,77 @@ public interface RepositoryOrBuilder
    */
   com.google.cloud.securesourcemanager.v1.Repository.InitialConfigOrBuilder
       getInitialConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repository level service account (BYOSA).
+   * </pre>
+   *
+   * <code>
+   * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  java.lang.String getServiceAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repository level service account (BYOSA).
+   * </pre>
+   *
+   * <code>
+   * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scanConfig field is set.
+   */
+  boolean hasScanConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scanConfig.
+   */
+  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig getScanConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder getScanConfigOrBuilder();
 }

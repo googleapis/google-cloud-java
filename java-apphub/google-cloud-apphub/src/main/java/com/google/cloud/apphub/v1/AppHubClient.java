@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -731,9 +733,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AppHubClient implements BackgroundResource {
-  private final AppHubSettings settings;
+  private final @Nullable AppHubSettings settings;
   private final AppHubStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -779,7 +782,7 @@ public class AppHubClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AppHubSettings getSettings() {
+  public final @Nullable AppHubSettings getSettings() {
     return settings;
   }
 
@@ -830,7 +833,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupServiceProjectAttachmentResponse lookupServiceProjectAttachment(
-      LocationName name) {
+      @Nullable LocationName name) {
     LookupServiceProjectAttachmentRequest request =
         LookupServiceProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -957,7 +960,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceProjectAttachmentsPagedResponse listServiceProjectAttachments(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListServiceProjectAttachmentsRequest request =
         ListServiceProjectAttachmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1148,7 +1151,7 @@ public class AppHubClient implements BackgroundResource {
    */
   public final OperationFuture<ServiceProjectAttachment, OperationMetadata>
       createServiceProjectAttachmentAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           ServiceProjectAttachment serviceProjectAttachment,
           String serviceProjectAttachmentId) {
     CreateServiceProjectAttachmentRequest request =
@@ -1332,7 +1335,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceProjectAttachment getServiceProjectAttachment(
-      ServiceProjectAttachmentName name) {
+      @Nullable ServiceProjectAttachmentName name) {
     GetServiceProjectAttachmentRequest request =
         GetServiceProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1461,7 +1464,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteServiceProjectAttachmentAsync(
-      ServiceProjectAttachmentName name) {
+      @Nullable ServiceProjectAttachmentName name) {
     DeleteServiceProjectAttachmentRequest request =
         DeleteServiceProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1625,7 +1628,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DetachServiceProjectAttachmentResponse detachServiceProjectAttachment(
-      LocationName name) {
+      @Nullable LocationName name) {
     DetachServiceProjectAttachmentRequest request =
         DetachServiceProjectAttachmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1749,7 +1752,8 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDiscoveredServicesPagedResponse listDiscoveredServices(LocationName parent) {
+  public final ListDiscoveredServicesPagedResponse listDiscoveredServices(
+      @Nullable LocationName parent) {
     ListDiscoveredServicesRequest request =
         ListDiscoveredServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1922,7 +1926,7 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/discoveredServices/{discoveredService}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscoveredService getDiscoveredService(DiscoveredServiceName name) {
+  public final DiscoveredService getDiscoveredService(@Nullable DiscoveredServiceName name) {
     GetDiscoveredServiceRequest request =
         GetDiscoveredServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2046,7 +2050,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredServiceResponse lookupDiscoveredService(
-      LocationName parent, String uri) {
+      @Nullable LocationName parent, String uri) {
     LookupDiscoveredServiceRequest request =
         LookupDiscoveredServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2170,7 +2174,7 @@ public class AppHubClient implements BackgroundResource {
    *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(ApplicationName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable ApplicationName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2344,7 +2348,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, OperationMetadata> createServiceAsync(
-      ApplicationName parent, Service service, String serviceId) {
+      @Nullable ApplicationName parent, Service service, String serviceId) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2509,7 +2513,7 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -2751,7 +2755,8 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/applications/{application}/services/{service}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(ServiceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteServiceAsync(
+      @Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteServiceAsync(request);
@@ -2904,7 +2909,8 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDiscoveredWorkloadsPagedResponse listDiscoveredWorkloads(LocationName parent) {
+  public final ListDiscoveredWorkloadsPagedResponse listDiscoveredWorkloads(
+      @Nullable LocationName parent) {
     ListDiscoveredWorkloadsRequest request =
         ListDiscoveredWorkloadsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3078,7 +3084,7 @@ public class AppHubClient implements BackgroundResource {
    *     format: `projects/{project}/locations/{location}/discoveredWorkloads/{discoveredWorkload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscoveredWorkload getDiscoveredWorkload(DiscoveredWorkloadName name) {
+  public final DiscoveredWorkload getDiscoveredWorkload(@Nullable DiscoveredWorkloadName name) {
     GetDiscoveredWorkloadRequest request =
         GetDiscoveredWorkloadRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3203,7 +3209,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final LookupDiscoveredWorkloadResponse lookupDiscoveredWorkload(
-      LocationName parent, String uri) {
+      @Nullable LocationName parent, String uri) {
     LookupDiscoveredWorkloadRequest request =
         LookupDiscoveredWorkloadRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3329,7 +3335,7 @@ public class AppHubClient implements BackgroundResource {
    *     Expected format: `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkloadsPagedResponse listWorkloads(ApplicationName parent) {
+  public final ListWorkloadsPagedResponse listWorkloads(@Nullable ApplicationName parent) {
     ListWorkloadsRequest request =
         ListWorkloadsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3503,7 +3509,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Workload, OperationMetadata> createWorkloadAsync(
-      ApplicationName parent, Workload workload, String workloadId) {
+      @Nullable ApplicationName parent, Workload workload, String workloadId) {
     CreateWorkloadRequest request =
         CreateWorkloadRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3668,7 +3674,7 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workload getWorkload(WorkloadName name) {
+  public final Workload getWorkload(@Nullable WorkloadName name) {
     GetWorkloadRequest request =
         GetWorkloadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkload(request);
@@ -3910,7 +3916,8 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/applications/{application}/workloads/{workload}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteWorkloadAsync(WorkloadName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteWorkloadAsync(
+      @Nullable WorkloadName name) {
     DeleteWorkloadRequest request =
         DeleteWorkloadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteWorkloadAsync(request);
@@ -4063,7 +4070,7 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApplicationsPagedResponse listApplications(LocationName parent) {
+  public final ListApplicationsPagedResponse listApplications(@Nullable LocationName parent) {
     ListApplicationsRequest request =
         ListApplicationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4241,7 +4248,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Application, OperationMetadata> createApplicationAsync(
-      LocationName parent, Application application, String applicationId) {
+      @Nullable LocationName parent, Application application, String applicationId) {
     CreateApplicationRequest request =
         CreateApplicationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4407,7 +4414,7 @@ public class AppHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/applications/{application}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Application getApplication(ApplicationName name) {
+  public final Application getApplication(@Nullable ApplicationName name) {
     GetApplicationRequest request =
         GetApplicationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApplication(request);
@@ -4647,7 +4654,7 @@ public class AppHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteApplicationAsync(
-      ApplicationName name) {
+      @Nullable ApplicationName name) {
     DeleteApplicationRequest request =
         DeleteApplicationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5188,12 +5195,13 @@ public class AppHubClient implements BackgroundResource {
           ListServiceProjectAttachmentsPage> {
 
     private ListServiceProjectAttachmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceProjectAttachmentsRequest,
                 ListServiceProjectAttachmentsResponse,
                 ServiceProjectAttachment>
             context,
-        ListServiceProjectAttachmentsResponse response) {
+        @Nullable ListServiceProjectAttachmentsResponse response) {
       super(context, response);
     }
 
@@ -5203,18 +5211,20 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListServiceProjectAttachmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceProjectAttachmentsRequest,
                 ListServiceProjectAttachmentsResponse,
                 ServiceProjectAttachment>
             context,
-        ListServiceProjectAttachmentsResponse response) {
+        @Nullable ListServiceProjectAttachmentsResponse response) {
       return new ListServiceProjectAttachmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceProjectAttachmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceProjectAttachmentsRequest,
                 ListServiceProjectAttachmentsResponse,
                 ServiceProjectAttachment>
@@ -5233,7 +5243,7 @@ public class AppHubClient implements BackgroundResource {
           ListServiceProjectAttachmentsFixedSizeCollection> {
 
     private ListServiceProjectAttachmentsFixedSizeCollection(
-        List<ListServiceProjectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceProjectAttachmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5243,7 +5253,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListServiceProjectAttachmentsFixedSizeCollection createCollection(
-        List<ListServiceProjectAttachmentsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceProjectAttachmentsPage> pages, int collectionSize) {
       return new ListServiceProjectAttachmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5282,10 +5292,11 @@ public class AppHubClient implements BackgroundResource {
           ListDiscoveredServicesPage> {
 
     private ListDiscoveredServicesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredServicesRequest, ListDiscoveredServicesResponse, DiscoveredService>
             context,
-        ListDiscoveredServicesResponse response) {
+        @Nullable ListDiscoveredServicesResponse response) {
       super(context, response);
     }
 
@@ -5295,16 +5306,18 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredServicesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredServicesRequest, ListDiscoveredServicesResponse, DiscoveredService>
             context,
-        ListDiscoveredServicesResponse response) {
+        @Nullable ListDiscoveredServicesResponse response) {
       return new ListDiscoveredServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiscoveredServicesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredServicesRequest, ListDiscoveredServicesResponse, DiscoveredService>
             context,
         ApiFuture<ListDiscoveredServicesResponse> futureResponse) {
@@ -5321,7 +5334,7 @@ public class AppHubClient implements BackgroundResource {
           ListDiscoveredServicesFixedSizeCollection> {
 
     private ListDiscoveredServicesFixedSizeCollection(
-        List<ListDiscoveredServicesPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5331,7 +5344,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredServicesFixedSizeCollection createCollection(
-        List<ListDiscoveredServicesPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredServicesPage> pages, int collectionSize) {
       return new ListDiscoveredServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5364,8 +5377,8 @@ public class AppHubClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -5375,14 +5388,14 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5396,7 +5409,8 @@ public class AppHubClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5406,7 +5420,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5445,10 +5459,11 @@ public class AppHubClient implements BackgroundResource {
           ListDiscoveredWorkloadsPage> {
 
     private ListDiscoveredWorkloadsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredWorkloadsRequest, ListDiscoveredWorkloadsResponse, DiscoveredWorkload>
             context,
-        ListDiscoveredWorkloadsResponse response) {
+        @Nullable ListDiscoveredWorkloadsResponse response) {
       super(context, response);
     }
 
@@ -5458,16 +5473,18 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredWorkloadsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredWorkloadsRequest, ListDiscoveredWorkloadsResponse, DiscoveredWorkload>
             context,
-        ListDiscoveredWorkloadsResponse response) {
+        @Nullable ListDiscoveredWorkloadsResponse response) {
       return new ListDiscoveredWorkloadsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDiscoveredWorkloadsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDiscoveredWorkloadsRequest, ListDiscoveredWorkloadsResponse, DiscoveredWorkload>
             context,
         ApiFuture<ListDiscoveredWorkloadsResponse> futureResponse) {
@@ -5484,7 +5501,7 @@ public class AppHubClient implements BackgroundResource {
           ListDiscoveredWorkloadsFixedSizeCollection> {
 
     private ListDiscoveredWorkloadsFixedSizeCollection(
-        List<ListDiscoveredWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredWorkloadsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5494,7 +5511,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListDiscoveredWorkloadsFixedSizeCollection createCollection(
-        List<ListDiscoveredWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListDiscoveredWorkloadsPage> pages, int collectionSize) {
       return new ListDiscoveredWorkloadsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5528,8 +5545,8 @@ public class AppHubClient implements BackgroundResource {
           ListWorkloadsRequest, ListWorkloadsResponse, Workload, ListWorkloadsPage> {
 
     private ListWorkloadsPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       super(context, response);
     }
 
@@ -5539,14 +5556,14 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsPage createPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       return new ListWorkloadsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkloadsPage> createPageAsync(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
         ApiFuture<ListWorkloadsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5560,7 +5577,8 @@ public class AppHubClient implements BackgroundResource {
           ListWorkloadsPage,
           ListWorkloadsFixedSizeCollection> {
 
-    private ListWorkloadsFixedSizeCollection(List<ListWorkloadsPage> pages, int collectionSize) {
+    private ListWorkloadsFixedSizeCollection(
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5570,7 +5588,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsFixedSizeCollection createCollection(
-        List<ListWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5604,8 +5622,9 @@ public class AppHubClient implements BackgroundResource {
           ListApplicationsRequest, ListApplicationsResponse, Application, ListApplicationsPage> {
 
     private ListApplicationsPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       super(context, response);
     }
 
@@ -5615,14 +5634,16 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsPage createPage(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
-        ListApplicationsResponse response) {
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
+        @Nullable ListApplicationsResponse response) {
       return new ListApplicationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApplicationsPage> createPageAsync(
-        PageContext<ListApplicationsRequest, ListApplicationsResponse, Application> context,
+        @Nullable PageContext<ListApplicationsRequest, ListApplicationsResponse, Application>
+            context,
         ApiFuture<ListApplicationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5637,7 +5658,7 @@ public class AppHubClient implements BackgroundResource {
           ListApplicationsFixedSizeCollection> {
 
     private ListApplicationsFixedSizeCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5647,7 +5668,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListApplicationsFixedSizeCollection createCollection(
-        List<ListApplicationsPage> pages, int collectionSize) {
+        @Nullable List<ListApplicationsPage> pages, int collectionSize) {
       return new ListApplicationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5681,8 +5702,8 @@ public class AppHubClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5692,14 +5713,14 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5713,7 +5734,8 @@ public class AppHubClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5723,7 +5745,7 @@ public class AppHubClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

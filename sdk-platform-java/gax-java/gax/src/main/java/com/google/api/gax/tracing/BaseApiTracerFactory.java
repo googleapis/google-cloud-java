@@ -30,12 +30,14 @@
 package com.google.api.gax.tracing;
 
 import com.google.api.core.InternalApi;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Base factory that will build {@link ApiTracer}s that do nothing.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public class BaseApiTracerFactory implements ApiTracerFactory {
   private static final BaseApiTracerFactory INSTANCE = new BaseApiTracerFactory();

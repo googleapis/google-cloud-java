@@ -500,6 +500,49 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the remoteAgentTool field is set.
+   */
+  boolean hasRemoteAgentTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The remoteAgentTool.
+   */
+  com.google.cloud.ces.v1.RemoteAgentTool getRemoteAgentTool();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The remote agent tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.RemoteAgentTool remote_agent_tool = 25 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1.RemoteAgentToolOrBuilder getRemoteAgentToolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The resource name of the tool. Format:
    *
    * * `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
@@ -597,6 +640,49 @@ public interface ToolOrBuilder
    * @return The executionType.
    */
   com.google.cloud.ces.v1.ExecutionType getExecutionType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  boolean hasTimeout();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeout.
+   */
+  com.google.protobuf.Duration getTimeout();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the tool execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` tools and 60 seconds for
+   * `ASYNCHRONOUS` tools.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
 
   /**
    *

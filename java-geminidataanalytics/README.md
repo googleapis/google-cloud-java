@@ -14,7 +14,6 @@ Java idiomatic client for [Data Analytics API with Gemini][product-docs].
 
 ## Quickstart
 
-
 If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 ```xml
@@ -45,20 +44,28 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-geminidataanalytics</artifactId>
-  <version>0.21.0</version>
+  <version>0.22.0</version>
 </dependency>
+```
+
+If you are using Gradle 5.x or later, add this to your dependencies:
+
+```Groovy
+implementation platform('com.google.cloud:libraries-bom:26.83.0')
+
+implementation 'com.google.cloud:google-cloud-geminidataanalytics'
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-geminidataanalytics:0.21.0'
+implementation 'com.google.cloud:google-cloud-geminidataanalytics:0.22.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-geminidataanalytics" % "0.21.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-geminidataanalytics" % "0.22.0"
 ```
 
 ## Authentication
@@ -150,8 +157,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -181,7 +186,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-geminidataanalytics.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-geminidataanalytics/0.21.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-geminidataanalytics/0.22.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

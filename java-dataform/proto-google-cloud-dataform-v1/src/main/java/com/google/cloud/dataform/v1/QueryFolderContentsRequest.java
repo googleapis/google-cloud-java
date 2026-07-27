@@ -82,7 +82,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Name of the folder whose contents to list.
+   * Required. Resource name of the Folder to list contents for.
    * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
    * </pre>
    *
@@ -109,7 +109,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Name of the folder whose contents to list.
+   * Required. Resource name of the Folder to list contents for.
    * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
    * </pre>
    *
@@ -230,8 +230,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    * order. Supported keywords: display_name (default), create_time,
    * last_modified_time.
    * Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -260,8 +261,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    * order. Supported keywords: display_name (default), create_time,
    * last_modified_time.
    * Examples:
-   * - `orderBy="display_name"`
-   * - `orderBy="display_name desc"`
+   *
+   * * `orderBy="display_name"`
+   * * `orderBy="display_name desc"`
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -294,7 +296,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -322,7 +325,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
    * only supported on the `display_name` field.
    *
    * Example:
-   * - `filter="display_name="MyFolder""`
+   *
+   * * `filter="display_name="MyFolder""`
    * </pre>
    *
    * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -753,7 +757,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Name of the folder whose contents to list.
+     * Required. Resource name of the Folder to list contents for.
      * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
      * </pre>
      *
@@ -779,7 +783,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Name of the folder whose contents to list.
+     * Required. Resource name of the Folder to list contents for.
      * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
      * </pre>
      *
@@ -805,7 +809,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Name of the folder whose contents to list.
+     * Required. Resource name of the Folder to list contents for.
      * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
      * </pre>
      *
@@ -830,7 +834,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Name of the folder whose contents to list.
+     * Required. Resource name of the Folder to list contents for.
      * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
      * </pre>
      *
@@ -851,7 +855,7 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Name of the folder whose contents to list.
+     * Required. Resource name of the Folder to list contents for.
      * Format: projects/&#42;&#47;locations/&#42;&#47;folders/&#42;
      * </pre>
      *
@@ -1082,8 +1086,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * order. Supported keywords: display_name (default), create_time,
      * last_modified_time.
      * Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1111,8 +1116,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * order. Supported keywords: display_name (default), create_time,
      * last_modified_time.
      * Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1140,8 +1146,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * order. Supported keywords: display_name (default), create_time,
      * last_modified_time.
      * Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1168,8 +1175,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * order. Supported keywords: display_name (default), create_time,
      * last_modified_time.
      * Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1192,8 +1200,9 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * order. Supported keywords: display_name (default), create_time,
      * last_modified_time.
      * Examples:
-     * - `orderBy="display_name"`
-     * - `orderBy="display_name desc"`
+     *
+     * * `orderBy="display_name"`
+     * * `orderBy="display_name desc"`
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1222,7 +1231,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1249,7 +1259,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1276,7 +1287,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1302,7 +1314,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1324,7 +1337,8 @@ public final class QueryFolderContentsRequest extends com.google.protobuf.Genera
      * only supported on the `display_name` field.
      *
      * Example:
-     * - `filter="display_name="MyFolder""`
+     *
+     * * `filter="display_name="MyFolder""`
      * </pre>
      *
      * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

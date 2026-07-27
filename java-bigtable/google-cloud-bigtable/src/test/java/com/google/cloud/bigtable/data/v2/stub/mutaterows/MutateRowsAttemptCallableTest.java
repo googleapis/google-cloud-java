@@ -67,7 +67,7 @@ public class MutateRowsAttemptCallableTest {
   private ApiCallContext callContext;
   private MockRetryingFuture parentFuture;
   private final RetryAlgorithm<MutateRowsRequest> mockRetryAlgorithm =
-      Mockito.mock(RetryAlgorithm.class);
+      Mockito.mock(RetryAlgorithm.class, Mockito.withSettings().withoutAnnotations());
 
   @Before
   public void setUp() {

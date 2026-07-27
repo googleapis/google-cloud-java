@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.productregistry.v1",
+  "libraryPackage": "com.google.cloud.productregistry.v1",
+  "services": {
+    "CloudProductRegistryReadService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CloudProductRegistryReadServiceClient",
+          "rpcs": {
+            "GetLogicalProduct": {
+              "methods": ["getLogicalProduct", "getLogicalProduct", "getLogicalProduct", "getLogicalProductCallable"]
+            },
+            "GetLogicalProductVariant": {
+              "methods": ["getLogicalProductVariant", "getLogicalProductVariant", "getLogicalProductVariant", "getLogicalProductVariantCallable"]
+            },
+            "GetProductSuite": {
+              "methods": ["getProductSuite", "getProductSuite", "getProductSuite", "getProductSuiteCallable"]
+            },
+            "ListLogicalProductVariants": {
+              "methods": ["listLogicalProductVariants", "listLogicalProductVariants", "listLogicalProductVariants", "listLogicalProductVariantsPagedCallable", "listLogicalProductVariantsCallable"]
+            },
+            "ListLogicalProducts": {
+              "methods": ["listLogicalProducts", "listLogicalProductsPagedCallable", "listLogicalProductsCallable"]
+            },
+            "ListProductSuites": {
+              "methods": ["listProductSuites", "listProductSuitesPagedCallable", "listProductSuitesCallable"]
+            },
+            "LookupEntity": {
+              "methods": ["lookupEntity", "lookupEntityCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

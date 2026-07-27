@@ -954,6 +954,56 @@ public final class HiveMetastoreServiceGrpc {
     return getListPartitionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest,
+          com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+      getFailoverHiveCatalogMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FailoverHiveCatalog",
+      requestType = com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest.class,
+      responseType = com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest,
+          com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+      getFailoverHiveCatalogMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest,
+            com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+        getFailoverHiveCatalogMethod;
+    if ((getFailoverHiveCatalogMethod = HiveMetastoreServiceGrpc.getFailoverHiveCatalogMethod)
+        == null) {
+      synchronized (HiveMetastoreServiceGrpc.class) {
+        if ((getFailoverHiveCatalogMethod = HiveMetastoreServiceGrpc.getFailoverHiveCatalogMethod)
+            == null) {
+          HiveMetastoreServiceGrpc.getFailoverHiveCatalogMethod =
+              getFailoverHiveCatalogMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest,
+                          com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FailoverHiveCatalog"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HiveMetastoreServiceMethodDescriptorSupplier("FailoverHiveCatalog"))
+                      .build();
+        }
+      }
+    }
+    return getFailoverHiveCatalogMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static HiveMetastoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<HiveMetastoreServiceStub> factory =
@@ -1311,6 +1361,22 @@ public final class HiveMetastoreServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListPartitionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failover the catalog to a new primary replica region.
+     * </pre>
+     */
+    default void failoverHiveCatalog(
+        com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFailoverHiveCatalogMethod(), responseObserver);
     }
   }
 
@@ -1693,6 +1759,24 @@ public final class HiveMetastoreServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failover the catalog to a new primary replica region.
+     * </pre>
+     */
+    public void failoverHiveCatalog(
+        com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFailoverHiveCatalogMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1994,6 +2078,20 @@ public final class HiveMetastoreServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getListPartitionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failover the catalog to a new primary replica region.
+     * </pre>
+     */
+    public com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse failoverHiveCatalog(
+        com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFailoverHiveCatalogMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2274,6 +2372,19 @@ public final class HiveMetastoreServiceGrpc {
         listPartitions(com.google.cloud.biglake.hive.v1beta.ListPartitionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getListPartitionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failover the catalog to a new primary replica region.
+     * </pre>
+     */
+    public com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse failoverHiveCatalog(
+        com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFailoverHiveCatalogMethod(), getCallOptions(), request);
     }
   }
 
@@ -2560,6 +2671,21 @@ public final class HiveMetastoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchUpdatePartitionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Failover the catalog to a new primary replica region.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>
+        failoverHiveCatalog(
+            com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFailoverHiveCatalogMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_HIVE_CATALOG = 0;
@@ -2581,6 +2707,7 @@ public final class HiveMetastoreServiceGrpc {
   private static final int METHODID_BATCH_DELETE_PARTITIONS = 16;
   private static final int METHODID_BATCH_UPDATE_PARTITIONS = 17;
   private static final int METHODID_LIST_PARTITIONS = 18;
+  private static final int METHODID_FAILOVER_HIVE_CATALOG = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2713,6 +2840,13 @@ public final class HiveMetastoreServiceGrpc {
               (com.google.cloud.biglake.hive.v1beta.ListPartitionsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.biglake.hive.v1beta.ListPartitionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FAILOVER_HIVE_CATALOG:
+          serviceImpl.failoverHiveCatalog(
+              (com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>)
                   responseObserver);
           break;
         default:
@@ -2862,6 +2996,13 @@ public final class HiveMetastoreServiceGrpc {
                     com.google.cloud.biglake.hive.v1beta.ListPartitionsRequest,
                     com.google.cloud.biglake.hive.v1beta.ListPartitionsResponse>(
                     service, METHODID_LIST_PARTITIONS)))
+        .addMethod(
+            getFailoverHiveCatalogMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest,
+                    com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse>(
+                    service, METHODID_FAILOVER_HIVE_CATALOG)))
         .build();
   }
 
@@ -2932,6 +3073,7 @@ public final class HiveMetastoreServiceGrpc {
                       .addMethod(getBatchDeletePartitionsMethod())
                       .addMethod(getBatchUpdatePartitionsMethod())
                       .addMethod(getListPartitionsMethod())
+                      .addMethod(getFailoverHiveCatalogMethod())
                       .build();
         }
       }

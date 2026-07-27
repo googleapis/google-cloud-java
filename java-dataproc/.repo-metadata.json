@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-dataproc",
   "api_id": "dataproc.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "codeowner_team": "@googleapis/api-dataproc",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559745",
   "rest_documentation": "https://cloud.google.com/dataproc/docs/reference/rest",

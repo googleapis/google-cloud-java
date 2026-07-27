@@ -45,6 +45,8 @@ import com.google.cloud.biglake.hive.v1beta.CreateHiveTableRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.DeleteHiveTableRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogRequest;
+import com.google.cloud.biglake.hive.v1beta.FailoverHiveCatalogResponse;
 import com.google.cloud.biglake.hive.v1beta.GetHiveCatalogRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveDatabaseRequest;
 import com.google.cloud.biglake.hive.v1beta.GetHiveTableRequest;
@@ -71,6 +73,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -78,6 +81,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
@@ -800,6 +804,44 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogMethodDescriptor =
+          ApiMethodDescriptor.<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.biglake.hive.v1beta.HiveMetastoreService/FailoverHiveCatalog")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FailoverHiveCatalogRequest>newBuilder()
+                      .setPath(
+                          "/hive/v1beta/{name=projects/*/catalogs/*}:failover",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverHiveCatalogRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FailoverHiveCatalogRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FailoverHiveCatalogResponse>newBuilder()
+                      .setDefaultInstance(FailoverHiveCatalogResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateHiveCatalogRequest, HiveCatalog> createHiveCatalogCallable;
   private final UnaryCallable<GetHiveCatalogRequest, HiveCatalog> getHiveCatalogCallable;
   private final UnaryCallable<ListHiveCatalogsRequest, ListHiveCatalogsResponse>
@@ -830,6 +872,8 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
       batchUpdatePartitionsCallable;
   private final ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable;
+  private final UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1114,6 +1158,19 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogTransportSettings =
+            HttpJsonCallSettings
+                .<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>newBuilder()
+                .setMethodDescriptor(failoverHiveCatalogMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createHiveCatalogCallable =
         callableFactory.createUnaryCallable(
@@ -1203,6 +1260,11 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
     this.listPartitionsCallable =
         callableFactory.createServerStreamingCallable(
             listPartitionsTransportSettings, settings.listPartitionsSettings(), clientContext);
+    this.failoverHiveCatalogCallable =
+        callableFactory.createUnaryCallable(
+            failoverHiveCatalogTransportSettings,
+            settings.failoverHiveCatalogSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1230,6 +1292,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
     methodDescriptors.add(batchDeletePartitionsMethodDescriptor);
     methodDescriptors.add(batchUpdatePartitionsMethodDescriptor);
     methodDescriptors.add(listPartitionsMethodDescriptor);
+    methodDescriptors.add(failoverHiveCatalogMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1349,6 +1412,12 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
   public ServerStreamingCallable<ListPartitionsRequest, ListPartitionsResponse>
       listPartitionsCallable() {
     return listPartitionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogCallable() {
+    return failoverHiveCatalogCallable;
   }
 
   @Override

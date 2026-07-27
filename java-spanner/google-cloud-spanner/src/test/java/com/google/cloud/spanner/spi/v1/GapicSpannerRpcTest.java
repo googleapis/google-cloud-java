@@ -106,14 +106,20 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
 import java.net.InetSocketAddress;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -932,6 +938,49 @@ public class GapicSpannerRpcTest {
     assertNull(rpc.getInstanceAdminStubSettings());
 
     rpc.shutdown();
+  }
+
+  @Test
+  public void testConcurrentClientCreationDoesNotRaceOnDirectPathFlag() throws Exception {
+    // Concurrent creation of Spanner clients used to cause a data race on the static
+    // DIRECTPATH_CHANNEL_CREATED field, which was written from the constructor without
+    // synchronization. This verifies that concurrent client creation succeeds and leaves the flag
+    // in a consistent state now that the field is volatile.
+    int numThreads = 8;
+    ExecutorService executor = Executors.newFixedThreadPool(numThreads);
+    CountDownLatch start = new CountDownLatch(1);
+    List<Future<Void>> futures = new ArrayList<>(numThreads);
+    try {
+      for (int i = 0; i < numThreads; i++) {
+        futures.add(
+            executor.submit(
+                () -> {
+                  start.await();
+                  GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+                  try {
+                    return null;
+                  } finally {
+                    rpc.shutdown();
+                  }
+                }));
+      }
+      start.countDown();
+      for (Future<Void> future : futures) {
+        future.get(60L, TimeUnit.SECONDS);
+      }
+      // The test options connect to a local plaintext mock server, so no DirectPath channel is
+      // ever created.
+      assertTrue(
+          Modifier.isVolatile(
+              GapicSpannerRpc.class.getField("DIRECTPATH_CHANNEL_CREATED").getModifiers()));
+      assertFalse(GapicSpannerRpc.DIRECTPATH_CHANNEL_CREATED);
+    } finally {
+      start.countDown();
+      for (Future<Void> future : futures) {
+        future.cancel(true);
+      }
+      executor.shutdownNow();
+    }
   }
 
   @Test

@@ -252,6 +252,49 @@ public interface ToolsetOrBuilder
    *
    *
    * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the timeout field is set.
+   */
+  boolean hasTimeout();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The timeout.
+   */
+  com.google.protobuf.Duration getTimeout();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The timeout for the toolset execution. If not set, the default
+   * timeout is 30 seconds for `SYNCHRONOUS` toolsets and 60 seconds for
+   * `ASYNCHRONOUS` toolsets.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration timeout = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTimeoutOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when the toolset was created.
    * </pre>
    *

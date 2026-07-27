@@ -27,13 +27,6 @@ public interface SslPolicyReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any
-   * existing SSL policy associated with the target proxy resource.
-   * </pre>
-   *
    * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return Whether the sslPolicy field is set.
@@ -41,13 +34,6 @@ public interface SslPolicyReferenceOrBuilder
   boolean hasSslPolicy();
 
   /**
-   *
-   *
-   * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any
-   * existing SSL policy associated with the target proxy resource.
-   * </pre>
-   *
    * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The sslPolicy.
@@ -55,13 +41,6 @@ public interface SslPolicyReferenceOrBuilder
   java.lang.String getSslPolicy();
 
   /**
-   *
-   *
-   * <pre>
-   * URL of the SSL policy resource. Set this to empty string to clear any
-   * existing SSL policy associated with the target proxy resource.
-   * </pre>
-   *
    * <code>optional string ssl_policy = 295190213;</code>
    *
    * @return The bytes for sslPolicy.

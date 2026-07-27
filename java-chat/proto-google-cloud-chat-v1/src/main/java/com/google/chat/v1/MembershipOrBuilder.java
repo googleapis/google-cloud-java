@@ -318,5 +318,39 @@ public interface MembershipOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A user's relationship to the Workspace organization that owns
+   * the space. In spaces owned by consumer accounts, the affiliation of all
+   * members is `EXTERNAL`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for affiliation.
+   */
+  int getAffiliationValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A user's relationship to the Workspace organization that owns
+   * the space. In spaces owned by consumer accounts, the affiliation of all
+   * members is `EXTERNAL`.
+   * </pre>
+   *
+   * <code>
+   * .google.chat.v1.Membership.Affiliation affiliation = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The affiliation.
+   */
+  com.google.chat.v1.Membership.Affiliation getAffiliation();
+
   com.google.chat.v1.Membership.MemberTypeCase getMemberTypeCase();
 }

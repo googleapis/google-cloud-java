@@ -88,6 +88,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
     importMethod_ = 0;
     protectionLevel_ = 0;
     state_ = 0;
+    publicKeyFormat_ = 0;
     cryptoKeyBackend_ = "";
   }
 
@@ -214,6 +215,54 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * <code>RSA_OAEP_4096_SHA256 = 6;</code>
      */
     RSA_OAEP_4096_SHA256(6),
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the ML-KEM-768 KEM. For more
+     * details, see the [ML-KEM HPKE
+     * standard](http://datatracker.ietf.org/doc/draft-ietf-hpke-pq/01/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_ML_KEM_768_HKDF_SHA256_AES_256_GCM = 8;</code>
+     */
+    HPKE_KEM_ML_KEM_768_HKDF_SHA256_AES_256_GCM(8),
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the ML-KEM-1024 KEM. For more
+     * details, see the [ML-KEM HPKE
+     * standard](http://datatracker.ietf.org/doc/draft-ietf-hpke-pq/01/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_ML_KEM_1024_HKDF_SHA256_AES_256_GCM = 9;</code>
+     */
+    HPKE_KEM_ML_KEM_1024_HKDF_SHA256_AES_256_GCM(9),
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the X-Wing hybrid KEM. For
+     * more details, see the [X-Wing
+     * standard](http://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/09/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_XWING_HKDF_SHA256_AES_256_GCM = 10;</code>
+     */
+    HPKE_KEM_XWING_HKDF_SHA256_AES_256_GCM(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -330,6 +379,57 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      */
     public static final int RSA_OAEP_4096_SHA256_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the ML-KEM-768 KEM. For more
+     * details, see the [ML-KEM HPKE
+     * standard](http://datatracker.ietf.org/doc/draft-ietf-hpke-pq/01/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_ML_KEM_768_HKDF_SHA256_AES_256_GCM = 8;</code>
+     */
+    public static final int HPKE_KEM_ML_KEM_768_HKDF_SHA256_AES_256_GCM_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the ML-KEM-1024 KEM. For more
+     * details, see the [ML-KEM HPKE
+     * standard](http://datatracker.ietf.org/doc/draft-ietf-hpke-pq/01/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_ML_KEM_1024_HKDF_SHA256_AES_256_GCM = 9;</code>
+     */
+    public static final int HPKE_KEM_ML_KEM_1024_HKDF_SHA256_AES_256_GCM_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the Hybrid Public Key Encryption (HPKE) Scheme originally
+     * defined in [RFC 9180](https://www.rfc-editor.org/rfc/rfc9180). It
+     * involves wrapping the raw key with an ephemeral AES key, derived with
+     * HKDF-SHA256 from an encryption context, that is, in turn obtained from
+     * the receiver’s public key with the help of the X-Wing hybrid KEM. For
+     * more details, see the [X-Wing
+     * standard](http://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/09/).
+     * </pre>
+     *
+     * <code>HPKE_KEM_XWING_HKDF_SHA256_AES_256_GCM = 10;</code>
+     */
+    public static final int HPKE_KEM_XWING_HKDF_SHA256_AES_256_GCM_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -368,6 +468,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
           return RSA_OAEP_3072_SHA256;
         case 6:
           return RSA_OAEP_4096_SHA256;
+        case 8:
+          return HPKE_KEM_ML_KEM_768_HKDF_SHA256_AES_256_GCM;
+        case 9:
+          return HPKE_KEM_ML_KEM_1024_HKDF_SHA256_AES_256_GCM;
+        case 10:
+          return HPKE_KEM_XWING_HKDF_SHA256_AES_256_GCM;
         default:
           return null;
       }
@@ -642,6 +748,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
      * [Textual Encoding of Subject Public Key Info]
      * (https://tools.ietf.org/html/rfc7468#section-13).
+     * This field gets populated by default for RSA-based import methods, if no
+     * public_key_format is specified in the request.
+     * If you want to retrieve the wrapping key of an
+     * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * and set the public_key_format to the desired public key format.
      * </pre>
      *
      * <code>string pem = 1;</code>
@@ -659,6 +771,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
      * [Textual Encoding of Subject Public Key Info]
      * (https://tools.ietf.org/html/rfc7468#section-13).
+     * This field gets populated by default for RSA-based import methods, if no
+     * public_key_format is specified in the request.
+     * If you want to retrieve the wrapping key of an
+     * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * and set the public_key_format to the desired public key format.
      * </pre>
      *
      * <code>string pem = 1;</code>
@@ -666,6 +784,23 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * @return The bytes for pem.
      */
     com.google.protobuf.ByteString getPemBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the public key, formatted according to the
+     * [PublicKey.PublicKeyFormat][google.cloud.kms.v1.PublicKey.PublicKeyFormat]
+     * specified in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
   }
 
   /**
@@ -702,6 +837,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
 
     private WrappingPublicKey() {
       pem_ = "";
+      data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -733,6 +869,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
      * [Textual Encoding of Subject Public Key Info]
      * (https://tools.ietf.org/html/rfc7468#section-13).
+     * This field gets populated by default for RSA-based import methods, if no
+     * public_key_format is specified in the request.
+     * If you want to retrieve the wrapping key of an
+     * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * and set the public_key_format to the desired public key format.
      * </pre>
      *
      * <code>string pem = 1;</code>
@@ -761,6 +903,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
      * [Textual Encoding of Subject Public Key Info]
      * (https://tools.ietf.org/html/rfc7468#section-13).
+     * This field gets populated by default for RSA-based import methods, if no
+     * public_key_format is specified in the request.
+     * If you want to retrieve the wrapping key of an
+     * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * and set the public_key_format to the desired public key format.
      * </pre>
      *
      * <code>string pem = 1;</code>
@@ -780,6 +928,29 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int DATA_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains the public key, formatted according to the
+     * [PublicKey.PublicKeyFormat][google.cloud.kms.v1.PublicKey.PublicKeyFormat]
+     * specified in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -797,6 +968,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pem_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, pem_);
       }
+      if (!data_.isEmpty()) {
+        output.writeBytes(2, data_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -808,6 +982,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pem_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, pem_);
+      }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, data_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -826,6 +1003,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.kms.v1.ImportJob.WrappingPublicKey) obj;
 
       if (!getPem().equals(other.getPem())) return false;
+      if (!getData().equals(other.getData())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -839,6 +1017,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PEM_FIELD_NUMBER;
       hash = (53 * hash) + getPem().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -983,6 +1163,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         pem_ = "";
+        data_ = com.google.protobuf.ByteString.EMPTY;
         return this;
       }
 
@@ -1022,6 +1203,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.pem_ = pem_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.data_ = data_;
+        }
       }
 
       @java.lang.Override
@@ -1041,6 +1225,9 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
           pem_ = other.pem_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (!other.getData().isEmpty()) {
+          setData(other.getData());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1074,6 +1261,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  data_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1104,6 +1297,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
        * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
        * [Textual Encoding of Subject Public Key Info]
        * (https://tools.ietf.org/html/rfc7468#section-13).
+       * This field gets populated by default for RSA-based import methods, if no
+       * public_key_format is specified in the request.
+       * If you want to retrieve the wrapping key of an
+       * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * and set the public_key_format to the desired public key format.
        * </pre>
        *
        * <code>string pem = 1;</code>
@@ -1131,6 +1330,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
        * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
        * [Textual Encoding of Subject Public Key Info]
        * (https://tools.ietf.org/html/rfc7468#section-13).
+       * This field gets populated by default for RSA-based import methods, if no
+       * public_key_format is specified in the request.
+       * If you want to retrieve the wrapping key of an
+       * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * and set the public_key_format to the desired public key format.
        * </pre>
        *
        * <code>string pem = 1;</code>
@@ -1158,6 +1363,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
        * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
        * [Textual Encoding of Subject Public Key Info]
        * (https://tools.ietf.org/html/rfc7468#section-13).
+       * This field gets populated by default for RSA-based import methods, if no
+       * public_key_format is specified in the request.
+       * If you want to retrieve the wrapping key of an
+       * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * and set the public_key_format to the desired public key format.
        * </pre>
        *
        * <code>string pem = 1;</code>
@@ -1184,6 +1395,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
        * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
        * [Textual Encoding of Subject Public Key Info]
        * (https://tools.ietf.org/html/rfc7468#section-13).
+       * This field gets populated by default for RSA-based import methods, if no
+       * public_key_format is specified in the request.
+       * If you want to retrieve the wrapping key of an
+       * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * and set the public_key_format to the desired public key format.
        * </pre>
        *
        * <code>string pem = 1;</code>
@@ -1206,6 +1423,12 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
        * Considerations](https://tools.ietf.org/html/rfc7468#section-2) and
        * [Textual Encoding of Subject Public Key Info]
        * (https://tools.ietf.org/html/rfc7468#section-13).
+       * This field gets populated by default for RSA-based import methods, if no
+       * public_key_format is specified in the request.
+       * If you want to retrieve the wrapping key of an
+       * [ImportJob][google.cloud.kms.v1.ImportJob] in some other format, use
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * and set the public_key_format to the desired public key format.
        * </pre>
        *
        * <code>string pem = 1;</code>
@@ -1220,6 +1443,76 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         pem_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains the public key, formatted according to the
+       * [PublicKey.PublicKeyFormat][google.cloud.kms.v1.PublicKey.PublicKeyFormat]
+       * specified in the
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * request.
+       * </pre>
+       *
+       * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains the public key, formatted according to the
+       * [PublicKey.PublicKeyFormat][google.cloud.kms.v1.PublicKey.PublicKeyFormat]
+       * specified in the
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * request.
+       * </pre>
+       *
+       * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Contains the public key, formatted according to the
+       * [PublicKey.PublicKeyFormat][google.cloud.kms.v1.PublicKey.PublicKeyFormat]
+       * specified in the
+       * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+       * request.
+       * </pre>
+       *
+       * <code>bytes data = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        data_ = getDefaultInstance().getData();
         onChanged();
         return this;
       }
@@ -1776,6 +2069,55 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         : publicKey_;
   }
 
+  public static final int PUBLIC_KEY_FORMAT_FIELD_NUMBER = 12;
+  private int publicKeyFormat_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the
+   * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+   * provided by the customer in the
+   * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  @java.lang.Override
+  public int getPublicKeyFormatValue() {
+    return publicKeyFormat_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the
+   * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+   * provided by the customer in the
+   * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The publicKeyFormat.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+    com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+        com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+    return result == null ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED : result;
+  }
+
   public static final int ATTESTATION_FIELD_NUMBER = 8;
   private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
 
@@ -1970,6 +2312,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cryptoKeyBackend_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, cryptoKeyBackend_);
     }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(12, publicKeyFormat_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2016,6 +2363,11 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cryptoKeyBackend_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, cryptoKeyBackend_);
     }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, publicKeyFormat_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2055,6 +2407,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
     if (hasPublicKey()) {
       if (!getPublicKey().equals(other.getPublicKey())) return false;
     }
+    if (publicKeyFormat_ != other.publicKeyFormat_) return false;
     if (hasAttestation() != other.hasAttestation()) return false;
     if (hasAttestation()) {
       if (!getAttestation().equals(other.getAttestation())) return false;
@@ -2099,6 +2452,8 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getPublicKey().hashCode();
     }
+    hash = (37 * hash) + PUBLIC_KEY_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + publicKeyFormat_;
     if (hasAttestation()) {
       hash = (37 * hash) + ATTESTATION_FIELD_NUMBER;
       hash = (53 * hash) + getAttestation().hashCode();
@@ -2319,6 +2674,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         publicKeyBuilder_.dispose();
         publicKeyBuilder_ = null;
       }
+      publicKeyFormat_ = 0;
       attestation_ = null;
       if (attestationBuilder_ != null) {
         attestationBuilder_.dispose();
@@ -2396,11 +2752,14 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.publicKeyFormat_ = publicKeyFormat_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.attestation_ =
             attestationBuilder_ == null ? attestation_ : attestationBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.cryptoKeyBackend_ = cryptoKeyBackend_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2447,12 +2806,15 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       if (other.hasPublicKey()) {
         mergePublicKey(other.getPublicKey());
       }
+      if (other.publicKeyFormat_ != 0) {
+        setPublicKeyFormatValue(other.getPublicKeyFormatValue());
+      }
       if (other.hasAttestation()) {
         mergeAttestation(other.getAttestation());
       }
       if (!other.getCryptoKeyBackend().isEmpty()) {
         cryptoKeyBackend_ = other.cryptoKeyBackend_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2531,7 +2893,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetAttestationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 66
             case 72:
@@ -2550,9 +2912,15 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
             case 90:
               {
                 cryptoKeyBackend_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 90
+            case 96:
+              {
+                publicKeyFormat_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4179,6 +4547,133 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       return publicKeyBuilder_;
     }
 
+    private int publicKeyFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the
+     * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+     * provided by the customer in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for publicKeyFormat.
+     */
+    @java.lang.Override
+    public int getPublicKeyFormatValue() {
+      return publicKeyFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the
+     * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+     * provided by the customer in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormatValue(int value) {
+      publicKeyFormat_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the
+     * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+     * provided by the customer in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The publicKeyFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+      com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+          com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+      return result == null
+          ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the
+     * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+     * provided by the customer in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormat(com.google.cloud.kms.v1.PublicKey.PublicKeyFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      publicKeyFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the
+     * [WrappingPublicKey][google.cloud.kms.v1.ImportJob.WrappingPublicKey] format
+     * provided by the customer in the
+     * [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob]
+     * request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicKeyFormat() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      publicKeyFormat_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.kms.v1.KeyOperationAttestation attestation_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.kms.v1.KeyOperationAttestation,
@@ -4205,7 +4700,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the attestation field is set.
      */
     public boolean hasAttestation() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -4261,7 +4756,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       } else {
         attestationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4289,7 +4784,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       } else {
         attestationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4312,7 +4807,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAttestation(com.google.cloud.kms.v1.KeyOperationAttestation value) {
       if (attestationBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && attestation_ != null
             && attestation_
                 != com.google.cloud.kms.v1.KeyOperationAttestation.getDefaultInstance()) {
@@ -4324,7 +4819,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         attestationBuilder_.mergeFrom(value);
       }
       if (attestation_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4347,7 +4842,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAttestation() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       attestation_ = null;
       if (attestationBuilder_ != null) {
         attestationBuilder_.dispose();
@@ -4374,7 +4869,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.kms.v1.KeyOperationAttestation.Builder getAttestationBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetAttestationFieldBuilder().getBuilder();
     }
@@ -4527,7 +5022,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       cryptoKeyBackend_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4553,7 +5048,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCryptoKeyBackend() {
       cryptoKeyBackend_ = getDefaultInstance().getCryptoKeyBackend();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -4584,7 +5079,7 @@ public final class ImportJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       cryptoKeyBackend_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

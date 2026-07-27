@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1;
  *
  *
  * <pre>
- * Request for [DeleteBackup].
+ * Request for `DeleteBackup`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1.DeleteBackupRequest}
@@ -360,7 +360,7 @@ public final class DeleteBackupRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request for [DeleteBackup].
+   * Request for `DeleteBackup`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1.DeleteBackupRequest}

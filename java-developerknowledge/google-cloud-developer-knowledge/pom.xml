@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-developer-knowledge</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
+  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
   <packaging>jar</packaging>
   <name>Google Developer Knowledge API</name>
   <description>Developer Knowledge API The Developer Knowledge API provides access to Google's developer knowledge</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-developer-knowledge-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
+    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-developer-knowledge:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-developer-knowledge</site.installationModule>

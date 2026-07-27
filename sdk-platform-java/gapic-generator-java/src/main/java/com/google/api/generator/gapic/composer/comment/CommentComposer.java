@@ -22,7 +22,9 @@ import com.google.common.base.Strings;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class CommentComposer {
   private static final String APACHE_LICENSE_STRING =
       String.format(

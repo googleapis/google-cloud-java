@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ces.v1.BidiSessionClientMessage;
 import com.google.cloud.ces.v1.BidiSessionServerMessage;
 import com.google.cloud.ces.v1.RunSessionRequest;
@@ -41,6 +42,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -48,6 +50,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcSessionServiceStub extends SessionServiceStub {
   private static final MethodDescriptor<RunSessionRequest, RunSessionResponse>
@@ -117,6 +120,9 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
+  private static final PathTemplate BIDI_RUN_SESSION_0_PATH_TEMPLATE =
+      PathTemplate.create("{session=projects/*/locations/*/apps/*/sessions/*}");
+
   public static final GrpcSessionServiceStub create(SessionServiceStubSettings settings)
       throws IOException {
     return new GrpcSessionServiceStub(settings, ClientContext.create(settings));
@@ -181,6 +187,17 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
         bidiRunSessionTransportSettings =
             GrpcCallSettings.<BidiSessionClientMessage, BidiSessionServerMessage>newBuilder()
                 .setMethodDescriptor(bidiRunSessionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      if (request.getConfig() != null) {
+                        builder.add(
+                            request.getConfig().getSession(),
+                            "session",
+                            BIDI_RUN_SESSION_0_PATH_TEMPLATE);
+                      }
+                      return builder.build();
+                    })
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

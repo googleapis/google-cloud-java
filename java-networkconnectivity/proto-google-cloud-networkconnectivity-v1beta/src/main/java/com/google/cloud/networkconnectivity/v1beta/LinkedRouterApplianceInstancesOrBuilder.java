@@ -198,4 +198,190 @@ public interface LinkedRouterApplianceInstancesOrBuilder
    * @return The bytes of the includeImportRanges at the given index.
    */
   com.google.protobuf.ByteString getIncludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeImportRanges.
+   */
+  java.util.List<java.lang.String> getExcludeImportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeImportRanges.
+   */
+  int getExcludeImportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeImportRanges at the given index.
+   */
+  java.lang.String getExcludeImportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Hub routes overlapped/encompassed by exclude import ranges are
+   * excluded during import from hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_import_ranges = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeImportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getExcludeImportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the includeExportRanges.
+   */
+  java.util.List<java.lang.String> getIncludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of includeExportRanges.
+   */
+  int getIncludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The includeExportRanges at the given index.
+   */
+  java.lang.String getIncludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes fully encompassed by include export ranges are
+   * included during export to hub.
+   * </pre>
+   *
+   * <code>repeated string include_export_ranges = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the includeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getIncludeExportRangesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the excludeExportRanges.
+   */
+  java.util.List<java.lang.String> getExcludeExportRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of excludeExportRanges.
+   */
+  int getExcludeExportRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The excludeExportRanges at the given index.
+   */
+  java.lang.String getExcludeExportRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Dynamic routes overlapped/encompassed by exclude export ranges
+   * are excluded during export to hub.
+   * </pre>
+   *
+   * <code>repeated string exclude_export_ranges = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the excludeExportRanges at the given index.
+   */
+  com.google.protobuf.ByteString getExcludeExportRangesBytes(int index);
 }

@@ -132,6 +132,43 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     }
   }
 
+  public static final int NO_GRACEFUL_SHUTDOWN_FIELD_NUMBER = 336255890;
+  private boolean noGracefulShutdown_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * When set, graceful shutdown is skipped for instance stopping even if it's
+   * configured for the instances.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return Whether the noGracefulShutdown field is set.
+   */
+  @java.lang.Override
+  public boolean hasNoGracefulShutdown() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * When set, graceful shutdown is skipped for instance stopping even if it's
+   * configured for the instances.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return The noGracefulShutdown.
+   */
+  @java.lang.Override
+  public boolean getNoGracefulShutdown() {
+    return noGracefulShutdown_;
+  }
+
   public static final int PROJECT_FIELD_NUMBER = 227560217;
 
   @SuppressWarnings("serial")
@@ -266,7 +303,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
    */
   @java.lang.Override
   public boolean hasRegionInstanceGroupManagersStopInstancesRequestResource() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -341,7 +378,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -430,7 +467,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
@@ -442,8 +479,11 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instanceGroupManager_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 249363395, instanceGroupManager_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(270306882, getRegionInstanceGroupManagersStopInstancesRequestResource());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(336255890, noGracefulShutdown_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -454,7 +494,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(37109963, requestId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
@@ -467,10 +507,13 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(249363395, instanceGroupManager_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               270306882, getRegionInstanceGroupManagersStopInstancesRequestResource());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(336255890, noGracefulShutdown_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -490,6 +533,10 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         (com.google.cloud.compute.v1.StopInstancesRegionInstanceGroupManagerRequest) obj;
 
     if (!getInstanceGroupManager().equals(other.getInstanceGroupManager())) return false;
+    if (hasNoGracefulShutdown() != other.hasNoGracefulShutdown()) return false;
+    if (hasNoGracefulShutdown()) {
+      if (getNoGracefulShutdown() != other.getNoGracefulShutdown()) return false;
+    }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (hasRegionInstanceGroupManagersStopInstancesRequestResource()
@@ -515,6 +562,10 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INSTANCE_GROUP_MANAGER_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceGroupManager().hashCode();
+    if (hasNoGracefulShutdown()) {
+      hash = (37 * hash) + NO_GRACEFUL_SHUTDOWN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoGracefulShutdown());
+    }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -687,6 +738,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       super.clear();
       bitField0_ = 0;
       instanceGroupManager_ = "";
+      noGracefulShutdown_ = false;
       project_ = "";
       region_ = "";
       regionInstanceGroupManagersStopInstancesRequestResource_ = null;
@@ -739,23 +791,27 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.instanceGroupManager_ = instanceGroupManager_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.project_ = project_;
+        result.noGracefulShutdown_ = noGracefulShutdown_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.project_ = project_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.region_ = region_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.regionInstanceGroupManagersStopInstancesRequestResource_ =
             regionInstanceGroupManagersStopInstancesRequestResourceBuilder_ == null
                 ? regionInstanceGroupManagersStopInstancesRequestResource_
                 : regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.requestId_ = requestId_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.requestId_ = requestId_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -782,14 +838,17 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasNoGracefulShutdown()) {
+        setNoGracefulShutdown(other.getNoGracefulShutdown());
+      }
       if (!other.getProject().isEmpty()) {
         project_ = other.project_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRegionInstanceGroupManagersStopInstancesRequestResource()) {
@@ -798,7 +857,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       }
       if (other.hasRequestId()) {
         requestId_ = other.requestId_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -830,19 +889,19 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
             case 296879706:
               {
                 requestId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 296879706
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 1111570338
             case 1820481738:
               {
                 project_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1820481738
             case 1994907162:
@@ -857,9 +916,15 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
                     internalGetRegionInstanceGroupManagersStopInstancesRequestResourceFieldBuilder()
                         .getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -2132512238
+            case -1604920176:
+              {
+                noGracefulShutdown_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case -1604920176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -995,6 +1060,82 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       return this;
     }
 
+    private boolean noGracefulShutdown_;
+
+    /**
+     *
+     *
+     * <pre>
+     * When set, graceful shutdown is skipped for instance stopping even if it's
+     * configured for the instances.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return Whether the noGracefulShutdown field is set.
+     */
+    @java.lang.Override
+    public boolean hasNoGracefulShutdown() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When set, graceful shutdown is skipped for instance stopping even if it's
+     * configured for the instances.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return The noGracefulShutdown.
+     */
+    @java.lang.Override
+    public boolean getNoGracefulShutdown() {
+      return noGracefulShutdown_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When set, graceful shutdown is skipped for instance stopping even if it's
+     * configured for the instances.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @param value The noGracefulShutdown to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNoGracefulShutdown(boolean value) {
+
+      noGracefulShutdown_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * When set, graceful shutdown is skipped for instance stopping even if it's
+     * configured for the instances.
+     * </pre>
+     *
+     * <code>optional bool no_graceful_shutdown = 336255890;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNoGracefulShutdown() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      noGracefulShutdown_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object project_ = "";
 
     /**
@@ -1066,7 +1207,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       project_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1086,7 +1227,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      */
     public Builder clearProject() {
       project_ = getDefaultInstance().getProject();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1111,7 +1252,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       }
       checkByteStringIsUtf8(value);
       project_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1187,7 +1328,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1207,7 +1348,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1232,7 +1373,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1259,7 +1400,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      * @return Whether the regionInstanceGroupManagersStopInstancesRequestResource field is set.
      */
     public boolean hasRegionInstanceGroupManagersStopInstancesRequestResource() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1308,7 +1449,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       } else {
         regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1333,7 +1474,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.setMessage(
             builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1352,7 +1493,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
     public Builder mergeRegionInstanceGroupManagersStopInstancesRequestResource(
         com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest value) {
       if (regionInstanceGroupManagersStopInstancesRequestResourceBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && regionInstanceGroupManagersStopInstancesRequestResource_ != null
             && regionInstanceGroupManagersStopInstancesRequestResource_
                 != com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest
@@ -1365,7 +1506,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.mergeFrom(value);
       }
       if (regionInstanceGroupManagersStopInstancesRequestResource_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1383,7 +1524,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersStopInstancesRequestResource() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       regionInstanceGroupManagersStopInstancesRequestResource_ = null;
       if (regionInstanceGroupManagersStopInstancesRequestResourceBuilder_ != null) {
         regionInstanceGroupManagersStopInstancesRequestResourceBuilder_.dispose();
@@ -1406,7 +1547,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersStopInstancesRequest.Builder
         getRegionInstanceGroupManagersStopInstancesRequestResourceBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetRegionInstanceGroupManagersStopInstancesRequestResourceFieldBuilder()
           .getBuilder();
@@ -1493,7 +1634,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      * @return Whether the requestId field is set.
      */
     public boolean hasRequestId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1595,7 +1736,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
         throw new NullPointerException();
       }
       requestId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1625,7 +1766,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
      */
     public Builder clearRequestId() {
       requestId_ = getDefaultInstance().getRequestId();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1660,7 +1801,7 @@ public final class StopInstancesRegionInstanceGroupManagerRequest
       }
       checkByteStringIsUtf8(value);
       requestId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

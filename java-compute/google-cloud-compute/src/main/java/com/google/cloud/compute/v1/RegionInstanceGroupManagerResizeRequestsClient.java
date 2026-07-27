@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -214,9 +216,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionInstanceGroupManagerResizeRequestsClient implements BackgroundResource {
-  private final RegionInstanceGroupManagerResizeRequestsSettings settings;
+  private final @Nullable RegionInstanceGroupManagerResizeRequestsSettings settings;
   private final RegionInstanceGroupManagerResizeRequestsStub stub;
 
   /**
@@ -265,7 +268,7 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
     this.stub = stub;
   }
 
-  public final RegionInstanceGroupManagerResizeRequestsSettings getSettings() {
+  public final @Nullable RegionInstanceGroupManagerResizeRequestsSettings getSettings() {
     return settings;
   }
 
@@ -1104,12 +1107,13 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagerResizeRequestsRequest,
                 RegionInstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
             context,
-        RegionInstanceGroupManagerResizeRequestsListResponse response) {
+        @Nullable RegionInstanceGroupManagerResizeRequestsListResponse response) {
       super(context, response);
     }
 
@@ -1119,18 +1123,20 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagerResizeRequestsRequest,
                 RegionInstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
             context,
-        RegionInstanceGroupManagerResizeRequestsListResponse response) {
+        @Nullable RegionInstanceGroupManagerResizeRequestsListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionInstanceGroupManagerResizeRequestsRequest,
                 RegionInstanceGroupManagerResizeRequestsListResponse,
                 InstanceGroupManagerResizeRequest>
@@ -1148,7 +1154,7 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1157,7 +1163,8 @@ public class RegionInstanceGroupManagerResizeRequestsClient implements Backgroun
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

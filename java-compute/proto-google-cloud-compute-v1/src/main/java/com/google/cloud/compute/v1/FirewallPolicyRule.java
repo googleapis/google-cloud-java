@@ -59,9 +59,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     kind_ = "";
     ruleName_ = "";
     securityProfileGroup_ = "";
+    targetForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
     targetSecureTags_ = java.util.Collections.emptyList();
     targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    targetType_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -216,6 +218,144 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicyRule.Direction)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.FirewallPolicyRule.TargetType}
+   */
+  public enum TargetType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_TYPE = 0;</code>
+     */
+    UNDEFINED_TARGET_TYPE(0),
+    /** <code>INSTANCES = 131337822;</code> */
+    INSTANCES(131337822),
+    /** <code>INTERNAL_MANAGED_LB = 309241080;</code> */
+    INTERNAL_MANAGED_LB(309241080),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "TargetType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_TARGET_TYPE_VALUE = 0;
+
+    /** <code>INSTANCES = 131337822;</code> */
+    public static final int INSTANCES_VALUE = 131337822;
+
+    /** <code>INTERNAL_MANAGED_LB = 309241080;</code> */
+    public static final int INTERNAL_MANAGED_LB_VALUE = 309241080;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TARGET_TYPE;
+        case 131337822:
+          return INSTANCES;
+        case 309241080:
+          return INTERNAL_MANAGED_LB;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetType>() {
+          public TargetType findValueByNumber(int number) {
+            return TargetType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.FirewallPolicyRule.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final TargetType[] VALUES = values();
+
+    public static TargetType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallPolicyRule.TargetType)
+  }
+
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
 
@@ -228,7 +368,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -248,7 +390,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -276,7 +420,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    * <pre>
    * The Action to perform when the client connection triggers the rule.
    * Valid actions for firewall rules are: "allow", "deny",
-   * "apply_security_profile_group" and "goto_next".
+   * "apply_security_profile_group" and "goto_next" (
+   * "apply_security_profile_group" can be specified only for global
+   * network firewall policies or hierarchical firewall policies).
    * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
    * and "goto_next".
    * </pre>
@@ -805,11 +951,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -825,11 +972,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -853,11 +1001,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A fully-qualified URL of a SecurityProfile resource instance.
+   * A fully-qualified URL of a SecurityProfileGroup resource instance.
    * Example:
    * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
    * Must be specified if action is one of 'apply_security_profile_group' or
-   * 'mirror'. Cannot be specified for other actions.
+   * 'mirror'. Cannot be specified for other actions. Can be specified only
+   * for global network firewall policies or hierarchical firewall policies.
    * </pre>
    *
    * <code>optional string security_profile_group = 207411626;</code>
@@ -875,6 +1024,114 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TARGET_FORWARDING_RULES_FIELD_NUMBER = 495923747;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList targetForwardingRules_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @return A list containing the targetForwardingRules.
+   */
+  public com.google.protobuf.ProtocolStringList getTargetForwardingRulesList() {
+    return targetForwardingRules_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @return The count of targetForwardingRules.
+   */
+  public int getTargetForwardingRulesCount() {
+    return targetForwardingRules_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The targetForwardingRules at the given index.
+   */
+  public java.lang.String getTargetForwardingRules(int index) {
+    return targetForwardingRules_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * A list of forwarding rules to which this rule applies.
+   * This field allows you to control which load balancers get this rule.
+   * For example, the following are valid values:
+   *
+   *
+   * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+   * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+   * - projects/project/global/
+   * forwardingRules/forwardingRule
+   * - projects/project/regions/region/forwardingRules/
+   * forwardingRule
+   * </pre>
+   *
+   * <code>repeated string target_forwarding_rules = 495923747;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the targetForwardingRules at the given index.
+   */
+  public com.google.protobuf.ByteString getTargetForwardingRulesBytes(int index) {
+    return targetForwardingRules_.getByteString(index);
   }
 
   public static final int TARGET_RESOURCES_FIELD_NUMBER = 528230647;
@@ -1148,6 +1405,81 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     return targetServiceAccounts_.getByteString(index);
   }
 
+  public static final int TARGET_TYPE_FIELD_NUMBER = 62925096;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return Whether the targetType field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetType() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return The targetType.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetType() {
+    java.lang.Object ref = targetType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Target types of the firewall policy rule.
+   * Default value is INSTANCES.
+   * Check the TargetType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_type = 62925096;</code>
+   *
+   * @return The bytes for targetType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetTypeBytes() {
+    java.lang.Object ref = targetType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TLS_INSPECT_FIELD_NUMBER = 43425488;
   private boolean tlsInspect_ = false;
 
@@ -1166,7 +1498,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasTlsInspect() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1204,11 +1536,14 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeBool(43425488, tlsInspect_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 55286254, ruleName_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 62925096, targetType_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(103668165, getMatch());
@@ -1244,6 +1579,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < targetSecureTags_.size(); i++) {
       output.writeMessage(468132403, targetSecureTags_.get(i));
     }
+    for (int i = 0; i < targetForwardingRules_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 495923747, targetForwardingRules_.getRaw(i));
+    }
     for (int i = 0; i < targetResources_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 528230647, targetResources_.getRaw(i));
@@ -1260,11 +1599,14 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(43425488, tlsInspect_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(55286254, ruleName_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(62925096, targetType_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
@@ -1306,6 +1648,14 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               468132403, targetSecureTags_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetForwardingRules_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetForwardingRules_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getTargetForwardingRulesList().size();
     }
     {
       int dataSize = 0;
@@ -1375,9 +1725,14 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (hasSecurityProfileGroup()) {
       if (!getSecurityProfileGroup().equals(other.getSecurityProfileGroup())) return false;
     }
+    if (!getTargetForwardingRulesList().equals(other.getTargetForwardingRulesList())) return false;
     if (!getTargetResourcesList().equals(other.getTargetResourcesList())) return false;
     if (!getTargetSecureTagsList().equals(other.getTargetSecureTagsList())) return false;
     if (!getTargetServiceAccountsList().equals(other.getTargetServiceAccountsList())) return false;
+    if (hasTargetType() != other.hasTargetType()) return false;
+    if (hasTargetType()) {
+      if (!getTargetType().equals(other.getTargetType())) return false;
+    }
     if (hasTlsInspect() != other.hasTlsInspect()) return false;
     if (hasTlsInspect()) {
       if (getTlsInspect() != other.getTlsInspect()) return false;
@@ -1437,6 +1792,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       hash = (37 * hash) + SECURITY_PROFILE_GROUP_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityProfileGroup().hashCode();
     }
+    if (getTargetForwardingRulesCount() > 0) {
+      hash = (37 * hash) + TARGET_FORWARDING_RULES_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetForwardingRulesList().hashCode();
+    }
     if (getTargetResourcesCount() > 0) {
       hash = (37 * hash) + TARGET_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getTargetResourcesList().hashCode();
@@ -1448,6 +1807,10 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     if (getTargetServiceAccountsCount() > 0) {
       hash = (37 * hash) + TARGET_SERVICE_ACCOUNTS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetServiceAccountsList().hashCode();
+    }
+    if (hasTargetType()) {
+      hash = (37 * hash) + TARGET_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetType().hashCode();
     }
     if (hasTlsInspect()) {
       hash = (37 * hash) + TLS_INSPECT_FIELD_NUMBER;
@@ -1619,6 +1982,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       ruleName_ = "";
       ruleTupleCount_ = 0;
       securityProfileGroup_ = "";
+      targetForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
       targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (targetSecureTagsBuilder_ == null) {
         targetSecureTags_ = java.util.Collections.emptyList();
@@ -1626,8 +1990,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetSecureTags_ = null;
         targetSecureTagsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      targetType_ = "";
       tlsInspect_ = false;
       return this;
     }
@@ -1666,9 +2031,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.FirewallPolicyRule result) {
       if (targetSecureTagsBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)) {
+        if (((bitField0_ & 0x00002000) != 0)) {
           targetSecureTags_ = java.util.Collections.unmodifiableList(targetSecureTags_);
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         }
         result.targetSecureTags_ = targetSecureTags_;
       } else {
@@ -1724,16 +2089,24 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        targetForwardingRules_.makeImmutable();
+        result.targetForwardingRules_ = targetForwardingRules_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         targetResources_.makeImmutable();
         result.targetResources_ = targetResources_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         targetServiceAccounts_.makeImmutable();
         result.targetServiceAccounts_ = targetServiceAccounts_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.tlsInspect_ = tlsInspect_;
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.targetType_ = targetType_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.tlsInspect_ = tlsInspect_;
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1795,10 +2168,20 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000400;
         onChanged();
       }
+      if (!other.targetForwardingRules_.isEmpty()) {
+        if (targetForwardingRules_.isEmpty()) {
+          targetForwardingRules_ = other.targetForwardingRules_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureTargetForwardingRulesIsMutable();
+          targetForwardingRules_.addAll(other.targetForwardingRules_);
+        }
+        onChanged();
+      }
       if (!other.targetResources_.isEmpty()) {
         if (targetResources_.isEmpty()) {
           targetResources_ = other.targetResources_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
         } else {
           ensureTargetResourcesIsMutable();
           targetResources_.addAll(other.targetResources_);
@@ -1809,7 +2192,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         if (!other.targetSecureTags_.isEmpty()) {
           if (targetSecureTags_.isEmpty()) {
             targetSecureTags_ = other.targetSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           } else {
             ensureTargetSecureTagsIsMutable();
             targetSecureTags_.addAll(other.targetSecureTags_);
@@ -1822,7 +2205,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
             targetSecureTagsBuilder_.dispose();
             targetSecureTagsBuilder_ = null;
             targetSecureTags_ = other.targetSecureTags_;
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
             targetSecureTagsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetTargetSecureTagsFieldBuilder()
@@ -1835,11 +2218,16 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (!other.targetServiceAccounts_.isEmpty()) {
         if (targetServiceAccounts_.isEmpty()) {
           targetServiceAccounts_ = other.targetServiceAccounts_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureTargetServiceAccountsIsMutable();
           targetServiceAccounts_.addAll(other.targetServiceAccounts_);
         }
+        onChanged();
+      }
+      if (other.hasTargetType()) {
+        targetType_ = other.targetType_;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasTlsInspect()) {
@@ -1880,7 +2268,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
             case 347403904:
               {
                 tlsInspect_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 347403904
             case 442290034:
@@ -1889,6 +2277,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000100;
                 break;
               } // case 442290034
+            case 503400770:
+              {
+                targetType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 503400770
             case 829345322:
               {
                 input.readMessage(internalGetMatchFieldBuilder().getBuilder(), extensionRegistry);
@@ -1964,6 +2358,13 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case -549908070
+            case -327577318:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTargetForwardingRulesIsMutable();
+                targetForwardingRules_.add(s);
+                break;
+              } // case -327577318
             case -69122118:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1998,7 +2399,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -2017,7 +2420,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -2044,7 +2449,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -2071,7 +2478,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -2097,7 +2506,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -2119,7 +2530,9 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * <pre>
      * The Action to perform when the client connection triggers the rule.
      * Valid actions for firewall rules are: "allow", "deny",
-     * "apply_security_profile_group" and "goto_next".
+     * "apply_security_profile_group" and "goto_next" (
+     * "apply_security_profile_group" can be specified only for global
+     * network firewall policies or hierarchical firewall policies).
      * Valid actions for packet mirroring rules are: "mirror", "do_not_mirror"
      * and "goto_next".
      * </pre>
@@ -3195,11 +3608,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3214,11 +3628,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3241,11 +3656,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3268,11 +3684,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3294,11 +3711,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3316,11 +3734,12 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A fully-qualified URL of a SecurityProfile resource instance.
+     * A fully-qualified URL of a SecurityProfileGroup resource instance.
      * Example:
      * https://networksecurity.googleapis.com/v1/projects/{project}/locations/{location}/securityProfileGroups/my-security-profile-group
      * Must be specified if action is one of 'apply_security_profile_group' or
-     * 'mirror'. Cannot be specified for other actions.
+     * 'mirror'. Cannot be specified for other actions. Can be specified only
+     * for global network firewall policies or hierarchical firewall policies.
      * </pre>
      *
      * <code>optional string security_profile_group = 207411626;</code>
@@ -3339,6 +3758,280 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList targetForwardingRules_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTargetForwardingRulesIsMutable() {
+      if (!targetForwardingRules_.isModifiable()) {
+        targetForwardingRules_ =
+            new com.google.protobuf.LazyStringArrayList(targetForwardingRules_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @return A list containing the targetForwardingRules.
+     */
+    public com.google.protobuf.ProtocolStringList getTargetForwardingRulesList() {
+      targetForwardingRules_.makeImmutable();
+      return targetForwardingRules_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @return The count of targetForwardingRules.
+     */
+    public int getTargetForwardingRulesCount() {
+      return targetForwardingRules_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The targetForwardingRules at the given index.
+     */
+    public java.lang.String getTargetForwardingRules(int index) {
+      return targetForwardingRules_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the targetForwardingRules at the given index.
+     */
+    public com.google.protobuf.ByteString getTargetForwardingRulesBytes(int index) {
+      return targetForwardingRules_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The targetForwardingRules to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetForwardingRules(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetForwardingRulesIsMutable();
+      targetForwardingRules_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param value The targetForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetForwardingRules(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTargetForwardingRulesIsMutable();
+      targetForwardingRules_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param values The targetForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTargetForwardingRules(java.lang.Iterable<java.lang.String> values) {
+      ensureTargetForwardingRulesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetForwardingRules_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetForwardingRules() {
+      targetForwardingRules_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A list of forwarding rules to which this rule applies.
+     * This field allows you to control which load balancers get this rule.
+     * For example, the following are valid values:
+     *
+     *
+     * - https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/forwardingRule
+     * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
+     * - projects/project/global/
+     * forwardingRules/forwardingRule
+     * - projects/project/regions/region/forwardingRules/
+     * forwardingRule
+     * </pre>
+     *
+     * <code>repeated string target_forwarding_rules = 495923747;</code>
+     *
+     * @param value The bytes of the targetForwardingRules to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTargetForwardingRulesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTargetForwardingRulesIsMutable();
+      targetForwardingRules_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList targetResources_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -3346,7 +4039,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       if (!targetResources_.isModifiable()) {
         targetResources_ = new com.google.protobuf.LazyStringArrayList(targetResources_);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
     }
 
     /**
@@ -3441,7 +4134,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetResourcesIsMutable();
       targetResources_.set(index, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3466,7 +4159,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3488,7 +4181,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder addAllTargetResources(java.lang.Iterable<java.lang.String> values) {
       ensureTargetResourcesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetResources_);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3508,7 +4201,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetResources() {
       targetResources_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       ;
       onChanged();
       return this;
@@ -3535,7 +4228,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureTargetResourcesIsMutable();
       targetResources_.add(value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3544,11 +4237,11 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetSecureTags_ = java.util.Collections.emptyList();
 
     private void ensureTargetSecureTagsIsMutable() {
-      if (!((bitField0_ & 0x00001000) != 0)) {
+      if (!((bitField0_ & 0x00002000) != 0)) {
         targetSecureTags_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag>(
                 targetSecureTags_);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
       }
     }
 
@@ -3880,7 +4573,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder clearTargetSecureTags() {
       if (targetSecureTagsBuilder_ == null) {
         targetSecureTags_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
       } else {
         targetSecureTagsBuilder_.clear();
@@ -4079,7 +4772,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTag.Builder,
                 com.google.cloud.compute.v1.FirewallPolicyRuleSecureTagOrBuilder>(
                 targetSecureTags_,
-                ((bitField0_ & 0x00001000) != 0),
+                ((bitField0_ & 0x00002000) != 0),
                 getParentForChildren(),
                 isClean());
         targetSecureTags_ = null;
@@ -4095,7 +4788,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
         targetServiceAccounts_ =
             new com.google.protobuf.LazyStringArrayList(targetServiceAccounts_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
 
     /**
@@ -4185,7 +4878,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4209,7 +4902,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       }
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4230,7 +4923,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder addAllTargetServiceAccounts(java.lang.Iterable<java.lang.String> values) {
       ensureTargetServiceAccountsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, targetServiceAccounts_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4249,7 +4942,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     public Builder clearTargetServiceAccounts() {
       targetServiceAccounts_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -4275,7 +4968,145 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       ensureTargetServiceAccountsIsMutable();
       targetServiceAccounts_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object targetType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @return Whether the targetType field is set.
+     */
+    public boolean hasTargetType() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @return The targetType.
+     */
+    public java.lang.String getTargetType() {
+      java.lang.Object ref = targetType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @return The bytes for targetType.
+     */
+    public com.google.protobuf.ByteString getTargetTypeBytes() {
+      java.lang.Object ref = targetType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @param value The targetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetType_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetType() {
+      targetType_ = getDefaultInstance().getTargetType();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Target types of the firewall policy rule.
+     * Default value is INSTANCES.
+     * Check the TargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_type = 62925096;</code>
+     *
+     * @param value The bytes for targetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetType_ = value;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4297,7 +5128,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      */
     @java.lang.Override
     public boolean hasTlsInspect() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4335,7 +5166,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
     public Builder setTlsInspect(boolean value) {
 
       tlsInspect_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4354,7 +5185,7 @@ public final class FirewallPolicyRule extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearTlsInspect() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       tlsInspect_ = false;
       onChanged();
       return this;

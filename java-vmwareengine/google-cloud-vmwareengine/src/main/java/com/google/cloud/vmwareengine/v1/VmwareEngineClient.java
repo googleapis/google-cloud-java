@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1660,9 +1662,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class VmwareEngineClient implements BackgroundResource {
-  private final VmwareEngineSettings settings;
+  private final @Nullable VmwareEngineSettings settings;
   private final VmwareEngineStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1709,7 +1712,7 @@ public class VmwareEngineClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VmwareEngineSettings getSettings() {
+  public final @Nullable VmwareEngineSettings getSettings() {
     return settings;
   }
 
@@ -1760,7 +1763,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateCloudsPagedResponse listPrivateClouds(LocationName parent) {
+  public final ListPrivateCloudsPagedResponse listPrivateClouds(@Nullable LocationName parent) {
     ListPrivateCloudsRequest request =
         ListPrivateCloudsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1935,7 +1938,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateCloud getPrivateCloud(PrivateCloudName name) {
+  public final PrivateCloud getPrivateCloud(@Nullable PrivateCloudName name) {
     GetPrivateCloudRequest request =
         GetPrivateCloudRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPrivateCloud(request);
@@ -2071,7 +2074,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> createPrivateCloudAsync(
-      LocationName parent, PrivateCloud privateCloud, String privateCloudId) {
+      @Nullable LocationName parent, PrivateCloud privateCloud, String privateCloudId) {
     CreatePrivateCloudRequest request =
         CreatePrivateCloudRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2431,7 +2434,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> deletePrivateCloudAsync(
-      PrivateCloudName name) {
+      @Nullable PrivateCloudName name) {
     DeletePrivateCloudRequest request =
         DeletePrivateCloudRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2636,7 +2639,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> undeletePrivateCloudAsync(
-      PrivateCloudName name) {
+      @Nullable PrivateCloudName name) {
     UndeletePrivateCloudRequest request =
         UndeletePrivateCloudRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2799,7 +2802,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(PrivateCloudName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable PrivateCloudName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2974,7 +2977,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -3110,7 +3113,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
-      PrivateCloudName parent, Cluster cluster, String clusterId) {
+      @Nullable PrivateCloudName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3446,7 +3449,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(
+      @Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -3611,7 +3615,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNodesPagedResponse listNodes(ClusterName parent) {
+  public final ListNodesPagedResponse listNodes(@Nullable ClusterName parent) {
     ListNodesRequest request =
         ListNodesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listNodes(request);
@@ -3779,7 +3783,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/privateClouds/{private_cloud}/clusters/{cluster}/nodes/{node}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Node getNode(NodeName name) {
+  public final Node getNode(@Nullable NodeName name) {
     GetNodeRequest request =
         GetNodeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNode(request);
@@ -3900,7 +3904,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExternalAddressesPagedResponse listExternalAddresses(PrivateCloudName parent) {
+  public final ListExternalAddressesPagedResponse listExternalAddresses(
+      @Nullable PrivateCloudName parent) {
     ListExternalAddressesRequest request =
         ListExternalAddressesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4087,7 +4092,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchNetworkPolicyExternalAddressesPagedResponse fetchNetworkPolicyExternalAddresses(
-      NetworkPolicyName networkPolicy) {
+      @Nullable NetworkPolicyName networkPolicy) {
     FetchNetworkPolicyExternalAddressesRequest request =
         FetchNetworkPolicyExternalAddressesRequest.newBuilder()
             .setNetworkPolicy(networkPolicy == null ? null : networkPolicy.toString())
@@ -4275,7 +4280,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-ip`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExternalAddress getExternalAddress(ExternalAddressName name) {
+  public final ExternalAddress getExternalAddress(@Nullable ExternalAddressName name) {
     GetExternalAddressRequest request =
         GetExternalAddressRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4423,7 +4428,9 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExternalAddress, OperationMetadata> createExternalAddressAsync(
-      PrivateCloudName parent, ExternalAddress externalAddress, String externalAddressId) {
+      @Nullable PrivateCloudName parent,
+      ExternalAddress externalAddress,
+      String externalAddressId) {
     CreateExternalAddressRequest request =
         CreateExternalAddressRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4771,7 +4778,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteExternalAddressAsync(
-      ExternalAddressName name) {
+      @Nullable ExternalAddressName name) {
     DeleteExternalAddressRequest request =
         DeleteExternalAddressRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4940,7 +4947,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSubnetsPagedResponse listSubnets(PrivateCloudName parent) {
+  public final ListSubnetsPagedResponse listSubnets(@Nullable PrivateCloudName parent) {
     ListSubnetsRequest request =
         ListSubnetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5108,7 +5115,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Subnet getSubnet(SubnetName name) {
+  public final Subnet getSubnet(@Nullable SubnetName name) {
     GetSubnetRequest request =
         GetSubnetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSubnet(request);
@@ -5369,7 +5376,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListExternalAccessRulesPagedResponse listExternalAccessRules(
-      NetworkPolicyName parent) {
+      @Nullable NetworkPolicyName parent) {
     ListExternalAccessRulesRequest request =
         ListExternalAccessRulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5553,7 +5560,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExternalAccessRule getExternalAccessRule(ExternalAccessRuleName name) {
+  public final ExternalAccessRule getExternalAccessRule(@Nullable ExternalAccessRuleName name) {
     GetExternalAccessRuleRequest request =
         GetExternalAccessRuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5701,7 +5708,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExternalAccessRule, OperationMetadata> createExternalAccessRuleAsync(
-      NetworkPolicyName parent,
+      @Nullable NetworkPolicyName parent,
       ExternalAccessRule externalAccessRule,
       String externalAccessRuleId) {
     CreateExternalAccessRuleRequest request =
@@ -6029,7 +6036,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteExternalAccessRuleAsync(
-      ExternalAccessRuleName name) {
+      @Nullable ExternalAccessRuleName name) {
     DeleteExternalAccessRuleRequest request =
         DeleteExternalAccessRuleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6196,7 +6203,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLoggingServersPagedResponse listLoggingServers(PrivateCloudName parent) {
+  public final ListLoggingServersPagedResponse listLoggingServers(
+      @Nullable PrivateCloudName parent) {
     ListLoggingServersRequest request =
         ListLoggingServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6376,7 +6384,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LoggingServer getLoggingServer(LoggingServerName name) {
+  public final LoggingServer getLoggingServer(@Nullable LoggingServerName name) {
     GetLoggingServerRequest request =
         GetLoggingServerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLoggingServer(request);
@@ -6516,7 +6524,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<LoggingServer, OperationMetadata> createLoggingServerAsync(
-      PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId) {
+      @Nullable PrivateCloudName parent, LoggingServer loggingServer, String loggingServerId) {
     CreateLoggingServerRequest request =
         CreateLoggingServerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6834,7 +6842,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteLoggingServerAsync(
-      LoggingServerName name) {
+      @Nullable LoggingServerName name) {
     DeleteLoggingServerRequest request =
         DeleteLoggingServerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6998,7 +7006,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNodeTypesPagedResponse listNodeTypes(LocationName parent) {
+  public final ListNodeTypesPagedResponse listNodeTypes(@Nullable LocationName parent) {
     ListNodeTypesRequest request =
         ListNodeTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7167,7 +7175,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-proj/locations/us-central1-a/nodeTypes/standard-72`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NodeType getNodeType(NodeTypeName name) {
+  public final NodeType getNodeType(@Nullable NodeTypeName name) {
     GetNodeTypeRequest request =
         GetNodeTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNodeType(request);
@@ -7282,7 +7290,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Credentials showNsxCredentials(PrivateCloudName privateCloud) {
+  public final Credentials showNsxCredentials(@Nullable PrivateCloudName privateCloud) {
     ShowNsxCredentialsRequest request =
         ShowNsxCredentialsRequest.newBuilder()
             .setPrivateCloud(privateCloud == null ? null : privateCloud.toString())
@@ -7404,7 +7412,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Credentials showVcenterCredentials(PrivateCloudName privateCloud) {
+  public final Credentials showVcenterCredentials(@Nullable PrivateCloudName privateCloud) {
     ShowVcenterCredentialsRequest request =
         ShowVcenterCredentialsRequest.newBuilder()
             .setPrivateCloud(privateCloud == null ? null : privateCloud.toString())
@@ -7530,7 +7538,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetNsxCredentialsAsync(
-      PrivateCloudName privateCloud) {
+      @Nullable PrivateCloudName privateCloud) {
     ResetNsxCredentialsRequest request =
         ResetNsxCredentialsRequest.newBuilder()
             .setPrivateCloud(privateCloud == null ? null : privateCloud.toString())
@@ -7688,7 +7696,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateCloud, OperationMetadata> resetVcenterCredentialsAsync(
-      PrivateCloudName privateCloud) {
+      @Nullable PrivateCloudName privateCloud) {
     ResetVcenterCredentialsRequest request =
         ResetVcenterCredentialsRequest.newBuilder()
             .setPrivateCloud(privateCloud == null ? null : privateCloud.toString())
@@ -7848,7 +7856,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DnsForwarding getDnsForwarding(DnsForwardingName name) {
+  public final DnsForwarding getDnsForwarding(@Nullable DnsForwardingName name) {
     GetDnsForwardingRequest request =
         GetDnsForwardingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDnsForwarding(request);
@@ -8101,7 +8109,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global/networkPeerings/my-peering`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NetworkPeering getNetworkPeering(NetworkPeeringName name) {
+  public final NetworkPeering getNetworkPeering(@Nullable NetworkPeeringName name) {
     GetNetworkPeeringRequest request =
         GetNetworkPeeringRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8230,7 +8238,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworkPeeringsPagedResponse listNetworkPeerings(LocationName parent) {
+  public final ListNetworkPeeringsPagedResponse listNetworkPeerings(@Nullable LocationName parent) {
     ListNetworkPeeringsRequest request =
         ListNetworkPeeringsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8431,7 +8439,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NetworkPeering, OperationMetadata> createNetworkPeeringAsync(
-      LocationName parent, NetworkPeering networkPeering, String networkPeeringId) {
+      @Nullable LocationName parent, NetworkPeering networkPeering, String networkPeeringId) {
     CreateNetworkPeeringRequest request =
         CreateNetworkPeeringRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8623,7 +8631,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteNetworkPeeringAsync(
-      NetworkPeeringName name) {
+      @Nullable NetworkPeeringName name) {
     DeleteNetworkPeeringRequest request =
         DeleteNetworkPeeringRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8929,7 +8937,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global/networkPeerings/my-peering`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPeeringRoutesPagedResponse listPeeringRoutes(NetworkPeeringName parent) {
+  public final ListPeeringRoutesPagedResponse listPeeringRoutes(
+      @Nullable NetworkPeeringName parent) {
     ListPeeringRoutesRequest request =
         ListPeeringRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9129,7 +9138,9 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<HcxActivationKey, OperationMetadata> createHcxActivationKeyAsync(
-      PrivateCloudName parent, HcxActivationKey hcxActivationKey, String hcxActivationKeyId) {
+      @Nullable PrivateCloudName parent,
+      HcxActivationKey hcxActivationKey,
+      String hcxActivationKeyId) {
     CreateHcxActivationKeyRequest request =
         CreateHcxActivationKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9319,7 +9330,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/privateClouds/my-cloud`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHcxActivationKeysPagedResponse listHcxActivationKeys(PrivateCloudName parent) {
+  public final ListHcxActivationKeysPagedResponse listHcxActivationKeys(
+      @Nullable PrivateCloudName parent) {
     ListHcxActivationKeysRequest request =
         ListHcxActivationKeysRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9496,7 +9508,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HcxActivationKey getHcxActivationKey(HcxActivationKeyName name) {
+  public final HcxActivationKey getHcxActivationKey(@Nullable HcxActivationKeyName name) {
     GetHcxActivationKeyRequest request =
         GetHcxActivationKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9624,7 +9636,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/networkPolicies/my-network-policy`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final NetworkPolicy getNetworkPolicy(NetworkPolicyName name) {
+  public final NetworkPolicy getNetworkPolicy(@Nullable NetworkPolicyName name) {
     GetNetworkPolicyRequest request =
         GetNetworkPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNetworkPolicy(request);
@@ -9743,7 +9755,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNetworkPoliciesPagedResponse listNetworkPolicies(LocationName parent) {
+  public final ListNetworkPoliciesPagedResponse listNetworkPolicies(@Nullable LocationName parent) {
     ListNetworkPoliciesRequest request =
         ListNetworkPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9938,7 +9950,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<NetworkPolicy, OperationMetadata> createNetworkPolicyAsync(
-      LocationName parent, NetworkPolicy networkPolicy, String networkPolicyId) {
+      @Nullable LocationName parent, NetworkPolicy networkPolicy, String networkPolicyId) {
     CreateNetworkPolicyRequest request =
         CreateNetworkPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10290,7 +10302,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteNetworkPolicyAsync(
-      NetworkPolicyName name) {
+      @Nullable NetworkPolicyName name) {
     DeleteNetworkPolicyRequest request =
         DeleteNetworkPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10456,7 +10468,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListManagementDnsZoneBindingsPagedResponse listManagementDnsZoneBindings(
-      PrivateCloudName parent) {
+      @Nullable PrivateCloudName parent) {
     ListManagementDnsZoneBindingsRequest request =
         ListManagementDnsZoneBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -10643,7 +10655,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ManagementDnsZoneBinding getManagementDnsZoneBinding(
-      ManagementDnsZoneBindingName name) {
+      @Nullable ManagementDnsZoneBindingName name) {
     GetManagementDnsZoneBindingRequest request =
         GetManagementDnsZoneBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -10805,7 +10817,7 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
       createManagementDnsZoneBindingAsync(
-          PrivateCloudName parent,
+          @Nullable PrivateCloudName parent,
           ManagementDnsZoneBinding managementDnsZoneBinding,
           String managementDnsZoneBindingId) {
     CreateManagementDnsZoneBindingRequest request =
@@ -11163,7 +11175,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteManagementDnsZoneBindingAsync(
-      ManagementDnsZoneBindingName name) {
+      @Nullable ManagementDnsZoneBindingName name) {
     DeleteManagementDnsZoneBindingRequest request =
         DeleteManagementDnsZoneBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11345,7 +11357,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ManagementDnsZoneBinding, OperationMetadata>
-      repairManagementDnsZoneBindingAsync(ManagementDnsZoneBindingName name) {
+      repairManagementDnsZoneBindingAsync(@Nullable ManagementDnsZoneBindingName name) {
     RepairManagementDnsZoneBindingRequest request =
         RepairManagementDnsZoneBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -11546,7 +11558,7 @@ public class VmwareEngineClient implements BackgroundResource {
    */
   public final OperationFuture<VmwareEngineNetwork, OperationMetadata>
       createVmwareEngineNetworkAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           VmwareEngineNetwork vmwareEngineNetwork,
           String vmwareEngineNetworkId) {
     CreateVmwareEngineNetworkRequest request =
@@ -11880,7 +11892,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteVmwareEngineNetworkAsync(
-      VmwareEngineNetworkName name) {
+      @Nullable VmwareEngineNetworkName name) {
     DeleteVmwareEngineNetworkRequest request =
         DeleteVmwareEngineNetworkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -12055,7 +12067,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VmwareEngineNetwork getVmwareEngineNetwork(VmwareEngineNetworkName name) {
+  public final VmwareEngineNetwork getVmwareEngineNetwork(@Nullable VmwareEngineNetworkName name) {
     GetVmwareEngineNetworkRequest request =
         GetVmwareEngineNetworkRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -12189,7 +12201,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVmwareEngineNetworksPagedResponse listVmwareEngineNetworks(LocationName parent) {
+  public final ListVmwareEngineNetworksPagedResponse listVmwareEngineNetworks(
+      @Nullable LocationName parent) {
     ListVmwareEngineNetworksRequest request =
         ListVmwareEngineNetworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -12386,7 +12399,9 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
-      LocationName parent, PrivateConnection privateConnection, String privateConnectionId) {
+      @Nullable LocationName parent,
+      PrivateConnection privateConnection,
+      String privateConnectionId) {
     CreatePrivateConnectionRequest request =
         CreatePrivateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -12572,7 +12587,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1/privateConnections/my-connection`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateConnection getPrivateConnection(PrivateConnectionName name) {
+  public final PrivateConnection getPrivateConnection(@Nullable PrivateConnectionName name) {
     GetPrivateConnectionRequest request =
         GetPrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -12702,7 +12717,8 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/us-central1`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateConnectionsPagedResponse listPrivateConnections(LocationName parent) {
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(
+      @Nullable LocationName parent) {
     ListPrivateConnectionsRequest request =
         ListPrivateConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -13018,7 +13034,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(
-      PrivateConnectionName name) {
+      @Nullable PrivateConnectionName name) {
     DeletePrivateConnectionRequest request =
         DeletePrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -13186,7 +13202,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPrivateConnectionPeeringRoutesPagedResponse listPrivateConnectionPeeringRoutes(
-      PrivateConnectionName parent) {
+      @Nullable PrivateConnectionName parent) {
     ListPrivateConnectionPeeringRoutesRequest request =
         ListPrivateConnectionPeeringRoutesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -13377,7 +13393,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DnsBindPermission, OperationMetadata> grantDnsBindPermissionAsync(
-      DnsBindPermissionName name, Principal principal) {
+      @Nullable DnsBindPermissionName name, Principal principal) {
     GrantDnsBindPermissionRequest request =
         GrantDnsBindPermissionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -13551,7 +13567,7 @@ public class VmwareEngineClient implements BackgroundResource {
    *     `projects/my-project/locations/global/dnsBindPermission`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DnsBindPermission getDnsBindPermission(DnsBindPermissionName name) {
+  public final DnsBindPermission getDnsBindPermission(@Nullable DnsBindPermissionName name) {
     GetDnsBindPermissionRequest request =
         GetDnsBindPermissionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -13685,7 +13701,7 @@ public class VmwareEngineClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DnsBindPermission, OperationMetadata> revokeDnsBindPermissionAsync(
-      DnsBindPermissionName name, Principal principal) {
+      @Nullable DnsBindPermissionName name, Principal principal) {
     RevokeDnsBindPermissionRequest request =
         RevokeDnsBindPermissionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -14252,8 +14268,9 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateCloudsPage> {
 
     private ListPrivateCloudsPage(
-        PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud> context,
-        ListPrivateCloudsResponse response) {
+        @Nullable PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud>
+            context,
+        @Nullable ListPrivateCloudsResponse response) {
       super(context, response);
     }
 
@@ -14263,14 +14280,16 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateCloudsPage createPage(
-        PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud> context,
-        ListPrivateCloudsResponse response) {
+        @Nullable PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud>
+            context,
+        @Nullable ListPrivateCloudsResponse response) {
       return new ListPrivateCloudsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateCloudsPage> createPageAsync(
-        PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud> context,
+        @Nullable PageContext<ListPrivateCloudsRequest, ListPrivateCloudsResponse, PrivateCloud>
+            context,
         ApiFuture<ListPrivateCloudsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14285,7 +14304,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateCloudsFixedSizeCollection> {
 
     private ListPrivateCloudsFixedSizeCollection(
-        List<ListPrivateCloudsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateCloudsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14295,7 +14314,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateCloudsFixedSizeCollection createCollection(
-        List<ListPrivateCloudsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateCloudsPage> pages, int collectionSize) {
       return new ListPrivateCloudsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14328,8 +14347,8 @@ public class VmwareEngineClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -14339,14 +14358,14 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14360,7 +14379,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14370,7 +14390,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14397,8 +14417,8 @@ public class VmwareEngineClient implements BackgroundResource {
       extends AbstractPage<ListNodesRequest, ListNodesResponse, Node, ListNodesPage> {
 
     private ListNodesPage(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
-        ListNodesResponse response) {
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
       super(context, response);
     }
 
@@ -14408,14 +14428,14 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNodesPage createPage(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
-        ListNodesResponse response) {
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
       return new ListNodesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNodesPage> createPageAsync(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
         ApiFuture<ListNodesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14425,7 +14445,7 @@ public class VmwareEngineClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
 
-    private ListNodesFixedSizeCollection(List<ListNodesPage> pages, int collectionSize) {
+    private ListNodesFixedSizeCollection(@Nullable List<ListNodesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14435,7 +14455,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNodesFixedSizeCollection createCollection(
-        List<ListNodesPage> pages, int collectionSize) {
+        @Nullable List<ListNodesPage> pages, int collectionSize) {
       return new ListNodesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14473,9 +14493,11 @@ public class VmwareEngineClient implements BackgroundResource {
           ListExternalAddressesPage> {
 
     private ListExternalAddressesPage(
-        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+        @Nullable
+            PageContext<
+                ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
             context,
-        ListExternalAddressesResponse response) {
+        @Nullable ListExternalAddressesResponse response) {
       super(context, response);
     }
 
@@ -14485,15 +14507,19 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListExternalAddressesPage createPage(
-        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+        @Nullable
+            PageContext<
+                ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
             context,
-        ListExternalAddressesResponse response) {
+        @Nullable ListExternalAddressesResponse response) {
       return new ListExternalAddressesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExternalAddressesPage> createPageAsync(
-        PageContext<ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
+        @Nullable
+            PageContext<
+                ListExternalAddressesRequest, ListExternalAddressesResponse, ExternalAddress>
             context,
         ApiFuture<ListExternalAddressesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -14509,7 +14535,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListExternalAddressesFixedSizeCollection> {
 
     private ListExternalAddressesFixedSizeCollection(
-        List<ListExternalAddressesPage> pages, int collectionSize) {
+        @Nullable List<ListExternalAddressesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14519,7 +14545,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListExternalAddressesFixedSizeCollection createCollection(
-        List<ListExternalAddressesPage> pages, int collectionSize) {
+        @Nullable List<ListExternalAddressesPage> pages, int collectionSize) {
       return new ListExternalAddressesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14562,12 +14588,13 @@ public class VmwareEngineClient implements BackgroundResource {
           FetchNetworkPolicyExternalAddressesPage> {
 
     private FetchNetworkPolicyExternalAddressesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchNetworkPolicyExternalAddressesRequest,
                 FetchNetworkPolicyExternalAddressesResponse,
                 ExternalAddress>
             context,
-        FetchNetworkPolicyExternalAddressesResponse response) {
+        @Nullable FetchNetworkPolicyExternalAddressesResponse response) {
       super(context, response);
     }
 
@@ -14577,18 +14604,20 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected FetchNetworkPolicyExternalAddressesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchNetworkPolicyExternalAddressesRequest,
                 FetchNetworkPolicyExternalAddressesResponse,
                 ExternalAddress>
             context,
-        FetchNetworkPolicyExternalAddressesResponse response) {
+        @Nullable FetchNetworkPolicyExternalAddressesResponse response) {
       return new FetchNetworkPolicyExternalAddressesPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchNetworkPolicyExternalAddressesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchNetworkPolicyExternalAddressesRequest,
                 FetchNetworkPolicyExternalAddressesResponse,
                 ExternalAddress>
@@ -14607,7 +14636,7 @@ public class VmwareEngineClient implements BackgroundResource {
           FetchNetworkPolicyExternalAddressesFixedSizeCollection> {
 
     private FetchNetworkPolicyExternalAddressesFixedSizeCollection(
-        List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
+        @Nullable List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14617,7 +14646,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected FetchNetworkPolicyExternalAddressesFixedSizeCollection createCollection(
-        List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
+        @Nullable List<FetchNetworkPolicyExternalAddressesPage> pages, int collectionSize) {
       return new FetchNetworkPolicyExternalAddressesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14648,8 +14677,8 @@ public class VmwareEngineClient implements BackgroundResource {
       extends AbstractPage<ListSubnetsRequest, ListSubnetsResponse, Subnet, ListSubnetsPage> {
 
     private ListSubnetsPage(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
-        ListSubnetsResponse response) {
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable ListSubnetsResponse response) {
       super(context, response);
     }
 
@@ -14659,14 +14688,14 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListSubnetsPage createPage(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
-        ListSubnetsResponse response) {
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable ListSubnetsResponse response) {
       return new ListSubnetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSubnetsPage> createPageAsync(
-        PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
+        @Nullable PageContext<ListSubnetsRequest, ListSubnetsResponse, Subnet> context,
         ApiFuture<ListSubnetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14680,7 +14709,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListSubnetsPage,
           ListSubnetsFixedSizeCollection> {
 
-    private ListSubnetsFixedSizeCollection(List<ListSubnetsPage> pages, int collectionSize) {
+    private ListSubnetsFixedSizeCollection(
+        @Nullable List<ListSubnetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14690,7 +14720,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListSubnetsFixedSizeCollection createCollection(
-        List<ListSubnetsPage> pages, int collectionSize) {
+        @Nullable List<ListSubnetsPage> pages, int collectionSize) {
       return new ListSubnetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14729,10 +14759,11 @@ public class VmwareEngineClient implements BackgroundResource {
           ListExternalAccessRulesPage> {
 
     private ListExternalAccessRulesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
             context,
-        ListExternalAccessRulesResponse response) {
+        @Nullable ListExternalAccessRulesResponse response) {
       super(context, response);
     }
 
@@ -14742,16 +14773,18 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListExternalAccessRulesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
             context,
-        ListExternalAccessRulesResponse response) {
+        @Nullable ListExternalAccessRulesResponse response) {
       return new ListExternalAccessRulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExternalAccessRulesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListExternalAccessRulesRequest, ListExternalAccessRulesResponse, ExternalAccessRule>
             context,
         ApiFuture<ListExternalAccessRulesResponse> futureResponse) {
@@ -14768,7 +14801,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListExternalAccessRulesFixedSizeCollection> {
 
     private ListExternalAccessRulesFixedSizeCollection(
-        List<ListExternalAccessRulesPage> pages, int collectionSize) {
+        @Nullable List<ListExternalAccessRulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14778,7 +14811,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListExternalAccessRulesFixedSizeCollection createCollection(
-        List<ListExternalAccessRulesPage> pages, int collectionSize) {
+        @Nullable List<ListExternalAccessRulesPage> pages, int collectionSize) {
       return new ListExternalAccessRulesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14815,8 +14848,9 @@ public class VmwareEngineClient implements BackgroundResource {
           ListLoggingServersPage> {
 
     private ListLoggingServersPage(
-        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
-        ListLoggingServersResponse response) {
+        @Nullable PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer>
+            context,
+        @Nullable ListLoggingServersResponse response) {
       super(context, response);
     }
 
@@ -14826,14 +14860,16 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListLoggingServersPage createPage(
-        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
-        ListLoggingServersResponse response) {
+        @Nullable PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer>
+            context,
+        @Nullable ListLoggingServersResponse response) {
       return new ListLoggingServersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLoggingServersPage> createPageAsync(
-        PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer> context,
+        @Nullable PageContext<ListLoggingServersRequest, ListLoggingServersResponse, LoggingServer>
+            context,
         ApiFuture<ListLoggingServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14848,7 +14884,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListLoggingServersFixedSizeCollection> {
 
     private ListLoggingServersFixedSizeCollection(
-        List<ListLoggingServersPage> pages, int collectionSize) {
+        @Nullable List<ListLoggingServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14858,7 +14894,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListLoggingServersFixedSizeCollection createCollection(
-        List<ListLoggingServersPage> pages, int collectionSize) {
+        @Nullable List<ListLoggingServersPage> pages, int collectionSize) {
       return new ListLoggingServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14892,8 +14928,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNodeTypesRequest, ListNodeTypesResponse, NodeType, ListNodeTypesPage> {
 
     private ListNodeTypesPage(
-        PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
-        ListNodeTypesResponse response) {
+        @Nullable PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
+        @Nullable ListNodeTypesResponse response) {
       super(context, response);
     }
 
@@ -14903,14 +14939,14 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNodeTypesPage createPage(
-        PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
-        ListNodeTypesResponse response) {
+        @Nullable PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
+        @Nullable ListNodeTypesResponse response) {
       return new ListNodeTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNodeTypesPage> createPageAsync(
-        PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
+        @Nullable PageContext<ListNodeTypesRequest, ListNodeTypesResponse, NodeType> context,
         ApiFuture<ListNodeTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -14924,7 +14960,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNodeTypesPage,
           ListNodeTypesFixedSizeCollection> {
 
-    private ListNodeTypesFixedSizeCollection(List<ListNodeTypesPage> pages, int collectionSize) {
+    private ListNodeTypesFixedSizeCollection(
+        @Nullable List<ListNodeTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -14934,7 +14971,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNodeTypesFixedSizeCollection createCollection(
-        List<ListNodeTypesPage> pages, int collectionSize) {
+        @Nullable List<ListNodeTypesPage> pages, int collectionSize) {
       return new ListNodeTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -14972,9 +15009,10 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNetworkPeeringsPage> {
 
     private ListNetworkPeeringsPage(
-        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+        @Nullable
+            PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
             context,
-        ListNetworkPeeringsResponse response) {
+        @Nullable ListNetworkPeeringsResponse response) {
       super(context, response);
     }
 
@@ -14984,15 +15022,17 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNetworkPeeringsPage createPage(
-        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+        @Nullable
+            PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
             context,
-        ListNetworkPeeringsResponse response) {
+        @Nullable ListNetworkPeeringsResponse response) {
       return new ListNetworkPeeringsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworkPeeringsPage> createPageAsync(
-        PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
+        @Nullable
+            PageContext<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse, NetworkPeering>
             context,
         ApiFuture<ListNetworkPeeringsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -15008,7 +15048,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNetworkPeeringsFixedSizeCollection> {
 
     private ListNetworkPeeringsFixedSizeCollection(
-        List<ListNetworkPeeringsPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkPeeringsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15018,7 +15058,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNetworkPeeringsFixedSizeCollection createCollection(
-        List<ListNetworkPeeringsPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkPeeringsPage> pages, int collectionSize) {
       return new ListNetworkPeeringsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15055,8 +15095,9 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPeeringRoutesPage> {
 
     private ListPeeringRoutesPage(
-        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
-        ListPeeringRoutesResponse response) {
+        @Nullable PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute>
+            context,
+        @Nullable ListPeeringRoutesResponse response) {
       super(context, response);
     }
 
@@ -15066,14 +15107,16 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesPage createPage(
-        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
-        ListPeeringRoutesResponse response) {
+        @Nullable PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute>
+            context,
+        @Nullable ListPeeringRoutesResponse response) {
       return new ListPeeringRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPeeringRoutesPage> createPageAsync(
-        PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute> context,
+        @Nullable PageContext<ListPeeringRoutesRequest, ListPeeringRoutesResponse, PeeringRoute>
+            context,
         ApiFuture<ListPeeringRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15088,7 +15131,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPeeringRoutesFixedSizeCollection> {
 
     private ListPeeringRoutesFixedSizeCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15098,7 +15141,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesFixedSizeCollection createCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       return new ListPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15136,9 +15179,11 @@ public class VmwareEngineClient implements BackgroundResource {
           ListHcxActivationKeysPage> {
 
     private ListHcxActivationKeysPage(
-        PageContext<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
+        @Nullable
+            PageContext<
+                ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
             context,
-        ListHcxActivationKeysResponse response) {
+        @Nullable ListHcxActivationKeysResponse response) {
       super(context, response);
     }
 
@@ -15148,15 +15193,19 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListHcxActivationKeysPage createPage(
-        PageContext<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
+        @Nullable
+            PageContext<
+                ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
             context,
-        ListHcxActivationKeysResponse response) {
+        @Nullable ListHcxActivationKeysResponse response) {
       return new ListHcxActivationKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHcxActivationKeysPage> createPageAsync(
-        PageContext<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
+        @Nullable
+            PageContext<
+                ListHcxActivationKeysRequest, ListHcxActivationKeysResponse, HcxActivationKey>
             context,
         ApiFuture<ListHcxActivationKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -15172,7 +15221,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListHcxActivationKeysFixedSizeCollection> {
 
     private ListHcxActivationKeysFixedSizeCollection(
-        List<ListHcxActivationKeysPage> pages, int collectionSize) {
+        @Nullable List<ListHcxActivationKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15182,7 +15231,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListHcxActivationKeysFixedSizeCollection createCollection(
-        List<ListHcxActivationKeysPage> pages, int collectionSize) {
+        @Nullable List<ListHcxActivationKeysPage> pages, int collectionSize) {
       return new ListHcxActivationKeysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15219,8 +15268,10 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNetworkPoliciesPage> {
 
     private ListNetworkPoliciesPage(
-        PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy> context,
-        ListNetworkPoliciesResponse response) {
+        @Nullable
+            PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy>
+            context,
+        @Nullable ListNetworkPoliciesResponse response) {
       super(context, response);
     }
 
@@ -15230,14 +15281,18 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNetworkPoliciesPage createPage(
-        PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy> context,
-        ListNetworkPoliciesResponse response) {
+        @Nullable
+            PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy>
+            context,
+        @Nullable ListNetworkPoliciesResponse response) {
       return new ListNetworkPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworkPoliciesPage> createPageAsync(
-        PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy> context,
+        @Nullable
+            PageContext<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse, NetworkPolicy>
+            context,
         ApiFuture<ListNetworkPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15252,7 +15307,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListNetworkPoliciesFixedSizeCollection> {
 
     private ListNetworkPoliciesFixedSizeCollection(
-        List<ListNetworkPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15262,7 +15317,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListNetworkPoliciesFixedSizeCollection createCollection(
-        List<ListNetworkPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListNetworkPoliciesPage> pages, int collectionSize) {
       return new ListNetworkPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15304,12 +15359,13 @@ public class VmwareEngineClient implements BackgroundResource {
           ListManagementDnsZoneBindingsPage> {
 
     private ListManagementDnsZoneBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagementDnsZoneBindingsRequest,
                 ListManagementDnsZoneBindingsResponse,
                 ManagementDnsZoneBinding>
             context,
-        ListManagementDnsZoneBindingsResponse response) {
+        @Nullable ListManagementDnsZoneBindingsResponse response) {
       super(context, response);
     }
 
@@ -15319,18 +15375,20 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListManagementDnsZoneBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagementDnsZoneBindingsRequest,
                 ListManagementDnsZoneBindingsResponse,
                 ManagementDnsZoneBinding>
             context,
-        ListManagementDnsZoneBindingsResponse response) {
+        @Nullable ListManagementDnsZoneBindingsResponse response) {
       return new ListManagementDnsZoneBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagementDnsZoneBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListManagementDnsZoneBindingsRequest,
                 ListManagementDnsZoneBindingsResponse,
                 ManagementDnsZoneBinding>
@@ -15349,7 +15407,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListManagementDnsZoneBindingsFixedSizeCollection> {
 
     private ListManagementDnsZoneBindingsFixedSizeCollection(
-        List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15359,7 +15417,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListManagementDnsZoneBindingsFixedSizeCollection createCollection(
-        List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListManagementDnsZoneBindingsPage> pages, int collectionSize) {
       return new ListManagementDnsZoneBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15400,12 +15458,13 @@ public class VmwareEngineClient implements BackgroundResource {
           ListVmwareEngineNetworksPage> {
 
     private ListVmwareEngineNetworksPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVmwareEngineNetworksRequest,
                 ListVmwareEngineNetworksResponse,
                 VmwareEngineNetwork>
             context,
-        ListVmwareEngineNetworksResponse response) {
+        @Nullable ListVmwareEngineNetworksResponse response) {
       super(context, response);
     }
 
@@ -15415,18 +15474,20 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListVmwareEngineNetworksPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVmwareEngineNetworksRequest,
                 ListVmwareEngineNetworksResponse,
                 VmwareEngineNetwork>
             context,
-        ListVmwareEngineNetworksResponse response) {
+        @Nullable ListVmwareEngineNetworksResponse response) {
       return new ListVmwareEngineNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVmwareEngineNetworksPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVmwareEngineNetworksRequest,
                 ListVmwareEngineNetworksResponse,
                 VmwareEngineNetwork>
@@ -15445,7 +15506,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListVmwareEngineNetworksFixedSizeCollection> {
 
     private ListVmwareEngineNetworksFixedSizeCollection(
-        List<ListVmwareEngineNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListVmwareEngineNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15455,7 +15516,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListVmwareEngineNetworksFixedSizeCollection createCollection(
-        List<ListVmwareEngineNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListVmwareEngineNetworksPage> pages, int collectionSize) {
       return new ListVmwareEngineNetworksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15494,10 +15555,11 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateConnectionsPage> {
 
     private ListPrivateConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       super(context, response);
     }
 
@@ -15507,16 +15569,18 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       return new ListPrivateConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
         ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
@@ -15533,7 +15597,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateConnectionsFixedSizeCollection> {
 
     private ListPrivateConnectionsFixedSizeCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15543,7 +15607,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsFixedSizeCollection createCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       return new ListPrivateConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15586,12 +15650,13 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateConnectionPeeringRoutesPage> {
 
     private ListPrivateConnectionPeeringRoutesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionPeeringRoutesRequest,
                 ListPrivateConnectionPeeringRoutesResponse,
                 PeeringRoute>
             context,
-        ListPrivateConnectionPeeringRoutesResponse response) {
+        @Nullable ListPrivateConnectionPeeringRoutesResponse response) {
       super(context, response);
     }
 
@@ -15601,18 +15666,20 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionPeeringRoutesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionPeeringRoutesRequest,
                 ListPrivateConnectionPeeringRoutesResponse,
                 PeeringRoute>
             context,
-        ListPrivateConnectionPeeringRoutesResponse response) {
+        @Nullable ListPrivateConnectionPeeringRoutesResponse response) {
       return new ListPrivateConnectionPeeringRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateConnectionPeeringRoutesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionPeeringRoutesRequest,
                 ListPrivateConnectionPeeringRoutesResponse,
                 PeeringRoute>
@@ -15631,7 +15698,7 @@ public class VmwareEngineClient implements BackgroundResource {
           ListPrivateConnectionPeeringRoutesFixedSizeCollection> {
 
     private ListPrivateConnectionPeeringRoutesFixedSizeCollection(
-        List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15641,7 +15708,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionPeeringRoutesFixedSizeCollection createCollection(
-        List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionPeeringRoutesPage> pages, int collectionSize) {
       return new ListPrivateConnectionPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -15675,8 +15742,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -15686,14 +15753,14 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -15707,7 +15774,8 @@ public class VmwareEngineClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -15717,7 +15785,7 @@ public class VmwareEngineClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

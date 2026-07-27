@@ -188,5 +188,82 @@ public interface ExecuteToolResponseOrBuilder
    */
   com.google.protobuf.StructOrBuilder getVariablesOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Citations citations = 5;</code>
+   *
+   * @return Whether the citations field is set.
+   */
+  boolean hasCitations();
+
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Citations citations = 5;</code>
+   *
+   * @return The citations.
+   */
+  com.google.cloud.ces.v1.Citations getCitations();
+
+  /**
+   *
+   *
+   * <pre>
+   * Citations that provide the source information for the tool's execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.Citations citations = 5;</code>
+   */
+  com.google.cloud.ces.v1.CitationsOrBuilder getCitationsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   *
+   * @return Whether the googleSearchSuggestions field is set.
+   */
+  boolean hasGoogleSearchSuggestions();
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   *
+   * @return The googleSearchSuggestions.
+   */
+  com.google.cloud.ces.v1.GoogleSearchSuggestions getGoogleSearchSuggestions();
+
+  /**
+   *
+   *
+   * <pre>
+   * The suggestions returned from Google Search as a result of invoking the
+   * Google Search Tool during the tool execution.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1.GoogleSearchSuggestions google_search_suggestions = 6;</code>
+   */
+  com.google.cloud.ces.v1.GoogleSearchSuggestionsOrBuilder getGoogleSearchSuggestionsOrBuilder();
+
   com.google.cloud.ces.v1.ExecuteToolResponse.ToolIdentifierCase getToolIdentifierCase();
 }

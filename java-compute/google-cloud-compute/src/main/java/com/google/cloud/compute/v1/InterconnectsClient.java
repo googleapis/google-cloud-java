@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -256,9 +258,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InterconnectsClient implements BackgroundResource {
-  private final InterconnectsSettings settings;
+  private final @Nullable InterconnectsSettings settings;
   private final InterconnectsStub stub;
 
   /** Constructs an instance of InterconnectsClient with default settings. */
@@ -298,7 +301,7 @@ public class InterconnectsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InterconnectsSettings getSettings() {
+  public final @Nullable InterconnectsSettings getSettings() {
     return settings;
   }
 
@@ -1317,8 +1320,8 @@ public class InterconnectsClient implements BackgroundResource {
       extends AbstractPage<ListInterconnectsRequest, InterconnectList, Interconnect, ListPage> {
 
     private ListPage(
-        PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
-        InterconnectList response) {
+        @Nullable PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
+        @Nullable InterconnectList response) {
       super(context, response);
     }
 
@@ -1328,14 +1331,14 @@ public class InterconnectsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
-        InterconnectList response) {
+        @Nullable PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
+        @Nullable InterconnectList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
+        @Nullable PageContext<ListInterconnectsRequest, InterconnectList, Interconnect> context,
         ApiFuture<InterconnectList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1349,7 +1352,7 @@ public class InterconnectsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1358,7 +1361,8 @@ public class InterconnectsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

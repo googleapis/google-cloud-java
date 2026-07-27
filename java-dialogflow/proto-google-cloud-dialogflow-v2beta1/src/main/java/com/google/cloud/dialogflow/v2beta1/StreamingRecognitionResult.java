@@ -180,6 +180,30 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>PARTIAL_DTMF_DIGITS = 4;</code>
      */
     PARTIAL_DTMF_DIGITS(4),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    SPEECH_ACTIVITY_BEGIN(5),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    SPEECH_ACTIVITY_END(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -256,6 +280,32 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      */
     public static final int PARTIAL_DTMF_DIGITS_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    public static final int SPEECH_ACTIVITY_BEGIN_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    public static final int SPEECH_ACTIVITY_END_VALUE = 6;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -290,6 +340,10 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           return DTMF_DIGITS;
         case 4:
           return PARTIAL_DTMF_DIGITS;
+        case 5:
+          return SPEECH_ACTIVITY_BEGIN;
+        case 6:
+          return SPEECH_ACTIVITY_END;
         default:
           return null;
       }

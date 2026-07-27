@@ -34,8 +34,10 @@ import com.google.api.gax.rpc.RequestMutator;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.protobuf.TypeRegistry;
+import org.jspecify.annotations.NullMarked;
 
 /** HTTP-specific settings for creating callables. */
+@NullMarked
 public class HttpJsonCallSettings<RequestT, ResponseT> {
   private final ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor;
   private final RequestParamsExtractor<RequestT> paramsExtractor;

@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -598,9 +600,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SpeechClient implements BackgroundResource {
-  private final SpeechSettings settings;
+  private final @Nullable SpeechSettings settings;
   private final SpeechStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -646,7 +649,7 @@ public class SpeechClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final SpeechSettings getSettings() {
+  public final @Nullable SpeechSettings getSettings() {
     return settings;
   }
 
@@ -701,7 +704,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Recognizer, OperationMetadata> createRecognizerAsync(
-      LocationName parent, Recognizer recognizer, String recognizerId) {
+      @Nullable LocationName parent, Recognizer recognizer, String recognizerId) {
     CreateRecognizerRequest request =
         CreateRecognizerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -869,7 +872,7 @@ public class SpeechClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRecognizersPagedResponse listRecognizers(LocationName parent) {
+  public final ListRecognizersPagedResponse listRecognizers(@Nullable LocationName parent) {
     ListRecognizersRequest request =
         ListRecognizersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1036,7 +1039,7 @@ public class SpeechClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/recognizers/{recognizer}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recognizer getRecognizer(RecognizerName name) {
+  public final Recognizer getRecognizer(@Nullable RecognizerName name) {
     GetRecognizerRequest request =
         GetRecognizerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRecognizer(request);
@@ -1277,7 +1280,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Recognizer, OperationMetadata> deleteRecognizerAsync(
-      RecognizerName name) {
+      @Nullable RecognizerName name) {
     DeleteRecognizerRequest request =
         DeleteRecognizerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRecognizerAsync(request);
@@ -1427,7 +1430,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Recognizer, OperationMetadata> undeleteRecognizerAsync(
-      RecognizerName name) {
+      @Nullable RecognizerName name) {
     UndeleteRecognizerRequest request =
         UndeleteRecognizerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1601,7 +1604,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RecognizeResponse recognize(
-      RecognizerName recognizer,
+      @Nullable RecognizerName recognizer,
       RecognitionConfig config,
       FieldMask configMask,
       ByteString content) {
@@ -1665,7 +1668,10 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RecognizeResponse recognize(
-      RecognizerName recognizer, RecognitionConfig config, FieldMask configMask, String uri) {
+      @Nullable RecognizerName recognizer,
+      RecognitionConfig config,
+      FieldMask configMask,
+      String uri) {
     RecognizeRequest request =
         RecognizeRequest.newBuilder()
             .setRecognizer(recognizer == null ? null : recognizer.toString())
@@ -1939,7 +1945,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchRecognizeResponse, OperationMetadata> batchRecognizeAsync(
-      RecognizerName recognizer,
+      @Nullable RecognizerName recognizer,
       RecognitionConfig config,
       FieldMask configMask,
       List<BatchRecognizeFileMetadata> files) {
@@ -2141,7 +2147,7 @@ public class SpeechClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/config`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Config getConfig(ConfigName name) {
+  public final Config getConfig(@Nullable ConfigName name) {
     GetConfigRequest request =
         GetConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConfig(request);
@@ -2348,7 +2354,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CustomClass, OperationMetadata> createCustomClassAsync(
-      LocationName parent, CustomClass customClass, String customClassId) {
+      @Nullable LocationName parent, CustomClass customClass, String customClassId) {
     CreateCustomClassRequest request =
         CreateCustomClassRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2516,7 +2522,7 @@ public class SpeechClient implements BackgroundResource {
    *     format is `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomClassesPagedResponse listCustomClasses(LocationName parent) {
+  public final ListCustomClassesPagedResponse listCustomClasses(@Nullable LocationName parent) {
     ListCustomClassesRequest request =
         ListCustomClassesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2683,7 +2689,7 @@ public class SpeechClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/customClasses/{custom_class}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomClass getCustomClass(CustomClassName name) {
+  public final CustomClass getCustomClass(@Nullable CustomClassName name) {
     GetCustomClassRequest request =
         GetCustomClassRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomClass(request);
@@ -2921,7 +2927,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CustomClass, OperationMetadata> deleteCustomClassAsync(
-      CustomClassName name) {
+      @Nullable CustomClassName name) {
     DeleteCustomClassRequest request =
         DeleteCustomClassRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3073,7 +3079,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CustomClass, OperationMetadata> undeleteCustomClassAsync(
-      CustomClassName name) {
+      @Nullable CustomClassName name) {
     UndeleteCustomClassRequest request =
         UndeleteCustomClassRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3230,7 +3236,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PhraseSet, OperationMetadata> createPhraseSetAsync(
-      LocationName parent, PhraseSet phraseSet, String phraseSetId) {
+      @Nullable LocationName parent, PhraseSet phraseSet, String phraseSetId) {
     CreatePhraseSetRequest request =
         CreatePhraseSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3397,7 +3403,7 @@ public class SpeechClient implements BackgroundResource {
    *     format is `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPhraseSetsPagedResponse listPhraseSets(LocationName parent) {
+  public final ListPhraseSetsPagedResponse listPhraseSets(@Nullable LocationName parent) {
     ListPhraseSetsRequest request =
         ListPhraseSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3562,7 +3568,7 @@ public class SpeechClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/phraseSets/{phrase_set}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PhraseSet getPhraseSet(PhraseSetName name) {
+  public final PhraseSet getPhraseSet(@Nullable PhraseSetName name) {
     GetPhraseSetRequest request =
         GetPhraseSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPhraseSet(request);
@@ -3800,7 +3806,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PhraseSet, OperationMetadata> deletePhraseSetAsync(
-      PhraseSetName name) {
+      @Nullable PhraseSetName name) {
     DeletePhraseSetRequest request =
         DeletePhraseSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deletePhraseSetAsync(request);
@@ -3950,7 +3956,7 @@ public class SpeechClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PhraseSet, OperationMetadata> undeletePhraseSetAsync(
-      PhraseSetName name) {
+      @Nullable PhraseSetName name) {
     UndeletePhraseSetRequest request =
         UndeletePhraseSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4307,8 +4313,8 @@ public class SpeechClient implements BackgroundResource {
           ListRecognizersRequest, ListRecognizersResponse, Recognizer, ListRecognizersPage> {
 
     private ListRecognizersPage(
-        PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
-        ListRecognizersResponse response) {
+        @Nullable PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
+        @Nullable ListRecognizersResponse response) {
       super(context, response);
     }
 
@@ -4318,14 +4324,14 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListRecognizersPage createPage(
-        PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
-        ListRecognizersResponse response) {
+        @Nullable PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
+        @Nullable ListRecognizersResponse response) {
       return new ListRecognizersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRecognizersPage> createPageAsync(
-        PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
+        @Nullable PageContext<ListRecognizersRequest, ListRecognizersResponse, Recognizer> context,
         ApiFuture<ListRecognizersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4340,7 +4346,7 @@ public class SpeechClient implements BackgroundResource {
           ListRecognizersFixedSizeCollection> {
 
     private ListRecognizersFixedSizeCollection(
-        List<ListRecognizersPage> pages, int collectionSize) {
+        @Nullable List<ListRecognizersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4350,7 +4356,7 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListRecognizersFixedSizeCollection createCollection(
-        List<ListRecognizersPage> pages, int collectionSize) {
+        @Nullable List<ListRecognizersPage> pages, int collectionSize) {
       return new ListRecognizersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4384,8 +4390,9 @@ public class SpeechClient implements BackgroundResource {
           ListCustomClassesRequest, ListCustomClassesResponse, CustomClass, ListCustomClassesPage> {
 
     private ListCustomClassesPage(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
-        ListCustomClassesResponse response) {
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
+        @Nullable ListCustomClassesResponse response) {
       super(context, response);
     }
 
@@ -4395,14 +4402,16 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListCustomClassesPage createPage(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
-        ListCustomClassesResponse response) {
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
+        @Nullable ListCustomClassesResponse response) {
       return new ListCustomClassesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomClassesPage> createPageAsync(
-        PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass> context,
+        @Nullable PageContext<ListCustomClassesRequest, ListCustomClassesResponse, CustomClass>
+            context,
         ApiFuture<ListCustomClassesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4417,7 +4426,7 @@ public class SpeechClient implements BackgroundResource {
           ListCustomClassesFixedSizeCollection> {
 
     private ListCustomClassesFixedSizeCollection(
-        List<ListCustomClassesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomClassesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4427,7 +4436,7 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListCustomClassesFixedSizeCollection createCollection(
-        List<ListCustomClassesPage> pages, int collectionSize) {
+        @Nullable List<ListCustomClassesPage> pages, int collectionSize) {
       return new ListCustomClassesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4461,8 +4470,8 @@ public class SpeechClient implements BackgroundResource {
           ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet, ListPhraseSetsPage> {
 
     private ListPhraseSetsPage(
-        PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
-        ListPhraseSetsResponse response) {
+        @Nullable PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
+        @Nullable ListPhraseSetsResponse response) {
       super(context, response);
     }
 
@@ -4472,14 +4481,14 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListPhraseSetsPage createPage(
-        PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
-        ListPhraseSetsResponse response) {
+        @Nullable PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
+        @Nullable ListPhraseSetsResponse response) {
       return new ListPhraseSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPhraseSetsPage> createPageAsync(
-        PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
+        @Nullable PageContext<ListPhraseSetsRequest, ListPhraseSetsResponse, PhraseSet> context,
         ApiFuture<ListPhraseSetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4493,7 +4502,8 @@ public class SpeechClient implements BackgroundResource {
           ListPhraseSetsPage,
           ListPhraseSetsFixedSizeCollection> {
 
-    private ListPhraseSetsFixedSizeCollection(List<ListPhraseSetsPage> pages, int collectionSize) {
+    private ListPhraseSetsFixedSizeCollection(
+        @Nullable List<ListPhraseSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4503,7 +4513,7 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListPhraseSetsFixedSizeCollection createCollection(
-        List<ListPhraseSetsPage> pages, int collectionSize) {
+        @Nullable List<ListPhraseSetsPage> pages, int collectionSize) {
       return new ListPhraseSetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4537,8 +4547,8 @@ public class SpeechClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4548,14 +4558,14 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4569,7 +4579,8 @@ public class SpeechClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4579,7 +4590,7 @@ public class SpeechClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

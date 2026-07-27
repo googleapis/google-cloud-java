@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LogBucketName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_BUCKET =
@@ -235,7 +238,7 @@ public class LogBucketName implements ResourceName {
         .toString();
   }
 
-  public static LogBucketName parse(String formattedString) {
+  public static @Nullable LogBucketName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -267,7 +270,7 @@ public class LogBucketName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<LogBucketName> values) {
+  public static List<String> toStringList(List<@Nullable LogBucketName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (LogBucketName value : values) {
       if (value == null) {
@@ -327,7 +330,7 @@ public class LogBucketName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

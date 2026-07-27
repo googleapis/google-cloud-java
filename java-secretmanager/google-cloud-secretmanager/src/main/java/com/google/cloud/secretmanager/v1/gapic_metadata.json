@@ -28,6 +28,9 @@
             "DisableSecretVersion": {
               "methods": ["disableSecretVersion", "disableSecretVersion", "disableSecretVersion", "disableSecretVersionCallable"]
             },
+            "EnableManagedRotation": {
+              "methods": ["enableManagedRotation", "enableManagedRotation", "enableManagedRotation", "enableManagedRotationCallable"]
+            },
             "EnableSecretVersion": {
               "methods": ["enableSecretVersion", "enableSecretVersion", "enableSecretVersion", "enableSecretVersionCallable"]
             },
@@ -45,6 +48,9 @@
             },
             "ListSecrets": {
               "methods": ["listSecrets", "listSecrets", "listSecrets", "listSecrets", "listSecretsPagedCallable", "listSecretsCallable"]
+            },
+            "RotateSecret": {
+              "methods": ["rotateSecret", "rotateSecret", "rotateSecret", "rotateSecretCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

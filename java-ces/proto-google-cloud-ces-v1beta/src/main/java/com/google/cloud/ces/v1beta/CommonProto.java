@@ -97,9 +97,21 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_ChannelProfile_WebWidgetConfig_SecuritySettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ChannelProfile_WhatsAppConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ChannelProfile_WhatsAppConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ChannelProfile_InstagramConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ChannelProfile_InstagramConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_Span_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Span_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -152,7 +164,7 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\004cert\030\002 \001(\014B\003\340A\002\"Z\n"
           + "\026ServiceDirectoryConfig\022@\n"
           + "\007service\030\001 \001(\tB/\340A\002\372A)\n"
-          + "\'servicedirectory.googleapis.com/Service\"\337\n\n"
+          + "\'servicedirectory.googleapis.com/Service\"\213\017\n"
           + "\016ChannelProfile\022\027\n\n"
           + "profile_id\030\001 \001(\tB\003\340A\001\022N\n"
           + "\014channel_type\030\003"
@@ -163,22 +175,27 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\030disable_barge_in_control\030\005 \001(\010B\003\340A\001\022W\n"
           + "\021web_widget_config\030\007"
           + " \001(\01327.google.cloud.ces.v1beta.ChannelProfile.WebWidgetConfigB\003\340A\001\022$\n"
-          + "\027noise_suppression_level\030\010 \001(\tB\003\340A\001\032\231\001\n"
+          + "\027noise_suppression_level\030\010 \001(\tB\003\340A\001\022T\n"
+          + "\017whatsapp_config\030\t \001(\01326.google.cloud.ces.v"
+          + "1beta.ChannelProfile.WhatsAppConfigB\003\340A\001\022V\n"
+          + "\020instagram_config\030\n"
+          + " \001(\01327.google.clou"
+          + "d.ces.v1beta.ChannelProfile.InstagramConfigB\003\340A\001\032\231\001\n"
           + "\017PersonaProperty\022U\n"
-          + "\007persona\030\001 \001(\0162?.google"
-          + ".cloud.ces.v1beta.ChannelProfile.PersonaProperty.PersonaB\003\340A\001\"/\n"
+          + "\007persona\030\001"
+          + " \001(\0162?.google.cloud.ces.v1beta.ChannelProfile.PersonaProperty.PersonaB\003\340A\001\"/\n"
           + "\007Persona\022\013\n"
           + "\007UNKNOWN\020\000\022\013\n"
           + "\007CONCISE\020\001\022\n\n"
           + "\006CHATTY\020\002\032\205\005\n"
           + "\017WebWidgetConfig\022W\n"
-          + "\010modality\030\001 \001(\0162@.google.cl"
-          + "oud.ces.v1beta.ChannelProfile.WebWidgetConfig.ModalityB\003\340A\001\022Q\n"
-          + "\005theme\030\002 \001(\0162=.goo"
-          + "gle.cloud.ces.v1beta.ChannelProfile.WebWidgetConfig.ThemeB\003\340A\001\022\035\n"
+          + "\010modality\030\001 \001"
+          + "(\0162@.google.cloud.ces.v1beta.ChannelProfile.WebWidgetConfig.ModalityB\003\340A\001\022Q\n"
+          + "\005theme\030\002"
+          + " \001(\0162=.google.cloud.ces.v1beta.ChannelProfile.WebWidgetConfig.ThemeB\003\340A\001\022\035\n"
           + "\020web_widget_title\030\003 \001(\tB\003\340A\001\022h\n"
-          + "\021security_settings\030\004 \001(\0132H.google.cloud.ces.v1beta.ChannelProfil"
-          + "e.WebWidgetConfig.SecuritySettingsB\003\340A\001\032\224\001\n"
+          + "\021security_settings\030\004 \001(\0132H.google.cloud.ces.v1beta"
+          + ".ChannelProfile.WebWidgetConfig.SecuritySettingsB\003\340A\001\032\224\001\n"
           + "\020SecuritySettings\022!\n"
           + "\024enable_public_access\030\001 \001(\010B\003\340A\001\022 \n"
           + "\023enable_origin_check\030\004 \001(\010B\003\340A\001\022\034\n"
@@ -187,22 +204,39 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\010Modality\022\030\n"
           + "\024MODALITY_UNSPECIFIED\020\000\022\022\n"
           + "\016CHAT_AND_VOICE\020\001\022\016\n\n"
-          + "VOICE_ONLY\020\002\022\r\n"
+          + "VOICE_ONLY\020\002\022\r"
+          + "\n"
           + "\tCHAT_ONLY\020\003\022\030\n"
           + "\024CHAT_VOICE_AND_VIDEO\020\004\"3\n"
           + "\005Theme\022\025\n"
           + "\021THEME_UNSPECIFIED\020\000\022\t\n"
           + "\005LIGHT\020\001\022\010\n"
-          + "\004DARK\020\002\"\246\001\n"
+          + "\004DARK\020\002\032\260\001\n"
+          + "\016WhatsAppConfig\022\024\n"
+          + "\007waba_id\030\001 \001(\tB\003\340A\002\022\034\n"
+          + "\017phone_number_id\030\002 \001(\tB\003\340A\002\022\031\n"
+          + "\014phone_number\030\003 \001(\tB\003\340A\001\022\031\n"
+          + "\014display_name\030\004 \001(\tB\003\340A\003\022\032\n\r"
+          + "thumbnail_url\030\005 \001(\tB\003\340A\003\022\030\n"
+          + "\013description\030\006 \001(\tB\003\340A\003\032\205\001\n"
+          + "\017InstagramConfig\022!\n"
+          + "\024instagram_account_id\030\001 \001(\tB\003\340A\002\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\003\022\032\n\r"
+          + "thumbnail_url\030\003 \001(\tB\003\340A\003\022\030\n"
+          + "\013description\030\004 \001(\tB\003\340A\003\"\351\001\n"
           + "\013ChannelType\022\013\n"
           + "\007UNKNOWN\020\000\022\n\n"
           + "\006WEB_UI\020\002\022\007\n"
           + "\003API\020\003\022\n\n"
           + "\006TWILIO\020\004\022\035\n"
           + "\031GOOGLE_TELEPHONY_PLATFORM\020\005\022\037\n"
-          + "\033CONTACT_CENTER_AS_A_SERVICE\020\006\022\t\n"
+          + "\033CONTACT_CENTER_AS_A_SERVICE\020\006\022$\n"
+          + " CONTACT_CENTER_AS_A_SERVICE_CHAT\020\013\022\t\n"
           + "\005FIVE9\020\007\022\036\n"
-          + "\032CONTACT_CENTER_INTEGRATION\020\010\"\236\002\n"
+          + "\032CONTACT_CENTER_INTEGRATION\020\010\022\014\n"
+          + "\010WHATSAPP\020\t\022\r\n"
+          + "\tINSTAGRAM\020\n"
+          + "\"\236\002\n"
           + "\004Span\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\0223\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
@@ -210,15 +244,22 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\010duration\030\006 \001(\0132\031.google.protobuf.DurationB\003\340A\003\0220\n\n"
           + "attributes\030\004 \001(\0132\027.google.protobuf.StructB\003\340A\003\0227\n"
           + "\013child_spans\030\005"
-          + " \003(\0132\035.google.cloud.ces.v1beta.SpanB\003\340A\003*R\n\r"
+          + " \003(\0132\035.google.cloud.ces.v1beta.SpanB\003\340A\003\"\374\001\n"
+          + "\034EvaluationRunCachingSettings\022m\n"
+          + "\020run_caching_mode\030\001 \001(\0162N.google"
+          + ".cloud.ces.v1beta.EvaluationRunCachingSettings.EvaluationRunCachingModeB\003\340A\001\"m\n"
+          + "\030EvaluationRunCachingMode\022+\n"
+          + "\'EVALUATION_RUN_CACHING_MODE_UNSPECIFIED\020\000\022\r\n"
+          + "\tFORCE_RUN\020\001\022\025\n"
+          + "\021SKIP_IF_UNCHANGED\020\002*R\n\r"
           + "ExecutionType\022\036\n"
           + "\032EXECUTION_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013SYNCHRONOUS\020\001\022\020\n"
           + "\014ASYNCHRONOUS\020\002B\332\001\n"
-          + "\033com.google.clou"
-          + "d.ces.v1betaB\013CommonProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A|\n"
-          + "\'servicedirectory.googleapis.com/Service\022Qprojects/{project}/locations/{location}/"
-          + "namespaces/{namespace}/services/{service}b\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\013CommonProtoP\001Z-"
+          + "cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A|\n"
+          + "\'servicedirectory.googleapis.com/Service\022Qprojects/{project}/locations/"
+          + "{location}/namespaces/{namespace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -322,6 +363,8 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
               "DisableBargeInControl",
               "WebWidgetConfig",
               "NoiseSuppressionLevel",
+              "WhatsappConfig",
+              "InstagramConfig",
             });
     internal_static_google_cloud_ces_v1beta_ChannelProfile_PersonaProperty_descriptor =
         internal_static_google_cloud_ces_v1beta_ChannelProfile_descriptor.getNestedType(0);
@@ -348,12 +391,41 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "EnablePublicAccess", "EnableOriginCheck", "AllowedOrigins", "EnableRecaptcha",
             });
+    internal_static_google_cloud_ces_v1beta_ChannelProfile_WhatsAppConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_ChannelProfile_descriptor.getNestedType(2);
+    internal_static_google_cloud_ces_v1beta_ChannelProfile_WhatsAppConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ChannelProfile_WhatsAppConfig_descriptor,
+            new java.lang.String[] {
+              "WabaId",
+              "PhoneNumberId",
+              "PhoneNumber",
+              "DisplayName",
+              "ThumbnailUrl",
+              "Description",
+            });
+    internal_static_google_cloud_ces_v1beta_ChannelProfile_InstagramConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_ChannelProfile_descriptor.getNestedType(3);
+    internal_static_google_cloud_ces_v1beta_ChannelProfile_InstagramConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ChannelProfile_InstagramConfig_descriptor,
+            new java.lang.String[] {
+              "InstagramAccountId", "DisplayName", "ThumbnailUrl", "Description",
+            });
     internal_static_google_cloud_ces_v1beta_Span_descriptor = getDescriptor().getMessageType(6);
     internal_static_google_cloud_ces_v1beta_Span_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Span_descriptor,
             new java.lang.String[] {
               "Name", "StartTime", "EndTime", "Duration", "Attributes", "ChildSpans",
+            });
+    internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_descriptor,
+            new java.lang.String[] {
+              "RunCachingMode",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

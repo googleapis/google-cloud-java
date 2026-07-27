@@ -235,4 +235,30 @@ public interface SdpInspectResultOrBuilder
    * @return The findingsTruncated.
    */
   boolean getFindingsTruncated();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains text extracted from the image, if applicable.
+   * </pre>
+   *
+   * <code>string extracted_image_text = 6;</code>
+   *
+   * @return The extractedImageText.
+   */
+  java.lang.String getExtractedImageText();
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains text extracted from the image, if applicable.
+   * </pre>
+   *
+   * <code>string extracted_image_text = 6;</code>
+   *
+   * @return The bytes for extractedImageText.
+   */
+  com.google.protobuf.ByteString getExtractedImageTextBytes();
 }

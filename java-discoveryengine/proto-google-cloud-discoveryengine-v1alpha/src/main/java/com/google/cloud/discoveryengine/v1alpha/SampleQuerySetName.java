@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SampleQuerySetName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_SAMPLE_QUERY_SET =
@@ -87,7 +90,7 @@ public class SampleQuerySetName implements ResourceName {
         .toString();
   }
 
-  public static SampleQuerySetName parse(String formattedString) {
+  public static @Nullable SampleQuerySetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -105,7 +108,7 @@ public class SampleQuerySetName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SampleQuerySetName> values) {
+  public static List<String> toStringList(List<@Nullable SampleQuerySetName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SampleQuerySetName value : values) {
       if (value == null) {
@@ -154,7 +157,7 @@ public class SampleQuerySetName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

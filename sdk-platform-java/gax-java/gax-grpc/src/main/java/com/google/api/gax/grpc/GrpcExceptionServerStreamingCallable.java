@@ -35,12 +35,14 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Transforms all {@code Throwable}s thrown during a call into an instance of {@link ApiException}.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcExceptionServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> inner;

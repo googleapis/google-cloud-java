@@ -31,6 +31,8 @@ package com.google.api.gax.rpc;
 
 import java.util.Iterator;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A ServerStreamingCallable is an immutable object which is capable of making RPC calls to server
@@ -40,6 +42,7 @@ import java.util.List;
  * This class is intended to be created by a generated client class, and configured by instances of
  * StreamingCallSettings.Builder which are exposed through the client settings class.
  */
+@NullMarked
 public abstract class ServerStreamingCallable<RequestT, ResponseT> {
   private final FirstElementCallable<RequestT, ResponseT> firstCallable;
   private final SpoolingCallable<RequestT, ResponseT> spoolingCallable;
@@ -120,7 +123,7 @@ public abstract class ServerStreamingCallable<RequestT, ResponseT> {
    * @param context the context
    * @return {@link ServerStream} which is used for iterating the responses.
    */
-  public ServerStream<ResponseT> call(RequestT request, ApiCallContext context) {
+  public ServerStream<ResponseT> call(RequestT request, @Nullable ApiCallContext context) {
     ServerStream<ResponseT> stream = new ServerStream<>();
     call(request, stream.observer(), context);
 
@@ -135,7 +138,9 @@ public abstract class ServerStreamingCallable<RequestT, ResponseT> {
    * @param context {@link ApiCallContext} to provide context information for the RPC call.
    */
   public abstract void call(
-      RequestT request, ResponseObserver<ResponseT> responseObserver, ApiCallContext context);
+      RequestT request,
+      ResponseObserver<ResponseT> responseObserver,
+      @Nullable ApiCallContext context);
 
   /**
    * Conduct a server streaming call
@@ -159,7 +164,7 @@ public abstract class ServerStreamingCallable<RequestT, ResponseT> {
   public void serverStreamingCall(
       RequestT request,
       final ApiStreamObserver<ResponseT> responseObserver,
-      ApiCallContext context) {
+      @Nullable ApiCallContext context) {
 
     call(request, new ApiStreamObserverAdapter<>(responseObserver), context);
   }
@@ -185,7 +190,8 @@ public abstract class ServerStreamingCallable<RequestT, ResponseT> {
    * @deprecated Please use call() instead.
    */
   @Deprecated
-  public Iterator<ResponseT> blockingServerStreamingCall(RequestT request, ApiCallContext context) {
+  public Iterator<ResponseT> blockingServerStreamingCall(
+      RequestT request, @Nullable ApiCallContext context) {
     return call(request, context).iterator();
   }
 

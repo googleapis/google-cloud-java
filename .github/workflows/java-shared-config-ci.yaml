@@ -13,6 +13,9 @@
 # limitations under the License.
 # Github action job to test core java library features on
 # downstream client libraries before they are released.
+permissions:
+  contents: read
+
 on:
   push:
     branches:
@@ -27,8 +30,10 @@ jobs:
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
       id: filter
       with:
         filters: |
@@ -43,8 +48,10 @@ jobs:
       matrix:
         java: [11, 17, 21]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
@@ -59,17 +66,19 @@ jobs:
     name: "units (8)"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          java-version: 11
+          persist-credentials: false
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+        with:
+          java-version: 8
           distribution: temurin
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
         run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java -P !java17" >> $GITHUB_ENV
         shell: bash
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
         with:
           java-version: 17
           distribution: temurin
@@ -83,11 +92,13 @@ jobs:
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
-        java-version: 11
+        java-version: 8
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -100,8 +111,10 @@ jobs:
       matrix:
         java: [17]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
@@ -112,8 +125,10 @@ jobs:
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
         java-version: 17
@@ -126,10 +141,11 @@ jobs:
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v4
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
         java-version: 11
@@ -144,8 +160,10 @@ jobs:
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
       with:
         distribution: temurin
         java-version: 11

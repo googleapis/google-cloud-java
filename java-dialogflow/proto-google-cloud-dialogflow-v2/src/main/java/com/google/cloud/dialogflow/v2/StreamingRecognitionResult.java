@@ -146,6 +146,16 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
+     * Message contains DTMF digits.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    DTMF_DIGITS(3),
+    /**
+     *
+     *
+     * <pre>
      * This event indicates that the server has detected the end of the user's
      * speech utterance and expects no additional inputs.
      * Therefore, the server will not process additional audio (although it may
@@ -159,6 +169,42 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     END_OF_SINGLE_UTTERANCE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
+     * a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
+     * up to the time of sending, which represents an intermediate result.
+     * </pre>
+     *
+     * <code>PARTIAL_DTMF_DIGITS = 4;</code>
+     */
+    PARTIAL_DTMF_DIGITS(4),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    SPEECH_ACTIVITY_BEGIN(5),
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    SPEECH_ACTIVITY_END(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -198,6 +244,17 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      *
      *
      * <pre>
+     * Message contains DTMF digits.
+     * </pre>
+     *
+     * <code>DTMF_DIGITS = 3;</code>
+     */
+    public static final int DTMF_DIGITS_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
      * This event indicates that the server has detected the end of the user's
      * speech utterance and expects no additional inputs.
      * Therefore, the server will not process additional audio (although it may
@@ -211,6 +268,45 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
      * <code>END_OF_SINGLE_UTTERANCE = 2;</code>
      */
     public static final int END_OF_SINGLE_UTTERANCE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Message contains DTMF digits. Before a message with DTMF_DIGITS is sent,
+     * a message with PARTIAL_DTMF_DIGITS may be sent with DTMF digits collected
+     * up to the time of sending, which represents an intermediate result.
+     * </pre>
+     *
+     * <code>PARTIAL_DTMF_DIGITS = 4;</code>
+     */
+    public static final int PARTIAL_DTMF_DIGITS_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the beginning of human
+     * voice activity in the stream. This event can be returned multiple times
+     * if speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_BEGIN = 5;</code>
+     */
+    public static final int SPEECH_ACTIVITY_BEGIN_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * This event indicates that the server has detected the end of human voice
+     * activity in the stream. This event can be returned multiple times if
+     * speech starts and stops repeatedly throughout the stream.
+     * </pre>
+     *
+     * <code>SPEECH_ACTIVITY_END = 6;</code>
+     */
+    public static final int SPEECH_ACTIVITY_END_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -240,8 +336,16 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           return MESSAGE_TYPE_UNSPECIFIED;
         case 1:
           return TRANSCRIPT;
+        case 3:
+          return DTMF_DIGITS;
         case 2:
           return END_OF_SINGLE_UTTERANCE;
+        case 4:
+          return PARTIAL_DTMF_DIGITS;
+        case 5:
+          return SPEECH_ACTIVITY_BEGIN;
+        case 6:
+          return SPEECH_ACTIVITY_END;
         default:
           return null;
       }

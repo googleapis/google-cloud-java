@@ -2352,4 +2352,134 @@ public interface FindingOrBuilder
    * <code>.google.cloud.securitycenter.v1.ExternalExposure external_exposure = 84;</code>
    */
   com.google.cloud.securitycenter.v1.ExternalExposureOrBuilder getExternalExposureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   *
+   * @return Whether the agent field is set.
+   */
+  boolean hasAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   *
+   * @return The agent.
+   */
+  com.google.cloud.securitycenter.v1.Agent getAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Primary Agent that the specified finding was flagged for
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.Agent agent = 88;</code>
+   */
+  com.google.cloud.securitycenter.v1.AgentOrBuilder getAgentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  java.util.List<com.google.cloud.securitycenter.v1.AgentSession> getAgentSessionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  com.google.cloud.securitycenter.v1.AgentSession getAgentSessions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  int getAgentSessionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  java.util.List<? extends com.google.cloud.securitycenter.v1.AgentSessionOrBuilder>
+      getAgentSessionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Conversational session(s) where the finding occurred.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.securitycenter.v1.AgentSession agent_sessions = 89;</code>
+   */
+  com.google.cloud.securitycenter.v1.AgentSessionOrBuilder getAgentSessionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   *
+   * @return Whether the agentAnomaly field is set.
+   */
+  boolean hasAgentAnomaly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   *
+   * @return The agentAnomaly.
+   */
+  com.google.cloud.securitycenter.v1.AgentAnomaly getAgentAnomaly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about behavior anomalies detected in AI agents.
+   * </pre>
+   *
+   * <code>.google.cloud.securitycenter.v1.AgentAnomaly agent_anomaly = 90;</code>
+   */
+  com.google.cloud.securitycenter.v1.AgentAnomalyOrBuilder getAgentAnomalyOrBuilder();
 }

@@ -118,6 +118,28 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     certifications_ = java.util.Collections.emptyList();
     sustainabilityIncentives_ = java.util.Collections.emptyList();
     videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    minimumOrderValues_ = java.util.Collections.emptyList();
+    vin_ = "";
+    model_ = "";
+    trim_ = "";
+    bodyStyle_ = 0;
+    dateFirstRegistered_ = "";
+    engine_ = 0;
+    emissionsStandard_ = 0;
+    vehiclePriceType_ = 0;
+    neighborhood_ = "";
+    propertyName_ = "";
+    propertyType_ = 0;
+    amenityFeature_ = emptyIntList();
+    utilitiesIncluded_ = emptyIntList();
+    specialtyHousingType_ = 0;
+    productFee_ = java.util.Collections.emptyList();
+    shortTitle_ = "";
+    questionsAndAnswers_ = java.util.Collections.emptyList();
+    itemGroupTitle_ = "";
+    documentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    variantOptions_ = java.util.Collections.emptyList();
+    relatedProducts_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1664,6 +1686,3575 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
 
     // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.CarrierPriceOption)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The vehicle body style. See the [Body
+   * style](https://support.google.com/google-ads/answer/14157085) for more
+   * information.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle}
+   */
+  public enum VehicleBodyStyle implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified vehicle body style.
+     * </pre>
+     *
+     * <code>VEHICLE_BODY_STYLE_UNSPECIFIED = 0;</code>
+     */
+    VEHICLE_BODY_STYLE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * ATV Sport.
+     * </pre>
+     *
+     * <code>ATV_SPORT = 1;</code>
+     */
+    ATV_SPORT(1),
+    /**
+     *
+     *
+     * <pre>
+     * ATV Touring.
+     * </pre>
+     *
+     * <code>ATV_TOURING = 2;</code>
+     */
+    ATV_TOURING(2),
+    /**
+     *
+     *
+     * <pre>
+     * ATV Utility.
+     * </pre>
+     *
+     * <code>ATV_UTILITY = 3;</code>
+     */
+    ATV_UTILITY(3),
+    /**
+     *
+     *
+     * <pre>
+     * ATV Youth.
+     * </pre>
+     *
+     * <code>ATV_YOUTH = 4;</code>
+     */
+    ATV_YOUTH(4),
+    /**
+     *
+     *
+     * <pre>
+     * City car.
+     * </pre>
+     *
+     * <code>CITY_CAR = 5;</code>
+     */
+    CITY_CAR(5),
+    /**
+     *
+     *
+     * <pre>
+     * Class A motorhome.
+     * </pre>
+     *
+     * <code>CLASS_A_MOTORHOME = 6;</code>
+     */
+    CLASS_A_MOTORHOME(6),
+    /**
+     *
+     *
+     * <pre>
+     * Class B motorhome.
+     * </pre>
+     *
+     * <code>CLASS_B_MOTORHOME = 7;</code>
+     */
+    CLASS_B_MOTORHOME(7),
+    /**
+     *
+     *
+     * <pre>
+     * Class C motorhome.
+     * </pre>
+     *
+     * <code>CLASS_C_MOTORHOME = 8;</code>
+     */
+    CLASS_C_MOTORHOME(8),
+    /**
+     *
+     *
+     * <pre>
+     * Compact SUV.
+     * </pre>
+     *
+     * <code>COMPACT_SUV = 9;</code>
+     */
+    COMPACT_SUV(9),
+    /**
+     *
+     *
+     * <pre>
+     * Convertible.
+     * </pre>
+     *
+     * <code>CONVERTIBLE = 10;</code>
+     */
+    CONVERTIBLE(10),
+    /**
+     *
+     *
+     * <pre>
+     * Coupe.
+     * </pre>
+     *
+     * <code>COUPE = 11;</code>
+     */
+    COUPE(11),
+    /**
+     *
+     *
+     * <pre>
+     * Crossover.
+     * </pre>
+     *
+     * <code>CROSSOVER = 12;</code>
+     */
+    CROSSOVER(12),
+    /**
+     *
+     *
+     * <pre>
+     * Fifth wheel.
+     * </pre>
+     *
+     * <code>FIFTH_WHEEL = 13;</code>
+     */
+    FIFTH_WHEEL(13),
+    /**
+     *
+     *
+     * <pre>
+     * Full size van.
+     * </pre>
+     *
+     * <code>FULL_SIZE_VAN = 14;</code>
+     */
+    FULL_SIZE_VAN(14),
+    /**
+     *
+     *
+     * <pre>
+     * Hatchback.
+     * </pre>
+     *
+     * <code>HATCHBACK = 15;</code>
+     */
+    HATCHBACK(15),
+    /**
+     *
+     *
+     * <pre>
+     * Limousine.
+     * </pre>
+     *
+     * <code>LIMOUSINE = 16;</code>
+     */
+    LIMOUSINE(16),
+    /**
+     *
+     *
+     * <pre>
+     * Minivan.
+     * </pre>
+     *
+     * <code>MINIVAN = 17;</code>
+     */
+    MINIVAN(17),
+    /**
+     *
+     *
+     * <pre>
+     * Notchback.
+     * </pre>
+     *
+     * <code>NOTCHBACK = 18;</code>
+     */
+    NOTCHBACK(18),
+    /**
+     *
+     *
+     * <pre>
+     * Pop up camper.
+     * </pre>
+     *
+     * <code>POP_UP_CAMPER = 19;</code>
+     */
+    POP_UP_CAMPER(19),
+    /**
+     *
+     *
+     * <pre>
+     * Sedan.
+     * </pre>
+     *
+     * <code>SEDAN = 20;</code>
+     */
+    SEDAN(20),
+    /**
+     *
+     *
+     * <pre>
+     * Side by side.
+     * </pre>
+     *
+     * <code>SIDE_BY_SIDE = 21;</code>
+     */
+    SIDE_BY_SIDE(21),
+    /**
+     *
+     *
+     * <pre>
+     * Station wagon.
+     * </pre>
+     *
+     * <code>STATION_WAGON = 22;</code>
+     */
+    STATION_WAGON(22),
+    /**
+     *
+     *
+     * <pre>
+     * SUV.
+     * </pre>
+     *
+     * <code>SUV = 23;</code>
+     */
+    SUV(23),
+    /**
+     *
+     *
+     * <pre>
+     * Travel trailer.
+     * </pre>
+     *
+     * <code>TRAVEL_TRAILER = 24;</code>
+     */
+    TRAVEL_TRAILER(24),
+    /**
+     *
+     *
+     * <pre>
+     * Truck.
+     * </pre>
+     *
+     * <code>TRUCK = 25;</code>
+     */
+    TRUCK(25),
+    /**
+     *
+     *
+     * <pre>
+     * Truck camper.
+     * </pre>
+     *
+     * <code>TRUCK_CAMPER = 26;</code>
+     */
+    TRUCK_CAMPER(26),
+    /**
+     *
+     *
+     * <pre>
+     * Ute.
+     * </pre>
+     *
+     * <code>UTE = 27;</code>
+     */
+    UTE(27),
+    /**
+     *
+     *
+     * <pre>
+     * UTV Recreational utility.
+     * </pre>
+     *
+     * <code>UTV_RECREATIONAL_UTILITY = 28;</code>
+     */
+    UTV_RECREATIONAL_UTILITY(28),
+    /**
+     *
+     *
+     * <pre>
+     * UTV Sport.
+     * </pre>
+     *
+     * <code>UTV_SPORT = 29;</code>
+     */
+    UTV_SPORT(29),
+    /**
+     *
+     *
+     * <pre>
+     * UTV Utility.
+     * </pre>
+     *
+     * <code>UTV_UTILITY = 30;</code>
+     */
+    UTV_UTILITY(30),
+    /**
+     *
+     *
+     * <pre>
+     * UTV Youth.
+     * </pre>
+     *
+     * <code>UTV_YOUTH = 31;</code>
+     */
+    UTV_YOUTH(31),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "VehicleBodyStyle");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified vehicle body style.
+     * </pre>
+     *
+     * <code>VEHICLE_BODY_STYLE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VEHICLE_BODY_STYLE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * ATV Sport.
+     * </pre>
+     *
+     * <code>ATV_SPORT = 1;</code>
+     */
+    public static final int ATV_SPORT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * ATV Touring.
+     * </pre>
+     *
+     * <code>ATV_TOURING = 2;</code>
+     */
+    public static final int ATV_TOURING_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * ATV Utility.
+     * </pre>
+     *
+     * <code>ATV_UTILITY = 3;</code>
+     */
+    public static final int ATV_UTILITY_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * ATV Youth.
+     * </pre>
+     *
+     * <code>ATV_YOUTH = 4;</code>
+     */
+    public static final int ATV_YOUTH_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * City car.
+     * </pre>
+     *
+     * <code>CITY_CAR = 5;</code>
+     */
+    public static final int CITY_CAR_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Class A motorhome.
+     * </pre>
+     *
+     * <code>CLASS_A_MOTORHOME = 6;</code>
+     */
+    public static final int CLASS_A_MOTORHOME_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Class B motorhome.
+     * </pre>
+     *
+     * <code>CLASS_B_MOTORHOME = 7;</code>
+     */
+    public static final int CLASS_B_MOTORHOME_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Class C motorhome.
+     * </pre>
+     *
+     * <code>CLASS_C_MOTORHOME = 8;</code>
+     */
+    public static final int CLASS_C_MOTORHOME_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Compact SUV.
+     * </pre>
+     *
+     * <code>COMPACT_SUV = 9;</code>
+     */
+    public static final int COMPACT_SUV_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Convertible.
+     * </pre>
+     *
+     * <code>CONVERTIBLE = 10;</code>
+     */
+    public static final int CONVERTIBLE_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Coupe.
+     * </pre>
+     *
+     * <code>COUPE = 11;</code>
+     */
+    public static final int COUPE_VALUE = 11;
+
+    /**
+     *
+     *
+     * <pre>
+     * Crossover.
+     * </pre>
+     *
+     * <code>CROSSOVER = 12;</code>
+     */
+    public static final int CROSSOVER_VALUE = 12;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fifth wheel.
+     * </pre>
+     *
+     * <code>FIFTH_WHEEL = 13;</code>
+     */
+    public static final int FIFTH_WHEEL_VALUE = 13;
+
+    /**
+     *
+     *
+     * <pre>
+     * Full size van.
+     * </pre>
+     *
+     * <code>FULL_SIZE_VAN = 14;</code>
+     */
+    public static final int FULL_SIZE_VAN_VALUE = 14;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hatchback.
+     * </pre>
+     *
+     * <code>HATCHBACK = 15;</code>
+     */
+    public static final int HATCHBACK_VALUE = 15;
+
+    /**
+     *
+     *
+     * <pre>
+     * Limousine.
+     * </pre>
+     *
+     * <code>LIMOUSINE = 16;</code>
+     */
+    public static final int LIMOUSINE_VALUE = 16;
+
+    /**
+     *
+     *
+     * <pre>
+     * Minivan.
+     * </pre>
+     *
+     * <code>MINIVAN = 17;</code>
+     */
+    public static final int MINIVAN_VALUE = 17;
+
+    /**
+     *
+     *
+     * <pre>
+     * Notchback.
+     * </pre>
+     *
+     * <code>NOTCHBACK = 18;</code>
+     */
+    public static final int NOTCHBACK_VALUE = 18;
+
+    /**
+     *
+     *
+     * <pre>
+     * Pop up camper.
+     * </pre>
+     *
+     * <code>POP_UP_CAMPER = 19;</code>
+     */
+    public static final int POP_UP_CAMPER_VALUE = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sedan.
+     * </pre>
+     *
+     * <code>SEDAN = 20;</code>
+     */
+    public static final int SEDAN_VALUE = 20;
+
+    /**
+     *
+     *
+     * <pre>
+     * Side by side.
+     * </pre>
+     *
+     * <code>SIDE_BY_SIDE = 21;</code>
+     */
+    public static final int SIDE_BY_SIDE_VALUE = 21;
+
+    /**
+     *
+     *
+     * <pre>
+     * Station wagon.
+     * </pre>
+     *
+     * <code>STATION_WAGON = 22;</code>
+     */
+    public static final int STATION_WAGON_VALUE = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * SUV.
+     * </pre>
+     *
+     * <code>SUV = 23;</code>
+     */
+    public static final int SUV_VALUE = 23;
+
+    /**
+     *
+     *
+     * <pre>
+     * Travel trailer.
+     * </pre>
+     *
+     * <code>TRAVEL_TRAILER = 24;</code>
+     */
+    public static final int TRAVEL_TRAILER_VALUE = 24;
+
+    /**
+     *
+     *
+     * <pre>
+     * Truck.
+     * </pre>
+     *
+     * <code>TRUCK = 25;</code>
+     */
+    public static final int TRUCK_VALUE = 25;
+
+    /**
+     *
+     *
+     * <pre>
+     * Truck camper.
+     * </pre>
+     *
+     * <code>TRUCK_CAMPER = 26;</code>
+     */
+    public static final int TRUCK_CAMPER_VALUE = 26;
+
+    /**
+     *
+     *
+     * <pre>
+     * Ute.
+     * </pre>
+     *
+     * <code>UTE = 27;</code>
+     */
+    public static final int UTE_VALUE = 27;
+
+    /**
+     *
+     *
+     * <pre>
+     * UTV Recreational utility.
+     * </pre>
+     *
+     * <code>UTV_RECREATIONAL_UTILITY = 28;</code>
+     */
+    public static final int UTV_RECREATIONAL_UTILITY_VALUE = 28;
+
+    /**
+     *
+     *
+     * <pre>
+     * UTV Sport.
+     * </pre>
+     *
+     * <code>UTV_SPORT = 29;</code>
+     */
+    public static final int UTV_SPORT_VALUE = 29;
+
+    /**
+     *
+     *
+     * <pre>
+     * UTV Utility.
+     * </pre>
+     *
+     * <code>UTV_UTILITY = 30;</code>
+     */
+    public static final int UTV_UTILITY_VALUE = 30;
+
+    /**
+     *
+     *
+     * <pre>
+     * UTV Youth.
+     * </pre>
+     *
+     * <code>UTV_YOUTH = 31;</code>
+     */
+    public static final int UTV_YOUTH_VALUE = 31;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VehicleBodyStyle valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VehicleBodyStyle forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VEHICLE_BODY_STYLE_UNSPECIFIED;
+        case 1:
+          return ATV_SPORT;
+        case 2:
+          return ATV_TOURING;
+        case 3:
+          return ATV_UTILITY;
+        case 4:
+          return ATV_YOUTH;
+        case 5:
+          return CITY_CAR;
+        case 6:
+          return CLASS_A_MOTORHOME;
+        case 7:
+          return CLASS_B_MOTORHOME;
+        case 8:
+          return CLASS_C_MOTORHOME;
+        case 9:
+          return COMPACT_SUV;
+        case 10:
+          return CONVERTIBLE;
+        case 11:
+          return COUPE;
+        case 12:
+          return CROSSOVER;
+        case 13:
+          return FIFTH_WHEEL;
+        case 14:
+          return FULL_SIZE_VAN;
+        case 15:
+          return HATCHBACK;
+        case 16:
+          return LIMOUSINE;
+        case 17:
+          return MINIVAN;
+        case 18:
+          return NOTCHBACK;
+        case 19:
+          return POP_UP_CAMPER;
+        case 20:
+          return SEDAN;
+        case 21:
+          return SIDE_BY_SIDE;
+        case 22:
+          return STATION_WAGON;
+        case 23:
+          return SUV;
+        case 24:
+          return TRAVEL_TRAILER;
+        case 25:
+          return TRUCK;
+        case 26:
+          return TRUCK_CAMPER;
+        case 27:
+          return UTE;
+        case 28:
+          return UTV_RECREATIONAL_UTILITY;
+        case 29:
+          return UTV_SPORT;
+        case 30:
+          return UTV_UTILITY;
+        case 31:
+          return UTV_YOUTH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VehicleBodyStyle> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VehicleBodyStyle>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VehicleBodyStyle>() {
+              public VehicleBodyStyle findValueByNumber(int number) {
+                return VehicleBodyStyle.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final VehicleBodyStyle[] VALUES = values();
+
+    public static VehicleBodyStyle valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VehicleBodyStyle(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The engine type of the vehicle.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.EngineType}
+   */
+  public enum EngineType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified engine type.
+     * </pre>
+     *
+     * <code>ENGINE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    ENGINE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Gasoline.
+     * </pre>
+     *
+     * <code>GASOLINE = 1;</code>
+     */
+    GASOLINE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Diesel.
+     * </pre>
+     *
+     * <code>DIESEL = 2;</code>
+     */
+    DIESEL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Electric.
+     * </pre>
+     *
+     * <code>ELECTRIC = 3;</code>
+     */
+    ELECTRIC(3),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid.
+     * </pre>
+     *
+     * <code>HYBRID = 4;</code>
+     */
+    HYBRID(4),
+    /**
+     *
+     *
+     * <pre>
+     * Plug-in hybrid.
+     * </pre>
+     *
+     * <code>PLUG_IN_HYBRID = 5;</code>
+     */
+    PLUG_IN_HYBRID(5),
+    /**
+     *
+     *
+     * <pre>
+     * Natural gas.
+     * </pre>
+     *
+     * <code>NATURAL_GAS = 6;</code>
+     */
+    NATURAL_GAS(6),
+    /**
+     *
+     *
+     * <pre>
+     * LPG.
+     * </pre>
+     *
+     * <code>LPG = 7;</code>
+     */
+    LPG(7),
+    /**
+     *
+     *
+     * <pre>
+     * Methane.
+     * </pre>
+     *
+     * <code>METHANE = 8;</code>
+     */
+    METHANE(8),
+    /**
+     *
+     *
+     * <pre>
+     * Other.
+     * </pre>
+     *
+     * <code>OTHER = 9;</code>
+     */
+    OTHER(9),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EngineType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified engine type.
+     * </pre>
+     *
+     * <code>ENGINE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ENGINE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Gasoline.
+     * </pre>
+     *
+     * <code>GASOLINE = 1;</code>
+     */
+    public static final int GASOLINE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Diesel.
+     * </pre>
+     *
+     * <code>DIESEL = 2;</code>
+     */
+    public static final int DIESEL_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Electric.
+     * </pre>
+     *
+     * <code>ELECTRIC = 3;</code>
+     */
+    public static final int ELECTRIC_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid.
+     * </pre>
+     *
+     * <code>HYBRID = 4;</code>
+     */
+    public static final int HYBRID_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Plug-in hybrid.
+     * </pre>
+     *
+     * <code>PLUG_IN_HYBRID = 5;</code>
+     */
+    public static final int PLUG_IN_HYBRID_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Natural gas.
+     * </pre>
+     *
+     * <code>NATURAL_GAS = 6;</code>
+     */
+    public static final int NATURAL_GAS_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * LPG.
+     * </pre>
+     *
+     * <code>LPG = 7;</code>
+     */
+    public static final int LPG_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Methane.
+     * </pre>
+     *
+     * <code>METHANE = 8;</code>
+     */
+    public static final int METHANE_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Other.
+     * </pre>
+     *
+     * <code>OTHER = 9;</code>
+     */
+    public static final int OTHER_VALUE = 9;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EngineType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EngineType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return ENGINE_TYPE_UNSPECIFIED;
+        case 1:
+          return GASOLINE;
+        case 2:
+          return DIESEL;
+        case 3:
+          return ELECTRIC;
+        case 4:
+          return HYBRID;
+        case 5:
+          return PLUG_IN_HYBRID;
+        case 6:
+          return NATURAL_GAS;
+        case 7:
+          return LPG;
+        case 8:
+          return METHANE;
+        case 9:
+          return OTHER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EngineType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EngineType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EngineType>() {
+          public EngineType findValueByNumber(int number) {
+            return EngineType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final EngineType[] VALUES = values();
+
+    public static EngineType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EngineType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.EngineType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The emission standard of the vehicle.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard}
+   */
+  public enum EmissionsStandard implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified emission standard.
+     * </pre>
+     *
+     * <code>EMISSIONS_STANDARD_UNSPECIFIED = 0;</code>
+     */
+    EMISSIONS_STANDARD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Zero emissions.
+     * </pre>
+     *
+     * <code>ZERO_EMISSIONS = 1;</code>
+     */
+    ZERO_EMISSIONS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 1.
+     * </pre>
+     *
+     * <code>EURO1 = 2;</code>
+     */
+    EURO1(2),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 2.
+     * </pre>
+     *
+     * <code>EURO2 = 3;</code>
+     */
+    EURO2(3),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 3.
+     * </pre>
+     *
+     * <code>EURO3 = 4;</code>
+     */
+    EURO3(4),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 4.
+     * </pre>
+     *
+     * <code>EURO4 = 5;</code>
+     */
+    EURO4(5),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 5.
+     * </pre>
+     *
+     * <code>EURO5 = 6;</code>
+     */
+    EURO5(6),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 5b.
+     * </pre>
+     *
+     * <code>EURO5B = 7;</code>
+     */
+    EURO5B(7),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6.
+     * </pre>
+     *
+     * <code>EURO6 = 8;</code>
+     */
+    EURO6(8),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6c.
+     * </pre>
+     *
+     * <code>EURO6C = 9;</code>
+     */
+    EURO6C(9),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6d.
+     * </pre>
+     *
+     * <code>EURO6D = 10;</code>
+     */
+    EURO6D(10),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6d-TEMP.
+     * </pre>
+     *
+     * <code>EURO6D_TEMP = 11;</code>
+     */
+    EURO6D_TEMP(11),
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6e.
+     * </pre>
+     *
+     * <code>EURO6E = 12;</code>
+     */
+    EURO6E(12),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EmissionsStandard");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified emission standard.
+     * </pre>
+     *
+     * <code>EMISSIONS_STANDARD_UNSPECIFIED = 0;</code>
+     */
+    public static final int EMISSIONS_STANDARD_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Zero emissions.
+     * </pre>
+     *
+     * <code>ZERO_EMISSIONS = 1;</code>
+     */
+    public static final int ZERO_EMISSIONS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 1.
+     * </pre>
+     *
+     * <code>EURO1 = 2;</code>
+     */
+    public static final int EURO1_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 2.
+     * </pre>
+     *
+     * <code>EURO2 = 3;</code>
+     */
+    public static final int EURO2_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 3.
+     * </pre>
+     *
+     * <code>EURO3 = 4;</code>
+     */
+    public static final int EURO3_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 4.
+     * </pre>
+     *
+     * <code>EURO4 = 5;</code>
+     */
+    public static final int EURO4_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 5.
+     * </pre>
+     *
+     * <code>EURO5 = 6;</code>
+     */
+    public static final int EURO5_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 5b.
+     * </pre>
+     *
+     * <code>EURO5B = 7;</code>
+     */
+    public static final int EURO5B_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6.
+     * </pre>
+     *
+     * <code>EURO6 = 8;</code>
+     */
+    public static final int EURO6_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6c.
+     * </pre>
+     *
+     * <code>EURO6C = 9;</code>
+     */
+    public static final int EURO6C_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6d.
+     * </pre>
+     *
+     * <code>EURO6D = 10;</code>
+     */
+    public static final int EURO6D_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6d-TEMP.
+     * </pre>
+     *
+     * <code>EURO6D_TEMP = 11;</code>
+     */
+    public static final int EURO6D_TEMP_VALUE = 11;
+
+    /**
+     *
+     *
+     * <pre>
+     * Euro 6e.
+     * </pre>
+     *
+     * <code>EURO6E = 12;</code>
+     */
+    public static final int EURO6E_VALUE = 12;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EmissionsStandard valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EmissionsStandard forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EMISSIONS_STANDARD_UNSPECIFIED;
+        case 1:
+          return ZERO_EMISSIONS;
+        case 2:
+          return EURO1;
+        case 3:
+          return EURO2;
+        case 4:
+          return EURO3;
+        case 5:
+          return EURO4;
+        case 6:
+          return EURO5;
+        case 7:
+          return EURO5B;
+        case 8:
+          return EURO6;
+        case 9:
+          return EURO6C;
+        case 10:
+          return EURO6D;
+        case 11:
+          return EURO6D_TEMP;
+        case 12:
+          return EURO6E;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EmissionsStandard>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EmissionsStandard>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EmissionsStandard>() {
+              public EmissionsStandard findValueByNumber(int number) {
+                return EmissionsStandard.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final EmissionsStandard[] VALUES = values();
+
+    public static EmissionsStandard valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EmissionsStandard(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The vehicle price type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType}
+   */
+  public enum VehiclePriceType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified vehicle price type.
+     * </pre>
+     *
+     * <code>VEHICLE_PRICE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    VEHICLE_PRICE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * All in price.
+     * </pre>
+     *
+     * <code>ALL_IN_PRICE = 1;</code>
+     */
+    ALL_IN_PRICE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Drive away price.
+     * </pre>
+     *
+     * <code>DRIVE_AWAY_PRICE = 2;</code>
+     */
+    DRIVE_AWAY_PRICE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Estimated drive away price.
+     * </pre>
+     *
+     * <code>ESTIMATED_DRIVE_AWAY_PRICE = 3;</code>
+     */
+    ESTIMATED_DRIVE_AWAY_PRICE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Excluding government charges price.
+     * </pre>
+     *
+     * <code>EXCLUDING_GOVERNMENT_CHARGES_PRICE = 4;</code>
+     */
+    EXCLUDING_GOVERNMENT_CHARGES_PRICE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Vehicle base price.
+     * </pre>
+     *
+     * <code>VEHICLE_BASE_PRICE = 5;</code>
+     */
+    VEHICLE_BASE_PRICE(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "VehiclePriceType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified vehicle price type.
+     * </pre>
+     *
+     * <code>VEHICLE_PRICE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VEHICLE_PRICE_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * All in price.
+     * </pre>
+     *
+     * <code>ALL_IN_PRICE = 1;</code>
+     */
+    public static final int ALL_IN_PRICE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Drive away price.
+     * </pre>
+     *
+     * <code>DRIVE_AWAY_PRICE = 2;</code>
+     */
+    public static final int DRIVE_AWAY_PRICE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Estimated drive away price.
+     * </pre>
+     *
+     * <code>ESTIMATED_DRIVE_AWAY_PRICE = 3;</code>
+     */
+    public static final int ESTIMATED_DRIVE_AWAY_PRICE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Excluding government charges price.
+     * </pre>
+     *
+     * <code>EXCLUDING_GOVERNMENT_CHARGES_PRICE = 4;</code>
+     */
+    public static final int EXCLUDING_GOVERNMENT_CHARGES_PRICE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Vehicle base price.
+     * </pre>
+     *
+     * <code>VEHICLE_BASE_PRICE = 5;</code>
+     */
+    public static final int VEHICLE_BASE_PRICE_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VehiclePriceType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VehiclePriceType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VEHICLE_PRICE_TYPE_UNSPECIFIED;
+        case 1:
+          return ALL_IN_PRICE;
+        case 2:
+          return DRIVE_AWAY_PRICE;
+        case 3:
+          return ESTIMATED_DRIVE_AWAY_PRICE;
+        case 4:
+          return EXCLUDING_GOVERNMENT_CHARGES_PRICE;
+        case 5:
+          return VEHICLE_BASE_PRICE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VehiclePriceType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VehiclePriceType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VehiclePriceType>() {
+              public VehiclePriceType findValueByNumber(int number) {
+                return VehiclePriceType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(4);
+    }
+
+    private static final VehiclePriceType[] VALUES = values();
+
+    public static VehiclePriceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VehiclePriceType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The property type.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.PropertyType}
+   */
+  public enum PropertyType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified property type.
+     * </pre>
+     *
+     * <code>PROPERTY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    PROPERTY_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Apartment.
+     * </pre>
+     *
+     * <code>APARTMENT = 1;</code>
+     */
+    APARTMENT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Condo.
+     * </pre>
+     *
+     * <code>CONDO = 2;</code>
+     */
+    CONDO(2),
+    /**
+     *
+     *
+     * <pre>
+     * Loft.
+     * </pre>
+     *
+     * <code>LOFT = 3;</code>
+     */
+    LOFT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Multi-family home.
+     * </pre>
+     *
+     * <code>MULTI_FAMILY_HOME = 4;</code>
+     */
+    MULTI_FAMILY_HOME(4),
+    /**
+     *
+     *
+     * <pre>
+     * Penthouse.
+     * </pre>
+     *
+     * <code>PENTHOUSE = 5;</code>
+     */
+    PENTHOUSE(5),
+    /**
+     *
+     *
+     * <pre>
+     * Room.
+     * </pre>
+     *
+     * <code>ROOM = 6;</code>
+     */
+    ROOM(6),
+    /**
+     *
+     *
+     * <pre>
+     * Single-family home.
+     * </pre>
+     *
+     * <code>SINGLE_FAMILY_HOME = 7;</code>
+     */
+    SINGLE_FAMILY_HOME(7),
+    /**
+     *
+     *
+     * <pre>
+     * Studio.
+     * </pre>
+     *
+     * <code>STUDIO = 8;</code>
+     */
+    STUDIO(8),
+    /**
+     *
+     *
+     * <pre>
+     * Townhouse.
+     * </pre>
+     *
+     * <code>TOWNHOUSE = 9;</code>
+     */
+    TOWNHOUSE(9),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "PropertyType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified property type.
+     * </pre>
+     *
+     * <code>PROPERTY_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROPERTY_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Apartment.
+     * </pre>
+     *
+     * <code>APARTMENT = 1;</code>
+     */
+    public static final int APARTMENT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Condo.
+     * </pre>
+     *
+     * <code>CONDO = 2;</code>
+     */
+    public static final int CONDO_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Loft.
+     * </pre>
+     *
+     * <code>LOFT = 3;</code>
+     */
+    public static final int LOFT_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Multi-family home.
+     * </pre>
+     *
+     * <code>MULTI_FAMILY_HOME = 4;</code>
+     */
+    public static final int MULTI_FAMILY_HOME_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Penthouse.
+     * </pre>
+     *
+     * <code>PENTHOUSE = 5;</code>
+     */
+    public static final int PENTHOUSE_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Room.
+     * </pre>
+     *
+     * <code>ROOM = 6;</code>
+     */
+    public static final int ROOM_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Single-family home.
+     * </pre>
+     *
+     * <code>SINGLE_FAMILY_HOME = 7;</code>
+     */
+    public static final int SINGLE_FAMILY_HOME_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Studio.
+     * </pre>
+     *
+     * <code>STUDIO = 8;</code>
+     */
+    public static final int STUDIO_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Townhouse.
+     * </pre>
+     *
+     * <code>TOWNHOUSE = 9;</code>
+     */
+    public static final int TOWNHOUSE_VALUE = 9;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PropertyType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static PropertyType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROPERTY_TYPE_UNSPECIFIED;
+        case 1:
+          return APARTMENT;
+        case 2:
+          return CONDO;
+        case 3:
+          return LOFT;
+        case 4:
+          return MULTI_FAMILY_HOME;
+        case 5:
+          return PENTHOUSE;
+        case 6:
+          return ROOM;
+        case 7:
+          return SINGLE_FAMILY_HOME;
+        case 8:
+          return STUDIO;
+        case 9:
+          return TOWNHOUSE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PropertyType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<PropertyType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<PropertyType>() {
+          public PropertyType findValueByNumber(int number) {
+            return PropertyType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(5);
+    }
+
+    private static final PropertyType[] VALUES = values();
+
+    public static PropertyType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private PropertyType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.PropertyType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature}
+   */
+  public enum AmenityFeature implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified amenity feature.
+     * </pre>
+     *
+     * <code>AMENITY_FEATURE_UNSPECIFIED = 0;</code>
+     */
+    AMENITY_FEATURE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Balcony.
+     * </pre>
+     *
+     * <code>BALCONY = 1;</code>
+     */
+    BALCONY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Basement.
+     * </pre>
+     *
+     * <code>BASEMENT = 2;</code>
+     */
+    BASEMENT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Basketball court.
+     * </pre>
+     *
+     * <code>BASKETBALL_COURT = 3;</code>
+     */
+    BASKETBALL_COURT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Bike storage.
+     * </pre>
+     *
+     * <code>BIKE_STORAGE = 4;</code>
+     */
+    BIKE_STORAGE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Central air conditioning.
+     * </pre>
+     *
+     * <code>CENTRAL_AC = 5;</code>
+     */
+    CENTRAL_AC(5),
+    /**
+     *
+     *
+     * <pre>
+     * Dishwasher.
+     * </pre>
+     *
+     * <code>DISHWASHER = 6;</code>
+     */
+    DISHWASHER(6),
+    /**
+     *
+     *
+     * <pre>
+     * Dog park.
+     * </pre>
+     *
+     * <code>DOG_PARK = 7;</code>
+     */
+    DOG_PARK(7),
+    /**
+     *
+     *
+     * <pre>
+     * Elevator.
+     * </pre>
+     *
+     * <code>ELEVATOR = 8;</code>
+     */
+    ELEVATOR(8),
+    /**
+     *
+     *
+     * <pre>
+     * EV charging.
+     * </pre>
+     *
+     * <code>EV_CHARGING = 9;</code>
+     */
+    EV_CHARGING(9),
+    /**
+     *
+     *
+     * <pre>
+     * Fenced lot.
+     * </pre>
+     *
+     * <code>FENCED_LOT = 10;</code>
+     */
+    FENCED_LOT(10),
+    /**
+     *
+     *
+     * <pre>
+     * Fireplace.
+     * </pre>
+     *
+     * <code>FIREPLACE = 11;</code>
+     */
+    FIREPLACE(11),
+    /**
+     *
+     *
+     * <pre>
+     * Fitness center.
+     * </pre>
+     *
+     * <code>FITNESS_CENTER = 12;</code>
+     */
+    FITNESS_CENTER(12),
+    /**
+     *
+     *
+     * <pre>
+     * Forced air heating.
+     * </pre>
+     *
+     * <code>FORCED_AIR_HEATING = 13;</code>
+     */
+    FORCED_AIR_HEATING(13),
+    /**
+     *
+     *
+     * <pre>
+     * Fully furnished.
+     * </pre>
+     *
+     * <code>FULLY_FURNISHED = 14;</code>
+     */
+    FULLY_FURNISHED(14),
+    /**
+     *
+     *
+     * <pre>
+     * Garage.
+     * </pre>
+     *
+     * <code>GARAGE = 15;</code>
+     */
+    GARAGE(15),
+    /**
+     *
+     *
+     * <pre>
+     * Gated community.
+     * </pre>
+     *
+     * <code>GATED_COMMUNITY = 16;</code>
+     */
+    GATED_COMMUNITY(16),
+    /**
+     *
+     *
+     * <pre>
+     * Hardwood floors.
+     * </pre>
+     *
+     * <code>HARDWOOD_FLOORS = 17;</code>
+     */
+    HARDWOOD_FLOORS(17),
+    /**
+     *
+     *
+     * <pre>
+     * High speed internet.
+     * </pre>
+     *
+     * <code>HIGH_SPEED_INTERNET = 18;</code>
+     */
+    HIGH_SPEED_INTERNET(18),
+    /**
+     *
+     *
+     * <pre>
+     * Intercom.
+     * </pre>
+     *
+     * <code>INTERCOM = 19;</code>
+     */
+    INTERCOM(19),
+    /**
+     *
+     *
+     * <pre>
+     * In-unit washer and dryer.
+     * </pre>
+     *
+     * <code>IN_UNIT_WASHER_DRYER = 20;</code>
+     */
+    IN_UNIT_WASHER_DRYER(20),
+    /**
+     *
+     *
+     * <pre>
+     * Kitchen.
+     * </pre>
+     *
+     * <code>KITCHEN = 21;</code>
+     */
+    KITCHEN(21),
+    /**
+     *
+     *
+     * <pre>
+     * Large closets.
+     * </pre>
+     *
+     * <code>LARGE_CLOSETS = 22;</code>
+     */
+    LARGE_CLOSETS(22),
+    /**
+     *
+     *
+     * <pre>
+     * Multisport court.
+     * </pre>
+     *
+     * <code>MULTISPORT_COURT = 23;</code>
+     */
+    MULTISPORT_COURT(23),
+    /**
+     *
+     *
+     * <pre>
+     * Onsite laundry.
+     * </pre>
+     *
+     * <code>ONSITE_LAUNDRY = 24;</code>
+     */
+    ONSITE_LAUNDRY(24),
+    /**
+     *
+     *
+     * <pre>
+     * Outdoor lounge.
+     * </pre>
+     *
+     * <code>OUTDOOR_LOUNGE = 25;</code>
+     */
+    OUTDOOR_LOUNGE(25),
+    /**
+     *
+     *
+     * <pre>
+     * Parking.
+     * </pre>
+     *
+     * <code>PARKING = 26;</code>
+     */
+    PARKING(26),
+    /**
+     *
+     *
+     * <pre>
+     * Patio.
+     * </pre>
+     *
+     * <code>PATIO = 27;</code>
+     */
+    PATIO(27),
+    /**
+     *
+     *
+     * <pre>
+     * Pickleball court.
+     * </pre>
+     *
+     * <code>PICKLEBALL_COURT = 28;</code>
+     */
+    PICKLEBALL_COURT(28),
+    /**
+     *
+     *
+     * <pre>
+     * Pool.
+     * </pre>
+     *
+     * <code>POOL = 29;</code>
+     */
+    POOL(29),
+    /**
+     *
+     *
+     * <pre>
+     * Refrigerator.
+     * </pre>
+     *
+     * <code>REFRIGERATOR = 30;</code>
+     */
+    REFRIGERATOR(30),
+    /**
+     *
+     *
+     * <pre>
+     * Soccer field.
+     * </pre>
+     *
+     * <code>SOCCER_FIELD = 31;</code>
+     */
+    SOCCER_FIELD(31),
+    /**
+     *
+     *
+     * <pre>
+     * Tennis court.
+     * </pre>
+     *
+     * <code>TENNIS_COURT = 32;</code>
+     */
+    TENNIS_COURT(32),
+    /**
+     *
+     *
+     * <pre>
+     * Walk-in closets.
+     * </pre>
+     *
+     * <code>WALK_IN_CLOSETS = 33;</code>
+     */
+    WALK_IN_CLOSETS(33),
+    /**
+     *
+     *
+     * <pre>
+     * Wheelchair accessibility.
+     * </pre>
+     *
+     * <code>WHEELCHAIR_ACCESS = 34;</code>
+     */
+    WHEELCHAIR_ACCESS(34),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "AmenityFeature");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified amenity feature.
+     * </pre>
+     *
+     * <code>AMENITY_FEATURE_UNSPECIFIED = 0;</code>
+     */
+    public static final int AMENITY_FEATURE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Balcony.
+     * </pre>
+     *
+     * <code>BALCONY = 1;</code>
+     */
+    public static final int BALCONY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Basement.
+     * </pre>
+     *
+     * <code>BASEMENT = 2;</code>
+     */
+    public static final int BASEMENT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Basketball court.
+     * </pre>
+     *
+     * <code>BASKETBALL_COURT = 3;</code>
+     */
+    public static final int BASKETBALL_COURT_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bike storage.
+     * </pre>
+     *
+     * <code>BIKE_STORAGE = 4;</code>
+     */
+    public static final int BIKE_STORAGE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Central air conditioning.
+     * </pre>
+     *
+     * <code>CENTRAL_AC = 5;</code>
+     */
+    public static final int CENTRAL_AC_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dishwasher.
+     * </pre>
+     *
+     * <code>DISHWASHER = 6;</code>
+     */
+    public static final int DISHWASHER_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dog park.
+     * </pre>
+     *
+     * <code>DOG_PARK = 7;</code>
+     */
+    public static final int DOG_PARK_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Elevator.
+     * </pre>
+     *
+     * <code>ELEVATOR = 8;</code>
+     */
+    public static final int ELEVATOR_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * EV charging.
+     * </pre>
+     *
+     * <code>EV_CHARGING = 9;</code>
+     */
+    public static final int EV_CHARGING_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fenced lot.
+     * </pre>
+     *
+     * <code>FENCED_LOT = 10;</code>
+     */
+    public static final int FENCED_LOT_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fireplace.
+     * </pre>
+     *
+     * <code>FIREPLACE = 11;</code>
+     */
+    public static final int FIREPLACE_VALUE = 11;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fitness center.
+     * </pre>
+     *
+     * <code>FITNESS_CENTER = 12;</code>
+     */
+    public static final int FITNESS_CENTER_VALUE = 12;
+
+    /**
+     *
+     *
+     * <pre>
+     * Forced air heating.
+     * </pre>
+     *
+     * <code>FORCED_AIR_HEATING = 13;</code>
+     */
+    public static final int FORCED_AIR_HEATING_VALUE = 13;
+
+    /**
+     *
+     *
+     * <pre>
+     * Fully furnished.
+     * </pre>
+     *
+     * <code>FULLY_FURNISHED = 14;</code>
+     */
+    public static final int FULLY_FURNISHED_VALUE = 14;
+
+    /**
+     *
+     *
+     * <pre>
+     * Garage.
+     * </pre>
+     *
+     * <code>GARAGE = 15;</code>
+     */
+    public static final int GARAGE_VALUE = 15;
+
+    /**
+     *
+     *
+     * <pre>
+     * Gated community.
+     * </pre>
+     *
+     * <code>GATED_COMMUNITY = 16;</code>
+     */
+    public static final int GATED_COMMUNITY_VALUE = 16;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hardwood floors.
+     * </pre>
+     *
+     * <code>HARDWOOD_FLOORS = 17;</code>
+     */
+    public static final int HARDWOOD_FLOORS_VALUE = 17;
+
+    /**
+     *
+     *
+     * <pre>
+     * High speed internet.
+     * </pre>
+     *
+     * <code>HIGH_SPEED_INTERNET = 18;</code>
+     */
+    public static final int HIGH_SPEED_INTERNET_VALUE = 18;
+
+    /**
+     *
+     *
+     * <pre>
+     * Intercom.
+     * </pre>
+     *
+     * <code>INTERCOM = 19;</code>
+     */
+    public static final int INTERCOM_VALUE = 19;
+
+    /**
+     *
+     *
+     * <pre>
+     * In-unit washer and dryer.
+     * </pre>
+     *
+     * <code>IN_UNIT_WASHER_DRYER = 20;</code>
+     */
+    public static final int IN_UNIT_WASHER_DRYER_VALUE = 20;
+
+    /**
+     *
+     *
+     * <pre>
+     * Kitchen.
+     * </pre>
+     *
+     * <code>KITCHEN = 21;</code>
+     */
+    public static final int KITCHEN_VALUE = 21;
+
+    /**
+     *
+     *
+     * <pre>
+     * Large closets.
+     * </pre>
+     *
+     * <code>LARGE_CLOSETS = 22;</code>
+     */
+    public static final int LARGE_CLOSETS_VALUE = 22;
+
+    /**
+     *
+     *
+     * <pre>
+     * Multisport court.
+     * </pre>
+     *
+     * <code>MULTISPORT_COURT = 23;</code>
+     */
+    public static final int MULTISPORT_COURT_VALUE = 23;
+
+    /**
+     *
+     *
+     * <pre>
+     * Onsite laundry.
+     * </pre>
+     *
+     * <code>ONSITE_LAUNDRY = 24;</code>
+     */
+    public static final int ONSITE_LAUNDRY_VALUE = 24;
+
+    /**
+     *
+     *
+     * <pre>
+     * Outdoor lounge.
+     * </pre>
+     *
+     * <code>OUTDOOR_LOUNGE = 25;</code>
+     */
+    public static final int OUTDOOR_LOUNGE_VALUE = 25;
+
+    /**
+     *
+     *
+     * <pre>
+     * Parking.
+     * </pre>
+     *
+     * <code>PARKING = 26;</code>
+     */
+    public static final int PARKING_VALUE = 26;
+
+    /**
+     *
+     *
+     * <pre>
+     * Patio.
+     * </pre>
+     *
+     * <code>PATIO = 27;</code>
+     */
+    public static final int PATIO_VALUE = 27;
+
+    /**
+     *
+     *
+     * <pre>
+     * Pickleball court.
+     * </pre>
+     *
+     * <code>PICKLEBALL_COURT = 28;</code>
+     */
+    public static final int PICKLEBALL_COURT_VALUE = 28;
+
+    /**
+     *
+     *
+     * <pre>
+     * Pool.
+     * </pre>
+     *
+     * <code>POOL = 29;</code>
+     */
+    public static final int POOL_VALUE = 29;
+
+    /**
+     *
+     *
+     * <pre>
+     * Refrigerator.
+     * </pre>
+     *
+     * <code>REFRIGERATOR = 30;</code>
+     */
+    public static final int REFRIGERATOR_VALUE = 30;
+
+    /**
+     *
+     *
+     * <pre>
+     * Soccer field.
+     * </pre>
+     *
+     * <code>SOCCER_FIELD = 31;</code>
+     */
+    public static final int SOCCER_FIELD_VALUE = 31;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tennis court.
+     * </pre>
+     *
+     * <code>TENNIS_COURT = 32;</code>
+     */
+    public static final int TENNIS_COURT_VALUE = 32;
+
+    /**
+     *
+     *
+     * <pre>
+     * Walk-in closets.
+     * </pre>
+     *
+     * <code>WALK_IN_CLOSETS = 33;</code>
+     */
+    public static final int WALK_IN_CLOSETS_VALUE = 33;
+
+    /**
+     *
+     *
+     * <pre>
+     * Wheelchair accessibility.
+     * </pre>
+     *
+     * <code>WHEELCHAIR_ACCESS = 34;</code>
+     */
+    public static final int WHEELCHAIR_ACCESS_VALUE = 34;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AmenityFeature valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AmenityFeature forNumber(int value) {
+      switch (value) {
+        case 0:
+          return AMENITY_FEATURE_UNSPECIFIED;
+        case 1:
+          return BALCONY;
+        case 2:
+          return BASEMENT;
+        case 3:
+          return BASKETBALL_COURT;
+        case 4:
+          return BIKE_STORAGE;
+        case 5:
+          return CENTRAL_AC;
+        case 6:
+          return DISHWASHER;
+        case 7:
+          return DOG_PARK;
+        case 8:
+          return ELEVATOR;
+        case 9:
+          return EV_CHARGING;
+        case 10:
+          return FENCED_LOT;
+        case 11:
+          return FIREPLACE;
+        case 12:
+          return FITNESS_CENTER;
+        case 13:
+          return FORCED_AIR_HEATING;
+        case 14:
+          return FULLY_FURNISHED;
+        case 15:
+          return GARAGE;
+        case 16:
+          return GATED_COMMUNITY;
+        case 17:
+          return HARDWOOD_FLOORS;
+        case 18:
+          return HIGH_SPEED_INTERNET;
+        case 19:
+          return INTERCOM;
+        case 20:
+          return IN_UNIT_WASHER_DRYER;
+        case 21:
+          return KITCHEN;
+        case 22:
+          return LARGE_CLOSETS;
+        case 23:
+          return MULTISPORT_COURT;
+        case 24:
+          return ONSITE_LAUNDRY;
+        case 25:
+          return OUTDOOR_LOUNGE;
+        case 26:
+          return PARKING;
+        case 27:
+          return PATIO;
+        case 28:
+          return PICKLEBALL_COURT;
+        case 29:
+          return POOL;
+        case 30:
+          return REFRIGERATOR;
+        case 31:
+          return SOCCER_FIELD;
+        case 32:
+          return TENNIS_COURT;
+        case 33:
+          return WALK_IN_CLOSETS;
+        case 34:
+          return WHEELCHAIR_ACCESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AmenityFeature> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<AmenityFeature> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AmenityFeature>() {
+          public AmenityFeature findValueByNumber(int number) {
+            return AmenityFeature.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(6);
+    }
+
+    private static final AmenityFeature[] VALUES = values();
+
+    public static AmenityFeature valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AmenityFeature(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded}
+   */
+  public enum UtilitiesIncluded implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified utilities included.
+     * </pre>
+     *
+     * <code>UTILITIES_INCLUDED_UNSPECIFIED = 0;</code>
+     */
+    UTILITIES_INCLUDED_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Electricity.
+     * </pre>
+     *
+     * <code>ELECTRICITY = 1;</code>
+     */
+    ELECTRICITY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Gas.
+     * </pre>
+     *
+     * <code>GAS = 2;</code>
+     */
+    GAS(2),
+    /**
+     *
+     *
+     * <pre>
+     * Internet.
+     * </pre>
+     *
+     * <code>INTERNET = 3;</code>
+     */
+    INTERNET(3),
+    /**
+     *
+     *
+     * <pre>
+     * Trash.
+     * </pre>
+     *
+     * <code>TRASH = 4;</code>
+     */
+    TRASH(4),
+    /**
+     *
+     *
+     * <pre>
+     * Water.
+     * </pre>
+     *
+     * <code>WATER = 5;</code>
+     */
+    WATER(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "UtilitiesIncluded");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified utilities included.
+     * </pre>
+     *
+     * <code>UTILITIES_INCLUDED_UNSPECIFIED = 0;</code>
+     */
+    public static final int UTILITIES_INCLUDED_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Electricity.
+     * </pre>
+     *
+     * <code>ELECTRICITY = 1;</code>
+     */
+    public static final int ELECTRICITY_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Gas.
+     * </pre>
+     *
+     * <code>GAS = 2;</code>
+     */
+    public static final int GAS_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Internet.
+     * </pre>
+     *
+     * <code>INTERNET = 3;</code>
+     */
+    public static final int INTERNET_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Trash.
+     * </pre>
+     *
+     * <code>TRASH = 4;</code>
+     */
+    public static final int TRASH_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Water.
+     * </pre>
+     *
+     * <code>WATER = 5;</code>
+     */
+    public static final int WATER_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static UtilitiesIncluded valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static UtilitiesIncluded forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UTILITIES_INCLUDED_UNSPECIFIED;
+        case 1:
+          return ELECTRICITY;
+        case 2:
+          return GAS;
+        case 3:
+          return INTERNET;
+        case 4:
+          return TRASH;
+        case 5:
+          return WATER;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<UtilitiesIncluded>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<UtilitiesIncluded>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<UtilitiesIncluded>() {
+              public UtilitiesIncluded findValueByNumber(int number) {
+                return UtilitiesIncluded.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(7);
+    }
+
+    private static final UtilitiesIncluded[] VALUES = values();
+
+    public static UtilitiesIncluded valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private UtilitiesIncluded(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The specialty housing type for the property.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType}
+   */
+  public enum SpecialtyHousingType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified specialty housing type.
+     * </pre>
+     *
+     * <code>SPECIALTY_HOUSING_TYPE_UNSPECIFIED = 0;</code>
+     */
+    SPECIALTY_HOUSING_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Corporate housing.
+     * </pre>
+     *
+     * <code>CORPORATE = 1;</code>
+     */
+    CORPORATE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Low income housing.
+     * </pre>
+     *
+     * <code>LOW_INCOME = 2;</code>
+     */
+    LOW_INCOME(2),
+    /**
+     *
+     *
+     * <pre>
+     * Military housing.
+     * </pre>
+     *
+     * <code>MILITARY = 3;</code>
+     */
+    MILITARY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Senior housing.
+     * </pre>
+     *
+     * <code>SENIOR = 4;</code>
+     */
+    SENIOR(4),
+    /**
+     *
+     *
+     * <pre>
+     * Short term housing.
+     * </pre>
+     *
+     * <code>SHORT_TERM = 5;</code>
+     */
+    SHORT_TERM(5),
+    /**
+     *
+     *
+     * <pre>
+     * Student housing.
+     * </pre>
+     *
+     * <code>STUDENT = 6;</code>
+     */
+    STUDENT(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SpecialtyHousingType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified specialty housing type.
+     * </pre>
+     *
+     * <code>SPECIALTY_HOUSING_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SPECIALTY_HOUSING_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Corporate housing.
+     * </pre>
+     *
+     * <code>CORPORATE = 1;</code>
+     */
+    public static final int CORPORATE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Low income housing.
+     * </pre>
+     *
+     * <code>LOW_INCOME = 2;</code>
+     */
+    public static final int LOW_INCOME_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Military housing.
+     * </pre>
+     *
+     * <code>MILITARY = 3;</code>
+     */
+    public static final int MILITARY_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Senior housing.
+     * </pre>
+     *
+     * <code>SENIOR = 4;</code>
+     */
+    public static final int SENIOR_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Short term housing.
+     * </pre>
+     *
+     * <code>SHORT_TERM = 5;</code>
+     */
+    public static final int SHORT_TERM_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Student housing.
+     * </pre>
+     *
+     * <code>STUDENT = 6;</code>
+     */
+    public static final int STUDENT_VALUE = 6;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SpecialtyHousingType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static SpecialtyHousingType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SPECIALTY_HOUSING_TYPE_UNSPECIFIED;
+        case 1:
+          return CORPORATE;
+        case 2:
+          return LOW_INCOME;
+        case 3:
+          return MILITARY;
+        case 4:
+          return SENIOR;
+        case 5:
+          return SHORT_TERM;
+        case 6:
+          return STUDENT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<SpecialtyHousingType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<SpecialtyHousingType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<SpecialtyHousingType>() {
+              public SpecialtyHousingType findValueByNumber(int number) {
+                return SpecialtyHousingType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductAttributes.getDescriptor()
+          .getEnumTypes()
+          .get(8);
+    }
+
+    private static final SpecialtyHousingType[] VALUES = values();
+
+    public static SpecialtyHousingType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private SpecialtyHousingType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType)
   }
 
   public interface ShippingBusinessDaysConfigOrBuilder
@@ -6969,6 +10560,12710 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface MileageOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.Mileage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return The value.
+     */
+    long getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    int getUnitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+     *
+     * @return The unit.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit getUnit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The mileage of the vehicle.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Mileage}
+   */
+  public static final class Mileage extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.Mileage)
+      MileageOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Mileage");
+    }
+
+    // Use Mileage.newBuilder() to construct.
+    private Mileage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Mileage() {
+      unit_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the mileage.
+     * </pre>
+     *
+     * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit}
+     */
+    public enum Unit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      UNIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Miles.
+       * </pre>
+       *
+       * <code>MILES = 1;</code>
+       */
+      MILES(1),
+      /**
+       *
+       *
+       * <pre>
+       * Kilometers.
+       * </pre>
+       *
+       * <code>KM = 2;</code>
+       */
+      KM(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Unit");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int UNIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Miles.
+       * </pre>
+       *
+       * <code>MILES = 1;</code>
+       */
+      public static final int MILES_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Kilometers.
+       * </pre>
+       *
+       * <code>KM = 2;</code>
+       */
+      public static final int KM_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Unit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Unit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNIT_UNSPECIFIED;
+          case 1:
+            return MILES;
+          case 2:
+            return KM;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Unit> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Unit> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Unit>() {
+            public Unit findValueByNumber(int number) {
+              return Unit.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Unit[] VALUES = values();
+
+      public static Unit valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Unit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit)
+    }
+
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private long value_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The distance value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public long getValue() {
+      return value_;
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 2;
+    private int unit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    @java.lang.Override
+    public int getUnitValue() {
+      return unit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit getUnit() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit.forNumber(unit_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Mileage)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.Mileage other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.Mileage) obj;
+
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (getValue() != other.getValue()) return false;
+      }
+      if (unit_ != other.unit_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValue());
+      }
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + unit_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The mileage of the vehicle.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Mileage}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.Mileage)
+        com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        value_ = 0L;
+        unit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.Mileage(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Mileage) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.Mileage) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.unit_ != 0) {
+          setUnitValue(other.getUnitValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  value_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  unit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long value_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public long getValue() {
+        return value_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(long value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The distance value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int unit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+       *
+       * @return The enum numeric value on the wire for unit.
+       */
+      @java.lang.Override
+      public int getUnitValue() {
+        return unit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitValue(int value) {
+        unit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+       *
+       * @return The unit.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit getUnit() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit.forNumber(
+                unit_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        unit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit unit = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.Mileage)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.Mileage)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.shopping.merchant.products.v1.ProductAttributes.Mileage();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Mileage> PARSER =
+        new com.google.protobuf.AbstractParser<Mileage>() {
+          @java.lang.Override
+          public Mileage parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Mileage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Mileage> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface FuelConsumptionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    double getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the fuel consumption.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    int getUnitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the fuel consumption.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit getUnit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption}
+   */
+  public static final class FuelConsumption extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)
+      FuelConsumptionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "FuelConsumption");
+    }
+
+    // Use FuelConsumption.newBuilder() to construct.
+    private FuelConsumption(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private FuelConsumption() {
+      unit_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the fuel consumption.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit}
+     */
+    public enum Unit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      UNIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Liter per 100 kilometers.
+       * </pre>
+       *
+       * <code>LPER100KM = 1;</code>
+       */
+      LPER100KM(1),
+      /**
+       *
+       *
+       * <pre>
+       * Kilograms per 100 kilometers.
+       * </pre>
+       *
+       * <code>KGPER100KM = 2;</code>
+       */
+      KGPER100KM(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Unit");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int UNIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Liter per 100 kilometers.
+       * </pre>
+       *
+       * <code>LPER100KM = 1;</code>
+       */
+      public static final int LPER100KM_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Kilograms per 100 kilometers.
+       * </pre>
+       *
+       * <code>KGPER100KM = 2;</code>
+       */
+      public static final int KGPER100KM_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Unit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Unit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNIT_UNSPECIFIED;
+          case 1:
+            return LPER100KM;
+          case 2:
+            return KGPER100KM;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Unit> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Unit> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Unit>() {
+            public Unit findValueByNumber(int number) {
+              return Unit.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Unit[] VALUES = values();
+
+      public static Unit valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Unit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit)
+    }
+
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private double value_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public double getValue() {
+      return value_;
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 2;
+    private int unit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the fuel consumption.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    @java.lang.Override
+    public int getUnitValue() {
+      return unit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the fuel consumption.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+        getUnit() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit.forNumber(
+              unit_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption) obj;
+
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (java.lang.Double.doubleToLongBits(getValue())
+            != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+      }
+      if (unit_ != other.unit_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getValue()));
+      }
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + unit_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        value_ = 0D;
+        unit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                .getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.unit_ != 0) {
+          setUnitValue(other.getUnitValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  value_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 9
+              case 16:
+                {
+                  unit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private double value_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The fuel consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fuel consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public double getValue() {
+        return value_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fuel consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(double value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The fuel consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int unit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the fuel consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for unit.
+       */
+      @java.lang.Override
+      public int getUnitValue() {
+        return unit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the fuel consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitValue(int value) {
+        unit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the fuel consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return The unit.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+          getUnit() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+                .forNumber(unit_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the fuel consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        unit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the fuel consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FuelConsumption> PARSER =
+        new com.google.protobuf.AbstractParser<FuelConsumption>() {
+          @java.lang.Override
+          public FuelConsumption parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<FuelConsumption> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FuelConsumption> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface EnergyConsumptionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The energy consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The energy consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    double getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the energy consumption.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    int getUnitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the energy consumption.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit getUnit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The energy consumption of the vehicle.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption}
+   */
+  public static final class EnergyConsumption extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)
+      EnergyConsumptionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EnergyConsumption");
+    }
+
+    // Use EnergyConsumption.newBuilder() to construct.
+    private EnergyConsumption(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EnergyConsumption() {
+      unit_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the energy consumption.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit}
+     */
+    public enum Unit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      UNIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Kilowatt hours per 100 kilometers.
+       * </pre>
+       *
+       * <code>KWHPER100KM = 1;</code>
+       */
+      KWHPER100KM(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Unit");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int UNIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Kilowatt hours per 100 kilometers.
+       * </pre>
+       *
+       * <code>KWHPER100KM = 1;</code>
+       */
+      public static final int KWHPER100KM_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Unit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Unit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNIT_UNSPECIFIED;
+          case 1:
+            return KWHPER100KM;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Unit> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Unit> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Unit>() {
+            public Unit findValueByNumber(int number) {
+              return Unit.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Unit[] VALUES = values();
+
+      public static Unit valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Unit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit)
+    }
+
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private double value_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The energy consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The energy consumption value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public double getValue() {
+      return value_;
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 2;
+    private int unit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the energy consumption.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    @java.lang.Override
+    public int getUnitValue() {
+      return unit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the energy consumption.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+        getUnit() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+              .forNumber(unit_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption) obj;
+
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (java.lang.Double.doubleToLongBits(getValue())
+            != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+      }
+      if (unit_ != other.unit_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getValue()));
+      }
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + unit_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The energy consumption of the vehicle.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        value_ = 0D;
+        unit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+                .getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.unit_ != 0) {
+          setUnitValue(other.getUnitValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  value_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 9
+              case 16:
+                {
+                  unit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private double value_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The energy consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The energy consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public double getValue() {
+        return value_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The energy consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(double value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The energy consumption value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int unit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the energy consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for unit.
+       */
+      @java.lang.Override
+      public int getUnitValue() {
+        return unit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the energy consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitValue(int value) {
+        unit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the energy consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return The unit.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+          getUnit() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+                .forNumber(unit_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the energy consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        unit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the energy consumption.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit unit = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes
+            .EnergyConsumption
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EnergyConsumption> PARSER =
+        new com.google.protobuf.AbstractParser<EnergyConsumption>() {
+          @java.lang.Override
+          public EnergyConsumption parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EnergyConsumption> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EnergyConsumption> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface Co2EmissionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The co2 emission value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The co2 emission value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return The value.
+     */
+    long getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the co2 emission.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    int getUnitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the co2 emission.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit getUnit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The co2 emission of the vehicle.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions}
+   */
+  public static final class Co2Emissions extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)
+      Co2EmissionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Co2Emissions");
+    }
+
+    // Use Co2Emissions.newBuilder() to construct.
+    private Co2Emissions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Co2Emissions() {
+      unit_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the co2 emission.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit}
+     */
+    public enum Unit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      UNIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Grams per kilometer.
+       * </pre>
+       *
+       * <code>GPERKM = 1;</code>
+       */
+      GPERKM(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Unit");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int UNIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Grams per kilometer.
+       * </pre>
+       *
+       * <code>GPERKM = 1;</code>
+       */
+      public static final int GPERKM_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Unit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Unit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNIT_UNSPECIFIED;
+          case 1:
+            return GPERKM;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Unit> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Unit> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Unit>() {
+            public Unit findValueByNumber(int number) {
+              return Unit.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Unit[] VALUES = values();
+
+      public static Unit valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Unit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit)
+    }
+
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private long value_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The co2 emission value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The co2 emission value.
+     * </pre>
+     *
+     * <code>optional int64 value = 1;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public long getValue() {
+      return value_;
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 2;
+    private int unit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the co2 emission.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    @java.lang.Override
+    public int getUnitValue() {
+      return unit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of the co2 emission.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+     * </code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit getUnit() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit.forNumber(
+              unit_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions) obj;
+
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (getValue() != other.getValue()) return false;
+      }
+      if (unit_ != other.unit_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getValue());
+      }
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + unit_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The co2 emission of the vehicle.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        value_ = 0L;
+        unit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+                .getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.unit_ != 0) {
+          setUnitValue(other.getUnitValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  value_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  unit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long value_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The co2 emission value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The co2 emission value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public long getValue() {
+        return value_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The co2 emission value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(long value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The co2 emission value.
+       * </pre>
+       *
+       * <code>optional int64 value = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int unit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the co2 emission.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for unit.
+       */
+      @java.lang.Override
+      public int getUnitValue() {
+        return unit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the co2 emission.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitValue(int value) {
+        unit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the co2 emission.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+       * </code>
+       *
+       * @return The unit.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit
+          getUnit() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit.forNumber(
+                unit_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the co2 emission.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+       * </code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        unit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of the co2 emission.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Unit unit = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Co2Emissions> PARSER =
+        new com.google.protobuf.AbstractParser<Co2Emissions>() {
+          @java.lang.Override
+          public Co2Emissions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Co2Emissions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Co2Emissions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface WarrantyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.Warranty)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty duration in months.
+     * </pre>
+     *
+     * <code>int64 duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    long getDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     *
+     * @return Whether the mileage field is set.
+     */
+    boolean hasMileage();
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     *
+     * @return The mileage.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage();
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+        getMileageOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The warranty of the vehicle.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Warranty}
+   */
+  public static final class Warranty extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.Warranty)
+      WarrantyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Warranty");
+    }
+
+    // Use Warranty.newBuilder() to construct.
+    private Warranty(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Warranty() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DURATION_FIELD_NUMBER = 1;
+    private long duration_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty duration in months.
+     * </pre>
+     *
+     * <code>int64 duration = 1;</code>
+     *
+     * @return The duration.
+     */
+    @java.lang.Override
+    public long getDuration() {
+      return duration_;
+    }
+
+    public static final int MILEAGE_FIELD_NUMBER = 2;
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     *
+     * @return Whether the mileage field is set.
+     */
+    @java.lang.Override
+    public boolean hasMileage() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     *
+     * @return The mileage.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage() {
+      return mileage_ == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+          : mileage_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty mileage.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+        getMileageOrBuilder() {
+      return mileage_ == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+          : mileage_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (duration_ != 0L) {
+        output.writeInt64(1, duration_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getMileage());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (duration_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, duration_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMileage());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Warranty)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.Warranty other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.Warranty) obj;
+
+      if (getDuration() != other.getDuration()) return false;
+      if (hasMileage() != other.hasMileage()) return false;
+      if (hasMileage()) {
+        if (!getMileage().equals(other.getMileage())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDuration());
+      if (hasMileage()) {
+        hash = (37 * hash) + MILEAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMileage().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The warranty of the vehicle.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.Warranty}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.Warranty)
+        com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetMileageFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        duration_ = 0L;
+        mileage_ = null;
+        if (mileageBuilder_ != null) {
+          mileageBuilder_.dispose();
+          mileageBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.Warranty(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Warranty result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.duration_ = duration_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mileage_ = mileageBuilder_ == null ? mileage_ : mileageBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.shopping.merchant.products.v1.ProductAttributes.Warranty) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.Warranty) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Warranty other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+                .getDefaultInstance()) return this;
+        if (other.getDuration() != 0L) {
+          setDuration(other.getDuration());
+        }
+        if (other.hasMileage()) {
+          mergeMileage(other.getMileage());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  duration_ = input.readInt64();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetMileageFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private long duration_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty duration in months.
+       * </pre>
+       *
+       * <code>int64 duration = 1;</code>
+       *
+       * @return The duration.
+       */
+      @java.lang.Override
+      public long getDuration() {
+        return duration_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty duration in months.
+       * </pre>
+       *
+       * <code>int64 duration = 1;</code>
+       *
+       * @param value The duration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDuration(long value) {
+
+        duration_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty duration in months.
+       * </pre>
+       *
+       * <code>int64 duration = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDuration() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        duration_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+              com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+          mileageBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       *
+       * @return Whether the mileage field is set.
+       */
+      public boolean hasMileage() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       *
+       * @return The mileage.
+       */
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage() {
+        if (mileageBuilder_ == null) {
+          return mileage_ == null
+              ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                  .getDefaultInstance()
+              : mileage_;
+        } else {
+          return mileageBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public Builder setMileage(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+        if (mileageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mileage_ = value;
+        } else {
+          mileageBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public Builder setMileage(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+              builderForValue) {
+        if (mileageBuilder_ == null) {
+          mileage_ = builderForValue.build();
+        } else {
+          mileageBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public Builder mergeMileage(
+          com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+        if (mileageBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && mileage_ != null
+              && mileage_
+                  != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                      .getDefaultInstance()) {
+            getMileageBuilder().mergeFrom(value);
+          } else {
+            mileage_ = value;
+          }
+        } else {
+          mileageBuilder_.mergeFrom(value);
+        }
+        if (mileage_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public Builder clearMileage() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        mileage_ = null;
+        if (mileageBuilder_ != null) {
+          mileageBuilder_.dispose();
+          mileageBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+          getMileageBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetMileageFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+          getMileageOrBuilder() {
+        if (mileageBuilder_ != null) {
+          return mileageBuilder_.getMessageOrBuilder();
+        } else {
+          return mileage_ == null
+              ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                  .getDefaultInstance()
+              : mileage_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The warranty mileage.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+              com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+              com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+          internalGetMileageFieldBuilder() {
+        if (mileageBuilder_ == null) {
+          mileageBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+                  com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+                  com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>(
+                  getMileage(), getParentForChildren(), isClean());
+          mileage_ = null;
+        }
+        return mileageBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.Warranty)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.Warranty)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.shopping.merchant.products.v1.ProductAttributes.Warranty();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Warranty> PARSER =
+        new com.google.protobuf.AbstractParser<Warranty>() {
+          @java.lang.Override
+          public Warranty parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Warranty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Warranty> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface ProductFeeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.ProductFee)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     *
+     * @return Whether the amount field is set.
+     */
+    boolean hasAmount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     *
+     * @return The amount.
+     */
+    com.google.shopping.type.Price getAmount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     */
+    com.google.shopping.type.PriceOrBuilder getAmountOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee attribute containing type and amount.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.ProductFee}
+   */
+  public static final class ProductFee extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.ProductFee)
+      ProductFeeOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ProductFee");
+    }
+
+    // Use ProductFee.newBuilder() to construct.
+    private ProductFee(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ProductFee() {
+      type_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of product fee.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType}
+     */
+    public enum FeeType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified fee type.
+       * </pre>
+       *
+       * <code>FEE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      FEE_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Admin fee.
+       * </pre>
+       *
+       * <code>ADMIN_FEE = 1;</code>
+       */
+      ADMIN_FEE(1),
+      /**
+       *
+       *
+       * <pre>
+       * Application fee.
+       * </pre>
+       *
+       * <code>APPLICATION_FEE = 2;</code>
+       */
+      APPLICATION_FEE(2),
+      /**
+       *
+       *
+       * <pre>
+       * Security deposit.
+       * </pre>
+       *
+       * <code>SECURITY_DEPOSIT = 3;</code>
+       */
+      SECURITY_DEPOSIT(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "FeeType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified fee type.
+       * </pre>
+       *
+       * <code>FEE_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int FEE_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Admin fee.
+       * </pre>
+       *
+       * <code>ADMIN_FEE = 1;</code>
+       */
+      public static final int ADMIN_FEE_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Application fee.
+       * </pre>
+       *
+       * <code>APPLICATION_FEE = 2;</code>
+       */
+      public static final int APPLICATION_FEE_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Security deposit.
+       * </pre>
+       *
+       * <code>SECURITY_DEPOSIT = 3;</code>
+       */
+      public static final int SECURITY_DEPOSIT_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static FeeType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static FeeType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return FEE_TYPE_UNSPECIFIED;
+          case 1:
+            return ADMIN_FEE;
+          case 2:
+            return APPLICATION_FEE;
+          case 3:
+            return SECURITY_DEPOSIT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<FeeType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<FeeType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<FeeType>() {
+            public FeeType findValueByNumber(int number) {
+              return FeeType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final FeeType[] VALUES = values();
+
+      public static FeeType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private FeeType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType)
+    }
+
+    private int bitField0_;
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType getType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType.forNumber(
+              type_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 2;
+    private com.google.shopping.type.Price amount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     *
+     * @return Whether the amount field is set.
+     */
+    @java.lang.Override
+    public boolean hasAmount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     *
+     * @return The amount.
+     */
+    @java.lang.Override
+    public com.google.shopping.type.Price getAmount() {
+      return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amount of product fee.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price amount = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.shopping.type.PriceOrBuilder getAmountOrBuilder() {
+      return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType
+              .FEE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(2, getAmount());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType
+              .FEE_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAmount());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee) obj;
+
+      if (type_ != other.type_) return false;
+      if (hasAmount() != other.hasAmount()) return false;
+      if (hasAmount()) {
+        if (!getAmount().equals(other.getAmount())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      if (hasAmount()) {
+        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAmount().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee attribute containing type and amount.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.ProductFee}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.ProductFee)
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetAmountFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        amount_ = null;
+        if (amountBuilder_ != null) {
+          amountBuilder_.dispose();
+          amountBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.amount_ = amountBuilder_ == null ? amount_ : amountBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+                .getDefaultInstance()) return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.hasAmount()) {
+          mergeAmount(other.getAmount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetAmountFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType
+          getType() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType.forNumber(
+                type_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.FeeType type = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.shopping.type.Price amount_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          amountBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       *
+       * @return Whether the amount field is set.
+       */
+      public boolean hasAmount() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       *
+       * @return The amount.
+       */
+      public com.google.shopping.type.Price getAmount() {
+        if (amountBuilder_ == null) {
+          return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
+        } else {
+          return amountBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public Builder setAmount(com.google.shopping.type.Price value) {
+        if (amountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          amount_ = value;
+        } else {
+          amountBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public Builder setAmount(com.google.shopping.type.Price.Builder builderForValue) {
+        if (amountBuilder_ == null) {
+          amount_ = builderForValue.build();
+        } else {
+          amountBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public Builder mergeAmount(com.google.shopping.type.Price value) {
+        if (amountBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && amount_ != null
+              && amount_ != com.google.shopping.type.Price.getDefaultInstance()) {
+            getAmountBuilder().mergeFrom(value);
+          } else {
+            amount_ = value;
+          }
+        } else {
+          amountBuilder_.mergeFrom(value);
+        }
+        if (amount_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public Builder clearAmount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        amount_ = null;
+        if (amountBuilder_ != null) {
+          amountBuilder_.dispose();
+          amountBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public com.google.shopping.type.Price.Builder getAmountBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetAmountFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      public com.google.shopping.type.PriceOrBuilder getAmountOrBuilder() {
+        if (amountBuilder_ != null) {
+          return amountBuilder_.getMessageOrBuilder();
+        } else {
+          return amount_ == null ? com.google.shopping.type.Price.getDefaultInstance() : amount_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The amount of product fee.
+       * </pre>
+       *
+       * <code>.google.shopping.type.Price amount = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.shopping.type.Price,
+              com.google.shopping.type.Price.Builder,
+              com.google.shopping.type.PriceOrBuilder>
+          internalGetAmountFieldBuilder() {
+        if (amountBuilder_ == null) {
+          amountBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.shopping.type.Price,
+                  com.google.shopping.type.Price.Builder,
+                  com.google.shopping.type.PriceOrBuilder>(
+                  getAmount(), getParentForChildren(), isClean());
+          amount_ = null;
+        }
+        return amountBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.ProductFee)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.ProductFee)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductFee> PARSER =
+        new com.google.protobuf.AbstractParser<ProductFee>() {
+          @java.lang.Override
+          public ProductFee parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ProductFee> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductFee> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DisplayAddressOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The street number.
+     * </pre>
+     *
+     * <code>string street_number = 1;</code>
+     *
+     * @return The streetNumber.
+     */
+    java.lang.String getStreetNumber();
+
+    /**
+     *
+     *
+     * <pre>
+     * The street number.
+     * </pre>
+     *
+     * <code>string street_number = 1;</code>
+     *
+     * @return The bytes for streetNumber.
+     */
+    com.google.protobuf.ByteString getStreetNumberBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The street name.
+     * </pre>
+     *
+     * <code>string street_name = 2;</code>
+     *
+     * @return The streetName.
+     */
+    java.lang.String getStreetName();
+
+    /**
+     *
+     *
+     * <pre>
+     * The street name.
+     * </pre>
+     *
+     * <code>string street_name = 2;</code>
+     *
+     * @return The bytes for streetName.
+     */
+    com.google.protobuf.ByteString getStreetNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The city such as Seattle, New York, etc.
+     * </pre>
+     *
+     * <code>string city = 3;</code>
+     *
+     * @return The city.
+     */
+    java.lang.String getCity();
+
+    /**
+     *
+     *
+     * <pre>
+     * The city such as Seattle, New York, etc.
+     * </pre>
+     *
+     * <code>string city = 3;</code>
+     *
+     * @return The bytes for city.
+     */
+    com.google.protobuf.ByteString getCityBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The region(state), such as WA, OH, etc.
+     * </pre>
+     *
+     * <code>string region = 4;</code>
+     *
+     * @return The region.
+     */
+    java.lang.String getRegion();
+
+    /**
+     *
+     *
+     * <pre>
+     * The region(state), such as WA, OH, etc.
+     * </pre>
+     *
+     * <code>string region = 4;</code>
+     *
+     * @return The bytes for region.
+     */
+    com.google.protobuf.ByteString getRegionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code, such as 94043.
+     * </pre>
+     *
+     * <code>string postal_code = 5;</code>
+     *
+     * @return The postalCode.
+     */
+    java.lang.String getPostalCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code, such as 94043.
+     * </pre>
+     *
+     * <code>string postal_code = 5;</code>
+     *
+     * @return The bytes for postalCode.
+     */
+    com.google.protobuf.ByteString getPostalCodeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress}
+   */
+  public static final class DisplayAddress extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)
+      DisplayAddressOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DisplayAddress");
+    }
+
+    // Use DisplayAddress.newBuilder() to construct.
+    private DisplayAddress(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DisplayAddress() {
+      streetNumber_ = "";
+      streetName_ = "";
+      city_ = "";
+      region_ = "";
+      postalCode_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder
+                  .class);
+    }
+
+    public static final int STREET_NUMBER_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object streetNumber_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The street number.
+     * </pre>
+     *
+     * <code>string street_number = 1;</code>
+     *
+     * @return The streetNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getStreetNumber() {
+      java.lang.Object ref = streetNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        streetNumber_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The street number.
+     * </pre>
+     *
+     * <code>string street_number = 1;</code>
+     *
+     * @return The bytes for streetNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStreetNumberBytes() {
+      java.lang.Object ref = streetNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        streetNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STREET_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object streetName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The street name.
+     * </pre>
+     *
+     * <code>string street_name = 2;</code>
+     *
+     * @return The streetName.
+     */
+    @java.lang.Override
+    public java.lang.String getStreetName() {
+      java.lang.Object ref = streetName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        streetName_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The street name.
+     * </pre>
+     *
+     * <code>string street_name = 2;</code>
+     *
+     * @return The bytes for streetName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getStreetNameBytes() {
+      java.lang.Object ref = streetName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        streetName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CITY_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object city_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The city such as Seattle, New York, etc.
+     * </pre>
+     *
+     * <code>string city = 3;</code>
+     *
+     * @return The city.
+     */
+    @java.lang.Override
+    public java.lang.String getCity() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        city_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The city such as Seattle, New York, etc.
+     * </pre>
+     *
+     * <code>string city = 3;</code>
+     *
+     * @return The bytes for city.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCityBytes() {
+      java.lang.Object ref = city_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        city_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REGION_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object region_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The region(state), such as WA, OH, etc.
+     * </pre>
+     *
+     * <code>string region = 4;</code>
+     *
+     * @return The region.
+     */
+    @java.lang.Override
+    public java.lang.String getRegion() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        region_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The region(state), such as WA, OH, etc.
+     * </pre>
+     *
+     * <code>string region = 4;</code>
+     *
+     * @return The bytes for region.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRegionBytes() {
+      java.lang.Object ref = region_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        region_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSTAL_CODE_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object postalCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code, such as 94043.
+     * </pre>
+     *
+     * <code>string postal_code = 5;</code>
+     *
+     * @return The postalCode.
+     */
+    @java.lang.Override
+    public java.lang.String getPostalCode() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        postalCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The postal code, such as 94043.
+     * </pre>
+     *
+     * <code>string postal_code = 5;</code>
+     *
+     * @return The bytes for postalCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPostalCodeBytes() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        postalCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(streetNumber_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, streetNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(streetName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, streetName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(city_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, city_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, region_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, postalCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(streetNumber_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, streetNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(streetName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, streetName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(city_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, city_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(region_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, region_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, postalCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress) obj;
+
+      if (!getStreetNumber().equals(other.getStreetNumber())) return false;
+      if (!getStreetName().equals(other.getStreetName())) return false;
+      if (!getCity().equals(other.getCity())) return false;
+      if (!getRegion().equals(other.getRegion())) return false;
+      if (!getPostalCode().equals(other.getPostalCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STREET_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getStreetNumber().hashCode();
+      hash = (37 * hash) + STREET_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getStreetName().hashCode();
+      hash = (37 * hash) + CITY_FIELD_NUMBER;
+      hash = (53 * hash) + getCity().hashCode();
+      hash = (37 * hash) + REGION_FIELD_NUMBER;
+      hash = (53 * hash) + getRegion().hashCode();
+      hash = (37 * hash) + POSTAL_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getPostalCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        streetNumber_ = "";
+        streetName_ = "";
+        city_ = "";
+        region_ = "";
+        postalCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.streetNumber_ = streetNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.streetName_ = streetName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.city_ = city_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.region_ = region_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.postalCode_ = postalCode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+                .getDefaultInstance()) return this;
+        if (!other.getStreetNumber().isEmpty()) {
+          streetNumber_ = other.streetNumber_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getStreetName().isEmpty()) {
+          streetName_ = other.streetName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getCity().isEmpty()) {
+          city_ = other.city_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getRegion().isEmpty()) {
+          region_ = other.region_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getPostalCode().isEmpty()) {
+          postalCode_ = other.postalCode_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  streetNumber_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  streetName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  city_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  region_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  postalCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object streetNumber_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The street number.
+       * </pre>
+       *
+       * <code>string street_number = 1;</code>
+       *
+       * @return The streetNumber.
+       */
+      public java.lang.String getStreetNumber() {
+        java.lang.Object ref = streetNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          streetNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street number.
+       * </pre>
+       *
+       * <code>string street_number = 1;</code>
+       *
+       * @return The bytes for streetNumber.
+       */
+      public com.google.protobuf.ByteString getStreetNumberBytes() {
+        java.lang.Object ref = streetNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          streetNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street number.
+       * </pre>
+       *
+       * <code>string street_number = 1;</code>
+       *
+       * @param value The streetNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreetNumber(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streetNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street number.
+       * </pre>
+       *
+       * <code>string street_number = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStreetNumber() {
+        streetNumber_ = getDefaultInstance().getStreetNumber();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street number.
+       * </pre>
+       *
+       * <code>string street_number = 1;</code>
+       *
+       * @param value The bytes for streetNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreetNumberBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        streetNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object streetName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The street name.
+       * </pre>
+       *
+       * <code>string street_name = 2;</code>
+       *
+       * @return The streetName.
+       */
+      public java.lang.String getStreetName() {
+        java.lang.Object ref = streetName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          streetName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street name.
+       * </pre>
+       *
+       * <code>string street_name = 2;</code>
+       *
+       * @return The bytes for streetName.
+       */
+      public com.google.protobuf.ByteString getStreetNameBytes() {
+        java.lang.Object ref = streetName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          streetName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street name.
+       * </pre>
+       *
+       * <code>string street_name = 2;</code>
+       *
+       * @param value The streetName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreetName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        streetName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street name.
+       * </pre>
+       *
+       * <code>string street_name = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStreetName() {
+        streetName_ = getDefaultInstance().getStreetName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The street name.
+       * </pre>
+       *
+       * <code>string street_name = 2;</code>
+       *
+       * @param value The bytes for streetName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStreetNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        streetName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object city_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The city such as Seattle, New York, etc.
+       * </pre>
+       *
+       * <code>string city = 3;</code>
+       *
+       * @return The city.
+       */
+      public java.lang.String getCity() {
+        java.lang.Object ref = city_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          city_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The city such as Seattle, New York, etc.
+       * </pre>
+       *
+       * <code>string city = 3;</code>
+       *
+       * @return The bytes for city.
+       */
+      public com.google.protobuf.ByteString getCityBytes() {
+        java.lang.Object ref = city_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          city_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The city such as Seattle, New York, etc.
+       * </pre>
+       *
+       * <code>string city = 3;</code>
+       *
+       * @param value The city to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCity(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        city_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The city such as Seattle, New York, etc.
+       * </pre>
+       *
+       * <code>string city = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCity() {
+        city_ = getDefaultInstance().getCity();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The city such as Seattle, New York, etc.
+       * </pre>
+       *
+       * <code>string city = 3;</code>
+       *
+       * @param value The bytes for city to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCityBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        city_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object region_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The region(state), such as WA, OH, etc.
+       * </pre>
+       *
+       * <code>string region = 4;</code>
+       *
+       * @return The region.
+       */
+      public java.lang.String getRegion() {
+        java.lang.Object ref = region_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          region_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The region(state), such as WA, OH, etc.
+       * </pre>
+       *
+       * <code>string region = 4;</code>
+       *
+       * @return The bytes for region.
+       */
+      public com.google.protobuf.ByteString getRegionBytes() {
+        java.lang.Object ref = region_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          region_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The region(state), such as WA, OH, etc.
+       * </pre>
+       *
+       * <code>string region = 4;</code>
+       *
+       * @param value The region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        region_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The region(state), such as WA, OH, etc.
+       * </pre>
+       *
+       * <code>string region = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRegion() {
+        region_ = getDefaultInstance().getRegion();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The region(state), such as WA, OH, etc.
+       * </pre>
+       *
+       * <code>string region = 4;</code>
+       *
+       * @param value The bytes for region to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRegionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        region_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object postalCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code, such as 94043.
+       * </pre>
+       *
+       * <code>string postal_code = 5;</code>
+       *
+       * @return The postalCode.
+       */
+      public java.lang.String getPostalCode() {
+        java.lang.Object ref = postalCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          postalCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code, such as 94043.
+       * </pre>
+       *
+       * <code>string postal_code = 5;</code>
+       *
+       * @return The bytes for postalCode.
+       */
+      public com.google.protobuf.ByteString getPostalCodeBytes() {
+        java.lang.Object ref = postalCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          postalCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code, such as 94043.
+       * </pre>
+       *
+       * <code>string postal_code = 5;</code>
+       *
+       * @param value The postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        postalCode_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code, such as 94043.
+       * </pre>
+       *
+       * <code>string postal_code = 5;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPostalCode() {
+        postalCode_ = getDefaultInstance().getPostalCode();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The postal code, such as 94043.
+       * </pre>
+       *
+       * <code>string postal_code = 5;</code>
+       *
+       * @param value The bytes for postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        postalCode_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DisplayAddress> PARSER =
+        new com.google.protobuf.AbstractParser<DisplayAddress>() {
+          @java.lang.Override
+          public DisplayAddress parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DisplayAddress> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DisplayAddress> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface UnitAreaOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.UnitArea)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The area value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    boolean hasValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The area value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    double getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of area.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    int getUnitValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of area.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;</code>
+     *
+     * @return The unit.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit getUnit();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.UnitArea}
+   */
+  public static final class UnitArea extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.UnitArea)
+      UnitAreaOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "UnitArea");
+    }
+
+    // Use UnitArea.newBuilder() to construct.
+    private UnitArea(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UnitArea() {
+      unit_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of area.
+     * </pre>
+     *
+     * Protobuf enum {@code google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit}
+     */
+    public enum Unit implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      UNIT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Square meters.
+       * </pre>
+       *
+       * <code>SQM = 1;</code>
+       */
+      SQM(1),
+      /**
+       *
+       *
+       * <pre>
+       * Square feet.
+       * </pre>
+       *
+       * <code>SQFT = 2;</code>
+       */
+      SQFT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Unit");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified unit.
+       * </pre>
+       *
+       * <code>UNIT_UNSPECIFIED = 0;</code>
+       */
+      public static final int UNIT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Square meters.
+       * </pre>
+       *
+       * <code>SQM = 1;</code>
+       */
+      public static final int SQM_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Square feet.
+       * </pre>
+       *
+       * <code>SQFT = 2;</code>
+       */
+      public static final int SQFT_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Unit valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Unit forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNIT_UNSPECIFIED;
+          case 1:
+            return SQM;
+          case 2:
+            return SQFT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Unit> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Unit> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Unit>() {
+            public Unit findValueByNumber(int number) {
+              return Unit.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Unit[] VALUES = values();
+
+      public static Unit valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Unit(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit)
+    }
+
+    private int bitField0_;
+    public static final int VALUE_FIELD_NUMBER = 1;
+    private double value_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * The area value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return Whether the value field is set.
+     */
+    @java.lang.Override
+    public boolean hasValue() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The area value.
+     * </pre>
+     *
+     * <code>optional double value = 1;</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public double getValue() {
+      return value_;
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 2;
+    private int unit_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of area.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;</code>
+     *
+     * @return The enum numeric value on the wire for unit.
+     */
+    @java.lang.Override
+    public int getUnitValue() {
+      return unit_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit of area.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;</code>
+     *
+     * @return The unit.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit getUnit() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit.forNumber(unit_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeDouble(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, value_);
+      }
+      if (unit_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit
+              .UNIT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea) obj;
+
+      if (hasValue() != other.hasValue()) return false;
+      if (hasValue()) {
+        if (java.lang.Double.doubleToLongBits(getValue())
+            != java.lang.Double.doubleToLongBits(other.getValue())) return false;
+      }
+      if (unit_ != other.unit_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasValue()) {
+        hash = (37 * hash) + VALUE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashLong(
+                    java.lang.Double.doubleToLongBits(getValue()));
+      }
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + unit_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.UnitArea}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.UnitArea)
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        value_ = 0D;
+        unit_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unit_ = unit_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+                .getDefaultInstance()) return this;
+        if (other.hasValue()) {
+          setValue(other.getValue());
+        }
+        if (other.unit_ != 0) {
+          setUnitValue(other.getUnitValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 9:
+                {
+                  value_ = input.readDouble();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 9
+              case 16:
+                {
+                  unit_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private double value_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The area value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return Whether the value field is set.
+       */
+      @java.lang.Override
+      public boolean hasValue() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The area value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return The value.
+       */
+      @java.lang.Override
+      public double getValue() {
+        return value_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The area value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(double value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The area value.
+       * </pre>
+       *
+       * <code>optional double value = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        value_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int unit_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of area.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for unit.
+       */
+      @java.lang.Override
+      public int getUnitValue() {
+        return unit_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of area.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitValue(int value) {
+        unit_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of area.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;
+       * </code>
+       *
+       * @return The unit.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit getUnit() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit.forNumber(
+                unit_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of area.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;
+       * </code>
+       *
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        unit_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The unit of area.
+       * </pre>
+       *
+       * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Unit unit = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unit_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.UnitArea)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.UnitArea)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnitArea> PARSER =
+        new com.google.protobuf.AbstractParser<UnitArea>() {
+          @java.lang.Override
+          public UnitArea parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UnitArea> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnitArea> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PetPolicyOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether pets are allowed.
+     * </pre>
+     *
+     * <code>bool pets_allowed = 1;</code>
+     *
+     * @return The petsAllowed.
+     */
+    boolean getPetsAllowed();
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return A list containing the petTypes.
+     */
+    java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>
+        getPetTypesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return The count of petTypes.
+     */
+    int getPetTypesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The petTypes at the given index.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType getPetTypes(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for petTypes.
+     */
+    java.util.List<java.lang.Integer> getPetTypesValueList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of petTypes at the given index.
+     */
+    int getPetTypesValue(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy of the property.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.PetPolicy}
+   */
+  public static final class PetPolicy extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)
+      PetPolicyOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "PetPolicy");
+    }
+
+    // Use PetPolicy.newBuilder() to construct.
+    private PetPolicy(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PetPolicy() {
+      petTypes_ = emptyIntList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType}
+     */
+    public enum PetType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified pet type.
+       * </pre>
+       *
+       * <code>PET_TYPE_UNSPECIFIED = 0;</code>
+       */
+      PET_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Cats.
+       * </pre>
+       *
+       * <code>CATS = 1;</code>
+       */
+      CATS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Large dogs.
+       * </pre>
+       *
+       * <code>LARGE_DOGS = 2;</code>
+       */
+      LARGE_DOGS(2),
+      /**
+       *
+       *
+       * <pre>
+       * Small dogs.
+       * </pre>
+       *
+       * <code>SMALL_DOGS = 3;</code>
+       */
+      SMALL_DOGS(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "PetType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified pet type.
+       * </pre>
+       *
+       * <code>PET_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int PET_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Cats.
+       * </pre>
+       *
+       * <code>CATS = 1;</code>
+       */
+      public static final int CATS_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Large dogs.
+       * </pre>
+       *
+       * <code>LARGE_DOGS = 2;</code>
+       */
+      public static final int LARGE_DOGS_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Small dogs.
+       * </pre>
+       *
+       * <code>SMALL_DOGS = 3;</code>
+       */
+      public static final int SMALL_DOGS_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PetType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PetType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return PET_TYPE_UNSPECIFIED;
+          case 1:
+            return CATS;
+          case 2:
+            return LARGE_DOGS;
+          case 3:
+            return SMALL_DOGS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PetType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<PetType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PetType>() {
+            public PetType findValueByNumber(int number) {
+              return PetType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final PetType[] VALUES = values();
+
+      public static PetType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private PetType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType)
+    }
+
+    public static final int PETS_ALLOWED_FIELD_NUMBER = 1;
+    private boolean petsAllowed_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether pets are allowed.
+     * </pre>
+     *
+     * <code>bool pets_allowed = 1;</code>
+     *
+     * @return The petsAllowed.
+     */
+    @java.lang.Override
+    public boolean getPetsAllowed() {
+      return petsAllowed_;
+    }
+
+    public static final int PET_TYPES_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList petTypes_ = emptyIntList();
+
+    private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>
+        petTypes_converter_ =
+            new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>() {
+              public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType
+                  convert(int from) {
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType
+                    result =
+                        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType
+                            .forNumber(from);
+                return result == null
+                    ? com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType
+                        .UNRECOGNIZED
+                    : result;
+              }
+            };
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return A list containing the petTypes.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>
+        getPetTypesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>(
+          petTypes_, petTypes_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return The count of petTypes.
+     */
+    @java.lang.Override
+    public int getPetTypesCount() {
+      return petTypes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The petTypes at the given index.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType getPetTypes(
+        int index) {
+      return petTypes_converter_.convert(petTypes_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for petTypes.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getPetTypesValueList() {
+      return petTypes_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet types allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of petTypes at the given index.
+     */
+    @java.lang.Override
+    public int getPetTypesValue(int index) {
+      return petTypes_.getInt(index);
+    }
+
+    private int petTypesMemoizedSerializedSize;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (petsAllowed_ != false) {
+        output.writeBool(1, petsAllowed_);
+      }
+      if (getPetTypesList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(petTypesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < petTypes_.size(); i++) {
+        output.writeEnumNoTag(petTypes_.getInt(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (petsAllowed_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, petsAllowed_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < petTypes_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(petTypes_.getInt(i));
+        }
+        size += dataSize;
+        if (!getPetTypesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        petTypesMemoizedSerializedSize = dataSize;
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy) obj;
+
+      if (getPetsAllowed() != other.getPetsAllowed()) return false;
+      if (!petTypes_.equals(other.petTypes_)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PETS_ALLOWED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPetsAllowed());
+      if (getPetTypesCount() > 0) {
+        hash = (37 * hash) + PET_TYPES_FIELD_NUMBER;
+        hash = (53 * hash) + petTypes_.hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy of the property.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.PetPolicy}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder.class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        petsAllowed_ = false;
+        petTypes_ = emptyIntList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.petsAllowed_ = petsAllowed_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          petTypes_.makeImmutable();
+          result.petTypes_ = petTypes_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+                .getDefaultInstance()) return this;
+        if (other.getPetsAllowed() != false) {
+          setPetsAllowed(other.getPetsAllowed());
+        }
+        if (!other.petTypes_.isEmpty()) {
+          if (petTypes_.isEmpty()) {
+            petTypes_ = other.petTypes_;
+            petTypes_.makeImmutable();
+            bitField0_ |= 0x00000002;
+          } else {
+            ensurePetTypesIsMutable();
+            petTypes_.addAll(other.petTypes_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  petsAllowed_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensurePetTypesIsMutable();
+                  petTypes_.addInt(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensurePetTypesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    petTypes_.addInt(input.readEnum());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean petsAllowed_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether pets are allowed.
+       * </pre>
+       *
+       * <code>bool pets_allowed = 1;</code>
+       *
+       * @return The petsAllowed.
+       */
+      @java.lang.Override
+      public boolean getPetsAllowed() {
+        return petsAllowed_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether pets are allowed.
+       * </pre>
+       *
+       * <code>bool pets_allowed = 1;</code>
+       *
+       * @param value The petsAllowed to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPetsAllowed(boolean value) {
+
+        petsAllowed_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Whether pets are allowed.
+       * </pre>
+       *
+       * <code>bool pets_allowed = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPetsAllowed() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        petsAllowed_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList petTypes_ = emptyIntList();
+
+      private void ensurePetTypesIsMutable() {
+        if (!petTypes_.isModifiable()) {
+          petTypes_ = makeMutableCopy(petTypes_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @return A list containing the petTypes.
+       */
+      public java.util.List<
+              com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>
+          getPetTypesList() {
+        return new com.google.protobuf.Internal.IntListAdapter<
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>(
+            petTypes_, petTypes_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @return The count of petTypes.
+       */
+      public int getPetTypesCount() {
+        return petTypes_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The petTypes at the given index.
+       */
+      public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType
+          getPetTypes(int index) {
+        return petTypes_converter_.convert(petTypes_.getInt(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The petTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPetTypes(
+          int index,
+          com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePetTypesIsMutable();
+        petTypes_.setInt(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param value The petTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPetTypes(
+          com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePetTypesIsMutable();
+        petTypes_.addInt(value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param values The petTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPetTypes(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType>
+              values) {
+        ensurePetTypesIsMutable();
+        for (com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType value :
+            values) {
+          petTypes_.addInt(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPetTypes() {
+        petTypes_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for petTypes.
+       */
+      public java.util.List<java.lang.Integer> getPetTypesValueList() {
+        petTypes_.makeImmutable();
+        return petTypes_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of petTypes at the given index.
+       */
+      public int getPetTypesValue(int index) {
+        return petTypes_.getInt(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for petTypes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPetTypesValue(int index, int value) {
+        ensurePetTypesIsMutable();
+        petTypes_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for petTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPetTypesValue(int value) {
+        ensurePetTypesIsMutable();
+        petTypes_.addInt(value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The pet types allowed.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.PetType pet_types = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for petTypes to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPetTypesValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensurePetTypesIsMutable();
+        for (int value : values) {
+          petTypes_.addInt(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.PetPolicy)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PetPolicy> PARSER =
+        new com.google.protobuf.AbstractParser<PetPolicy>() {
+          @java.lang.Override
+          public PetPolicy parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PetPolicy> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PetPolicy> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface QuestionAndAnswerOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The question text.
+     * </pre>
+     *
+     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The question.
+     */
+    java.lang.String getQuestion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The question text.
+     * </pre>
+     *
+     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for question.
+     */
+    com.google.protobuf.ByteString getQuestionBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The answer text.
+     * </pre>
+     *
+     * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The answer.
+     */
+    java.lang.String getAnswer();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The answer text.
+     * </pre>
+     *
+     * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for answer.
+     */
+    com.google.protobuf.ByteString getAnswerBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The question and answer for the product.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer}
+   */
+  public static final class QuestionAndAnswer extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)
+      QuestionAndAnswerOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "QuestionAndAnswer");
+    }
+
+    // Use QuestionAndAnswer.newBuilder() to construct.
+    private QuestionAndAnswer(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QuestionAndAnswer() {
+      question_ = "";
+      answer_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+                  .class);
+    }
+
+    public static final int QUESTION_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object question_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The question text.
+     * </pre>
+     *
+     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The question.
+     */
+    @java.lang.Override
+    public java.lang.String getQuestion() {
+      java.lang.Object ref = question_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        question_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The question text.
+     * </pre>
+     *
+     * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for question.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getQuestionBytes() {
+      java.lang.Object ref = question_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        question_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ANSWER_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object answer_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The answer text.
+     * </pre>
+     *
+     * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The answer.
+     */
+    @java.lang.Override
+    public java.lang.String getAnswer() {
+      java.lang.Object ref = answer_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        answer_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The answer text.
+     * </pre>
+     *
+     * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for answer.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAnswerBytes() {
+      java.lang.Object ref = answer_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        answer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(question_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, question_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answer_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, answer_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(question_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, question_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answer_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, answer_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer) obj;
+
+      if (!getQuestion().equals(other.getQuestion())) return false;
+      if (!getAnswer().equals(other.getAnswer())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + QUESTION_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestion().hashCode();
+      hash = (37 * hash) + ANSWER_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswer().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The question and answer for the product.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        question_ = "";
+        answer_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.question_ = question_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.answer_ = answer_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+                .getDefaultInstance()) return this;
+        if (!other.getQuestion().isEmpty()) {
+          question_ = other.question_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getAnswer().isEmpty()) {
+          answer_ = other.answer_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  question_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  answer_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object question_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The question text.
+       * </pre>
+       *
+       * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The question.
+       */
+      public java.lang.String getQuestion() {
+        java.lang.Object ref = question_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          question_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The question text.
+       * </pre>
+       *
+       * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for question.
+       */
+      public com.google.protobuf.ByteString getQuestionBytes() {
+        java.lang.Object ref = question_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          question_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The question text.
+       * </pre>
+       *
+       * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The question to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestion(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        question_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The question text.
+       * </pre>
+       *
+       * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearQuestion() {
+        question_ = getDefaultInstance().getQuestion();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The question text.
+       * </pre>
+       *
+       * <code>string question = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for question to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuestionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        question_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object answer_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The answer text.
+       * </pre>
+       *
+       * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The answer.
+       */
+      public java.lang.String getAnswer() {
+        java.lang.Object ref = answer_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          answer_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The answer text.
+       * </pre>
+       *
+       * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for answer.
+       */
+      public com.google.protobuf.ByteString getAnswerBytes() {
+        java.lang.Object ref = answer_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          answer_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The answer text.
+       * </pre>
+       *
+       * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The answer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnswer(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answer_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The answer text.
+       * </pre>
+       *
+       * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAnswer() {
+        answer_ = getDefaultInstance().getAnswer();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The answer text.
+       * </pre>
+       *
+       * <code>string answer = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for answer to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAnswerBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        answer_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes
+            .QuestionAndAnswer
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuestionAndAnswer> PARSER =
+        new com.google.protobuf.AbstractParser<QuestionAndAnswer>() {
+          @java.lang.Override
+          public QuestionAndAnswer parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QuestionAndAnswer> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuestionAndAnswer> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface VariantOptionOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.VariantOption)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the variant. For example, "Color", "Memory",
+     * "Size", "Length"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the variant. For example, "Color", "Memory",
+     * "Size", "Length"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of the variant. For example, "Red", "128GB", "XL",
+     * "100cm"
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
+     */
+    java.lang.String getValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of the variant. For example, "Red", "128GB", "XL",
+     * "100cm"
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
+     */
+    com.google.protobuf.ByteString getValueBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Additional product variants for the product.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.VariantOption}
+   */
+  public static final class VariantOption extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.VariantOption)
+      VariantOptionOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "VariantOption");
+    }
+
+    // Use VariantOption.newBuilder() to construct.
+    private VariantOption(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VariantOption() {
+      name_ = "";
+      value_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+                  .class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the variant. For example, "Color", "Memory",
+     * "Size", "Length"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The name of the variant. For example, "Color", "Memory",
+     * "Size", "Length"
+     * </pre>
+     *
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object value_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of the variant. For example, "Red", "128GB", "XL",
+     * "100cm"
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The value.
+     */
+    @java.lang.Override
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The value of the variant. For example, "Red", "128GB", "XL",
+     * "100cm"
+     * </pre>
+     *
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption) obj;
+
+      if (!getName().equals(other.getName())) return false;
+      if (!getValue().equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional product variants for the product.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.VariantOption}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.VariantOption)
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        value_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+                .getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  value_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the variant. For example, "Color", "Memory",
+       * "Size", "Length"
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the variant. For example, "Color", "Memory",
+       * "Size", "Length"
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the variant. For example, "Color", "Memory",
+       * "Size", "Length"
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the variant. For example, "Color", "Memory",
+       * "Size", "Length"
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The name of the variant. For example, "Color", "Memory",
+       * "Size", "Length"
+       * </pre>
+       *
+       * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of the variant. For example, "Red", "128GB", "XL",
+       * "100cm"
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The value.
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of the variant. For example, "Red", "128GB", "XL",
+       * "100cm"
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for value.
+       */
+      public com.google.protobuf.ByteString getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of the variant. For example, "Red", "128GB", "XL",
+       * "100cm"
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of the variant. For example, "Red", "128GB", "XL",
+       * "100cm"
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        value_ = getDefaultInstance().getValue();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The value of the variant. For example, "Red", "128GB", "XL",
+       * "100cm"
+       * </pre>
+       *
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValueBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.VariantOption)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.VariantOption)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VariantOption> PARSER =
+        new com.google.protobuf.AbstractParser<VariantOption>() {
+          @java.lang.Override
+          public VariantOption parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VariantOption> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VariantOption> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface RelatedProductOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the relationship between this product and the
+     * related product.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for relationshipType.
+     */
+    int getRelationshipTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the relationship between this product and the
+     * related product.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The relationshipType.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType
+        getRelationshipType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the identifier of the related product.
+     * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+     * or [product ID](https://support.google.com/merchants/answer/6324405).
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for idType.
+     */
+    int getIdTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the identifier of the related product.
+     * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+     * or [product ID](https://support.google.com/merchants/answer/6324405).
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The idType.
+     */
+    com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType getIdType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The identifier of the related product.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The identifier of the related product.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString getIdBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies how other products are related to this product.
+   * </pre>
+   *
+   * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct}
+   */
+  public static final class RelatedProduct extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)
+      RelatedProductOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "RelatedProduct");
+    }
+
+    // Use RelatedProduct.newBuilder() to construct.
+    private RelatedProduct(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private RelatedProduct() {
+      relationshipType_ = 0;
+      idType_ = 0;
+      id_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.shopping.merchant.products.v1.ProductsCommonProto
+          .internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.class,
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The various types of the relationships between this product and the
+     * related product.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType}
+     */
+    public enum RelationshipType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The relationship type is unspecified.
+       * </pre>
+       *
+       * <code>RELATIONSHIP_TYPE_UNSPECIFIED = 0;</code>
+       */
+      RELATIONSHIP_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Part of a set of products that are often purchased together.
+       * </pre>
+       *
+       * <code>PART_OF_SET = 1;</code>
+       */
+      PART_OF_SET(1),
+      /**
+       *
+       *
+       * <pre>
+       * Part that is necessary for the product to function, for example a
+       * battery for a battery-operated lamp.
+       * </pre>
+       *
+       * <code>REQUIRED_PART = 2;</code>
+       */
+      REQUIRED_PART(2),
+      /**
+       *
+       *
+       * <pre>
+       * A product that this product is often purchased together with, for
+       * example a phone case with a phone.
+       * </pre>
+       *
+       * <code>OFTEN_BOUGHT_WITH = 3;</code>
+       */
+      OFTEN_BOUGHT_WITH(3),
+      /**
+       *
+       *
+       * <pre>
+       * Product that this product can be substituted for. For example a printer
+       * comparable in function to another printer.
+       * </pre>
+       *
+       * <code>SUBSTITUTE = 4;</code>
+       */
+      SUBSTITUTE(4),
+      /**
+       *
+       *
+       * <pre>
+       * An identical product sold under a different brand, for example a
+       * cheaper house brand.
+       * </pre>
+       *
+       * <code>DIFFERENT_BRAND = 5;</code>
+       */
+      DIFFERENT_BRAND(5),
+      /**
+       *
+       *
+       * <pre>
+       * An accessory to this product, for example a side table that matches the
+       * style of a couch.
+       * </pre>
+       *
+       * <code>ACCESSORY = 6;</code>
+       */
+      ACCESSORY(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "RelationshipType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The relationship type is unspecified.
+       * </pre>
+       *
+       * <code>RELATIONSHIP_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int RELATIONSHIP_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Part of a set of products that are often purchased together.
+       * </pre>
+       *
+       * <code>PART_OF_SET = 1;</code>
+       */
+      public static final int PART_OF_SET_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Part that is necessary for the product to function, for example a
+       * battery for a battery-operated lamp.
+       * </pre>
+       *
+       * <code>REQUIRED_PART = 2;</code>
+       */
+      public static final int REQUIRED_PART_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * A product that this product is often purchased together with, for
+       * example a phone case with a phone.
+       * </pre>
+       *
+       * <code>OFTEN_BOUGHT_WITH = 3;</code>
+       */
+      public static final int OFTEN_BOUGHT_WITH_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Product that this product can be substituted for. For example a printer
+       * comparable in function to another printer.
+       * </pre>
+       *
+       * <code>SUBSTITUTE = 4;</code>
+       */
+      public static final int SUBSTITUTE_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * An identical product sold under a different brand, for example a
+       * cheaper house brand.
+       * </pre>
+       *
+       * <code>DIFFERENT_BRAND = 5;</code>
+       */
+      public static final int DIFFERENT_BRAND_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * An accessory to this product, for example a side table that matches the
+       * style of a couch.
+       * </pre>
+       *
+       * <code>ACCESSORY = 6;</code>
+       */
+      public static final int ACCESSORY_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RelationshipType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static RelationshipType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return RELATIONSHIP_TYPE_UNSPECIFIED;
+          case 1:
+            return PART_OF_SET;
+          case 2:
+            return REQUIRED_PART;
+          case 3:
+            return OFTEN_BOUGHT_WITH;
+          case 4:
+            return SUBSTITUTE;
+          case 5:
+            return DIFFERENT_BRAND;
+          case 6:
+            return ACCESSORY;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<RelationshipType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<RelationshipType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<RelationshipType>() {
+                public RelationshipType findValueByNumber(int number) {
+                  return RelationshipType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final RelationshipType[] VALUES = values();
+
+      public static RelationshipType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private RelationshipType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of the identifier of the related product.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType}
+     */
+    public enum IdType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The identifier type is unspecified.
+       * </pre>
+       *
+       * <code>ID_TYPE_UNSPECIFIED = 0;</code>
+       */
+      ID_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The identifier is a GTIN.
+       * </pre>
+       *
+       * <code>GTIN = 1;</code>
+       */
+      GTIN(1),
+      /**
+       *
+       *
+       * <pre>
+       * The identifier is a product ID in the feed.
+       * </pre>
+       *
+       * <code>ID = 2;</code>
+       */
+      ID(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "IdType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The identifier type is unspecified.
+       * </pre>
+       *
+       * <code>ID_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ID_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The identifier is a GTIN.
+       * </pre>
+       *
+       * <code>GTIN = 1;</code>
+       */
+      public static final int GTIN_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The identifier is a product ID in the feed.
+       * </pre>
+       *
+       * <code>ID = 2;</code>
+       */
+      public static final int ID_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static IdType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static IdType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ID_TYPE_UNSPECIFIED;
+          case 1:
+            return GTIN;
+          case 2:
+            return ID;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<IdType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<IdType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<IdType>() {
+            public IdType findValueByNumber(int number) {
+              return IdType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final IdType[] VALUES = values();
+
+      public static IdType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private IdType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType)
+    }
+
+    public static final int RELATIONSHIP_TYPE_FIELD_NUMBER = 1;
+    private int relationshipType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the relationship between this product and the
+     * related product.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for relationshipType.
+     */
+    @java.lang.Override
+    public int getRelationshipTypeValue() {
+      return relationshipType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the relationship between this product and the
+     * related product.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The relationshipType.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+            .RelationshipType
+        getRelationshipType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType
+          result =
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                  .RelationshipType.forNumber(relationshipType_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+              .RelationshipType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ID_TYPE_FIELD_NUMBER = 2;
+    private int idType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the identifier of the related product.
+     * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+     * or [product ID](https://support.google.com/merchants/answer/6324405).
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for idType.
+     */
+    @java.lang.Override
+    public int getIdTypeValue() {
+      return idType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The type of the identifier of the related product.
+     * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+     * or [product ID](https://support.google.com/merchants/answer/6324405).
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The idType.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+        getIdType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+              .forNumber(idType_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The identifier of the related product.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The identifier of the related product.
+     * </pre>
+     *
+     * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (relationshipType_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+              .RelationshipType.RELATIONSHIP_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, relationshipType_);
+      }
+      if (idType_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+              .ID_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, idType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, id_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (relationshipType_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+              .RelationshipType.RELATIONSHIP_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, relationshipType_);
+      }
+      if (idType_
+          != com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+              .ID_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, idType_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, id_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)) {
+        return super.equals(obj);
+      }
+      com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct other =
+          (com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct) obj;
+
+      if (relationshipType_ != other.relationshipType_) return false;
+      if (idType_ != other.idType_) return false;
+      if (!getId().equals(other.getId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RELATIONSHIP_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + relationshipType_;
+      hash = (37 * hash) + ID_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + idType_;
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how other products are related to this product.
+     * </pre>
+     *
+     * Protobuf type {@code google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.class,
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        relationshipType_ = 0;
+        idType_ = 0;
+        id_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.shopping.merchant.products.v1.ProductsCommonProto
+            .internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+          getDefaultInstanceForType() {
+        return com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct build() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+          buildPartial() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct result =
+            new com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.relationshipType_ = relationshipType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.idType_ = idType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.id_ = id_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct) {
+          return mergeFrom(
+              (com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct other) {
+        if (other
+            == com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                .getDefaultInstance()) return this;
+        if (other.relationshipType_ != 0) {
+          setRelationshipTypeValue(other.getRelationshipTypeValue());
+        }
+        if (other.idType_ != 0) {
+          setIdTypeValue(other.getIdTypeValue());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  relationshipType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  idType_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  id_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int relationshipType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the relationship between this product and the
+       * related product.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for relationshipType.
+       */
+      @java.lang.Override
+      public int getRelationshipTypeValue() {
+        return relationshipType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the relationship between this product and the
+       * related product.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for relationshipType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRelationshipTypeValue(int value) {
+        relationshipType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the relationship between this product and the
+       * related product.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The relationshipType.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+              .RelationshipType
+          getRelationshipType() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType
+            result =
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                    .RelationshipType.forNumber(relationshipType_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                .RelationshipType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the relationship between this product and the
+       * related product.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The relationshipType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRelationshipType(
+          com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        relationshipType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the relationship between this product and the
+       * related product.
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.RelationshipType relationship_type = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRelationshipType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        relationshipType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int idType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the identifier of the related product.
+       * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+       * or [product ID](https://support.google.com/merchants/answer/6324405).
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for idType.
+       */
+      @java.lang.Override
+      public int getIdTypeValue() {
+        return idType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the identifier of the related product.
+       * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+       * or [product ID](https://support.google.com/merchants/answer/6324405).
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for idType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdTypeValue(int value) {
+        idType_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the identifier of the related product.
+       * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+       * or [product ID](https://support.google.com/merchants/answer/6324405).
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The idType.
+       */
+      @java.lang.Override
+      public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+          getIdType() {
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType result =
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+                .forNumber(idType_);
+        return result == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the identifier of the related product.
+       * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+       * or [product ID](https://support.google.com/merchants/answer/6324405).
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The idType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdType(
+          com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        idType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The type of the identifier of the related product.
+       * For example, [GTIN](https://support.google.com/merchants/answer/6219078)
+       * or [product ID](https://support.google.com/merchants/answer/6324405).
+       * </pre>
+       *
+       * <code>
+       * .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.IdType id_type = 2 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearIdType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        idType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The identifier of the related product.
+       * </pre>
+       *
+       * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The identifier of the related product.
+       * </pre>
+       *
+       * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The identifier of the related product.
+       * </pre>
+       *
+       * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The identifier of the related product.
+       * </pre>
+       *
+       * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The identifier of the related product.
+       * </pre>
+       *
+       * <code>string id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct)
+    private static final com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct();
+    }
+
+    public static com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RelatedProduct> PARSER =
+        new com.google.protobuf.AbstractParser<RelatedProduct>() {
+          @java.lang.Override
+          public RelatedProduct parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<RelatedProduct> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RelatedProduct> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int bitField1_;
   private int bitField2_;
@@ -11985,6 +28280,71 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         : result;
   }
 
+  public static final int PICKUP_COST_FIELD_NUMBER = 172;
+  private com.google.shopping.merchant.products.v1.PickupCost pickupCost_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pickupCost field is set.
+   */
+  @java.lang.Override
+  public boolean hasPickupCost() {
+    return ((bitField1_ & 0x20000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pickupCost.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.PickupCost getPickupCost() {
+    return pickupCost_ == null
+        ? com.google.shopping.merchant.products.v1.PickupCost.getDefaultInstance()
+        : pickupCost_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The [pickup
+   * cost](https://support.google.com/merchants/answer/16988704) for an item
+   * when a customer buys it online and picks it up at a store.
+   * </pre>
+   *
+   * <code>
+   * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.PickupCostOrBuilder getPickupCostOrBuilder() {
+    return pickupCost_ == null
+        ? com.google.shopping.merchant.products.v1.PickupCost.getDefaultInstance()
+        : pickupCost_;
+  }
+
   public static final int LINK_TEMPLATE_FIELD_NUMBER = 82;
 
   @SuppressWarnings("serial")
@@ -12004,7 +28364,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasLinkTemplate() {
-    return ((bitField1_ & 0x20000000) != 0);
+    return ((bitField1_ & 0x40000000) != 0);
   }
 
   /**
@@ -12077,7 +28437,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasMobileLinkTemplate() {
-    return ((bitField1_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x80000000) != 0);
   }
 
   /**
@@ -12151,7 +28511,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel0() {
-    return ((bitField1_ & 0x80000000) != 0);
+    return ((bitField2_ & 0x00000001) != 0);
   }
 
   /**
@@ -12223,7 +28583,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel1() {
-    return ((bitField2_ & 0x00000001) != 0);
+    return ((bitField2_ & 0x00000002) != 0);
   }
 
   /**
@@ -12295,7 +28655,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel2() {
-    return ((bitField2_ & 0x00000002) != 0);
+    return ((bitField2_ & 0x00000004) != 0);
   }
 
   /**
@@ -12367,7 +28727,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel3() {
-    return ((bitField2_ & 0x00000004) != 0);
+    return ((bitField2_ & 0x00000008) != 0);
   }
 
   /**
@@ -12439,7 +28799,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCustomLabel4() {
-    return ((bitField2_ & 0x00000008) != 0);
+    return ((bitField2_ & 0x00000010) != 0);
   }
 
   /**
@@ -12899,7 +29259,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasExternalSellerId() {
-    return ((bitField2_ & 0x00000010) != 0);
+    return ((bitField2_ & 0x00000020) != 0);
   }
 
   /**
@@ -12971,7 +29331,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPause() {
-    return ((bitField2_ & 0x00000020) != 0);
+    return ((bitField2_ & 0x00000040) != 0);
   }
 
   /**
@@ -13202,7 +29562,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasVirtualModelLink() {
-    return ((bitField2_ & 0x00000040) != 0);
+    return ((bitField2_ & 0x00000080) != 0);
   }
 
   /**
@@ -13380,7 +29740,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasStructuredTitle() {
-    return ((bitField2_ & 0x00000080) != 0);
+    return ((bitField2_ & 0x00000100) != 0);
   }
 
   /**
@@ -13438,7 +29798,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasStructuredDescription() {
-    return ((bitField2_ & 0x00000100) != 0);
+    return ((bitField2_ & 0x00000200) != 0);
   }
 
   /**
@@ -13501,7 +29861,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasAutoPricingMinPrice() {
-    return ((bitField2_ & 0x00000200) != 0);
+    return ((bitField2_ & 0x00000400) != 0);
   }
 
   /**
@@ -13720,6 +30080,2680 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     return videoLinks_.getByteString(index);
   }
 
+  public static final int MINIMUM_ORDER_VALUES_FIELD_NUMBER = 146;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+      minimumOrderValues_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+      getMinimumOrderValuesList() {
+    return minimumOrderValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>
+      getMinimumOrderValuesOrBuilderList() {
+    return minimumOrderValues_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public int getMinimumOrderValuesCount() {
+    return minimumOrderValues_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductMinimumOrderValue getMinimumOrderValues(
+      int index) {
+    return minimumOrderValues_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [minimum value](https://support.google.com/merchants/answer/16989009)
+   * in the cart before a customer can initiate checkout. Supports multiple
+   * minimum order values. Different minimum order values can be specified per
+   * country, service and surface. Maximum entries: 100.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder
+      getMinimumOrderValuesOrBuilder(int index) {
+    return minimumOrderValues_.get(index);
+  }
+
+  public static final int VIN_FIELD_NUMBER = 147;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object vin_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Vehicle Identification Number
+   * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>string vin = 147;</code>
+   *
+   * @return The vin.
+   */
+  @java.lang.Override
+  public java.lang.String getVin() {
+    java.lang.Object ref = vin_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      vin_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Vehicle Identification Number
+   * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>string vin = 147;</code>
+   *
+   * @return The bytes for vin.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVinBytes() {
+    java.lang.Object ref = vin_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      vin_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MODEL_FIELD_NUMBER = 148;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+   * vehicle, such as `LX`, `EX`, and others.
+   * </pre>
+   *
+   * <code>string model = 148;</code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+   * vehicle, such as `LX`, `EX`, and others.
+   * </pre>
+   *
+   * <code>string model = 148;</code>
+   *
+   * @return The bytes for model.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int TRIM_FIELD_NUMBER = 149;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object trim_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+   * vehicle model, such as `S`, `SV`, `SL` and others.
+   * </pre>
+   *
+   * <code>string trim = 149;</code>
+   *
+   * @return The trim.
+   */
+  @java.lang.Override
+  public java.lang.String getTrim() {
+    java.lang.Object ref = trim_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      trim_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+   * vehicle model, such as `S`, `SV`, `SL` and others.
+   * </pre>
+   *
+   * <code>string trim = 149;</code>
+   *
+   * @return The bytes for trim.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTrimBytes() {
+    java.lang.Object ref = trim_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      trim_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BODY_STYLE_FIELD_NUMBER = 150;
+  private int bodyStyle_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [body style](https://support.google.com/google-ads/answer/14157085) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bodyStyle.
+   */
+  @java.lang.Override
+  public int getBodyStyleValue() {
+    return bodyStyle_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [body style](https://support.google.com/google-ads/answer/14157085) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+   * </code>
+   *
+   * @return The bodyStyle.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle
+      getBodyStyle() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle.forNumber(
+            bodyStyle_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int YEAR_FIELD_NUMBER = 151;
+  private long year_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Year](https://support.google.com/google-ads/answer/14152816) of the
+   * vehicle model.
+   * </pre>
+   *
+   * <code>int64 year = 151;</code>
+   *
+   * @return The year.
+   */
+  @java.lang.Override
+  public long getYear() {
+    return year_;
+  }
+
+  public static final int MILEAGE_FIELD_NUMBER = 152;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   *
+   * @return Whether the mileage field is set.
+   */
+  @java.lang.Override
+  public boolean hasMileage() {
+    return ((bitField2_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   *
+   * @return The mileage.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage() {
+    return mileage_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : mileage_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of miles/kms on the vehicle. See the
+   * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+      getMileageOrBuilder() {
+    return mileage_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : mileage_;
+  }
+
+  public static final int ELECTRIC_RANGE_FIELD_NUMBER = 153;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage electricRange_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   *
+   * @return Whether the electricRange field is set.
+   */
+  @java.lang.Override
+  public boolean hasElectricRange() {
+    return ((bitField2_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   *
+   * @return The electricRange.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getElectricRange() {
+    return electricRange_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : electricRange_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [electric range](https://support.google.com/google-ads/answer/15162232)
+   * of the vehicle in miles/kms.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+      getElectricRangeOrBuilder() {
+    return electricRange_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.getDefaultInstance()
+        : electricRange_;
+  }
+
+  public static final int FUEL_CONSUMPTION_FIELD_NUMBER = 154;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+      fuelConsumption_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   *
+   * @return Whether the fuelConsumption field is set.
+   */
+  @java.lang.Override
+  public boolean hasFuelConsumption() {
+    return ((bitField2_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   *
+   * @return The fuelConsumption.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+      getFuelConsumption() {
+    return fuelConsumption_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDefaultInstance()
+        : fuelConsumption_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [fuel
+   * consumption](https://support.google.com/google-ads/answer/14543580) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+      getFuelConsumptionOrBuilder() {
+    return fuelConsumption_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDefaultInstance()
+        : fuelConsumption_;
+  }
+
+  public static final int FUEL_CONSUMPTION_DISCHARGED_BATTERY_FIELD_NUMBER = 155;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+      fuelConsumptionDischargedBattery_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   *
+   * @return Whether the fuelConsumptionDischargedBattery field is set.
+   */
+  @java.lang.Override
+  public boolean hasFuelConsumptionDischargedBattery() {
+    return ((bitField2_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   *
+   * @return The fuelConsumptionDischargedBattery.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+      getFuelConsumptionDischargedBattery() {
+    return fuelConsumptionDischargedBattery_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDefaultInstance()
+        : fuelConsumptionDischargedBattery_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The fuel consumption of the vehicle when the hybrid battery is discharged.
+   * See the [Help Center
+   * article](https://support.google.com/google-ads/answer/15162033) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+      getFuelConsumptionDischargedBatteryOrBuilder() {
+    return fuelConsumptionDischargedBattery_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+            .getDefaultInstance()
+        : fuelConsumptionDischargedBattery_;
+  }
+
+  public static final int ENERGY_CONSUMPTION_FIELD_NUMBER = 156;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+      energyConsumption_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   *
+   * @return Whether the energyConsumption field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnergyConsumption() {
+    return ((bitField2_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   *
+   * @return The energyConsumption.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+      getEnergyConsumption() {
+    return energyConsumption_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+            .getDefaultInstance()
+        : energyConsumption_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [energy
+   * consumption](https://support.google.com/google-ads/answer/14546149) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder
+      getEnergyConsumptionOrBuilder() {
+    return energyConsumption_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+            .getDefaultInstance()
+        : energyConsumption_;
+  }
+
+  public static final int CO2_EMISSIONS_FIELD_NUMBER = 157;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2Emissions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   *
+   * @return Whether the co2Emissions field is set.
+   */
+  @java.lang.Override
+  public boolean hasCo2Emissions() {
+    return ((bitField2_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   *
+   * @return The co2Emissions.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions getCo2Emissions() {
+    return co2Emissions_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+            .getDefaultInstance()
+        : co2Emissions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+   * of the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder
+      getCo2EmissionsOrBuilder() {
+    return co2Emissions_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+            .getDefaultInstance()
+        : co2Emissions_;
+  }
+
+  public static final int DATE_FIRST_REGISTERED_FIELD_NUMBER = 158;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dateFirstRegistered_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+   * [Date first
+   * registered](https://support.google.com/google-ads/answer/14546138) for more
+   * information.
+   * </pre>
+   *
+   * <code>string date_first_registered = 158;</code>
+   *
+   * @return The dateFirstRegistered.
+   */
+  @java.lang.Override
+  public java.lang.String getDateFirstRegistered() {
+    java.lang.Object ref = dateFirstRegistered_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dateFirstRegistered_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+   * [Date first
+   * registered](https://support.google.com/google-ads/answer/14546138) for more
+   * information.
+   * </pre>
+   *
+   * <code>string date_first_registered = 158;</code>
+   *
+   * @return The bytes for dateFirstRegistered.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDateFirstRegisteredBytes() {
+    java.lang.Object ref = dateFirstRegistered_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dateFirstRegistered_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENGINE_FIELD_NUMBER = 159;
+  private int engine_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+   *
+   * @return The enum numeric value on the wire for engine.
+   */
+  @java.lang.Override
+  public int getEngineValue() {
+    return engine_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+   *
+   * @return The engine.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.EngineType getEngine() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.EngineType result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.EngineType.forNumber(engine_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.EngineType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EMISSIONS_STANDARD_FIELD_NUMBER = 160;
+  private int emissionsStandard_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [emission
+   * standard](https://support.google.com/google-ads/answer/14869021) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for emissionsStandard.
+   */
+  @java.lang.Override
+  public int getEmissionsStandardValue() {
+    return emissionsStandard_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [emission
+   * standard](https://support.google.com/google-ads/answer/14869021) of the
+   * vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+   * </code>
+   *
+   * @return The emissionsStandard.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+      getEmissionsStandard() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard.forNumber(
+            emissionsStandard_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CERTIFIED_PRE_OWNED_FIELD_NUMBER = 161;
+  private boolean certifiedPreOwned_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the vehicle is OEM [certified
+   * pre-owned](https://support.google.com/google-ads/answer/14156475).
+   * </pre>
+   *
+   * <code>bool certified_pre_owned = 161;</code>
+   *
+   * @return The certifiedPreOwned.
+   */
+  @java.lang.Override
+  public boolean getCertifiedPreOwned() {
+    return certifiedPreOwned_;
+  }
+
+  public static final int VEHICLE_MSRP_FIELD_NUMBER = 162;
+  private com.google.shopping.type.Price vehicleMsrp_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   *
+   * @return Whether the vehicleMsrp field is set.
+   */
+  @java.lang.Override
+  public boolean hasVehicleMsrp() {
+    return ((bitField2_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   *
+   * @return The vehicleMsrp.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.Price getVehicleMsrp() {
+    return vehicleMsrp_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleMsrp_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+   * current configuration. See the [Vehicle
+   * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.PriceOrBuilder getVehicleMsrpOrBuilder() {
+    return vehicleMsrp_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleMsrp_;
+  }
+
+  public static final int VEHICLE_ALL_IN_PRICE_FIELD_NUMBER = 163;
+  private com.google.shopping.type.Price vehicleAllInPrice_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   *
+   * @return Whether the vehicleAllInPrice field is set.
+   */
+  @java.lang.Override
+  public boolean hasVehicleAllInPrice() {
+    return ((bitField2_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   *
+   * @return The vehicleAllInPrice.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.Price getVehicleAllInPrice() {
+    return vehicleAllInPrice_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleAllInPrice_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The all-in advertised price for a vehicle, which includes costs for the
+   * following – any accessories attached to the vehicle, environmental levies,
+   * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+   * for handling licensing, provincial regulatory fees, miscellaneous dealer
+   * charges for security etching and nitrogen tire fill, and
+   * factory-to-customer or dealer-to-customer discounts or incentives. See the
+   * [Vehicle all-in
+   * price](https://support.google.com/google-ads/answer/14156981) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.PriceOrBuilder getVehicleAllInPriceOrBuilder() {
+    return vehicleAllInPrice_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleAllInPrice_;
+  }
+
+  public static final int VEHICLE_PRICE_TYPE_FIELD_NUMBER = 164;
+  private int vehiclePriceType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [price type](https://support.google.com/google-ads/answer/14592783) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for vehiclePriceType.
+   */
+  @java.lang.Override
+  public int getVehiclePriceTypeValue() {
+    return vehiclePriceType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [price type](https://support.google.com/google-ads/answer/14592783) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+   * </code>
+   *
+   * @return The vehiclePriceType.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType
+      getVehiclePriceType() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType.forNumber(
+            vehiclePriceType_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int VEHICLE_MANDATORY_INSPECTION_INCLUDED_FIELD_NUMBER = 166;
+  private boolean vehicleMandatoryInspectionIncluded_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether the vehicle is sold with mandatory inspection and maintenance
+   * performed before delivery. See the [Vehicle mandatory inspection
+   * included](https://support.google.com/google-ads/answer/15956630) for more
+   * information.`
+   * </pre>
+   *
+   * <code>bool vehicle_mandatory_inspection_included = 166;</code>
+   *
+   * @return The vehicleMandatoryInspectionIncluded.
+   */
+  @java.lang.Override
+  public boolean getVehicleMandatoryInspectionIncluded() {
+    return vehicleMandatoryInspectionIncluded_;
+  }
+
+  public static final int VEHICLE_EXPENSES_FIELD_NUMBER = 167;
+  private com.google.shopping.type.Price vehicleExpenses_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   *
+   * @return Whether the vehicleExpenses field is set.
+   */
+  @java.lang.Override
+  public boolean hasVehicleExpenses() {
+    return ((bitField2_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   *
+   * @return The vehicleExpenses.
+   */
+  @java.lang.Override
+  public com.google.shopping.type.Price getVehicleExpenses() {
+    return vehicleExpenses_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleExpenses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The miscellaneous expenses like insurance and registration fees of the
+   * vehicle. See the [Vehicle
+   * expenses](https://support.google.com/google-ads/answer/15957154) for more
+   * information.
+   * </pre>
+   *
+   * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.type.PriceOrBuilder getVehicleExpensesOrBuilder() {
+    return vehicleExpenses_ == null
+        ? com.google.shopping.type.Price.getDefaultInstance()
+        : vehicleExpenses_;
+  }
+
+  public static final int WARRANTY_FIELD_NUMBER = 168;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   *
+   * @return Whether the warranty field is set.
+   */
+  @java.lang.Override
+  public boolean hasWarranty() {
+    return ((bitField2_ & 0x00100000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   *
+   * @return The warranty.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty getWarranty() {
+    return warranty_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.getDefaultInstance()
+        : warranty_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+   * the vehicle.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder
+      getWarrantyOrBuilder() {
+    return warranty_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.getDefaultInstance()
+        : warranty_;
+  }
+
+  public static final int DISPLAY_ADDRESS_FIELD_NUMBER = 179;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress displayAddress_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   *
+   * @return Whether the displayAddress field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayAddress() {
+    return ((bitField2_ & 0x00200000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   *
+   * @return The displayAddress.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+      getDisplayAddress() {
+    return displayAddress_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+            .getDefaultInstance()
+        : displayAddress_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The display address of the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder
+      getDisplayAddressOrBuilder() {
+    return displayAddress_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+            .getDefaultInstance()
+        : displayAddress_;
+  }
+
+  public static final int LATITUDE_FIELD_NUMBER = 180;
+  private double latitude_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The latitude of the property. The value must be between -90 (inclusive) and
+   * 90 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double latitude = 180;</code>
+   *
+   * @return Whether the latitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLatitude() {
+    return ((bitField2_ & 0x00400000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The latitude of the property. The value must be between -90 (inclusive) and
+   * 90 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double latitude = 180;</code>
+   *
+   * @return The latitude.
+   */
+  @java.lang.Override
+  public double getLatitude() {
+    return latitude_;
+  }
+
+  public static final int LONGITUDE_FIELD_NUMBER = 181;
+  private double longitude_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The longitude of the property. The value must be between -180 (inclusive)
+   * and 180 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double longitude = 181;</code>
+   *
+   * @return Whether the longitude field is set.
+   */
+  @java.lang.Override
+  public boolean hasLongitude() {
+    return ((bitField2_ & 0x00800000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The longitude of the property. The value must be between -180 (inclusive)
+   * and 180 (inclusive), up to 6 decimal places.
+   * </pre>
+   *
+   * <code>optional double longitude = 181;</code>
+   *
+   * @return The longitude.
+   */
+  @java.lang.Override
+  public double getLongitude() {
+    return longitude_;
+  }
+
+  public static final int NEIGHBORHOOD_FIELD_NUMBER = 182;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object neighborhood_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The neighborhood (locality) of the property, such as `Wallingford`,
+   * `Greenwood`, etc.
+   * </pre>
+   *
+   * <code>string neighborhood = 182;</code>
+   *
+   * @return The neighborhood.
+   */
+  @java.lang.Override
+  public java.lang.String getNeighborhood() {
+    java.lang.Object ref = neighborhood_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      neighborhood_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The neighborhood (locality) of the property, such as `Wallingford`,
+   * `Greenwood`, etc.
+   * </pre>
+   *
+   * <code>string neighborhood = 182;</code>
+   *
+   * @return The bytes for neighborhood.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNeighborhoodBytes() {
+    java.lang.Object ref = neighborhood_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      neighborhood_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UNIT_AREA_FIELD_NUMBER = 183;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unitArea_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   *
+   * @return Whether the unitArea field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnitArea() {
+    return ((bitField2_ & 0x01000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   *
+   * @return The unitArea.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea getUnitArea() {
+    return unitArea_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.getDefaultInstance()
+        : unitArea_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The unit area of the property, such as `1000 sqft`.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;</code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder
+      getUnitAreaOrBuilder() {
+    return unitArea_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.getDefaultInstance()
+        : unitArea_;
+  }
+
+  public static final int NUMBER_OF_UNITS_FIELD_NUMBER = 184;
+  private long numberOfUnits_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of units available for a specific floor plan of the property.
+   * The value must be greater than 0.
+   * </pre>
+   *
+   * <code>optional int64 number_of_units = 184;</code>
+   *
+   * @return Whether the numberOfUnits field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumberOfUnits() {
+    return ((bitField2_ & 0x02000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of units available for a specific floor plan of the property.
+   * The value must be greater than 0.
+   * </pre>
+   *
+   * <code>optional int64 number_of_units = 184;</code>
+   *
+   * @return The numberOfUnits.
+   */
+  @java.lang.Override
+  public long getNumberOfUnits() {
+    return numberOfUnits_;
+  }
+
+  public static final int PROPERTY_NAME_FIELD_NUMBER = 185;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object propertyName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the property.
+   * </pre>
+   *
+   * <code>string property_name = 185;</code>
+   *
+   * @return The propertyName.
+   */
+  @java.lang.Override
+  public java.lang.String getPropertyName() {
+    java.lang.Object ref = propertyName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      propertyName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The name of the property.
+   * </pre>
+   *
+   * <code>string property_name = 185;</code>
+   *
+   * @return The bytes for propertyName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPropertyNameBytes() {
+    java.lang.Object ref = propertyName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      propertyName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NUMBER_OF_BEDROOMS_FIELD_NUMBER = 186;
+  private double numberOfBedrooms_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bedrooms in the property. The value must be greater than or
+   * equal to 0 and a multiple of 1.0.
+   * </pre>
+   *
+   * <code>optional double number_of_bedrooms = 186;</code>
+   *
+   * @return Whether the numberOfBedrooms field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumberOfBedrooms() {
+    return ((bitField2_ & 0x04000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bedrooms in the property. The value must be greater than or
+   * equal to 0 and a multiple of 1.0.
+   * </pre>
+   *
+   * <code>optional double number_of_bedrooms = 186;</code>
+   *
+   * @return The numberOfBedrooms.
+   */
+  @java.lang.Override
+  public double getNumberOfBedrooms() {
+    return numberOfBedrooms_;
+  }
+
+  public static final int NUMBER_OF_BATHROOMS_FIELD_NUMBER = 187;
+  private double numberOfBathrooms_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bathrooms in the property. The value must be greater than 0
+   * and a multiple of 0.5.
+   * </pre>
+   *
+   * <code>optional double number_of_bathrooms = 187;</code>
+   *
+   * @return Whether the numberOfBathrooms field is set.
+   */
+  @java.lang.Override
+  public boolean hasNumberOfBathrooms() {
+    return ((bitField2_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of bathrooms in the property. The value must be greater than 0
+   * and a multiple of 0.5.
+   * </pre>
+   *
+   * <code>optional double number_of_bathrooms = 187;</code>
+   *
+   * @return The numberOfBathrooms.
+   */
+  @java.lang.Override
+  public double getNumberOfBathrooms() {
+    return numberOfBathrooms_;
+  }
+
+  public static final int PROPERTY_TYPE_FIELD_NUMBER = 188;
+  private int propertyType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for propertyType.
+   */
+  @java.lang.Override
+  public int getPropertyTypeValue() {
+    return propertyType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+   * </code>
+   *
+   * @return The propertyType.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType getPropertyType() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType.forNumber(
+            propertyType_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int AMENITY_FEATURE_FIELD_NUMBER = 189;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList amenityFeature_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>
+      amenityFeature_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>() {
+            public com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature
+                convert(int from) {
+              com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature result =
+                  com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature
+                      .forNumber(from);
+              return result == null
+                  ? com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return A list containing the amenityFeature.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>
+      getAmenityFeatureList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>(
+        amenityFeature_, amenityFeature_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return The count of amenityFeature.
+   */
+  @java.lang.Override
+  public int getAmenityFeatureCount() {
+    return amenityFeature_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The amenityFeature at the given index.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature
+      getAmenityFeature(int index) {
+    return amenityFeature_converter_.convert(amenityFeature_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for amenityFeature.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getAmenityFeatureValueList() {
+    return amenityFeature_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The amenity features for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of amenityFeature at the given index.
+   */
+  @java.lang.Override
+  public int getAmenityFeatureValue(int index) {
+    return amenityFeature_.getInt(index);
+  }
+
+  private int amenityFeatureMemoizedSerializedSize;
+
+  public static final int UTILITIES_INCLUDED_FIELD_NUMBER = 190;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList utilitiesIncluded_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>
+      utilitiesIncluded_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>() {
+            public com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded
+                convert(int from) {
+              com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded result =
+                  com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded
+                      .forNumber(from);
+              return result == null
+                  ? com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded
+                      .UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return A list containing the utilitiesIncluded.
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>
+      getUtilitiesIncludedList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>(
+        utilitiesIncluded_, utilitiesIncluded_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return The count of utilitiesIncluded.
+   */
+  @java.lang.Override
+  public int getUtilitiesIncludedCount() {
+    return utilitiesIncluded_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The utilitiesIncluded at the given index.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded
+      getUtilitiesIncluded(int index) {
+    return utilitiesIncluded_converter_.convert(utilitiesIncluded_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for utilitiesIncluded.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getUtilitiesIncludedValueList() {
+    return utilitiesIncluded_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The utilities included for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of utilitiesIncluded at the given index.
+   */
+  @java.lang.Override
+  public int getUtilitiesIncludedValue(int index) {
+    return utilitiesIncluded_.getInt(index);
+  }
+
+  private int utilitiesIncludedMemoizedSerializedSize;
+
+  public static final int PET_POLICY_FIELD_NUMBER = 191;
+  private com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy petPolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   *
+   * @return Whether the petPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasPetPolicy() {
+    return ((bitField2_ & 0x10000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   *
+   * @return The petPolicy.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy getPetPolicy() {
+    return petPolicy_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.getDefaultInstance()
+        : petPolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The pet policy for the property.
+   * </pre>
+   *
+   * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder
+      getPetPolicyOrBuilder() {
+    return petPolicy_ == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.getDefaultInstance()
+        : petPolicy_;
+  }
+
+  public static final int SPECIALTY_HOUSING_TYPE_FIELD_NUMBER = 192;
+  private int specialtyHousingType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The specialty housing type for the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for specialtyHousingType.
+   */
+  @java.lang.Override
+  public int getSpecialtyHousingTypeValue() {
+    return specialtyHousingType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The specialty housing type for the property.
+   * </pre>
+   *
+   * <code>
+   * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+   * </code>
+   *
+   * @return The specialtyHousingType.
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+      getSpecialtyHousingType() {
+    com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType result =
+        com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType.forNumber(
+            specialtyHousingType_);
+    return result == null
+        ? com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int PRODUCT_FEE_FIELD_NUMBER = 193;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+      productFee_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+      getProductFeeList() {
+    return productFee_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>
+      getProductFeeOrBuilderList() {
+    return productFee_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  @java.lang.Override
+  public int getProductFeeCount() {
+    return productFee_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee getProductFee(
+      int index) {
+    return productFee_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The product fee for the property.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder
+      getProductFeeOrBuilder(int index) {
+    return productFee_.get(index);
+  }
+
+  public static final int SHORT_TITLE_FIELD_NUMBER = 194;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object shortTitle_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return Whether the shortTitle field is set.
+   */
+  @java.lang.Override
+  public boolean hasShortTitle() {
+    return ((bitField2_ & 0x20000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return The shortTitle.
+   */
+  @java.lang.Override
+  public java.lang.String getShortTitle() {
+    java.lang.Object ref = shortTitle_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      shortTitle_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The short title of the item.
+   * </pre>
+   *
+   * <code>optional string short_title = 194;</code>
+   *
+   * @return The bytes for shortTitle.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getShortTitleBytes() {
+    java.lang.Object ref = shortTitle_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      shortTitle_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int QUESTIONS_AND_ANSWERS_FIELD_NUMBER = 173;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+      questionsAndAnswers_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+      getQuestionsAndAnswersList() {
+    return questionsAndAnswers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder>
+      getQuestionsAndAnswersOrBuilderList() {
+    return questionsAndAnswers_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getQuestionsAndAnswersCount() {
+    return questionsAndAnswers_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+      getQuestionsAndAnswers(int index) {
+    return questionsAndAnswers_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+   * and answers](https://support.google.com/merchants/answer/17085211) about
+   * the product. Max 30 question and answer pairs. Max 10000 characters total.
+   * Each question can have max 1000 characters. Each answer can have max 1000
+   * characters.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder
+      getQuestionsAndAnswersOrBuilder(int index) {
+    return questionsAndAnswers_.get(index);
+  }
+
+  public static final int POPULARITY_RANK_FIELD_NUMBER = 174;
+  private float popularityRank_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates the
+   * [popularity](https://support.google.com/merchants/answer/17085297) of the
+   * product in a merchant's inventory. Using a scale of 0.0 (lowest) to 100.0
+   * (highest).
+   * </pre>
+   *
+   * <code>float popularity_rank = 174 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The popularityRank.
+   */
+  @java.lang.Override
+  public float getPopularityRank() {
+    return popularityRank_;
+  }
+
+  public static final int ITEM_GROUP_TITLE_FIELD_NUMBER = 175;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object itemGroupTitle_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the [title of the product
+   * group](https://support.google.com/merchants/answer/17085146) to which
+   * this variant product belongs. This can be used along with the [item group
+   * id](https://support.google.com/merchants/answer/6324507) attribute.
+   * It lets you perform better grouping of variant products, and helps
+   * identifying common product characteristics more efficiently.
+   * </pre>
+   *
+   * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The itemGroupTitle.
+   */
+  @java.lang.Override
+  public java.lang.String getItemGroupTitle() {
+    java.lang.Object ref = itemGroupTitle_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      itemGroupTitle_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the [title of the product
+   * group](https://support.google.com/merchants/answer/17085146) to which
+   * this variant product belongs. This can be used along with the [item group
+   * id](https://support.google.com/merchants/answer/6324507) attribute.
+   * It lets you perform better grouping of variant products, and helps
+   * identifying common product characteristics more efficiently.
+   * </pre>
+   *
+   * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for itemGroupTitle.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getItemGroupTitleBytes() {
+    java.lang.Object ref = itemGroupTitle_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      itemGroupTitle_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DOCUMENT_LINKS_FIELD_NUMBER = 176;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList documentLinks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the documentLinks.
+   */
+  public com.google.protobuf.ProtocolStringList getDocumentLinksList() {
+    return documentLinks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of documentLinks.
+   */
+  public int getDocumentLinksCount() {
+    return documentLinks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The documentLinks at the given index.
+   */
+  public java.lang.String getDocumentLinks(int index) {
+    return documentLinks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains a list of PDF [document
+   * URLs](https://support.google.com/merchants/answer/17084656) for the
+   * product. Examples are training manuals, user guides, assembly instructions,
+   * package inserts, etc. Must start with "http://" or "https://"), ASCII
+   * characters only, and RFC 3986 compliant.
+   * </pre>
+   *
+   * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the documentLinks at the given index.
+   */
+  public com.google.protobuf.ByteString getDocumentLinksBytes(int index) {
+    return documentLinks_.getByteString(index);
+  }
+
+  public static final int VARIANT_OPTIONS_FIELD_NUMBER = 177;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+      variantOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+      getVariantOptionsList() {
+    return variantOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>
+      getVariantOptionsOrBuilderList() {
+    return variantOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getVariantOptionsCount() {
+    return variantOptions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption getVariantOptions(
+      int index) {
+    return variantOptions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the [list of all variant-identifying
+   * options](https://support.google.com/merchants/answer/17085214) of this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder
+      getVariantOptionsOrBuilder(int index) {
+    return variantOptions_.get(index);
+  }
+
+  public static final int RELATED_PRODUCTS_FIELD_NUMBER = 178;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+      relatedProducts_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+      getRelatedProductsList() {
+    return relatedProducts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>
+      getRelatedProductsOrBuilderList() {
+    return relatedProducts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRelatedProductsCount() {
+    return relatedProducts_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+      getRelatedProducts(int index) {
+    return relatedProducts_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies how other [products are
+   * related](https://support.google.com/merchants/answer/17085213) to this
+   * product.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder
+      getRelatedProductsOrBuilder(int index) {
+    return relatedProducts_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13735,7 +32769,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (((bitField2_ & 0x00000010) != 0)) {
+    if (((bitField2_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, externalSellerId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -13765,7 +32799,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < additionalImageLinks_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, additionalImageLinks_.getRaw(i));
     }
-    if (((bitField2_ & 0x00000020) != 0)) {
+    if (((bitField2_ & 0x00000040) != 0)) {
       output.writeEnum(13, pause_);
     }
     for (int i = 0; i < lifestyleImageLinks_.size(); i++) {
@@ -13931,19 +32965,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < promotionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 70, promotionIds_.getRaw(i));
     }
-    if (((bitField1_ & 0x80000000) != 0)) {
+    if (((bitField2_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 71, customLabel0_);
     }
-    if (((bitField2_ & 0x00000001) != 0)) {
+    if (((bitField2_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 72, customLabel1_);
     }
-    if (((bitField2_ & 0x00000002) != 0)) {
+    if (((bitField2_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 73, customLabel2_);
     }
-    if (((bitField2_ & 0x00000004) != 0)) {
+    if (((bitField2_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 74, customLabel3_);
     }
-    if (((bitField2_ & 0x00000008) != 0)) {
+    if (((bitField2_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 75, customLabel4_);
     }
     if (getIncludedDestinationsList().size() > 0) {
@@ -13973,10 +33007,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField1_ & 0x10000000) != 0)) {
       output.writeEnum(81, pickupSla_);
     }
-    if (((bitField1_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 82, linkTemplate_);
     }
-    if (((bitField1_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 83, mobileLinkTemplate_);
     }
     for (int i = 0; i < cloudExportAdditionalProperties_.size(); i++) {
@@ -13997,16 +33031,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < certifications_.size(); i++) {
       output.writeMessage(123, certifications_.get(i));
     }
-    if (((bitField2_ & 0x00000200) != 0)) {
+    if (((bitField2_ & 0x00000400) != 0)) {
       output.writeMessage(124, getAutoPricingMinPrice());
     }
-    if (((bitField2_ & 0x00000040) != 0)) {
+    if (((bitField2_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 130, virtualModelLink_);
     }
-    if (((bitField2_ & 0x00000080) != 0)) {
+    if (((bitField2_ & 0x00000100) != 0)) {
       output.writeMessage(132, getStructuredTitle());
     }
-    if (((bitField2_ & 0x00000100) != 0)) {
+    if (((bitField2_ & 0x00000200) != 0)) {
       output.writeMessage(133, getStructuredDescription());
     }
     for (int i = 0; i < freeShippingThreshold_.size(); i++) {
@@ -14036,11 +33070,172 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < shippingTransitBusinessDays_.size(); i++) {
       output.writeMessage(144, shippingTransitBusinessDays_.get(i));
     }
+    for (int i = 0; i < minimumOrderValues_.size(); i++) {
+      output.writeMessage(146, minimumOrderValues_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vin_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 147, vin_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 148, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trim_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 149, trim_);
+    }
+    if (bodyStyle_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle
+            .VEHICLE_BODY_STYLE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(150, bodyStyle_);
+    }
+    if (year_ != 0L) {
+      output.writeInt64(151, year_);
+    }
+    if (((bitField2_ & 0x00000800) != 0)) {
+      output.writeMessage(152, getMileage());
+    }
+    if (((bitField2_ & 0x00001000) != 0)) {
+      output.writeMessage(153, getElectricRange());
+    }
+    if (((bitField2_ & 0x00002000) != 0)) {
+      output.writeMessage(154, getFuelConsumption());
+    }
+    if (((bitField2_ & 0x00004000) != 0)) {
+      output.writeMessage(155, getFuelConsumptionDischargedBattery());
+    }
+    if (((bitField2_ & 0x00008000) != 0)) {
+      output.writeMessage(156, getEnergyConsumption());
+    }
+    if (((bitField2_ & 0x00010000) != 0)) {
+      output.writeMessage(157, getCo2Emissions());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dateFirstRegistered_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 158, dateFirstRegistered_);
+    }
+    if (engine_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.EngineType
+            .ENGINE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(159, engine_);
+    }
+    if (emissionsStandard_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+            .EMISSIONS_STANDARD_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(160, emissionsStandard_);
+    }
+    if (certifiedPreOwned_ != false) {
+      output.writeBool(161, certifiedPreOwned_);
+    }
+    if (((bitField2_ & 0x00020000) != 0)) {
+      output.writeMessage(162, getVehicleMsrp());
+    }
+    if (((bitField2_ & 0x00040000) != 0)) {
+      output.writeMessage(163, getVehicleAllInPrice());
+    }
+    if (vehiclePriceType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType
+            .VEHICLE_PRICE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(164, vehiclePriceType_);
+    }
+    if (vehicleMandatoryInspectionIncluded_ != false) {
+      output.writeBool(166, vehicleMandatoryInspectionIncluded_);
+    }
+    if (((bitField2_ & 0x00080000) != 0)) {
+      output.writeMessage(167, getVehicleExpenses());
+    }
+    if (((bitField2_ & 0x00100000) != 0)) {
+      output.writeMessage(168, getWarranty());
+    }
     for (int i = 0; i < videoLinks_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 169, videoLinks_.getRaw(i));
     }
     if (((bitField1_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 170, returnPolicyLabel_);
+    }
+    if (((bitField1_ & 0x20000000) != 0)) {
+      output.writeMessage(172, getPickupCost());
+    }
+    for (int i = 0; i < questionsAndAnswers_.size(); i++) {
+      output.writeMessage(173, questionsAndAnswers_.get(i));
+    }
+    if (java.lang.Float.floatToRawIntBits(popularityRank_) != 0) {
+      output.writeFloat(174, popularityRank_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(itemGroupTitle_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 175, itemGroupTitle_);
+    }
+    for (int i = 0; i < documentLinks_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 176, documentLinks_.getRaw(i));
+    }
+    for (int i = 0; i < variantOptions_.size(); i++) {
+      output.writeMessage(177, variantOptions_.get(i));
+    }
+    for (int i = 0; i < relatedProducts_.size(); i++) {
+      output.writeMessage(178, relatedProducts_.get(i));
+    }
+    if (((bitField2_ & 0x00200000) != 0)) {
+      output.writeMessage(179, getDisplayAddress());
+    }
+    if (((bitField2_ & 0x00400000) != 0)) {
+      output.writeDouble(180, latitude_);
+    }
+    if (((bitField2_ & 0x00800000) != 0)) {
+      output.writeDouble(181, longitude_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(neighborhood_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 182, neighborhood_);
+    }
+    if (((bitField2_ & 0x01000000) != 0)) {
+      output.writeMessage(183, getUnitArea());
+    }
+    if (((bitField2_ & 0x02000000) != 0)) {
+      output.writeInt64(184, numberOfUnits_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(propertyName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 185, propertyName_);
+    }
+    if (((bitField2_ & 0x04000000) != 0)) {
+      output.writeDouble(186, numberOfBedrooms_);
+    }
+    if (((bitField2_ & 0x08000000) != 0)) {
+      output.writeDouble(187, numberOfBathrooms_);
+    }
+    if (propertyType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType
+            .PROPERTY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(188, propertyType_);
+    }
+    if (getAmenityFeatureList().size() > 0) {
+      output.writeUInt32NoTag(1514);
+      output.writeUInt32NoTag(amenityFeatureMemoizedSerializedSize);
+    }
+    for (int i = 0; i < amenityFeature_.size(); i++) {
+      output.writeEnumNoTag(amenityFeature_.getInt(i));
+    }
+    if (getUtilitiesIncludedList().size() > 0) {
+      output.writeUInt32NoTag(1522);
+      output.writeUInt32NoTag(utilitiesIncludedMemoizedSerializedSize);
+    }
+    for (int i = 0; i < utilitiesIncluded_.size(); i++) {
+      output.writeEnumNoTag(utilitiesIncluded_.getInt(i));
+    }
+    if (((bitField2_ & 0x10000000) != 0)) {
+      output.writeMessage(191, getPetPolicy());
+    }
+    if (specialtyHousingType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+            .SPECIALTY_HOUSING_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(192, specialtyHousingType_);
+    }
+    for (int i = 0; i < productFee_.size(); i++) {
+      output.writeMessage(193, productFee_.get(i));
+    }
+    if (((bitField2_ & 0x20000000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 194, shortTitle_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -14051,7 +33246,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField2_ & 0x00000010) != 0)) {
+    if (((bitField2_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, externalSellerId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -14086,7 +33281,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 1 * getAdditionalImageLinksList().size();
     }
-    if (((bitField2_ & 0x00000020) != 0)) {
+    if (((bitField2_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, pause_);
     }
     {
@@ -14290,19 +33485,19 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       size += dataSize;
       size += 2 * getPromotionIdsList().size();
     }
-    if (((bitField1_ & 0x80000000) != 0)) {
+    if (((bitField2_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(71, customLabel0_);
     }
-    if (((bitField2_ & 0x00000001) != 0)) {
+    if (((bitField2_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(72, customLabel1_);
     }
-    if (((bitField2_ & 0x00000002) != 0)) {
+    if (((bitField2_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(73, customLabel2_);
     }
-    if (((bitField2_ & 0x00000004) != 0)) {
+    if (((bitField2_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(74, customLabel3_);
     }
-    if (((bitField2_ & 0x00000008) != 0)) {
+    if (((bitField2_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(75, customLabel4_);
     }
     {
@@ -14350,10 +33545,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (((bitField1_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(81, pickupSla_);
     }
-    if (((bitField1_ & 0x20000000) != 0)) {
+    if (((bitField1_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(82, linkTemplate_);
     }
-    if (((bitField1_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(83, mobileLinkTemplate_);
     }
     for (int i = 0; i < cloudExportAdditionalProperties_.size(); i++) {
@@ -14376,17 +33571,17 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < certifications_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(123, certifications_.get(i));
     }
-    if (((bitField2_ & 0x00000200) != 0)) {
+    if (((bitField2_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(124, getAutoPricingMinPrice());
     }
-    if (((bitField2_ & 0x00000040) != 0)) {
+    if (((bitField2_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(130, virtualModelLink_);
     }
-    if (((bitField2_ & 0x00000080) != 0)) {
+    if (((bitField2_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(132, getStructuredTitle());
     }
-    if (((bitField2_ & 0x00000100) != 0)) {
+    if (((bitField2_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(133, getStructuredDescription());
     }
@@ -14435,6 +33630,89 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               144, shippingTransitBusinessDays_.get(i));
     }
+    for (int i = 0; i < minimumOrderValues_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(146, minimumOrderValues_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(vin_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(147, vin_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(148, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(trim_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(149, trim_);
+    }
+    if (bodyStyle_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle
+            .VEHICLE_BODY_STYLE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(150, bodyStyle_);
+    }
+    if (year_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(151, year_);
+    }
+    if (((bitField2_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(152, getMileage());
+    }
+    if (((bitField2_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(153, getElectricRange());
+    }
+    if (((bitField2_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(154, getFuelConsumption());
+    }
+    if (((bitField2_ & 0x00004000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              155, getFuelConsumptionDischargedBattery());
+    }
+    if (((bitField2_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(156, getEnergyConsumption());
+    }
+    if (((bitField2_ & 0x00010000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(157, getCo2Emissions());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dateFirstRegistered_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(158, dateFirstRegistered_);
+    }
+    if (engine_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.EngineType
+            .ENGINE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(159, engine_);
+    }
+    if (emissionsStandard_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+            .EMISSIONS_STANDARD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(160, emissionsStandard_);
+    }
+    if (certifiedPreOwned_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(161, certifiedPreOwned_);
+    }
+    if (((bitField2_ & 0x00020000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(162, getVehicleMsrp());
+    }
+    if (((bitField2_ & 0x00040000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(163, getVehicleAllInPrice());
+    }
+    if (vehiclePriceType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType
+            .VEHICLE_PRICE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(164, vehiclePriceType_);
+    }
+    if (vehicleMandatoryInspectionIncluded_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              166, vehicleMandatoryInspectionIncluded_);
+    }
+    if (((bitField2_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(167, getVehicleExpenses());
+    }
+    if (((bitField2_ & 0x00100000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(168, getWarranty());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < videoLinks_.size(); i++) {
@@ -14445,6 +33723,110 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField1_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(170, returnPolicyLabel_);
+    }
+    if (((bitField1_ & 0x20000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(172, getPickupCost());
+    }
+    for (int i = 0; i < questionsAndAnswers_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              173, questionsAndAnswers_.get(i));
+    }
+    if (java.lang.Float.floatToRawIntBits(popularityRank_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(174, popularityRank_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(itemGroupTitle_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(175, itemGroupTitle_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < documentLinks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(documentLinks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getDocumentLinksList().size();
+    }
+    for (int i = 0; i < variantOptions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(177, variantOptions_.get(i));
+    }
+    for (int i = 0; i < relatedProducts_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(178, relatedProducts_.get(i));
+    }
+    if (((bitField2_ & 0x00200000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(179, getDisplayAddress());
+    }
+    if (((bitField2_ & 0x00400000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(180, latitude_);
+    }
+    if (((bitField2_ & 0x00800000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(181, longitude_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(neighborhood_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(182, neighborhood_);
+    }
+    if (((bitField2_ & 0x01000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(183, getUnitArea());
+    }
+    if (((bitField2_ & 0x02000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(184, numberOfUnits_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(propertyName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(185, propertyName_);
+    }
+    if (((bitField2_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(186, numberOfBedrooms_);
+    }
+    if (((bitField2_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(187, numberOfBathrooms_);
+    }
+    if (propertyType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType
+            .PROPERTY_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(188, propertyType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < amenityFeature_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(amenityFeature_.getInt(i));
+      }
+      size += dataSize;
+      if (!getAmenityFeatureList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      amenityFeatureMemoizedSerializedSize = dataSize;
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < utilitiesIncluded_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                utilitiesIncluded_.getInt(i));
+      }
+      size += dataSize;
+      if (!getUtilitiesIncludedList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      utilitiesIncludedMemoizedSerializedSize = dataSize;
+    }
+    if (((bitField2_ & 0x10000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(191, getPetPolicy());
+    }
+    if (specialtyHousingType_
+        != com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+            .SPECIALTY_HOUSING_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(192, specialtyHousingType_);
+    }
+    for (int i = 0; i < productFee_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(193, productFee_.get(i));
+    }
+    if (((bitField2_ & 0x20000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(194, shortTitle_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -14725,6 +34107,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (hasPickupSla()) {
       if (pickupSla_ != other.pickupSla_) return false;
     }
+    if (hasPickupCost() != other.hasPickupCost()) return false;
+    if (hasPickupCost()) {
+      if (!getPickupCost().equals(other.getPickupCost())) return false;
+    }
     if (hasLinkTemplate() != other.hasLinkTemplate()) return false;
     if (hasLinkTemplate()) {
       if (!getLinkTemplate().equals(other.getLinkTemplate())) return false;
@@ -14788,6 +34174,115 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (!getSustainabilityIncentivesList().equals(other.getSustainabilityIncentivesList()))
       return false;
     if (!getVideoLinksList().equals(other.getVideoLinksList())) return false;
+    if (!getMinimumOrderValuesList().equals(other.getMinimumOrderValuesList())) return false;
+    if (!getVin().equals(other.getVin())) return false;
+    if (!getModel().equals(other.getModel())) return false;
+    if (!getTrim().equals(other.getTrim())) return false;
+    if (bodyStyle_ != other.bodyStyle_) return false;
+    if (getYear() != other.getYear()) return false;
+    if (hasMileage() != other.hasMileage()) return false;
+    if (hasMileage()) {
+      if (!getMileage().equals(other.getMileage())) return false;
+    }
+    if (hasElectricRange() != other.hasElectricRange()) return false;
+    if (hasElectricRange()) {
+      if (!getElectricRange().equals(other.getElectricRange())) return false;
+    }
+    if (hasFuelConsumption() != other.hasFuelConsumption()) return false;
+    if (hasFuelConsumption()) {
+      if (!getFuelConsumption().equals(other.getFuelConsumption())) return false;
+    }
+    if (hasFuelConsumptionDischargedBattery() != other.hasFuelConsumptionDischargedBattery())
+      return false;
+    if (hasFuelConsumptionDischargedBattery()) {
+      if (!getFuelConsumptionDischargedBattery()
+          .equals(other.getFuelConsumptionDischargedBattery())) return false;
+    }
+    if (hasEnergyConsumption() != other.hasEnergyConsumption()) return false;
+    if (hasEnergyConsumption()) {
+      if (!getEnergyConsumption().equals(other.getEnergyConsumption())) return false;
+    }
+    if (hasCo2Emissions() != other.hasCo2Emissions()) return false;
+    if (hasCo2Emissions()) {
+      if (!getCo2Emissions().equals(other.getCo2Emissions())) return false;
+    }
+    if (!getDateFirstRegistered().equals(other.getDateFirstRegistered())) return false;
+    if (engine_ != other.engine_) return false;
+    if (emissionsStandard_ != other.emissionsStandard_) return false;
+    if (getCertifiedPreOwned() != other.getCertifiedPreOwned()) return false;
+    if (hasVehicleMsrp() != other.hasVehicleMsrp()) return false;
+    if (hasVehicleMsrp()) {
+      if (!getVehicleMsrp().equals(other.getVehicleMsrp())) return false;
+    }
+    if (hasVehicleAllInPrice() != other.hasVehicleAllInPrice()) return false;
+    if (hasVehicleAllInPrice()) {
+      if (!getVehicleAllInPrice().equals(other.getVehicleAllInPrice())) return false;
+    }
+    if (vehiclePriceType_ != other.vehiclePriceType_) return false;
+    if (getVehicleMandatoryInspectionIncluded() != other.getVehicleMandatoryInspectionIncluded())
+      return false;
+    if (hasVehicleExpenses() != other.hasVehicleExpenses()) return false;
+    if (hasVehicleExpenses()) {
+      if (!getVehicleExpenses().equals(other.getVehicleExpenses())) return false;
+    }
+    if (hasWarranty() != other.hasWarranty()) return false;
+    if (hasWarranty()) {
+      if (!getWarranty().equals(other.getWarranty())) return false;
+    }
+    if (hasDisplayAddress() != other.hasDisplayAddress()) return false;
+    if (hasDisplayAddress()) {
+      if (!getDisplayAddress().equals(other.getDisplayAddress())) return false;
+    }
+    if (hasLatitude() != other.hasLatitude()) return false;
+    if (hasLatitude()) {
+      if (java.lang.Double.doubleToLongBits(getLatitude())
+          != java.lang.Double.doubleToLongBits(other.getLatitude())) return false;
+    }
+    if (hasLongitude() != other.hasLongitude()) return false;
+    if (hasLongitude()) {
+      if (java.lang.Double.doubleToLongBits(getLongitude())
+          != java.lang.Double.doubleToLongBits(other.getLongitude())) return false;
+    }
+    if (!getNeighborhood().equals(other.getNeighborhood())) return false;
+    if (hasUnitArea() != other.hasUnitArea()) return false;
+    if (hasUnitArea()) {
+      if (!getUnitArea().equals(other.getUnitArea())) return false;
+    }
+    if (hasNumberOfUnits() != other.hasNumberOfUnits()) return false;
+    if (hasNumberOfUnits()) {
+      if (getNumberOfUnits() != other.getNumberOfUnits()) return false;
+    }
+    if (!getPropertyName().equals(other.getPropertyName())) return false;
+    if (hasNumberOfBedrooms() != other.hasNumberOfBedrooms()) return false;
+    if (hasNumberOfBedrooms()) {
+      if (java.lang.Double.doubleToLongBits(getNumberOfBedrooms())
+          != java.lang.Double.doubleToLongBits(other.getNumberOfBedrooms())) return false;
+    }
+    if (hasNumberOfBathrooms() != other.hasNumberOfBathrooms()) return false;
+    if (hasNumberOfBathrooms()) {
+      if (java.lang.Double.doubleToLongBits(getNumberOfBathrooms())
+          != java.lang.Double.doubleToLongBits(other.getNumberOfBathrooms())) return false;
+    }
+    if (propertyType_ != other.propertyType_) return false;
+    if (!amenityFeature_.equals(other.amenityFeature_)) return false;
+    if (!utilitiesIncluded_.equals(other.utilitiesIncluded_)) return false;
+    if (hasPetPolicy() != other.hasPetPolicy()) return false;
+    if (hasPetPolicy()) {
+      if (!getPetPolicy().equals(other.getPetPolicy())) return false;
+    }
+    if (specialtyHousingType_ != other.specialtyHousingType_) return false;
+    if (!getProductFeeList().equals(other.getProductFeeList())) return false;
+    if (hasShortTitle() != other.hasShortTitle()) return false;
+    if (hasShortTitle()) {
+      if (!getShortTitle().equals(other.getShortTitle())) return false;
+    }
+    if (!getQuestionsAndAnswersList().equals(other.getQuestionsAndAnswersList())) return false;
+    if (java.lang.Float.floatToIntBits(getPopularityRank())
+        != java.lang.Float.floatToIntBits(other.getPopularityRank())) return false;
+    if (!getItemGroupTitle().equals(other.getItemGroupTitle())) return false;
+    if (!getDocumentLinksList().equals(other.getDocumentLinksList())) return false;
+    if (!getVariantOptionsList().equals(other.getVariantOptionsList())) return false;
+    if (!getRelatedProductsList().equals(other.getRelatedProductsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -15110,6 +34605,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + PICKUP_SLA_FIELD_NUMBER;
       hash = (53 * hash) + pickupSla_;
     }
+    if (hasPickupCost()) {
+      hash = (37 * hash) + PICKUP_COST_FIELD_NUMBER;
+      hash = (53 * hash) + getPickupCost().hashCode();
+    }
     if (hasLinkTemplate()) {
       hash = (37 * hash) + LINK_TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getLinkTemplate().hashCode();
@@ -15193,6 +34692,162 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (getVideoLinksCount() > 0) {
       hash = (37 * hash) + VIDEO_LINKS_FIELD_NUMBER;
       hash = (53 * hash) + getVideoLinksList().hashCode();
+    }
+    if (getMinimumOrderValuesCount() > 0) {
+      hash = (37 * hash) + MINIMUM_ORDER_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimumOrderValuesList().hashCode();
+    }
+    hash = (37 * hash) + VIN_FIELD_NUMBER;
+    hash = (53 * hash) + getVin().hashCode();
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + TRIM_FIELD_NUMBER;
+    hash = (53 * hash) + getTrim().hashCode();
+    hash = (37 * hash) + BODY_STYLE_FIELD_NUMBER;
+    hash = (53 * hash) + bodyStyle_;
+    hash = (37 * hash) + YEAR_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getYear());
+    if (hasMileage()) {
+      hash = (37 * hash) + MILEAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMileage().hashCode();
+    }
+    if (hasElectricRange()) {
+      hash = (37 * hash) + ELECTRIC_RANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getElectricRange().hashCode();
+    }
+    if (hasFuelConsumption()) {
+      hash = (37 * hash) + FUEL_CONSUMPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getFuelConsumption().hashCode();
+    }
+    if (hasFuelConsumptionDischargedBattery()) {
+      hash = (37 * hash) + FUEL_CONSUMPTION_DISCHARGED_BATTERY_FIELD_NUMBER;
+      hash = (53 * hash) + getFuelConsumptionDischargedBattery().hashCode();
+    }
+    if (hasEnergyConsumption()) {
+      hash = (37 * hash) + ENERGY_CONSUMPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getEnergyConsumption().hashCode();
+    }
+    if (hasCo2Emissions()) {
+      hash = (37 * hash) + CO2_EMISSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getCo2Emissions().hashCode();
+    }
+    hash = (37 * hash) + DATE_FIRST_REGISTERED_FIELD_NUMBER;
+    hash = (53 * hash) + getDateFirstRegistered().hashCode();
+    hash = (37 * hash) + ENGINE_FIELD_NUMBER;
+    hash = (53 * hash) + engine_;
+    hash = (37 * hash) + EMISSIONS_STANDARD_FIELD_NUMBER;
+    hash = (53 * hash) + emissionsStandard_;
+    hash = (37 * hash) + CERTIFIED_PRE_OWNED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCertifiedPreOwned());
+    if (hasVehicleMsrp()) {
+      hash = (37 * hash) + VEHICLE_MSRP_FIELD_NUMBER;
+      hash = (53 * hash) + getVehicleMsrp().hashCode();
+    }
+    if (hasVehicleAllInPrice()) {
+      hash = (37 * hash) + VEHICLE_ALL_IN_PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + getVehicleAllInPrice().hashCode();
+    }
+    hash = (37 * hash) + VEHICLE_PRICE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + vehiclePriceType_;
+    hash = (37 * hash) + VEHICLE_MANDATORY_INSPECTION_INCLUDED_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getVehicleMandatoryInspectionIncluded());
+    if (hasVehicleExpenses()) {
+      hash = (37 * hash) + VEHICLE_EXPENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getVehicleExpenses().hashCode();
+    }
+    if (hasWarranty()) {
+      hash = (37 * hash) + WARRANTY_FIELD_NUMBER;
+      hash = (53 * hash) + getWarranty().hashCode();
+    }
+    if (hasDisplayAddress()) {
+      hash = (37 * hash) + DISPLAY_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayAddress().hashCode();
+    }
+    if (hasLatitude()) {
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getLatitude()));
+    }
+    if (hasLongitude()) {
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getLongitude()));
+    }
+    hash = (37 * hash) + NEIGHBORHOOD_FIELD_NUMBER;
+    hash = (53 * hash) + getNeighborhood().hashCode();
+    if (hasUnitArea()) {
+      hash = (37 * hash) + UNIT_AREA_FIELD_NUMBER;
+      hash = (53 * hash) + getUnitArea().hashCode();
+    }
+    if (hasNumberOfUnits()) {
+      hash = (37 * hash) + NUMBER_OF_UNITS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNumberOfUnits());
+    }
+    hash = (37 * hash) + PROPERTY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPropertyName().hashCode();
+    if (hasNumberOfBedrooms()) {
+      hash = (37 * hash) + NUMBER_OF_BEDROOMS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getNumberOfBedrooms()));
+    }
+    if (hasNumberOfBathrooms()) {
+      hash = (37 * hash) + NUMBER_OF_BATHROOMS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getNumberOfBathrooms()));
+    }
+    hash = (37 * hash) + PROPERTY_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + propertyType_;
+    if (getAmenityFeatureCount() > 0) {
+      hash = (37 * hash) + AMENITY_FEATURE_FIELD_NUMBER;
+      hash = (53 * hash) + amenityFeature_.hashCode();
+    }
+    if (getUtilitiesIncludedCount() > 0) {
+      hash = (37 * hash) + UTILITIES_INCLUDED_FIELD_NUMBER;
+      hash = (53 * hash) + utilitiesIncluded_.hashCode();
+    }
+    if (hasPetPolicy()) {
+      hash = (37 * hash) + PET_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getPetPolicy().hashCode();
+    }
+    hash = (37 * hash) + SPECIALTY_HOUSING_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + specialtyHousingType_;
+    if (getProductFeeCount() > 0) {
+      hash = (37 * hash) + PRODUCT_FEE_FIELD_NUMBER;
+      hash = (53 * hash) + getProductFeeList().hashCode();
+    }
+    if (hasShortTitle()) {
+      hash = (37 * hash) + SHORT_TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getShortTitle().hashCode();
+    }
+    if (getQuestionsAndAnswersCount() > 0) {
+      hash = (37 * hash) + QUESTIONS_AND_ANSWERS_FIELD_NUMBER;
+      hash = (53 * hash) + getQuestionsAndAnswersList().hashCode();
+    }
+    hash = (37 * hash) + POPULARITY_RANK_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getPopularityRank());
+    hash = (37 * hash) + ITEM_GROUP_TITLE_FIELD_NUMBER;
+    hash = (53 * hash) + getItemGroupTitle().hashCode();
+    if (getDocumentLinksCount() > 0) {
+      hash = (37 * hash) + DOCUMENT_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentLinksList().hashCode();
+    }
+    if (getVariantOptionsCount() > 0) {
+      hash = (37 * hash) + VARIANT_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getVariantOptionsList().hashCode();
+    }
+    if (getRelatedProductsCount() > 0) {
+      hash = (37 * hash) + RELATED_PRODUCTS_FIELD_NUMBER;
+      hash = (53 * hash) + getRelatedProductsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -15365,12 +35020,31 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         internalGetUnitPricingBaseMeasureFieldBuilder();
         internalGetCostOfGoodsSoldFieldBuilder();
         internalGetProductDetailsFieldBuilder();
+        internalGetPickupCostFieldBuilder();
         internalGetCloudExportAdditionalPropertiesFieldBuilder();
         internalGetCertificationsFieldBuilder();
         internalGetStructuredTitleFieldBuilder();
         internalGetStructuredDescriptionFieldBuilder();
         internalGetAutoPricingMinPriceFieldBuilder();
         internalGetSustainabilityIncentivesFieldBuilder();
+        internalGetMinimumOrderValuesFieldBuilder();
+        internalGetMileageFieldBuilder();
+        internalGetElectricRangeFieldBuilder();
+        internalGetFuelConsumptionFieldBuilder();
+        internalGetFuelConsumptionDischargedBatteryFieldBuilder();
+        internalGetEnergyConsumptionFieldBuilder();
+        internalGetCo2EmissionsFieldBuilder();
+        internalGetVehicleMsrpFieldBuilder();
+        internalGetVehicleAllInPriceFieldBuilder();
+        internalGetVehicleExpensesFieldBuilder();
+        internalGetWarrantyFieldBuilder();
+        internalGetDisplayAddressFieldBuilder();
+        internalGetUnitAreaFieldBuilder();
+        internalGetPetPolicyFieldBuilder();
+        internalGetProductFeeFieldBuilder();
+        internalGetQuestionsAndAnswersFieldBuilder();
+        internalGetVariantOptionsFieldBuilder();
+        internalGetRelatedProductsFieldBuilder();
       }
     }
 
@@ -15381,6 +35055,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       bitField1_ = 0;
       bitField2_ = 0;
       bitField3_ = 0;
+      bitField4_ = 0;
       identifierExists_ = false;
       isBundle_ = false;
       title_ = "";
@@ -15590,6 +35265,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       pickupMethod_ = 0;
       pickupSla_ = 0;
+      pickupCost_ = null;
+      if (pickupCostBuilder_ != null) {
+        pickupCostBuilder_.dispose();
+        pickupCostBuilder_ = null;
+      }
       linkTemplate_ = "";
       mobileLinkTemplate_ = "";
       customLabel0_ = "";
@@ -15609,7 +35289,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = null;
         cloudExportAdditionalPropertiesBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x04000000);
+      bitField2_ = (bitField2_ & ~0x08000000);
       virtualModelLink_ = "";
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
@@ -15617,7 +35297,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = null;
         certificationsBuilder_.clear();
       }
-      bitField2_ = (bitField2_ & ~0x10000000);
+      bitField2_ = (bitField2_ & ~0x20000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -15639,8 +35319,134 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = null;
         sustainabilityIncentivesBuilder_.clear();
       }
-      bitField3_ = (bitField3_ & ~0x00000001);
+      bitField3_ = (bitField3_ & ~0x00000002);
       videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (minimumOrderValuesBuilder_ == null) {
+        minimumOrderValues_ = java.util.Collections.emptyList();
+      } else {
+        minimumOrderValues_ = null;
+        minimumOrderValuesBuilder_.clear();
+      }
+      bitField3_ = (bitField3_ & ~0x00000008);
+      vin_ = "";
+      model_ = "";
+      trim_ = "";
+      bodyStyle_ = 0;
+      year_ = 0L;
+      mileage_ = null;
+      if (mileageBuilder_ != null) {
+        mileageBuilder_.dispose();
+        mileageBuilder_ = null;
+      }
+      electricRange_ = null;
+      if (electricRangeBuilder_ != null) {
+        electricRangeBuilder_.dispose();
+        electricRangeBuilder_ = null;
+      }
+      fuelConsumption_ = null;
+      if (fuelConsumptionBuilder_ != null) {
+        fuelConsumptionBuilder_.dispose();
+        fuelConsumptionBuilder_ = null;
+      }
+      fuelConsumptionDischargedBattery_ = null;
+      if (fuelConsumptionDischargedBatteryBuilder_ != null) {
+        fuelConsumptionDischargedBatteryBuilder_.dispose();
+        fuelConsumptionDischargedBatteryBuilder_ = null;
+      }
+      energyConsumption_ = null;
+      if (energyConsumptionBuilder_ != null) {
+        energyConsumptionBuilder_.dispose();
+        energyConsumptionBuilder_ = null;
+      }
+      co2Emissions_ = null;
+      if (co2EmissionsBuilder_ != null) {
+        co2EmissionsBuilder_.dispose();
+        co2EmissionsBuilder_ = null;
+      }
+      dateFirstRegistered_ = "";
+      engine_ = 0;
+      emissionsStandard_ = 0;
+      certifiedPreOwned_ = false;
+      vehicleMsrp_ = null;
+      if (vehicleMsrpBuilder_ != null) {
+        vehicleMsrpBuilder_.dispose();
+        vehicleMsrpBuilder_ = null;
+      }
+      vehicleAllInPrice_ = null;
+      if (vehicleAllInPriceBuilder_ != null) {
+        vehicleAllInPriceBuilder_.dispose();
+        vehicleAllInPriceBuilder_ = null;
+      }
+      vehiclePriceType_ = 0;
+      vehicleMandatoryInspectionIncluded_ = false;
+      vehicleExpenses_ = null;
+      if (vehicleExpensesBuilder_ != null) {
+        vehicleExpensesBuilder_.dispose();
+        vehicleExpensesBuilder_ = null;
+      }
+      warranty_ = null;
+      if (warrantyBuilder_ != null) {
+        warrantyBuilder_.dispose();
+        warrantyBuilder_ = null;
+      }
+      displayAddress_ = null;
+      if (displayAddressBuilder_ != null) {
+        displayAddressBuilder_.dispose();
+        displayAddressBuilder_ = null;
+      }
+      latitude_ = 0D;
+      longitude_ = 0D;
+      neighborhood_ = "";
+      unitArea_ = null;
+      if (unitAreaBuilder_ != null) {
+        unitAreaBuilder_.dispose();
+        unitAreaBuilder_ = null;
+      }
+      numberOfUnits_ = 0L;
+      propertyName_ = "";
+      numberOfBedrooms_ = 0D;
+      numberOfBathrooms_ = 0D;
+      propertyType_ = 0;
+      amenityFeature_ = emptyIntList();
+      utilitiesIncluded_ = emptyIntList();
+      petPolicy_ = null;
+      if (petPolicyBuilder_ != null) {
+        petPolicyBuilder_.dispose();
+        petPolicyBuilder_ = null;
+      }
+      specialtyHousingType_ = 0;
+      if (productFeeBuilder_ == null) {
+        productFee_ = java.util.Collections.emptyList();
+      } else {
+        productFee_ = null;
+        productFeeBuilder_.clear();
+      }
+      bitField4_ = (bitField4_ & ~0x00000080);
+      shortTitle_ = "";
+      if (questionsAndAnswersBuilder_ == null) {
+        questionsAndAnswers_ = java.util.Collections.emptyList();
+      } else {
+        questionsAndAnswers_ = null;
+        questionsAndAnswersBuilder_.clear();
+      }
+      bitField4_ = (bitField4_ & ~0x00000200);
+      popularityRank_ = 0F;
+      itemGroupTitle_ = "";
+      documentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (variantOptionsBuilder_ == null) {
+        variantOptions_ = java.util.Collections.emptyList();
+      } else {
+        variantOptions_ = null;
+        variantOptionsBuilder_.clear();
+      }
+      bitField4_ = (bitField4_ & ~0x00002000);
+      if (relatedProductsBuilder_ == null) {
+        relatedProducts_ = java.util.Collections.emptyList();
+      } else {
+        relatedProducts_ = null;
+        relatedProductsBuilder_.clear();
+      }
+      bitField4_ = (bitField4_ & ~0x00004000);
       return this;
     }
 
@@ -15680,6 +35486,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (bitField3_ != 0) {
         buildPartial3(result);
+      }
+      if (bitField4_ != 0) {
+        buildPartial4(result);
       }
       onBuilt();
       return result;
@@ -15762,33 +35571,78 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         result.productDetails_ = productDetailsBuilder_.build();
       }
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
-        if (((bitField2_ & 0x04000000) != 0)) {
+        if (((bitField2_ & 0x08000000) != 0)) {
           cloudExportAdditionalProperties_ =
               java.util.Collections.unmodifiableList(cloudExportAdditionalProperties_);
-          bitField2_ = (bitField2_ & ~0x04000000);
+          bitField2_ = (bitField2_ & ~0x08000000);
         }
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalProperties_;
       } else {
         result.cloudExportAdditionalProperties_ = cloudExportAdditionalPropertiesBuilder_.build();
       }
       if (certificationsBuilder_ == null) {
-        if (((bitField2_ & 0x10000000) != 0)) {
+        if (((bitField2_ & 0x20000000) != 0)) {
           certifications_ = java.util.Collections.unmodifiableList(certifications_);
-          bitField2_ = (bitField2_ & ~0x10000000);
+          bitField2_ = (bitField2_ & ~0x20000000);
         }
         result.certifications_ = certifications_;
       } else {
         result.certifications_ = certificationsBuilder_.build();
       }
       if (sustainabilityIncentivesBuilder_ == null) {
-        if (((bitField3_ & 0x00000001) != 0)) {
+        if (((bitField3_ & 0x00000002) != 0)) {
           sustainabilityIncentives_ =
               java.util.Collections.unmodifiableList(sustainabilityIncentives_);
-          bitField3_ = (bitField3_ & ~0x00000001);
+          bitField3_ = (bitField3_ & ~0x00000002);
         }
         result.sustainabilityIncentives_ = sustainabilityIncentives_;
       } else {
         result.sustainabilityIncentives_ = sustainabilityIncentivesBuilder_.build();
+      }
+      if (minimumOrderValuesBuilder_ == null) {
+        if (((bitField3_ & 0x00000008) != 0)) {
+          minimumOrderValues_ = java.util.Collections.unmodifiableList(minimumOrderValues_);
+          bitField3_ = (bitField3_ & ~0x00000008);
+        }
+        result.minimumOrderValues_ = minimumOrderValues_;
+      } else {
+        result.minimumOrderValues_ = minimumOrderValuesBuilder_.build();
+      }
+      if (productFeeBuilder_ == null) {
+        if (((bitField4_ & 0x00000080) != 0)) {
+          productFee_ = java.util.Collections.unmodifiableList(productFee_);
+          bitField4_ = (bitField4_ & ~0x00000080);
+        }
+        result.productFee_ = productFee_;
+      } else {
+        result.productFee_ = productFeeBuilder_.build();
+      }
+      if (questionsAndAnswersBuilder_ == null) {
+        if (((bitField4_ & 0x00000200) != 0)) {
+          questionsAndAnswers_ = java.util.Collections.unmodifiableList(questionsAndAnswers_);
+          bitField4_ = (bitField4_ & ~0x00000200);
+        }
+        result.questionsAndAnswers_ = questionsAndAnswers_;
+      } else {
+        result.questionsAndAnswers_ = questionsAndAnswersBuilder_.build();
+      }
+      if (variantOptionsBuilder_ == null) {
+        if (((bitField4_ & 0x00002000) != 0)) {
+          variantOptions_ = java.util.Collections.unmodifiableList(variantOptions_);
+          bitField4_ = (bitField4_ & ~0x00002000);
+        }
+        result.variantOptions_ = variantOptions_;
+      } else {
+        result.variantOptions_ = variantOptionsBuilder_.build();
+      }
+      if (relatedProductsBuilder_ == null) {
+        if (((bitField4_ & 0x00004000) != 0)) {
+          relatedProducts_ = java.util.Collections.unmodifiableList(relatedProducts_);
+          bitField4_ = (bitField4_ & ~0x00004000);
+        }
+        result.relatedProducts_ = relatedProducts_;
+      } else {
+        result.relatedProducts_ = relatedProductsBuilder_.build();
       }
     }
 
@@ -16113,79 +35967,76 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         to_bitField1_ |= 0x10000000;
       }
       if (((from_bitField2_ & 0x00002000) != 0)) {
-        result.linkTemplate_ = linkTemplate_;
+        result.pickupCost_ = pickupCostBuilder_ == null ? pickupCost_ : pickupCostBuilder_.build();
         to_bitField1_ |= 0x20000000;
       }
       if (((from_bitField2_ & 0x00004000) != 0)) {
-        result.mobileLinkTemplate_ = mobileLinkTemplate_;
+        result.linkTemplate_ = linkTemplate_;
         to_bitField1_ |= 0x40000000;
       }
       if (((from_bitField2_ & 0x00008000) != 0)) {
-        result.customLabel0_ = customLabel0_;
+        result.mobileLinkTemplate_ = mobileLinkTemplate_;
         to_bitField1_ |= 0x80000000;
       }
       int to_bitField2_ = 0;
       if (((from_bitField2_ & 0x00010000) != 0)) {
-        result.customLabel1_ = customLabel1_;
+        result.customLabel0_ = customLabel0_;
         to_bitField2_ |= 0x00000001;
       }
       if (((from_bitField2_ & 0x00020000) != 0)) {
-        result.customLabel2_ = customLabel2_;
+        result.customLabel1_ = customLabel1_;
         to_bitField2_ |= 0x00000002;
       }
       if (((from_bitField2_ & 0x00040000) != 0)) {
-        result.customLabel3_ = customLabel3_;
+        result.customLabel2_ = customLabel2_;
         to_bitField2_ |= 0x00000004;
       }
       if (((from_bitField2_ & 0x00080000) != 0)) {
-        result.customLabel4_ = customLabel4_;
+        result.customLabel3_ = customLabel3_;
         to_bitField2_ |= 0x00000008;
       }
       if (((from_bitField2_ & 0x00100000) != 0)) {
+        result.customLabel4_ = customLabel4_;
+        to_bitField2_ |= 0x00000010;
+      }
+      if (((from_bitField2_ & 0x00200000) != 0)) {
         includedDestinations_.makeImmutable();
         result.includedDestinations_ = includedDestinations_;
       }
-      if (((from_bitField2_ & 0x00200000) != 0)) {
+      if (((from_bitField2_ & 0x00400000) != 0)) {
         excludedDestinations_.makeImmutable();
         result.excludedDestinations_ = excludedDestinations_;
       }
-      if (((from_bitField2_ & 0x00400000) != 0)) {
+      if (((from_bitField2_ & 0x00800000) != 0)) {
         shoppingAdsExcludedCountries_.makeImmutable();
         result.shoppingAdsExcludedCountries_ = shoppingAdsExcludedCountries_;
       }
-      if (((from_bitField2_ & 0x00800000) != 0)) {
-        result.externalSellerId_ = externalSellerId_;
-        to_bitField2_ |= 0x00000010;
-      }
       if (((from_bitField2_ & 0x01000000) != 0)) {
-        result.pause_ = pause_;
+        result.externalSellerId_ = externalSellerId_;
         to_bitField2_ |= 0x00000020;
       }
       if (((from_bitField2_ & 0x02000000) != 0)) {
+        result.pause_ = pause_;
+        to_bitField2_ |= 0x00000040;
+      }
+      if (((from_bitField2_ & 0x04000000) != 0)) {
         lifestyleImageLinks_.makeImmutable();
         result.lifestyleImageLinks_ = lifestyleImageLinks_;
       }
-      if (((from_bitField2_ & 0x08000000) != 0)) {
+      if (((from_bitField2_ & 0x10000000) != 0)) {
         result.virtualModelLink_ = virtualModelLink_;
-        to_bitField2_ |= 0x00000040;
-      }
-      if (((from_bitField2_ & 0x20000000) != 0)) {
-        result.structuredTitle_ =
-            structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
         to_bitField2_ |= 0x00000080;
       }
       if (((from_bitField2_ & 0x40000000) != 0)) {
+        result.structuredTitle_ =
+            structuredTitleBuilder_ == null ? structuredTitle_ : structuredTitleBuilder_.build();
+        to_bitField2_ |= 0x00000100;
+      }
+      if (((from_bitField2_ & 0x80000000) != 0)) {
         result.structuredDescription_ =
             structuredDescriptionBuilder_ == null
                 ? structuredDescription_
                 : structuredDescriptionBuilder_.build();
-        to_bitField2_ |= 0x00000100;
-      }
-      if (((from_bitField2_ & 0x80000000) != 0)) {
-        result.autoPricingMinPrice_ =
-            autoPricingMinPriceBuilder_ == null
-                ? autoPricingMinPrice_
-                : autoPricingMinPriceBuilder_.build();
         to_bitField2_ |= 0x00000200;
       }
       result.bitField1_ |= to_bitField1_;
@@ -16194,10 +36045,179 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial3(com.google.shopping.merchant.products.v1.ProductAttributes result) {
       int from_bitField3_ = bitField3_;
-      if (((from_bitField3_ & 0x00000002) != 0)) {
+      int to_bitField2_ = 0;
+      if (((from_bitField3_ & 0x00000001) != 0)) {
+        result.autoPricingMinPrice_ =
+            autoPricingMinPriceBuilder_ == null
+                ? autoPricingMinPrice_
+                : autoPricingMinPriceBuilder_.build();
+        to_bitField2_ |= 0x00000400;
+      }
+      if (((from_bitField3_ & 0x00000004) != 0)) {
         videoLinks_.makeImmutable();
         result.videoLinks_ = videoLinks_;
       }
+      if (((from_bitField3_ & 0x00000010) != 0)) {
+        result.vin_ = vin_;
+      }
+      if (((from_bitField3_ & 0x00000020) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField3_ & 0x00000040) != 0)) {
+        result.trim_ = trim_;
+      }
+      if (((from_bitField3_ & 0x00000080) != 0)) {
+        result.bodyStyle_ = bodyStyle_;
+      }
+      if (((from_bitField3_ & 0x00000100) != 0)) {
+        result.year_ = year_;
+      }
+      if (((from_bitField3_ & 0x00000200) != 0)) {
+        result.mileage_ = mileageBuilder_ == null ? mileage_ : mileageBuilder_.build();
+        to_bitField2_ |= 0x00000800;
+      }
+      if (((from_bitField3_ & 0x00000400) != 0)) {
+        result.electricRange_ =
+            electricRangeBuilder_ == null ? electricRange_ : electricRangeBuilder_.build();
+        to_bitField2_ |= 0x00001000;
+      }
+      if (((from_bitField3_ & 0x00000800) != 0)) {
+        result.fuelConsumption_ =
+            fuelConsumptionBuilder_ == null ? fuelConsumption_ : fuelConsumptionBuilder_.build();
+        to_bitField2_ |= 0x00002000;
+      }
+      if (((from_bitField3_ & 0x00001000) != 0)) {
+        result.fuelConsumptionDischargedBattery_ =
+            fuelConsumptionDischargedBatteryBuilder_ == null
+                ? fuelConsumptionDischargedBattery_
+                : fuelConsumptionDischargedBatteryBuilder_.build();
+        to_bitField2_ |= 0x00004000;
+      }
+      if (((from_bitField3_ & 0x00002000) != 0)) {
+        result.energyConsumption_ =
+            energyConsumptionBuilder_ == null
+                ? energyConsumption_
+                : energyConsumptionBuilder_.build();
+        to_bitField2_ |= 0x00008000;
+      }
+      if (((from_bitField3_ & 0x00004000) != 0)) {
+        result.co2Emissions_ =
+            co2EmissionsBuilder_ == null ? co2Emissions_ : co2EmissionsBuilder_.build();
+        to_bitField2_ |= 0x00010000;
+      }
+      if (((from_bitField3_ & 0x00008000) != 0)) {
+        result.dateFirstRegistered_ = dateFirstRegistered_;
+      }
+      if (((from_bitField3_ & 0x00010000) != 0)) {
+        result.engine_ = engine_;
+      }
+      if (((from_bitField3_ & 0x00020000) != 0)) {
+        result.emissionsStandard_ = emissionsStandard_;
+      }
+      if (((from_bitField3_ & 0x00040000) != 0)) {
+        result.certifiedPreOwned_ = certifiedPreOwned_;
+      }
+      if (((from_bitField3_ & 0x00080000) != 0)) {
+        result.vehicleMsrp_ =
+            vehicleMsrpBuilder_ == null ? vehicleMsrp_ : vehicleMsrpBuilder_.build();
+        to_bitField2_ |= 0x00020000;
+      }
+      if (((from_bitField3_ & 0x00100000) != 0)) {
+        result.vehicleAllInPrice_ =
+            vehicleAllInPriceBuilder_ == null
+                ? vehicleAllInPrice_
+                : vehicleAllInPriceBuilder_.build();
+        to_bitField2_ |= 0x00040000;
+      }
+      if (((from_bitField3_ & 0x00200000) != 0)) {
+        result.vehiclePriceType_ = vehiclePriceType_;
+      }
+      if (((from_bitField3_ & 0x00400000) != 0)) {
+        result.vehicleMandatoryInspectionIncluded_ = vehicleMandatoryInspectionIncluded_;
+      }
+      if (((from_bitField3_ & 0x00800000) != 0)) {
+        result.vehicleExpenses_ =
+            vehicleExpensesBuilder_ == null ? vehicleExpenses_ : vehicleExpensesBuilder_.build();
+        to_bitField2_ |= 0x00080000;
+      }
+      if (((from_bitField3_ & 0x01000000) != 0)) {
+        result.warranty_ = warrantyBuilder_ == null ? warranty_ : warrantyBuilder_.build();
+        to_bitField2_ |= 0x00100000;
+      }
+      if (((from_bitField3_ & 0x02000000) != 0)) {
+        result.displayAddress_ =
+            displayAddressBuilder_ == null ? displayAddress_ : displayAddressBuilder_.build();
+        to_bitField2_ |= 0x00200000;
+      }
+      if (((from_bitField3_ & 0x04000000) != 0)) {
+        result.latitude_ = latitude_;
+        to_bitField2_ |= 0x00400000;
+      }
+      if (((from_bitField3_ & 0x08000000) != 0)) {
+        result.longitude_ = longitude_;
+        to_bitField2_ |= 0x00800000;
+      }
+      if (((from_bitField3_ & 0x10000000) != 0)) {
+        result.neighborhood_ = neighborhood_;
+      }
+      if (((from_bitField3_ & 0x20000000) != 0)) {
+        result.unitArea_ = unitAreaBuilder_ == null ? unitArea_ : unitAreaBuilder_.build();
+        to_bitField2_ |= 0x01000000;
+      }
+      if (((from_bitField3_ & 0x40000000) != 0)) {
+        result.numberOfUnits_ = numberOfUnits_;
+        to_bitField2_ |= 0x02000000;
+      }
+      if (((from_bitField3_ & 0x80000000) != 0)) {
+        result.propertyName_ = propertyName_;
+      }
+      result.bitField2_ |= to_bitField2_;
+    }
+
+    private void buildPartial4(com.google.shopping.merchant.products.v1.ProductAttributes result) {
+      int from_bitField4_ = bitField4_;
+      int to_bitField2_ = 0;
+      if (((from_bitField4_ & 0x00000001) != 0)) {
+        result.numberOfBedrooms_ = numberOfBedrooms_;
+        to_bitField2_ |= 0x04000000;
+      }
+      if (((from_bitField4_ & 0x00000002) != 0)) {
+        result.numberOfBathrooms_ = numberOfBathrooms_;
+        to_bitField2_ |= 0x08000000;
+      }
+      if (((from_bitField4_ & 0x00000004) != 0)) {
+        result.propertyType_ = propertyType_;
+      }
+      if (((from_bitField4_ & 0x00000008) != 0)) {
+        amenityFeature_.makeImmutable();
+        result.amenityFeature_ = amenityFeature_;
+      }
+      if (((from_bitField4_ & 0x00000010) != 0)) {
+        utilitiesIncluded_.makeImmutable();
+        result.utilitiesIncluded_ = utilitiesIncluded_;
+      }
+      if (((from_bitField4_ & 0x00000020) != 0)) {
+        result.petPolicy_ = petPolicyBuilder_ == null ? petPolicy_ : petPolicyBuilder_.build();
+        to_bitField2_ |= 0x10000000;
+      }
+      if (((from_bitField4_ & 0x00000040) != 0)) {
+        result.specialtyHousingType_ = specialtyHousingType_;
+      }
+      if (((from_bitField4_ & 0x00000100) != 0)) {
+        result.shortTitle_ = shortTitle_;
+        to_bitField2_ |= 0x20000000;
+      }
+      if (((from_bitField4_ & 0x00000400) != 0)) {
+        result.popularityRank_ = popularityRank_;
+      }
+      if (((from_bitField4_ & 0x00000800) != 0)) {
+        result.itemGroupTitle_ = itemGroupTitle_;
+      }
+      if (((from_bitField4_ & 0x00001000) != 0)) {
+        documentLinks_.makeImmutable();
+        result.documentLinks_ = documentLinks_;
+      }
+      result.bitField2_ |= to_bitField2_;
     }
 
     @java.lang.Override
@@ -16738,46 +36758,49 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (other.hasPickupSla()) {
         setPickupSlaValue(other.getPickupSlaValue());
       }
+      if (other.hasPickupCost()) {
+        mergePickupCost(other.getPickupCost());
+      }
       if (other.hasLinkTemplate()) {
         linkTemplate_ = other.linkTemplate_;
-        bitField2_ |= 0x00002000;
+        bitField2_ |= 0x00004000;
         onChanged();
       }
       if (other.hasMobileLinkTemplate()) {
         mobileLinkTemplate_ = other.mobileLinkTemplate_;
-        bitField2_ |= 0x00004000;
+        bitField2_ |= 0x00008000;
         onChanged();
       }
       if (other.hasCustomLabel0()) {
         customLabel0_ = other.customLabel0_;
-        bitField2_ |= 0x00008000;
+        bitField2_ |= 0x00010000;
         onChanged();
       }
       if (other.hasCustomLabel1()) {
         customLabel1_ = other.customLabel1_;
-        bitField2_ |= 0x00010000;
+        bitField2_ |= 0x00020000;
         onChanged();
       }
       if (other.hasCustomLabel2()) {
         customLabel2_ = other.customLabel2_;
-        bitField2_ |= 0x00020000;
+        bitField2_ |= 0x00040000;
         onChanged();
       }
       if (other.hasCustomLabel3()) {
         customLabel3_ = other.customLabel3_;
-        bitField2_ |= 0x00040000;
+        bitField2_ |= 0x00080000;
         onChanged();
       }
       if (other.hasCustomLabel4()) {
         customLabel4_ = other.customLabel4_;
-        bitField2_ |= 0x00080000;
+        bitField2_ |= 0x00100000;
         onChanged();
       }
       if (!other.includedDestinations_.isEmpty()) {
         if (includedDestinations_.isEmpty()) {
           includedDestinations_ = other.includedDestinations_;
           includedDestinations_.makeImmutable();
-          bitField2_ |= 0x00100000;
+          bitField2_ |= 0x00200000;
         } else {
           ensureIncludedDestinationsIsMutable();
           includedDestinations_.addAll(other.includedDestinations_);
@@ -16788,7 +36811,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (excludedDestinations_.isEmpty()) {
           excludedDestinations_ = other.excludedDestinations_;
           excludedDestinations_.makeImmutable();
-          bitField2_ |= 0x00200000;
+          bitField2_ |= 0x00400000;
         } else {
           ensureExcludedDestinationsIsMutable();
           excludedDestinations_.addAll(other.excludedDestinations_);
@@ -16798,7 +36821,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.shoppingAdsExcludedCountries_.isEmpty()) {
         if (shoppingAdsExcludedCountries_.isEmpty()) {
           shoppingAdsExcludedCountries_ = other.shoppingAdsExcludedCountries_;
-          bitField2_ |= 0x00400000;
+          bitField2_ |= 0x00800000;
         } else {
           ensureShoppingAdsExcludedCountriesIsMutable();
           shoppingAdsExcludedCountries_.addAll(other.shoppingAdsExcludedCountries_);
@@ -16807,7 +36830,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasExternalSellerId()) {
         externalSellerId_ = other.externalSellerId_;
-        bitField2_ |= 0x00800000;
+        bitField2_ |= 0x01000000;
         onChanged();
       }
       if (other.hasPause()) {
@@ -16816,7 +36839,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.lifestyleImageLinks_.isEmpty()) {
         if (lifestyleImageLinks_.isEmpty()) {
           lifestyleImageLinks_ = other.lifestyleImageLinks_;
-          bitField2_ |= 0x02000000;
+          bitField2_ |= 0x04000000;
         } else {
           ensureLifestyleImageLinksIsMutable();
           lifestyleImageLinks_.addAll(other.lifestyleImageLinks_);
@@ -16827,7 +36850,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.cloudExportAdditionalProperties_.isEmpty()) {
           if (cloudExportAdditionalProperties_.isEmpty()) {
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x04000000);
+            bitField2_ = (bitField2_ & ~0x08000000);
           } else {
             ensureCloudExportAdditionalPropertiesIsMutable();
             cloudExportAdditionalProperties_.addAll(other.cloudExportAdditionalProperties_);
@@ -16840,7 +36863,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             cloudExportAdditionalPropertiesBuilder_.dispose();
             cloudExportAdditionalPropertiesBuilder_ = null;
             cloudExportAdditionalProperties_ = other.cloudExportAdditionalProperties_;
-            bitField2_ = (bitField2_ & ~0x04000000);
+            bitField2_ = (bitField2_ & ~0x08000000);
             cloudExportAdditionalPropertiesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCloudExportAdditionalPropertiesFieldBuilder()
@@ -16853,14 +36876,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasVirtualModelLink()) {
         virtualModelLink_ = other.virtualModelLink_;
-        bitField2_ |= 0x08000000;
+        bitField2_ |= 0x10000000;
         onChanged();
       }
       if (certificationsBuilder_ == null) {
         if (!other.certifications_.isEmpty()) {
           if (certifications_.isEmpty()) {
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x10000000);
+            bitField2_ = (bitField2_ & ~0x20000000);
           } else {
             ensureCertificationsIsMutable();
             certifications_.addAll(other.certifications_);
@@ -16873,7 +36896,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             certificationsBuilder_.dispose();
             certificationsBuilder_ = null;
             certifications_ = other.certifications_;
-            bitField2_ = (bitField2_ & ~0x10000000);
+            bitField2_ = (bitField2_ & ~0x20000000);
             certificationsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCertificationsFieldBuilder()
@@ -16896,7 +36919,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         if (!other.sustainabilityIncentives_.isEmpty()) {
           if (sustainabilityIncentives_.isEmpty()) {
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField3_ = (bitField3_ & ~0x00000001);
+            bitField3_ = (bitField3_ & ~0x00000002);
           } else {
             ensureSustainabilityIncentivesIsMutable();
             sustainabilityIncentives_.addAll(other.sustainabilityIncentives_);
@@ -16909,7 +36932,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.dispose();
             sustainabilityIncentivesBuilder_ = null;
             sustainabilityIncentives_ = other.sustainabilityIncentives_;
-            bitField3_ = (bitField3_ & ~0x00000001);
+            bitField3_ = (bitField3_ & ~0x00000002);
             sustainabilityIncentivesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetSustainabilityIncentivesFieldBuilder()
@@ -16922,12 +36945,303 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!other.videoLinks_.isEmpty()) {
         if (videoLinks_.isEmpty()) {
           videoLinks_ = other.videoLinks_;
-          bitField3_ |= 0x00000002;
+          bitField3_ |= 0x00000004;
         } else {
           ensureVideoLinksIsMutable();
           videoLinks_.addAll(other.videoLinks_);
         }
         onChanged();
+      }
+      if (minimumOrderValuesBuilder_ == null) {
+        if (!other.minimumOrderValues_.isEmpty()) {
+          if (minimumOrderValues_.isEmpty()) {
+            minimumOrderValues_ = other.minimumOrderValues_;
+            bitField3_ = (bitField3_ & ~0x00000008);
+          } else {
+            ensureMinimumOrderValuesIsMutable();
+            minimumOrderValues_.addAll(other.minimumOrderValues_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.minimumOrderValues_.isEmpty()) {
+          if (minimumOrderValuesBuilder_.isEmpty()) {
+            minimumOrderValuesBuilder_.dispose();
+            minimumOrderValuesBuilder_ = null;
+            minimumOrderValues_ = other.minimumOrderValues_;
+            bitField3_ = (bitField3_ & ~0x00000008);
+            minimumOrderValuesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetMinimumOrderValuesFieldBuilder()
+                    : null;
+          } else {
+            minimumOrderValuesBuilder_.addAllMessages(other.minimumOrderValues_);
+          }
+        }
+      }
+      if (!other.getVin().isEmpty()) {
+        vin_ = other.vin_;
+        bitField3_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        bitField3_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getTrim().isEmpty()) {
+        trim_ = other.trim_;
+        bitField3_ |= 0x00000040;
+        onChanged();
+      }
+      if (other.bodyStyle_ != 0) {
+        setBodyStyleValue(other.getBodyStyleValue());
+      }
+      if (other.getYear() != 0L) {
+        setYear(other.getYear());
+      }
+      if (other.hasMileage()) {
+        mergeMileage(other.getMileage());
+      }
+      if (other.hasElectricRange()) {
+        mergeElectricRange(other.getElectricRange());
+      }
+      if (other.hasFuelConsumption()) {
+        mergeFuelConsumption(other.getFuelConsumption());
+      }
+      if (other.hasFuelConsumptionDischargedBattery()) {
+        mergeFuelConsumptionDischargedBattery(other.getFuelConsumptionDischargedBattery());
+      }
+      if (other.hasEnergyConsumption()) {
+        mergeEnergyConsumption(other.getEnergyConsumption());
+      }
+      if (other.hasCo2Emissions()) {
+        mergeCo2Emissions(other.getCo2Emissions());
+      }
+      if (!other.getDateFirstRegistered().isEmpty()) {
+        dateFirstRegistered_ = other.dateFirstRegistered_;
+        bitField3_ |= 0x00008000;
+        onChanged();
+      }
+      if (other.engine_ != 0) {
+        setEngineValue(other.getEngineValue());
+      }
+      if (other.emissionsStandard_ != 0) {
+        setEmissionsStandardValue(other.getEmissionsStandardValue());
+      }
+      if (other.getCertifiedPreOwned() != false) {
+        setCertifiedPreOwned(other.getCertifiedPreOwned());
+      }
+      if (other.hasVehicleMsrp()) {
+        mergeVehicleMsrp(other.getVehicleMsrp());
+      }
+      if (other.hasVehicleAllInPrice()) {
+        mergeVehicleAllInPrice(other.getVehicleAllInPrice());
+      }
+      if (other.vehiclePriceType_ != 0) {
+        setVehiclePriceTypeValue(other.getVehiclePriceTypeValue());
+      }
+      if (other.getVehicleMandatoryInspectionIncluded() != false) {
+        setVehicleMandatoryInspectionIncluded(other.getVehicleMandatoryInspectionIncluded());
+      }
+      if (other.hasVehicleExpenses()) {
+        mergeVehicleExpenses(other.getVehicleExpenses());
+      }
+      if (other.hasWarranty()) {
+        mergeWarranty(other.getWarranty());
+      }
+      if (other.hasDisplayAddress()) {
+        mergeDisplayAddress(other.getDisplayAddress());
+      }
+      if (other.hasLatitude()) {
+        setLatitude(other.getLatitude());
+      }
+      if (other.hasLongitude()) {
+        setLongitude(other.getLongitude());
+      }
+      if (!other.getNeighborhood().isEmpty()) {
+        neighborhood_ = other.neighborhood_;
+        bitField3_ |= 0x10000000;
+        onChanged();
+      }
+      if (other.hasUnitArea()) {
+        mergeUnitArea(other.getUnitArea());
+      }
+      if (other.hasNumberOfUnits()) {
+        setNumberOfUnits(other.getNumberOfUnits());
+      }
+      if (!other.getPropertyName().isEmpty()) {
+        propertyName_ = other.propertyName_;
+        bitField3_ |= 0x80000000;
+        onChanged();
+      }
+      if (other.hasNumberOfBedrooms()) {
+        setNumberOfBedrooms(other.getNumberOfBedrooms());
+      }
+      if (other.hasNumberOfBathrooms()) {
+        setNumberOfBathrooms(other.getNumberOfBathrooms());
+      }
+      if (other.propertyType_ != 0) {
+        setPropertyTypeValue(other.getPropertyTypeValue());
+      }
+      if (!other.amenityFeature_.isEmpty()) {
+        if (amenityFeature_.isEmpty()) {
+          amenityFeature_ = other.amenityFeature_;
+          amenityFeature_.makeImmutable();
+          bitField4_ |= 0x00000008;
+        } else {
+          ensureAmenityFeatureIsMutable();
+          amenityFeature_.addAll(other.amenityFeature_);
+        }
+        onChanged();
+      }
+      if (!other.utilitiesIncluded_.isEmpty()) {
+        if (utilitiesIncluded_.isEmpty()) {
+          utilitiesIncluded_ = other.utilitiesIncluded_;
+          utilitiesIncluded_.makeImmutable();
+          bitField4_ |= 0x00000010;
+        } else {
+          ensureUtilitiesIncludedIsMutable();
+          utilitiesIncluded_.addAll(other.utilitiesIncluded_);
+        }
+        onChanged();
+      }
+      if (other.hasPetPolicy()) {
+        mergePetPolicy(other.getPetPolicy());
+      }
+      if (other.specialtyHousingType_ != 0) {
+        setSpecialtyHousingTypeValue(other.getSpecialtyHousingTypeValue());
+      }
+      if (productFeeBuilder_ == null) {
+        if (!other.productFee_.isEmpty()) {
+          if (productFee_.isEmpty()) {
+            productFee_ = other.productFee_;
+            bitField4_ = (bitField4_ & ~0x00000080);
+          } else {
+            ensureProductFeeIsMutable();
+            productFee_.addAll(other.productFee_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.productFee_.isEmpty()) {
+          if (productFeeBuilder_.isEmpty()) {
+            productFeeBuilder_.dispose();
+            productFeeBuilder_ = null;
+            productFee_ = other.productFee_;
+            bitField4_ = (bitField4_ & ~0x00000080);
+            productFeeBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetProductFeeFieldBuilder()
+                    : null;
+          } else {
+            productFeeBuilder_.addAllMessages(other.productFee_);
+          }
+        }
+      }
+      if (other.hasShortTitle()) {
+        shortTitle_ = other.shortTitle_;
+        bitField4_ |= 0x00000100;
+        onChanged();
+      }
+      if (questionsAndAnswersBuilder_ == null) {
+        if (!other.questionsAndAnswers_.isEmpty()) {
+          if (questionsAndAnswers_.isEmpty()) {
+            questionsAndAnswers_ = other.questionsAndAnswers_;
+            bitField4_ = (bitField4_ & ~0x00000200);
+          } else {
+            ensureQuestionsAndAnswersIsMutable();
+            questionsAndAnswers_.addAll(other.questionsAndAnswers_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.questionsAndAnswers_.isEmpty()) {
+          if (questionsAndAnswersBuilder_.isEmpty()) {
+            questionsAndAnswersBuilder_.dispose();
+            questionsAndAnswersBuilder_ = null;
+            questionsAndAnswers_ = other.questionsAndAnswers_;
+            bitField4_ = (bitField4_ & ~0x00000200);
+            questionsAndAnswersBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetQuestionsAndAnswersFieldBuilder()
+                    : null;
+          } else {
+            questionsAndAnswersBuilder_.addAllMessages(other.questionsAndAnswers_);
+          }
+        }
+      }
+      if (java.lang.Float.floatToRawIntBits(other.getPopularityRank()) != 0) {
+        setPopularityRank(other.getPopularityRank());
+      }
+      if (!other.getItemGroupTitle().isEmpty()) {
+        itemGroupTitle_ = other.itemGroupTitle_;
+        bitField4_ |= 0x00000800;
+        onChanged();
+      }
+      if (!other.documentLinks_.isEmpty()) {
+        if (documentLinks_.isEmpty()) {
+          documentLinks_ = other.documentLinks_;
+          bitField4_ |= 0x00001000;
+        } else {
+          ensureDocumentLinksIsMutable();
+          documentLinks_.addAll(other.documentLinks_);
+        }
+        onChanged();
+      }
+      if (variantOptionsBuilder_ == null) {
+        if (!other.variantOptions_.isEmpty()) {
+          if (variantOptions_.isEmpty()) {
+            variantOptions_ = other.variantOptions_;
+            bitField4_ = (bitField4_ & ~0x00002000);
+          } else {
+            ensureVariantOptionsIsMutable();
+            variantOptions_.addAll(other.variantOptions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.variantOptions_.isEmpty()) {
+          if (variantOptionsBuilder_.isEmpty()) {
+            variantOptionsBuilder_.dispose();
+            variantOptionsBuilder_ = null;
+            variantOptions_ = other.variantOptions_;
+            bitField4_ = (bitField4_ & ~0x00002000);
+            variantOptionsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetVariantOptionsFieldBuilder()
+                    : null;
+          } else {
+            variantOptionsBuilder_.addAllMessages(other.variantOptions_);
+          }
+        }
+      }
+      if (relatedProductsBuilder_ == null) {
+        if (!other.relatedProducts_.isEmpty()) {
+          if (relatedProducts_.isEmpty()) {
+            relatedProducts_ = other.relatedProducts_;
+            bitField4_ = (bitField4_ & ~0x00004000);
+          } else {
+            ensureRelatedProductsIsMutable();
+            relatedProducts_.addAll(other.relatedProducts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.relatedProducts_.isEmpty()) {
+          if (relatedProductsBuilder_.isEmpty()) {
+            relatedProductsBuilder_.dispose();
+            relatedProductsBuilder_ = null;
+            relatedProducts_ = other.relatedProducts_;
+            bitField4_ = (bitField4_ & ~0x00004000);
+            relatedProductsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetRelatedProductsFieldBuilder()
+                    : null;
+          } else {
+            relatedProductsBuilder_.addAllMessages(other.relatedProducts_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -16958,7 +37272,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 externalSellerId_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00800000;
+                bitField2_ |= 0x01000000;
                 break;
               } // case 10
             case 32:
@@ -17019,7 +37333,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 104:
               {
                 pause_ = input.readEnum();
-                bitField2_ |= 0x01000000;
+                bitField2_ |= 0x02000000;
                 break;
               } // case 104
             case 114:
@@ -17393,31 +37707,31 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 570:
               {
                 customLabel0_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00008000;
+                bitField2_ |= 0x00010000;
                 break;
               } // case 570
             case 578:
               {
                 customLabel1_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00010000;
+                bitField2_ |= 0x00020000;
                 break;
               } // case 578
             case 586:
               {
                 customLabel2_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00020000;
+                bitField2_ |= 0x00040000;
                 break;
               } // case 586
             case 594:
               {
                 customLabel3_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00040000;
+                bitField2_ |= 0x00080000;
                 break;
               } // case 594
             case 602:
               {
                 customLabel4_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00080000;
+                bitField2_ |= 0x00100000;
                 break;
               } // case 602
             case 608:
@@ -17485,13 +37799,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             case 658:
               {
                 linkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00002000;
+                bitField2_ |= 0x00004000;
                 break;
               } // case 658
             case 666:
               {
                 mobileLinkTemplate_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x00004000;
+                bitField2_ |= 0x00008000;
                 break;
               } // case 666
             case 674:
@@ -17555,27 +37869,27 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetAutoPricingMinPriceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x80000000;
+                bitField3_ |= 0x00000001;
                 break;
               } // case 994
             case 1042:
               {
                 virtualModelLink_ = input.readStringRequireUtf8();
-                bitField2_ |= 0x08000000;
+                bitField2_ |= 0x10000000;
                 break;
               } // case 1042
             case 1058:
               {
                 input.readMessage(
                     internalGetStructuredTitleFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x20000000;
+                bitField2_ |= 0x40000000;
                 break;
               } // case 1058
             case 1066:
               {
                 input.readMessage(
                     internalGetStructuredDescriptionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField2_ |= 0x40000000;
+                bitField2_ |= 0x80000000;
                 break;
               } // case 1066
             case 1082:
@@ -17698,6 +38012,156 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 1154
+            case 1170:
+              {
+                com.google.shopping.merchant.products.v1.ProductMinimumOrderValue m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.parser(),
+                        extensionRegistry);
+                if (minimumOrderValuesBuilder_ == null) {
+                  ensureMinimumOrderValuesIsMutable();
+                  minimumOrderValues_.add(m);
+                } else {
+                  minimumOrderValuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1170
+            case 1178:
+              {
+                vin_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x00000010;
+                break;
+              } // case 1178
+            case 1186:
+              {
+                model_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x00000020;
+                break;
+              } // case 1186
+            case 1194:
+              {
+                trim_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x00000040;
+                break;
+              } // case 1194
+            case 1200:
+              {
+                bodyStyle_ = input.readEnum();
+                bitField3_ |= 0x00000080;
+                break;
+              } // case 1200
+            case 1208:
+              {
+                year_ = input.readInt64();
+                bitField3_ |= 0x00000100;
+                break;
+              } // case 1208
+            case 1218:
+              {
+                input.readMessage(internalGetMileageFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00000200;
+                break;
+              } // case 1218
+            case 1226:
+              {
+                input.readMessage(
+                    internalGetElectricRangeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00000400;
+                break;
+              } // case 1226
+            case 1234:
+              {
+                input.readMessage(
+                    internalGetFuelConsumptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00000800;
+                break;
+              } // case 1234
+            case 1242:
+              {
+                input.readMessage(
+                    internalGetFuelConsumptionDischargedBatteryFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField3_ |= 0x00001000;
+                break;
+              } // case 1242
+            case 1250:
+              {
+                input.readMessage(
+                    internalGetEnergyConsumptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00002000;
+                break;
+              } // case 1250
+            case 1258:
+              {
+                input.readMessage(
+                    internalGetCo2EmissionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00004000;
+                break;
+              } // case 1258
+            case 1266:
+              {
+                dateFirstRegistered_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x00008000;
+                break;
+              } // case 1266
+            case 1272:
+              {
+                engine_ = input.readEnum();
+                bitField3_ |= 0x00010000;
+                break;
+              } // case 1272
+            case 1280:
+              {
+                emissionsStandard_ = input.readEnum();
+                bitField3_ |= 0x00020000;
+                break;
+              } // case 1280
+            case 1288:
+              {
+                certifiedPreOwned_ = input.readBool();
+                bitField3_ |= 0x00040000;
+                break;
+              } // case 1288
+            case 1298:
+              {
+                input.readMessage(
+                    internalGetVehicleMsrpFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00080000;
+                break;
+              } // case 1298
+            case 1306:
+              {
+                input.readMessage(
+                    internalGetVehicleAllInPriceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00100000;
+                break;
+              } // case 1306
+            case 1312:
+              {
+                vehiclePriceType_ = input.readEnum();
+                bitField3_ |= 0x00200000;
+                break;
+              } // case 1312
+            case 1328:
+              {
+                vehicleMandatoryInspectionIncluded_ = input.readBool();
+                bitField3_ |= 0x00400000;
+                break;
+              } // case 1328
+            case 1338:
+              {
+                input.readMessage(
+                    internalGetVehicleExpensesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x00800000;
+                break;
+              } // case 1338
+            case 1346:
+              {
+                input.readMessage(
+                    internalGetWarrantyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x01000000;
+                break;
+              } // case 1346
             case 1354:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -17711,6 +38175,209 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 bitField1_ |= 0x00100000;
                 break;
               } // case 1362
+            case 1378:
+              {
+                input.readMessage(
+                    internalGetPickupCostFieldBuilder().getBuilder(), extensionRegistry);
+                bitField2_ |= 0x00002000;
+                break;
+              } // case 1378
+            case 1386:
+              {
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+                            .parser(),
+                        extensionRegistry);
+                if (questionsAndAnswersBuilder_ == null) {
+                  ensureQuestionsAndAnswersIsMutable();
+                  questionsAndAnswers_.add(m);
+                } else {
+                  questionsAndAnswersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1386
+            case 1397:
+              {
+                popularityRank_ = input.readFloat();
+                bitField4_ |= 0x00000400;
+                break;
+              } // case 1397
+            case 1402:
+              {
+                itemGroupTitle_ = input.readStringRequireUtf8();
+                bitField4_ |= 0x00000800;
+                break;
+              } // case 1402
+            case 1410:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDocumentLinksIsMutable();
+                documentLinks_.add(s);
+                break;
+              } // case 1410
+            case 1418:
+              {
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+                            .parser(),
+                        extensionRegistry);
+                if (variantOptionsBuilder_ == null) {
+                  ensureVariantOptionsIsMutable();
+                  variantOptions_.add(m);
+                } else {
+                  variantOptionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1418
+            case 1426:
+              {
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                            .parser(),
+                        extensionRegistry);
+                if (relatedProductsBuilder_ == null) {
+                  ensureRelatedProductsIsMutable();
+                  relatedProducts_.add(m);
+                } else {
+                  relatedProductsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1426
+            case 1434:
+              {
+                input.readMessage(
+                    internalGetDisplayAddressFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x02000000;
+                break;
+              } // case 1434
+            case 1441:
+              {
+                latitude_ = input.readDouble();
+                bitField3_ |= 0x04000000;
+                break;
+              } // case 1441
+            case 1449:
+              {
+                longitude_ = input.readDouble();
+                bitField3_ |= 0x08000000;
+                break;
+              } // case 1449
+            case 1458:
+              {
+                neighborhood_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x10000000;
+                break;
+              } // case 1458
+            case 1466:
+              {
+                input.readMessage(
+                    internalGetUnitAreaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField3_ |= 0x20000000;
+                break;
+              } // case 1466
+            case 1472:
+              {
+                numberOfUnits_ = input.readInt64();
+                bitField3_ |= 0x40000000;
+                break;
+              } // case 1472
+            case 1482:
+              {
+                propertyName_ = input.readStringRequireUtf8();
+                bitField3_ |= 0x80000000;
+                break;
+              } // case 1482
+            case 1489:
+              {
+                numberOfBedrooms_ = input.readDouble();
+                bitField4_ |= 0x00000001;
+                break;
+              } // case 1489
+            case 1497:
+              {
+                numberOfBathrooms_ = input.readDouble();
+                bitField4_ |= 0x00000002;
+                break;
+              } // case 1497
+            case 1504:
+              {
+                propertyType_ = input.readEnum();
+                bitField4_ |= 0x00000004;
+                break;
+              } // case 1504
+            case 1512:
+              {
+                int tmpRaw = input.readEnum();
+                ensureAmenityFeatureIsMutable();
+                amenityFeature_.addInt(tmpRaw);
+                break;
+              } // case 1512
+            case 1514:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAmenityFeatureIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  amenityFeature_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 1514
+            case 1520:
+              {
+                int tmpRaw = input.readEnum();
+                ensureUtilitiesIncludedIsMutable();
+                utilitiesIncluded_.addInt(tmpRaw);
+                break;
+              } // case 1520
+            case 1522:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUtilitiesIncludedIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  utilitiesIncluded_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 1522
+            case 1530:
+              {
+                input.readMessage(
+                    internalGetPetPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField4_ |= 0x00000020;
+                break;
+              } // case 1530
+            case 1536:
+              {
+                specialtyHousingType_ = input.readEnum();
+                bitField4_ |= 0x00000040;
+                break;
+              } // case 1536
+            case 1546:
+              {
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee m =
+                    input.readMessage(
+                        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+                            .parser(),
+                        extensionRegistry);
+                if (productFeeBuilder_ == null) {
+                  ensureProductFeeIsMutable();
+                  productFee_.add(m);
+                } else {
+                  productFeeBuilder_.addMessage(m);
+                }
+                break;
+              } // case 1546
+            case 1554:
+              {
+                shortTitle_ = input.readStringRequireUtf8();
+                bitField4_ |= 0x00000100;
+                break;
+              } // case 1554
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17732,6 +38399,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     private int bitField1_;
     private int bitField2_;
     private int bitField3_;
+    private int bitField4_;
 
     private boolean identifierExists_;
 
@@ -31888,6 +52556,238 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.shopping.merchant.products.v1.PickupCost pickupCost_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.PickupCost,
+            com.google.shopping.merchant.products.v1.PickupCost.Builder,
+            com.google.shopping.merchant.products.v1.PickupCostOrBuilder>
+        pickupCostBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pickupCost field is set.
+     */
+    public boolean hasPickupCost() {
+      return ((bitField2_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pickupCost.
+     */
+    public com.google.shopping.merchant.products.v1.PickupCost getPickupCost() {
+      if (pickupCostBuilder_ == null) {
+        return pickupCost_ == null
+            ? com.google.shopping.merchant.products.v1.PickupCost.getDefaultInstance()
+            : pickupCost_;
+      } else {
+        return pickupCostBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPickupCost(com.google.shopping.merchant.products.v1.PickupCost value) {
+      if (pickupCostBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pickupCost_ = value;
+      } else {
+        pickupCostBuilder_.setMessage(value);
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPickupCost(
+        com.google.shopping.merchant.products.v1.PickupCost.Builder builderForValue) {
+      if (pickupCostBuilder_ == null) {
+        pickupCost_ = builderForValue.build();
+      } else {
+        pickupCostBuilder_.setMessage(builderForValue.build());
+      }
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePickupCost(com.google.shopping.merchant.products.v1.PickupCost value) {
+      if (pickupCostBuilder_ == null) {
+        if (((bitField2_ & 0x00002000) != 0)
+            && pickupCost_ != null
+            && pickupCost_
+                != com.google.shopping.merchant.products.v1.PickupCost.getDefaultInstance()) {
+          getPickupCostBuilder().mergeFrom(value);
+        } else {
+          pickupCost_ = value;
+        }
+      } else {
+        pickupCostBuilder_.mergeFrom(value);
+      }
+      if (pickupCost_ != null) {
+        bitField2_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPickupCost() {
+      bitField2_ = (bitField2_ & ~0x00002000);
+      pickupCost_ = null;
+      if (pickupCostBuilder_ != null) {
+        pickupCostBuilder_.dispose();
+        pickupCostBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.PickupCost.Builder getPickupCostBuilder() {
+      bitField2_ |= 0x00002000;
+      onChanged();
+      return internalGetPickupCostFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.PickupCostOrBuilder getPickupCostOrBuilder() {
+      if (pickupCostBuilder_ != null) {
+        return pickupCostBuilder_.getMessageOrBuilder();
+      } else {
+        return pickupCost_ == null
+            ? com.google.shopping.merchant.products.v1.PickupCost.getDefaultInstance()
+            : pickupCost_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The [pickup
+     * cost](https://support.google.com/merchants/answer/16988704) for an item
+     * when a customer buys it online and picks it up at a store.
+     * </pre>
+     *
+     * <code>
+     * optional .google.shopping.merchant.products.v1.PickupCost pickup_cost = 172 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.PickupCost,
+            com.google.shopping.merchant.products.v1.PickupCost.Builder,
+            com.google.shopping.merchant.products.v1.PickupCostOrBuilder>
+        internalGetPickupCostFieldBuilder() {
+      if (pickupCostBuilder_ == null) {
+        pickupCostBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.PickupCost,
+                com.google.shopping.merchant.products.v1.PickupCost.Builder,
+                com.google.shopping.merchant.products.v1.PickupCostOrBuilder>(
+                getPickupCost(), getParentForChildren(), isClean());
+        pickupCost_ = null;
+      }
+      return pickupCostBuilder_;
+    }
+
     private java.lang.Object linkTemplate_ = "";
 
     /**
@@ -31903,7 +52803,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the linkTemplate field is set.
      */
     public boolean hasLinkTemplate() {
-      return ((bitField2_ & 0x00002000) != 0);
+      return ((bitField2_ & 0x00004000) != 0);
     }
 
     /**
@@ -31972,7 +52872,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       linkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -31991,7 +52891,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLinkTemplate() {
       linkTemplate_ = getDefaultInstance().getLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00002000);
+      bitField2_ = (bitField2_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -32015,7 +52915,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       linkTemplate_ = value;
-      bitField2_ |= 0x00002000;
+      bitField2_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -32036,7 +52936,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the mobileLinkTemplate field is set.
      */
     public boolean hasMobileLinkTemplate() {
-      return ((bitField2_ & 0x00004000) != 0);
+      return ((bitField2_ & 0x00008000) != 0);
     }
 
     /**
@@ -32108,7 +53008,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -32128,7 +53028,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearMobileLinkTemplate() {
       mobileLinkTemplate_ = getDefaultInstance().getMobileLinkTemplate();
-      bitField2_ = (bitField2_ & ~0x00004000);
+      bitField2_ = (bitField2_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -32153,7 +53053,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       mobileLinkTemplate_ = value;
-      bitField2_ |= 0x00004000;
+      bitField2_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -32173,7 +53073,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel0 field is set.
      */
     public boolean hasCustomLabel0() {
-      return ((bitField2_ & 0x00008000) != 0);
+      return ((bitField2_ & 0x00010000) != 0);
     }
 
     /**
@@ -32242,7 +53142,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel0_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -32261,7 +53161,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel0() {
       customLabel0_ = getDefaultInstance().getCustomLabel0();
-      bitField2_ = (bitField2_ & ~0x00008000);
+      bitField2_ = (bitField2_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -32285,7 +53185,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel0_ = value;
-      bitField2_ |= 0x00008000;
+      bitField2_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -32305,7 +53205,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel1 field is set.
      */
     public boolean hasCustomLabel1() {
-      return ((bitField2_ & 0x00010000) != 0);
+      return ((bitField2_ & 0x00020000) != 0);
     }
 
     /**
@@ -32374,7 +53274,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel1_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -32393,7 +53293,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel1() {
       customLabel1_ = getDefaultInstance().getCustomLabel1();
-      bitField2_ = (bitField2_ & ~0x00010000);
+      bitField2_ = (bitField2_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -32417,7 +53317,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel1_ = value;
-      bitField2_ |= 0x00010000;
+      bitField2_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -32437,7 +53337,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel2 field is set.
      */
     public boolean hasCustomLabel2() {
-      return ((bitField2_ & 0x00020000) != 0);
+      return ((bitField2_ & 0x00040000) != 0);
     }
 
     /**
@@ -32506,7 +53406,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel2_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -32525,7 +53425,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel2() {
       customLabel2_ = getDefaultInstance().getCustomLabel2();
-      bitField2_ = (bitField2_ & ~0x00020000);
+      bitField2_ = (bitField2_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -32549,7 +53449,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel2_ = value;
-      bitField2_ |= 0x00020000;
+      bitField2_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -32569,7 +53469,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel3 field is set.
      */
     public boolean hasCustomLabel3() {
-      return ((bitField2_ & 0x00040000) != 0);
+      return ((bitField2_ & 0x00080000) != 0);
     }
 
     /**
@@ -32638,7 +53538,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel3_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -32657,7 +53557,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel3() {
       customLabel3_ = getDefaultInstance().getCustomLabel3();
-      bitField2_ = (bitField2_ & ~0x00040000);
+      bitField2_ = (bitField2_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -32681,7 +53581,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel3_ = value;
-      bitField2_ |= 0x00040000;
+      bitField2_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -32701,7 +53601,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the customLabel4 field is set.
      */
     public boolean hasCustomLabel4() {
-      return ((bitField2_ & 0x00080000) != 0);
+      return ((bitField2_ & 0x00100000) != 0);
     }
 
     /**
@@ -32770,7 +53670,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       customLabel4_ = value;
-      bitField2_ |= 0x00080000;
+      bitField2_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -32789,7 +53689,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearCustomLabel4() {
       customLabel4_ = getDefaultInstance().getCustomLabel4();
-      bitField2_ = (bitField2_ & ~0x00080000);
+      bitField2_ = (bitField2_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -32813,7 +53713,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       customLabel4_ = value;
-      bitField2_ |= 0x00080000;
+      bitField2_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -32824,7 +53724,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!includedDestinations_.isModifiable()) {
         includedDestinations_ = makeMutableCopy(includedDestinations_);
       }
-      bitField2_ |= 0x00100000;
+      bitField2_ |= 0x00200000;
     }
 
     /**
@@ -33028,7 +53928,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearIncludedDestinations() {
       includedDestinations_ = emptyIntList();
-      bitField2_ = (bitField2_ & ~0x00100000);
+      bitField2_ = (bitField2_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -33181,7 +54081,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!excludedDestinations_.isModifiable()) {
         excludedDestinations_ = makeMutableCopy(excludedDestinations_);
       }
-      bitField2_ |= 0x00200000;
+      bitField2_ |= 0x00400000;
     }
 
     /**
@@ -33378,7 +54278,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExcludedDestinations() {
       excludedDestinations_ = emptyIntList();
-      bitField2_ = (bitField2_ & ~0x00200000);
+      bitField2_ = (bitField2_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -33528,7 +54428,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         shoppingAdsExcludedCountries_ =
             new com.google.protobuf.LazyStringArrayList(shoppingAdsExcludedCountries_);
       }
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
     }
 
     /**
@@ -33628,7 +54528,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.set(index, value);
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33654,7 +54554,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33677,7 +54577,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllShoppingAdsExcludedCountries(java.lang.Iterable<java.lang.String> values) {
       ensureShoppingAdsExcludedCountriesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, shoppingAdsExcludedCountries_);
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33698,7 +54598,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearShoppingAdsExcludedCountries() {
       shoppingAdsExcludedCountries_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x00400000);
+      bitField2_ = (bitField2_ & ~0x00800000);
       ;
       onChanged();
       return this;
@@ -33726,7 +54626,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureShoppingAdsExcludedCountriesIsMutable();
       shoppingAdsExcludedCountries_.add(value);
-      bitField2_ |= 0x00400000;
+      bitField2_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -33747,7 +54647,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the externalSellerId field is set.
      */
     public boolean hasExternalSellerId() {
-      return ((bitField2_ & 0x00800000) != 0);
+      return ((bitField2_ & 0x01000000) != 0);
     }
 
     /**
@@ -33819,7 +54719,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       externalSellerId_ = value;
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -33839,7 +54739,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearExternalSellerId() {
       externalSellerId_ = getDefaultInstance().getExternalSellerId();
-      bitField2_ = (bitField2_ & ~0x00800000);
+      bitField2_ = (bitField2_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -33864,7 +54764,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       externalSellerId_ = value;
-      bitField2_ |= 0x00800000;
+      bitField2_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -33885,7 +54785,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPause() {
-      return ((bitField2_ & 0x01000000) != 0);
+      return ((bitField2_ & 0x02000000) != 0);
     }
 
     /**
@@ -33920,7 +54820,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder setPauseValue(int value) {
       pause_ = value;
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -33961,7 +54861,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField2_ |= 0x01000000;
+      bitField2_ |= 0x02000000;
       pause_ = value.getNumber();
       onChanged();
       return this;
@@ -33980,7 +54880,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPause() {
-      bitField2_ = (bitField2_ & ~0x01000000);
+      bitField2_ = (bitField2_ & ~0x02000000);
       pause_ = 0;
       onChanged();
       return this;
@@ -33993,7 +54893,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!lifestyleImageLinks_.isModifiable()) {
         lifestyleImageLinks_ = new com.google.protobuf.LazyStringArrayList(lifestyleImageLinks_);
       }
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
     }
 
     /**
@@ -34093,7 +54993,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.set(index, value);
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -34119,7 +55019,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -34142,7 +55042,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllLifestyleImageLinks(java.lang.Iterable<java.lang.String> values) {
       ensureLifestyleImageLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, lifestyleImageLinks_);
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -34163,7 +55063,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearLifestyleImageLinks() {
       lifestyleImageLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField2_ = (bitField2_ & ~0x02000000);
+      bitField2_ = (bitField2_ & ~0x04000000);
       ;
       onChanged();
       return this;
@@ -34191,7 +55091,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureLifestyleImageLinksIsMutable();
       lifestyleImageLinks_.add(value);
-      bitField2_ |= 0x02000000;
+      bitField2_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -34200,12 +55100,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
 
     private void ensureCloudExportAdditionalPropertiesIsMutable() {
-      if (!((bitField2_ & 0x04000000) != 0)) {
+      if (!((bitField2_ & 0x08000000) != 0)) {
         cloudExportAdditionalProperties_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties>(
                 cloudExportAdditionalProperties_);
-        bitField2_ |= 0x04000000;
+        bitField2_ |= 0x08000000;
       }
     }
 
@@ -34466,7 +55366,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCloudExportAdditionalProperties() {
       if (cloudExportAdditionalPropertiesBuilder_ == null) {
         cloudExportAdditionalProperties_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x04000000);
+        bitField2_ = (bitField2_ & ~0x08000000);
         onChanged();
       } else {
         cloudExportAdditionalPropertiesBuilder_.clear();
@@ -34622,7 +55522,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalProperties.Builder,
                 com.google.shopping.merchant.products.v1.CloudExportAdditionalPropertiesOrBuilder>(
                 cloudExportAdditionalProperties_,
-                ((bitField2_ & 0x04000000) != 0),
+                ((bitField2_ & 0x08000000) != 0),
                 getParentForChildren(),
                 isClean());
         cloudExportAdditionalProperties_ = null;
@@ -34646,7 +55546,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the virtualModelLink field is set.
      */
     public boolean hasVirtualModelLink() {
-      return ((bitField2_ & 0x08000000) != 0);
+      return ((bitField2_ & 0x10000000) != 0);
     }
 
     /**
@@ -34718,7 +55618,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       virtualModelLink_ = value;
-      bitField2_ |= 0x08000000;
+      bitField2_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -34738,7 +55638,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVirtualModelLink() {
       virtualModelLink_ = getDefaultInstance().getVirtualModelLink();
-      bitField2_ = (bitField2_ & ~0x08000000);
+      bitField2_ = (bitField2_ & ~0x10000000);
       onChanged();
       return this;
     }
@@ -34763,7 +55663,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       virtualModelLink_ = value;
-      bitField2_ |= 0x08000000;
+      bitField2_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -34772,11 +55672,11 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         certifications_ = java.util.Collections.emptyList();
 
     private void ensureCertificationsIsMutable() {
-      if (!((bitField2_ & 0x10000000) != 0)) {
+      if (!((bitField2_ & 0x20000000) != 0)) {
         certifications_ =
             new java.util.ArrayList<com.google.shopping.merchant.products.v1.ProductCertification>(
                 certifications_);
-        bitField2_ |= 0x10000000;
+        bitField2_ |= 0x20000000;
       }
     }
 
@@ -35076,7 +55976,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearCertifications() {
       if (certificationsBuilder_ == null) {
         certifications_ = java.util.Collections.emptyList();
-        bitField2_ = (bitField2_ & ~0x10000000);
+        bitField2_ = (bitField2_ & ~0x20000000);
         onChanged();
       } else {
         certificationsBuilder_.clear();
@@ -35256,7 +56156,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductCertification.Builder,
                 com.google.shopping.merchant.products.v1.ProductCertificationOrBuilder>(
                 certifications_,
-                ((bitField2_ & 0x10000000) != 0),
+                ((bitField2_ & 0x20000000) != 0),
                 getParentForChildren(),
                 isClean());
         certifications_ = null;
@@ -35284,7 +56184,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredTitle field is set.
      */
     public boolean hasStructuredTitle() {
-      return ((bitField2_ & 0x20000000) != 0);
+      return ((bitField2_ & 0x40000000) != 0);
     }
 
     /**
@@ -35329,7 +56229,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -35351,7 +56251,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredTitleBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -35369,7 +56269,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredTitle(
         com.google.shopping.merchant.products.v1.StructuredTitle value) {
       if (structuredTitleBuilder_ == null) {
-        if (((bitField2_ & 0x20000000) != 0)
+        if (((bitField2_ & 0x40000000) != 0)
             && structuredTitle_ != null
             && structuredTitle_
                 != com.google.shopping.merchant.products.v1.StructuredTitle.getDefaultInstance()) {
@@ -35381,7 +56281,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredTitleBuilder_.mergeFrom(value);
       }
       if (structuredTitle_ != null) {
-        bitField2_ |= 0x20000000;
+        bitField2_ |= 0x40000000;
         onChanged();
       }
       return this;
@@ -35398,7 +56298,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredTitle() {
-      bitField2_ = (bitField2_ & ~0x20000000);
+      bitField2_ = (bitField2_ & ~0x40000000);
       structuredTitle_ = null;
       if (structuredTitleBuilder_ != null) {
         structuredTitleBuilder_.dispose();
@@ -35420,7 +56320,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredTitle.Builder
         getStructuredTitleBuilder() {
-      bitField2_ |= 0x20000000;
+      bitField2_ |= 0x40000000;
       onChanged();
       return internalGetStructuredTitleFieldBuilder().getBuilder();
     }
@@ -35494,7 +56394,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the structuredDescription field is set.
      */
     public boolean hasStructuredDescription() {
-      return ((bitField2_ & 0x40000000) != 0);
+      return ((bitField2_ & 0x80000000) != 0);
     }
 
     /**
@@ -35542,7 +56442,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -35565,7 +56465,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         structuredDescriptionBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -35584,7 +56484,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder mergeStructuredDescription(
         com.google.shopping.merchant.products.v1.StructuredDescription value) {
       if (structuredDescriptionBuilder_ == null) {
-        if (((bitField2_ & 0x40000000) != 0)
+        if (((bitField2_ & 0x80000000) != 0)
             && structuredDescription_ != null
             && structuredDescription_
                 != com.google.shopping.merchant.products.v1.StructuredDescription
@@ -35597,7 +56497,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         structuredDescriptionBuilder_.mergeFrom(value);
       }
       if (structuredDescription_ != null) {
-        bitField2_ |= 0x40000000;
+        bitField2_ |= 0x80000000;
         onChanged();
       }
       return this;
@@ -35615,7 +56515,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearStructuredDescription() {
-      bitField2_ = (bitField2_ & ~0x40000000);
+      bitField2_ = (bitField2_ & ~0x80000000);
       structuredDescription_ = null;
       if (structuredDescriptionBuilder_ != null) {
         structuredDescriptionBuilder_.dispose();
@@ -35638,7 +56538,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.products.v1.StructuredDescription.Builder
         getStructuredDescriptionBuilder() {
-      bitField2_ |= 0x40000000;
+      bitField2_ |= 0x80000000;
       onChanged();
       return internalGetStructuredDescriptionFieldBuilder().getBuilder();
     }
@@ -35717,7 +56617,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * @return Whether the autoPricingMinPrice field is set.
      */
     public boolean hasAutoPricingMinPrice() {
-      return ((bitField2_ & 0x80000000) != 0);
+      return ((bitField3_ & 0x00000001) != 0);
     }
 
     /**
@@ -35769,7 +56669,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(value);
       }
-      bitField2_ |= 0x80000000;
+      bitField3_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -35794,7 +56694,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       } else {
         autoPricingMinPriceBuilder_.setMessage(builderForValue.build());
       }
-      bitField2_ |= 0x80000000;
+      bitField3_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -35815,7 +56715,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeAutoPricingMinPrice(com.google.shopping.type.Price value) {
       if (autoPricingMinPriceBuilder_ == null) {
-        if (((bitField2_ & 0x80000000) != 0)
+        if (((bitField3_ & 0x00000001) != 0)
             && autoPricingMinPrice_ != null
             && autoPricingMinPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
           getAutoPricingMinPriceBuilder().mergeFrom(value);
@@ -35826,7 +56726,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         autoPricingMinPriceBuilder_.mergeFrom(value);
       }
       if (autoPricingMinPrice_ != null) {
-        bitField2_ |= 0x80000000;
+        bitField3_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -35847,7 +56747,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public Builder clearAutoPricingMinPrice() {
-      bitField2_ = (bitField2_ & ~0x80000000);
+      bitField3_ = (bitField3_ & ~0x00000001);
       autoPricingMinPrice_ = null;
       if (autoPricingMinPriceBuilder_ != null) {
         autoPricingMinPriceBuilder_.dispose();
@@ -35872,7 +56772,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      * <code>.google.shopping.type.Price auto_pricing_min_price = 124;</code>
      */
     public com.google.shopping.type.Price.Builder getAutoPricingMinPriceBuilder() {
-      bitField2_ |= 0x80000000;
+      bitField3_ |= 0x00000001;
       onChanged();
       return internalGetAutoPricingMinPriceFieldBuilder().getBuilder();
     }
@@ -35936,12 +56836,12 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = java.util.Collections.emptyList();
 
     private void ensureSustainabilityIncentivesIsMutable() {
-      if (!((bitField3_ & 0x00000001) != 0)) {
+      if (!((bitField3_ & 0x00000002) != 0)) {
         sustainabilityIncentives_ =
             new java.util.ArrayList<
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive>(
                 sustainabilityIncentives_);
-        bitField3_ |= 0x00000001;
+        bitField3_ |= 0x00000002;
       }
     }
 
@@ -36201,7 +57101,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder clearSustainabilityIncentives() {
       if (sustainabilityIncentivesBuilder_ == null) {
         sustainabilityIncentives_ = java.util.Collections.emptyList();
-        bitField3_ = (bitField3_ & ~0x00000001);
+        bitField3_ = (bitField3_ & ~0x00000002);
         onChanged();
       } else {
         sustainabilityIncentivesBuilder_.clear();
@@ -36357,7 +57257,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentive.Builder,
                 com.google.shopping.merchant.products.v1.ProductSustainabilityIncentiveOrBuilder>(
                 sustainabilityIncentives_,
-                ((bitField3_ & 0x00000001) != 0),
+                ((bitField3_ & 0x00000002) != 0),
                 getParentForChildren(),
                 isClean());
         sustainabilityIncentives_ = null;
@@ -36372,7 +57272,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       if (!videoLinks_.isModifiable()) {
         videoLinks_ = new com.google.protobuf.LazyStringArrayList(videoLinks_);
       }
-      bitField3_ |= 0x00000002;
+      bitField3_ |= 0x00000004;
     }
 
     /**
@@ -36472,7 +57372,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureVideoLinksIsMutable();
       videoLinks_.set(index, value);
-      bitField3_ |= 0x00000002;
+      bitField3_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -36498,7 +57398,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       }
       ensureVideoLinksIsMutable();
       videoLinks_.add(value);
-      bitField3_ |= 0x00000002;
+      bitField3_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -36521,7 +57421,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     public Builder addAllVideoLinks(java.lang.Iterable<java.lang.String> values) {
       ensureVideoLinksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, videoLinks_);
-      bitField3_ |= 0x00000002;
+      bitField3_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -36542,7 +57442,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVideoLinks() {
       videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField3_ = (bitField3_ & ~0x00000002);
+      bitField3_ = (bitField3_ & ~0x00000004);
       ;
       onChanged();
       return this;
@@ -36570,9 +57470,8384 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureVideoLinksIsMutable();
       videoLinks_.add(value);
-      bitField3_ |= 0x00000002;
+      bitField3_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+        minimumOrderValues_ = java.util.Collections.emptyList();
+
+    private void ensureMinimumOrderValuesIsMutable() {
+      if (!((bitField3_ & 0x00000008) != 0)) {
+        minimumOrderValues_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>(
+                minimumOrderValues_);
+        bitField3_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValue,
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder,
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>
+        minimumOrderValuesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+        getMinimumOrderValuesList() {
+      if (minimumOrderValuesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(minimumOrderValues_);
+      } else {
+        return minimumOrderValuesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public int getMinimumOrderValuesCount() {
+      if (minimumOrderValuesBuilder_ == null) {
+        return minimumOrderValues_.size();
+      } else {
+        return minimumOrderValuesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductMinimumOrderValue getMinimumOrderValues(
+        int index) {
+      if (minimumOrderValuesBuilder_ == null) {
+        return minimumOrderValues_.get(index);
+      } else {
+        return minimumOrderValuesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder setMinimumOrderValues(
+        int index, com.google.shopping.merchant.products.v1.ProductMinimumOrderValue value) {
+      if (minimumOrderValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.set(index, value);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder setMinimumOrderValues(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder builderForValue) {
+      if (minimumOrderValuesBuilder_ == null) {
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder addMinimumOrderValues(
+        com.google.shopping.merchant.products.v1.ProductMinimumOrderValue value) {
+      if (minimumOrderValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.add(value);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder addMinimumOrderValues(
+        int index, com.google.shopping.merchant.products.v1.ProductMinimumOrderValue value) {
+      if (minimumOrderValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.add(index, value);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder addMinimumOrderValues(
+        com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder builderForValue) {
+      if (minimumOrderValuesBuilder_ == null) {
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.add(builderForValue.build());
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder addMinimumOrderValues(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder builderForValue) {
+      if (minimumOrderValuesBuilder_ == null) {
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder addAllMinimumOrderValues(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.products.v1.ProductMinimumOrderValue>
+            values) {
+      if (minimumOrderValuesBuilder_ == null) {
+        ensureMinimumOrderValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, minimumOrderValues_);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder clearMinimumOrderValues() {
+      if (minimumOrderValuesBuilder_ == null) {
+        minimumOrderValues_ = java.util.Collections.emptyList();
+        bitField3_ = (bitField3_ & ~0x00000008);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public Builder removeMinimumOrderValues(int index) {
+      if (minimumOrderValuesBuilder_ == null) {
+        ensureMinimumOrderValuesIsMutable();
+        minimumOrderValues_.remove(index);
+        onChanged();
+      } else {
+        minimumOrderValuesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder
+        getMinimumOrderValuesBuilder(int index) {
+      return internalGetMinimumOrderValuesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder
+        getMinimumOrderValuesOrBuilder(int index) {
+      if (minimumOrderValuesBuilder_ == null) {
+        return minimumOrderValues_.get(index);
+      } else {
+        return minimumOrderValuesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>
+        getMinimumOrderValuesOrBuilderList() {
+      if (minimumOrderValuesBuilder_ != null) {
+        return minimumOrderValuesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(minimumOrderValues_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder
+        addMinimumOrderValuesBuilder() {
+      return internalGetMinimumOrderValuesFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductMinimumOrderValue
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder
+        addMinimumOrderValuesBuilder(int index) {
+      return internalGetMinimumOrderValuesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductMinimumOrderValue
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [minimum value](https://support.google.com/merchants/answer/16989009)
+     * in the cart before a customer can initiate checkout. Supports multiple
+     * minimum order values. Different minimum order values can be specified per
+     * country, service and surface. Maximum entries: 100.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductMinimumOrderValue minimum_order_values = 146;
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder>
+        getMinimumOrderValuesBuilderList() {
+      return internalGetMinimumOrderValuesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValue,
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder,
+            com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>
+        internalGetMinimumOrderValuesFieldBuilder() {
+      if (minimumOrderValuesBuilder_ == null) {
+        minimumOrderValuesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductMinimumOrderValue,
+                com.google.shopping.merchant.products.v1.ProductMinimumOrderValue.Builder,
+                com.google.shopping.merchant.products.v1.ProductMinimumOrderValueOrBuilder>(
+                minimumOrderValues_,
+                ((bitField3_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        minimumOrderValues_ = null;
+      }
+      return minimumOrderValuesBuilder_;
+    }
+
+    private java.lang.Object vin_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Vehicle Identification Number
+     * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>string vin = 147;</code>
+     *
+     * @return The vin.
+     */
+    public java.lang.String getVin() {
+      java.lang.Object ref = vin_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vin_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Vehicle Identification Number
+     * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>string vin = 147;</code>
+     *
+     * @return The bytes for vin.
+     */
+    public com.google.protobuf.ByteString getVinBytes() {
+      java.lang.Object ref = vin_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Vehicle Identification Number
+     * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>string vin = 147;</code>
+     *
+     * @param value The vin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVin(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      vin_ = value;
+      bitField3_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Vehicle Identification Number
+     * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>string vin = 147;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVin() {
+      vin_ = getDefaultInstance().getVin();
+      bitField3_ = (bitField3_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Vehicle Identification Number
+     * (VIN)](https://support.google.com/google-ads/answer/14154510) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>string vin = 147;</code>
+     *
+     * @param value The bytes for vin to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVinBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      vin_ = value;
+      bitField3_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+     * vehicle, such as `LX`, `EX`, and others.
+     * </pre>
+     *
+     * <code>string model = 148;</code>
+     *
+     * @return The model.
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+     * vehicle, such as `LX`, `EX`, and others.
+     * </pre>
+     *
+     * <code>string model = 148;</code>
+     *
+     * @return The bytes for model.
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+     * vehicle, such as `LX`, `EX`, and others.
+     * </pre>
+     *
+     * <code>string model = 148;</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      model_ = value;
+      bitField3_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+     * vehicle, such as `LX`, `EX`, and others.
+     * </pre>
+     *
+     * <code>string model = 148;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      model_ = getDefaultInstance().getModel();
+      bitField3_ = (bitField3_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Model](https://support.google.com/google-ads/answer/14154511) of the
+     * vehicle, such as `LX`, `EX`, and others.
+     * </pre>
+     *
+     * <code>string model = 148;</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      model_ = value;
+      bitField3_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object trim_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+     * vehicle model, such as `S`, `SV`, `SL` and others.
+     * </pre>
+     *
+     * <code>string trim = 149;</code>
+     *
+     * @return The trim.
+     */
+    public java.lang.String getTrim() {
+      java.lang.Object ref = trim_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        trim_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+     * vehicle model, such as `S`, `SV`, `SL` and others.
+     * </pre>
+     *
+     * <code>string trim = 149;</code>
+     *
+     * @return The bytes for trim.
+     */
+    public com.google.protobuf.ByteString getTrimBytes() {
+      java.lang.Object ref = trim_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        trim_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+     * vehicle model, such as `S`, `SV`, `SL` and others.
+     * </pre>
+     *
+     * <code>string trim = 149;</code>
+     *
+     * @param value The trim to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrim(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      trim_ = value;
+      bitField3_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+     * vehicle model, such as `S`, `SV`, `SL` and others.
+     * </pre>
+     *
+     * <code>string trim = 149;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrim() {
+      trim_ = getDefaultInstance().getTrim();
+      bitField3_ = (bitField3_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Trim](https://support.google.com/google-ads/answer/14154176) of the
+     * vehicle model, such as `S`, `SV`, `SL` and others.
+     * </pre>
+     *
+     * <code>string trim = 149;</code>
+     *
+     * @param value The bytes for trim to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrimBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      trim_ = value;
+      bitField3_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int bodyStyle_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [body style](https://support.google.com/google-ads/answer/14157085) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for bodyStyle.
+     */
+    @java.lang.Override
+    public int getBodyStyleValue() {
+      return bodyStyle_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [body style](https://support.google.com/google-ads/answer/14157085) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for bodyStyle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBodyStyleValue(int value) {
+      bodyStyle_ = value;
+      bitField3_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [body style](https://support.google.com/google-ads/answer/14157085) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+     * </code>
+     *
+     * @return The bodyStyle.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle
+        getBodyStyle() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle.forNumber(
+              bodyStyle_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [body style](https://support.google.com/google-ads/answer/14157085) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+     * </code>
+     *
+     * @param value The bodyStyle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBodyStyle(
+        com.google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField3_ |= 0x00000080;
+      bodyStyle_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [body style](https://support.google.com/google-ads/answer/14157085) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehicleBodyStyle body_style = 150;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBodyStyle() {
+      bitField3_ = (bitField3_ & ~0x00000080);
+      bodyStyle_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long year_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Year](https://support.google.com/google-ads/answer/14152816) of the
+     * vehicle model.
+     * </pre>
+     *
+     * <code>int64 year = 151;</code>
+     *
+     * @return The year.
+     */
+    @java.lang.Override
+    public long getYear() {
+      return year_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Year](https://support.google.com/google-ads/answer/14152816) of the
+     * vehicle model.
+     * </pre>
+     *
+     * <code>int64 year = 151;</code>
+     *
+     * @param value The year to set.
+     * @return This builder for chaining.
+     */
+    public Builder setYear(long value) {
+
+      year_ = value;
+      bitField3_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Year](https://support.google.com/google-ads/answer/14152816) of the
+     * vehicle model.
+     * </pre>
+     *
+     * <code>int64 year = 151;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearYear() {
+      bitField3_ = (bitField3_ & ~0x00000100);
+      year_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        mileageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     *
+     * @return Whether the mileage field is set.
+     */
+    public boolean hasMileage() {
+      return ((bitField3_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     *
+     * @return The mileage.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getMileage() {
+      if (mileageBuilder_ == null) {
+        return mileage_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : mileage_;
+      } else {
+        return mileageBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public Builder setMileage(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (mileageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mileage_ = value;
+      } else {
+        mileageBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public Builder setMileage(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+            builderForValue) {
+      if (mileageBuilder_ == null) {
+        mileage_ = builderForValue.build();
+      } else {
+        mileageBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public Builder mergeMileage(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (mileageBuilder_ == null) {
+        if (((bitField3_ & 0x00000200) != 0)
+            && mileage_ != null
+            && mileage_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                    .getDefaultInstance()) {
+          getMileageBuilder().mergeFrom(value);
+        } else {
+          mileage_ = value;
+        }
+      } else {
+        mileageBuilder_.mergeFrom(value);
+      }
+      if (mileage_ != null) {
+        bitField3_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public Builder clearMileage() {
+      bitField3_ = (bitField3_ & ~0x00000200);
+      mileage_ = null;
+      if (mileageBuilder_ != null) {
+        mileageBuilder_.dispose();
+        mileageBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+        getMileageBuilder() {
+      bitField3_ |= 0x00000200;
+      onChanged();
+      return internalGetMileageFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+        getMileageOrBuilder() {
+      if (mileageBuilder_ != null) {
+        return mileageBuilder_.getMessageOrBuilder();
+      } else {
+        return mileage_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : mileage_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of miles/kms on the vehicle. See the
+     * [Mileage](https://support.google.com/google-ads/answer/14156166) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage mileage = 152;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        internalGetMileageFieldBuilder() {
+      if (mileageBuilder_ == null) {
+        mileageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>(
+                getMileage(), getParentForChildren(), isClean());
+        mileage_ = null;
+      }
+      return mileageBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Mileage electricRange_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        electricRangeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     *
+     * @return Whether the electricRange field is set.
+     */
+    public boolean hasElectricRange() {
+      return ((bitField3_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     *
+     * @return The electricRange.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage getElectricRange() {
+      if (electricRangeBuilder_ == null) {
+        return electricRange_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : electricRange_;
+      } else {
+        return electricRangeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public Builder setElectricRange(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (electricRangeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        electricRange_ = value;
+      } else {
+        electricRangeBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public Builder setElectricRange(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+            builderForValue) {
+      if (electricRangeBuilder_ == null) {
+        electricRange_ = builderForValue.build();
+      } else {
+        electricRangeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public Builder mergeElectricRange(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Mileage value) {
+      if (electricRangeBuilder_ == null) {
+        if (((bitField3_ & 0x00000400) != 0)
+            && electricRange_ != null
+            && electricRange_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                    .getDefaultInstance()) {
+          getElectricRangeBuilder().mergeFrom(value);
+        } else {
+          electricRange_ = value;
+        }
+      } else {
+        electricRangeBuilder_.mergeFrom(value);
+      }
+      if (electricRange_ != null) {
+        bitField3_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public Builder clearElectricRange() {
+      bitField3_ = (bitField3_ & ~0x00000400);
+      electricRange_ = null;
+      if (electricRangeBuilder_ != null) {
+        electricRangeBuilder_.dispose();
+        electricRangeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder
+        getElectricRangeBuilder() {
+      bitField3_ |= 0x00000400;
+      onChanged();
+      return internalGetElectricRangeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder
+        getElectricRangeOrBuilder() {
+      if (electricRangeBuilder_ != null) {
+        return electricRangeBuilder_.getMessageOrBuilder();
+      } else {
+        return electricRange_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Mileage
+                .getDefaultInstance()
+            : electricRange_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [electric range](https://support.google.com/google-ads/answer/15162232)
+     * of the vehicle in miles/kms.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Mileage electric_range = 153;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>
+        internalGetElectricRangeFieldBuilder() {
+      if (electricRangeBuilder_ == null) {
+        electricRangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.MileageOrBuilder>(
+                getElectricRange(), getParentForChildren(), isClean());
+        electricRange_ = null;
+      }
+      return electricRangeBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        fuelConsumption_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder>
+        fuelConsumptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     *
+     * @return Whether the fuelConsumption field is set.
+     */
+    public boolean hasFuelConsumption() {
+      return ((bitField3_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     *
+     * @return The fuelConsumption.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        getFuelConsumption() {
+      if (fuelConsumptionBuilder_ == null) {
+        return fuelConsumption_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                .getDefaultInstance()
+            : fuelConsumption_;
+      } else {
+        return fuelConsumptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public Builder setFuelConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption value) {
+      if (fuelConsumptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fuelConsumption_ = value;
+      } else {
+        fuelConsumptionBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public Builder setFuelConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+            builderForValue) {
+      if (fuelConsumptionBuilder_ == null) {
+        fuelConsumption_ = builderForValue.build();
+      } else {
+        fuelConsumptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public Builder mergeFuelConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption value) {
+      if (fuelConsumptionBuilder_ == null) {
+        if (((bitField3_ & 0x00000800) != 0)
+            && fuelConsumption_ != null
+            && fuelConsumption_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                    .getDefaultInstance()) {
+          getFuelConsumptionBuilder().mergeFrom(value);
+        } else {
+          fuelConsumption_ = value;
+        }
+      } else {
+        fuelConsumptionBuilder_.mergeFrom(value);
+      }
+      if (fuelConsumption_ != null) {
+        bitField3_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public Builder clearFuelConsumption() {
+      bitField3_ = (bitField3_ & ~0x00000800);
+      fuelConsumption_ = null;
+      if (fuelConsumptionBuilder_ != null) {
+        fuelConsumptionBuilder_.dispose();
+        fuelConsumptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+        getFuelConsumptionBuilder() {
+      bitField3_ |= 0x00000800;
+      onChanged();
+      return internalGetFuelConsumptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+        getFuelConsumptionOrBuilder() {
+      if (fuelConsumptionBuilder_ != null) {
+        return fuelConsumptionBuilder_.getMessageOrBuilder();
+      } else {
+        return fuelConsumption_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                .getDefaultInstance()
+            : fuelConsumption_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [fuel
+     * consumption](https://support.google.com/google-ads/answer/14543580) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption = 154;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder>
+        internalGetFuelConsumptionFieldBuilder() {
+      if (fuelConsumptionBuilder_ == null) {
+        fuelConsumptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .FuelConsumptionOrBuilder>(
+                getFuelConsumption(), getParentForChildren(), isClean());
+        fuelConsumption_ = null;
+      }
+      return fuelConsumptionBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        fuelConsumptionDischargedBattery_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder>
+        fuelConsumptionDischargedBatteryBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     *
+     * @return Whether the fuelConsumptionDischargedBattery field is set.
+     */
+    public boolean hasFuelConsumptionDischargedBattery() {
+      return ((bitField3_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     *
+     * @return The fuelConsumptionDischargedBattery.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+        getFuelConsumptionDischargedBattery() {
+      if (fuelConsumptionDischargedBatteryBuilder_ == null) {
+        return fuelConsumptionDischargedBattery_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                .getDefaultInstance()
+            : fuelConsumptionDischargedBattery_;
+      } else {
+        return fuelConsumptionDischargedBatteryBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public Builder setFuelConsumptionDischargedBattery(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption value) {
+      if (fuelConsumptionDischargedBatteryBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fuelConsumptionDischargedBattery_ = value;
+      } else {
+        fuelConsumptionDischargedBatteryBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public Builder setFuelConsumptionDischargedBattery(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+            builderForValue) {
+      if (fuelConsumptionDischargedBatteryBuilder_ == null) {
+        fuelConsumptionDischargedBattery_ = builderForValue.build();
+      } else {
+        fuelConsumptionDischargedBatteryBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public Builder mergeFuelConsumptionDischargedBattery(
+        com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption value) {
+      if (fuelConsumptionDischargedBatteryBuilder_ == null) {
+        if (((bitField3_ & 0x00001000) != 0)
+            && fuelConsumptionDischargedBattery_ != null
+            && fuelConsumptionDischargedBattery_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                    .getDefaultInstance()) {
+          getFuelConsumptionDischargedBatteryBuilder().mergeFrom(value);
+        } else {
+          fuelConsumptionDischargedBattery_ = value;
+        }
+      } else {
+        fuelConsumptionDischargedBatteryBuilder_.mergeFrom(value);
+      }
+      if (fuelConsumptionDischargedBattery_ != null) {
+        bitField3_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public Builder clearFuelConsumptionDischargedBattery() {
+      bitField3_ = (bitField3_ & ~0x00001000);
+      fuelConsumptionDischargedBattery_ = null;
+      if (fuelConsumptionDischargedBatteryBuilder_ != null) {
+        fuelConsumptionDischargedBatteryBuilder_.dispose();
+        fuelConsumptionDischargedBatteryBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder
+        getFuelConsumptionDischargedBatteryBuilder() {
+      bitField3_ |= 0x00001000;
+      onChanged();
+      return internalGetFuelConsumptionDischargedBatteryFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder
+        getFuelConsumptionDischargedBatteryOrBuilder() {
+      if (fuelConsumptionDischargedBatteryBuilder_ != null) {
+        return fuelConsumptionDischargedBatteryBuilder_.getMessageOrBuilder();
+      } else {
+        return fuelConsumptionDischargedBattery_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption
+                .getDefaultInstance()
+            : fuelConsumptionDischargedBattery_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The fuel consumption of the vehicle when the hybrid battery is discharged.
+     * See the [Help Center
+     * article](https://support.google.com/google-ads/answer/15162033) for more
+     * information.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption fuel_consumption_discharged_battery = 155;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumptionOrBuilder>
+        internalGetFuelConsumptionDischargedBatteryFieldBuilder() {
+      if (fuelConsumptionDischargedBatteryBuilder_ == null) {
+        fuelConsumptionDischargedBatteryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption,
+                com.google.shopping.merchant.products.v1.ProductAttributes.FuelConsumption.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .FuelConsumptionOrBuilder>(
+                getFuelConsumptionDischargedBattery(), getParentForChildren(), isClean());
+        fuelConsumptionDischargedBattery_ = null;
+      }
+      return fuelConsumptionDischargedBatteryBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        energyConsumption_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder>
+        energyConsumptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     *
+     * @return Whether the energyConsumption field is set.
+     */
+    public boolean hasEnergyConsumption() {
+      return ((bitField3_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     *
+     * @return The energyConsumption.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+        getEnergyConsumption() {
+      if (energyConsumptionBuilder_ == null) {
+        return energyConsumption_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+                .getDefaultInstance()
+            : energyConsumption_;
+      } else {
+        return energyConsumptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public Builder setEnergyConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption value) {
+      if (energyConsumptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        energyConsumption_ = value;
+      } else {
+        energyConsumptionBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public Builder setEnergyConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder
+            builderForValue) {
+      if (energyConsumptionBuilder_ == null) {
+        energyConsumption_ = builderForValue.build();
+      } else {
+        energyConsumptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public Builder mergeEnergyConsumption(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption value) {
+      if (energyConsumptionBuilder_ == null) {
+        if (((bitField3_ & 0x00002000) != 0)
+            && energyConsumption_ != null
+            && energyConsumption_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+                    .getDefaultInstance()) {
+          getEnergyConsumptionBuilder().mergeFrom(value);
+        } else {
+          energyConsumption_ = value;
+        }
+      } else {
+        energyConsumptionBuilder_.mergeFrom(value);
+      }
+      if (energyConsumption_ != null) {
+        bitField3_ |= 0x00002000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public Builder clearEnergyConsumption() {
+      bitField3_ = (bitField3_ & ~0x00002000);
+      energyConsumption_ = null;
+      if (energyConsumptionBuilder_ != null) {
+        energyConsumptionBuilder_.dispose();
+        energyConsumptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder
+        getEnergyConsumptionBuilder() {
+      bitField3_ |= 0x00002000;
+      onChanged();
+      return internalGetEnergyConsumptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder
+        getEnergyConsumptionOrBuilder() {
+      if (energyConsumptionBuilder_ != null) {
+        return energyConsumptionBuilder_.getMessageOrBuilder();
+      } else {
+        return energyConsumption_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+                .getDefaultInstance()
+            : energyConsumption_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [energy
+     * consumption](https://support.google.com/google-ads/answer/14546149) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption energy_consumption = 156;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumptionOrBuilder>
+        internalGetEnergyConsumptionFieldBuilder() {
+      if (energyConsumptionBuilder_ == null) {
+        energyConsumptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption,
+                com.google.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption
+                    .Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .EnergyConsumptionOrBuilder>(
+                getEnergyConsumption(), getParentForChildren(), isClean());
+        energyConsumption_ = null;
+      }
+      return energyConsumptionBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2Emissions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder>
+        co2EmissionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     *
+     * @return Whether the co2Emissions field is set.
+     */
+    public boolean hasCo2Emissions() {
+      return ((bitField3_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     *
+     * @return The co2Emissions.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+        getCo2Emissions() {
+      if (co2EmissionsBuilder_ == null) {
+        return co2Emissions_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+                .getDefaultInstance()
+            : co2Emissions_;
+      } else {
+        return co2EmissionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public Builder setCo2Emissions(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions value) {
+      if (co2EmissionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        co2Emissions_ = value;
+      } else {
+        co2EmissionsBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public Builder setCo2Emissions(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder
+            builderForValue) {
+      if (co2EmissionsBuilder_ == null) {
+        co2Emissions_ = builderForValue.build();
+      } else {
+        co2EmissionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public Builder mergeCo2Emissions(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions value) {
+      if (co2EmissionsBuilder_ == null) {
+        if (((bitField3_ & 0x00004000) != 0)
+            && co2Emissions_ != null
+            && co2Emissions_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+                    .getDefaultInstance()) {
+          getCo2EmissionsBuilder().mergeFrom(value);
+        } else {
+          co2Emissions_ = value;
+        }
+      } else {
+        co2EmissionsBuilder_.mergeFrom(value);
+      }
+      if (co2Emissions_ != null) {
+        bitField3_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public Builder clearCo2Emissions() {
+      bitField3_ = (bitField3_ & ~0x00004000);
+      co2Emissions_ = null;
+      if (co2EmissionsBuilder_ != null) {
+        co2EmissionsBuilder_.dispose();
+        co2EmissionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder
+        getCo2EmissionsBuilder() {
+      bitField3_ |= 0x00004000;
+      onChanged();
+      return internalGetCo2EmissionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder
+        getCo2EmissionsOrBuilder() {
+      if (co2EmissionsBuilder_ != null) {
+        return co2EmissionsBuilder_.getMessageOrBuilder();
+      } else {
+        return co2Emissions_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions
+                .getDefaultInstance()
+            : co2Emissions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [co2 emission](https://support.google.com/google-ads/answer/14546146)
+     * of the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions co2_emissions = 157;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder>
+        internalGetCo2EmissionsFieldBuilder() {
+      if (co2EmissionsBuilder_ == null) {
+        co2EmissionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Co2Emissions.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Co2EmissionsOrBuilder>(
+                getCo2Emissions(), getParentForChildren(), isClean());
+        co2Emissions_ = null;
+      }
+      return co2EmissionsBuilder_;
+    }
+
+    private java.lang.Object dateFirstRegistered_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+     * [Date first
+     * registered](https://support.google.com/google-ads/answer/14546138) for more
+     * information.
+     * </pre>
+     *
+     * <code>string date_first_registered = 158;</code>
+     *
+     * @return The dateFirstRegistered.
+     */
+    public java.lang.String getDateFirstRegistered() {
+      java.lang.Object ref = dateFirstRegistered_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dateFirstRegistered_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+     * [Date first
+     * registered](https://support.google.com/google-ads/answer/14546138) for more
+     * information.
+     * </pre>
+     *
+     * <code>string date_first_registered = 158;</code>
+     *
+     * @return The bytes for dateFirstRegistered.
+     */
+    public com.google.protobuf.ByteString getDateFirstRegisteredBytes() {
+      java.lang.Object ref = dateFirstRegistered_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dateFirstRegistered_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+     * [Date first
+     * registered](https://support.google.com/google-ads/answer/14546138) for more
+     * information.
+     * </pre>
+     *
+     * <code>string date_first_registered = 158;</code>
+     *
+     * @param value The dateFirstRegistered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDateFirstRegistered(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dateFirstRegistered_ = value;
+      bitField3_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+     * [Date first
+     * registered](https://support.google.com/google-ads/answer/14546138) for more
+     * information.
+     * </pre>
+     *
+     * <code>string date_first_registered = 158;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDateFirstRegistered() {
+      dateFirstRegistered_ = getDefaultInstance().getDateFirstRegistered();
+      bitField3_ = (bitField3_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The date the vehicle was first registered. Format: `YYYY-MM`. See the
+     * [Date first
+     * registered](https://support.google.com/google-ads/answer/14546138) for more
+     * information.
+     * </pre>
+     *
+     * <code>string date_first_registered = 158;</code>
+     *
+     * @param value The bytes for dateFirstRegistered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDateFirstRegisteredBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dateFirstRegistered_ = value;
+      bitField3_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private int engine_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+     *
+     * @return The enum numeric value on the wire for engine.
+     */
+    @java.lang.Override
+    public int getEngineValue() {
+      return engine_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+     *
+     * @param value The enum numeric value on the wire for engine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEngineValue(int value) {
+      engine_ = value;
+      bitField3_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+     *
+     * @return The engine.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EngineType getEngine() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.EngineType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.EngineType.forNumber(engine_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.EngineType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+     *
+     * @param value The engine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEngine(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EngineType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField3_ |= 0x00010000;
+      engine_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [engine](https://support.google.com/google-ads/answer/14156068) type of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.EngineType engine = 159;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEngine() {
+      bitField3_ = (bitField3_ & ~0x00010000);
+      engine_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int emissionsStandard_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [emission
+     * standard](https://support.google.com/google-ads/answer/14869021) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for emissionsStandard.
+     */
+    @java.lang.Override
+    public int getEmissionsStandardValue() {
+      return emissionsStandard_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [emission
+     * standard](https://support.google.com/google-ads/answer/14869021) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for emissionsStandard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmissionsStandardValue(int value) {
+      emissionsStandard_ = value;
+      bitField3_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [emission
+     * standard](https://support.google.com/google-ads/answer/14869021) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+     * </code>
+     *
+     * @return The emissionsStandard.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+        getEmissionsStandard() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard.forNumber(
+              emissionsStandard_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [emission
+     * standard](https://support.google.com/google-ads/answer/14869021) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+     * </code>
+     *
+     * @param value The emissionsStandard to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEmissionsStandard(
+        com.google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField3_ |= 0x00020000;
+      emissionsStandard_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [emission
+     * standard](https://support.google.com/google-ads/answer/14869021) of the
+     * vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.EmissionsStandard emissions_standard = 160;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEmissionsStandard() {
+      bitField3_ = (bitField3_ & ~0x00020000);
+      emissionsStandard_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean certifiedPreOwned_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is OEM [certified
+     * pre-owned](https://support.google.com/google-ads/answer/14156475).
+     * </pre>
+     *
+     * <code>bool certified_pre_owned = 161;</code>
+     *
+     * @return The certifiedPreOwned.
+     */
+    @java.lang.Override
+    public boolean getCertifiedPreOwned() {
+      return certifiedPreOwned_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is OEM [certified
+     * pre-owned](https://support.google.com/google-ads/answer/14156475).
+     * </pre>
+     *
+     * <code>bool certified_pre_owned = 161;</code>
+     *
+     * @param value The certifiedPreOwned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCertifiedPreOwned(boolean value) {
+
+      certifiedPreOwned_ = value;
+      bitField3_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is OEM [certified
+     * pre-owned](https://support.google.com/google-ads/answer/14156475).
+     * </pre>
+     *
+     * <code>bool certified_pre_owned = 161;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCertifiedPreOwned() {
+      bitField3_ = (bitField3_ & ~0x00040000);
+      certifiedPreOwned_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.shopping.type.Price vehicleMsrp_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        vehicleMsrpBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     *
+     * @return Whether the vehicleMsrp field is set.
+     */
+    public boolean hasVehicleMsrp() {
+      return ((bitField3_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     *
+     * @return The vehicleMsrp.
+     */
+    public com.google.shopping.type.Price getVehicleMsrp() {
+      if (vehicleMsrpBuilder_ == null) {
+        return vehicleMsrp_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleMsrp_;
+      } else {
+        return vehicleMsrpBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public Builder setVehicleMsrp(com.google.shopping.type.Price value) {
+      if (vehicleMsrpBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vehicleMsrp_ = value;
+      } else {
+        vehicleMsrpBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public Builder setVehicleMsrp(com.google.shopping.type.Price.Builder builderForValue) {
+      if (vehicleMsrpBuilder_ == null) {
+        vehicleMsrp_ = builderForValue.build();
+      } else {
+        vehicleMsrpBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public Builder mergeVehicleMsrp(com.google.shopping.type.Price value) {
+      if (vehicleMsrpBuilder_ == null) {
+        if (((bitField3_ & 0x00080000) != 0)
+            && vehicleMsrp_ != null
+            && vehicleMsrp_ != com.google.shopping.type.Price.getDefaultInstance()) {
+          getVehicleMsrpBuilder().mergeFrom(value);
+        } else {
+          vehicleMsrp_ = value;
+        }
+      } else {
+        vehicleMsrpBuilder_.mergeFrom(value);
+      }
+      if (vehicleMsrp_ != null) {
+        bitField3_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public Builder clearVehicleMsrp() {
+      bitField3_ = (bitField3_ & ~0x00080000);
+      vehicleMsrp_ = null;
+      if (vehicleMsrpBuilder_ != null) {
+        vehicleMsrpBuilder_.dispose();
+        vehicleMsrpBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public com.google.shopping.type.Price.Builder getVehicleMsrpBuilder() {
+      bitField3_ |= 0x00080000;
+      onChanged();
+      return internalGetVehicleMsrpFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    public com.google.shopping.type.PriceOrBuilder getVehicleMsrpOrBuilder() {
+      if (vehicleMsrpBuilder_ != null) {
+        return vehicleMsrpBuilder_.getMessageOrBuilder();
+      } else {
+        return vehicleMsrp_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleMsrp_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The MSRP (Manufacturer Suggested Retail Price) for the vehicle in its
+     * current configuration. See the [Vehicle
+     * MSRP](https://support.google.com/google-ads/answer/14154171) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_msrp = 162;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        internalGetVehicleMsrpFieldBuilder() {
+      if (vehicleMsrpBuilder_ == null) {
+        vehicleMsrpBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.type.Price,
+                com.google.shopping.type.Price.Builder,
+                com.google.shopping.type.PriceOrBuilder>(
+                getVehicleMsrp(), getParentForChildren(), isClean());
+        vehicleMsrp_ = null;
+      }
+      return vehicleMsrpBuilder_;
+    }
+
+    private com.google.shopping.type.Price vehicleAllInPrice_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        vehicleAllInPriceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     *
+     * @return Whether the vehicleAllInPrice field is set.
+     */
+    public boolean hasVehicleAllInPrice() {
+      return ((bitField3_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     *
+     * @return The vehicleAllInPrice.
+     */
+    public com.google.shopping.type.Price getVehicleAllInPrice() {
+      if (vehicleAllInPriceBuilder_ == null) {
+        return vehicleAllInPrice_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleAllInPrice_;
+      } else {
+        return vehicleAllInPriceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public Builder setVehicleAllInPrice(com.google.shopping.type.Price value) {
+      if (vehicleAllInPriceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vehicleAllInPrice_ = value;
+      } else {
+        vehicleAllInPriceBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public Builder setVehicleAllInPrice(com.google.shopping.type.Price.Builder builderForValue) {
+      if (vehicleAllInPriceBuilder_ == null) {
+        vehicleAllInPrice_ = builderForValue.build();
+      } else {
+        vehicleAllInPriceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public Builder mergeVehicleAllInPrice(com.google.shopping.type.Price value) {
+      if (vehicleAllInPriceBuilder_ == null) {
+        if (((bitField3_ & 0x00100000) != 0)
+            && vehicleAllInPrice_ != null
+            && vehicleAllInPrice_ != com.google.shopping.type.Price.getDefaultInstance()) {
+          getVehicleAllInPriceBuilder().mergeFrom(value);
+        } else {
+          vehicleAllInPrice_ = value;
+        }
+      } else {
+        vehicleAllInPriceBuilder_.mergeFrom(value);
+      }
+      if (vehicleAllInPrice_ != null) {
+        bitField3_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public Builder clearVehicleAllInPrice() {
+      bitField3_ = (bitField3_ & ~0x00100000);
+      vehicleAllInPrice_ = null;
+      if (vehicleAllInPriceBuilder_ != null) {
+        vehicleAllInPriceBuilder_.dispose();
+        vehicleAllInPriceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public com.google.shopping.type.Price.Builder getVehicleAllInPriceBuilder() {
+      bitField3_ |= 0x00100000;
+      onChanged();
+      return internalGetVehicleAllInPriceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    public com.google.shopping.type.PriceOrBuilder getVehicleAllInPriceOrBuilder() {
+      if (vehicleAllInPriceBuilder_ != null) {
+        return vehicleAllInPriceBuilder_.getMessageOrBuilder();
+      } else {
+        return vehicleAllInPrice_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleAllInPrice_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The all-in advertised price for a vehicle, which includes costs for the
+     * following – any accessories attached to the vehicle, environmental levies,
+     * extra warranty, fuel, freight, pre-delivery inspection (PDI), dealer fees
+     * for handling licensing, provincial regulatory fees, miscellaneous dealer
+     * charges for security etching and nitrogen tire fill, and
+     * factory-to-customer or dealer-to-customer discounts or incentives. See the
+     * [Vehicle all-in
+     * price](https://support.google.com/google-ads/answer/14156981) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_all_in_price = 163;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        internalGetVehicleAllInPriceFieldBuilder() {
+      if (vehicleAllInPriceBuilder_ == null) {
+        vehicleAllInPriceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.type.Price,
+                com.google.shopping.type.Price.Builder,
+                com.google.shopping.type.PriceOrBuilder>(
+                getVehicleAllInPrice(), getParentForChildren(), isClean());
+        vehicleAllInPrice_ = null;
+      }
+      return vehicleAllInPriceBuilder_;
+    }
+
+    private int vehiclePriceType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [price type](https://support.google.com/google-ads/answer/14592783) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for vehiclePriceType.
+     */
+    @java.lang.Override
+    public int getVehiclePriceTypeValue() {
+      return vehiclePriceType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [price type](https://support.google.com/google-ads/answer/14592783) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for vehiclePriceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVehiclePriceTypeValue(int value) {
+      vehiclePriceType_ = value;
+      bitField3_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [price type](https://support.google.com/google-ads/answer/14592783) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+     * </code>
+     *
+     * @return The vehiclePriceType.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType
+        getVehiclePriceType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType.forNumber(
+              vehiclePriceType_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [price type](https://support.google.com/google-ads/answer/14592783) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+     * </code>
+     *
+     * @param value The vehiclePriceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVehiclePriceType(
+        com.google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField3_ |= 0x00200000;
+      vehiclePriceType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [price type](https://support.google.com/google-ads/answer/14592783) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.VehiclePriceType vehicle_price_type = 164;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVehiclePriceType() {
+      bitField3_ = (bitField3_ & ~0x00200000);
+      vehiclePriceType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean vehicleMandatoryInspectionIncluded_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is sold with mandatory inspection and maintenance
+     * performed before delivery. See the [Vehicle mandatory inspection
+     * included](https://support.google.com/google-ads/answer/15956630) for more
+     * information.`
+     * </pre>
+     *
+     * <code>bool vehicle_mandatory_inspection_included = 166;</code>
+     *
+     * @return The vehicleMandatoryInspectionIncluded.
+     */
+    @java.lang.Override
+    public boolean getVehicleMandatoryInspectionIncluded() {
+      return vehicleMandatoryInspectionIncluded_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is sold with mandatory inspection and maintenance
+     * performed before delivery. See the [Vehicle mandatory inspection
+     * included](https://support.google.com/google-ads/answer/15956630) for more
+     * information.`
+     * </pre>
+     *
+     * <code>bool vehicle_mandatory_inspection_included = 166;</code>
+     *
+     * @param value The vehicleMandatoryInspectionIncluded to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVehicleMandatoryInspectionIncluded(boolean value) {
+
+      vehicleMandatoryInspectionIncluded_ = value;
+      bitField3_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether the vehicle is sold with mandatory inspection and maintenance
+     * performed before delivery. See the [Vehicle mandatory inspection
+     * included](https://support.google.com/google-ads/answer/15956630) for more
+     * information.`
+     * </pre>
+     *
+     * <code>bool vehicle_mandatory_inspection_included = 166;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVehicleMandatoryInspectionIncluded() {
+      bitField3_ = (bitField3_ & ~0x00400000);
+      vehicleMandatoryInspectionIncluded_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.shopping.type.Price vehicleExpenses_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        vehicleExpensesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     *
+     * @return Whether the vehicleExpenses field is set.
+     */
+    public boolean hasVehicleExpenses() {
+      return ((bitField3_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     *
+     * @return The vehicleExpenses.
+     */
+    public com.google.shopping.type.Price getVehicleExpenses() {
+      if (vehicleExpensesBuilder_ == null) {
+        return vehicleExpenses_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleExpenses_;
+      } else {
+        return vehicleExpensesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public Builder setVehicleExpenses(com.google.shopping.type.Price value) {
+      if (vehicleExpensesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vehicleExpenses_ = value;
+      } else {
+        vehicleExpensesBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public Builder setVehicleExpenses(com.google.shopping.type.Price.Builder builderForValue) {
+      if (vehicleExpensesBuilder_ == null) {
+        vehicleExpenses_ = builderForValue.build();
+      } else {
+        vehicleExpensesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public Builder mergeVehicleExpenses(com.google.shopping.type.Price value) {
+      if (vehicleExpensesBuilder_ == null) {
+        if (((bitField3_ & 0x00800000) != 0)
+            && vehicleExpenses_ != null
+            && vehicleExpenses_ != com.google.shopping.type.Price.getDefaultInstance()) {
+          getVehicleExpensesBuilder().mergeFrom(value);
+        } else {
+          vehicleExpenses_ = value;
+        }
+      } else {
+        vehicleExpensesBuilder_.mergeFrom(value);
+      }
+      if (vehicleExpenses_ != null) {
+        bitField3_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public Builder clearVehicleExpenses() {
+      bitField3_ = (bitField3_ & ~0x00800000);
+      vehicleExpenses_ = null;
+      if (vehicleExpensesBuilder_ != null) {
+        vehicleExpensesBuilder_.dispose();
+        vehicleExpensesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public com.google.shopping.type.Price.Builder getVehicleExpensesBuilder() {
+      bitField3_ |= 0x00800000;
+      onChanged();
+      return internalGetVehicleExpensesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    public com.google.shopping.type.PriceOrBuilder getVehicleExpensesOrBuilder() {
+      if (vehicleExpensesBuilder_ != null) {
+        return vehicleExpensesBuilder_.getMessageOrBuilder();
+      } else {
+        return vehicleExpenses_ == null
+            ? com.google.shopping.type.Price.getDefaultInstance()
+            : vehicleExpenses_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The miscellaneous expenses like insurance and registration fees of the
+     * vehicle. See the [Vehicle
+     * expenses](https://support.google.com/google-ads/answer/15957154) for more
+     * information.
+     * </pre>
+     *
+     * <code>.google.shopping.type.Price vehicle_expenses = 167;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.type.Price,
+            com.google.shopping.type.Price.Builder,
+            com.google.shopping.type.PriceOrBuilder>
+        internalGetVehicleExpensesFieldBuilder() {
+      if (vehicleExpensesBuilder_ == null) {
+        vehicleExpensesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.type.Price,
+                com.google.shopping.type.Price.Builder,
+                com.google.shopping.type.PriceOrBuilder>(
+                getVehicleExpenses(), getParentForChildren(), isClean());
+        vehicleExpenses_ = null;
+      }
+      return vehicleExpensesBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Warranty,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder>
+        warrantyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     *
+     * @return Whether the warranty field is set.
+     */
+    public boolean hasWarranty() {
+      return ((bitField3_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     *
+     * @return The warranty.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty getWarranty() {
+      if (warrantyBuilder_ == null) {
+        return warranty_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+                .getDefaultInstance()
+            : warranty_;
+      } else {
+        return warrantyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public Builder setWarranty(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty value) {
+      if (warrantyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        warranty_ = value;
+      } else {
+        warrantyBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public Builder setWarranty(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder
+            builderForValue) {
+      if (warrantyBuilder_ == null) {
+        warranty_ = builderForValue.build();
+      } else {
+        warrantyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public Builder mergeWarranty(
+        com.google.shopping.merchant.products.v1.ProductAttributes.Warranty value) {
+      if (warrantyBuilder_ == null) {
+        if (((bitField3_ & 0x01000000) != 0)
+            && warranty_ != null
+            && warranty_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+                    .getDefaultInstance()) {
+          getWarrantyBuilder().mergeFrom(value);
+        } else {
+          warranty_ = value;
+        }
+      } else {
+        warrantyBuilder_.mergeFrom(value);
+      }
+      if (warranty_ != null) {
+        bitField3_ |= 0x01000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public Builder clearWarranty() {
+      bitField3_ = (bitField3_ & ~0x01000000);
+      warranty_ = null;
+      if (warrantyBuilder_ != null) {
+        warrantyBuilder_.dispose();
+        warrantyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder
+        getWarrantyBuilder() {
+      bitField3_ |= 0x01000000;
+      onChanged();
+      return internalGetWarrantyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder
+        getWarrantyOrBuilder() {
+      if (warrantyBuilder_ != null) {
+        return warrantyBuilder_.getMessageOrBuilder();
+      } else {
+        return warranty_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.Warranty
+                .getDefaultInstance()
+            : warranty_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [warranty](https://support.google.com/google-ads/answer/15957626) of
+     * the vehicle.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.Warranty warranty = 168;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.Warranty,
+            com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder>
+        internalGetWarrantyFieldBuilder() {
+      if (warrantyBuilder_ == null) {
+        warrantyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.Warranty,
+                com.google.shopping.merchant.products.v1.ProductAttributes.Warranty.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.WarrantyOrBuilder>(
+                getWarranty(), getParentForChildren(), isClean());
+        warranty_ = null;
+      }
+      return warrantyBuilder_;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        displayAddress_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress,
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder>
+        displayAddressBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     *
+     * @return Whether the displayAddress field is set.
+     */
+    public boolean hasDisplayAddress() {
+      return ((bitField3_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     *
+     * @return The displayAddress.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+        getDisplayAddress() {
+      if (displayAddressBuilder_ == null) {
+        return displayAddress_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+                .getDefaultInstance()
+            : displayAddress_;
+      } else {
+        return displayAddressBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public Builder setDisplayAddress(
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress value) {
+      if (displayAddressBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        displayAddress_ = value;
+      } else {
+        displayAddressBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public Builder setDisplayAddress(
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder
+            builderForValue) {
+      if (displayAddressBuilder_ == null) {
+        displayAddress_ = builderForValue.build();
+      } else {
+        displayAddressBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public Builder mergeDisplayAddress(
+        com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress value) {
+      if (displayAddressBuilder_ == null) {
+        if (((bitField3_ & 0x02000000) != 0)
+            && displayAddress_ != null
+            && displayAddress_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+                    .getDefaultInstance()) {
+          getDisplayAddressBuilder().mergeFrom(value);
+        } else {
+          displayAddress_ = value;
+        }
+      } else {
+        displayAddressBuilder_.mergeFrom(value);
+      }
+      if (displayAddress_ != null) {
+        bitField3_ |= 0x02000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public Builder clearDisplayAddress() {
+      bitField3_ = (bitField3_ & ~0x02000000);
+      displayAddress_ = null;
+      if (displayAddressBuilder_ != null) {
+        displayAddressBuilder_.dispose();
+        displayAddressBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder
+        getDisplayAddressBuilder() {
+      bitField3_ |= 0x02000000;
+      onChanged();
+      return internalGetDisplayAddressFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder
+        getDisplayAddressOrBuilder() {
+      if (displayAddressBuilder_ != null) {
+        return displayAddressBuilder_.getMessageOrBuilder();
+      } else {
+        return displayAddress_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress
+                .getDefaultInstance()
+            : displayAddress_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The display address of the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress display_address = 179;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress,
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder>
+        internalGetDisplayAddressFieldBuilder() {
+      if (displayAddressBuilder_ == null) {
+        displayAddressBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress,
+                com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddress.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.DisplayAddressOrBuilder>(
+                getDisplayAddress(), getParentForChildren(), isClean());
+        displayAddress_ = null;
+      }
+      return displayAddressBuilder_;
+    }
+
+    private double latitude_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The latitude of the property. The value must be between -90 (inclusive) and
+     * 90 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double latitude = 180;</code>
+     *
+     * @return Whether the latitude field is set.
+     */
+    @java.lang.Override
+    public boolean hasLatitude() {
+      return ((bitField3_ & 0x04000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The latitude of the property. The value must be between -90 (inclusive) and
+     * 90 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double latitude = 180;</code>
+     *
+     * @return The latitude.
+     */
+    @java.lang.Override
+    public double getLatitude() {
+      return latitude_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The latitude of the property. The value must be between -90 (inclusive) and
+     * 90 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double latitude = 180;</code>
+     *
+     * @param value The latitude to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLatitude(double value) {
+
+      latitude_ = value;
+      bitField3_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The latitude of the property. The value must be between -90 (inclusive) and
+     * 90 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double latitude = 180;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLatitude() {
+      bitField3_ = (bitField3_ & ~0x04000000);
+      latitude_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double longitude_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The longitude of the property. The value must be between -180 (inclusive)
+     * and 180 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double longitude = 181;</code>
+     *
+     * @return Whether the longitude field is set.
+     */
+    @java.lang.Override
+    public boolean hasLongitude() {
+      return ((bitField3_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The longitude of the property. The value must be between -180 (inclusive)
+     * and 180 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double longitude = 181;</code>
+     *
+     * @return The longitude.
+     */
+    @java.lang.Override
+    public double getLongitude() {
+      return longitude_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The longitude of the property. The value must be between -180 (inclusive)
+     * and 180 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double longitude = 181;</code>
+     *
+     * @param value The longitude to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLongitude(double value) {
+
+      longitude_ = value;
+      bitField3_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The longitude of the property. The value must be between -180 (inclusive)
+     * and 180 (inclusive), up to 6 decimal places.
+     * </pre>
+     *
+     * <code>optional double longitude = 181;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLongitude() {
+      bitField3_ = (bitField3_ & ~0x08000000);
+      longitude_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object neighborhood_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The neighborhood (locality) of the property, such as `Wallingford`,
+     * `Greenwood`, etc.
+     * </pre>
+     *
+     * <code>string neighborhood = 182;</code>
+     *
+     * @return The neighborhood.
+     */
+    public java.lang.String getNeighborhood() {
+      java.lang.Object ref = neighborhood_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        neighborhood_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The neighborhood (locality) of the property, such as `Wallingford`,
+     * `Greenwood`, etc.
+     * </pre>
+     *
+     * <code>string neighborhood = 182;</code>
+     *
+     * @return The bytes for neighborhood.
+     */
+    public com.google.protobuf.ByteString getNeighborhoodBytes() {
+      java.lang.Object ref = neighborhood_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        neighborhood_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The neighborhood (locality) of the property, such as `Wallingford`,
+     * `Greenwood`, etc.
+     * </pre>
+     *
+     * <code>string neighborhood = 182;</code>
+     *
+     * @param value The neighborhood to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNeighborhood(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      neighborhood_ = value;
+      bitField3_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The neighborhood (locality) of the property, such as `Wallingford`,
+     * `Greenwood`, etc.
+     * </pre>
+     *
+     * <code>string neighborhood = 182;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNeighborhood() {
+      neighborhood_ = getDefaultInstance().getNeighborhood();
+      bitField3_ = (bitField3_ & ~0x10000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The neighborhood (locality) of the property, such as `Wallingford`,
+     * `Greenwood`, etc.
+     * </pre>
+     *
+     * <code>string neighborhood = 182;</code>
+     *
+     * @param value The bytes for neighborhood to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNeighborhoodBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      neighborhood_ = value;
+      bitField3_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unitArea_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea,
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder>
+        unitAreaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     *
+     * @return Whether the unitArea field is set.
+     */
+    public boolean hasUnitArea() {
+      return ((bitField3_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     *
+     * @return The unitArea.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea getUnitArea() {
+      if (unitAreaBuilder_ == null) {
+        return unitArea_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+                .getDefaultInstance()
+            : unitArea_;
+      } else {
+        return unitAreaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public Builder setUnitArea(
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea value) {
+      if (unitAreaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unitArea_ = value;
+      } else {
+        unitAreaBuilder_.setMessage(value);
+      }
+      bitField3_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public Builder setUnitArea(
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder
+            builderForValue) {
+      if (unitAreaBuilder_ == null) {
+        unitArea_ = builderForValue.build();
+      } else {
+        unitAreaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField3_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public Builder mergeUnitArea(
+        com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea value) {
+      if (unitAreaBuilder_ == null) {
+        if (((bitField3_ & 0x20000000) != 0)
+            && unitArea_ != null
+            && unitArea_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+                    .getDefaultInstance()) {
+          getUnitAreaBuilder().mergeFrom(value);
+        } else {
+          unitArea_ = value;
+        }
+      } else {
+        unitAreaBuilder_.mergeFrom(value);
+      }
+      if (unitArea_ != null) {
+        bitField3_ |= 0x20000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public Builder clearUnitArea() {
+      bitField3_ = (bitField3_ & ~0x20000000);
+      unitArea_ = null;
+      if (unitAreaBuilder_ != null) {
+        unitAreaBuilder_.dispose();
+        unitAreaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder
+        getUnitAreaBuilder() {
+      bitField3_ |= 0x20000000;
+      onChanged();
+      return internalGetUnitAreaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder
+        getUnitAreaOrBuilder() {
+      if (unitAreaBuilder_ != null) {
+        return unitAreaBuilder_.getMessageOrBuilder();
+      } else {
+        return unitArea_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea
+                .getDefaultInstance()
+            : unitArea_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The unit area of the property, such as `1000 sqft`.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.UnitArea unit_area = 183;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea,
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder>
+        internalGetUnitAreaFieldBuilder() {
+      if (unitAreaBuilder_ == null) {
+        unitAreaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea,
+                com.google.shopping.merchant.products.v1.ProductAttributes.UnitArea.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.UnitAreaOrBuilder>(
+                getUnitArea(), getParentForChildren(), isClean());
+        unitArea_ = null;
+      }
+      return unitAreaBuilder_;
+    }
+
+    private long numberOfUnits_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of units available for a specific floor plan of the property.
+     * The value must be greater than 0.
+     * </pre>
+     *
+     * <code>optional int64 number_of_units = 184;</code>
+     *
+     * @return Whether the numberOfUnits field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumberOfUnits() {
+      return ((bitField3_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of units available for a specific floor plan of the property.
+     * The value must be greater than 0.
+     * </pre>
+     *
+     * <code>optional int64 number_of_units = 184;</code>
+     *
+     * @return The numberOfUnits.
+     */
+    @java.lang.Override
+    public long getNumberOfUnits() {
+      return numberOfUnits_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of units available for a specific floor plan of the property.
+     * The value must be greater than 0.
+     * </pre>
+     *
+     * <code>optional int64 number_of_units = 184;</code>
+     *
+     * @param value The numberOfUnits to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumberOfUnits(long value) {
+
+      numberOfUnits_ = value;
+      bitField3_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of units available for a specific floor plan of the property.
+     * The value must be greater than 0.
+     * </pre>
+     *
+     * <code>optional int64 number_of_units = 184;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNumberOfUnits() {
+      bitField3_ = (bitField3_ & ~0x40000000);
+      numberOfUnits_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object propertyName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the property.
+     * </pre>
+     *
+     * <code>string property_name = 185;</code>
+     *
+     * @return The propertyName.
+     */
+    public java.lang.String getPropertyName() {
+      java.lang.Object ref = propertyName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        propertyName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the property.
+     * </pre>
+     *
+     * <code>string property_name = 185;</code>
+     *
+     * @return The bytes for propertyName.
+     */
+    public com.google.protobuf.ByteString getPropertyNameBytes() {
+      java.lang.Object ref = propertyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        propertyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the property.
+     * </pre>
+     *
+     * <code>string property_name = 185;</code>
+     *
+     * @param value The propertyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      propertyName_ = value;
+      bitField3_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the property.
+     * </pre>
+     *
+     * <code>string property_name = 185;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropertyName() {
+      propertyName_ = getDefaultInstance().getPropertyName();
+      bitField3_ = (bitField3_ & ~0x80000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the property.
+     * </pre>
+     *
+     * <code>string property_name = 185;</code>
+     *
+     * @param value The bytes for propertyName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      propertyName_ = value;
+      bitField3_ |= 0x80000000;
+      onChanged();
+      return this;
+    }
+
+    private double numberOfBedrooms_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bedrooms in the property. The value must be greater than or
+     * equal to 0 and a multiple of 1.0.
+     * </pre>
+     *
+     * <code>optional double number_of_bedrooms = 186;</code>
+     *
+     * @return Whether the numberOfBedrooms field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumberOfBedrooms() {
+      return ((bitField4_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bedrooms in the property. The value must be greater than or
+     * equal to 0 and a multiple of 1.0.
+     * </pre>
+     *
+     * <code>optional double number_of_bedrooms = 186;</code>
+     *
+     * @return The numberOfBedrooms.
+     */
+    @java.lang.Override
+    public double getNumberOfBedrooms() {
+      return numberOfBedrooms_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bedrooms in the property. The value must be greater than or
+     * equal to 0 and a multiple of 1.0.
+     * </pre>
+     *
+     * <code>optional double number_of_bedrooms = 186;</code>
+     *
+     * @param value The numberOfBedrooms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumberOfBedrooms(double value) {
+
+      numberOfBedrooms_ = value;
+      bitField4_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bedrooms in the property. The value must be greater than or
+     * equal to 0 and a multiple of 1.0.
+     * </pre>
+     *
+     * <code>optional double number_of_bedrooms = 186;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNumberOfBedrooms() {
+      bitField4_ = (bitField4_ & ~0x00000001);
+      numberOfBedrooms_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private double numberOfBathrooms_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bathrooms in the property. The value must be greater than 0
+     * and a multiple of 0.5.
+     * </pre>
+     *
+     * <code>optional double number_of_bathrooms = 187;</code>
+     *
+     * @return Whether the numberOfBathrooms field is set.
+     */
+    @java.lang.Override
+    public boolean hasNumberOfBathrooms() {
+      return ((bitField4_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bathrooms in the property. The value must be greater than 0
+     * and a multiple of 0.5.
+     * </pre>
+     *
+     * <code>optional double number_of_bathrooms = 187;</code>
+     *
+     * @return The numberOfBathrooms.
+     */
+    @java.lang.Override
+    public double getNumberOfBathrooms() {
+      return numberOfBathrooms_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bathrooms in the property. The value must be greater than 0
+     * and a multiple of 0.5.
+     * </pre>
+     *
+     * <code>optional double number_of_bathrooms = 187;</code>
+     *
+     * @param value The numberOfBathrooms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNumberOfBathrooms(double value) {
+
+      numberOfBathrooms_ = value;
+      bitField4_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of bathrooms in the property. The value must be greater than 0
+     * and a multiple of 0.5.
+     * </pre>
+     *
+     * <code>optional double number_of_bathrooms = 187;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNumberOfBathrooms() {
+      bitField4_ = (bitField4_ & ~0x00000002);
+      numberOfBathrooms_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private int propertyType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for propertyType.
+     */
+    @java.lang.Override
+    public int getPropertyTypeValue() {
+      return propertyType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyTypeValue(int value) {
+      propertyType_ = value;
+      bitField4_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+     * </code>
+     *
+     * @return The propertyType.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType
+        getPropertyType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType.forNumber(
+              propertyType_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+     * </code>
+     *
+     * @param value The propertyType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPropertyType(
+        com.google.shopping.merchant.products.v1.ProductAttributes.PropertyType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField4_ |= 0x00000004;
+      propertyType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.PropertyType property_type = 188;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPropertyType() {
+      bitField4_ = (bitField4_ & ~0x00000004);
+      propertyType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList amenityFeature_ = emptyIntList();
+
+    private void ensureAmenityFeatureIsMutable() {
+      if (!amenityFeature_.isModifiable()) {
+        amenityFeature_ = makeMutableCopy(amenityFeature_);
+      }
+      bitField4_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @return A list containing the amenityFeature.
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>
+        getAmenityFeatureList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>(
+          amenityFeature_, amenityFeature_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @return The count of amenityFeature.
+     */
+    public int getAmenityFeatureCount() {
+      return amenityFeature_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The amenityFeature at the given index.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature
+        getAmenityFeature(int index) {
+      return amenityFeature_converter_.convert(amenityFeature_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The amenityFeature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAmenityFeature(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAmenityFeatureIsMutable();
+      amenityFeature_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param value The amenityFeature to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAmenityFeature(
+        com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAmenityFeatureIsMutable();
+      amenityFeature_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param values The amenityFeature to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAmenityFeature(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature>
+            values) {
+      ensureAmenityFeatureIsMutable();
+      for (com.google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature value :
+          values) {
+        amenityFeature_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAmenityFeature() {
+      amenityFeature_ = emptyIntList();
+      bitField4_ = (bitField4_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for amenityFeature.
+     */
+    public java.util.List<java.lang.Integer> getAmenityFeatureValueList() {
+      amenityFeature_.makeImmutable();
+      return amenityFeature_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of amenityFeature at the given index.
+     */
+    public int getAmenityFeatureValue(int index) {
+      return amenityFeature_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for amenityFeature to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAmenityFeatureValue(int index, int value) {
+      ensureAmenityFeatureIsMutable();
+      amenityFeature_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for amenityFeature to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAmenityFeatureValue(int value) {
+      ensureAmenityFeatureIsMutable();
+      amenityFeature_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The amenity features for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.AmenityFeature amenity_feature = 189;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for amenityFeature to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAmenityFeatureValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureAmenityFeatureIsMutable();
+      for (int value : values) {
+        amenityFeature_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList utilitiesIncluded_ = emptyIntList();
+
+    private void ensureUtilitiesIncludedIsMutable() {
+      if (!utilitiesIncluded_.isModifiable()) {
+        utilitiesIncluded_ = makeMutableCopy(utilitiesIncluded_);
+      }
+      bitField4_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @return A list containing the utilitiesIncluded.
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>
+        getUtilitiesIncludedList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>(
+          utilitiesIncluded_, utilitiesIncluded_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @return The count of utilitiesIncluded.
+     */
+    public int getUtilitiesIncludedCount() {
+      return utilitiesIncluded_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The utilitiesIncluded at the given index.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded
+        getUtilitiesIncluded(int index) {
+      return utilitiesIncluded_converter_.convert(utilitiesIncluded_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The utilitiesIncluded to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUtilitiesIncluded(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUtilitiesIncludedIsMutable();
+      utilitiesIncluded_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param value The utilitiesIncluded to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUtilitiesIncluded(
+        com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureUtilitiesIncludedIsMutable();
+      utilitiesIncluded_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param values The utilitiesIncluded to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUtilitiesIncluded(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded>
+            values) {
+      ensureUtilitiesIncludedIsMutable();
+      for (com.google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded value :
+          values) {
+        utilitiesIncluded_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUtilitiesIncluded() {
+      utilitiesIncluded_ = emptyIntList();
+      bitField4_ = (bitField4_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for utilitiesIncluded.
+     */
+    public java.util.List<java.lang.Integer> getUtilitiesIncludedValueList() {
+      utilitiesIncluded_.makeImmutable();
+      return utilitiesIncluded_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of utilitiesIncluded at the given index.
+     */
+    public int getUtilitiesIncludedValue(int index) {
+      return utilitiesIncluded_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for utilitiesIncluded to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUtilitiesIncludedValue(int index, int value) {
+      ensureUtilitiesIncludedIsMutable();
+      utilitiesIncluded_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for utilitiesIncluded to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUtilitiesIncludedValue(int value) {
+      ensureUtilitiesIncludedIsMutable();
+      utilitiesIncluded_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The utilities included for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded utilities_included = 190;
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for utilitiesIncluded to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUtilitiesIncludedValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureUtilitiesIncludedIsMutable();
+      for (int value : values) {
+        utilitiesIncluded_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy petPolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy,
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder>
+        petPolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     *
+     * @return Whether the petPolicy field is set.
+     */
+    public boolean hasPetPolicy() {
+      return ((bitField4_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     *
+     * @return The petPolicy.
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy getPetPolicy() {
+      if (petPolicyBuilder_ == null) {
+        return petPolicy_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+                .getDefaultInstance()
+            : petPolicy_;
+      } else {
+        return petPolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public Builder setPetPolicy(
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy value) {
+      if (petPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        petPolicy_ = value;
+      } else {
+        petPolicyBuilder_.setMessage(value);
+      }
+      bitField4_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public Builder setPetPolicy(
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder
+            builderForValue) {
+      if (petPolicyBuilder_ == null) {
+        petPolicy_ = builderForValue.build();
+      } else {
+        petPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField4_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public Builder mergePetPolicy(
+        com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy value) {
+      if (petPolicyBuilder_ == null) {
+        if (((bitField4_ & 0x00000020) != 0)
+            && petPolicy_ != null
+            && petPolicy_
+                != com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+                    .getDefaultInstance()) {
+          getPetPolicyBuilder().mergeFrom(value);
+        } else {
+          petPolicy_ = value;
+        }
+      } else {
+        petPolicyBuilder_.mergeFrom(value);
+      }
+      if (petPolicy_ != null) {
+        bitField4_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public Builder clearPetPolicy() {
+      bitField4_ = (bitField4_ & ~0x00000020);
+      petPolicy_ = null;
+      if (petPolicyBuilder_ != null) {
+        petPolicyBuilder_.dispose();
+        petPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder
+        getPetPolicyBuilder() {
+      bitField4_ |= 0x00000020;
+      onChanged();
+      return internalGetPetPolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder
+        getPetPolicyOrBuilder() {
+      if (petPolicyBuilder_ != null) {
+        return petPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return petPolicy_ == null
+            ? com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy
+                .getDefaultInstance()
+            : petPolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The pet policy for the property.
+     * </pre>
+     *
+     * <code>.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy pet_policy = 191;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy,
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder>
+        internalGetPetPolicyFieldBuilder() {
+      if (petPolicyBuilder_ == null) {
+        petPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy,
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicy.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.PetPolicyOrBuilder>(
+                getPetPolicy(), getParentForChildren(), isClean());
+        petPolicy_ = null;
+      }
+      return petPolicyBuilder_;
+    }
+
+    private int specialtyHousingType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The specialty housing type for the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for specialtyHousingType.
+     */
+    @java.lang.Override
+    public int getSpecialtyHousingTypeValue() {
+      return specialtyHousingType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specialty housing type for the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for specialtyHousingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecialtyHousingTypeValue(int value) {
+      specialtyHousingType_ = value;
+      bitField4_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specialty housing type for the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+     * </code>
+     *
+     * @return The specialtyHousingType.
+     */
+    @java.lang.Override
+    public com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+        getSpecialtyHousingType() {
+      com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType result =
+          com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType.forNumber(
+              specialtyHousingType_);
+      return result == null
+          ? com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specialty housing type for the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+     * </code>
+     *
+     * @param value The specialtyHousingType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSpecialtyHousingType(
+        com.google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField4_ |= 0x00000040;
+      specialtyHousingType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The specialty housing type for the property.
+     * </pre>
+     *
+     * <code>
+     * .google.shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType specialty_housing_type = 192;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSpecialtyHousingType() {
+      bitField4_ = (bitField4_ & ~0x00000040);
+      specialtyHousingType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+        productFee_ = java.util.Collections.emptyList();
+
+    private void ensureProductFeeIsMutable() {
+      if (!((bitField4_ & 0x00000080) != 0)) {
+        productFee_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>(productFee_);
+        bitField4_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee,
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>
+        productFeeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+        getProductFeeList() {
+      if (productFeeBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(productFee_);
+      } else {
+        return productFeeBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public int getProductFeeCount() {
+      if (productFeeBuilder_ == null) {
+        return productFee_.size();
+      } else {
+        return productFeeBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee getProductFee(
+        int index) {
+      if (productFeeBuilder_ == null) {
+        return productFee_.get(index);
+      } else {
+        return productFeeBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder setProductFee(
+        int index, com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee value) {
+      if (productFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeIsMutable();
+        productFee_.set(index, value);
+        onChanged();
+      } else {
+        productFeeBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder setProductFee(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+            builderForValue) {
+      if (productFeeBuilder_ == null) {
+        ensureProductFeeIsMutable();
+        productFee_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder addProductFee(
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee value) {
+      if (productFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeIsMutable();
+        productFee_.add(value);
+        onChanged();
+      } else {
+        productFeeBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder addProductFee(
+        int index, com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee value) {
+      if (productFeeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProductFeeIsMutable();
+        productFee_.add(index, value);
+        onChanged();
+      } else {
+        productFeeBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder addProductFee(
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+            builderForValue) {
+      if (productFeeBuilder_ == null) {
+        ensureProductFeeIsMutable();
+        productFee_.add(builderForValue.build());
+        onChanged();
+      } else {
+        productFeeBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder addProductFee(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+            builderForValue) {
+      if (productFeeBuilder_ == null) {
+        ensureProductFeeIsMutable();
+        productFee_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        productFeeBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder addAllProductFee(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee>
+            values) {
+      if (productFeeBuilder_ == null) {
+        ensureProductFeeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productFee_);
+        onChanged();
+      } else {
+        productFeeBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder clearProductFee() {
+      if (productFeeBuilder_ == null) {
+        productFee_ = java.util.Collections.emptyList();
+        bitField4_ = (bitField4_ & ~0x00000080);
+        onChanged();
+      } else {
+        productFeeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public Builder removeProductFee(int index) {
+      if (productFeeBuilder_ == null) {
+        ensureProductFeeIsMutable();
+        productFee_.remove(index);
+        onChanged();
+      } else {
+        productFeeBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+        getProductFeeBuilder(int index) {
+      return internalGetProductFeeFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder
+        getProductFeeOrBuilder(int index) {
+      if (productFeeBuilder_ == null) {
+        return productFee_.get(index);
+      } else {
+        return productFeeBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>
+        getProductFeeOrBuilderList() {
+      if (productFeeBuilder_ != null) {
+        return productFeeBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(productFee_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+        addProductFeeBuilder() {
+      return internalGetProductFeeFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder
+        addProductFeeBuilder(int index) {
+      return internalGetProductFeeFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The product fee for the property.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.ProductFee product_fee = 193;
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder>
+        getProductFeeBuilderList() {
+      return internalGetProductFeeFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee,
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>
+        internalGetProductFeeFieldBuilder() {
+      if (productFeeBuilder_ == null) {
+        productFeeBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee,
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFee.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.ProductFeeOrBuilder>(
+                productFee_, ((bitField4_ & 0x00000080) != 0), getParentForChildren(), isClean());
+        productFee_ = null;
+      }
+      return productFeeBuilder_;
+    }
+
+    private java.lang.Object shortTitle_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @return Whether the shortTitle field is set.
+     */
+    public boolean hasShortTitle() {
+      return ((bitField4_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @return The shortTitle.
+     */
+    public java.lang.String getShortTitle() {
+      java.lang.Object ref = shortTitle_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortTitle_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @return The bytes for shortTitle.
+     */
+    public com.google.protobuf.ByteString getShortTitleBytes() {
+      java.lang.Object ref = shortTitle_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        shortTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @param value The shortTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      shortTitle_ = value;
+      bitField4_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShortTitle() {
+      shortTitle_ = getDefaultInstance().getShortTitle();
+      bitField4_ = (bitField4_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The short title of the item.
+     * </pre>
+     *
+     * <code>optional string short_title = 194;</code>
+     *
+     * @param value The bytes for shortTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShortTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      shortTitle_ = value;
+      bitField4_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+        questionsAndAnswers_ = java.util.Collections.emptyList();
+
+    private void ensureQuestionsAndAnswersIsMutable() {
+      if (!((bitField4_ & 0x00000200) != 0)) {
+        questionsAndAnswers_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>(
+                questionsAndAnswers_);
+        bitField4_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer,
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder>
+        questionsAndAnswersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+        getQuestionsAndAnswersList() {
+      if (questionsAndAnswersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(questionsAndAnswers_);
+      } else {
+        return questionsAndAnswersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getQuestionsAndAnswersCount() {
+      if (questionsAndAnswersBuilder_ == null) {
+        return questionsAndAnswers_.size();
+      } else {
+        return questionsAndAnswersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+        getQuestionsAndAnswers(int index) {
+      if (questionsAndAnswersBuilder_ == null) {
+        return questionsAndAnswers_.get(index);
+      } else {
+        return questionsAndAnswersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setQuestionsAndAnswers(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer value) {
+      if (questionsAndAnswersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.set(index, value);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setQuestionsAndAnswers(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+            builderForValue) {
+      if (questionsAndAnswersBuilder_ == null) {
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addQuestionsAndAnswers(
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer value) {
+      if (questionsAndAnswersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.add(value);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addQuestionsAndAnswers(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer value) {
+      if (questionsAndAnswersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.add(index, value);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addQuestionsAndAnswers(
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+            builderForValue) {
+      if (questionsAndAnswersBuilder_ == null) {
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.add(builderForValue.build());
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addQuestionsAndAnswers(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+            builderForValue) {
+      if (questionsAndAnswersBuilder_ == null) {
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllQuestionsAndAnswers(
+        java.lang.Iterable<
+                ? extends
+                    com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer>
+            values) {
+      if (questionsAndAnswersBuilder_ == null) {
+        ensureQuestionsAndAnswersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, questionsAndAnswers_);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearQuestionsAndAnswers() {
+      if (questionsAndAnswersBuilder_ == null) {
+        questionsAndAnswers_ = java.util.Collections.emptyList();
+        bitField4_ = (bitField4_ & ~0x00000200);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeQuestionsAndAnswers(int index) {
+      if (questionsAndAnswersBuilder_ == null) {
+        ensureQuestionsAndAnswersIsMutable();
+        questionsAndAnswers_.remove(index);
+        onChanged();
+      } else {
+        questionsAndAnswersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+        getQuestionsAndAnswersBuilder(int index) {
+      return internalGetQuestionsAndAnswersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder
+        getQuestionsAndAnswersOrBuilder(int index) {
+      if (questionsAndAnswersBuilder_ == null) {
+        return questionsAndAnswers_.get(index);
+      } else {
+        return questionsAndAnswersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .QuestionAndAnswerOrBuilder>
+        getQuestionsAndAnswersOrBuilderList() {
+      if (questionsAndAnswersBuilder_ != null) {
+        return questionsAndAnswersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(questionsAndAnswers_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+        addQuestionsAndAnswersBuilder() {
+      return internalGetQuestionsAndAnswersFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder
+        addQuestionsAndAnswersBuilder(int index) {
+      return internalGetQuestionsAndAnswersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains user-, merchant-, and manufacturer-authored [questions
+     * and answers](https://support.google.com/merchants/answer/17085211) about
+     * the product. Max 30 question and answer pairs. Max 10000 characters total.
+     * Each question can have max 1000 characters. Each answer can have max 1000
+     * characters.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer questions_and_answers = 173 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder>
+        getQuestionsAndAnswersBuilderList() {
+      return internalGetQuestionsAndAnswersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer,
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswerOrBuilder>
+        internalGetQuestionsAndAnswersFieldBuilder() {
+      if (questionsAndAnswersBuilder_ == null) {
+        questionsAndAnswersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer,
+                com.google.shopping.merchant.products.v1.ProductAttributes.QuestionAndAnswer
+                    .Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes
+                    .QuestionAndAnswerOrBuilder>(
+                questionsAndAnswers_,
+                ((bitField4_ & 0x00000200) != 0),
+                getParentForChildren(),
+                isClean());
+        questionsAndAnswers_ = null;
+      }
+      return questionsAndAnswersBuilder_;
+    }
+
+    private float popularityRank_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the
+     * [popularity](https://support.google.com/merchants/answer/17085297) of the
+     * product in a merchant's inventory. Using a scale of 0.0 (lowest) to 100.0
+     * (highest).
+     * </pre>
+     *
+     * <code>float popularity_rank = 174 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The popularityRank.
+     */
+    @java.lang.Override
+    public float getPopularityRank() {
+      return popularityRank_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the
+     * [popularity](https://support.google.com/merchants/answer/17085297) of the
+     * product in a merchant's inventory. Using a scale of 0.0 (lowest) to 100.0
+     * (highest).
+     * </pre>
+     *
+     * <code>float popularity_rank = 174 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The popularityRank to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPopularityRank(float value) {
+
+      popularityRank_ = value;
+      bitField4_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates the
+     * [popularity](https://support.google.com/merchants/answer/17085297) of the
+     * product in a merchant's inventory. Using a scale of 0.0 (lowest) to 100.0
+     * (highest).
+     * </pre>
+     *
+     * <code>float popularity_rank = 174 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPopularityRank() {
+      bitField4_ = (bitField4_ & ~0x00000400);
+      popularityRank_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object itemGroupTitle_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the [title of the product
+     * group](https://support.google.com/merchants/answer/17085146) to which
+     * this variant product belongs. This can be used along with the [item group
+     * id](https://support.google.com/merchants/answer/6324507) attribute.
+     * It lets you perform better grouping of variant products, and helps
+     * identifying common product characteristics more efficiently.
+     * </pre>
+     *
+     * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The itemGroupTitle.
+     */
+    public java.lang.String getItemGroupTitle() {
+      java.lang.Object ref = itemGroupTitle_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        itemGroupTitle_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the [title of the product
+     * group](https://support.google.com/merchants/answer/17085146) to which
+     * this variant product belongs. This can be used along with the [item group
+     * id](https://support.google.com/merchants/answer/6324507) attribute.
+     * It lets you perform better grouping of variant products, and helps
+     * identifying common product characteristics more efficiently.
+     * </pre>
+     *
+     * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for itemGroupTitle.
+     */
+    public com.google.protobuf.ByteString getItemGroupTitleBytes() {
+      java.lang.Object ref = itemGroupTitle_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        itemGroupTitle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the [title of the product
+     * group](https://support.google.com/merchants/answer/17085146) to which
+     * this variant product belongs. This can be used along with the [item group
+     * id](https://support.google.com/merchants/answer/6324507) attribute.
+     * It lets you perform better grouping of variant products, and helps
+     * identifying common product characteristics more efficiently.
+     * </pre>
+     *
+     * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The itemGroupTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemGroupTitle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      itemGroupTitle_ = value;
+      bitField4_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the [title of the product
+     * group](https://support.google.com/merchants/answer/17085146) to which
+     * this variant product belongs. This can be used along with the [item group
+     * id](https://support.google.com/merchants/answer/6324507) attribute.
+     * It lets you perform better grouping of variant products, and helps
+     * identifying common product characteristics more efficiently.
+     * </pre>
+     *
+     * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearItemGroupTitle() {
+      itemGroupTitle_ = getDefaultInstance().getItemGroupTitle();
+      bitField4_ = (bitField4_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the [title of the product
+     * group](https://support.google.com/merchants/answer/17085146) to which
+     * this variant product belongs. This can be used along with the [item group
+     * id](https://support.google.com/merchants/answer/6324507) attribute.
+     * It lets you perform better grouping of variant products, and helps
+     * identifying common product characteristics more efficiently.
+     * </pre>
+     *
+     * <code>string item_group_title = 175 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for itemGroupTitle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setItemGroupTitleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      itemGroupTitle_ = value;
+      bitField4_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList documentLinks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDocumentLinksIsMutable() {
+      if (!documentLinks_.isModifiable()) {
+        documentLinks_ = new com.google.protobuf.LazyStringArrayList(documentLinks_);
+      }
+      bitField4_ |= 0x00001000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the documentLinks.
+     */
+    public com.google.protobuf.ProtocolStringList getDocumentLinksList() {
+      documentLinks_.makeImmutable();
+      return documentLinks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of documentLinks.
+     */
+    public int getDocumentLinksCount() {
+      return documentLinks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The documentLinks at the given index.
+     */
+    public java.lang.String getDocumentLinks(int index) {
+      return documentLinks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the documentLinks at the given index.
+     */
+    public com.google.protobuf.ByteString getDocumentLinksBytes(int index) {
+      return documentLinks_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The documentLinks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentLinks(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDocumentLinksIsMutable();
+      documentLinks_.set(index, value);
+      bitField4_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The documentLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDocumentLinks(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDocumentLinksIsMutable();
+      documentLinks_.add(value);
+      bitField4_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The documentLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDocumentLinks(java.lang.Iterable<java.lang.String> values) {
+      ensureDocumentLinksIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentLinks_);
+      bitField4_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentLinks() {
+      documentLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField4_ = (bitField4_ & ~0x00001000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains a list of PDF [document
+     * URLs](https://support.google.com/merchants/answer/17084656) for the
+     * product. Examples are training manuals, user guides, assembly instructions,
+     * package inserts, etc. Must start with "http://" or "https://"), ASCII
+     * characters only, and RFC 3986 compliant.
+     * </pre>
+     *
+     * <code>repeated string document_links = 176 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the documentLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDocumentLinksBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDocumentLinksIsMutable();
+      documentLinks_.add(value);
+      bitField4_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+        variantOptions_ = java.util.Collections.emptyList();
+
+    private void ensureVariantOptionsIsMutable() {
+      if (!((bitField4_ & 0x00002000) != 0)) {
+        variantOptions_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>(
+                variantOptions_);
+        bitField4_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>
+        variantOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+        getVariantOptionsList() {
+      if (variantOptionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(variantOptions_);
+      } else {
+        return variantOptionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getVariantOptionsCount() {
+      if (variantOptionsBuilder_ == null) {
+        return variantOptions_.size();
+      } else {
+        return variantOptionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+        getVariantOptions(int index) {
+      if (variantOptionsBuilder_ == null) {
+        return variantOptions_.get(index);
+      } else {
+        return variantOptionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVariantOptions(
+        int index, com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption value) {
+      if (variantOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantOptionsIsMutable();
+        variantOptions_.set(index, value);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setVariantOptions(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+            builderForValue) {
+      if (variantOptionsBuilder_ == null) {
+        ensureVariantOptionsIsMutable();
+        variantOptions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        variantOptionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVariantOptions(
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption value) {
+      if (variantOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantOptionsIsMutable();
+        variantOptions_.add(value);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVariantOptions(
+        int index, com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption value) {
+      if (variantOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureVariantOptionsIsMutable();
+        variantOptions_.add(index, value);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVariantOptions(
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+            builderForValue) {
+      if (variantOptionsBuilder_ == null) {
+        ensureVariantOptionsIsMutable();
+        variantOptions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        variantOptionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addVariantOptions(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+            builderForValue) {
+      if (variantOptionsBuilder_ == null) {
+        ensureVariantOptionsIsMutable();
+        variantOptions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        variantOptionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllVariantOptions(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption>
+            values) {
+      if (variantOptionsBuilder_ == null) {
+        ensureVariantOptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, variantOptions_);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearVariantOptions() {
+      if (variantOptionsBuilder_ == null) {
+        variantOptions_ = java.util.Collections.emptyList();
+        bitField4_ = (bitField4_ & ~0x00002000);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeVariantOptions(int index) {
+      if (variantOptionsBuilder_ == null) {
+        ensureVariantOptionsIsMutable();
+        variantOptions_.remove(index);
+        onChanged();
+      } else {
+        variantOptionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+        getVariantOptionsBuilder(int index) {
+      return internalGetVariantOptionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder
+        getVariantOptionsOrBuilder(int index) {
+      if (variantOptionsBuilder_ == null) {
+        return variantOptions_.get(index);
+      } else {
+        return variantOptionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>
+        getVariantOptionsOrBuilderList() {
+      if (variantOptionsBuilder_ != null) {
+        return variantOptionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(variantOptions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+        addVariantOptionsBuilder() {
+      return internalGetVariantOptionsFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder
+        addVariantOptionsBuilder(int index) {
+      return internalGetVariantOptionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Contains the [list of all variant-identifying
+     * options](https://support.google.com/merchants/answer/17085214) of this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.VariantOption variant_options = 177 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder>
+        getVariantOptionsBuilderList() {
+      return internalGetVariantOptionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption,
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>
+        internalGetVariantOptionsFieldBuilder() {
+      if (variantOptionsBuilder_ == null) {
+        variantOptionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption,
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOption.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.VariantOptionOrBuilder>(
+                variantOptions_,
+                ((bitField4_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        variantOptions_ = null;
+      }
+      return variantOptionsBuilder_;
+    }
+
+    private java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+        relatedProducts_ = java.util.Collections.emptyList();
+
+    private void ensureRelatedProductsIsMutable() {
+      if (!((bitField4_ & 0x00004000) != 0)) {
+        relatedProducts_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>(
+                relatedProducts_);
+        bitField4_ |= 0x00004000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct,
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>
+        relatedProductsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+        getRelatedProductsList() {
+      if (relatedProductsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(relatedProducts_);
+      } else {
+        return relatedProductsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getRelatedProductsCount() {
+      if (relatedProductsBuilder_ == null) {
+        return relatedProducts_.size();
+      } else {
+        return relatedProductsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+        getRelatedProducts(int index) {
+      if (relatedProductsBuilder_ == null) {
+        return relatedProducts_.get(index);
+      } else {
+        return relatedProductsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelatedProducts(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct value) {
+      if (relatedProductsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.set(index, value);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRelatedProducts(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+            builderForValue) {
+      if (relatedProductsBuilder_ == null) {
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        relatedProductsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRelatedProducts(
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct value) {
+      if (relatedProductsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.add(value);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRelatedProducts(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct value) {
+      if (relatedProductsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.add(index, value);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRelatedProducts(
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+            builderForValue) {
+      if (relatedProductsBuilder_ == null) {
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        relatedProductsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addRelatedProducts(
+        int index,
+        com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+            builderForValue) {
+      if (relatedProductsBuilder_ == null) {
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        relatedProductsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllRelatedProducts(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct>
+            values) {
+      if (relatedProductsBuilder_ == null) {
+        ensureRelatedProductsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedProducts_);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRelatedProducts() {
+      if (relatedProductsBuilder_ == null) {
+        relatedProducts_ = java.util.Collections.emptyList();
+        bitField4_ = (bitField4_ & ~0x00004000);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeRelatedProducts(int index) {
+      if (relatedProductsBuilder_ == null) {
+        ensureRelatedProductsIsMutable();
+        relatedProducts_.remove(index);
+        onChanged();
+      } else {
+        relatedProductsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+        getRelatedProductsBuilder(int index) {
+      return internalGetRelatedProductsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder
+        getRelatedProductsOrBuilder(int index) {
+      if (relatedProductsBuilder_ == null) {
+        return relatedProducts_.get(index);
+      } else {
+        return relatedProductsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>
+        getRelatedProductsOrBuilderList() {
+      if (relatedProductsBuilder_ != null) {
+        return relatedProductsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(relatedProducts_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+        addRelatedProductsBuilder() {
+      return internalGetRelatedProductsFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder
+        addRelatedProductsBuilder(int index) {
+      return internalGetRelatedProductsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how other [products are
+     * related](https://support.google.com/merchants/answer/17085213) to this
+     * product.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct related_products = 178 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder>
+        getRelatedProductsBuilderList() {
+      return internalGetRelatedProductsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct,
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder,
+            com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>
+        internalGetRelatedProductsFieldBuilder() {
+      if (relatedProductsBuilder_ == null) {
+        relatedProductsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct,
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProduct.Builder,
+                com.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductOrBuilder>(
+                relatedProducts_,
+                ((bitField4_ & 0x00004000) != 0),
+                getParentForChildren(),
+                isClean());
+        relatedProducts_ = null;
+      }
+      return relatedProductsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes)

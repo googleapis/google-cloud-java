@@ -25,6 +25,6 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-bigquery:current}
-  static final String VERSION = "2.68.0-SNAPSHOT";
+  static final String VERSION = "2.69.0-SNAPSHOT";
   // {x-version-update-end}
 }

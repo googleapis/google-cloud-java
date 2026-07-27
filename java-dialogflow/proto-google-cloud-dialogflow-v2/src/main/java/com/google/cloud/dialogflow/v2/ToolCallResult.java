@@ -1188,10 +1188,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the error field is set.
    */
@@ -1204,10 +1206,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The error.
    */
@@ -1223,10 +1227,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The tool call's error.
+   * Optional. The tool call's error.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.ToolCallResult.ErrorOrBuilder getErrorOrBuilder() {
@@ -1242,11 +1248,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Only populated if the response content is not utf-8 encoded.
+   * Optional. Only populated if the response content is not utf-8 encoded.
    * (by definition byte fields are base64 encoded).
    * </pre>
    *
-   * <code>bytes raw_content = 5;</code>
+   * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the rawContent field is set.
    */
@@ -1259,11 +1265,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Only populated if the response content is not utf-8 encoded.
+   * Optional. Only populated if the response content is not utf-8 encoded.
    * (by definition byte fields are base64 encoded).
    * </pre>
    *
-   * <code>bytes raw_content = 5;</code>
+   * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rawContent.
    */
@@ -1281,10 +1287,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the content field is set.
    */
@@ -1296,10 +1302,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -1324,10 +1330,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Only populated if the response content is utf-8 encoded.
+   * Optional. Only populated if the response content is utf-8 encoded.
    * </pre>
    *
-   * <code>string content = 6;</code>
+   * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */
@@ -2866,10 +2872,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the error field is set.
      */
@@ -2882,10 +2890,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The error.
      */
@@ -2908,10 +2918,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setError(com.google.cloud.dialogflow.v2.ToolCallResult.Error value) {
       if (errorBuilder_ == null) {
@@ -2931,10 +2943,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setError(
         com.google.cloud.dialogflow.v2.ToolCallResult.Error.Builder builderForValue) {
@@ -2952,10 +2966,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeError(com.google.cloud.dialogflow.v2.ToolCallResult.Error value) {
       if (errorBuilder_ == null) {
@@ -2986,10 +3002,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearError() {
       if (errorBuilder_ == null) {
@@ -3012,10 +3030,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.dialogflow.v2.ToolCallResult.Error.Builder getErrorBuilder() {
       return internalGetErrorFieldBuilder().getBuilder();
@@ -3025,10 +3045,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.dialogflow.v2.ToolCallResult.ErrorOrBuilder getErrorOrBuilder() {
@@ -3046,10 +3068,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The tool call's error.
+     * Optional. The tool call's error.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2.ToolCallResult.Error error = 3;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2.ToolCallResult.Error error = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dialogflow.v2.ToolCallResult.Error,
@@ -3079,11 +3103,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is not utf-8 encoded.
+     * Optional. Only populated if the response content is not utf-8 encoded.
      * (by definition byte fields are base64 encoded).
      * </pre>
      *
-     * <code>bytes raw_content = 5;</code>
+     * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the rawContent field is set.
      */
@@ -3095,11 +3119,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is not utf-8 encoded.
+     * Optional. Only populated if the response content is not utf-8 encoded.
      * (by definition byte fields are base64 encoded).
      * </pre>
      *
-     * <code>bytes raw_content = 5;</code>
+     * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The rawContent.
      */
@@ -3114,11 +3138,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is not utf-8 encoded.
+     * Optional. Only populated if the response content is not utf-8 encoded.
      * (by definition byte fields are base64 encoded).
      * </pre>
      *
-     * <code>bytes raw_content = 5;</code>
+     * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The rawContent to set.
      * @return This builder for chaining.
@@ -3137,11 +3161,11 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is not utf-8 encoded.
+     * Optional. Only populated if the response content is not utf-8 encoded.
      * (by definition byte fields are base64 encoded).
      * </pre>
      *
-     * <code>bytes raw_content = 5;</code>
+     * <code>bytes raw_content = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3158,10 +3182,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the content field is set.
      */
@@ -3174,10 +3198,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The content.
      */
@@ -3203,10 +3227,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for content.
      */
@@ -3232,10 +3256,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -3254,10 +3278,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3274,10 +3298,10 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Only populated if the response content is utf-8 encoded.
+     * Optional. Only populated if the response content is utf-8 encoded.
      * </pre>
      *
-     * <code>string content = 6;</code>
+     * <code>string content = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.

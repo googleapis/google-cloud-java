@@ -19,7 +19,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.65.0</version>
+      <version>26.83.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -31,7 +31,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-firestore</artifactId>
   </dependency>
-
+</dependencies>
 ```
 
 If you are using Maven without the BOM, add this to your dependencies:
@@ -41,9 +41,8 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-firestore</artifactId>
-  <version>3.31.9</version>
+  <version>3.44.0</version>
 </dependency>
-
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies:
@@ -53,16 +52,17 @@ implementation platform('com.google.cloud:libraries-bom:26.83.0')
 
 implementation 'com.google.cloud:google-cloud-firestore'
 ```
+
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-firestore:3.43.1'
+implementation 'com.google.cloud:google-cloud-firestore:3.44.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "3.43.1"
+libraryDependencies += "com.google.cloud" % "google-cloud-firestore" % "3.44.0"
 ```
 
 ## Authentication
@@ -95,8 +95,6 @@ to add `google-cloud-firestore` as a dependency in your code.
 
 See the [Cloud Firestore client library docs][javadocs] to learn how to
 use this Cloud Firestore Client Library.
-
-
 
 
 
@@ -173,8 +171,6 @@ the individual GitHub repository `github.com/GoogleAPIs/java-SERVICENAME`
 and on [google-cloud-java][g-c-j].
 
 ## Versioning
-
-
 This library follows [Semantic Versioning](http://semver.org/).
 
 
@@ -201,7 +197,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-firestore.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-firestore/3.43.1
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-firestore/3.44.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

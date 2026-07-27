@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EncryptionConfigName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_ENCRYPTION_CONFIG =
@@ -88,7 +91,7 @@ public class EncryptionConfigName implements ResourceName {
         .toString();
   }
 
-  public static EncryptionConfigName parse(String formattedString) {
+  public static @Nullable EncryptionConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -107,7 +110,7 @@ public class EncryptionConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<EncryptionConfigName> values) {
+  public static List<String> toStringList(List<@Nullable EncryptionConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EncryptionConfigName value : values) {
       if (value == null) {
@@ -156,7 +159,7 @@ public class EncryptionConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

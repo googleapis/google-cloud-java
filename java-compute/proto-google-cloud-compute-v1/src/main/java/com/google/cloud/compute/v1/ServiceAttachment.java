@@ -1283,6 +1283,43 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int NAT_IPS_PER_ENDPOINT_FIELD_NUMBER = 371459848;
+  private int natIpsPerEndpoint_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of NAT IP addresses to be allocated per connected endpoint.
+   * If not specified, the default value is 1.
+   * </pre>
+   *
+   * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+   *
+   * @return Whether the natIpsPerEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasNatIpsPerEndpoint() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The number of NAT IP addresses to be allocated per connected endpoint.
+   * If not specified, the default value is 1.
+   * </pre>
+   *
+   * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+   *
+   * @return The natIpsPerEndpoint.
+   */
+  @java.lang.Override
+  public int getNatIpsPerEndpoint() {
+    return natIpsPerEndpoint_;
+  }
+
   public static final int NAT_SUBNETS_FIELD_NUMBER = 374785944;
 
   @SuppressWarnings("serial")
@@ -1374,7 +1411,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasProducerForwardingRule() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1455,7 +1492,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPropagatedConnectionLimit() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -1502,7 +1539,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasPscServiceAttachmentId() {
-    return ((bitField0_ & 0x00000400) != 0);
+    return ((bitField0_ & 0x00000800) != 0);
   }
 
   /**
@@ -1568,7 +1605,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasReconcileConnections() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1621,7 +1658,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -1696,7 +1733,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1766,7 +1803,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTargetService() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1836,7 +1873,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1856,10 +1893,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 86866735);
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeBool(125493732, reconcileConnections_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < consumerRejectLists_.size(); i++) {
@@ -1869,17 +1906,20 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 247927889, producerForwardingRule_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 285818076, connectionPreference_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeUInt32(332719230, propagatedConnectionLimit_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(363791237, enableProxyProtocol_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeUInt32(371459848, natIpsPerEndpoint_);
     }
     for (int i = 0; i < natSubnets_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 374785944, natSubnets_.getRaw(i));
@@ -1890,10 +1930,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(527695214, getPscServiceAttachmentId());
     }
     getUnknownFields().writeTo(output);
@@ -1908,7 +1948,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1293831, targetService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1943,11 +1983,11 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(86866735, metadata__);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(125493732, reconcileConnections_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
     {
@@ -1961,7 +2001,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               247927889, producerForwardingRule_);
@@ -1970,7 +2010,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(285818076, connectionPreference_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeUInt32Size(
               332719230, propagatedConnectionLimit_);
@@ -1978,6 +2018,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(363791237, enableProxyProtocol_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeUInt32Size(371459848, natIpsPerEndpoint_);
     }
     {
       int dataSize = 0;
@@ -1995,10 +2039,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
-    if (((bitField0_ & 0x00000400) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               527695214, getPscServiceAttachmentId());
@@ -2055,6 +2099,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
       if (!getName().equals(other.getName())) return false;
+    }
+    if (hasNatIpsPerEndpoint() != other.hasNatIpsPerEndpoint()) return false;
+    if (hasNatIpsPerEndpoint()) {
+      if (getNatIpsPerEndpoint() != other.getNatIpsPerEndpoint()) return false;
     }
     if (!getNatSubnetsList().equals(other.getNatSubnetsList())) return false;
     if (hasProducerForwardingRule() != other.hasProducerForwardingRule()) return false;
@@ -2147,6 +2195,10 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+    }
+    if (hasNatIpsPerEndpoint()) {
+      hash = (37 * hash) + NAT_IPS_PER_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getNatIpsPerEndpoint();
     }
     if (getNatSubnetsCount() > 0) {
       hash = (37 * hash) + NAT_SUBNETS_FIELD_NUMBER;
@@ -2383,6 +2435,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       kind_ = "";
       internalGetMutableMetadata().clear();
       name_ = "";
+      natIpsPerEndpoint_ = 0;
       natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
       producerForwardingRule_ = "";
       propagatedConnectionLimit_ = 0;
@@ -2499,39 +2552,43 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.natIpsPerEndpoint_ = natIpsPerEndpoint_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         natSubnets_.makeImmutable();
         result.natSubnets_ = natSubnets_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.producerForwardingRule_ = producerForwardingRule_;
-        to_bitField0_ |= 0x00000100;
-      }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.propagatedConnectionLimit_ = propagatedConnectionLimit_;
+        result.producerForwardingRule_ = producerForwardingRule_;
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.propagatedConnectionLimit_ = propagatedConnectionLimit_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.pscServiceAttachmentId_ =
             pscServiceAttachmentIdBuilder_ == null
                 ? pscServiceAttachmentId_
                 : pscServiceAttachmentIdBuilder_.build();
-        to_bitField0_ |= 0x00000400;
-      }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.region_ = region_;
+        result.reconcileConnections_ = reconcileConnections_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.targetService_ = targetService_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.targetService_ = targetService_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2660,10 +2717,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (other.hasNatIpsPerEndpoint()) {
+        setNatIpsPerEndpoint(other.getNatIpsPerEndpoint());
+      }
       if (!other.natSubnets_.isEmpty()) {
         if (natSubnets_.isEmpty()) {
           natSubnets_ = other.natSubnets_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensureNatSubnetsIsMutable();
           natSubnets_.addAll(other.natSubnets_);
@@ -2672,7 +2732,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasProducerForwardingRule()) {
         producerForwardingRule_ = other.producerForwardingRule_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasPropagatedConnectionLimit()) {
@@ -2686,17 +2746,17 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasTargetService()) {
         targetService_ = other.targetService_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2734,7 +2794,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 10350650:
               {
                 targetService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 10350650
             case 26336418:
@@ -2791,13 +2851,13 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 1003949856:
               {
                 reconcileConnections_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1003949856
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 1111570338
             case 1632265458:
@@ -2816,7 +2876,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case 1983423114:
               {
                 producerForwardingRule_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 1983423114
             case -2008422686:
@@ -2828,7 +2888,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -1633213456:
               {
                 propagatedConnectionLimit_ = input.readUInt32();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -1633213456
             case -1384637400:
@@ -2837,6 +2897,12 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000080;
                 break;
               } // case -1384637400
+            case -1323288512:
+              {
+                natIpsPerEndpoint_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case -1323288512
             case -1296679742:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2867,7 +2933,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case -645248918
             case -73405582:
@@ -2875,7 +2941,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
                 input.readMessage(
                     internalGetPscServiceAttachmentIdFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case -73405582
             default:
@@ -5488,6 +5554,82 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int natIpsPerEndpoint_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of NAT IP addresses to be allocated per connected endpoint.
+     * If not specified, the default value is 1.
+     * </pre>
+     *
+     * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+     *
+     * @return Whether the natIpsPerEndpoint field is set.
+     */
+    @java.lang.Override
+    public boolean hasNatIpsPerEndpoint() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of NAT IP addresses to be allocated per connected endpoint.
+     * If not specified, the default value is 1.
+     * </pre>
+     *
+     * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+     *
+     * @return The natIpsPerEndpoint.
+     */
+    @java.lang.Override
+    public int getNatIpsPerEndpoint() {
+      return natIpsPerEndpoint_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of NAT IP addresses to be allocated per connected endpoint.
+     * If not specified, the default value is 1.
+     * </pre>
+     *
+     * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+     *
+     * @param value The natIpsPerEndpoint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNatIpsPerEndpoint(int value) {
+
+      natIpsPerEndpoint_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The number of NAT IP addresses to be allocated per connected endpoint.
+     * If not specified, the default value is 1.
+     * </pre>
+     *
+     * <code>optional uint32 nat_ips_per_endpoint = 371459848;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNatIpsPerEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      natIpsPerEndpoint_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList natSubnets_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -5495,7 +5637,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       if (!natSubnets_.isModifiable()) {
         natSubnets_ = new com.google.protobuf.LazyStringArrayList(natSubnets_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
 
     /**
@@ -5585,7 +5727,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5609,7 +5751,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5630,7 +5772,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder addAllNatSubnets(java.lang.Iterable<java.lang.String> values) {
       ensureNatSubnetsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, natSubnets_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5649,7 +5791,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearNatSubnets() {
       natSubnets_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       ;
       onChanged();
       return this;
@@ -5675,7 +5817,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       ensureNatSubnetsIsMutable();
       natSubnets_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5695,7 +5837,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the producerForwardingRule field is set.
      */
     public boolean hasProducerForwardingRule() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5764,7 +5906,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       producerForwardingRule_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5783,7 +5925,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearProducerForwardingRule() {
       producerForwardingRule_ = getDefaultInstance().getProducerForwardingRule();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -5807,7 +5949,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       producerForwardingRule_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5839,7 +5981,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasPropagatedConnectionLimit() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5897,7 +6039,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder setPropagatedConnectionLimit(int value) {
 
       propagatedConnectionLimit_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5926,7 +6068,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearPropagatedConnectionLimit() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       propagatedConnectionLimit_ = 0;
       onChanged();
       return this;
@@ -5951,7 +6093,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the pscServiceAttachmentId field is set.
      */
     public boolean hasPscServiceAttachmentId() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5993,7 +6135,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6014,7 +6156,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       } else {
         pscServiceAttachmentIdBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -6030,7 +6172,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergePscServiceAttachmentId(com.google.cloud.compute.v1.Uint128 value) {
       if (pscServiceAttachmentIdBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && pscServiceAttachmentId_ != null
             && pscServiceAttachmentId_
                 != com.google.cloud.compute.v1.Uint128.getDefaultInstance()) {
@@ -6042,7 +6184,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         pscServiceAttachmentIdBuilder_.mergeFrom(value);
       }
       if (pscServiceAttachmentId_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -6058,7 +6200,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public Builder clearPscServiceAttachmentId() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       pscServiceAttachmentId_ = null;
       if (pscServiceAttachmentIdBuilder_ != null) {
         pscServiceAttachmentIdBuilder_.dispose();
@@ -6078,7 +6220,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.Uint128 psc_service_attachment_id = 527695214;</code>
      */
     public com.google.cloud.compute.v1.Uint128.Builder getPscServiceAttachmentIdBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetPscServiceAttachmentIdFieldBuilder().getBuilder();
     }
@@ -6156,7 +6298,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasReconcileConnections() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -6216,7 +6358,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
     public Builder setReconcileConnections(boolean value) {
 
       reconcileConnections_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6246,7 +6388,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearReconcileConnections() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       reconcileConnections_ = false;
       onChanged();
       return this;
@@ -6269,7 +6411,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6344,7 +6486,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6365,7 +6507,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -6391,7 +6533,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6410,7 +6552,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6476,7 +6618,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6494,7 +6636,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6517,7 +6659,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6537,7 +6679,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      * @return Whether the targetService field is set.
      */
     public boolean hasTargetService() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6606,7 +6748,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       targetService_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6625,7 +6767,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTargetService() {
       targetService_ = getDefaultInstance().getTargetService();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6649,7 +6791,7 @@ public final class ServiceAttachment extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       targetService_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }

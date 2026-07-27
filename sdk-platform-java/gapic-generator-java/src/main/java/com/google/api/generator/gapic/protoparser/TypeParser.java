@@ -35,7 +35,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class TypeParser {
   private static Reference REFERENCE_BYTE_STRING = ConcreteReference.withClazz(ByteString.class);
   private static TypeNode TYPE_NODE_BYTE_STRING = TypeNode.withReference(REFERENCE_BYTE_STRING);

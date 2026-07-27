@@ -24,8 +24,10 @@ package com.google.cloud.binaryauthorization.v1beta1;
  *
  *
  * <pre>
- * An [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern] exempts images
- * from checks by [admission rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
+ * An [admission allowlist
+ * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+ * exempts images from checks by [admission
+ * rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
  * </pre>
  *
  * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern}
@@ -302,8 +304,10 @@ public final class AdmissionWhitelistPattern extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * An [admission allowlist pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern] exempts images
-   * from checks by [admission rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
+   * An [admission allowlist
+   * pattern][google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern]
+   * exempts images from checks by [admission
+   * rules][google.cloud.binaryauthorization.v1beta1.AdmissionRule].
    * </pre>
    *
    * Protobuf type {@code google.cloud.binaryauthorization.v1beta1.AdmissionWhitelistPattern}

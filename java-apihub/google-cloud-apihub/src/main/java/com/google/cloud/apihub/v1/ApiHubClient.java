@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -941,9 +943,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ApiHubClient implements BackgroundResource {
-  private final ApiHubSettings settings;
+  private final @Nullable ApiHubSettings settings;
   private final ApiHubStub stub;
 
   /** Constructs an instance of ApiHubClient with default settings. */
@@ -981,7 +984,7 @@ public class ApiHubClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ApiHubSettings getSettings() {
+  public final @Nullable ApiHubSettings getSettings() {
     return settings;
   }
 
@@ -1023,7 +1026,7 @@ public class ApiHubClient implements BackgroundResource {
    *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Api createApi(LocationName parent, Api api, String apiId) {
+  public final Api createApi(@Nullable LocationName parent, Api api, String apiId) {
     CreateApiRequest request =
         CreateApiRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1156,7 +1159,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Api getApi(ApiName name) {
+  public final Api getApi(@Nullable ApiName name) {
     GetApiRequest request =
         GetApiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApi(request);
@@ -1268,7 +1271,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApisPagedResponse listApis(LocationName parent) {
+  public final ListApisPagedResponse listApis(@Nullable LocationName parent) {
     ListApisRequest request =
         ListApisRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listApis(request);
@@ -1578,7 +1581,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteApi(ApiName name) {
+  public final void deleteApi(@Nullable ApiName name) {
     DeleteApiRequest request =
         DeleteApiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteApi(request);
@@ -1706,7 +1709,7 @@ public class ApiHubClient implements BackgroundResource {
    *     limited to 700 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Version createVersion(ApiName parent, Version version, String versionId) {
+  public final Version createVersion(@Nullable ApiName parent, Version version, String versionId) {
     CreateVersionRequest request =
         CreateVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1843,7 +1846,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Version getVersion(VersionName name) {
+  public final Version getVersion(@Nullable VersionName name) {
     GetVersionRequest request =
         GetVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVersion(request);
@@ -1958,7 +1961,7 @@ public class ApiHubClient implements BackgroundResource {
    *     resource Format: `projects/{project}/locations/{location}/apis/{api}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVersionsPagedResponse listVersions(ApiName parent) {
+  public final ListVersionsPagedResponse listVersions(@Nullable ApiName parent) {
     ListVersionsRequest request =
         ListVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2256,7 +2259,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteVersion(VersionName name) {
+  public final void deleteVersion(@Nullable VersionName name) {
     DeleteVersionRequest request =
         DeleteVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteVersion(request);
@@ -2398,7 +2401,7 @@ public class ApiHubClient implements BackgroundResource {
    *     length is limited to 1000 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Spec createSpec(VersionName parent, Spec spec, String specId) {
+  public final Spec createSpec(@Nullable VersionName parent, Spec spec, String specId) {
     CreateSpecRequest request =
         CreateSpecRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2574,7 +2577,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Spec getSpec(SpecName name) {
+  public final Spec getSpec(@Nullable SpecName name) {
     GetSpecRequest request =
         GetSpecRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpec(request);
@@ -2693,7 +2696,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpecContents getSpecContents(SpecName name) {
+  public final SpecContents getSpecContents(@Nullable SpecName name) {
     GetSpecContentsRequest request =
         GetSpecContentsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpecContents(request);
@@ -2808,7 +2811,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSpecsPagedResponse listSpecs(VersionName parent) {
+  public final ListSpecsPagedResponse listSpecs(@Nullable VersionName parent) {
     ListSpecsRequest request =
         ListSpecsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSpecs(request);
@@ -3117,7 +3120,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSpec(SpecName name) {
+  public final void deleteSpec(@Nullable SpecName name) {
     DeleteSpecRequest request =
         DeleteSpecRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSpec(request);
@@ -3245,7 +3248,7 @@ public class ApiHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ApiOperation createApiOperation(
-      VersionName parent, ApiOperation apiOperation, String apiOperationId) {
+      @Nullable VersionName parent, ApiOperation apiOperation, String apiOperationId) {
     CreateApiOperationRequest request =
         CreateApiOperationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3387,7 +3390,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ApiOperation getApiOperation(ApiOperationName name) {
+  public final ApiOperation getApiOperation(@Nullable ApiOperationName name) {
     GetApiOperationRequest request =
         GetApiOperationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getApiOperation(request);
@@ -3507,7 +3510,7 @@ public class ApiHubClient implements BackgroundResource {
    *     version. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListApiOperationsPagedResponse listApiOperations(VersionName parent) {
+  public final ListApiOperationsPagedResponse listApiOperations(@Nullable VersionName parent) {
     ListApiOperationsRequest request =
         ListApiOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3821,7 +3824,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteApiOperation(ApiOperationName name) {
+  public final void deleteApiOperation(@Nullable ApiOperationName name) {
     DeleteApiOperationRequest request =
         DeleteApiOperationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3949,7 +3952,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/definitions/{definition}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Definition getDefinition(DefinitionName name) {
+  public final Definition getDefinition(@Nullable DefinitionName name) {
     GetDefinitionRequest request =
         GetDefinitionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDefinition(request);
@@ -4078,7 +4081,7 @@ public class ApiHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment createDeployment(
-      LocationName parent, Deployment deployment, String deploymentId) {
+      @Nullable LocationName parent, Deployment deployment, String deploymentId) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4216,7 +4219,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/deployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -4328,7 +4331,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(LocationName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(@Nullable LocationName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4642,7 +4645,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/deployments/{deployment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDeployment(DeploymentName name) {
+  public final void deleteDeployment(@Nullable DeploymentName name) {
     DeleteDeploymentRequest request =
         DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDeployment(request);
@@ -4770,7 +4773,7 @@ public class ApiHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Attribute createAttribute(
-      LocationName parent, Attribute attribute, String attributeId) {
+      @Nullable LocationName parent, Attribute attribute, String attributeId) {
     CreateAttributeRequest request =
         CreateAttributeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4922,7 +4925,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/attributes/{attribute}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attribute getAttribute(AttributeName name) {
+  public final Attribute getAttribute(@Nullable AttributeName name) {
     GetAttributeRequest request =
         GetAttributeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAttribute(request);
@@ -5189,7 +5192,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/attributes/{attribute}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAttribute(AttributeName name) {
+  public final void deleteAttribute(@Nullable AttributeName name) {
     DeleteAttributeRequest request =
         DeleteAttributeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAttribute(request);
@@ -5310,7 +5313,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttributesPagedResponse listAttributes(LocationName parent) {
+  public final ListAttributesPagedResponse listAttributes(@Nullable LocationName parent) {
     ListAttributesRequest request =
         ListAttributesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5482,7 +5485,8 @@ public class ApiHubClient implements BackgroundResource {
    *     attributes etc.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchResourcesPagedResponse searchResources(LocationName location, String query) {
+  public final SearchResourcesPagedResponse searchResources(
+      @Nullable LocationName location, String query) {
     SearchResourcesRequest request =
         SearchResourcesRequest.newBuilder()
             .setLocation(location == null ? null : location.toString())
@@ -5670,7 +5674,7 @@ public class ApiHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExternalApi createExternalApi(
-      LocationName parent, ExternalApi externalApi, String externalApiId) {
+      @Nullable LocationName parent, ExternalApi externalApi, String externalApiId) {
     CreateExternalApiRequest request =
         CreateExternalApiRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5805,7 +5809,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/externalApis/{externalApi}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ExternalApi getExternalApi(ExternalApiName name) {
+  public final ExternalApi getExternalApi(@Nullable ExternalApiName name) {
     GetExternalApiRequest request =
         GetExternalApiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExternalApi(request);
@@ -6039,7 +6043,7 @@ public class ApiHubClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/externalApis/{externalApi}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteExternalApi(ExternalApiName name) {
+  public final void deleteExternalApi(@Nullable ExternalApiName name) {
     DeleteExternalApiRequest request =
         DeleteExternalApiRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6153,7 +6157,7 @@ public class ApiHubClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExternalApisPagedResponse listExternalApis(LocationName parent) {
+  public final ListExternalApisPagedResponse listExternalApis(@Nullable LocationName parent) {
     ListExternalApisRequest request =
         ListExternalApisRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6501,7 +6505,8 @@ public class ApiHubClient implements BackgroundResource {
       extends AbstractPage<ListApisRequest, ListApisResponse, Api, ListApisPage> {
 
     private ListApisPage(
-        PageContext<ListApisRequest, ListApisResponse, Api> context, ListApisResponse response) {
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable ListApisResponse response) {
       super(context, response);
     }
 
@@ -6511,13 +6516,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListApisPage createPage(
-        PageContext<ListApisRequest, ListApisResponse, Api> context, ListApisResponse response) {
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable ListApisResponse response) {
       return new ListApisPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApisPage> createPageAsync(
-        PageContext<ListApisRequest, ListApisResponse, Api> context,
+        @Nullable PageContext<ListApisRequest, ListApisResponse, Api> context,
         ApiFuture<ListApisResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6527,7 +6533,7 @@ public class ApiHubClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListApisRequest, ListApisResponse, Api, ListApisPage, ListApisFixedSizeCollection> {
 
-    private ListApisFixedSizeCollection(List<ListApisPage> pages, int collectionSize) {
+    private ListApisFixedSizeCollection(@Nullable List<ListApisPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6537,7 +6543,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListApisFixedSizeCollection createCollection(
-        List<ListApisPage> pages, int collectionSize) {
+        @Nullable List<ListApisPage> pages, int collectionSize) {
       return new ListApisFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6570,8 +6576,8 @@ public class ApiHubClient implements BackgroundResource {
       extends AbstractPage<ListVersionsRequest, ListVersionsResponse, Version, ListVersionsPage> {
 
     private ListVersionsPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       super(context, response);
     }
 
@@ -6581,14 +6587,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListVersionsPage createPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       return new ListVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVersionsPage> createPageAsync(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
         ApiFuture<ListVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6602,7 +6608,8 @@ public class ApiHubClient implements BackgroundResource {
           ListVersionsPage,
           ListVersionsFixedSizeCollection> {
 
-    private ListVersionsFixedSizeCollection(List<ListVersionsPage> pages, int collectionSize) {
+    private ListVersionsFixedSizeCollection(
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6612,7 +6619,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListVersionsFixedSizeCollection createCollection(
-        List<ListVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       return new ListVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6639,8 +6646,8 @@ public class ApiHubClient implements BackgroundResource {
       extends AbstractPage<ListSpecsRequest, ListSpecsResponse, Spec, ListSpecsPage> {
 
     private ListSpecsPage(
-        PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
-        ListSpecsResponse response) {
+        @Nullable PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
+        @Nullable ListSpecsResponse response) {
       super(context, response);
     }
 
@@ -6650,14 +6657,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListSpecsPage createPage(
-        PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
-        ListSpecsResponse response) {
+        @Nullable PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
+        @Nullable ListSpecsResponse response) {
       return new ListSpecsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpecsPage> createPageAsync(
-        PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
+        @Nullable PageContext<ListSpecsRequest, ListSpecsResponse, Spec> context,
         ApiFuture<ListSpecsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6667,7 +6674,7 @@ public class ApiHubClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSpecsRequest, ListSpecsResponse, Spec, ListSpecsPage, ListSpecsFixedSizeCollection> {
 
-    private ListSpecsFixedSizeCollection(List<ListSpecsPage> pages, int collectionSize) {
+    private ListSpecsFixedSizeCollection(@Nullable List<ListSpecsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6677,7 +6684,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListSpecsFixedSizeCollection createCollection(
-        List<ListSpecsPage> pages, int collectionSize) {
+        @Nullable List<ListSpecsPage> pages, int collectionSize) {
       return new ListSpecsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6714,8 +6721,9 @@ public class ApiHubClient implements BackgroundResource {
           ListApiOperationsPage> {
 
     private ListApiOperationsPage(
-        PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation> context,
-        ListApiOperationsResponse response) {
+        @Nullable PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation>
+            context,
+        @Nullable ListApiOperationsResponse response) {
       super(context, response);
     }
 
@@ -6725,14 +6733,16 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListApiOperationsPage createPage(
-        PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation> context,
-        ListApiOperationsResponse response) {
+        @Nullable PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation>
+            context,
+        @Nullable ListApiOperationsResponse response) {
       return new ListApiOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListApiOperationsPage> createPageAsync(
-        PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation> context,
+        @Nullable PageContext<ListApiOperationsRequest, ListApiOperationsResponse, ApiOperation>
+            context,
         ApiFuture<ListApiOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6747,7 +6757,7 @@ public class ApiHubClient implements BackgroundResource {
           ListApiOperationsFixedSizeCollection> {
 
     private ListApiOperationsFixedSizeCollection(
-        List<ListApiOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListApiOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6757,7 +6767,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListApiOperationsFixedSizeCollection createCollection(
-        List<ListApiOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListApiOperationsPage> pages, int collectionSize) {
       return new ListApiOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6791,8 +6801,8 @@ public class ApiHubClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -6802,14 +6812,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6824,7 +6834,7 @@ public class ApiHubClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6834,7 +6844,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6868,8 +6878,8 @@ public class ApiHubClient implements BackgroundResource {
           ListAttributesRequest, ListAttributesResponse, Attribute, ListAttributesPage> {
 
     private ListAttributesPage(
-        PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
-        ListAttributesResponse response) {
+        @Nullable PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
+        @Nullable ListAttributesResponse response) {
       super(context, response);
     }
 
@@ -6879,14 +6889,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListAttributesPage createPage(
-        PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
-        ListAttributesResponse response) {
+        @Nullable PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
+        @Nullable ListAttributesResponse response) {
       return new ListAttributesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttributesPage> createPageAsync(
-        PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
+        @Nullable PageContext<ListAttributesRequest, ListAttributesResponse, Attribute> context,
         ApiFuture<ListAttributesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6900,7 +6910,8 @@ public class ApiHubClient implements BackgroundResource {
           ListAttributesPage,
           ListAttributesFixedSizeCollection> {
 
-    private ListAttributesFixedSizeCollection(List<ListAttributesPage> pages, int collectionSize) {
+    private ListAttributesFixedSizeCollection(
+        @Nullable List<ListAttributesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6910,7 +6921,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListAttributesFixedSizeCollection createCollection(
-        List<ListAttributesPage> pages, int collectionSize) {
+        @Nullable List<ListAttributesPage> pages, int collectionSize) {
       return new ListAttributesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6944,8 +6955,9 @@ public class ApiHubClient implements BackgroundResource {
           SearchResourcesRequest, SearchResourcesResponse, SearchResult, SearchResourcesPage> {
 
     private SearchResourcesPage(
-        PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult> context,
-        SearchResourcesResponse response) {
+        @Nullable PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult>
+            context,
+        @Nullable SearchResourcesResponse response) {
       super(context, response);
     }
 
@@ -6955,14 +6967,16 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected SearchResourcesPage createPage(
-        PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult> context,
-        SearchResourcesResponse response) {
+        @Nullable PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult>
+            context,
+        @Nullable SearchResourcesResponse response) {
       return new SearchResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchResourcesPage> createPageAsync(
-        PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult> context,
+        @Nullable PageContext<SearchResourcesRequest, SearchResourcesResponse, SearchResult>
+            context,
         ApiFuture<SearchResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6977,7 +6991,7 @@ public class ApiHubClient implements BackgroundResource {
           SearchResourcesFixedSizeCollection> {
 
     private SearchResourcesFixedSizeCollection(
-        List<SearchResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6987,7 +7001,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected SearchResourcesFixedSizeCollection createCollection(
-        List<SearchResourcesPage> pages, int collectionSize) {
+        @Nullable List<SearchResourcesPage> pages, int collectionSize) {
       return new SearchResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7021,8 +7035,9 @@ public class ApiHubClient implements BackgroundResource {
           ListExternalApisRequest, ListExternalApisResponse, ExternalApi, ListExternalApisPage> {
 
     private ListExternalApisPage(
-        PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi> context,
-        ListExternalApisResponse response) {
+        @Nullable PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi>
+            context,
+        @Nullable ListExternalApisResponse response) {
       super(context, response);
     }
 
@@ -7032,14 +7047,16 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListExternalApisPage createPage(
-        PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi> context,
-        ListExternalApisResponse response) {
+        @Nullable PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi>
+            context,
+        @Nullable ListExternalApisResponse response) {
       return new ListExternalApisPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExternalApisPage> createPageAsync(
-        PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi> context,
+        @Nullable PageContext<ListExternalApisRequest, ListExternalApisResponse, ExternalApi>
+            context,
         ApiFuture<ListExternalApisResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7054,7 +7071,7 @@ public class ApiHubClient implements BackgroundResource {
           ListExternalApisFixedSizeCollection> {
 
     private ListExternalApisFixedSizeCollection(
-        List<ListExternalApisPage> pages, int collectionSize) {
+        @Nullable List<ListExternalApisPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7064,7 +7081,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListExternalApisFixedSizeCollection createCollection(
-        List<ListExternalApisPage> pages, int collectionSize) {
+        @Nullable List<ListExternalApisPage> pages, int collectionSize) {
       return new ListExternalApisFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7098,8 +7115,8 @@ public class ApiHubClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7109,14 +7126,14 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7130,7 +7147,8 @@ public class ApiHubClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7140,7 +7158,7 @@ public class ApiHubClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

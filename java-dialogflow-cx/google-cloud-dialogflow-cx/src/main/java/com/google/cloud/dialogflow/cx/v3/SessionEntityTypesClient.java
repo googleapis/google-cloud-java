@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -255,9 +257,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SessionEntityTypesClient implements BackgroundResource {
-  private final SessionEntityTypesSettings settings;
+  private final @Nullable SessionEntityTypesSettings settings;
   private final SessionEntityTypesStub stub;
 
   /** Constructs an instance of SessionEntityTypesClient with default settings. */
@@ -297,7 +300,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SessionEntityTypesSettings getSettings() {
+  public final @Nullable SessionEntityTypesSettings getSettings() {
     return settings;
   }
 
@@ -335,7 +338,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     If `Environment ID` is not specified, we assume default 'draft' environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(SessionName parent) {
+  public final ListSessionEntityTypesPagedResponse listSessionEntityTypes(
+      @Nullable SessionName parent) {
     ListSessionEntityTypesRequest request =
         ListSessionEntityTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -523,7 +527,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     If `Environment ID` is not specified, we assume default 'draft' environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SessionEntityType getSessionEntityType(SessionEntityTypeName name) {
+  public final SessionEntityType getSessionEntityType(@Nullable SessionEntityTypeName name) {
     GetSessionEntityTypeRequest request =
         GetSessionEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -659,7 +663,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType createSessionEntityType(
-      SessionName parent, SessionEntityType sessionEntityType) {
+      @Nullable SessionName parent, SessionEntityType sessionEntityType) {
     CreateSessionEntityTypeRequest request =
         CreateSessionEntityTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -898,7 +902,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     If `Environment ID` is not specified, we assume default 'draft' environment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSessionEntityType(SessionEntityTypeName name) {
+  public final void deleteSessionEntityType(@Nullable SessionEntityTypeName name) {
     DeleteSessionEntityTypeRequest request =
         DeleteSessionEntityTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1260,10 +1264,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
           ListSessionEntityTypesPage> {
 
     private ListSessionEntityTypesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
             context,
-        ListSessionEntityTypesResponse response) {
+        @Nullable ListSessionEntityTypesResponse response) {
       super(context, response);
     }
 
@@ -1273,16 +1278,18 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListSessionEntityTypesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
             context,
-        ListSessionEntityTypesResponse response) {
+        @Nullable ListSessionEntityTypesResponse response) {
       return new ListSessionEntityTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionEntityTypesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType>
             context,
         ApiFuture<ListSessionEntityTypesResponse> futureResponse) {
@@ -1299,7 +1306,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
           ListSessionEntityTypesFixedSizeCollection> {
 
     private ListSessionEntityTypesFixedSizeCollection(
-        List<ListSessionEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListSessionEntityTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1309,7 +1316,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListSessionEntityTypesFixedSizeCollection createCollection(
-        List<ListSessionEntityTypesPage> pages, int collectionSize) {
+        @Nullable List<ListSessionEntityTypesPage> pages, int collectionSize) {
       return new ListSessionEntityTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1343,8 +1350,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1354,14 +1361,14 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1375,7 +1382,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1385,7 +1393,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

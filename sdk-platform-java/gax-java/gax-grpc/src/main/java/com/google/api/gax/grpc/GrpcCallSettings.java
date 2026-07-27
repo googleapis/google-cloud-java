@@ -34,8 +34,10 @@ import com.google.api.gax.rpc.RequestMutator;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import io.grpc.MethodDescriptor;
+import org.jspecify.annotations.NullMarked;
 
 /** Grpc-specific settings for creating callables. */
+@NullMarked
 public class GrpcCallSettings<RequestT, ResponseT> {
   private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
   private final RequestParamsExtractor<RequestT> paramsExtractor;

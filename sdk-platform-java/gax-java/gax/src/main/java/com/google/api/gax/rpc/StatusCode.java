@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.InternalExtensionOnly;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Transport-specific status code.
@@ -38,6 +39,7 @@ import com.google.api.core.InternalExtensionOnly;
  * status codes, see
  * https://github.com/grpc/grpc-java/blob/master/core/src/main/java/io/grpc/Status.java
  */
+@NullMarked
 @InternalExtensionOnly
 public interface StatusCode {
 

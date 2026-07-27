@@ -24,7 +24,8 @@ package com.google.api.servicecontrol.v1;
  *
  *
  * <pre>
- * Represents error information for [QuotaOperation][google.api.servicecontrol.v1.QuotaOperation].
+ * Represents error information for
+ * [QuotaOperation][google.api.servicecontrol.v1.QuotaOperation].
  * </pre>
  *
  * Protobuf type {@code google.api.servicecontrol.v1.QuotaError}
@@ -101,7 +102,8 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Quota allocation failed.
-     * Same as [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
+     * Same as
+     * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
      * </pre>
      *
      * <code>RESOURCE_EXHAUSTED = 8;</code>
@@ -177,7 +179,8 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Quota allocation failed.
-     * Same as [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
+     * Same as
+     * [google.rpc.Code.RESOURCE_EXHAUSTED][google.rpc.Code.RESOURCE_EXHAUSTED].
      * </pre>
      *
      * <code>RESOURCE_EXHAUSTED = 8;</code>
@@ -714,7 +717,8 @@ public final class QuotaError extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents error information for [QuotaOperation][google.api.servicecontrol.v1.QuotaOperation].
+   * Represents error information for
+   * [QuotaOperation][google.api.servicecontrol.v1.QuotaOperation].
    * </pre>
    *
    * Protobuf type {@code google.api.servicecontrol.v1.QuotaError}

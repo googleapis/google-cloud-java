@@ -103,5 +103,45 @@ public interface SdpFilterResultOrBuilder
    */
   com.google.cloud.modelarmor.v1.SdpDeidentifyResultOrBuilder getDeidentifyResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   *
+   * @return Whether the redactResult field is set.
+   */
+  boolean hasRedactResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   *
+   * @return The redactResult.
+   */
+  com.google.cloud.modelarmor.v1.SdpRedactResult getRedactResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Sensitive Data Protection Redaction result if redaction is performed.
+   * This is primarily used for image redaction.
+   * </pre>
+   *
+   * <code>.google.cloud.modelarmor.v1.SdpRedactResult redact_result = 3;</code>
+   */
+  com.google.cloud.modelarmor.v1.SdpRedactResultOrBuilder getRedactResultOrBuilder();
+
   com.google.cloud.modelarmor.v1.SdpFilterResult.ResultCase getResultCase();
 }

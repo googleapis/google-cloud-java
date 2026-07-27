@@ -30,11 +30,37 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+   * </pre>
+   *
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the port field is set.
+   */
+  boolean hasPort();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. port will only be set for Primary/Reader or Discovery endpoint.
+   * </pre>
+   *
+   * <code>int32 port = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The port.
+   */
+  int getPort();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The pscConnectionId.
    */
@@ -44,11 +70,11 @@ public interface PscConnectionOrBuilder
    *
    *
    * <pre>
-   * Output only. The PSC connection id of the forwarding rule connected to the
+   * Required. The PSC connection id of the forwarding rule connected to the
    * service attachment.
    * </pre>
    *
-   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string psc_connection_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for pscConnectionId.
    */
@@ -153,7 +179,7 @@ public interface PscConnectionOrBuilder
    *
    * <pre>
    * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -169,7 +195,7 @@ public interface PscConnectionOrBuilder
    *
    * <pre>
    * Required. The consumer network where the IP address resides, in the form of
-   * projects/{project_id}/global/networks/{network_id}.
+   * projects/{project_id}/global/networks/{network_name}.
    * </pre>
    *
    * <code>
@@ -279,4 +305,6 @@ public interface PscConnectionOrBuilder
    * @return The connectionType.
    */
   com.google.cloud.memorystore.v1beta.ConnectionType getConnectionType();
+
+  com.google.cloud.memorystore.v1beta.PscConnection.PortsCase getPortsCase();
 }

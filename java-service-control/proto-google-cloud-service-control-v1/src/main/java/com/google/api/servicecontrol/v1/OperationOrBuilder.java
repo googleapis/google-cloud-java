@@ -103,6 +103,7 @@ public interface OperationOrBuilder
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
    *
+   *
    * - This can be in one of the following formats:
    * - project:PROJECT_ID,
    * - project`_`number:PROJECT_NUMBER,
@@ -126,6 +127,7 @@ public interface OperationOrBuilder
    * This field should be filled in for the operations initiated by a
    * consumer, but not for service-initiated operations that are
    * not related to a specific consumer.
+   *
    *
    * - This can be in one of the following formats:
    * - project:PROJECT_ID,
@@ -548,6 +550,84 @@ public interface OperationOrBuilder
    * @return The importance.
    */
   com.google.api.servicecontrol.v1.Operation.Importance getImportance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  int getUserLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  boolean containsUserLabels(java.lang.String key);
+
+  /** Use {@link #getUserLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getUserLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  /* nullable */
+  java.lang.String getUserLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Private Preview. This feature is only available for approved services.
+   *
+   * User defined labels for the resource that this operation is associated
+   * with.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_labels = 12;</code>
+   */
+  java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
   /**
    *

@@ -107,4 +107,67 @@ public interface QueryActionOrBuilder
    * <code>repeated .google.spanner.executor.v1.QueryAction.Parameter params = 2;</code>
    */
   com.google.spanner.executor.v1.QueryAction.ParameterOrBuilder getParamsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  int getSecureContextCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  boolean containsSecureContext(java.lang.String key);
+
+  /** Use {@link #getSecureContextMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContext();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  java.util.Map<java.lang.String, com.google.spanner.executor.v1.Value> getSecureContextMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  /* nullable */
+  com.google.spanner.executor.v1.Value getSecureContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.spanner.executor.v1.Value defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Secure context parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.spanner.executor.v1.Value&gt; secure_context = 3;</code>
+   */
+  com.google.spanner.executor.v1.Value getSecureContextOrThrow(java.lang.String key);
 }

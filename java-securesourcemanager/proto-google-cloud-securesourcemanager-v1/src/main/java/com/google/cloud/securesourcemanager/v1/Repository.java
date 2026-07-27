@@ -57,6 +57,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     instance_ = "";
     uid_ = "";
     etag_ = "";
+    serviceAccount_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3886,6 +3887,1566 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface ScanConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.securesourcemanager.v1.Repository.ScanConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the secretScanConfig field is set.
+     */
+    boolean hasSecretScanConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretScanConfig.
+     */
+    com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+        getSecretScanConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfigOrBuilder
+        getSecretScanConfigOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for scanning.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.securesourcemanager.v1.Repository.ScanConfig}
+   */
+  public static final class ScanConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.Repository.ScanConfig)
+      ScanConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ScanConfig");
+    }
+
+    // Use ScanConfig.newBuilder() to construct.
+    private ScanConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ScanConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+          .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.class,
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder.class);
+    }
+
+    public interface SecretScanConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables secret scanning for the repository.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      boolean getEnabled();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The DLP inspect template to use for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The inspectTemplate.
+       */
+      java.lang.String getInspectTemplate();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The DLP inspect template to use for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for inspectTemplate.
+       */
+      com.google.protobuf.ByteString getInspectTemplateBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for secret scanning.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig}
+     */
+    public static final class SecretScanConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+        SecretScanConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SecretScanConfig");
+      }
+
+      // Use SecretScanConfig.newBuilder() to construct.
+      private SecretScanConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SecretScanConfig() {
+        inspectTemplate_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_SecretScanConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_SecretScanConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                    .class,
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                    .Builder.class);
+      }
+
+      public static final int ENABLED_FIELD_NUMBER = 1;
+      private boolean enabled_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Enables secret scanning for the repository.
+       * </pre>
+       *
+       * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      public static final int INSPECT_TEMPLATE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object inspectTemplate_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The DLP inspect template to use for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The inspectTemplate.
+       */
+      @java.lang.Override
+      public java.lang.String getInspectTemplate() {
+        java.lang.Object ref = inspectTemplate_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inspectTemplate_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The DLP inspect template to use for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for inspectTemplate.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getInspectTemplateBytes() {
+        java.lang.Object ref = inspectTemplate_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          inspectTemplate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (enabled_ != false) {
+          output.writeBool(1, enabled_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(inspectTemplate_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, inspectTemplate_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (enabled_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(inspectTemplate_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, inspectTemplate_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig other =
+            (com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig) obj;
+
+        if (getEnabled() != other.getEnabled()) return false;
+        if (!getInspectTemplate().equals(other.getInspectTemplate())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+        hash = (37 * hash) + INSPECT_TEMPLATE_FIELD_NUMBER;
+        hash = (53 * hash) + getInspectTemplate().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Configuration for secret scanning.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_SecretScanConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_SecretScanConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                      .class,
+                  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          enabled_ = false;
+          inspectTemplate_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+              .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_SecretScanConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+            getDefaultInstanceForType() {
+          return com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+            build() {
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+            buildPartial() {
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig result =
+              new com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.enabled_ = enabled_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.inspectTemplate_ = inspectTemplate_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig) {
+            return mergeFrom(
+                (com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig other) {
+          if (other
+              == com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                  .getDefaultInstance()) return this;
+          if (other.getEnabled() != false) {
+            setEnabled(other.getEnabled());
+          }
+          if (!other.getInspectTemplate().isEmpty()) {
+            inspectTemplate_ = other.inspectTemplate_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    enabled_ = input.readBool();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    inspectTemplate_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private boolean enabled_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Enables secret scanning for the repository.
+         * </pre>
+         *
+         * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The enabled.
+         */
+        @java.lang.Override
+        public boolean getEnabled() {
+          return enabled_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Enables secret scanning for the repository.
+         * </pre>
+         *
+         * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The enabled to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnabled(boolean value) {
+
+          enabled_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Enables secret scanning for the repository.
+         * </pre>
+         *
+         * <code>bool enabled = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnabled() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          enabled_ = false;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object inspectTemplate_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The DLP inspect template to use for secret scanning.
+         * </pre>
+         *
+         * <code>
+         * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The inspectTemplate.
+         */
+        public java.lang.String getInspectTemplate() {
+          java.lang.Object ref = inspectTemplate_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            inspectTemplate_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The DLP inspect template to use for secret scanning.
+         * </pre>
+         *
+         * <code>
+         * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return The bytes for inspectTemplate.
+         */
+        public com.google.protobuf.ByteString getInspectTemplateBytes() {
+          java.lang.Object ref = inspectTemplate_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            inspectTemplate_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The DLP inspect template to use for secret scanning.
+         * </pre>
+         *
+         * <code>
+         * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The inspectTemplate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInspectTemplate(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          inspectTemplate_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The DLP inspect template to use for secret scanning.
+         * </pre>
+         *
+         * <code>
+         * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearInspectTemplate() {
+          inspectTemplate_ = getDefaultInstance().getInspectTemplate();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The DLP inspect template to use for secret scanning.
+         * </pre>
+         *
+         * <code>
+         * string inspect_template = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+         * </code>
+         *
+         * @param value The bytes for inspectTemplate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setInspectTemplateBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          inspectTemplate_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig)
+      private static final com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+              .SecretScanConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig();
+      }
+
+      public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SecretScanConfig> PARSER =
+          new com.google.protobuf.AbstractParser<SecretScanConfig>() {
+            @java.lang.Override
+            public SecretScanConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SecretScanConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SecretScanConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int SECRET_SCAN_CONFIG_FIELD_NUMBER = 1;
+    private com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+        secretScanConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the secretScanConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSecretScanConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The secretScanConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+        getSecretScanConfig() {
+      return secretScanConfig_ == null
+          ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+              .getDefaultInstance()
+          : secretScanConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for secret scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfigOrBuilder
+        getSecretScanConfigOrBuilder() {
+      return secretScanConfig_ == null
+          ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+              .getDefaultInstance()
+          : secretScanConfig_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getSecretScanConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSecretScanConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.securesourcemanager.v1.Repository.ScanConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.securesourcemanager.v1.Repository.ScanConfig other =
+          (com.google.cloud.securesourcemanager.v1.Repository.ScanConfig) obj;
+
+      if (hasSecretScanConfig() != other.hasSecretScanConfig()) return false;
+      if (hasSecretScanConfig()) {
+        if (!getSecretScanConfig().equals(other.getSecretScanConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSecretScanConfig()) {
+        hash = (37 * hash) + SECRET_SCAN_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSecretScanConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for scanning.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.securesourcemanager.v1.Repository.ScanConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.securesourcemanager.v1.Repository.ScanConfig)
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.class,
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetSecretScanConfigFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        secretScanConfig_ = null;
+        if (secretScanConfigBuilder_ != null) {
+          secretScanConfigBuilder_.dispose();
+          secretScanConfigBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securesourcemanager.v1.SecureSourceManagerProto
+            .internal_static_google_cloud_securesourcemanager_v1_Repository_ScanConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig build() {
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig buildPartial() {
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig result =
+            new com.google.cloud.securesourcemanager.v1.Repository.ScanConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.secretScanConfig_ =
+              secretScanConfigBuilder_ == null
+                  ? secretScanConfig_
+                  : secretScanConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.securesourcemanager.v1.Repository.ScanConfig) {
+          return mergeFrom((com.google.cloud.securesourcemanager.v1.Repository.ScanConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig other) {
+        if (other
+            == com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance())
+          return this;
+        if (other.hasSecretScanConfig()) {
+          mergeSecretScanConfig(other.getSecretScanConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetSecretScanConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          secretScanConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig,
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                  .Builder,
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+                  .SecretScanConfigOrBuilder>
+          secretScanConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the secretScanConfig field is set.
+       */
+      public boolean hasSecretScanConfig() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The secretScanConfig.
+       */
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+          getSecretScanConfig() {
+        if (secretScanConfigBuilder_ == null) {
+          return secretScanConfig_ == null
+              ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                  .getDefaultInstance()
+              : secretScanConfig_;
+        } else {
+          return secretScanConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSecretScanConfig(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig value) {
+        if (secretScanConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          secretScanConfig_ = value;
+        } else {
+          secretScanConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSecretScanConfig(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig.Builder
+              builderForValue) {
+        if (secretScanConfigBuilder_ == null) {
+          secretScanConfig_ = builderForValue.build();
+        } else {
+          secretScanConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSecretScanConfig(
+          com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig value) {
+        if (secretScanConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && secretScanConfig_ != null
+              && secretScanConfig_
+                  != com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                      .getDefaultInstance()) {
+            getSecretScanConfigBuilder().mergeFrom(value);
+          } else {
+            secretScanConfig_ = value;
+          }
+        } else {
+          secretScanConfigBuilder_.mergeFrom(value);
+        }
+        if (secretScanConfig_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSecretScanConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        secretScanConfig_ = null;
+        if (secretScanConfigBuilder_ != null) {
+          secretScanConfigBuilder_.dispose();
+          secretScanConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig.Builder
+          getSecretScanConfigBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetSecretScanConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfigOrBuilder
+          getSecretScanConfigOrBuilder() {
+        if (secretScanConfigBuilder_ != null) {
+          return secretScanConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return secretScanConfig_ == null
+              ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                  .getDefaultInstance()
+              : secretScanConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for secret scanning.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig secret_scan_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig,
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                  .Builder,
+              com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+                  .SecretScanConfigOrBuilder>
+          internalGetSecretScanConfigFieldBuilder() {
+        if (secretScanConfigBuilder_ == null) {
+          secretScanConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig,
+                  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.SecretScanConfig
+                      .Builder,
+                  com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+                      .SecretScanConfigOrBuilder>(
+                  getSecretScanConfig(), getParentForChildren(), isClean());
+          secretScanConfig_ = null;
+        }
+        return secretScanConfigBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Repository.ScanConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.securesourcemanager.v1.Repository.ScanConfig)
+    private static final com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.securesourcemanager.v1.Repository.ScanConfig();
+    }
+
+    public static com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScanConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ScanConfig>() {
+          @java.lang.Override
+          public ScanConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ScanConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScanConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -4403,6 +5964,123 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         : initialConfig_;
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repository level service account (BYOSA).
+   * </pre>
+   *
+   * <code>
+   * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Repository level service account (BYOSA).
+   * </pre>
+   *
+   * <code>
+   * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SCAN_CONFIG_FIELD_NUMBER = 13;
+  private com.google.cloud.securesourcemanager.v1.Repository.ScanConfig scanConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the scanConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasScanConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scanConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig getScanConfig() {
+    return scanConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance()
+        : scanConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides configuration for scanning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder
+      getScanConfigOrBuilder() {
+    return scanConfig_ == null
+        ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance()
+        : scanConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4444,6 +6122,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getInitialConfig());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(13, getScanConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4479,6 +6163,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getInitialConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(serviceAccount_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getScanConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -4517,6 +6207,11 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (hasInitialConfig()) {
       if (!getInitialConfig().equals(other.getInitialConfig())) return false;
     }
+    if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    if (hasScanConfig() != other.hasScanConfig()) return false;
+    if (hasScanConfig()) {
+      if (!getScanConfig().equals(other.getScanConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4553,6 +6248,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
     if (hasInitialConfig()) {
       hash = (37 * hash) + INITIAL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getInitialConfig().hashCode();
+    }
+    hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAccount().hashCode();
+    if (hasScanConfig()) {
+      hash = (37 * hash) + SCAN_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getScanConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4699,6 +6400,7 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetUrisFieldBuilder();
         internalGetInitialConfigFieldBuilder();
+        internalGetScanConfigFieldBuilder();
       }
     }
 
@@ -4730,6 +6432,12 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       if (initialConfigBuilder_ != null) {
         initialConfigBuilder_.dispose();
         initialConfigBuilder_ = null;
+      }
+      serviceAccount_ = "";
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
+        scanConfigBuilder_ = null;
       }
       return this;
     }
@@ -4800,6 +6508,13 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
             initialConfigBuilder_ == null ? initialConfig_ : initialConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.scanConfig_ = scanConfigBuilder_ == null ? scanConfig_ : scanConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4852,6 +6567,14 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasInitialConfig()) {
         mergeInitialConfig(other.getInitialConfig());
+      }
+      if (!other.getServiceAccount().isEmpty()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (other.hasScanConfig()) {
+        mergeScanConfig(other.getScanConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4936,6 +6659,19 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
+            case 106:
+              {
+                input.readMessage(
+                    internalGetScanConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6435,6 +8171,346 @@ public final class Repository extends com.google.protobuf.GeneratedMessage
         initialConfig_ = null;
       }
       return initialConfigBuilder_;
+    }
+
+    private java.lang.Object serviceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repository level service account (BYOSA).
+     * </pre>
+     *
+     * <code>
+     * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repository level service account (BYOSA).
+     * </pre>
+     *
+     * <code>
+     * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repository level service account (BYOSA).
+     * </pre>
+     *
+     * <code>
+     * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repository level service account (BYOSA).
+     * </pre>
+     *
+     * <code>
+     * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Repository level service account (BYOSA).
+     * </pre>
+     *
+     * <code>
+     * string service_account = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.securesourcemanager.v1.Repository.ScanConfig scanConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig,
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder,
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder>
+        scanConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the scanConfig field is set.
+     */
+    public boolean hasScanConfig() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scanConfig.
+     */
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig getScanConfig() {
+      if (scanConfigBuilder_ == null) {
+        return scanConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance()
+            : scanConfig_;
+      } else {
+        return scanConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScanConfig(
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig value) {
+      if (scanConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        scanConfig_ = value;
+      } else {
+        scanConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setScanConfig(
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder builderForValue) {
+      if (scanConfigBuilder_ == null) {
+        scanConfig_ = builderForValue.build();
+      } else {
+        scanConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeScanConfig(
+        com.google.cloud.securesourcemanager.v1.Repository.ScanConfig value) {
+      if (scanConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && scanConfig_ != null
+            && scanConfig_
+                != com.google.cloud.securesourcemanager.v1.Repository.ScanConfig
+                    .getDefaultInstance()) {
+          getScanConfigBuilder().mergeFrom(value);
+        } else {
+          scanConfig_ = value;
+        }
+      } else {
+        scanConfigBuilder_.mergeFrom(value);
+      }
+      if (scanConfig_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearScanConfig() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      scanConfig_ = null;
+      if (scanConfigBuilder_ != null) {
+        scanConfigBuilder_.dispose();
+        scanConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder
+        getScanConfigBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetScanConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder
+        getScanConfigOrBuilder() {
+      if (scanConfigBuilder_ != null) {
+        return scanConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return scanConfig_ == null
+            ? com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.getDefaultInstance()
+            : scanConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides configuration for scanning.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.securesourcemanager.v1.Repository.ScanConfig scan_config = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig,
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder,
+            com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder>
+        internalGetScanConfigFieldBuilder() {
+      if (scanConfigBuilder_ == null) {
+        scanConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig,
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfig.Builder,
+                com.google.cloud.securesourcemanager.v1.Repository.ScanConfigOrBuilder>(
+                getScanConfig(), getParentForChildren(), isClean());
+        scanConfig_ = null;
+      }
+      return scanConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securesourcemanager.v1.Repository)

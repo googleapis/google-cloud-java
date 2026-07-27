@@ -55,6 +55,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
   private GenerateEvaluationRequest() {
     conversation_ = "";
     source_ = 0;
+    evaluationType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -70,6 +71,177 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
         .ensureFieldAccessorsInitialized(
             com.google.cloud.ces.v1beta.GenerateEvaluationRequest.class,
             com.google.cloud.ces.v1beta.GenerateEvaluationRequest.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of evaluation to generate.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType}
+   */
+  public enum EvaluationType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified type. Defaults to GOLDEN.
+     * </pre>
+     *
+     * <code>EVALUATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    EVALUATION_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Golden evaluation.
+     * </pre>
+     *
+     * <code>GOLDEN = 1;</code>
+     */
+    GOLDEN(1),
+    /**
+     *
+     *
+     * <pre>
+     * Scenario evaluation.
+     * </pre>
+     *
+     * <code>SCENARIO = 2;</code>
+     */
+    SCENARIO(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "EvaluationType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified type. Defaults to GOLDEN.
+     * </pre>
+     *
+     * <code>EVALUATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int EVALUATION_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Golden evaluation.
+     * </pre>
+     *
+     * <code>GOLDEN = 1;</code>
+     */
+    public static final int GOLDEN_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Scenario evaluation.
+     * </pre>
+     *
+     * <code>SCENARIO = 2;</code>
+     */
+    public static final int SCENARIO_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EvaluationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static EvaluationType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EVALUATION_TYPE_UNSPECIFIED;
+        case 1:
+          return GOLDEN;
+        case 2:
+          return SCENARIO;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EvaluationType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<EvaluationType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EvaluationType>() {
+          public EvaluationType findValueByNumber(int number) {
+            return EvaluationType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.GenerateEvaluationRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final EvaluationType[] VALUES = values();
+
+    public static EvaluationType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EvaluationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType)
   }
 
   public static final int CONVERSATION_FIELD_NUMBER = 1;
@@ -149,7 +321,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
    * @return The enum numeric value on the wire for source.
    */
   @java.lang.Override
@@ -171,7 +343,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
    * @return The source.
    */
   @java.lang.Override
@@ -180,6 +352,52 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
     com.google.cloud.ces.v1beta.Conversation.Source result =
         com.google.cloud.ces.v1beta.Conversation.Source.forNumber(source_);
     return result == null ? com.google.cloud.ces.v1beta.Conversation.Source.UNRECOGNIZED : result;
+  }
+
+  public static final int EVALUATION_TYPE_FIELD_NUMBER = 3;
+  private int evaluationType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+   * unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for evaluationType.
+   */
+  @java.lang.Override
+  public int getEvaluationTypeValue() {
+    return evaluationType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+   * unspecified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationType.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType getEvaluationType() {
+    com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType result =
+        com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType.forNumber(
+            evaluationType_);
+    return result == null
+        ? com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -202,6 +420,12 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
     if (source_ != com.google.cloud.ces.v1beta.Conversation.Source.SOURCE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, source_);
     }
+    if (evaluationType_
+        != com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType
+            .EVALUATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(3, evaluationType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -216,6 +440,12 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
     }
     if (source_ != com.google.cloud.ces.v1beta.Conversation.Source.SOURCE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, source_);
+    }
+    if (evaluationType_
+        != com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType
+            .EVALUATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, evaluationType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -235,6 +465,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
 
     if (!getConversation().equals(other.getConversation())) return false;
     if (source_ != other.source_) return false;
+    if (evaluationType_ != other.evaluationType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -250,6 +481,8 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
     hash = (53 * hash) + getConversation().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + source_;
+    hash = (37 * hash) + EVALUATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + evaluationType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -394,6 +627,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
       bitField0_ = 0;
       conversation_ = "";
       source_ = 0;
+      evaluationType_ = 0;
       return this;
     }
 
@@ -436,6 +670,9 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.source_ = source_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.evaluationType_ = evaluationType_;
+      }
     }
 
     @java.lang.Override
@@ -458,6 +695,9 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
       }
       if (other.source_ != 0) {
         setSourceValue(other.getSourceValue());
+      }
+      if (other.evaluationType_ != 0) {
+        setEvaluationTypeValue(other.getEvaluationTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -497,6 +737,12 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                evaluationType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -662,7 +908,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+     *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
      * @return The enum numeric value on the wire for source.
      */
     @java.lang.Override
@@ -684,7 +930,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+     *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
      * @param value The enum numeric value on the wire for source to set.
      * @return This builder for chaining.
      */
@@ -709,7 +955,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+     *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
      * @return The source.
      */
     @java.lang.Override
@@ -733,7 +979,7 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+     *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
      * @param value The source to set.
      * @return This builder for chaining.
      */
@@ -761,13 +1007,128 @@ public final class GenerateEvaluationRequest extends com.google.protobuf.Generat
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation_service.proto;l=531
+     *     google/cloud/ces/v1beta/evaluation_service.proto;l=543
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearSource() {
       bitField0_ = (bitField0_ & ~0x00000002);
       source_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int evaluationType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+     * unspecified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for evaluationType.
+     */
+    @java.lang.Override
+    public int getEvaluationTypeValue() {
+      return evaluationType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+     * unspecified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationTypeValue(int value) {
+      evaluationType_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+     * unspecified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The evaluationType.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType
+        getEvaluationType() {
+      com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType result =
+          com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType.forNumber(
+              evaluationType_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+     * unspecified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The evaluationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvaluationType(
+        com.google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      evaluationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of evaluation to generate. Defaults to GOLDEN if
+     * unspecified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.GenerateEvaluationRequest.EvaluationType evaluation_type = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvaluationType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      evaluationType_ = 0;
       onChanged();
       return this;
     }

@@ -40,6 +40,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -229,15 +230,27 @@ class ConnectionWorkerPoolTest {
         createConnectionWorkerPool(
             /* maxRequests= */ 3, /* maxBytes= */ 1000, java.time.Duration.ofSeconds(5));
 
-    // Sets the sleep time to simulate requests stuck in connection.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
     StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
     StreamWriter writeStream2 = getTestStreamWriter(TEST_STREAM_2);
 
     // Try append 20 requests, at the end we should have 2 requests per connection.
     long appendCount = 20;
+    // Use a CountDownLatch to block mock server responses. This ensures all 20 requests
+    // remain in-flight simultaneously, forcing the ConnectionWorkerPool to scale up to
+    // 10 connections. Without this blocking, requests might finish early and prevent scaling.
+    CountDownLatch latch = new CountDownLatch(1);
     for (long i = 0; i < appendCount; i++) {
-      testBigQueryWrite.addResponse(createAppendResponse(i));
+      long offset = i;
+      testBigQueryWrite.addResponse(
+          () -> {
+            try {
+              latch.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+              throw new RuntimeException(e);
+            }
+            return new FakeBigQueryWriteImpl.Response(createAppendResponse(offset));
+          });
     }
     List<ApiFuture<?>> futures = new ArrayList<>();
 
@@ -253,12 +266,18 @@ class ConnectionWorkerPoolTest {
               writeStream, connectionWorkerPool, new String[] {String.valueOf(i)}, i));
     }
 
+    // At the end we should scale up to 10 connections.
+    try {
+      assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
+      assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
+    } finally {
+      // Release the latch to allow requests to complete.
+      latch.countDown();
+    }
+
     for (ApiFuture<?> future : futures) {
       future.get();
     }
-    // At the end we should scale up to 10 connections.
-    assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
-    assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
 
     // Start testing calling close on each stream.
     // When we close the first stream, only the connection that only serve stream 1 will be closed.
@@ -273,8 +292,10 @@ class ConnectionWorkerPoolTest {
 
   @Test
   void testMultiStreamAppend_appendWhileClosing() throws Exception {
+    // Limit max connections to 5 (same as min connections) to prevent timing-dependent
+    // scale up during concurrent appends in this test, which expects exactly 5 connections.
     ConnectionWorkerPool.setOptions(
-        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
+        Settings.builder().setMaxConnectionsPerRegion(5).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(
             /* maxRequests= */ 3, /* maxBytes= */ 100000, java.time.Duration.ofSeconds(5));

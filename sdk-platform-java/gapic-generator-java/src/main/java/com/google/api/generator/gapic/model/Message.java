@@ -31,8 +31,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class Message {
 
@@ -62,8 +64,7 @@ public abstract class Message {
 
   public abstract ImmutableMap<String, Field> fieldMap();
 
-  @Nullable
-  public abstract OperationResponse operationResponse();
+  public abstract @Nullable OperationResponse operationResponse();
 
   public abstract Map<String, String> operationRequestFields();
 
@@ -71,8 +72,7 @@ public abstract class Message {
 
   // The resource name annotation (and definition) in this message. Optional.
   // Expected dto be empty for messages that have no such definition.
-  @Nullable
-  public abstract ResourceName resource();
+  public abstract @Nullable ResourceName resource();
 
   // The nested types in left-to-right order, if any.
   // Example: com.google.Foo.Bar.Car.ThisType will have the outer types listed in the order
@@ -143,8 +143,7 @@ public abstract class Message {
   }
 
   /** Returns the first list repeated field in a message, unwrapped from its list type. */
-  @Nullable
-  public Field findAndUnwrapPaginatedRepeatedField() {
+  public @Nullable Field findAndUnwrapPaginatedRepeatedField() {
     for (Field field : fields()) {
       if (field.isMap()) {
         List<Reference> repeatedGenericMapRefs = field.type().reference().generics();

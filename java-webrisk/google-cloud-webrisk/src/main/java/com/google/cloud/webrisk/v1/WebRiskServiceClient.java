@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -225,9 +227,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WebRiskServiceClient implements BackgroundResource {
-  private final WebRiskServiceSettings settings;
+  private final @Nullable WebRiskServiceSettings settings;
   private final WebRiskServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -275,7 +278,7 @@ public class WebRiskServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WebRiskServiceSettings getSettings() {
+  public final @Nullable WebRiskServiceSettings getSettings() {
     return settings;
   }
 
@@ -648,7 +651,7 @@ public class WebRiskServiceClient implements BackgroundResource {
    * @param submission Required. The submission that contains the content of the phishing report.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Submission createSubmission(ProjectName parent, Submission submission) {
+  public final Submission createSubmission(@Nullable ProjectName parent, Submission submission) {
     CreateSubmissionRequest request =
         CreateSubmissionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -792,7 +795,7 @@ public class WebRiskServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Submission, SubmitUriMetadata> submitUriAsync(
-      ProjectName parent, Submission submission) {
+      @Nullable ProjectName parent, Submission submission) {
     SubmitUriRequest request =
         SubmitUriRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

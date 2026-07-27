@@ -70,6 +70,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +150,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSettings> {
 
@@ -194,6 +197,29 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       deleteCloudExadataInfrastructureOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .deleteCloudExadataInfrastructureOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public UnaryCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .configureExascaleCloudExadataInfrastructureSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * configureExascaleCloudExadataInfrastructure.
+   */
+  public OperationCallSettings<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .configureExascaleCloudExadataInfrastructureOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listCloudVmClusters. */
@@ -984,7 +1010,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1004,7 +1030,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(OracleDatabaseStubSettings.newBuilder(clientContext));
     }
 
@@ -1080,6 +1106,28 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
         deleteCloudExadataInfrastructureOperationSettings() {
       return getStubSettingsBuilder().deleteCloudExadataInfrastructureOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public UnaryCallSettings.Builder<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureSettings() {
+      return getStubSettingsBuilder().configureExascaleCloudExadataInfrastructureSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * configureExascaleCloudExadataInfrastructure.
+     */
+    public OperationCallSettings.Builder<
+            ConfigureExascaleCloudExadataInfrastructureRequest,
+            CloudExadataInfrastructure,
+            OperationMetadata>
+        configureExascaleCloudExadataInfrastructureOperationSettings() {
+      return getStubSettingsBuilder()
+          .configureExascaleCloudExadataInfrastructureOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listCloudVmClusters. */

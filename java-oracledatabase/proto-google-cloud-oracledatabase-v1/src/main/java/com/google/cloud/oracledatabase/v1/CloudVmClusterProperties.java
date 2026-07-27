@@ -72,6 +72,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     dnsListenerIp_ = "";
     clusterName_ = "";
     computeModel_ = 0;
+    storageManagementType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -715,6 +716,181 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.CloudVmClusterProperties.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of storage management for the Cloud VM Cluster.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType}
+   */
+  public enum StorageManagementType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage management type.
+     * </pre>
+     *
+     * <code>STORAGE_MANAGEMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    STORAGE_MANAGEMENT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Automatic Storage Management.
+     * </pre>
+     *
+     * <code>ASM = 1;</code>
+     */
+    ASM(1),
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage management.
+     * </pre>
+     *
+     * <code>EXASCALE = 2;</code>
+     */
+    EXASCALE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "StorageManagementType");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified storage management type.
+     * </pre>
+     *
+     * <code>STORAGE_MANAGEMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STORAGE_MANAGEMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Automatic Storage Management.
+     * </pre>
+     *
+     * <code>ASM = 1;</code>
+     */
+    public static final int ASM_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Exascale storage management.
+     * </pre>
+     *
+     * <code>EXASCALE = 2;</code>
+     */
+    public static final int EXASCALE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StorageManagementType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StorageManagementType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STORAGE_MANAGEMENT_TYPE_UNSPECIFIED;
+        case 1:
+          return ASM;
+        case 2:
+          return EXASCALE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StorageManagementType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StorageManagementType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<StorageManagementType>() {
+              public StorageManagementType findValueByNumber(int number) {
+                return StorageManagementType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final StorageManagementType[] VALUES = values();
+
+    public static StorageManagementType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StorageManagementType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType)
   }
 
   private int bitField0_;
@@ -2112,6 +2288,52 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     return result == null ? com.google.cloud.oracledatabase.v1.ComputeModel.UNRECOGNIZED : result;
   }
 
+  public static final int STORAGE_MANAGEMENT_TYPE_FIELD_NUMBER = 38;
+  private int storageManagementType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage management type of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for storageManagementType.
+   */
+  @java.lang.Override
+  public int getStorageManagementTypeValue() {
+    return storageManagementType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The storage management type of the VM Cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The storageManagementType.
+   */
+  @java.lang.Override
+  public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+      getStorageManagementType() {
+    com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType result =
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType.forNumber(
+            storageManagementType_);
+    return result == null
+        ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+            .UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2233,6 +2455,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     if (computeModel_
         != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
       output.writeEnum(37, computeModel_);
+    }
+    if (storageManagementType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+            .STORAGE_MANAGEMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(38, storageManagementType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2368,6 +2596,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
         != com.google.cloud.oracledatabase.v1.ComputeModel.COMPUTE_MODEL_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(37, computeModel_);
     }
+    if (storageManagementType_
+        != com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+            .STORAGE_MANAGEMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(38, storageManagementType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2427,6 +2661,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     if (!getDnsListenerIp().equals(other.getDnsListenerIp())) return false;
     if (!getClusterName().equals(other.getClusterName())) return false;
     if (computeModel_ != other.computeModel_) return false;
+    if (storageManagementType_ != other.storageManagementType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2517,6 +2752,8 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     hash = (53 * hash) + getClusterName().hashCode();
     hash = (37 * hash) + COMPUTE_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + computeModel_;
+    hash = (37 * hash) + STORAGE_MANAGEMENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + storageManagementType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2710,6 +2947,7 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       dnsListenerIp_ = "";
       clusterName_ = "";
       computeModel_ = 0;
+      storageManagementType_ = 0;
       return this;
     }
 
@@ -2861,6 +3099,9 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       int from_bitField1_ = bitField1_;
       if (((from_bitField1_ & 0x00000001) != 0)) {
         result.computeModel_ = computeModel_;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.storageManagementType_ = storageManagementType_;
       }
     }
 
@@ -3022,6 +3263,9 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
       }
       if (other.computeModel_ != 0) {
         setComputeModelValue(other.getComputeModelValue());
+      }
+      if (other.storageManagementType_ != 0) {
+        setStorageManagementTypeValue(other.getStorageManagementTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3253,6 +3497,12 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
                 bitField1_ |= 0x00000001;
                 break;
               } // case 296
+            case 304:
+              {
+                storageManagementType_ = input.readEnum();
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 304
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6740,6 +6990,117 @@ public final class CloudVmClusterProperties extends com.google.protobuf.Generate
     public Builder clearComputeModel() {
       bitField1_ = (bitField1_ & ~0x00000001);
       computeModel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int storageManagementType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage management type of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for storageManagementType.
+     */
+    @java.lang.Override
+    public int getStorageManagementTypeValue() {
+      return storageManagementType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage management type of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for storageManagementType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageManagementTypeValue(int value) {
+      storageManagementType_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage management type of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The storageManagementType.
+     */
+    @java.lang.Override
+    public com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+        getStorageManagementType() {
+      com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType result =
+          com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+              .forNumber(storageManagementType_);
+      return result == null
+          ? com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage management type of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The storageManagementType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageManagementType(
+        com.google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000002;
+      storageManagementType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The storage management type of the VM Cluster.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.oracledatabase.v1.CloudVmClusterProperties.StorageManagementType storage_management_type = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageManagementType() {
+      bitField1_ = (bitField1_ & ~0x00000002);
+      storageManagementType_ = 0;
       onChanged();
       return this;
     }

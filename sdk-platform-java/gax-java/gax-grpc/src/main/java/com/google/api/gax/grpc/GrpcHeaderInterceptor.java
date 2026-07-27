@@ -41,12 +41,14 @@ import io.grpc.Metadata.Key;
 import io.grpc.MethodDescriptor;
 import java.util.Map;
 import java.util.Map.Entry;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An interceptor to handle custom headers.
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 @InternalApi
 public class GrpcHeaderInterceptor implements ClientInterceptor {
   private final Map<Metadata.Key<String>, String> staticHeaders;

@@ -884,7 +884,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
    * @return Whether the privateAuctionDealId field is set.
    */
   @java.lang.Override
@@ -905,7 +905,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    * </code>
    *
    * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+   *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
    * @return The privateAuctionDealId.
    */
   @java.lang.Override
@@ -1616,6 +1616,65 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         : buyerData_;
   }
 
+  public static final int DEAL_PRIORITY_FIELD_NUMBER = 22;
+  private com.google.ads.admanager.v1.NonGuaranteedDealPriority dealPriority_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dealPriority field is set.
+   */
+  @java.lang.Override
+  public boolean hasDealPriority() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dealPriority.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.NonGuaranteedDealPriority getDealPriority() {
+    return dealPriority_ == null
+        ? com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()
+        : dealPriority_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The priority of the deal across all non-guaranteed deals.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder getDealPriorityOrBuilder() {
+    return dealPriority_ == null
+        ? com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()
+        : dealPriority_;
+  }
+
   public static final int CREATE_TIME_FIELD_NUMBER = 15;
   private com.google.protobuf.Timestamp createTime_;
 
@@ -1634,7 +1693,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1690,7 +1749,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1782,10 +1841,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(14, getBuyerData());
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(15, getCreateTime());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(16, getUpdateTime());
     }
     for (int i = 0; i < creativeSizes_.size(); i++) {
@@ -1793,6 +1852,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 20, privateAuctionDisplayName_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      output.writeMessage(22, getDealPriority());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1842,10 +1904,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getBuyerData());
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getCreateTime());
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getUpdateTime());
     }
     for (int i = 0; i < creativeSizes_.size(); i++) {
@@ -1854,6 +1916,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(20, privateAuctionDisplayName_);
+    }
+    if (((bitField0_ & 0x00002000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getDealPriority());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1925,6 +1990,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasBuyerData() != other.hasBuyerData()) return false;
     if (hasBuyerData()) {
       if (!getBuyerData().equals(other.getBuyerData())) return false;
+    }
+    if (hasDealPriority() != other.hasDealPriority()) return false;
+    if (hasDealPriority()) {
+      if (!getDealPriority().equals(other.getDealPriority())) return false;
     }
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -2002,6 +2071,10 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
     if (hasBuyerData()) {
       hash = (37 * hash) + BUYER_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getBuyerData().hashCode();
+    }
+    if (hasDealPriority()) {
+      hash = (37 * hash) + DEAL_PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getDealPriority().hashCode();
     }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
@@ -2157,6 +2230,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         internalGetFloorPriceFieldBuilder();
         internalGetCreativeSizesFieldBuilder();
         internalGetBuyerDataFieldBuilder();
+        internalGetDealPriorityFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
       }
@@ -2202,6 +2276,11 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       if (buyerDataBuilder_ != null) {
         buyerDataBuilder_.dispose();
         buyerDataBuilder_ = null;
+      }
+      dealPriority_ = null;
+      if (dealPriorityBuilder_ != null) {
+        dealPriorityBuilder_.dispose();
+        dealPriorityBuilder_ = null;
       }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -2319,12 +2398,17 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.dealPriority_ =
+            dealPriorityBuilder_ == null ? dealPriority_ : dealPriorityBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2413,6 +2497,9 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasBuyerData()) {
         mergeBuyerData(other.getBuyerData());
+      }
+      if (other.hasDealPriority()) {
+        mergeDealPriority(other.getDealPriority());
       }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
@@ -2531,14 +2618,14 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 130
             case 146:
@@ -2559,6 +2646,13 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 162
+            case 178:
+              {
+                input.readMessage(
+                    internalGetDealPriorityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2713,7 +2807,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
      * @return Whether the privateAuctionDealId field is set.
      */
     @java.lang.Override
@@ -2734,7 +2828,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
      * @return The privateAuctionDealId.
      */
     @java.lang.Override
@@ -2755,7 +2849,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
      * @param value The privateAuctionDealId to set.
      * @return This builder for chaining.
      */
@@ -2780,7 +2874,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      *
      * @deprecated google.ads.admanager.v1.PrivateAuctionDeal.private_auction_deal_id is deprecated.
-     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=56
+     *     See google/ads/admanager/v1/private_auction_deal_messages.proto;l=57
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4814,6 +4908,221 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       return buyerDataBuilder_;
     }
 
+    private com.google.ads.admanager.v1.NonGuaranteedDealPriority dealPriority_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.NonGuaranteedDealPriority,
+            com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder,
+            com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder>
+        dealPriorityBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dealPriority field is set.
+     */
+    public boolean hasDealPriority() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dealPriority.
+     */
+    public com.google.ads.admanager.v1.NonGuaranteedDealPriority getDealPriority() {
+      if (dealPriorityBuilder_ == null) {
+        return dealPriority_ == null
+            ? com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()
+            : dealPriority_;
+      } else {
+        return dealPriorityBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDealPriority(com.google.ads.admanager.v1.NonGuaranteedDealPriority value) {
+      if (dealPriorityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dealPriority_ = value;
+      } else {
+        dealPriorityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDealPriority(
+        com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder builderForValue) {
+      if (dealPriorityBuilder_ == null) {
+        dealPriority_ = builderForValue.build();
+      } else {
+        dealPriorityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDealPriority(com.google.ads.admanager.v1.NonGuaranteedDealPriority value) {
+      if (dealPriorityBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && dealPriority_ != null
+            && dealPriority_
+                != com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()) {
+          getDealPriorityBuilder().mergeFrom(value);
+        } else {
+          dealPriority_ = value;
+        }
+      } else {
+        dealPriorityBuilder_.mergeFrom(value);
+      }
+      if (dealPriority_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDealPriority() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      dealPriority_ = null;
+      if (dealPriorityBuilder_ != null) {
+        dealPriorityBuilder_.dispose();
+        dealPriorityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder getDealPriorityBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return internalGetDealPriorityFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder
+        getDealPriorityOrBuilder() {
+      if (dealPriorityBuilder_ != null) {
+        return dealPriorityBuilder_.getMessageOrBuilder();
+      } else {
+        return dealPriority_ == null
+            ? com.google.ads.admanager.v1.NonGuaranteedDealPriority.getDefaultInstance()
+            : dealPriority_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The priority of the deal across all non-guaranteed deals.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.NonGuaranteedDealPriority deal_priority = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.NonGuaranteedDealPriority,
+            com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder,
+            com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder>
+        internalGetDealPriorityFieldBuilder() {
+      if (dealPriorityBuilder_ == null) {
+        dealPriorityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.NonGuaranteedDealPriority,
+                com.google.ads.admanager.v1.NonGuaranteedDealPriority.Builder,
+                com.google.ads.admanager.v1.NonGuaranteedDealPriorityOrBuilder>(
+                getDealPriority(), getParentForChildren(), isClean());
+        dealPriority_ = null;
+      }
+      return dealPriorityBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -4835,7 +5144,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4881,7 +5190,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4903,7 +5212,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4921,7 +5230,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4932,7 +5241,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4950,7 +5259,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4972,7 +5281,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5048,7 +5357,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5096,7 +5405,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5119,7 +5428,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5138,7 +5447,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5149,7 +5458,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -5168,7 +5477,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5191,7 +5500,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }

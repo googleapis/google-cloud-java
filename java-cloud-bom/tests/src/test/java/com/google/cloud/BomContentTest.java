@@ -30,6 +30,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -76,6 +77,12 @@ public class BomContentTest {
       if (artifact.getVersion().contains("SNAPSHOT")) {
         continue;
       }
+      // If the artifact is built locally (e.g. during a release PR), it will be in the local
+      // .m2 cache. We can skip checking Maven Central for these local artifacts since they
+      // are not yet published.
+      if (existsLocally(artifact)) {
+        continue;
+      }
       assertReachable(buildMavenCentralUrl(artifact));
     }
 
@@ -102,6 +109,12 @@ public class BomContentTest {
     StringBuilder errors = new StringBuilder();
     for (Artifact artifact : artifacts) {
       if (artifact.getVersion().contains("SNAPSHOT")) {
+        continue;
+      }
+      // If the artifact is built locally (e.g. during a release PR), it will be in the local
+      // .m2 cache. We can skip checking Maven Central for these local artifacts since they
+      // are not yet published.
+      if (existsLocally(artifact)) {
         continue;
       }
       try {
@@ -132,6 +145,30 @@ public class BomContentTest {
         + "-"
         + artifact.getVersion()
         + ".pom";
+  }
+
+  /**
+   * Checks if the artifact exists in the local Maven repository cache. This is used as a
+   * fallback/bypass for reachability checks during release PRs.
+   */
+  private static boolean existsLocally(Artifact artifact) {
+    String localRepository = System.getProperty("maven.repo.local");
+    if (localRepository == null) {
+      String userHome = System.getProperty("user.home");
+      if (userHome == null) {
+        return false;
+      }
+      // Standard default location for Maven local repository.
+      localRepository = userHome + "/.m2/repository";
+    }
+    Path localPath =
+        Paths.get(
+            localRepository,
+            artifact.getGroupId().replace('.', '/'),
+            artifact.getArtifactId(),
+            artifact.getVersion(),
+            artifact.getArtifactId() + "-" + artifact.getVersion() + ".pom");
+    return Files.exists(localPath);
   }
 
   /** Asserts that the BOM only provides JARs which contains unique class names to the classpath. */

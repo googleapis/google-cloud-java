@@ -24,7 +24,7 @@ package com.google.cloud.memorystore.v1beta;
  *
  *
  * <pre>
- * Response message for [ListInstances][].
+ * Response message for `ListInstances`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.memorystore.v1beta.ListInstancesResponse}
@@ -473,7 +473,7 @@ public final class ListInstancesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [ListInstances][].
+   * Response message for `ListInstances`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.memorystore.v1beta.ListInstancesResponse}

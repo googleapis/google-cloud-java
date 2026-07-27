@@ -14,7 +14,10 @@
 
 package com.google.api.generator.gapic.composer.utils;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Provides Gapic common strings. */
+@NullMarked
 public class CommonStrings {
   public static final String PAGED_RESPONSE_TYPE_NAME_PATTERN = "%sPagedResponse";
   public static final String INTERNAL_API_WARNING =

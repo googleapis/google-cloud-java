@@ -120,6 +120,8 @@ public interface ListContentBundlesRequestOrBuilder
    * &lt;ul style="list-style-type:none"&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *
@@ -141,6 +143,8 @@ public interface ListContentBundlesRequestOrBuilder
    * &lt;ul style="list-style-type:none"&gt;
    * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
    * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
+   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
    * &lt;/ul&gt;
    * </pre>
    *

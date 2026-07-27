@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "OracleDatabaseClient",
           "rpcs": {
+            "ConfigureExascaleCloudExadataInfrastructure": {
+              "methods": ["configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureOperationCallable", "configureExascaleCloudExadataInfrastructureCallable"]
+            },
             "CreateAutonomousDatabase": {
               "methods": ["createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseOperationCallable", "createAutonomousDatabaseCallable"]
             },

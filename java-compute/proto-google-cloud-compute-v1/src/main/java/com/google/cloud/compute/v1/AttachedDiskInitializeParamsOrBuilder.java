@@ -193,32 +193,6 @@ public interface AttachedDiskInitializeParamsOrBuilder
   long getDiskSizeGb();
 
   /**
-   *
-   *
-   * <pre>
-   * Specifies the disk type to use to create the instance. If not specified,
-   * the default is pd-standard, specified using the full URL.
-   * For example:
-   *
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   *
-   *
-   * For a full list of acceptable values, seePersistent disk
-   * types. If you specify this field when creating a VM, you can provide
-   * either the full or partial URL. For example, the following values are
-   * valid:
-   *
-   *
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType
-   *
-   *
-   * If you specify this field when creating or updating an instance template
-   * or all-instances configuration, specify the type of the disk, not the
-   * URL. For example: pd-standard.
-   * </pre>
-   *
    * <code>optional string disk_type = 93009052;</code>
    *
    * @return Whether the diskType field is set.
@@ -226,32 +200,6 @@ public interface AttachedDiskInitializeParamsOrBuilder
   boolean hasDiskType();
 
   /**
-   *
-   *
-   * <pre>
-   * Specifies the disk type to use to create the instance. If not specified,
-   * the default is pd-standard, specified using the full URL.
-   * For example:
-   *
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   *
-   *
-   * For a full list of acceptable values, seePersistent disk
-   * types. If you specify this field when creating a VM, you can provide
-   * either the full or partial URL. For example, the following values are
-   * valid:
-   *
-   *
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType
-   *
-   *
-   * If you specify this field when creating or updating an instance template
-   * or all-instances configuration, specify the type of the disk, not the
-   * URL. For example: pd-standard.
-   * </pre>
-   *
    * <code>optional string disk_type = 93009052;</code>
    *
    * @return The diskType.
@@ -259,32 +207,6 @@ public interface AttachedDiskInitializeParamsOrBuilder
   java.lang.String getDiskType();
 
   /**
-   *
-   *
-   * <pre>
-   * Specifies the disk type to use to create the instance. If not specified,
-   * the default is pd-standard, specified using the full URL.
-   * For example:
-   *
-   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/pd-standard
-   *
-   *
-   * For a full list of acceptable values, seePersistent disk
-   * types. If you specify this field when creating a VM, you can provide
-   * either the full or partial URL. For example, the following values are
-   * valid:
-   *
-   *
-   * - https://www.googleapis.com/compute/v1/projects/project/zones/zone/diskTypes/diskType
-   * - projects/project/zones/zone/diskTypes/diskType
-   * - zones/zone/diskTypes/diskType
-   *
-   *
-   * If you specify this field when creating or updating an instance template
-   * or all-instances configuration, specify the type of the disk, not the
-   * URL. For example: pd-standard.
-   * </pre>
-   *
    * <code>optional string disk_type = 93009052;</code>
    *
    * @return The bytes for diskType.

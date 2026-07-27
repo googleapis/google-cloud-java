@@ -60,6 +60,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     creationTimestamp_ = "";
     description_ = "";
     kind_ = "";
+    loadBalancingScheme_ = "";
     name_ = "";
     proxyHeader_ = "";
     region_ = "";
@@ -80,6 +81,160 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.TargetTcpProxy.class,
             com.google.cloud.compute.v1.TargetTcpProxy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.TargetTcpProxy.LoadBalancingScheme}
+   */
+  public enum LoadBalancingScheme implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_LOAD_BALANCING_SCHEME = 0;</code>
+     */
+    UNDEFINED_LOAD_BALANCING_SCHEME(0),
+    /** <code>EXTERNAL = 35607499;</code> */
+    EXTERNAL(35607499),
+    /** <code>EXTERNAL_MANAGED = 512006923;</code> */
+    EXTERNAL_MANAGED(512006923),
+    /** <code>INTERNAL_MANAGED = 37350397;</code> */
+    INTERNAL_MANAGED(37350397),
+    /** <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code> */
+    LOAD_BALANCING_SCHEME_UNSPECIFIED(526507452),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "LoadBalancingScheme");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_LOAD_BALANCING_SCHEME = 0;</code>
+     */
+    public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
+
+    /** <code>EXTERNAL = 35607499;</code> */
+    public static final int EXTERNAL_VALUE = 35607499;
+
+    /** <code>EXTERNAL_MANAGED = 512006923;</code> */
+    public static final int EXTERNAL_MANAGED_VALUE = 512006923;
+
+    /** <code>INTERNAL_MANAGED = 37350397;</code> */
+    public static final int INTERNAL_MANAGED_VALUE = 37350397;
+
+    /** <code>LOAD_BALANCING_SCHEME_UNSPECIFIED = 526507452;</code> */
+    public static final int LOAD_BALANCING_SCHEME_UNSPECIFIED_VALUE = 526507452;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static LoadBalancingScheme valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static LoadBalancingScheme forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_LOAD_BALANCING_SCHEME;
+        case 35607499:
+          return EXTERNAL;
+        case 512006923:
+          return EXTERNAL_MANAGED;
+        case 37350397:
+          return INTERNAL_MANAGED;
+        case 526507452:
+          return LOAD_BALANCING_SCHEME_UNSPECIFIED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<LoadBalancingScheme>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<LoadBalancingScheme>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LoadBalancingScheme>() {
+              public LoadBalancingScheme findValueByNumber(int number) {
+                return LoadBalancingScheme.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.TargetTcpProxy.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final LoadBalancingScheme[] VALUES = values();
+
+    public static LoadBalancingScheme valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private LoadBalancingScheme(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetTcpProxy.LoadBalancingScheme)
   }
 
   /**
@@ -197,7 +352,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     }
 
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.TargetTcpProxy.getDescriptor().getEnumTypes().get(0);
+      return com.google.cloud.compute.v1.TargetTcpProxy.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final ProxyHeader[] VALUES = values();
@@ -472,6 +627,78 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loadBalancingScheme_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return Whether the loadBalancingScheme field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancingScheme() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return The loadBalancingScheme.
+   */
+  @java.lang.Override
+  public java.lang.String getLoadBalancingScheme() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancingScheme_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the type of load balancing scheme used by this target proxy.
+   * Check the LoadBalancingScheme enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   *
+   * @return The bytes for loadBalancingScheme.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoadBalancingSchemeBytes() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loadBalancingScheme_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
 
   @SuppressWarnings("serial")
@@ -496,7 +723,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -585,7 +812,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProxyBind() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -635,7 +862,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasProxyHeader() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -711,7 +938,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -782,7 +1009,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -851,7 +1078,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasService() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -922,28 +1149,31 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 138946292, region_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 160374142, proxyHeader_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     getUnknownFields().writeTo(output);
@@ -961,28 +1191,32 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(138946292, region_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(160374142, proxyHeader_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(286025582, proxyBind_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(363890244, loadBalancingScheme_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(373540533, service_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -1016,6 +1250,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
       if (!getKind().equals(other.getKind())) return false;
+    }
+    if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
+    if (hasLoadBalancingScheme()) {
+      if (!getLoadBalancingScheme().equals(other.getLoadBalancingScheme())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1067,6 +1305,10 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
       hash = (53 * hash) + getKind().hashCode();
+    }
+    if (hasLoadBalancingScheme()) {
+      hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadBalancingScheme().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1241,6 +1483,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       description_ = "";
       id_ = 0L;
       kind_ = "";
+      loadBalancingScheme_ = "";
       name_ = "";
       proxyBind_ = false;
       proxyHeader_ = "";
@@ -1301,28 +1544,32 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.name_ = name_;
+        result.loadBalancingScheme_ = loadBalancingScheme_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.proxyBind_ = proxyBind_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.proxyHeader_ = proxyHeader_;
+        result.proxyBind_ = proxyBind_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.region_ = region_;
+        result.proxyHeader_ = proxyHeader_;
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.region_ = region_;
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.service_ = service_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.service_ = service_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1357,9 +1604,14 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasLoadBalancingScheme()) {
+        loadBalancingScheme_ = other.loadBalancingScheme_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasProxyBind()) {
@@ -1367,22 +1619,22 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasProxyHeader()) {
         proxyHeader_ = other.proxyHeader_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (other.hasService()) {
         service_ = other.service_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1426,7 +1678,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26989658
             case 244202930:
@@ -1438,25 +1690,31 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 1111570338
             case 1282993138:
               {
                 proxyHeader_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1282993138
             case -2006762640:
               {
                 proxyBind_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -2006762640
+            case -1383845342:
+              {
+                loadBalancingScheme_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -1383845342
             case -1306643030:
               {
                 service_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case -1306643030
             case -911466526:
@@ -1468,7 +1726,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case -645248918
             default:
@@ -1956,6 +2214,138 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object loadBalancingScheme_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @return Whether the loadBalancingScheme field is set.
+     */
+    public boolean hasLoadBalancingScheme() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @return The loadBalancingScheme.
+     */
+    public java.lang.String getLoadBalancingScheme() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancingScheme_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @return The bytes for loadBalancingScheme.
+     */
+    public com.google.protobuf.ByteString getLoadBalancingSchemeBytes() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loadBalancingScheme_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @param value The loadBalancingScheme to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingScheme(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loadBalancingScheme_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancingScheme() {
+      loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the type of load balancing scheme used by this target proxy.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     *
+     * @param value The bytes for loadBalancingScheme to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingSchemeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loadBalancingScheme_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -1976,7 +2366,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2060,7 +2450,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2084,7 +2474,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2113,7 +2503,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2143,7 +2533,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasProxyBind() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2197,7 +2587,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
     public Builder setProxyBind(boolean value) {
 
       proxyBind_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2224,7 +2614,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearProxyBind() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       proxyBind_ = false;
       onChanged();
       return this;
@@ -2247,7 +2637,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the proxyHeader field is set.
      */
     public boolean hasProxyHeader() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2322,7 +2712,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       proxyHeader_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2343,7 +2733,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProxyHeader() {
       proxyHeader_ = getDefaultInstance().getProxyHeader();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2369,7 +2759,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       proxyHeader_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2389,7 +2779,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2458,7 +2848,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2477,7 +2867,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2501,7 +2891,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2520,7 +2910,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2586,7 +2976,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2604,7 +2994,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2627,7 +3017,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2646,7 +3036,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      * @return Whether the service field is set.
      */
     public boolean hasService() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -2712,7 +3102,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       service_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2730,7 +3120,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearService() {
       service_ = getDefaultInstance().getService();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -2753,7 +3143,7 @@ public final class TargetTcpProxy extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       service_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

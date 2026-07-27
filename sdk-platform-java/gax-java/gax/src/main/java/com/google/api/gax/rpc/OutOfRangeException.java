@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when the operation was attempted past the valid range. E.g., seeking or reading
  * past end of file.
  */
+@NullMarked
 public class OutOfRangeException extends ApiException {
   public OutOfRangeException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

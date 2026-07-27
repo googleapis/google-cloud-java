@@ -53,6 +53,9 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
 
   private SynthesizeSpeechConfig() {
     voice_ = "";
+    voiceSampleGcsUri_ = "";
+    model_ = "";
+    instruction_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -133,6 +136,69 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int VOICE_SAMPLE_GCS_URI_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object voiceSampleGcsUri_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+   * audio sample should be a mono-channel, 24kHz WAV file.
+   *
+   * Note: Please make sure the CES service agent
+   * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+   * `storage.objects.get` permission to the Cloud Storage object.
+   * </pre>
+   *
+   * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The voiceSampleGcsUri.
+   */
+  @java.lang.Override
+  public java.lang.String getVoiceSampleGcsUri() {
+    java.lang.Object ref = voiceSampleGcsUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      voiceSampleGcsUri_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+   * audio sample should be a mono-channel, 24kHz WAV file.
+   *
+   * Note: Please make sure the CES service agent
+   * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+   * `storage.objects.get` permission to the Cloud Storage object.
+   * </pre>
+   *
+   * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for voiceSampleGcsUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getVoiceSampleGcsUriBytes() {
+    java.lang.Object ref = voiceSampleGcsUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      voiceSampleGcsUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SPEAKING_RATE_FIELD_NUMBER = 2;
   private double speakingRate_ = 0D;
 
@@ -155,6 +221,120 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     return speakingRate_;
   }
 
+  public static final int MODEL_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object model_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model used to synthesize audio.
+   * Currently supported values:
+   * - "gemini-3.1-flash-tts-preview"
+   * If empty, Chirp3-HD is used.
+   * </pre>
+   *
+   * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The model.
+   */
+  @java.lang.Override
+  public java.lang.String getModel() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      model_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The model used to synthesize audio.
+   * Currently supported values:
+   * - "gemini-3.1-flash-tts-preview"
+   * If empty, Chirp3-HD is used.
+   * </pre>
+   *
+   * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for model.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getModelBytes() {
+    java.lang.Object ref = model_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      model_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INSTRUCTION_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instruction_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instruction used to synthesize speech when using a generative
+   * model.
+   * </pre>
+   *
+   * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The instruction.
+   */
+  @java.lang.Override
+  public java.lang.String getInstruction() {
+    java.lang.Object ref = instruction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instruction_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The instruction used to synthesize speech when using a generative
+   * model.
+   * </pre>
+   *
+   * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for instruction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInstructionBytes() {
+    java.lang.Object ref = instruction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      instruction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -175,6 +355,15 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       output.writeDouble(2, speakingRate_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(voiceSampleGcsUri_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, voiceSampleGcsUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, instruction_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -189,6 +378,15 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     }
     if (java.lang.Double.doubleToRawLongBits(speakingRate_) != 0) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, speakingRate_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(voiceSampleGcsUri_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, voiceSampleGcsUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(model_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, model_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(instruction_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, instruction_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -207,8 +405,11 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         (com.google.cloud.ces.v1.SynthesizeSpeechConfig) obj;
 
     if (!getVoice().equals(other.getVoice())) return false;
+    if (!getVoiceSampleGcsUri().equals(other.getVoiceSampleGcsUri())) return false;
     if (java.lang.Double.doubleToLongBits(getSpeakingRate())
         != java.lang.Double.doubleToLongBits(other.getSpeakingRate())) return false;
+    if (!getModel().equals(other.getModel())) return false;
+    if (!getInstruction().equals(other.getInstruction())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -222,11 +423,17 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + VOICE_FIELD_NUMBER;
     hash = (53 * hash) + getVoice().hashCode();
+    hash = (37 * hash) + VOICE_SAMPLE_GCS_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getVoiceSampleGcsUri().hashCode();
     hash = (37 * hash) + SPEAKING_RATE_FIELD_NUMBER;
     hash =
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getSpeakingRate()));
+    hash = (37 * hash) + MODEL_FIELD_NUMBER;
+    hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + INSTRUCTION_FIELD_NUMBER;
+    hash = (53 * hash) + getInstruction().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -368,7 +575,10 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       voice_ = "";
+      voiceSampleGcsUri_ = "";
       speakingRate_ = 0D;
+      model_ = "";
+      instruction_ = "";
       return this;
     }
 
@@ -409,7 +619,16 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         result.voice_ = voice_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.voiceSampleGcsUri_ = voiceSampleGcsUri_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.speakingRate_ = speakingRate_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.instruction_ = instruction_;
       }
     }
 
@@ -430,8 +649,23 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getVoiceSampleGcsUri().isEmpty()) {
+        voiceSampleGcsUri_ = other.voiceSampleGcsUri_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (java.lang.Double.doubleToRawLongBits(other.getSpeakingRate()) != 0) {
         setSpeakingRate(other.getSpeakingRate());
+      }
+      if (!other.getModel().isEmpty()) {
+        model_ = other.model_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getInstruction().isEmpty()) {
+        instruction_ = other.instruction_;
+        bitField0_ |= 0x00000010;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -468,9 +702,27 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
             case 17:
               {
                 speakingRate_ = input.readDouble();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 17
+            case 26:
+              {
+                voiceSampleGcsUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                model_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                instruction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -626,6 +878,142 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private java.lang.Object voiceSampleGcsUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+     * audio sample should be a mono-channel, 24kHz WAV file.
+     *
+     * Note: Please make sure the CES service agent
+     * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+     * `storage.objects.get` permission to the Cloud Storage object.
+     * </pre>
+     *
+     * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The voiceSampleGcsUri.
+     */
+    public java.lang.String getVoiceSampleGcsUri() {
+      java.lang.Object ref = voiceSampleGcsUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        voiceSampleGcsUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+     * audio sample should be a mono-channel, 24kHz WAV file.
+     *
+     * Note: Please make sure the CES service agent
+     * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+     * `storage.objects.get` permission to the Cloud Storage object.
+     * </pre>
+     *
+     * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for voiceSampleGcsUri.
+     */
+    public com.google.protobuf.ByteString getVoiceSampleGcsUriBytes() {
+      java.lang.Object ref = voiceSampleGcsUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        voiceSampleGcsUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+     * audio sample should be a mono-channel, 24kHz WAV file.
+     *
+     * Note: Please make sure the CES service agent
+     * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+     * `storage.objects.get` permission to the Cloud Storage object.
+     * </pre>
+     *
+     * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The voiceSampleGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVoiceSampleGcsUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      voiceSampleGcsUri_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+     * audio sample should be a mono-channel, 24kHz WAV file.
+     *
+     * Note: Please make sure the CES service agent
+     * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+     * `storage.objects.get` permission to the Cloud Storage object.
+     * </pre>
+     *
+     * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVoiceSampleGcsUri() {
+      voiceSampleGcsUri_ = getDefaultInstance().getVoiceSampleGcsUri();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Cloud Storage URI to the audio sample for voice cloning. The
+     * audio sample should be a mono-channel, 24kHz WAV file.
+     *
+     * Note: Please make sure the CES service agent
+     * `service-&lt;PROJECT-NUMBER&gt;&#64;gcp-sa-ces.iam.gserviceaccount.com` has
+     * `storage.objects.get` permission to the Cloud Storage object.
+     * </pre>
+     *
+     * <code>string voice_sample_gcs_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for voiceSampleGcsUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVoiceSampleGcsUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      voiceSampleGcsUri_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private double speakingRate_;
 
     /**
@@ -665,7 +1053,7 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
     public Builder setSpeakingRate(double value) {
 
       speakingRate_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -685,8 +1073,250 @@ public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearSpeakingRate() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       speakingRate_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object model_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model used to synthesize audio.
+     * Currently supported values:
+     * - "gemini-3.1-flash-tts-preview"
+     * If empty, Chirp3-HD is used.
+     * </pre>
+     *
+     * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The model.
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        model_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model used to synthesize audio.
+     * Currently supported values:
+     * - "gemini-3.1-flash-tts-preview"
+     * If empty, Chirp3-HD is used.
+     * </pre>
+     *
+     * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for model.
+     */
+    public com.google.protobuf.ByteString getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        model_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model used to synthesize audio.
+     * Currently supported values:
+     * - "gemini-3.1-flash-tts-preview"
+     * If empty, Chirp3-HD is used.
+     * </pre>
+     *
+     * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      model_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model used to synthesize audio.
+     * Currently supported values:
+     * - "gemini-3.1-flash-tts-preview"
+     * If empty, Chirp3-HD is used.
+     * </pre>
+     *
+     * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModel() {
+      model_ = getDefaultInstance().getModel();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The model used to synthesize audio.
+     * Currently supported values:
+     * - "gemini-3.1-flash-tts-preview"
+     * If empty, Chirp3-HD is used.
+     * </pre>
+     *
+     * <code>string model = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for model to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      model_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object instruction_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instruction used to synthesize speech when using a generative
+     * model.
+     * </pre>
+     *
+     * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The instruction.
+     */
+    public java.lang.String getInstruction() {
+      java.lang.Object ref = instruction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instruction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instruction used to synthesize speech when using a generative
+     * model.
+     * </pre>
+     *
+     * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for instruction.
+     */
+    public com.google.protobuf.ByteString getInstructionBytes() {
+      java.lang.Object ref = instruction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        instruction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instruction used to synthesize speech when using a generative
+     * model.
+     * </pre>
+     *
+     * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The instruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstruction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      instruction_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instruction used to synthesize speech when using a generative
+     * model.
+     * </pre>
+     *
+     * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstruction() {
+      instruction_ = getDefaultInstance().getInstruction();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The instruction used to synthesize speech when using a generative
+     * model.
+     * </pre>
+     *
+     * <code>string instruction = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for instruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstructionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      instruction_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -122,4 +122,25 @@ public class MockDeveloperKnowledgeImpl extends DeveloperKnowledgeImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void answerQuery(
+      AnswerQueryRequest request, StreamObserver<AnswerQueryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AnswerQueryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((AnswerQueryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnswerQuery, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AnswerQueryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

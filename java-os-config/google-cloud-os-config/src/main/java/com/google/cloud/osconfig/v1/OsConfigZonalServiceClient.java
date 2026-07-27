@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -379,9 +381,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OsConfigZonalServiceClient implements BackgroundResource {
-  private final OsConfigZonalServiceSettings settings;
+  private final @Nullable OsConfigZonalServiceSettings settings;
   private final OsConfigZonalServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -429,7 +432,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final OsConfigZonalServiceSettings getSettings() {
+  public final @Nullable OsConfigZonalServiceSettings getSettings() {
     return settings;
   }
 
@@ -503,7 +506,9 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    */
   public final OperationFuture<OSPolicyAssignment, OSPolicyAssignmentOperationMetadata>
       createOSPolicyAssignmentAsync(
-          LocationName parent, OSPolicyAssignment osPolicyAssignment, String osPolicyAssignmentId) {
+          @Nullable LocationName parent,
+          OSPolicyAssignment osPolicyAssignment,
+          String osPolicyAssignmentId) {
     CreateOSPolicyAssignmentRequest request =
         CreateOSPolicyAssignmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -891,7 +896,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/osPolicyAssignments/{os_policy_assignment}{@literal @}{revisionId}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OSPolicyAssignment getOSPolicyAssignment(OSPolicyAssignmentName name) {
+  public final OSPolicyAssignment getOSPolicyAssignment(@Nullable OSPolicyAssignmentName name) {
     GetOSPolicyAssignmentRequest request =
         GetOSPolicyAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1029,7 +1034,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * @param parent Required. The parent resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOSPolicyAssignmentsPagedResponse listOSPolicyAssignments(LocationName parent) {
+  public final ListOSPolicyAssignmentsPagedResponse listOSPolicyAssignments(
+      @Nullable LocationName parent) {
     ListOSPolicyAssignmentsRequest request =
         ListOSPolicyAssignmentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1213,7 +1219,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOSPolicyAssignmentRevisionsPagedResponse listOSPolicyAssignmentRevisions(
-      OSPolicyAssignmentName name) {
+      @Nullable OSPolicyAssignmentName name) {
     ListOSPolicyAssignmentRevisionsRequest request =
         ListOSPolicyAssignmentRevisionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1409,7 +1415,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OSPolicyAssignmentOperationMetadata>
-      deleteOSPolicyAssignmentAsync(OSPolicyAssignmentName name) {
+      deleteOSPolicyAssignmentAsync(@Nullable OSPolicyAssignmentName name) {
     DeleteOSPolicyAssignmentRequest request =
         DeleteOSPolicyAssignmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1620,7 +1626,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OSPolicyAssignmentReport getOSPolicyAssignmentReport(
-      OSPolicyAssignmentReportName name) {
+      @Nullable OSPolicyAssignmentReportName name) {
     GetOSPolicyAssignmentReportRequest request =
         GetOSPolicyAssignmentReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1774,7 +1780,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOSPolicyAssignmentReportsPagedResponse listOSPolicyAssignmentReports(
-      InstanceOSPolicyAssignmentName parent) {
+      @Nullable InstanceOSPolicyAssignmentName parent) {
     ListOSPolicyAssignmentReportsRequest request =
         ListOSPolicyAssignmentReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1983,7 +1989,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     `{instance}`, either Compute Engine `instance-id` or `instance-name` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Inventory getInventory(InventoryName name) {
+  public final Inventory getInventory(@Nullable InventoryName name) {
     GetInventoryRequest request =
         GetInventoryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInventory(request);
@@ -2109,7 +2115,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInventoriesPagedResponse listInventories(InstanceName parent) {
+  public final ListInventoriesPagedResponse listInventories(@Nullable InstanceName parent) {
     ListInventoriesRequest request =
         ListInventoriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2300,7 +2306,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     `{instance}`, either Compute Engine `instance-id` or `instance-name` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VulnerabilityReport getVulnerabilityReport(VulnerabilityReportName name) {
+  public final VulnerabilityReport getVulnerabilityReport(@Nullable VulnerabilityReportName name) {
     GetVulnerabilityReportRequest request =
         GetVulnerabilityReportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2432,7 +2438,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
    *     <p>For `{project}`, either `project-number` or `project-id` can be provided.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVulnerabilityReportsPagedResponse listVulnerabilityReports(InstanceName parent) {
+  public final ListVulnerabilityReportsPagedResponse listVulnerabilityReports(
+      @Nullable InstanceName parent) {
     ListVulnerabilityReportsRequest request =
         ListVulnerabilityReportsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2660,10 +2667,11 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentsPage> {
 
     private ListOSPolicyAssignmentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse, OSPolicyAssignment>
             context,
-        ListOSPolicyAssignmentsResponse response) {
+        @Nullable ListOSPolicyAssignmentsResponse response) {
       super(context, response);
     }
 
@@ -2673,16 +2681,18 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse, OSPolicyAssignment>
             context,
-        ListOSPolicyAssignmentsResponse response) {
+        @Nullable ListOSPolicyAssignmentsResponse response) {
       return new ListOSPolicyAssignmentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOSPolicyAssignmentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentsRequest, ListOSPolicyAssignmentsResponse, OSPolicyAssignment>
             context,
         ApiFuture<ListOSPolicyAssignmentsResponse> futureResponse) {
@@ -2699,7 +2709,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentsFixedSizeCollection> {
 
     private ListOSPolicyAssignmentsFixedSizeCollection(
-        List<ListOSPolicyAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2709,7 +2719,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentsFixedSizeCollection createCollection(
-        List<ListOSPolicyAssignmentsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentsPage> pages, int collectionSize) {
       return new ListOSPolicyAssignmentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2751,12 +2761,13 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentRevisionsPage> {
 
     private ListOSPolicyAssignmentRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentRevisionsRequest,
                 ListOSPolicyAssignmentRevisionsResponse,
                 OSPolicyAssignment>
             context,
-        ListOSPolicyAssignmentRevisionsResponse response) {
+        @Nullable ListOSPolicyAssignmentRevisionsResponse response) {
       super(context, response);
     }
 
@@ -2766,18 +2777,20 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentRevisionsRequest,
                 ListOSPolicyAssignmentRevisionsResponse,
                 OSPolicyAssignment>
             context,
-        ListOSPolicyAssignmentRevisionsResponse response) {
+        @Nullable ListOSPolicyAssignmentRevisionsResponse response) {
       return new ListOSPolicyAssignmentRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOSPolicyAssignmentRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentRevisionsRequest,
                 ListOSPolicyAssignmentRevisionsResponse,
                 OSPolicyAssignment>
@@ -2796,7 +2809,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentRevisionsFixedSizeCollection> {
 
     private ListOSPolicyAssignmentRevisionsFixedSizeCollection(
-        List<ListOSPolicyAssignmentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2806,7 +2819,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentRevisionsFixedSizeCollection createCollection(
-        List<ListOSPolicyAssignmentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentRevisionsPage> pages, int collectionSize) {
       return new ListOSPolicyAssignmentRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2848,12 +2861,13 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentReportsPage> {
 
     private ListOSPolicyAssignmentReportsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentReportsRequest,
                 ListOSPolicyAssignmentReportsResponse,
                 OSPolicyAssignmentReport>
             context,
-        ListOSPolicyAssignmentReportsResponse response) {
+        @Nullable ListOSPolicyAssignmentReportsResponse response) {
       super(context, response);
     }
 
@@ -2863,18 +2877,20 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentReportsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentReportsRequest,
                 ListOSPolicyAssignmentReportsResponse,
                 OSPolicyAssignmentReport>
             context,
-        ListOSPolicyAssignmentReportsResponse response) {
+        @Nullable ListOSPolicyAssignmentReportsResponse response) {
       return new ListOSPolicyAssignmentReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOSPolicyAssignmentReportsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOSPolicyAssignmentReportsRequest,
                 ListOSPolicyAssignmentReportsResponse,
                 OSPolicyAssignmentReport>
@@ -2893,7 +2909,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentReportsFixedSizeCollection> {
 
     private ListOSPolicyAssignmentReportsFixedSizeCollection(
-        List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2903,7 +2919,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListOSPolicyAssignmentReportsFixedSizeCollection createCollection(
-        List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
+        @Nullable List<ListOSPolicyAssignmentReportsPage> pages, int collectionSize) {
       return new ListOSPolicyAssignmentReportsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2937,8 +2953,8 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListInventoriesRequest, ListInventoriesResponse, Inventory, ListInventoriesPage> {
 
     private ListInventoriesPage(
-        PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
-        ListInventoriesResponse response) {
+        @Nullable PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
+        @Nullable ListInventoriesResponse response) {
       super(context, response);
     }
 
@@ -2948,14 +2964,14 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListInventoriesPage createPage(
-        PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
-        ListInventoriesResponse response) {
+        @Nullable PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
+        @Nullable ListInventoriesResponse response) {
       return new ListInventoriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInventoriesPage> createPageAsync(
-        PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
+        @Nullable PageContext<ListInventoriesRequest, ListInventoriesResponse, Inventory> context,
         ApiFuture<ListInventoriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2970,7 +2986,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListInventoriesFixedSizeCollection> {
 
     private ListInventoriesFixedSizeCollection(
-        List<ListInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListInventoriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2980,7 +2996,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListInventoriesFixedSizeCollection createCollection(
-        List<ListInventoriesPage> pages, int collectionSize) {
+        @Nullable List<ListInventoriesPage> pages, int collectionSize) {
       return new ListInventoriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3021,12 +3037,13 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListVulnerabilityReportsPage> {
 
     private ListVulnerabilityReportsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVulnerabilityReportsRequest,
                 ListVulnerabilityReportsResponse,
                 VulnerabilityReport>
             context,
-        ListVulnerabilityReportsResponse response) {
+        @Nullable ListVulnerabilityReportsResponse response) {
       super(context, response);
     }
 
@@ -3036,18 +3053,20 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListVulnerabilityReportsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVulnerabilityReportsRequest,
                 ListVulnerabilityReportsResponse,
                 VulnerabilityReport>
             context,
-        ListVulnerabilityReportsResponse response) {
+        @Nullable ListVulnerabilityReportsResponse response) {
       return new ListVulnerabilityReportsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVulnerabilityReportsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListVulnerabilityReportsRequest,
                 ListVulnerabilityReportsResponse,
                 VulnerabilityReport>
@@ -3066,7 +3085,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListVulnerabilityReportsFixedSizeCollection> {
 
     private ListVulnerabilityReportsFixedSizeCollection(
-        List<ListVulnerabilityReportsPage> pages, int collectionSize) {
+        @Nullable List<ListVulnerabilityReportsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3076,7 +3095,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
 
     @Override
     protected ListVulnerabilityReportsFixedSizeCollection createCollection(
-        List<ListVulnerabilityReportsPage> pages, int collectionSize) {
+        @Nullable List<ListVulnerabilityReportsPage> pages, int collectionSize) {
       return new ListVulnerabilityReportsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -248,6 +248,63 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getConfigureExascaleCloudExadataInfrastructureMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ConfigureExascaleCloudExadataInfrastructure",
+      requestType =
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+              .class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+          com.google.longrunning.Operation>
+      getConfigureExascaleCloudExadataInfrastructureMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest,
+            com.google.longrunning.Operation>
+        getConfigureExascaleCloudExadataInfrastructureMethod;
+    if ((getConfigureExascaleCloudExadataInfrastructureMethod =
+            OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod)
+        == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getConfigureExascaleCloudExadataInfrastructureMethod =
+                OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod)
+            == null) {
+          OracleDatabaseGrpc.getConfigureExascaleCloudExadataInfrastructureMethod =
+              getConfigureExascaleCloudExadataInfrastructureMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1
+                              .ConfigureExascaleCloudExadataInfrastructureRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ConfigureExascaleCloudExadataInfrastructure"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1
+                                  .ConfigureExascaleCloudExadataInfrastructureRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier(
+                              "ConfigureExascaleCloudExadataInfrastructure"))
+                      .build();
+        }
+      }
+    }
+    return getConfigureExascaleCloudExadataInfrastructureMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListCloudVmClustersRequest,
           com.google.cloud.oracledatabase.v1.ListCloudVmClustersResponse>
       getListCloudVmClustersMethod;
@@ -4037,6 +4094,21 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    default void configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getConfigureExascaleCloudExadataInfrastructureMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the VM Clusters in a given project and location.
      * </pre>
      */
@@ -5222,6 +5294,24 @@ public final class OracleDatabaseGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteCloudExadataInfrastructureMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public void configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getConfigureExascaleCloudExadataInfrastructureMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -6545,6 +6635,24 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getConfigureExascaleCloudExadataInfrastructureMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the VM Clusters in a given project and location.
      * </pre>
      */
@@ -7669,6 +7777,23 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.longrunning.Operation configureExascaleCloudExadataInfrastructure(
+        com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+            request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getConfigureExascaleCloudExadataInfrastructureMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the VM Clusters in a given project and location.
      * </pre>
      */
@@ -8722,6 +8847,23 @@ public final class OracleDatabaseGrpc {
             com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteCloudExadataInfrastructureMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configures Exascale for a single Exadata Infrastructure.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        configureExascaleCloudExadataInfrastructure(
+            com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getConfigureExascaleCloudExadataInfrastructureMethod(), getCallOptions()),
           request);
     }
 
@@ -9797,79 +9939,80 @@ public final class OracleDatabaseGrpc {
   private static final int METHODID_GET_CLOUD_EXADATA_INFRASTRUCTURE = 1;
   private static final int METHODID_CREATE_CLOUD_EXADATA_INFRASTRUCTURE = 2;
   private static final int METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE = 3;
-  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 4;
-  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 5;
-  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 6;
-  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 7;
-  private static final int METHODID_LIST_ENTITLEMENTS = 8;
-  private static final int METHODID_LIST_DB_SERVERS = 9;
-  private static final int METHODID_LIST_DB_NODES = 10;
-  private static final int METHODID_LIST_GI_VERSIONS = 11;
-  private static final int METHODID_LIST_MINOR_VERSIONS = 12;
-  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 13;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 14;
-  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 15;
-  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 16;
-  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 17;
-  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 18;
-  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 19;
-  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 20;
-  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 21;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 22;
-  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 23;
-  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 24;
-  private static final int METHODID_START_AUTONOMOUS_DATABASE = 25;
-  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 26;
-  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 27;
-  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 28;
-  private static final int METHODID_LIST_ODB_NETWORKS = 29;
-  private static final int METHODID_GET_ODB_NETWORK = 30;
-  private static final int METHODID_CREATE_ODB_NETWORK = 31;
-  private static final int METHODID_DELETE_ODB_NETWORK = 32;
-  private static final int METHODID_LIST_ODB_SUBNETS = 33;
-  private static final int METHODID_GET_ODB_SUBNET = 34;
-  private static final int METHODID_CREATE_ODB_SUBNET = 35;
-  private static final int METHODID_DELETE_ODB_SUBNET = 36;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 37;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 38;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 39;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 40;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 41;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 42;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 43;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 44;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 45;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 46;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 47;
-  private static final int METHODID_LIST_DATABASES = 48;
-  private static final int METHODID_GET_DATABASE = 49;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 50;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 51;
-  private static final int METHODID_LIST_DB_SYSTEMS = 52;
-  private static final int METHODID_GET_DB_SYSTEM = 53;
-  private static final int METHODID_CREATE_DB_SYSTEM = 54;
-  private static final int METHODID_DELETE_DB_SYSTEM = 55;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 56;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 57;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 58;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 59;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 60;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 61;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 62;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 63;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 64;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 65;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 66;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 67;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 68;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 69;
-  private static final int METHODID_LIST_DB_VERSIONS = 70;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 71;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 72;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 73;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 74;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 75;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
+  private static final int METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE = 4;
+  private static final int METHODID_LIST_CLOUD_VM_CLUSTERS = 5;
+  private static final int METHODID_GET_CLOUD_VM_CLUSTER = 6;
+  private static final int METHODID_CREATE_CLOUD_VM_CLUSTER = 7;
+  private static final int METHODID_DELETE_CLOUD_VM_CLUSTER = 8;
+  private static final int METHODID_LIST_ENTITLEMENTS = 9;
+  private static final int METHODID_LIST_DB_SERVERS = 10;
+  private static final int METHODID_LIST_DB_NODES = 11;
+  private static final int METHODID_LIST_GI_VERSIONS = 12;
+  private static final int METHODID_LIST_MINOR_VERSIONS = 13;
+  private static final int METHODID_LIST_DB_SYSTEM_SHAPES = 14;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASES = 15;
+  private static final int METHODID_GET_AUTONOMOUS_DATABASE = 16;
+  private static final int METHODID_CREATE_AUTONOMOUS_DATABASE = 17;
+  private static final int METHODID_UPDATE_AUTONOMOUS_DATABASE = 18;
+  private static final int METHODID_DELETE_AUTONOMOUS_DATABASE = 19;
+  private static final int METHODID_RESTORE_AUTONOMOUS_DATABASE = 20;
+  private static final int METHODID_GENERATE_AUTONOMOUS_DATABASE_WALLET = 21;
+  private static final int METHODID_LIST_AUTONOMOUS_DB_VERSIONS = 22;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_CHARACTER_SETS = 23;
+  private static final int METHODID_LIST_AUTONOMOUS_DATABASE_BACKUPS = 24;
+  private static final int METHODID_STOP_AUTONOMOUS_DATABASE = 25;
+  private static final int METHODID_START_AUTONOMOUS_DATABASE = 26;
+  private static final int METHODID_RESTART_AUTONOMOUS_DATABASE = 27;
+  private static final int METHODID_SWITCHOVER_AUTONOMOUS_DATABASE = 28;
+  private static final int METHODID_FAILOVER_AUTONOMOUS_DATABASE = 29;
+  private static final int METHODID_LIST_ODB_NETWORKS = 30;
+  private static final int METHODID_GET_ODB_NETWORK = 31;
+  private static final int METHODID_CREATE_ODB_NETWORK = 32;
+  private static final int METHODID_DELETE_ODB_NETWORK = 33;
+  private static final int METHODID_LIST_ODB_SUBNETS = 34;
+  private static final int METHODID_GET_ODB_SUBNET = 35;
+  private static final int METHODID_CREATE_ODB_SUBNET = 36;
+  private static final int METHODID_DELETE_ODB_SUBNET = 37;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 38;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 39;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 40;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 41;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 42;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 43;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 44;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 45;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 46;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 47;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 48;
+  private static final int METHODID_LIST_DATABASES = 49;
+  private static final int METHODID_GET_DATABASE = 50;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 51;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 52;
+  private static final int METHODID_LIST_DB_SYSTEMS = 53;
+  private static final int METHODID_GET_DB_SYSTEM = 54;
+  private static final int METHODID_CREATE_DB_SYSTEM = 55;
+  private static final int METHODID_DELETE_DB_SYSTEM = 56;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 57;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 58;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 59;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 60;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 61;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 62;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 63;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 64;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 65;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 66;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 67;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 68;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 69;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 70;
+  private static final int METHODID_LIST_DB_VERSIONS = 71;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 72;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 73;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 74;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 75;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -9910,6 +10053,13 @@ public final class OracleDatabaseGrpc {
         case METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE:
           serviceImpl.deleteCloudExadataInfrastructure(
               (com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE:
+          serviceImpl.configureExascaleCloudExadataInfrastructure(
+              (com.google.cloud.oracledatabase.v1
+                      .ConfigureExascaleCloudExadataInfrastructureRequest)
+                  request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_CLOUD_VM_CLUSTERS:
@@ -10407,6 +10557,14 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.DeleteCloudExadataInfrastructureRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_CLOUD_EXADATA_INFRASTRUCTURE)))
+        .addMethod(
+            getConfigureExascaleCloudExadataInfrastructureMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1
+                        .ConfigureExascaleCloudExadataInfrastructureRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CONFIGURE_EXASCALE_CLOUD_EXADATA_INFRASTRUCTURE)))
         .addMethod(
             getListCloudVmClustersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -10959,6 +11117,7 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getGetCloudExadataInfrastructureMethod())
                       .addMethod(getCreateCloudExadataInfrastructureMethod())
                       .addMethod(getDeleteCloudExadataInfrastructureMethod())
+                      .addMethod(getConfigureExascaleCloudExadataInfrastructureMethod())
                       .addMethod(getListCloudVmClustersMethod())
                       .addMethod(getGetCloudVmClusterMethod())
                       .addMethod(getCreateCloudVmClusterMethod())

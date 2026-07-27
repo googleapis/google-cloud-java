@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TensorboardTimeSeriesName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_TENSORBOARD_EXPERIMENT_RUN_TIME_SERIES =
@@ -126,7 +129,7 @@ public class TensorboardTimeSeriesName implements ResourceName {
         .toString();
   }
 
-  public static TensorboardTimeSeriesName parse(String formattedString) {
+  public static @Nullable TensorboardTimeSeriesName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -151,7 +154,7 @@ public class TensorboardTimeSeriesName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<TensorboardTimeSeriesName> values) {
+  public static List<String> toStringList(List<@Nullable TensorboardTimeSeriesName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (TensorboardTimeSeriesName value : values) {
       if (value == null) {
@@ -220,7 +223,7 @@ public class TensorboardTimeSeriesName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

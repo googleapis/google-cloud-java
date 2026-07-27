@@ -54,6 +54,7 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
 
   private GetImportJobRequest() {
     name_ = "";
+    publicKeyFormat_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -130,6 +131,63 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int PUBLIC_KEY_FORMAT_FIELD_NUMBER = 2;
+  private int publicKeyFormat_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the [WrappingPublicKey][] format.
+   * If not specified:
+   * * For RSA-based import methods, the wrapping key will be returned in PEM
+   * format
+   * * For pure ML-KEM-based import methods, the wrapping key will be returned
+   * in the raw bytes format specified in FIPS-203
+   * * For X-Wing-based import methods, the wrapping key will be returned in
+   * the raw bytes format specified in
+   * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for publicKeyFormat.
+   */
+  @java.lang.Override
+  public int getPublicKeyFormatValue() {
+    return publicKeyFormat_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the [WrappingPublicKey][] format.
+   * If not specified:
+   * * For RSA-based import methods, the wrapping key will be returned in PEM
+   * format
+   * * For pure ML-KEM-based import methods, the wrapping key will be returned
+   * in the raw bytes format specified in FIPS-203
+   * * For X-Wing-based import methods, the wrapping key will be returned in
+   * the raw bytes format specified in
+   * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The publicKeyFormat.
+   */
+  @java.lang.Override
+  public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+    com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+        com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+    return result == null ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -147,6 +205,11 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(2, publicKeyFormat_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -158,6 +221,11 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (publicKeyFormat_
+        != com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.PUBLIC_KEY_FORMAT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, publicKeyFormat_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -176,6 +244,7 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
         (com.google.cloud.kms.v1.GetImportJobRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (publicKeyFormat_ != other.publicKeyFormat_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -189,6 +258,8 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PUBLIC_KEY_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + publicKeyFormat_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -331,6 +402,7 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      publicKeyFormat_ = 0;
       return this;
     }
 
@@ -370,6 +442,9 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.publicKeyFormat_ = publicKeyFormat_;
+      }
     }
 
     @java.lang.Override
@@ -388,6 +463,9 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.publicKeyFormat_ != 0) {
+        setPublicKeyFormatValue(other.getPublicKeyFormatValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -421,6 +499,12 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 16:
+              {
+                publicKeyFormat_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -562,6 +646,153 @@ public final class GetImportJobRequest extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private int publicKeyFormat_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the [WrappingPublicKey][] format.
+     * If not specified:
+     * * For RSA-based import methods, the wrapping key will be returned in PEM
+     * format
+     * * For pure ML-KEM-based import methods, the wrapping key will be returned
+     * in the raw bytes format specified in FIPS-203
+     * * For X-Wing-based import methods, the wrapping key will be returned in
+     * the raw bytes format specified in
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for publicKeyFormat.
+     */
+    @java.lang.Override
+    public int getPublicKeyFormatValue() {
+      return publicKeyFormat_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the [WrappingPublicKey][] format.
+     * If not specified:
+     * * For RSA-based import methods, the wrapping key will be returned in PEM
+     * format
+     * * For pure ML-KEM-based import methods, the wrapping key will be returned
+     * in the raw bytes format specified in FIPS-203
+     * * For X-Wing-based import methods, the wrapping key will be returned in
+     * the raw bytes format specified in
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormatValue(int value) {
+      publicKeyFormat_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the [WrappingPublicKey][] format.
+     * If not specified:
+     * * For RSA-based import methods, the wrapping key will be returned in PEM
+     * format
+     * * For pure ML-KEM-based import methods, the wrapping key will be returned
+     * in the raw bytes format specified in FIPS-203
+     * * For X-Wing-based import methods, the wrapping key will be returned in
+     * the raw bytes format specified in
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The publicKeyFormat.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.PublicKey.PublicKeyFormat getPublicKeyFormat() {
+      com.google.cloud.kms.v1.PublicKey.PublicKeyFormat result =
+          com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.forNumber(publicKeyFormat_);
+      return result == null
+          ? com.google.cloud.kms.v1.PublicKey.PublicKeyFormat.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the [WrappingPublicKey][] format.
+     * If not specified:
+     * * For RSA-based import methods, the wrapping key will be returned in PEM
+     * format
+     * * For pure ML-KEM-based import methods, the wrapping key will be returned
+     * in the raw bytes format specified in FIPS-203
+     * * For X-Wing-based import methods, the wrapping key will be returned in
+     * the raw bytes format specified in
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The publicKeyFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPublicKeyFormat(com.google.cloud.kms.v1.PublicKey.PublicKeyFormat value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000002;
+      publicKeyFormat_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the [WrappingPublicKey][] format.
+     * If not specified:
+     * * For RSA-based import methods, the wrapping key will be returned in PEM
+     * format
+     * * For pure ML-KEM-based import methods, the wrapping key will be returned
+     * in the raw bytes format specified in FIPS-203
+     * * For X-Wing-based import methods, the wrapping key will be returned in
+     * the raw bytes format specified in
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.kms.v1.PublicKey.PublicKeyFormat public_key_format = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPublicKeyFormat() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      publicKeyFormat_ = 0;
       onChanged();
       return this;
     }

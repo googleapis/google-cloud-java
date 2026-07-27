@@ -390,6 +390,21 @@ public interface InputAudioConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. If `true`, responses with voice activity speech events will be
+   * returned as they are detected.
+   * Note: This setting is relevant only for streaming methods.
+   * </pre>
+   *
+   * <code>bool enable_voice_activity_events = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableVoiceActivityEvents.
+   */
+  boolean getEnableVoiceActivityEvents();
+
+  /**
+   *
+   *
+   * <pre>
    * Only used in
    * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
    * and

@@ -53,6 +53,54 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_ProductAttributes_CarrierShipping_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_products_v1_ShippingWeight_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_ShippingWeight_fieldAccessorTable;
@@ -141,9 +189,17 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_AutomatedDiscounts_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_PickupCost_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_PickupCost_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_products_v1_ProductMinimumOrderValue_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_products_v1_ProductMinimumOrderValue_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -157,7 +213,7 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + ":google/shopping/merchant/products/v1/products_common.proto\022$google.shopping.me"
           + "rchant.products.v1\032\037google/api/field_beh"
           + "avior.proto\032\037google/protobuf/timestamp.proto\032"
-          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\214E\n"
+          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\223\200\001\n"
           + "\021ProductAttributes\022\036\n"
           + "\021identifier_exists\030\004 \001(\010H\000\210\001\001\022\026\n"
           + "\tis_bundle\030\005 \001(\010H\001\210\001\001\022\022\n"
@@ -192,29 +248,29 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\007pattern\030\036 \001(\tH\023\210\001\001\022*\n"
           + "\005price\030\037 \001(\0132\033.google.shopping.type.Price\022:\n"
           + "\024maximum_retail_price\030\213\001 \001(\0132\033.google.shopping.type.Price\022M\n"
-          + "\013installment\030  \001(\01328.google.shoppin"
-          + "g.merchant.products.v1.ProductInstallment\022Q\n"
-          + "\021subscription_cost\030! \001(\01326.google.sh"
-          + "opping.merchant.products.v1.SubscriptionCost\022K\n"
-          + "\016loyalty_points\030\" \001(\01323.google.sh"
-          + "opping.merchant.products.v1.LoyaltyPoints\022O\n"
-          + "\020loyalty_programs\030\210\001 \003(\01324.google.sh"
-          + "opping.merchant.products.v1.LoyaltyProgram\022\025\n\r"
+          + "\013installment\030  \001(\01328.google.shoppi"
+          + "ng.merchant.products.v1.ProductInstallment\022Q\n"
+          + "\021subscription_cost\030! \001(\01326.google.s"
+          + "hopping.merchant.products.v1.SubscriptionCost\022K\n"
+          + "\016loyalty_points\030\" \001(\01323.google.s"
+          + "hopping.merchant.products.v1.LoyaltyPoints\022O\n"
+          + "\020loyalty_programs\030\210\001 \003(\01324.google.s"
+          + "hopping.merchant.products.v1.LoyaltyProgram\022\025\n\r"
           + "product_types\030# \003(\t\022/\n\n"
           + "sale_price\030$ \001(\0132\033.google.shopping.type.Price\0228\n"
           + "\031sale_price_effective_date\030% \001(\0132\025.google.type.Interval\022$\n"
           + "\027sell_on_google_quantity\030& \001(\003H\024\210\001\001\022N\n"
-          + "\016product_height\030w \001(\01326.goo"
-          + "gle.shopping.merchant.products.v1.ProductDimension\022N\n"
-          + "\016product_length\030x \001(\01326.goo"
-          + "gle.shopping.merchant.products.v1.ProductDimension\022M\n\r"
-          + "product_width\030y \001(\01326.goog"
-          + "le.shopping.merchant.products.v1.ProductDimension\022K\n"
-          + "\016product_weight\030z \001(\01323.goog"
-          + "le.shopping.merchant.products.v1.ProductWeight\022@\n"
+          + "\016product_height\030w \001(\01326.go"
+          + "ogle.shopping.merchant.products.v1.ProductDimension\022N\n"
+          + "\016product_length\030x \001(\01326.go"
+          + "ogle.shopping.merchant.products.v1.ProductDimension\022M\n\r"
+          + "product_width\030y \001(\01326.goo"
+          + "gle.shopping.merchant.products.v1.ProductDimension\022K\n"
+          + "\016product_weight\030z \001(\01323.goo"
+          + "gle.shopping.merchant.products.v1.ProductWeight\022@\n"
           + "\010shipping\030\' \003(\0132..google.shopping.merchant.products.v1.Shipping\022b\n"
-          + "\020carrier_shipping\030\216\001 \003(\0132G.google.shopping.me"
-          + "rchant.products.v1.ProductAttributes.CarrierShipping\022]\n"
+          + "\020carrier_shipping\030\216\001 \003(\0132G.google.shopping.m"
+          + "erchant.products.v1.ProductAttributes.CarrierShipping\022]\n"
           + "\027free_shipping_threshold\030\207\001"
           + " \003(\0132;.google.shopping.merchant.products.v1.FreeShippingThreshold\022M\n"
           + "\017shipping_weight\030("
@@ -227,10 +283,10 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + " \001(\01327.google.shopping.merchant.products.v1.ShippingDimension\022\036\n"
           + "\021max_handling_time\030, \001(\003H\025\210\001\001\022\036\n"
           + "\021min_handling_time\030- \001(\003H\026\210\001\001\022|\n"
-          + "\037shipping_handling_business_days\030\217\001 \003(\0132R.google.shopping.merc"
-          + "hant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022{\n"
-          + "\036shipping_transit_business_days\030\220\001 \003(\0132R.google.shopping"
-          + ".merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022X\n"
+          + "\037shipping_handling_business_days\030\217\001 \003(\0132R.google.shopping.mer"
+          + "chant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022{\n"
+          + "\036shipping_transit_business_days\030\220\001 \003(\0132R.google.shoppin"
+          + "g.merchant.products.v1.ProductAttributes.ShippingBusinessDaysConfig\022X\n"
           + "\025handling_cutoff_times\030\215\001"
           + " \003(\01328.google.shopping.merchant.products.v1.HandlingCutoffTime\022\033\n"
           + "\016shipping_label\030. \001(\tH\027\210\001\001\022!\n"
@@ -242,17 +298,16 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "size_types\0302 \003(\0162..google.shopping.merchant.products.v1.SizeType\022a\n"
           + "\027energy_efficiency_class\0305"
           + " \001(\0162;.google.shopping.merchant.products.v1.EnergyEfficiencyClassH\034\210\001\001\022e\n"
-          + "\033min_energy_efficiency_class\0306 \001(\0162;.googl"
-          + "e.shopping.merchant.products.v1.EnergyEfficiencyClassH\035\210\001\001\022e\n"
-          + "\033max_energy_efficiency_class\0307 \001(\0162;.google.shopping.mercha"
-          + "nt.products.v1.EnergyEfficiencyClassH\036\210\001\001\022V\n"
-          + "\024unit_pricing_measure\0308 \001(\01328.google"
-          + ".shopping.merchant.products.v1.UnitPricingMeasure\022_\n"
+          + "\033min_energy_efficiency_class\0306 \001(\0162;.goog"
+          + "le.shopping.merchant.products.v1.EnergyEfficiencyClassH\035\210\001\001\022e\n"
+          + "\033max_energy_efficiency_class\0307 \001(\0162;.google.shopping.merch"
+          + "ant.products.v1.EnergyEfficiencyClassH\036\210\001\001\022V\n"
+          + "\024unit_pricing_measure\0308 \001(\01328.googl"
+          + "e.shopping.merchant.products.v1.UnitPricingMeasure\022_\n"
           + "\031unit_pricing_base_measure\0309"
           + " \001(\0132<.google.shopping.merchant.products.v1.UnitPricingBaseMeasure\022\026\n"
           + "\tmultipack\030: \001(\003H\037\210\001\001\022\031\n"
-          + "\014ads_grouping\030; \001(\tH \210\001\001\022\022\n"
-          + "\n"
+          + "\014ads_grouping\030; \001(\tH \210\001\001\022\022\n\n"
           + "ads_labels\030< \003(\t\022\031\n"
           + "\014ads_redirect\030= \001(\tH!\210\001\001\0227\n"
           + "\022cost_of_goods_sold\030> \001(\0132\033.google.shopping.type.Price\022L\n"
@@ -268,37 +323,105 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "pickup_method\030P"
           + " \001(\01622.google.shopping.merchant.products.v1.PickupMethodH&\210\001\001\022H\n\n"
           + "pickup_sla\030Q"
-          + " \001(\0162/.google.shopping.merchant.products.v1.PickupSlaH\'\210\001\001\022\032\n\r"
-          + "link_template\030R \001(\tH(\210\001\001\022!\n"
-          + "\024mobile_link_template\030S \001(\tH)\210\001\001\022\033\n"
-          + "\016custom_label_0\030G \001(\tH*\210\001\001\022\033\n"
-          + "\016custom_label_1\030H \001(\tH+\210\001\001\022\033\n"
-          + "\016custom_label_2\030I \001(\tH,\210\001\001\022\033\n"
-          + "\016custom_label_3\030J \001(\tH-\210\001\001\022\033\n"
-          + "\016custom_label_4\030K \001(\tH.\210\001\001\022P\n"
+          + " \001(\0162/.google.shopping.merchant.products.v1.PickupSlaH\'\210\001\001\022P\n"
+          + "\013pickup_cost\030\254\001"
+          + " \001(\01320.google.shopping.merchant.products.v1.PickupCostB\003\340A\001H(\210\001\001\022\032\n\r"
+          + "link_template\030R \001(\tH)\210\001\001\022!\n"
+          + "\024mobile_link_template\030S \001(\tH*\210\001\001\022\033\n"
+          + "\016custom_label_0\030G \001(\tH+\210\001\001\022\033\n"
+          + "\016custom_label_1\030H \001(\tH,\210\001\001\022\033\n"
+          + "\016custom_label_2\030I \001(\tH-\210\001\001\022\033\n"
+          + "\016custom_label_3\030J \001(\tH.\210\001\001\022\033\n"
+          + "\016custom_label_4\030K \001(\tH/\210\001\001\022P\n"
           + "\025included_destinations\030L"
           + " \003(\01621.google.shopping.type.Destination.DestinationEnum\022P\n"
           + "\025excluded_destinations\030M"
           + " \003(\01621.google.shopping.type.Destination.DestinationEnum\022\'\n"
           + "\037shopping_ads_excluded_countries\030N \003(\t\022\037\n"
-          + "\022external_seller_id\030\001 \001(\tH/\210\001\001\022?\n"
+          + "\022external_seller_id\030\001 \001(\tH0\210\001\001\022?\n"
           + "\005pause\030\r"
-          + " \001(\0162+.google.shopping.merchant.products.v1.PauseH0\210\001\001\022\035\n"
+          + " \001(\0162+.google.shopping.merchant.products.v1.PauseH1\210\001\001\022\035\n"
           + "\025lifestyle_image_links\030\016 \003(\t\022q\n"
-          + "\"cloud_export_additional_properties\030T"
-          + " \003(\0132E.google.shopping.merchant.products.v1.CloudExportAdditionalProperties\022"
-          + " \n"
-          + "\022virtual_model_link\030\202\001 \001(\tH1\210\001\001\022R\n"
-          + "\016certifications\030{"
-          + " \003(\0132:.google.shopping.merchant.products.v1.ProductCertification\022U\n"
-          + "\020structured_title\030\204\001 \001(\01325.google.shoppin"
-          + "g.merchant.products.v1.StructuredTitleH2\210\001\001\022a\n"
-          + "\026structured_description\030\205\001 \001(\0132;.g"
-          + "oogle.shopping.merchant.products.v1.StructuredDescriptionH3\210\001\001\022;\n"
+          + "\"cloud_export_additional_properties\030T \003(\0132E.google.shopping.merchant.pr"
+          + "oducts.v1.CloudExportAdditionalProperties\022 \n"
+          + "\022virtual_model_link\030\202\001 \001(\tH2\210\001\001\022R\n"
+          + "\016certifications\030{ \003(\0132:.google.shopping.me"
+          + "rchant.products.v1.ProductCertification\022U\n"
+          + "\020structured_title\030\204\001 \001(\01325.google.shop"
+          + "ping.merchant.products.v1.StructuredTitleH3\210\001\001\022a\n"
+          + "\026structured_description\030\205\001 \001(\0132"
+          + ";.google.shopping.merchant.products.v1.StructuredDescriptionH4\210\001\001\022;\n"
           + "\026auto_pricing_min_price\030| \001(\0132\033.google.shopping.type.Price\022h\n"
-          + "\031sustainability_incentives\030\212\001 \003(\0132"
-          + "D.google.shopping.merchant.products.v1.ProductSustainabilityIncentive\022\031\n"
-          + "\013video_links\030\251\001 \003(\tB\003\340A\001\032l\n"
+          + "\031sustainability_incentives\030\212\001 \003"
+          + "(\0132D.google.shopping.merchant.products.v1.ProductSustainabilityIncentive\022\031\n"
+          + "\013video_links\030\251\001 \003(\tB\003\340A\001\022]\n"
+          + "\024minimum_order_values\030\222\001"
+          + " \003(\0132>.google.shopping.merchant.products.v1.ProductMinimumOrderValue\022\014\n"
+          + "\003vin\030\223\001 \001(\t\022\016\n"
+          + "\005model\030\224\001 \001(\t\022\r\n"
+          + "\004trim\030\225\001 \001(\t\022]\n\n"
+          + "body_style\030\226\001 \001(\0162H.google.shopping.m"
+          + "erchant.products.v1.ProductAttributes.VehicleBodyStyle\022\r\n"
+          + "\004year\030\227\001 \001(\003\022Q\n"
+          + "\007mileage\030\230\001"
+          + " \001(\0132?.google.shopping.merchant.products.v1.ProductAttributes.Mileage\022X\n"
+          + "\016electric_range\030\231\001 \001(\0132?.google.shopping.merc"
+          + "hant.products.v1.ProductAttributes.Mileage\022b\n"
+          + "\020fuel_consumption\030\232\001 \001(\0132G.google.s"
+          + "hopping.merchant.products.v1.ProductAttributes.FuelConsumption\022u\n"
+          + "#fuel_consumption_discharged_battery\030\233\001 \001(\0132G.google.sh"
+          + "opping.merchant.products.v1.ProductAttributes.FuelConsumption\022f\n"
+          + "\022energy_consumption\030\234\001 \001(\0132I.google.shopping.merchant.pr"
+          + "oducts.v1.ProductAttributes.EnergyConsumption\022\\\n\r"
+          + "co2_emissions\030\235\001 \001(\0132D.google.s"
+          + "hopping.merchant.products.v1.ProductAttributes.Co2Emissions\022\036\n"
+          + "\025date_first_registered\030\236\001 \001(\t\022S\n"
+          + "\006engine\030\237\001 \001(\0162B.google.sh"
+          + "opping.merchant.products.v1.ProductAttributes.EngineType\022f\n"
+          + "\022emissions_standard\030\240\001 \001(\0162I.google.shopping.merchant.product"
+          + "s.v1.ProductAttributes.EmissionsStandard\022\034\n"
+          + "\023certified_pre_owned\030\241\001 \001(\010\0222\n"
+          + "\014vehicle_msrp\030\242\001 \001(\0132\033.google.shopping.type.Price\022:\n"
+          + "\024vehicle_all_in_price\030\243\001 \001(\0132\033.google.shopping.type.Price\022e\n"
+          + "\022vehicle_price_type\030\244\001 \001(\0162H.google.shopping.merchant.p"
+          + "roducts.v1.ProductAttributes.VehiclePriceType\022.\n"
+          + "%vehicle_mandatory_inspection_included\030\246\001 \001(\010\0226\n"
+          + "\020vehicle_expenses\030\247\001 \001(\0132\033.google.shopping.type.Price\022S\n"
+          + "\010warranty\030\250\001"
+          + " \001(\0132@.google.shopping.merchant.products.v1.ProductAttributes.Warranty\022`\n"
+          + "\017display_address\030\263\001 \001(\0132F.google.shopping.m"
+          + "erchant.products.v1.ProductAttributes.DisplayAddress\022\026\n"
+          + "\010latitude\030\264\001 \001(\001H5\210\001\001\022\027\n"
+          + "\tlongitude\030\265\001 \001(\001H6\210\001\001\022\025\n"
+          + "\014neighborhood\030\266\001 \001(\t\022T\n"
+          + "\tunit_area\030\267\001 \001(\0132@.google.shoppi"
+          + "ng.merchant.products.v1.ProductAttributes.UnitArea\022\035\n"
+          + "\017number_of_units\030\270\001 \001(\003H7\210\001\001\022\026\n\r"
+          + "property_name\030\271\001 \001(\t\022 \n"
+          + "\022number_of_bedrooms\030\272\001 \001(\001H8\210\001\001\022!\n"
+          + "\023number_of_bathrooms\030\273\001 \001(\001H9\210\001\001\022\\\n\r"
+          + "property_type\030\274\001 \001(\0162D"
+          + ".google.shopping.merchant.products.v1.ProductAttributes.PropertyType\022`\n"
+          + "\017amenity_feature\030\275\001 \003(\0162F.google.shopping.merchan"
+          + "t.products.v1.ProductAttributes.AmenityFeature\022f\n"
+          + "\022utilities_included\030\276\001 \003(\0162I.go"
+          + "ogle.shopping.merchant.products.v1.ProductAttributes.UtilitiesIncluded\022V\n\n"
+          + "pet_policy\030\277\001 \001(\0132A.google.shopping.merchant.p"
+          + "roducts.v1.ProductAttributes.PetPolicy\022m\n"
+          + "\026specialty_housing_type\030\300\001 \001(\0162L.google"
+          + ".shopping.merchant.products.v1.ProductAttributes.SpecialtyHousingType\022X\n"
+          + "\013product_fee\030\301\001 \003(\0132B.google.shopping.merchant.p"
+          + "roducts.v1.ProductAttributes.ProductFee\022\031\n"
+          + "\013short_title\030\302\001 \001(\tH:\210\001\001\022n\n"
+          + "\025questions_and_answers\030\255\001 \003(\0132I.google.shopping.mer"
+          + "chant.products.v1.ProductAttributes.QuestionAndAnswerB\003\340A\001\022\035\n"
+          + "\017popularity_rank\030\256\001 \001(\002B\003\340A\001\022\036\n"
+          + "\020item_group_title\030\257\001 \001(\tB\003\340A\001\022\034\n"
+          + "\016document_links\030\260\001 \003(\tB\003\340A\001\022d\n"
+          + "\017variant_options\030\261\001 \003(\0132E.google.shopping.merc"
+          + "hant.products.v1.ProductAttributes.VariantOptionB\003\340A\001\022f\n"
+          + "\020related_products\030\262\001 \003(\013"
+          + "2F.google.shopping.merchant.products.v1.ProductAttributes.RelatedProductB\003\340A\001\032l\n"
           + "\032ShippingBusinessDaysConfig\022\024\n"
           + "\007country\030\001 \001(\tH\000\210\001\001\022\032\n\r"
           + "business_days\030\002 \001(\tH\001\210\001\001B\n\n"
@@ -310,8 +433,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\013postal_code\030\003 \001(\tH\002\210\001\001\022\037\n"
           + "\022origin_postal_code\030\004 \001(\tH\003\210\001\001\0224\n\n"
           + "flat_price\030\005 \001(\0132\033.google.shopping.type.PriceH\004\210\001\001\022f\n\r"
-          + "carrier_price\030\006 \001(\0162J.google.shopping.merchant.product"
-          + "s.v1.ProductAttributes.CarrierPriceOptionH\005\210\001\001\022G\n"
+          + "carrier_price\030\006 \001(\0162J.google.shop"
+          + "ping.merchant.products.v1.ProductAttributes.CarrierPriceOptionH\005\210\001\001\022G\n"
           + "\035carrier_price_flat_adjustment\030\007"
           + " \001(\0132\033.google.shopping.type.PriceH\006\210\001\001\0220\n"
           + "#carrier_price_percentage_adjustment\030\010 \001(\001H\007\210\001\001\022\036\n"
@@ -322,8 +445,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\210\001\001\022#\n"
           + "\026fixed_max_transit_time\030\014 \001(\003H\013\210\001\001\022a\n"
           + "\024carrier_transit_time\030\r"
-          + " \001(\0162>.google.shopping.merc"
-          + "hant.products.v1.CarrierTransitTimeOptionH\014\210\001\001B\n\n"
+          + " \001(\0162>"
+          + ".google.shopping.merchant.products.v1.CarrierTransitTimeOptionH\014\210\001\001B\n\n"
           + "\010_countryB\t\n"
           + "\007_regionB\016\n"
           + "\014_postal_codeB\025\n"
@@ -336,7 +459,102 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\022_max_handling_timeB\031\n"
           + "\027_fixed_min_transit_timeB\031\n"
           + "\027_fixed_max_transit_timeB\027\n"
-          + "\025_carrier_transit_time\"\210\014\n"
+          + "\025_carrier_transit_time\032\254\001\n"
+          + "\007Mileage\022\022\n"
+          + "\005value\030\001 \001(\003H\000\210\001\001\022R\n"
+          + "\004unit\030\002"
+          + " \001(\0162D.google.shopping.merchant.products.v1.ProductAttributes.Mileage.Unit\"/\n"
+          + "\004Unit\022\024\n"
+          + "\020UNIT_UNSPECIFIED\020\000\022\t\n"
+          + "\005MILES\020\001\022\006\n"
+          + "\002KM\020\002B\010\n"
+          + "\006_value\032\310\001\n"
+          + "\017FuelConsumption\022\022\n"
+          + "\005value\030\001 \001(\001H\000\210\001\001\022Z\n"
+          + "\004unit\030\002 \001(\0162L.google.sh"
+          + "opping.merchant.products.v1.ProductAttributes.FuelConsumption.Unit\";\n"
+          + "\004Unit\022\024\n"
+          + "\020UNIT_UNSPECIFIED\020\000\022\r\n"
+          + "\tLPER100KM\020\001\022\016\n\n"
+          + "KGPER100KM\020\002B\010\n"
+          + "\006_value\032\276\001\n"
+          + "\021EnergyConsumption\022\022\n"
+          + "\005value\030\001 \001(\001H\000\210\001\001\022\\\n"
+          + "\004unit\030\002 \001(\0162N.goog"
+          + "le.shopping.merchant.products.v1.ProductAttributes.EnergyConsumption.Unit\"-\n"
+          + "\004Unit\022\024\n"
+          + "\020UNIT_UNSPECIFIED\020\000\022\017\n"
+          + "\013KWHPER100KM\020\001B\010\n"
+          + "\006_value\032\257\001\n"
+          + "\014Co2Emissions\022\022\n"
+          + "\005value\030\001 \001(\003H\000\210\001\001\022W\n"
+          + "\004unit\030\002 \001(\0162I.google.shopping."
+          + "merchant.products.v1.ProductAttributes.Co2Emissions.Unit\"(\n"
+          + "\004Unit\022\024\n"
+          + "\020UNIT_UNSPECIFIED\020\000\022\n\n"
+          + "\006GPERKM\020\001B\010\n"
+          + "\006_value\032n\n"
+          + "\010Warranty\022\020\n"
+          + "\010duration\030\001 \001(\003\022P\n"
+          + "\007mileage\030\002 \001(\0132?.go"
+          + "ogle.shopping.merchant.products.v1.ProductAttributes.Mileage\032\362\001\n\n"
+          + "ProductFee\022X\n"
+          + "\004type\030\001 \001(\0162J.google.shopping.merchant.pro"
+          + "ducts.v1.ProductAttributes.ProductFee.FeeType\022+\n"
+          + "\006amount\030\002 \001(\0132\033.google.shopping.type.Price\"]\n"
+          + "\007FeeType\022\030\n"
+          + "\024FEE_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tADMIN_FEE\020\001\022\023\n"
+          + "\017APPLICATION_FEE\020\002\022\024\n"
+          + "\020SECURITY_DEPOSIT\020\003\032o\n"
+          + "\016DisplayAddress\022\025\n\r"
+          + "street_number\030\001 \001(\t\022\023\n"
+          + "\013street_name\030\002 \001(\t\022\014\n"
+          + "\004city\030\003 \001(\t\022\016\n"
+          + "\006region\030\004 \001(\t\022\023\n"
+          + "\013postal_code\030\005 \001(\t\032\256\001\n"
+          + "\010UnitArea\022\022\n"
+          + "\005value\030\001 \001(\001H\000\210\001\001\022S\n"
+          + "\004unit\030\002 \001(\0162E.google.shopp"
+          + "ing.merchant.products.v1.ProductAttributes.UnitArea.Unit\"/\n"
+          + "\004Unit\022\024\n"
+          + "\020UNIT_UNSPECIFIED\020\000\022\007\n"
+          + "\003SQM\020\001\022\010\n"
+          + "\004SQFT\020\002B\010\n"
+          + "\006_value\032\316\001\n"
+          + "\tPetPolicy\022\024\n"
+          + "\014pets_allowed\030\001 \001(\010\022\\\n"
+          + "\tpet_types\030\002 \003(\0162I.google.shopping.merchant.pr"
+          + "oducts.v1.ProductAttributes.PetPolicy.PetType\"M\n"
+          + "\007PetType\022\030\n"
+          + "\024PET_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004CATS\020\001\022\016\n\n"
+          + "LARGE_DOGS\020\002\022\016\n\n"
+          + "SMALL_DOGS\020\003\032?\n"
+          + "\021QuestionAndAnswer\022\025\n"
+          + "\010question\030\001 \001(\tB\003\340A\002\022\023\n"
+          + "\006answer\030\002 \001(\tB\003\340A\002\0326\n\r"
+          + "VariantOption\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\002\032\333\003\n"
+          + "\016RelatedProduct\022w\n"
+          + "\021relationship_type\030\001 \001(\0162W.google.shopping.merchant.p"
+          + "roducts.v1.ProductAttributes.RelatedProduct.RelationshipTypeB\003\340A\002\022c\n"
+          + "\007id_type\030\002 \001(\0162M.google.shopping.merchant.products.v"
+          + "1.ProductAttributes.RelatedProduct.IdTypeB\003\340A\002\022\017\n"
+          + "\002id\030\003 \001(\tB\003\340A\002\"\244\001\n"
+          + "\020RelationshipType\022!\n"
+          + "\035RELATIONSHIP_TYPE_UNSPECIFIED\020\000\022\017\n"
+          + "\013PART_OF_SET\020\001\022\021\n\r"
+          + "REQUIRED_PART\020\002\022\025\n"
+          + "\021OFTEN_BOUGHT_WITH\020\003\022\016\n\n"
+          + "SUBSTITUTE\020\004\022\023\n"
+          + "\017DIFFERENT_BRAND\020\005\022\r\n"
+          + "\tACCESSORY\020\006\"3\n"
+          + "\006IdType\022\027\n"
+          + "\023ID_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004GTIN\020\001\022\006\n"
+          + "\002ID\020\002\"\210\014\n"
           + "\022CarrierPriceOption\022$\n"
           + " CARRIER_PRICE_OPTION_UNSPECIFIED\020\000\022\032\n"
           + "\026AUSTRALIA_POST_REGULAR\020\001\022\032\n"
@@ -401,7 +619,140 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\017USPS_MEDIA_MAIL\020:\022 \n"
           + "\034USPS_GROUND_ADVANTAGE_RETAIL\020;\022\026\n"
           + "\022USPS_PRIORITY_MAIL\020<\022$\n"
-          + " USPS_GROUND_ADVANTAGE_COMMERCIAL\020=B\024\n"
+          + " USPS_GROUND_ADVANTAGE_COMMERCIAL\020=\"\266\004\n"
+          + "\020VehicleBodyStyle\022\"\n"
+          + "\036VEHICLE_BODY_STYLE_UNSPECIFIED\020\000\022\r\n"
+          + "\tATV_SPORT\020\001\022\017\n"
+          + "\013ATV_TOURING\020\002\022\017\n"
+          + "\013ATV_UTILITY\020\003\022\r\n"
+          + "\tATV_YOUTH\020\004\022\014\n"
+          + "\010CITY_CAR\020\005\022\025\n"
+          + "\021CLASS_A_MOTORHOME\020\006\022\025\n"
+          + "\021CLASS_B_MOTORHOME\020\007\022\025\n"
+          + "\021CLASS_C_MOTORHOME\020\010\022\017\n"
+          + "\013COMPACT_SUV\020\t\022\017\n"
+          + "\013CONVERTIBLE\020\n"
+          + "\022\t\n"
+          + "\005COUPE\020\013\022\r\n"
+          + "\tCROSSOVER\020\014\022\017\n"
+          + "\013FIFTH_WHEEL\020\r"
+          + "\022\021\n\r"
+          + "FULL_SIZE_VAN\020\016\022\r\n"
+          + "\tHATCHBACK\020\017\022\r\n"
+          + "\tLIMOUSINE\020\020\022\013\n"
+          + "\007MINIVAN\020\021\022\r\n"
+          + "\tNOTCHBACK\020\022\022\021\n\r"
+          + "POP_UP_CAMPER\020\023\022\t\n"
+          + "\005SEDAN\020\024\022\020\n"
+          + "\014SIDE_BY_SIDE\020\025\022\021\n\r"
+          + "STATION_WAGON\020\026\022\007\n"
+          + "\003SUV\020\027\022\022\n"
+          + "\016TRAVEL_TRAILER\020\030\022\t\n"
+          + "\005TRUCK\020\031\022\020\n"
+          + "\014TRUCK_CAMPER\020\032\022\007\n"
+          + "\003UTE\020\033\022\034\n"
+          + "\030UTV_RECREATIONAL_UTILITY\020\034\022\r\n"
+          + "\tUTV_SPORT\020\035\022\017\n"
+          + "\013UTV_UTILITY\020\036\022\r\n"
+          + "\tUTV_YOUTH\020\037\"\243\001\n\n"
+          + "EngineType\022\033\n"
+          + "\027ENGINE_TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010GASOLINE\020\001\022\n\n"
+          + "\006DIESEL\020\002\022\014\n"
+          + "\010ELECTRIC\020\003\022\n\n"
+          + "\006HYBRID\020\004\022\022\n"
+          + "\016PLUG_IN_HYBRID\020\005\022\017\n"
+          + "\013NATURAL_GAS\020\006\022\007\n"
+          + "\003LPG\020\007\022\013\n"
+          + "\007METHANE\020\010\022\t\n"
+          + "\005OTHER\020\t\"\316\001\n"
+          + "\021EmissionsStandard\022\"\n"
+          + "\036EMISSIONS_STANDARD_UNSPECIFIED\020\000\022\022\n"
+          + "\016ZERO_EMISSIONS\020\001\022\t\n"
+          + "\005EURO1\020\002\022\t\n"
+          + "\005EURO2\020\003\022\t\n"
+          + "\005EURO3\020\004\022\t\n"
+          + "\005EURO4\020\005\022\t\n"
+          + "\005EURO5\020\006\022\n\n"
+          + "\006EURO5B\020\007\022\t\n"
+          + "\005EURO6\020\010\022\n\n"
+          + "\006EURO6C\020\t\022\n\n"
+          + "\006EURO6D\020\n"
+          + "\022\017\n"
+          + "\013EURO6D_TEMP\020\013\022\n\n"
+          + "\006EURO6E\020\014\"\276\001\n"
+          + "\020VehiclePriceType\022\"\n"
+          + "\036VEHICLE_PRICE_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014ALL_IN_PRICE\020\001\022\024\n"
+          + "\020DRIVE_AWAY_PRICE\020\002\022\036\n"
+          + "\032ESTIMATED_DRIVE_AWAY_PRICE\020\003\022&\n"
+          + "\"EXCLUDING_GOVERNMENT_CHARGES_PRICE\020\004\022\026\n"
+          + "\022VEHICLE_BASE_PRICE\020\005\"\264\001\n"
+          + "\014PropertyType\022\035\n"
+          + "\031PROPERTY_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tAPARTMENT\020\001\022\t\n"
+          + "\005CONDO\020\002\022\010\n"
+          + "\004LOFT\020\003\022\025\n"
+          + "\021MULTI_FAMILY_HOME\020\004\022\r\n"
+          + "\tPENTHOUSE\020\005\022\010\n"
+          + "\004ROOM\020\006\022\026\n"
+          + "\022SINGLE_FAMILY_HOME\020\007\022\n\n"
+          + "\006STUDIO\020\010\022\r\n"
+          + "\tTOWNHOUSE\020\t\"\220\005\n"
+          + "\016AmenityFeature\022\037\n"
+          + "\033AMENITY_FEATURE_UNSPECIFIED\020\000\022\013\n"
+          + "\007BALCONY\020\001\022\014\n"
+          + "\010BASEMENT\020\002\022\024\n"
+          + "\020BASKETBALL_COURT\020\003\022\020\n"
+          + "\014BIKE_STORAGE\020\004\022\016\n\n"
+          + "CENTRAL_AC\020\005\022\016\n\n"
+          + "DISHWASHER\020\006\022\014\n"
+          + "\010DOG_PARK\020\007\022\014\n"
+          + "\010ELEVATOR\020\010\022\017\n"
+          + "\013EV_CHARGING\020\t\022\016\n\n"
+          + "FENCED_LOT\020\n"
+          + "\022\r\n"
+          + "\tFIREPLACE\020\013\022\022\n"
+          + "\016FITNESS_CENTER\020\014\022\026\n"
+          + "\022FORCED_AIR_HEATING\020\r"
+          + "\022\023\n"
+          + "\017FULLY_FURNISHED\020\016\022\n\n"
+          + "\006GARAGE\020\017\022\023\n"
+          + "\017GATED_COMMUNITY\020\020\022\023\n"
+          + "\017HARDWOOD_FLOORS\020\021\022\027\n"
+          + "\023HIGH_SPEED_INTERNET\020\022\022\014\n"
+          + "\010INTERCOM\020\023\022\030\n"
+          + "\024IN_UNIT_WASHER_DRYER\020\024\022\013\n"
+          + "\007KITCHEN\020\025\022\021\n\r"
+          + "LARGE_CLOSETS\020\026\022\024\n"
+          + "\020MULTISPORT_COURT\020\027\022\022\n"
+          + "\016ONSITE_LAUNDRY\020\030\022\022\n"
+          + "\016OUTDOOR_LOUNGE\020\031\022\013\n"
+          + "\007PARKING\020\032\022\t\n"
+          + "\005PATIO\020\033\022\024\n"
+          + "\020PICKLEBALL_COURT\020\034\022\010\n"
+          + "\004POOL\020\035\022\020\n"
+          + "\014REFRIGERATOR\020\036\022\020\n"
+          + "\014SOCCER_FIELD\020\037\022\020\n"
+          + "\014TENNIS_COURT\020 \022\023\n"
+          + "\017WALK_IN_CLOSETS\020!\022\025\n"
+          + "\021WHEELCHAIR_ACCESS\020\"\"u\n"
+          + "\021UtilitiesIncluded\022\"\n"
+          + "\036UTILITIES_INCLUDED_UNSPECIFIED\020\000\022\017\n"
+          + "\013ELECTRICITY\020\001\022\007\n"
+          + "\003GAS\020\002\022\014\n"
+          + "\010INTERNET\020\003\022\t\n"
+          + "\005TRASH\020\004\022\t\n"
+          + "\005WATER\020\005\"\224\001\n"
+          + "\024SpecialtyHousingType\022&\n"
+          + "\"SPECIALTY_HOUSING_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tCORPORATE\020\001\022\016\n\n"
+          + "LOW_INCOME\020\002\022\014\n"
+          + "\010MILITARY\020\003\022\n"
+          + "\n"
+          + "\006SENIOR\020\004\022\016\n\n"
+          + "SHORT_TERM\020\005\022\013\n"
+          + "\007STUDENT\020\006B\024\n"
           + "\022_identifier_existsB\014\n\n"
           + "_is_bundleB\010\n"
           + "\006_titleB\016\n"
@@ -429,7 +780,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\024_return_policy_labelB\025\n"
           + "\023_transit_time_labelB\007\n"
           + "\005_sizeB\016\n"
-          + "\014_size_systemB\032\n"
+          + "\014_siz",
+      "e_systemB\032\n"
           + "\030_energy_efficiency_classB\036\n"
           + "\034_min_energy_efficiency_classB\036\n"
           + "\034_max_energy_efficiency_classB\014\n\n"
@@ -441,7 +793,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\021_display_ads_linkB\024\n"
           + "\022_display_ads_valueB\020\n"
           + "\016_pickup_methodB\r\n"
-          + "\013_pickup_slaB\020\n"
+          + "\013_pickup_slaB\016\n"
+          + "\014_pickup_costB\020\n"
           + "\016_link_templateB\027\n"
           + "\025_mobile_link_templateB\021\n"
           + "\017_custom_label_0B\021\n"
@@ -453,7 +806,13 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\006_pauseB\025\n"
           + "\023_virtual_model_linkB\023\n"
           + "\021_structured_titleB\031\n"
-          + "\027_structured_description\"-\n"
+          + "\027_structured_descriptionB\013\n"
+          + "\t_latitudeB\014\n\n"
+          + "_longitudeB\022\n"
+          + "\020_number_of_unitsB\025\n"
+          + "\023_number_of_bedroomsB\026\n"
+          + "\024_number_of_bathroomsB\016\n"
+          + "\014_short_title\"-\n"
           + "\016ShippingWeight\022\r\n"
           + "\005value\030\001 \001(\001\022\014\n"
           + "\004unit\030\002 \001(\t\"0\n"
@@ -470,7 +829,7 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\006period\030\001 \001(\01628.goog"
           + "le.shopping.merchant.products.v1.SubscriptionPeriod\022\025\n\r"
           + "period_length\030\002 \001(\003\022+\n"
-          + "\006amount\030\003 \001(\0132\033.google.shopping.type.Price\"\271\002\n"
+          + "\006amount\030\003 \001(\0132\033.google.shopping.type.Price\"\207\003\n"
           + "\022ProductInstallment\022\016\n"
           + "\006months\030\001 \001(\003\022+\n"
           + "\006amount\030\002 \001(\0132\033.google.shopping.type.Price\0225\n"
@@ -478,10 +837,13 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + " \001(\0132\033.google.shopping.type.PriceH\000\210\001\001\022J\n"
           + "\013credit_type\030\004 \001(\0162"
           + "0.google.shopping.merchant.products.v1.CreditTypeH\001\210\001\001\022(\n"
-          + "\026annual_percentage_rate\030\005 \001(\001B\003\340A\001H\002\210\001\001B\016\n"
+          + "\026annual_percentage_rate\030\005 \001(\001B\003\340A\001H\002\210\001\001\022;\n"
+          + "\014total_amount\030\006"
+          + " \001(\0132\033.google.shopping.type.PriceB\003\340A\001H\003\210\001\001B\016\n"
           + "\014_downpaymentB\016\n"
           + "\014_credit_typeB\031\n"
-          + "\027_annual_percentage_rate\"B\n\r"
+          + "\027_annual_percentage_rateB\017\n\r"
+          + "_total_amount\"B\n\r"
           + "LoyaltyPoints\022\014\n"
           + "\004name\030\001 \001(\t\022\024\n"
           + "\014points_value\030\002 \001(\003\022\r\n"
@@ -502,7 +864,7 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\030_cashback_for_future_useB\021\n"
           + "\017_loyalty_pointsB\036\n"
           + "\034_member_price_effective_dateB\021\n"
-          + "\017_shipping_label\"\203\004\n"
+          + "\017_shipping_label\"\310\004\n"
           + "\010Shipping\022*\n"
           + "\005price\030\001 \001(\0132\033.google.shopping.type.Price\022\017\n"
           + "\007country\030\002 \001(\t\022\016\n"
@@ -518,7 +880,9 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\020max_transit_time\030\013 \001(\003H\003\210\001\001\022!\n"
           + "\024handling_cutoff_time\030\014 \001(\tH\004\210\001\001\022%\n"
           + "\030handling_cutoff_timezone\030\r"
-          + " \001(\tH\005\210\001\001B\024\n"
+          + " \001(\tH\005\210\001\001\022\"\n"
+          + "\025loyalty_program_label\030\016 \001(\tB\003\340A\001\022\037\n"
+          + "\022loyalty_tier_label\030\017 \001(\tB\003\340A\001B\024\n"
           + "\022_min_handling_timeB\024\n"
           + "\022_max_handling_timeB\023\n"
           + "\021_min_transit_timeB\023\n"
@@ -536,10 +900,10 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\016attribute_name\030\002 \001(\t\022\027\n"
           + "\017attribute_value\030\003 \001(\t\"\371\002\n"
           + "\024ProductCertification\022b\n"
-          + "\027certification_authority\030\001 \001(\0162<"
-          + ".google.shopping.merchant.products.v1.CertificationAuthorityH\000\210\001\001\022X\n"
-          + "\022certification_name\030\002"
-          + " \001(\01627.google.shopping.merchant.products.v1.CertificationNameH\001\210\001\001\022\037\n"
+          + "\027certification_authority\030\001 \001(\0162<.google.shopp"
+          + "ing.merchant.products.v1.CertificationAuthorityH\000\210\001\001\022X\n"
+          + "\022certification_name\030\002 \001(\016"
+          + "27.google.shopping.merchant.products.v1.CertificationNameH\001\210\001\001\022\037\n"
           + "\022certification_code\030\003 \001(\tH\002\210\001\001\022 \n"
           + "\023certification_value\030\004 \001(\tH\003\210\001\001B\032\n"
           + "\030_certification_authorityB\025\n"
@@ -547,14 +911,14 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\023_certification_codeB\026\n"
           + "\024_certification_value\"\246\001\n"
           + "\017StructuredTitle\022Y\n"
-          + "\023digital_source_type\030\001"
-          + " \001(\01627.google.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
+          + "\023digital_source_type\030\001 \001(\01627.g"
+          + "oogle.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
           + "\007content\030\002 \001(\tH\001\210\001\001B\026\n"
           + "\024_digital_source_typeB\n\n"
           + "\010_content\"\254\001\n"
           + "\025StructuredDescription\022Y\n"
-          + "\023digital_source_type\030\001 \001(\01627.google.shoppi"
-          + "ng.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
+          + "\023digital_source_type\030\001"
+          + " \001(\01627.google.shopping.merchant.products.v1.DigitalSourceTypeH\000\210\001\001\022\024\n"
           + "\007content\030\002 \001(\tH\001\210\001\001B\026\n"
           + "\024_digital_source_typeB\n\n"
           + "\010_content\"9\n"
@@ -565,28 +929,28 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\005value\030\001 \001(\001B\003\340A\002\022\021\n"
           + "\004unit\030\002 \001(\tB\003\340A\002\"\353\007\n\r"
           + "ProductStatus\022c\n"
-          + "\024destination_statuses\030\003 \003(\0132E.google.sho"
-          + "pping.merchant.products.v1.ProductStatus.DestinationStatus\022]\n"
-          + "\021item_level_issues\030\004"
-          + " \003(\0132B.google.shopping.merchant.products.v1.ProductStatus.ItemLevelIssue\0221\n\r"
+          + "\024destination_statuses\030\003 \003(\0132E.google.shopping.merchan"
+          + "t.products.v1.ProductStatus.DestinationStatus\022]\n"
+          + "\021item_level_issues\030\004 \003(\0132B.googl"
+          + "e.shopping.merchant.products.v1.ProductStatus.ItemLevelIssue\0221\n\r"
           + "creation_date\030\005 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\020last_update_date\030\006 \001(\0132\032.google.protobuf.Timestamp\022:\n"
           + "\026google_expiration_date\030\007"
           + " \001(\0132\032.google.protobuf.Timestamp\032\301\001\n"
           + "\021DestinationStatus\022V\n"
-          + "\021reporting_context\030\001"
-          + " \001(\0162;.google.shopping.type.ReportingContext.ReportingContextEnum\022\032\n"
+          + "\021reporting_context\030\001 \001(\0162;.goo"
+          + "gle.shopping.type.ReportingContext.ReportingContextEnum\022\032\n"
           + "\022approved_countries\030\002 \003(\t\022\031\n"
           + "\021pending_countries\030\003 \003(\t\022\035\n"
           + "\025disapproved_countries\030\004 \003(\t\032\254\003\n"
           + "\016ItemLevelIssue\022\014\n"
           + "\004code\030\001 \001(\t\022]\n"
-          + "\010severity\030\002 \001(\0162K.google.shopping.merchant.product"
-          + "s.v1.ProductStatus.ItemLevelIssue.Severity\022\022\n\n"
+          + "\010severity\030\002 \001(\0162K.googl"
+          + "e.shopping.merchant.products.v1.ProductStatus.ItemLevelIssue.Severity\022\022\n\n"
           + "resolution\030\003 \001(\t\022\021\n"
           + "\tattribute\030\004 \001(\t\022V\n"
-          + "\021reporting_context\030\005 \001(\0162;.google.sh"
-          + "opping.type.ReportingContext.ReportingContextEnum\022\023\n"
+          + "\021reporting_context\030\005"
+          + " \001(\0162;.google.shopping.type.ReportingContext.ReportingContextEnum\022\023\n"
           + "\013description\030\006 \001(\t\022\016\n"
           + "\006detail\030\007 \001(\t\022\025\n\r"
           + "documentation\030\010 \001(\t\022\034\n"
@@ -613,8 +977,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\036ProductSustainabilityIncentive\022-\n"
           + "\006amount\030\002 \001(\0132\033.google.shopping.type.PriceH\000\022\024\n\n"
           + "percentage\030\003 \001(\001H\000\022\\\n"
-          + "\004type\030\001 \001(\0162I.google.shopping.merchant.products.v1.P"
-          + "roductSustainabilityIncentive.TypeH\001\210\001\001\"F\n"
+          + "\004type\030\001 \001(\0162I.google.shop"
+          + "ping.merchant.products.v1.ProductSustainabilityIncentive.TypeH\001\210\001\001\"F\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\021\n\r"
           + "EV_TAX_CREDIT\020\001\022\025\n"
@@ -624,7 +988,14 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\022AutomatedDiscounts\0220\n"
           + "\013prior_price\030\001 \001(\0132\033.google.shopping.type.Price\022<\n"
           + "\027prior_price_progressive\030\002 \001(\0132\033.google.shopping.type.Price\022.\n"
-          + "\tgad_price\030\003 \001(\0132\033.google.shopping.type.Price\"\340\001\n"
+          + "\tgad_price\030\003 \001(\0132\033.google.shopping.type.Price\"\246\001\n\n"
+          + "PickupCost\0228\n"
+          + "\tflat_rate\030\001"
+          + " \001(\0132\033.google.shopping.type.PriceB\003\340A\002H\000\210\001\001\022=\n"
+          + "\016free_threshold\030\002"
+          + " \001(\0132\033.google.shopping.type.PriceB\003\340A\001H\001\210\001\001B\014\n\n"
+          + "_flat_rateB\021\n"
+          + "\017_free_threshold\"\340\001\n"
           + "\022HandlingCutoffTime\022\024\n"
           + "\007country\030\001 \001(\tH\000\210\001\001\022\030\n"
           + "\013cutoff_time\030\002 \001(\tH\001\210\001\001\022\034\n"
@@ -633,7 +1004,24 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\010_countryB\016\n"
           + "\014_cutoff_timeB\022\n"
           + "\020_cutoff_timezoneB \n"
-          + "\036_disable_delivery_after_cutoff*X\n"
+          + "\036_disable_delivery_after_cutoff\"\332\002\n"
+          + "\030ProductMinimumOrderValue\022\031\n"
+          + "\007country\030\001 \001(\tB\003\340A\002H\000\210\001\001\022\024\n"
+          + "\007service\030\002 \001(\tH\001\210\001\001\022\\\n"
+          + "\007surface\030\003 \001(\0162F.google."
+          + "shopping.merchant.products.v1.ProductMinimumOrderValue.SurfaceH\002\210\001\001\0224\n"
+          + "\005price\030\004 \001"
+          + "(\0132\033.google.shopping.type.PriceB\003\340A\002H\003\210\001\001\"K\n"
+          + "\007Surface\022\027\n"
+          + "\023SURFACE_UNSPECIFIED\020\000\022\n\n"
+          + "\006ONLINE\020\001\022\t\n"
+          + "\005LOCAL\020\002\022\020\n"
+          + "\014ONLINE_LOCAL\020\003B\n"
+          + "\n"
+          + "\010_countryB\n\n"
+          + "\010_serviceB\n\n"
+          + "\010_surfaceB\010\n"
+          + "\006_price*X\n"
           + "\022SubscriptionPeriod\022#\n"
           + "\037SUBSCRIPTION_PERIOD_UNSPECIFIED\020\000\022\t\n"
           + "\005MONTH\020\001\022\010\n"
@@ -764,26 +1152,30 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
           + "\021TNT_ESSENTIEL_24H\020\022\022\035\n"
           + "\031TNT_ESSENTIEL_FLEXIBILITE\020\023\022\020\n"
           + "\014FEDEX_GROUND\020\024\022\027\n"
-          + "\023FED",
-      "EX_HOME_DELIVERY\020\025\022\027\n\023FEDEX_EXPRESS_SAVE"
-          + "R\020\026\022\031\n\025FEDEX_FIRST_OVERNIGHT\020\027\022\034\n\030FEDEX_"
-          + "PRIORITY_OVERNIGHT\020\030\022\034\n\030FEDEX_STANDARD_O"
-          + "VERNIGHT\020\031\022\016\n\nFEDEX_2DAY\020\032\022\023\n\017UPS_2ND_DA"
-          + "Y_AIR\020\033\022\022\n\016UPS_2ND_DAY_AM\020\034\022\024\n\020UPS_3_DAY"
-          + "_SELECT\020\035\022\016\n\nUPS_GROUND\020\036\022\024\n\020UPS_NEXT_DA"
-          + "Y_AIR\020\037\022\035\n\031UPS_NEXT_DAY_AIR_EARLY_AM\020 \022\032"
-          + "\n\026UPS_NEXT_DAY_AIR_SAVER\020!\022\036\n\032USPS_PRIOR"
-          + "ITY_MAIL_EXPRESS\020\"\022\023\n\017USPS_MEDIA_MAIL\020#\022"
-          + " \n\034USPS_GROUND_ADVANTAGE_RETAIL\020$\022\026\n\022USP"
-          + "S_PRIORITY_MAIL\020%\022$\n USPS_GROUND_ADVANTA"
-          + "GE_COMMERCIAL\020&\022\031\n\025USPS_FIRST_CLASS_MAIL"
-          + "\020\'B\206\002\n(com.google.shopping.merchant.prod"
-          + "ucts.v1B\023ProductsCommonProtoP\001ZJcloud.go"
-          + "ogle.com/go/shopping/merchant/products/a"
-          + "piv1/productspb;productspb\252\002$Google.Shop"
-          + "ping.Merchant.Products.V1\312\002$Google\\Shopp"
-          + "ing\\Merchant\\Products\\V1\352\002(Google::Shopp"
-          + "ing::Merchant::Products::V1b\006proto3"
+          + "\023FEDEX_HOME_DELIVERY\020\025\022\027\n"
+          + "\023FEDEX_EXPRESS_SAVER\020\026\022\031\n"
+          + "\025FEDEX_FIRST_OVERNIGHT\020\027\022\034\n"
+          + "\030FEDEX_PRIORITY_OVERNIGHT\020\030\022\034\n"
+          + "\030FEDEX_STANDARD_OVERNIGHT\020\031\022\016\n\n"
+          + "FEDEX_2DAY\020\032\022\023\n"
+          + "\017UPS_2ND_DAY_AIR\020\033\022\022\n"
+          + "\016UPS_2ND_DAY_AM\020\034\022\024\n"
+          + "\020UPS_3_DAY_SELECT\020\035\022\016\n\n"
+          + "UPS_GROUND\020\036\022\024\n"
+          + "\020UPS_NEXT_DAY_AIR\020\037\022\035\n"
+          + "\031UPS_NEXT_DAY_AIR_EARLY_AM\020 \022\032\n"
+          + "\026UPS_NEXT_DAY_AIR_SAVER\020!\022\036\n"
+          + "\032USPS_PRIORITY_MAIL_EXPRESS\020\"\022\023\n"
+          + "\017USPS_MEDIA_MAIL\020#\022 \n"
+          + "\034USPS_GROUND_ADVANTAGE_RETAIL\020$\022\026\n"
+          + "\022USPS_PRIORITY_MAIL\020%\022$\n"
+          + " USPS_GROUND_ADVANTAGE_COMMERCIAL\020&\022\031\n"
+          + "\025USPS_FIRST_CLASS_MAIL\020\'B\206\002\n"
+          + "(com.google.shopping.merchant.products.v1B\023Produc"
+          + "tsCommonProtoP\001ZJcloud.google.com/go/shopping/merchant/products/apiv1/productspb"
+          + ";productspb\252\002$Google.Shopping.Merchant.P"
+          + "roducts.V1\312\002$Google\\Shopping\\Merchant\\Pr"
+          + "oducts\\V1\352\002(Google::Shopping::Merchant::Products::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -877,6 +1269,7 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
               "PromotionIds",
               "PickupMethod",
               "PickupSla",
+              "PickupCost",
               "LinkTemplate",
               "MobileLinkTemplate",
               "CustomLabel0",
@@ -898,6 +1291,50 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
               "AutoPricingMinPrice",
               "SustainabilityIncentives",
               "VideoLinks",
+              "MinimumOrderValues",
+              "Vin",
+              "Model",
+              "Trim",
+              "BodyStyle",
+              "Year",
+              "Mileage",
+              "ElectricRange",
+              "FuelConsumption",
+              "FuelConsumptionDischargedBattery",
+              "EnergyConsumption",
+              "Co2Emissions",
+              "DateFirstRegistered",
+              "Engine",
+              "EmissionsStandard",
+              "CertifiedPreOwned",
+              "VehicleMsrp",
+              "VehicleAllInPrice",
+              "VehiclePriceType",
+              "VehicleMandatoryInspectionIncluded",
+              "VehicleExpenses",
+              "Warranty",
+              "DisplayAddress",
+              "Latitude",
+              "Longitude",
+              "Neighborhood",
+              "UnitArea",
+              "NumberOfUnits",
+              "PropertyName",
+              "NumberOfBedrooms",
+              "NumberOfBathrooms",
+              "PropertyType",
+              "AmenityFeature",
+              "UtilitiesIncluded",
+              "PetPolicy",
+              "SpecialtyHousingType",
+              "ProductFee",
+              "ShortTitle",
+              "QuestionsAndAnswers",
+              "PopularityRank",
+              "ItemGroupTitle",
+              "DocumentLinks",
+              "VariantOptions",
+              "RelatedProducts",
             });
     internal_static_google_shopping_merchant_products_v1_ProductAttributes_ShippingBusinessDaysConfig_descriptor =
         internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
@@ -928,6 +1365,114 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
               "FixedMinTransitTime",
               "FixedMaxTransitTime",
               "CarrierTransitTime",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(2);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_Mileage_descriptor,
+            new java.lang.String[] {
+              "Value", "Unit",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(3);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_FuelConsumption_descriptor,
+            new java.lang.String[] {
+              "Value", "Unit",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(4);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_EnergyConsumption_descriptor,
+            new java.lang.String[] {
+              "Value", "Unit",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(5);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_Co2Emissions_descriptor,
+            new java.lang.String[] {
+              "Value", "Unit",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(6);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_Warranty_descriptor,
+            new java.lang.String[] {
+              "Duration", "Mileage",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(7);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_ProductFee_descriptor,
+            new java.lang.String[] {
+              "Type", "Amount",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(8);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_DisplayAddress_descriptor,
+            new java.lang.String[] {
+              "StreetNumber", "StreetName", "City", "Region", "PostalCode",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(9);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_UnitArea_descriptor,
+            new java.lang.String[] {
+              "Value", "Unit",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(10);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_PetPolicy_descriptor,
+            new java.lang.String[] {
+              "PetsAllowed", "PetTypes",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(11);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_QuestionAndAnswer_descriptor,
+            new java.lang.String[] {
+              "Question", "Answer",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(12);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_VariantOption_descriptor,
+            new java.lang.String[] {
+              "Name", "Value",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor =
+        internal_static_google_shopping_merchant_products_v1_ProductAttributes_descriptor
+            .getNestedType(13);
+    internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductAttributes_RelatedProduct_descriptor,
+            new java.lang.String[] {
+              "RelationshipType", "IdType", "Id",
             });
     internal_static_google_shopping_merchant_products_v1_ShippingWeight_descriptor =
         getDescriptor().getMessageType(1);
@@ -975,7 +1520,12 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_products_v1_ProductInstallment_descriptor,
             new java.lang.String[] {
-              "Months", "Amount", "Downpayment", "CreditType", "AnnualPercentageRate",
+              "Months",
+              "Amount",
+              "Downpayment",
+              "CreditType",
+              "AnnualPercentageRate",
+              "TotalAmount",
             });
     internal_static_google_shopping_merchant_products_v1_LoyaltyPoints_descriptor =
         getDescriptor().getMessageType(7);
@@ -1018,6 +1568,8 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
               "MaxTransitTime",
               "HandlingCutoffTime",
               "HandlingCutoffTimezone",
+              "LoyaltyProgramLabel",
+              "LoyaltyTierLabel",
             });
     internal_static_google_shopping_merchant_products_v1_FreeShippingThreshold_descriptor =
         getDescriptor().getMessageType(10);
@@ -1147,13 +1699,29 @@ public final class ProductsCommonProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "PriorPrice", "PriorPriceProgressive", "GadPrice",
             });
-    internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor =
+    internal_static_google_shopping_merchant_products_v1_PickupCost_descriptor =
         getDescriptor().getMessageType(21);
+    internal_static_google_shopping_merchant_products_v1_PickupCost_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_PickupCost_descriptor,
+            new java.lang.String[] {
+              "FlatRate", "FreeThreshold",
+            });
+    internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor =
+        getDescriptor().getMessageType(22);
     internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_products_v1_HandlingCutoffTime_descriptor,
             new java.lang.String[] {
               "Country", "CutoffTime", "CutoffTimezone", "DisableDeliveryAfterCutoff",
+            });
+    internal_static_google_shopping_merchant_products_v1_ProductMinimumOrderValue_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_shopping_merchant_products_v1_ProductMinimumOrderValue_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_products_v1_ProductMinimumOrderValue_descriptor,
+            new java.lang.String[] {
+              "Country", "Service", "Surface", "Price",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

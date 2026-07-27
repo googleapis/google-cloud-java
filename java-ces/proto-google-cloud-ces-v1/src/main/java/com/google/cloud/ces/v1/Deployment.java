@@ -470,6 +470,189 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int EXPERIMENT_CONFIG_FIELD_NUMBER = 9;
+  private com.google.cloud.ces.v1.ExperimentConfig experimentConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the experimentConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasExperimentConfig() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The experimentConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ExperimentConfig getExperimentConfig() {
+    return experimentConfig_ == null
+        ? com.google.cloud.ces.v1.ExperimentConfig.getDefaultInstance()
+        : experimentConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Experiment configuration for the deployment.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.ExperimentConfigOrBuilder getExperimentConfigOrBuilder() {
+    return experimentConfig_ == null
+        ? com.google.cloud.ces.v1.ExperimentConfig.getDefaultInstance()
+        : experimentConfig_;
+  }
+
+  public static final int WHATSAPP_CREDENTIALS_FIELD_NUMBER = 10;
+  private com.google.cloud.ces.v1.WhatsAppCredentials whatsappCredentials_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the whatsappCredentials field is set.
+   */
+  @java.lang.Override
+  public boolean hasWhatsappCredentials() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The whatsappCredentials.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.WhatsAppCredentials getWhatsappCredentials() {
+    return whatsappCredentials_ == null
+        ? com.google.cloud.ces.v1.WhatsAppCredentials.getDefaultInstance()
+        : whatsappCredentials_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral WhatsApp credentials required when
+   * configuring a WhatsApp channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.WhatsAppCredentialsOrBuilder getWhatsappCredentialsOrBuilder() {
+    return whatsappCredentials_ == null
+        ? com.google.cloud.ces.v1.WhatsAppCredentials.getDefaultInstance()
+        : whatsappCredentials_;
+  }
+
+  public static final int INSTAGRAM_CREDENTIALS_FIELD_NUMBER = 11;
+  private com.google.cloud.ces.v1.InstagramCredentials instagramCredentials_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the instagramCredentials field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstagramCredentials() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The instagramCredentials.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.InstagramCredentials getInstagramCredentials() {
+    return instagramCredentials_ == null
+        ? com.google.cloud.ces.v1.InstagramCredentials.getDefaultInstance()
+        : instagramCredentials_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Ephemeral Instagram credentials required when
+   * configuring a Instagram channel profile.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1.InstagramCredentialsOrBuilder getInstagramCredentialsOrBuilder() {
+    return instagramCredentials_ == null
+        ? com.google.cloud.ces.v1.InstagramCredentials.getDefaultInstance()
+        : instagramCredentials_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -505,6 +688,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, displayName_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getExperimentConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(10, getWhatsappCredentials());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(11, getInstagramCredentials());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -534,6 +726,17 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, displayName_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getExperimentConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(10, getWhatsappCredentials());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getInstagramCredentials());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -566,6 +769,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasExperimentConfig() != other.hasExperimentConfig()) return false;
+    if (hasExperimentConfig()) {
+      if (!getExperimentConfig().equals(other.getExperimentConfig())) return false;
+    }
+    if (hasWhatsappCredentials() != other.hasWhatsappCredentials()) return false;
+    if (hasWhatsappCredentials()) {
+      if (!getWhatsappCredentials().equals(other.getWhatsappCredentials())) return false;
+    }
+    if (hasInstagramCredentials() != other.hasInstagramCredentials()) return false;
+    if (hasInstagramCredentials()) {
+      if (!getInstagramCredentials().equals(other.getInstagramCredentials())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -597,6 +812,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasExperimentConfig()) {
+      hash = (37 * hash) + EXPERIMENT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getExperimentConfig().hashCode();
+    }
+    if (hasWhatsappCredentials()) {
+      hash = (37 * hash) + WHATSAPP_CREDENTIALS_FIELD_NUMBER;
+      hash = (53 * hash) + getWhatsappCredentials().hashCode();
+    }
+    if (hasInstagramCredentials()) {
+      hash = (37 * hash) + INSTAGRAM_CREDENTIALS_FIELD_NUMBER;
+      hash = (53 * hash) + getInstagramCredentials().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -741,6 +968,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         internalGetChannelProfileFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetExperimentConfigFieldBuilder();
+        internalGetWhatsappCredentialsFieldBuilder();
+        internalGetInstagramCredentialsFieldBuilder();
       }
     }
 
@@ -767,6 +997,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       etag_ = "";
+      experimentConfig_ = null;
+      if (experimentConfigBuilder_ != null) {
+        experimentConfigBuilder_.dispose();
+        experimentConfigBuilder_ = null;
+      }
+      whatsappCredentials_ = null;
+      if (whatsappCredentialsBuilder_ != null) {
+        whatsappCredentialsBuilder_.dispose();
+        whatsappCredentialsBuilder_ = null;
+      }
+      instagramCredentials_ = null;
+      if (instagramCredentialsBuilder_ != null) {
+        instagramCredentialsBuilder_.dispose();
+        instagramCredentialsBuilder_ = null;
+      }
       return this;
     }
 
@@ -828,6 +1073,25 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.experimentConfig_ =
+            experimentConfigBuilder_ == null ? experimentConfig_ : experimentConfigBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.whatsappCredentials_ =
+            whatsappCredentialsBuilder_ == null
+                ? whatsappCredentials_
+                : whatsappCredentialsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.instagramCredentials_ =
+            instagramCredentialsBuilder_ == null
+                ? instagramCredentials_
+                : instagramCredentialsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -871,6 +1135,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         etag_ = other.etag_;
         bitField0_ |= 0x00000040;
         onChanged();
+      }
+      if (other.hasExperimentConfig()) {
+        mergeExperimentConfig(other.getExperimentConfig());
+      }
+      if (other.hasWhatsappCredentials()) {
+        mergeWhatsappCredentials(other.getWhatsappCredentials());
+      }
+      if (other.hasInstagramCredentials()) {
+        mergeInstagramCredentials(other.getInstagramCredentials());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -943,6 +1216,27 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetExperimentConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetWhatsappCredentialsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetInstagramCredentialsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2091,6 +2385,666 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1.ExperimentConfig experimentConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ExperimentConfig,
+            com.google.cloud.ces.v1.ExperimentConfig.Builder,
+            com.google.cloud.ces.v1.ExperimentConfigOrBuilder>
+        experimentConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the experimentConfig field is set.
+     */
+    public boolean hasExperimentConfig() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The experimentConfig.
+     */
+    public com.google.cloud.ces.v1.ExperimentConfig getExperimentConfig() {
+      if (experimentConfigBuilder_ == null) {
+        return experimentConfig_ == null
+            ? com.google.cloud.ces.v1.ExperimentConfig.getDefaultInstance()
+            : experimentConfig_;
+      } else {
+        return experimentConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExperimentConfig(com.google.cloud.ces.v1.ExperimentConfig value) {
+      if (experimentConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        experimentConfig_ = value;
+      } else {
+        experimentConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExperimentConfig(
+        com.google.cloud.ces.v1.ExperimentConfig.Builder builderForValue) {
+      if (experimentConfigBuilder_ == null) {
+        experimentConfig_ = builderForValue.build();
+      } else {
+        experimentConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExperimentConfig(com.google.cloud.ces.v1.ExperimentConfig value) {
+      if (experimentConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && experimentConfig_ != null
+            && experimentConfig_ != com.google.cloud.ces.v1.ExperimentConfig.getDefaultInstance()) {
+          getExperimentConfigBuilder().mergeFrom(value);
+        } else {
+          experimentConfig_ = value;
+        }
+      } else {
+        experimentConfigBuilder_.mergeFrom(value);
+      }
+      if (experimentConfig_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExperimentConfig() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      experimentConfig_ = null;
+      if (experimentConfigBuilder_ != null) {
+        experimentConfigBuilder_.dispose();
+        experimentConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ExperimentConfig.Builder getExperimentConfigBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return internalGetExperimentConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.ExperimentConfigOrBuilder getExperimentConfigOrBuilder() {
+      if (experimentConfigBuilder_ != null) {
+        return experimentConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return experimentConfig_ == null
+            ? com.google.cloud.ces.v1.ExperimentConfig.getDefaultInstance()
+            : experimentConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Experiment configuration for the deployment.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.ExperimentConfig experiment_config = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.ExperimentConfig,
+            com.google.cloud.ces.v1.ExperimentConfig.Builder,
+            com.google.cloud.ces.v1.ExperimentConfigOrBuilder>
+        internalGetExperimentConfigFieldBuilder() {
+      if (experimentConfigBuilder_ == null) {
+        experimentConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.ExperimentConfig,
+                com.google.cloud.ces.v1.ExperimentConfig.Builder,
+                com.google.cloud.ces.v1.ExperimentConfigOrBuilder>(
+                getExperimentConfig(), getParentForChildren(), isClean());
+        experimentConfig_ = null;
+      }
+      return experimentConfigBuilder_;
+    }
+
+    private com.google.cloud.ces.v1.WhatsAppCredentials whatsappCredentials_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.WhatsAppCredentials,
+            com.google.cloud.ces.v1.WhatsAppCredentials.Builder,
+            com.google.cloud.ces.v1.WhatsAppCredentialsOrBuilder>
+        whatsappCredentialsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the whatsappCredentials field is set.
+     */
+    public boolean hasWhatsappCredentials() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The whatsappCredentials.
+     */
+    public com.google.cloud.ces.v1.WhatsAppCredentials getWhatsappCredentials() {
+      if (whatsappCredentialsBuilder_ == null) {
+        return whatsappCredentials_ == null
+            ? com.google.cloud.ces.v1.WhatsAppCredentials.getDefaultInstance()
+            : whatsappCredentials_;
+      } else {
+        return whatsappCredentialsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setWhatsappCredentials(com.google.cloud.ces.v1.WhatsAppCredentials value) {
+      if (whatsappCredentialsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        whatsappCredentials_ = value;
+      } else {
+        whatsappCredentialsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setWhatsappCredentials(
+        com.google.cloud.ces.v1.WhatsAppCredentials.Builder builderForValue) {
+      if (whatsappCredentialsBuilder_ == null) {
+        whatsappCredentials_ = builderForValue.build();
+      } else {
+        whatsappCredentialsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeWhatsappCredentials(com.google.cloud.ces.v1.WhatsAppCredentials value) {
+      if (whatsappCredentialsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && whatsappCredentials_ != null
+            && whatsappCredentials_
+                != com.google.cloud.ces.v1.WhatsAppCredentials.getDefaultInstance()) {
+          getWhatsappCredentialsBuilder().mergeFrom(value);
+        } else {
+          whatsappCredentials_ = value;
+        }
+      } else {
+        whatsappCredentialsBuilder_.mergeFrom(value);
+      }
+      if (whatsappCredentials_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearWhatsappCredentials() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      whatsappCredentials_ = null;
+      if (whatsappCredentialsBuilder_ != null) {
+        whatsappCredentialsBuilder_.dispose();
+        whatsappCredentialsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.WhatsAppCredentials.Builder getWhatsappCredentialsBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetWhatsappCredentialsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.WhatsAppCredentialsOrBuilder getWhatsappCredentialsOrBuilder() {
+      if (whatsappCredentialsBuilder_ != null) {
+        return whatsappCredentialsBuilder_.getMessageOrBuilder();
+      } else {
+        return whatsappCredentials_ == null
+            ? com.google.cloud.ces.v1.WhatsAppCredentials.getDefaultInstance()
+            : whatsappCredentials_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral WhatsApp credentials required when
+     * configuring a WhatsApp channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.WhatsAppCredentials whatsapp_credentials = 10 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.WhatsAppCredentials,
+            com.google.cloud.ces.v1.WhatsAppCredentials.Builder,
+            com.google.cloud.ces.v1.WhatsAppCredentialsOrBuilder>
+        internalGetWhatsappCredentialsFieldBuilder() {
+      if (whatsappCredentialsBuilder_ == null) {
+        whatsappCredentialsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.WhatsAppCredentials,
+                com.google.cloud.ces.v1.WhatsAppCredentials.Builder,
+                com.google.cloud.ces.v1.WhatsAppCredentialsOrBuilder>(
+                getWhatsappCredentials(), getParentForChildren(), isClean());
+        whatsappCredentials_ = null;
+      }
+      return whatsappCredentialsBuilder_;
+    }
+
+    private com.google.cloud.ces.v1.InstagramCredentials instagramCredentials_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.InstagramCredentials,
+            com.google.cloud.ces.v1.InstagramCredentials.Builder,
+            com.google.cloud.ces.v1.InstagramCredentialsOrBuilder>
+        instagramCredentialsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the instagramCredentials field is set.
+     */
+    public boolean hasInstagramCredentials() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The instagramCredentials.
+     */
+    public com.google.cloud.ces.v1.InstagramCredentials getInstagramCredentials() {
+      if (instagramCredentialsBuilder_ == null) {
+        return instagramCredentials_ == null
+            ? com.google.cloud.ces.v1.InstagramCredentials.getDefaultInstance()
+            : instagramCredentials_;
+      } else {
+        return instagramCredentialsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstagramCredentials(com.google.cloud.ces.v1.InstagramCredentials value) {
+      if (instagramCredentialsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instagramCredentials_ = value;
+      } else {
+        instagramCredentialsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstagramCredentials(
+        com.google.cloud.ces.v1.InstagramCredentials.Builder builderForValue) {
+      if (instagramCredentialsBuilder_ == null) {
+        instagramCredentials_ = builderForValue.build();
+      } else {
+        instagramCredentialsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeInstagramCredentials(com.google.cloud.ces.v1.InstagramCredentials value) {
+      if (instagramCredentialsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && instagramCredentials_ != null
+            && instagramCredentials_
+                != com.google.cloud.ces.v1.InstagramCredentials.getDefaultInstance()) {
+          getInstagramCredentialsBuilder().mergeFrom(value);
+        } else {
+          instagramCredentials_ = value;
+        }
+      } else {
+        instagramCredentialsBuilder_.mergeFrom(value);
+      }
+      if (instagramCredentials_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInstagramCredentials() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      instagramCredentials_ = null;
+      if (instagramCredentialsBuilder_ != null) {
+        instagramCredentialsBuilder_.dispose();
+        instagramCredentialsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.InstagramCredentials.Builder getInstagramCredentialsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetInstagramCredentialsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1.InstagramCredentialsOrBuilder
+        getInstagramCredentialsOrBuilder() {
+      if (instagramCredentialsBuilder_ != null) {
+        return instagramCredentialsBuilder_.getMessageOrBuilder();
+      } else {
+        return instagramCredentials_ == null
+            ? com.google.cloud.ces.v1.InstagramCredentials.getDefaultInstance()
+            : instagramCredentials_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Ephemeral Instagram credentials required when
+     * configuring a Instagram channel profile.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1.InstagramCredentials instagram_credentials = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1.InstagramCredentials,
+            com.google.cloud.ces.v1.InstagramCredentials.Builder,
+            com.google.cloud.ces.v1.InstagramCredentialsOrBuilder>
+        internalGetInstagramCredentialsFieldBuilder() {
+      if (instagramCredentialsBuilder_ == null) {
+        instagramCredentialsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1.InstagramCredentials,
+                com.google.cloud.ces.v1.InstagramCredentials.Builder,
+                com.google.cloud.ces.v1.InstagramCredentialsOrBuilder>(
+                getInstagramCredentials(), getParentForChildren(), isClean());
+        instagramCredentials_ = null;
+      }
+      return instagramCredentialsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1.Deployment)
