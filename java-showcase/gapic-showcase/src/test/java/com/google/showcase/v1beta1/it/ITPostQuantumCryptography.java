@@ -35,13 +35,12 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.KeyStore;
-import java.security.Provider;
-import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import org.conscrypt.Conscrypt;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -80,9 +79,8 @@ class ITPostQuantumCryptography {
 
   // Expected TLS parameters
   private static final String EXPECTED_PQC_GROUP = "X25519MLKEM768";
-
-  private static final String[] DEFAULT_JSSE_GROUPS =
-      new String[] {"secp256r1", "secp384r1", "x25519", "secp521r1"};
+  private static final String CLASSICAL_X25519_GROUP = "X25519";
+  private static final String[] EXPLICIT_NON_PQC_GROUPS = new String[] {CLASSICAL_X25519_GROUP};
 
   private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
 
@@ -158,16 +156,22 @@ class ITPostQuantumCryptography {
   }
 
   @Test
-  void testHttpJsonPqc_withExplicitJsseSecurityProvider() throws Exception {
+  void testHttpJsonPqc_withExplicitNonPqcGroup() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
-    // Explicitly configure SunJSSE (standard JDK JSSE provider) on NetHttpTransport.Builder
-    // with Showcase CA cert to verify that overriding the security provider safely falls
-    // back to classical key exchange while trusting the server.
-    Provider sunJsseProvider = Security.getProvider("SunJSSE");
+    // Explicitly configure Conscrypt socket with classical X25519 group to verify that
+    // specifying non-PQC groups forces classical key exchange across all JDK versions.
     NetHttpTransport transport =
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
-            .setSecurityProvider(sunJsseProvider)
+            .setSslSocketConfigurator(
+                socket -> {
+                  if (Conscrypt.isConscrypt(socket)) {
+                    try {
+                      Conscrypt.setNamedGroups(socket, EXPLICIT_NON_PQC_GROUPS);
+                    } catch (Exception ignored) {
+                    }
+                  }
+                })
             .trustCertificates(loadCaCert(DEFAULT_CA_CERT_PATH))
             .build();
 
@@ -193,12 +197,11 @@ class ITPostQuantumCryptography {
       assertThat(capturedHeaders).isNotNull();
 
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
-      // Under SunJSSE, the negotiated group is a classical curve, not PQC
-      assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_PQC_GROUP);
+      assertThat(negotiatedGroup).isEqualTo(CLASSICAL_X25519_GROUP);
 
       List<String> supportedGroups =
           getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
-      assertThat(supportedGroups).containsExactlyElementsIn(Arrays.asList(DEFAULT_JSSE_GROUPS));
+      assertThat(supportedGroups).containsExactlyElementsIn(Arrays.asList(EXPLICIT_NON_PQC_GROUPS));
     }
   }
 
