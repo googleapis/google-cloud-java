@@ -1354,6 +1354,54 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testPublisherThrowsIfHedgeDelayGtRpcTimeout() throws Exception {
+    HedgeSettings hedgeSettings =
+        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
+    com.google.api.gax.retrying.RetrySettings retrySettings =
+        com.google.api.gax.retrying.RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(400))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(400))
+            .setTotalTimeoutDuration(Duration.ofSeconds(10))
+            .build();
+
+    try {
+      getTestPublisherBuilder()
+          .setHedgeSettings(hedgeSettings)
+          .setRetrySettings(retrySettings)
+          .build();
+      fail(
+          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) > RPC timeout (400ms)");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage())
+          .contains("must be strictly less than the initial RPC timeout duration");
+    }
+  }
+
+  @Test
+  public void testPublisherThrowsIfHedgeDelayEqRpcTimeout() throws Exception {
+    HedgeSettings hedgeSettings =
+        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
+    com.google.api.gax.retrying.RetrySettings retrySettings =
+        com.google.api.gax.retrying.RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(500))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(500))
+            .setTotalTimeoutDuration(Duration.ofSeconds(10))
+            .build();
+
+    try {
+      getTestPublisherBuilder()
+          .setHedgeSettings(hedgeSettings)
+          .setRetrySettings(retrySettings)
+          .build();
+      fail(
+          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) == RPC timeout (500ms)");
+    } catch (IllegalArgumentException e) {
+      assertThat(e.getMessage())
+          .contains("must be strictly less than the initial RPC timeout duration");
+    }
+  }
+
+  @Test
   public void testPublisherWithoutHedgeSettings() throws Exception {
     Publisher publisher = getTestPublisherBuilder().build();
 
@@ -1441,6 +1489,7 @@ public class PublisherImplTest {
 
     // Advance to 220ms to let responses complete
     fakeExecutor.advanceTime(Duration.ofMillis(100));
+    fakeExecutor.advanceTime(Duration.ZERO); // Drain pending tasks
     assertTrue(future.isDone());
 
     shutdownTestPublisher(publisher);

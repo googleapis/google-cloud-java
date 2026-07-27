@@ -255,8 +255,17 @@ public class Publisher implements PublisherInterface {
     messagesWaiter = new Waiter();
     this.hedgeSettings = builder.hedgeSettings;
     if (this.hedgeSettings != null) {
-      // Scale all configuration values to integers to allow lock-free atomic operations
-      // without the garbage collection overhead of autoboxing Float objects.
+      // Verify that the hedge delay is strictly less than the initial RPC timeout.
+      Duration hedgeDelay = this.hedgeSettings.getHedgeDelay();
+      Duration initialRpcTimeout = builder.retrySettings.getInitialRpcTimeoutDuration();
+      if (hedgeDelay.compareTo(initialRpcTimeout) >= 0) {
+        throw new IllegalArgumentException(
+            "hedgeDelay ("
+                + hedgeDelay.toMillis()
+                + "ms) must be strictly less than the initial RPC timeout duration ("
+                + initialRpcTimeout.toMillis()
+                + "ms)");
+      }
       this.scaledMaxHedgeTokens = this.hedgeSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
           (int) (this.hedgeSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
@@ -549,8 +558,7 @@ public class Publisher implements PublisherInterface {
     }
 
     outstandingBatch.publishRpcSpan =
-        tracer.startPublishRpcSpan(top
-        icNameObject, messageWrappers, attemptNumber);
+        tracer.startPublishRpcSpan(topicNameObject, messageWrappers, attemptNumber);
 
     return publisherStub
         .publishCallable()
