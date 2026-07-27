@@ -42,6 +42,7 @@ public class PubsubMessageWrapper {
   private final int deliveryAttempt;
 
   private static final String PUBLISH_START_EVENT = "publish start";
+  private static final String HEDGED_PUBLISH_START_EVENT = "publish start (hedged)";
   private static final String PUBLISH_END_EVENT = "publish end";
 
   private static final String MODACK_START_EVENT = "modack start";
@@ -183,8 +184,20 @@ public class PubsubMessageWrapper {
 
   /** Creates a publish start event that is tied to the publish RPC span time. */
   void addPublishStartEvent() {
+    addPublishStartEvent(1);
+  }
+
+  /**
+   * Creates a publish start event that is tied to the publish RPC span time, marking hedged
+   * attempts explicitly.
+   */
+  void addPublishStartEvent(int attemptNumber) {
     if (publisherSpan != null) {
-      publisherSpan.addEvent(PUBLISH_START_EVENT);
+      if (attemptNumber > 1) {
+        publisherSpan.addEvent(HEDGED_PUBLISH_START_EVENT);
+      } else {
+        publisherSpan.addEvent(PUBLISH_START_EVENT);
+      }
     }
   }
 

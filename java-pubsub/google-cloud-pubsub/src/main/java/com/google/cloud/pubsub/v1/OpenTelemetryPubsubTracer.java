@@ -179,6 +179,11 @@ public class OpenTelemetryPubsubTracer {
    * links with the publisher parent span are created for sampled messages in the batch.
    */
   Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages) {
+    return startPublishRpcSpan(topicName, messages, 1);
+  }
+
+  Span startPublishRpcSpan(
+      TopicName topicName, List<PubsubMessageWrapper> messages, int attemptNumber) {
     if (!enabled) {
       return null;
     }
@@ -203,7 +208,7 @@ public class OpenTelemetryPubsubTracer {
     for (PubsubMessageWrapper message : messages) {
       if (publishRpcSpan.getSpanContext().isSampled()) {
         message.getPublisherSpan().addLink(publishRpcSpan.getSpanContext(), linkAttributes);
-        message.addPublishStartEvent();
+        message.addPublishStartEvent(attemptNumber);
       }
     }
     return publishRpcSpan;

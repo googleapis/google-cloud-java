@@ -530,6 +530,11 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
+    return publishCall(outstandingBatch, 1);
+  }
+
+  private ApiFuture<PublishResponse> publishCall(
+      OutstandingBatch outstandingBatch, int attemptNumber) {
     GrpcCallContext context = publishContext;
     if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
       context = publishContextWithCompression;
@@ -543,7 +548,9 @@ public class Publisher implements PublisherInterface {
       pubsubMessagesList.add(messageWrapper.getPubsubMessage());
     }
 
-    outstandingBatch.publishRpcSpan = tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
+    outstandingBatch.publishRpcSpan =
+        tracer.startPublishRpcSpan(top
+        icNameObject, messageWrappers, attemptNumber);
 
     return publisherStub
         .publishCallable()
@@ -1365,7 +1372,8 @@ public class Publisher implements PublisherInterface {
           hedgingQueue.add(nextItem);
 
           // Start Hedged Attempt
-          ApiFuture<PublishResponse> hedgedFuture = publishCall(coordinator.getBatch());
+          ApiFuture<PublishResponse> hedgedFuture =
+              publishCall(coordinator.getBatch(), item.getAttemptNumber());
           coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
         } else {
           coordinator.isInQueue.set(false);
