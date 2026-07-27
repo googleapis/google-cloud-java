@@ -48,9 +48,9 @@
         <version>3.5.2</version>
         <configuration>
           <skip>${skipSurefire}</skip>
+          <argLine>-Djava.net.preferIPv4Stack=true</argLine>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
-            <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -58,9 +58,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <configuration>
+          <argLine>-Djava.net.preferIPv4Stack=true</argLine>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
-            <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
           </systemPropertyVariables>
         </configuration>
         <dependencies>
@@ -479,14 +479,14 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <argLine>-Djava.net.preferIPv4Stack=true --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <argLine>-Djava.net.preferIPv4Stack=true --add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
         </plugins>
