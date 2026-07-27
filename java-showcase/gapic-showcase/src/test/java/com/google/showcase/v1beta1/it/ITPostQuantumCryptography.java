@@ -65,9 +65,10 @@ import org.junit.jupiter.api.Test;
  * <ol>
  *   <li>{@code testHttpJsonPqc}: Verifies that HTTP/JSON transport defaults to Conscrypt and
  *       negotiates the hybrid post-quantum group {@code X25519MLKEM768}.
- *   <li>{@code testHttpJsonPqc_withExplicitSecurityProvider}: Verifies that overriding the
- *       transport's SSLSocketFactory to explicitly use standard JDK JSSE provider (SunJSSE) falls
- *       back gracefully to classical key exchange ({@code X25519}) instead of crashing.
+ *   <li>{@code testHttpJsonPqc_withExplicitNonPqcGroup}: Verifies that explicitly configuring
+ *       classical non-PQC key exchange groups (e.g. {@code X25519}) forces classical key exchange.
+ *       Explicitly setting the group ensures test compatibility across all JDK versions, including
+ *       future JDK releases (such as JDK 27+) where PQC will be enabled by default.
  * </ol>
  */
 class ITPostQuantumCryptography {
@@ -159,8 +160,11 @@ class ITPostQuantumCryptography {
   void testHttpJsonPqc_withExplicitNonPqcGroup() throws Exception {
     HttpJsonCapturingClientInterceptor interceptor = new HttpJsonCapturingClientInterceptor();
 
-    // Explicitly configure Conscrypt socket with classical X25519 group to verify that
-    // specifying non-PQC groups forces classical key exchange across all JDK versions.
+    // Explicitly configure Conscrypt socket with classical X25519 group. This verifies that
+    // custom socket configurators can override default PQC groups with non-PQC groups.
+    // Explicitly passing a non-PQC curve ensures that the test deterministically verifies
+    // classical key exchange fallback across all JDK versions, including future JDK 27+ releases
+    // where PQC algorithms will be enabled by default in standard JDK security providers.
     NetHttpTransport transport =
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(new NetHttpTransport.Builder())
             .setSslSocketConfigurator(
