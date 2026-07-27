@@ -78,6 +78,21 @@ public class SessionImpl implements Session, VRpcSessionApi {
           .setDescription("missed heartbeat")
           .build();
 
+  @VisibleForTesting
+  // Upper bound on how long a session may remain STARTING before we give up on the open handshake
+  // and force-close it. Without this, a stream that connects but never delivers the OpenSession
+  // response (or a GoAway) leaves the session wedged in STARTING forever, holding the
+  // session-creation-budget slot it reserved and never firing the terminal callback that would
+  // release it. Force-closing routes STARTING -> WAIT_SERVER_CLOSE -> onSessionClose, which frees
+  // the budget.
+  static final Duration OPEN_SESSION_TIMEOUT = Duration.ofSeconds(30);
+
+  private static final CloseSessionRequest OPEN_TIMEOUT_CLOSE_REQUEST =
+      CloseSessionRequest.newBuilder()
+          .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
+          .setDescription("session open timeout")
+          .build();
+
   private final Clock clock;
   private final BigtableTimer timer;
   // Serializes all session state mutations. Stream callbacks and the heartbeat tick dispatch
@@ -129,6 +144,10 @@ public class SessionImpl implements Session, VRpcSessionApi {
   // Handle for the in-flight heartbeat tick (one outstanding at a time). Cancelled on terminal
   // transitions so the wheel doesn't carry a no-op entry until the next fire.
   @Nullable private BigtableTimer.Timeout heartbeatTimeout;
+
+  // Handle for the open-handshake deadline (armed while STARTING). Cancelled the moment the
+  // session leaves STARTING so a session that opens normally never trips it.
+  @Nullable private BigtableTimer.Timeout openTimeout;
 
   // Set by the global SyncContext handler when an uncaught exception triggers an abort. Read on
   // re-entry to break out instead of looping. Only accessed inside sessionSyncContext.
@@ -310,6 +329,9 @@ public class SessionImpl implements Session, VRpcSessionApi {
           tracer.onStart();
 
           updateState(SessionState.STARTING);
+          // Bound the open handshake: if we're still STARTING when this fires, force-close so the
+          // reserved session-creation-budget slot is released instead of leaking forever.
+          scheduleOpenTimeoutCheck();
           openParams = OpenParams.create(headers, req);
 
           SessionRequest wrappedReq = SessionRequest.newBuilder().setOpenSession(req).build();
@@ -455,6 +477,41 @@ public class SessionImpl implements Session, VRpcSessionApi {
           }
           // do nothing if the rpc is already finished
         });
+  }
+
+  private void scheduleOpenTimeoutCheck() {
+    openTimeout =
+        timer.newTimeout(
+            this::checkOpenTimeout,
+            sessionSyncContext,
+            OPEN_SESSION_TIMEOUT.toMillis(),
+            TimeUnit.MILLISECONDS);
+  }
+
+  private void cancelOpenTimeout() {
+    if (openTimeout != null) {
+      openTimeout.cancel();
+      openTimeout = null;
+    }
+  }
+
+  // Runs on sessionSyncContext (dispatched from the wheel-timer tick body). If the session is
+  // still STARTING, the open handshake never completed; force-close so the reserved
+  // session-creation-budget slot is released via the STARTING -> WAIT_SERVER_CLOSE ->
+  // onSessionClose
+  // path. Any transition out of STARTING cancels this timer, so reaching here in another state is a
+  // benign race (tick already dispatched) and is ignored.
+  private void checkOpenTimeout() {
+    sessionSyncContext.throwIfNotInThisSynchronizationContext();
+    if (state != SessionState.STARTING) {
+      return;
+    }
+    logger.warning(
+        String.format(
+            "Session %s did not complete the open handshake within %s, forcing session close",
+            info.getLogName(), OPEN_SESSION_TIMEOUT));
+    debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_open_timeout");
+    forceClose(OPEN_TIMEOUT_CLOSE_REQUEST);
   }
 
   private void scheduleHeartbeatCheck() {
@@ -849,6 +906,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private void updateState(SessionState newState) {
     this.state = newState;
     this.lastStateChangedAt = clock.instant();
+    // The open deadline only applies while STARTING. Any other transition (READY on success, or a
+    // terminal state) means the handshake resolved, so drop the pending tick. NEW -> STARTING keeps
+    // it, since start() arms the timer right after this call.
+    if (newState != SessionState.STARTING) {
+      cancelOpenTimeout();
+    }
     // Once we're past READY, no further heartbeat checks are useful: checkHeartbeat short-circuits
     // on state.phase >= WAIT_SERVER_CLOSE. Cancel any pending tick to keep the wheel clean during
     // session churn.

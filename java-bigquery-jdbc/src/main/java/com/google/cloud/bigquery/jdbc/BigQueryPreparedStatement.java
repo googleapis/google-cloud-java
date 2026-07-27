@@ -97,12 +97,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    return super.executeQuery(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeQuery",
+        this.connection,
+        this.currentQuery,
+        () -> super.executeQuery(this.currentQuery));
   }
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    return super.executeLargeUpdate(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeLargeUpdate",
+        this.connection,
+        this.currentQuery,
+        () -> super.executeLargeUpdate(this.currentQuery));
   }
 
   @Override
@@ -112,7 +120,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public boolean execute() throws SQLException {
-    return super.execute(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.execute",
+        this.connection,
+        this.currentQuery,
+        () -> super.execute(this.currentQuery));
   }
 
   @Override

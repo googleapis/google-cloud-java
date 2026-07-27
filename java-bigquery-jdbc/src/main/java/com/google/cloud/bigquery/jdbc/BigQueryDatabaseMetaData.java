@@ -52,6 +52,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import io.opentelemetry.context.Context;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -837,7 +838,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           procedureNamePattern,
                           procedureNameRegex,
                           false);
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingRoutines tasks.");
@@ -1139,7 +1141,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   procedureNamePattern,
                   procedureNameRegex,
                   false);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -1214,7 +1216,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               return null;
             }
           };
-      getRoutineFutures.add(getRoutineDetailsExecutor.submit(getCallable));
+      getRoutineFutures.add(getRoutineDetailsExecutor.submit(Context.current().wrap(getCallable)));
     }
     logger.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
 
@@ -1559,6 +1561,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTables(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getTables",
+        () -> getTablesImpl(catalog, schemaPattern, tableNamePattern, types));
+  }
+
+  private ResultSet getTablesImpl(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
 
     if ((catalog != null && catalog.isEmpty())
@@ -1638,7 +1648,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           tableNamePattern,
                           tableNameRegex,
                           false);
-              Future<List<Table>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Table>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
@@ -1682,7 +1693,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(tableFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(tableFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -1809,6 +1821,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getCatalogs() throws SQLException {
+    return withTracing("BigQueryDatabaseMetaData.getCatalogs", () -> getCatalogsImpl());
+  }
+
+  private ResultSet getCatalogsImpl() throws SQLException {
     LOG.info("getCatalogs() called");
 
     final List<String> accessibleCatalogs = getAccessibleCatalogNames();
@@ -1878,6 +1894,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getColumns(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern)
+      throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getColumns",
+        () -> getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern));
+  }
+
+  private ResultSet getColumnsImpl(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
 
     if ((catalog != null && catalog.isEmpty())
@@ -1992,7 +2016,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(columnFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(columnFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -3594,6 +3619,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) throws SQLException {
+    return withTracing(
+        "BigQueryDatabaseMetaData.getSchemas", () -> getSchemasImpl(catalog, schemaPattern));
+  }
+
+  private ResultSet getSchemasImpl(String catalog, String schemaPattern) throws SQLException {
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning("Returning empty ResultSet as catalog or schemaPattern is an empty string.");
@@ -3649,7 +3679,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         };
 
-    Future<?> fetcherFuture = connection.getExecutorService().submit(multiSchemaFetcher);
+    Future<?> fetcherFuture =
+        connection.getExecutorService().submit(Context.current().wrap(multiSchemaFetcher));
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, fetcherFuture);
 
@@ -3863,7 +3894,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                         functionNameRegex,
                         false);
                   };
-              Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
+              Future<List<Routine>> apiFuture =
+                  apiExecutor.submit(Context.current().wrap(apiCallable));
               apiFutures.add(apiFuture);
             }
             LOG.fine(
@@ -4213,7 +4245,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   functionNamePattern,
                   functionNameRegex,
                   false);
-      listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
+      listRoutineFutures.add(listRoutinesExecutor.submit(Context.current().wrap(listCallable)));
     }
     logger.fine(
         "Submitted "
@@ -5409,5 +5441,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     } catch (SQLException e) {
       // ignore
     }
+  }
+
+  private interface TracedMetadataOperation<T> {
+    T run() throws SQLException;
+  }
+
+  private <T> T withTracing(String spanName, TracedMetadataOperation<T> operation)
+      throws SQLException {
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        spanName, this.connection, null, () -> operation.run());
   }
 }
