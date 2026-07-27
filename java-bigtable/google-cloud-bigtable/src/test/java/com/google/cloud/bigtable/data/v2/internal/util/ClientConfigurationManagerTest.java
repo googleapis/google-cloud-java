@@ -336,7 +336,7 @@ class ClientConfigurationManagerTest {
     assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
-  @Disabled
+  @Disabled("https://github.com/googleapis/google-cloud-java/issues/13903")
   @Test
   void testDeadlockPrevention() throws Exception {
     // Initialize the manager and fetch the initial config to schedule polling.
