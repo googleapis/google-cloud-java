@@ -143,7 +143,14 @@ public class Publisher implements PublisherInterface {
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private final HedgeSettings hedgeSettings;
+
+  /**
+   * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
+   * AtomicInteger token bucket. A scale of 100 allows representing decimal ratios down to 0.01
+   * (1%). For example, 1.0 logical token is represented as 100.
+   */
   private static final int HEDGE_TOKEN_SCALE = 100;
+
   private final AtomicInteger hedgingTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
   private int scaledHedgeRefillAmount;
@@ -248,6 +255,8 @@ public class Publisher implements PublisherInterface {
     messagesWaiter = new Waiter();
     this.hedgeSettings = builder.hedgeSettings;
     if (this.hedgeSettings != null) {
+      // Scale all configuration values to integers to allow lock-free atomic operations
+      // without the garbage collection overhead of autoboxing Float objects.
       this.scaledMaxHedgeTokens = this.hedgeSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
           (int) (this.hedgeSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);

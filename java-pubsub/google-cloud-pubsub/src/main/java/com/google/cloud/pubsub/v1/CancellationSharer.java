@@ -25,7 +25,6 @@ import com.google.pubsub.v1.PublishResponse;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -39,7 +38,6 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private final Publisher publisher;
   private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts =
       new ConcurrentHashMap<>();
-  private final AtomicInteger totalAttemptsCount = new AtomicInteger(0);
   private final AtomicBoolean done = new AtomicBoolean(false);
   final AtomicBoolean isInQueue = new AtomicBoolean(false);
   private final AtomicReference<Throwable> lastError = new AtomicReference<>();
@@ -57,7 +55,6 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
    */
   void addAttempt(final int attemptNumber, ApiFuture<PublishResponse> future) {
     runningAttempts.put(attemptNumber, future);
-    totalAttemptsCount.incrementAndGet();
 
     if (done.get()) {
       future.cancel(true);
@@ -131,10 +128,6 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       }
     }
     return false;
-  }
-
-  int getAttemptCount() {
-    return totalAttemptsCount.get();
   }
 
   Publisher.OutstandingBatch getBatch() {
