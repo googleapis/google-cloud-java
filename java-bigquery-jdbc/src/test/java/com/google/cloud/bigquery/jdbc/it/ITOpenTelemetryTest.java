@@ -263,9 +263,15 @@ public class ITOpenTelemetryTest extends ITBase {
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
       assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
 
-      LogEntry sampleEntry = entries.get(0);
-      String traceId = sampleEntry.getTrace();
-      String hexSpanId = sampleEntry.getSpanId();
+      String traceId = null;
+      String hexSpanId = null;
+      for (LogEntry entry : entries) {
+        if (entry.getTrace() != null) {
+          traceId = entry.getTrace();
+          hexSpanId = entry.getSpanId();
+          break;
+        }
+      }
 
       assertNotNull(traceId, "Log entry must contain TraceId");
       assertNotNull(hexSpanId, "Log entry must contain SpanId");
