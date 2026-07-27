@@ -59,6 +59,7 @@ import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
