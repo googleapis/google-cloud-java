@@ -175,6 +175,18 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
   @GuardedBy("poolLock")
   private final SessionCreationBudget budget;
 
+  // Handles that reserved a session-creation budget slot in createSession() and have not yet
+  // released it. A slot is released exactly once: as a success when the session reaches READY
+  // (onSessionReady), or as a failure when the session terminates without ever becoming READY
+  // (onSessionClose). Tracking the reservation on the handle -- instead of inferring it from the
+  // close-time prevState -- is what makes the release exactly-once: a session that goes
+  // STARTING -> WAIT_SERVER_CLOSE (e.g. a server GO_AWAY before the open handshake completes)
+  // closes with prevState == WAIT_SERVER_CLOSE, which the abnormal-close branch skips, so the
+  // prevState == STARTING check alone would leak the slot forever. SessionHandle uses identity
+  // equality, so a plain HashSet keys on the handle instance.
+  @GuardedBy("poolLock")
+  private final Set<SessionHandle> sessionsHoldingBudget = new HashSet<>();
+
   private final ClientConfigurationManager configManager;
   private final ClientConfigurationManager.ListenerHandle configListenerHandle;
 
@@ -455,35 +467,65 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // Explicit create session streams in a detached context
     // We don't want to propagate the rpc deadline nor the trace context
     Context prevContext = Context.ROOT.attach();
+    // Tracks the handle once registered so the catch below can tell whether the reservation was
+    // ever bound to a handle (and therefore what cleanup is required).
+    SessionHandle handle = null;
     try {
       try (Scope ignored = io.opentelemetry.context.Context.root().makeCurrent()) {
 
-        SessionStream stream = factory.createNew();
-        Session session = new SessionImpl(metrics, info, sessionNum++, stream, timer);
-        SessionHandle handle = sessions.newHandle(session);
-
+        // Build the metadata before registering the handle so the only step between newHandle and
+        // session.start (whose own failures are handled by the session's abort path once the
+        // listener is published) is the non-throwing sessionsHoldingBudget.add.
         Metadata localMd = new Metadata();
         localMd.merge(openParams.metadata());
+
+        SessionStream stream = factory.createNew();
+        Session session = new SessionImpl(metrics, info, sessionNum++, stream, timer);
+        handle = sessions.newHandle(session);
+        // Bind the budget reservation made by tryReserveSession() above to this handle so it is
+        // released exactly once when the session becomes READY or terminates.
+        sessionsHoldingBudget.add(handle);
+
+        final SessionHandle startedHandle = handle;
         session.start(
             openParams.request(),
             localMd,
             new Listener() {
               @Override
               public void onReady(OpenSessionResponse msg) {
-                SessionPoolImpl.this.onSessionReady(handle, msg);
+                SessionPoolImpl.this.onSessionReady(startedHandle, msg);
               }
 
               @Override
               public void onGoAway(GoAwayResponse msg) {
-                SessionPoolImpl.this.onSessionGoAway(handle, msg);
+                SessionPoolImpl.this.onSessionGoAway(startedHandle, msg);
               }
 
               @Override
               public void onClose(SessionState prevState, Status status, Metadata trailers) {
-                SessionPoolImpl.this.onSessionClose(handle, prevState, status, trailers);
+                SessionPoolImpl.this.onSessionClose(startedHandle, prevState, status, trailers);
               }
             });
       }
+    } catch (RuntimeException | Error e) {
+      // A synchronous failure here (e.g. factory.createNew, the SessionImpl constructor, or
+      // metadata merge) means no terminal session callback will ever run for this reservation, so
+      // the budget slot and any partially-registered handle would leak for the life of the pool.
+      // Release the slot as a failure and unwind the handle ourselves. Note session.start's own
+      // failures do NOT land here: it publishes the listener first and routes exceptions through
+      // the session's abort path, which fires onClose -> onSessionClose (the normal release path).
+      debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_create_failed");
+      logger.log(Level.WARNING, "Failed to create session, releasing reserved budget", e);
+      // If a handle was registered it owns the reservation via the set; otherwise the reservation
+      // was never bound to a handle and must be released directly.
+      if (handle == null || sessionsHoldingBudget.remove(handle)) {
+        budget.onSessionCreationFailure();
+      }
+      if (handle != null) {
+        sessions.removeUnstartedHandle(handle);
+      }
+      // Let the pool recover instead of running permanently short a session.
+      maybeScheduleCreateSessionRetry();
     } finally {
       Context.ROOT.detach(prevContext);
     }
@@ -540,7 +582,11 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       }
       handle.onSessionStarted();
 
-      budget.onSessionCreationSuccess();
+      // Release the reservation as a success. Guarded by the set so we release exactly once even if
+      // onSessionReady were ever delivered more than once.
+      if (sessionsHoldingBudget.remove(handle)) {
+        budget.onSessionCreationSuccess();
+      }
 
       // handle pending rpcs
       tryDrainPendingRpcs();
@@ -613,6 +659,21 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
     poolLock.lock();
     try {
+      // Release the budget reservation FIRST, before any code below that can throw. This is the
+      // session's terminal callback, so there is no later backstop: if the reservation is not
+      // released here it leaks forever. In particular handle.onSessionClosed(prevState) below can
+      // throw (e.g. IllegalStateException on an unexpected NEW / double-CLOSED prevState), which
+      // would otherwise strand the slot -- the same leak this fix exists to prevent.
+      //
+      // Release as a failure if this session still holds a slot, i.e. it terminated without ever
+      // reaching READY; sessions that reached READY were already removed from the set in
+      // onSessionReady, so this never double-releases. Keying off the reservation instead of the
+      // close-time prevState is also what covers the STARTING -> WAIT_SERVER_CLOSE (GO_AWAY) path
+      // that the abnormal-close branch below skips.
+      if (sessionsHoldingBudget.remove(handle)) {
+        budget.onSessionCreationFailure();
+      }
+
       logger.fine(
           String.format("Removing closed session from pool %s", handle.getSession().getLogName()));
 
@@ -642,9 +703,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           toBeClosed = popClosableRpcs();
         }
 
-        if (prevState == SessionState.STARTING) {
-          budget.onSessionCreationFailure();
-        }
+        // Budget release for STARTING-phase closes is handled above via sessionsHoldingBudget,
+        // which also covers the STARTING -> WAIT_SERVER_CLOSE (GO_AWAY) path this branch skips.
 
         // TODO: backoff creating a new session when consecutive failures > max?
         if (poolSizer.handleSessionClose(StatusProto.fromStatusAndTrailers(status, trailers))) {
