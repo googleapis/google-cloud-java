@@ -34,6 +34,11 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -50,13 +55,22 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -73,6 +87,22 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
+    when(bigQueryConnection.getTracer())
+        .thenReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+    when(bigQueryConnection.getOtelContext()).thenReturn(Context.current());
+
+    Page<Dataset> datasetPageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
+
+    Page<Table> tablePageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
+
+    Table mockTable = mock(Table.class);
+    when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
     when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
     when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
@@ -2978,7 +3008,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws Exception {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
@@ -3269,6 +3299,48 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @ParameterizedTest
+  @MethodSource("metadataOperationProvider")
+  public void testMetadataOperation_generatesSpan(
+      MetadataOperation operation, String expectedSpanName) throws Exception {
+    operation.run();
+
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
+  }
+
+  @FunctionalInterface
+  interface MetadataOperation {
+    void run() throws SQLException;
+  }
+
+  Stream<Arguments> metadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getCatalogs(),
+            "BigQueryDatabaseMetaData.getCatalogs"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getSchemas("catalog", "schema"),
+            "BigQueryDatabaseMetaData.getSchemas"),
+        Arguments.of(
+            (MetadataOperation)
+                () -> dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"}),
+            "BigQueryDatabaseMetaData.getTables"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
+            "BigQueryDatabaseMetaData.getColumns"));
   }
 
   @Test

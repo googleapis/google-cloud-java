@@ -44,8 +44,16 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.logging.Logging;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.opentelemetry.GrpcOpenTelemetry;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.baggage.Baggage;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -157,6 +165,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int transactionIsolation;
   List<SQLWarning> sqlWarnings;
   String catalog;
+  String gcpTelemetryCredentials;
+  String gcpTelemetryProjectId;
   int holdability;
   long retryTimeoutInSeconds;
   Duration retryTimeoutDuration;
@@ -215,6 +225,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  boolean enableGcpTraceExporter;
+  boolean enableGcpLogExporter;
+  OpenTelemetry customOpenTelemetry;
+  boolean useGlobalOpenTelemetry;
+  private OpenTelemetry openTelemetry;
+  private Context otelContext;
+  Tracer tracer =
+      OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
@@ -228,6 +246,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
     this.connectionId = UUID.randomUUID().toString();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, this.connectionId)
+            .build();
+    this.otelContext = Context.current().with(baggage);
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       this.connectionUrl = url;
       if (LOG.isLoggable(java.util.logging.Level.CONFIG)) {
@@ -250,6 +273,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
       this.maxBytesBilled = ds.getMaximumBytesBilled();
+      this.gcpTelemetryCredentials = ds.getGcpTelemetryCredentials();
+      this.gcpTelemetryProjectId = ds.getGcpTelemetryProjectId();
       this.retryTimeoutInSeconds = ds.getTimeout();
       this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
       this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
@@ -369,6 +394,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.partnerToken = ds.getPartnerToken();
 
       this.headerProvider = createHeaderProvider();
+      this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
+      this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
+      this.customOpenTelemetry = ds.getCustomOpenTelemetry();
+      this.useGlobalOpenTelemetry = ds.getUseGlobalOpenTelemetry();
+      this.openTelemetry = getOpenTelemetryInstance();
       this.bigQuery = getBigQueryConnection();
       // Cached pool executes queries immediately without queueing and reclaims all idle threads
       // when inactive, minimizing resources.
@@ -447,7 +477,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return connectionUrl;
   }
 
-  String getConnectionId() {
+  @VisibleForTesting
+  public String getConnectionId() {
     return this.connectionId;
   }
 
@@ -1077,6 +1108,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } finally {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+      BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
+      BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+      this.openTelemetry = null;
     }
     if (exceptionToThrow != null) {
       throw exceptionToThrow;
@@ -1150,6 +1184,77 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.openStatements.remove(statement);
   }
 
+  private OpenTelemetry getOpenTelemetryInstance() {
+
+    String effectiveProjectId =
+        (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
+
+    validateTraceConfiguration(
+        this.enableGcpTraceExporter,
+        this.gcpTelemetryCredentials != null
+            ? this.gcpTelemetryCredentials
+            : resolveEffectiveCredentials());
+
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.useGlobalOpenTelemetry,
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
+            this.customOpenTelemetry,
+            this.gcpTelemetryCredentials,
+            effectiveProjectId,
+            this.credentials);
+
+    boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
+    Logging localLoggingClient = null;
+    if (this.enableGcpLogExporter && !hasExternalOtel) {
+      localLoggingClient =
+          BigQueryJdbcOpenTelemetry.createLoggingClient(
+              true, null, this.gcpTelemetryCredentials, effectiveProjectId, this.credentials);
+    }
+
+    if (this.enableGcpLogExporter || hasExternalOtel) {
+      BigQueryJdbcOpenTelemetry.registerConnection(
+          this.connectionId,
+          openTelemetry,
+          localLoggingClient,
+          this.enableGcpLogExporter && !hasExternalOtel);
+    }
+
+    return openTelemetry;
+  }
+
+  private String resolveEffectiveCredentials() {
+    if (this.gcpTelemetryCredentials != null) {
+      return this.gcpTelemetryCredentials;
+    }
+
+    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+    if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
+      return null;
+    }
+
+    String pvtKey = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
+    if (pvtKey != null) {
+      return pvtKey;
+    }
+
+    return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME);
+  }
+
+  private void validateTraceConfiguration(boolean isTraceEnabled, String effectiveCredentials) {
+    if (isTraceEnabled && effectiveCredentials == null) {
+      String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+      if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)
+          && !BigQueryJdbcOAuthUtility.AuthType.APPLICATION_DEFAULT_CREDENTIALS
+              .name()
+              .equals(authTypeStr)) {
+        throw new BigQueryJdbcRuntimeException(
+            "Exporting traces to Google Cloud is only supported when using Application Default Credentials (ADC) or Service Account authentication.");
+      }
+    }
+  }
+
   private BigQuery getBigQueryConnection() {
     BigQueryOptions.Builder bigQueryOptions = BigQueryOptions.newBuilder();
     if (this.retryTimeoutInSeconds > 0L
@@ -1186,6 +1291,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.httpTransportOptions != null) {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
+      Tracer sdkTracer = this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.BIGQUERY_NAMESPACE);
+      bigQueryOptions.setOpenTelemetryTracer(sdkTracer);
+      bigQueryOptions.setEnableOpenTelemetryTracing(true);
+      this.tracer =
+          this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
+    }
 
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();
     options.setDefaultJobCreationMode(
@@ -1220,7 +1334,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
     TransportChannelProvider activeProvider = this.transportChannelProvider;
     if (activeProvider == null) {
-      activeProvider = BigQueryReadSettings.defaultGrpcTransportProviderBuilder().build();
+      InstantiatingGrpcChannelProvider.Builder builder =
+          BigQueryReadSettings.defaultGrpcTransportProviderBuilder();
+      if (this.enableGcpTraceExporter
+          || this.customOpenTelemetry != null
+          || this.useGlobalOpenTelemetry) {
+        GrpcOpenTelemetry grpcOpenTelemetry =
+            GrpcOpenTelemetry.newBuilder().sdk(this.openTelemetry).build();
+        builder.setChannelConfigurator(
+            b -> {
+              grpcOpenTelemetry.configureChannelBuilder((ManagedChannelBuilder) b);
+              return b;
+            });
+      }
+      activeProvider = builder.build();
     }
 
     if (activeProvider instanceof InstantiatingGrpcChannelProvider) {
@@ -1234,6 +1361,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
+
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
+      bigQueryReadSettings.setOpenTelemetryTracerProvider(this.openTelemetry.getTracerProvider());
+      bigQueryReadSettings.setEnableOpenTelemetryTracing(true);
+    }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());
   }
@@ -1332,6 +1466,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public Tracer getTracer() {
+    return this.tracer;
+  }
+
+  public Context getOtelContext() {
+    return this.otelContext;
+  }
+
+  public String getPartnerToken() {
+    return this.partnerToken;
   }
 
   public boolean isReadOnlyTokenUsed() {
