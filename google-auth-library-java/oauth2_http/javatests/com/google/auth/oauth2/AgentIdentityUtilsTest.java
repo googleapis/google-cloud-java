@@ -180,7 +180,7 @@ class AgentIdentityUtilsTest {
     envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
-    assertTrue(info.certificate.getIssuerDN().getName().contains("unit-tests"));
+    assertTrue(info.getCertificate().getIssuerDN().getName().contains("unit-tests"));
   }
 
   @Test
@@ -256,7 +256,7 @@ class AgentIdentityUtilsTest {
     assertNotNull(info);
     assertEquals(
         new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8),
-        info.certContent);
+        info.getCertContent());
   }
 
   @Test
