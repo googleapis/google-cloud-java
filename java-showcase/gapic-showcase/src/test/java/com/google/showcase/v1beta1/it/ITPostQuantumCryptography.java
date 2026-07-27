@@ -39,6 +39,7 @@ import java.security.Provider;
 import java.security.Security;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
@@ -79,6 +80,9 @@ class ITPostQuantumCryptography {
 
   // Expected TLS parameters
   private static final String EXPECTED_PQC_GROUP = "X25519MLKEM768";
+
+  private static final String[] DEFAULT_JSSE_GROUPS =
+      new String[] {"secp256r1", "secp384r1", "x25519", "secp521r1"};
 
   private static final String DEFAULT_CA_CERT_PATH = getCaCertPath();
 
@@ -145,9 +149,11 @@ class ITPostQuantumCryptography {
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
       assertThat(negotiatedGroup).isEqualTo(EXPECTED_PQC_GROUP);
 
-      String supportedGroups = getSingleHeaderString(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
-      assertThat(supportedGroups).isNotNull();
-      assertThat(supportedGroups).isEqualTo(DEFAULT_PQC_GROUPS);
+      List<String> supportedGroups =
+          getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
+      assertThat(supportedGroups)
+          .containsExactlyElementsIn(Arrays.asList(DEFAULT_PQC_GROUPS))
+          .inOrder();
     }
   }
 
@@ -189,6 +195,10 @@ class ITPostQuantumCryptography {
       String negotiatedGroup = getSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
       // Under SunJSSE, the negotiated group is a classical curve, not PQC
       assertThat(negotiatedGroup).isNotEqualTo(EXPECTED_PQC_GROUP);
+
+      List<String> supportedGroups =
+          getHeaderStringList(capturedHeaders, TLS_SUPPORTED_GROUPS_HEADER);
+      assertThat(supportedGroups).containsExactlyElementsIn(Arrays.asList(DEFAULT_JSSE_GROUPS));
     }
   }
 
@@ -210,6 +220,21 @@ class ITPostQuantumCryptography {
       return String.valueOf(valueObj);
     }
     return null;
+  }
+
+  /**
+   * Extracts a list of string values from a comma-separated HTTP response header.
+   *
+   * @param metadata the HTTP metadata containing response headers
+   * @param name the case-insensitive header key name
+   * @return list of header string tokens, or empty list if not found
+   */
+  private static List<String> getHeaderStringList(HttpJsonMetadata metadata, String name) {
+    String value = getSingleHeaderString(metadata, name);
+    if (value == null || value.trim().isEmpty()) {
+      return Collections.emptyList();
+    }
+    return Arrays.asList(value.split(","));
   }
 
   /**
