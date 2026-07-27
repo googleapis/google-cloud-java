@@ -124,6 +124,14 @@ By default, NullAway checks nullability using legacy checking rules. Passing `-X
 dependencies {
   errorprone("com.uber.nullaway:nullaway:${nullaway.version}")
 }
+
+tasks.withType(JavaCompile).configureEach {
+  options.errorprone {
+    check("NullAway", CheckSeverity.ERROR)
+    option("NullAway:AnnotatedPackages", "your.package.prefix")
+    option("NullAway:JSpecifyMode", "true")
+  }
+}
 ```
 Configure the compiler plugin to run ErrorProne as a compiler plugin and NullAway as an annotation processor.
 

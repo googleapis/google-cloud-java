@@ -54,11 +54,6 @@ Add this profile to your `pom.xml`:
               <artifactId>error_prone_core</artifactId>
               <version>${errorprone.version}</version>
             </path>
-            <path>
-              <groupId>com.uber.nullaway</groupId>
-              <artifactId>nullaway</artifactId>
-              <version>${nullaway.version}</version>
-            </path>
           </annotationProcessorPaths>
         </configuration>
       </plugin>
