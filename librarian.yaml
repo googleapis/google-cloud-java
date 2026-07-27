@@ -39,14 +39,6 @@ tools:
       packaging: jar
       local_path: sdk-platform-java/gapic-generator-java
       main_class: com.google.api.generator.Main
-  pip:
-    - name: PyYAML
-      version: 6.0.2
-    - name: jinja2
-      version: 3.1.6
-    - name: synthtool
-      version: ""
-      local_path: sdk-platform-java/hermetic_build/library_generation
   protoc:
     version: "33.6"
     sha256: 9c49962391ff8b5754342509efc3885db91dfe11a358e1e98c9a71518f0ad199
