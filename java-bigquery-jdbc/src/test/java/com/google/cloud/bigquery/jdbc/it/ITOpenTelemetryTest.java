@@ -307,7 +307,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
     int attempts = 0;
-    int maxAttempts = 10;
+    int maxAttempts = 24;
     long delayMs = 10000;
 
     // 10 second wait for GCP to ingest data

@@ -50,7 +50,6 @@
           <skip>${skipSurefire}</skip>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
-            <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
           </systemPropertyVariables>
         </configuration>
       </plugin>
@@ -60,7 +59,6 @@
         <configuration>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
-            <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
           </systemPropertyVariables>
         </configuration>
         <dependencies>
