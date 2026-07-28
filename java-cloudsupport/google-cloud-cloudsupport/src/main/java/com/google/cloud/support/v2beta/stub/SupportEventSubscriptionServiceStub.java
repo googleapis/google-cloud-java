@@ -23,12 +23,14 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2beta.CreateSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.DeleteSupportEventSubscriptionRequest;
+import com.google.cloud.support.v2beta.ExpungeSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.GetSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.ListSupportEventSubscriptionsRequest;
 import com.google.cloud.support.v2beta.ListSupportEventSubscriptionsResponse;
 import com.google.cloud.support.v2beta.SupportEventSubscription;
 import com.google.cloud.support.v2beta.UndeleteSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.UpdateSupportEventSubscriptionRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -84,6 +86,12 @@ public abstract class SupportEventSubscriptionServiceStub implements BackgroundR
       undeleteSupportEventSubscriptionCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: undeleteSupportEventSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: expungeSupportEventSubscriptionCallable()");
   }
 
   @Override

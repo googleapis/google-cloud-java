@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchActivateContentBundlesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesResponse;
 import com.google.ads.admanager.v1.ContentBundle;
 import com.google.ads.admanager.v1.GetContentBundleRequest;
 import com.google.ads.admanager.v1.ListContentBundlesRequest;
@@ -122,6 +126,12 @@ public class ContentBundleServiceStubSettings
   private final PagedCallSettings<
           ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
       listContentBundlesSettings;
+  private final UnaryCallSettings<
+          BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesSettings;
+  private final UnaryCallSettings<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesSettings;
 
   private static final PagedListDescriptor<
           ListContentBundlesRequest, ListContentBundlesResponse, ContentBundle>
@@ -192,6 +202,19 @@ public class ContentBundleServiceStubSettings
           ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
       listContentBundlesSettings() {
     return listContentBundlesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateContentBundles. */
+  public UnaryCallSettings<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesSettings() {
+    return batchActivateContentBundlesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateContentBundles. */
+  public UnaryCallSettings<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesSettings() {
+    return batchDeactivateContentBundlesSettings;
   }
 
   public ContentBundleServiceStub createStub() throws IOException {
@@ -278,6 +301,10 @@ public class ContentBundleServiceStubSettings
 
     getContentBundleSettings = settingsBuilder.getContentBundleSettings().build();
     listContentBundlesSettings = settingsBuilder.listContentBundlesSettings().build();
+    batchActivateContentBundlesSettings =
+        settingsBuilder.batchActivateContentBundlesSettings().build();
+    batchDeactivateContentBundlesSettings =
+        settingsBuilder.batchDeactivateContentBundlesSettings().build();
   }
 
   @Override
@@ -298,6 +325,12 @@ public class ContentBundleServiceStubSettings
     private final PagedCallSettings.Builder<
             ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
         listContentBundlesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+        batchActivateContentBundlesSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+        batchDeactivateContentBundlesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -327,10 +360,15 @@ public class ContentBundleServiceStubSettings
 
       getContentBundleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listContentBundlesSettings = PagedCallSettings.newBuilder(LIST_CONTENT_BUNDLES_PAGE_STR_FACT);
+      batchActivateContentBundlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateContentBundlesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getContentBundleSettings, listContentBundlesSettings);
+              getContentBundleSettings,
+              listContentBundlesSettings,
+              batchActivateContentBundlesSettings,
+              batchDeactivateContentBundlesSettings);
       initDefaults(this);
     }
 
@@ -339,10 +377,17 @@ public class ContentBundleServiceStubSettings
 
       getContentBundleSettings = settings.getContentBundleSettings.toBuilder();
       listContentBundlesSettings = settings.listContentBundlesSettings.toBuilder();
+      batchActivateContentBundlesSettings =
+          settings.batchActivateContentBundlesSettings.toBuilder();
+      batchDeactivateContentBundlesSettings =
+          settings.batchDeactivateContentBundlesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getContentBundleSettings, listContentBundlesSettings);
+              getContentBundleSettings,
+              listContentBundlesSettings,
+              batchActivateContentBundlesSettings,
+              batchDeactivateContentBundlesSettings);
     }
 
     private static Builder createDefault() {
@@ -365,6 +410,16 @@ public class ContentBundleServiceStubSettings
 
       builder
           .listContentBundlesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateContentBundlesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateContentBundlesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -397,6 +452,20 @@ public class ContentBundleServiceStubSettings
             ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
         listContentBundlesSettings() {
       return listContentBundlesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+        batchActivateContentBundlesSettings() {
+      return batchActivateContentBundlesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+        batchDeactivateContentBundlesSettings() {
+      return batchDeactivateContentBundlesSettings;
     }
 
     @Override

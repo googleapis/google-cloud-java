@@ -373,4 +373,18 @@ public interface OnPremisesConfigurationOrBuilder
    * @return The sslOption.
    */
   com.google.cloud.sql.v1beta4.OnPremisesConfiguration.SslOption getSslOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the resource is managed by Database
+   * Migration Service.
+   * </pre>
+   *
+   * <code>bool dms_managed = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dmsManaged.
+   */
+  boolean getDmsManaged();
 }

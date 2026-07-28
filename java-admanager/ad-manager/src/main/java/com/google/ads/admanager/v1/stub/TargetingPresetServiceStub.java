@@ -22,11 +22,14 @@ import com.google.ads.admanager.v1.BatchCreateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchCreateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsRequest;
 import com.google.ads.admanager.v1.BatchDeactivateTargetingPresetsResponse;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsRequest;
+import com.google.ads.admanager.v1.BatchUpdateTargetingPresetsResponse;
 import com.google.ads.admanager.v1.CreateTargetingPresetRequest;
 import com.google.ads.admanager.v1.GetTargetingPresetRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsRequest;
 import com.google.ads.admanager.v1.ListTargetingPresetsResponse;
 import com.google.ads.admanager.v1.TargetingPreset;
+import com.google.ads.admanager.v1.UpdateTargetingPresetRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
@@ -65,6 +68,17 @@ public abstract class TargetingPresetServiceStub implements BackgroundResource {
       batchCreateTargetingPresetsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: batchCreateTargetingPresetsCallable()");
+  }
+
+  public UnaryCallable<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateTargetingPresetCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchUpdateTargetingPresetsCallable()");
   }
 
   public UnaryCallable<

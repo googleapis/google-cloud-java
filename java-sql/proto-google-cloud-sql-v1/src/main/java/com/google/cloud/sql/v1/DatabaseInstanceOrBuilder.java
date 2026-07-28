@@ -301,7 +301,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
    * @return Whether the maxDiskSize field is set.
    */
   @java.lang.Deprecated
@@ -317,7 +317,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>.google.protobuf.Int64Value max_disk_size = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.max_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1573
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1582
    * @return The maxDiskSize.
    */
   @java.lang.Deprecated
@@ -350,7 +350,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
    * @return Whether the currentDiskSize field is set.
    */
   @java.lang.Deprecated
@@ -371,7 +371,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>.google.protobuf.Int64Value current_disk_size = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.current_disk_size is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1581
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1590
    * @return The currentDiskSize.
    */
   @java.lang.Deprecated
@@ -553,7 +553,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>string ipv6_address = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
    * @return The ipv6Address.
    */
   @java.lang.Deprecated
@@ -571,7 +571,7 @@ public interface DatabaseInstanceOrBuilder
    * <code>string ipv6_address = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.ipv6_address is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1599
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1608
    * @return The bytes for ipv6Address.
    */
   @java.lang.Deprecated
@@ -1568,7 +1568,7 @@ public interface DatabaseInstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return Whether the primaryDnsName field is set.
    */
   @java.lang.Deprecated
@@ -1586,7 +1586,7 @@ public interface DatabaseInstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return The primaryDnsName.
    */
   @java.lang.Deprecated
@@ -1604,7 +1604,7 @@ public interface DatabaseInstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.sql.v1.DatabaseInstance.primary_dns_name is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1711
+   *     google/cloud/sql/v1/cloud_sql_instances.proto;l=1720
    * @return The bytes for primaryDnsName.
    */
   @java.lang.Deprecated
@@ -2175,4 +2175,50 @@ public interface DatabaseInstanceOrBuilder
    * </code>
    */
   com.google.cloud.sql.v1.DnsNameMappingOrBuilder getDnsNamesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the databaseCenterIntegrationEnabled field is set.
+   */
+  boolean hasDatabaseCenterIntegrationEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The databaseCenterIntegrationEnabled.
+   */
+  com.google.protobuf.BoolValue getDatabaseCenterIntegrationEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, instance metadata is sent to the Database Center. If
+   * false, instance metadata is not sent to the Database Center.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.BoolValue database_center_integration_enabled = 72 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.BoolValueOrBuilder getDatabaseCenterIntegrationEnabledOrBuilder();
 }

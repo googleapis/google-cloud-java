@@ -26,12 +26,6 @@ package com.google.storage.control.v2;
  * <pre>
  * Request message to get the `IntelligenceConfig` resource associated with your
  * folder.
- *
- * **IAM Permissions**
- *
- * Requires `storage.intelligenceConfigs.get`
- * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission on
- * the folder.
  * </pre>
  *
  * Protobuf type {@code google.storage.control.v2.GetFolderIntelligenceConfigRequest}
@@ -308,12 +302,6 @@ public final class GetFolderIntelligenceConfigRequest extends com.google.protobu
    * <pre>
    * Request message to get the `IntelligenceConfig` resource associated with your
    * folder.
-   *
-   * **IAM Permissions**
-   *
-   * Requires `storage.intelligenceConfigs.get`
-   * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission on
-   * the folder.
    * </pre>
    *
    * Protobuf type {@code google.storage.control.v2.GetFolderIntelligenceConfigRequest}

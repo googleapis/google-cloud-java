@@ -106,8 +106,8 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -120,8 +120,8 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -134,8 +134,8 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the line item. This attribute is required and has a
-   * maximum length of 255 characters.
+   * Required. The name of the line item. This attribute has a maximum length of
+   * 255 characters.
    * </pre>
    *
    * <code>optional string display_name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -143,6 +143,93 @@ public interface LineItemOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the externalLineItemId field is set.
+   */
+  boolean hasExternalLineItemId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The externalLineItemId.
+   */
+  java.lang.String getExternalLineItemId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An identifier for the LineItem that is meaningful to the
+   * publisher. This attribute has a maximum length of 255 characters.
+   * </pre>
+   *
+   * <code>optional string external_line_item_id = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for externalLineItemId.
+   */
+  com.google.protobuf.ByteString getExternalLineItemIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the orderDisplayName field is set.
+   */
+  boolean hasOrderDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The orderDisplayName.
+   */
+  java.lang.String getOrderDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The name of the Order.
+   * </pre>
+   *
+   * <code>optional string order_display_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for orderDisplayName.
+   */
+  com.google.protobuf.ByteString getOrderDisplayNameBytes();
 
   /**
    *
@@ -194,8 +281,66 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the targetEndTime field is set.
+   */
+  boolean hasTargetEndTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The targetEndTime.
+   */
+  com.google.protobuf.Timestamp getTargetEndTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The target end time of the line item. This attribute is required
+   * unless
+   * [end_time_unlimited][google.ads.admanager.v1.LineItem.end_time_unlimited]
+   * is set to true. If specified, it must be after the
+   * [start_time][google.ads.admanager.v1.LineItem.start_time]. This does not
+   * include auto extension days.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp target_end_time = 95 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getTargetEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -211,7 +356,7 @@ public interface LineItemOrBuilder
    *
    * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -227,7 +372,7 @@ public interface LineItemOrBuilder
    *
    * <pre>
    * Output only. The timestamp when the LineItem will stop serving. This
-   * attribute is read-only and includes auto extension days.
+   * attribute includes auto extension days.
    * </pre>
    *
    * <code>
@@ -240,10 +385,442 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Optional. The number of days to allow a line item to deliver past its
+   * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+   * maximum of 7 days is allowed. This is feature is only available for Ad
+   * Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the autoExtensionDays field is set.
+   */
+  boolean hasAutoExtensionDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of days to allow a line item to deliver past its
+   * [target_end_time][google.ads.admanager.v1.LineItem.target_end_time]. A
+   * maximum of 7 days is allowed. This is feature is only available for Ad
+   * Manager 360 accounts.
+   * </pre>
+   *
+   * <code>optional int32 auto_extension_days = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoExtensionDays.
+   */
+  int getAutoExtensionDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Specifies whether or not the LineItem has an
+   * end time. This attribute defaults to false. It can be be set to true for
+   * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+   * </pre>
+   *
+   * <code>
+   * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the endTimeUnlimited field is set.
+   */
+  boolean hasEndTimeUnlimited();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Specifies whether or not the LineItem has an
+   * end time. This attribute defaults to false. It can be be set to true for
+   * only line items of type SPONSORSHIP, NETWORK, PRICE_PRIORITY and HOUSE.
+   * </pre>
+   *
+   * <code>
+   * optional bool end_time_unlimited = 9 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The endTimeUnlimited.
+   */
+  boolean getEndTimeUnlimited();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the creativeRotationType field is set.
+   */
+  boolean hasCreativeRotationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for creativeRotationType.
+   */
+  int getCreativeRotationTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The strategy used for displaying multiple Creative objects that
+   * are associated with the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType creative_rotation_type = 10 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The creativeRotationType.
+   */
+  com.google.ads.admanager.v1.CreativeRotationTypeEnum.CreativeRotationType
+      getCreativeRotationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the deliveryRateType field is set.
+   */
+  boolean hasDeliveryRateType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deliveryRateType.
+   */
+  int getDeliveryRateTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for delivering ads over the
+   * course of the line item's duration. This attribute defaults to EVENLY or
+   * FRONTLOADED depending on the network's configuration.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType delivery_rate_type = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The deliveryRateType.
+   */
+  com.google.ads.admanager.v1.LineItemDeliveryRateTypeEnum.LineItemDeliveryRateType
+      getDeliveryRateType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the deliveryForecastSource field is set.
+   */
+  boolean hasDeliveryForecastSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deliveryForecastSource.
+   */
+  int getDeliveryForecastSourceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Strategy for choosing forecasted traffic
+   * shapes to pace line items. This field defaults to HISTORICAL.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource delivery_forecast_source = 12 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The deliveryForecastSource.
+   */
+  com.google.ads.admanager.v1.LineItemDeliveryForecastSourceEnum.LineItemDeliveryForecastSource
+      getDeliveryForecastSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customPacingCurve field is set.
+   */
+  boolean hasCustomPacingCurve();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customPacingCurve.
+   */
+  com.google.ads.admanager.v1.CustomPacingCurve getCustomPacingCurve();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The curve that is used to pace the line item's delivery. This
+   * field is required if and only if the delivery forecast source is
+   * CUSTOM_PACING_CURVE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CustomPacingCurve custom_pacing_curve = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CustomPacingCurveOrBuilder getCustomPacingCurveOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the roadblockingType field is set.
+   */
+  boolean hasRoadblockingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for roadblockingType.
+   */
+  int getRoadblockingTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The strategy for serving roadblocked
+   * creatives, that is, instances where multiple creatives must be served
+   * together on a single web page. This attribute defaults to ONE_OR_MORE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType roadblocking_type = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The roadblockingType.
+   */
+  com.google.ads.admanager.v1.RoadblockingTypeEnum.RoadblockingType getRoadblockingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the skippableAdType field is set.
+   */
+  boolean hasSkippableAdType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for skippableAdType.
+   */
+  int getSkippableAdTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The nature of the line item's creatives'
+   * skippability. This attribute is only applicable for video line items, and
+   * defaults to NOT_SKIPPABLE.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType skippable_ad_type = 15 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The skippableAdType.
+   */
+  com.google.ads.admanager.v1.SkippableAdTypeEnum.SkippableAdType getSkippableAdType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.FrequencyCap> getFrequencyCapsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.FrequencyCap getFrequencyCaps(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFrequencyCapsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.FrequencyCapOrBuilder>
+      getFrequencyCapsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of frequency capping units for this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.FrequencyCap frequency_caps = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.FrequencyCapOrBuilder getFrequencyCapsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -258,10 +835,9 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -276,10 +852,9 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
-   * Required. Indicates the line item type of a LineItem. This attribute is
-   * required. The line item type determines the default priority of the line
-   * item. More information can be found at
-   * https://support.google.com/admanager/answer/177279.
+   * Required. Indicates the line item type of a LineItem. The line item type
+   * determines the default priority of the line item. More information can be
+   * found at https://support.google.com/admanager/answer/177279.
    * </pre>
    *
    * <code>
@@ -289,6 +864,72 @@ public interface LineItemOrBuilder
    * @return The lineItemType.
    */
   com.google.ads.admanager.v1.LineItemTypeEnum.LineItemType getLineItemType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The priority for the line item. Valid values
+   * range from 1 to 16. This field defaults to the default priority of the
+   * LineItemType. The following list shows the default, minimum, and maximum
+   * priority values are for each line item type:
+   * - LineItemType: default priority (minimum priority, maximum priority)
+   * - SPONSORSHIP: 4 (2, 5)
+   * - STANDARD: 8 (6, 10)
+   * - NETWORK: 12 (11, 14)
+   * - BULK: 12 (11, 14)
+   * - PRICE_PRIORITY: 12 (11, 14)
+   * - HOUSE: 16 (15, 16)
+   * - CLICK_TRACKING: 16 (1, 16)
+   * - AD_EXCHANGE: 12 (1, 16)
+   * - ADSENSE: 12 (1, 16)
+   * - BUMPER: 16 (15, 16)
+   * - ADMOB: 21 (1, 16)
+   * - PREFERRED_DEAL: 12 (12, 12)
+   * This field can only be edited by certain networks, otherwise a
+   * PermissionError will occur.
+   * </pre>
+   *
+   * <code>
+   * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the priority field is set.
+   */
+  boolean hasPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The priority for the line item. Valid values
+   * range from 1 to 16. This field defaults to the default priority of the
+   * LineItemType. The following list shows the default, minimum, and maximum
+   * priority values are for each line item type:
+   * - LineItemType: default priority (minimum priority, maximum priority)
+   * - SPONSORSHIP: 4 (2, 5)
+   * - STANDARD: 8 (6, 10)
+   * - NETWORK: 12 (11, 14)
+   * - BULK: 12 (11, 14)
+   * - PRICE_PRIORITY: 12 (11, 14)
+   * - HOUSE: 16 (15, 16)
+   * - CLICK_TRACKING: 16 (1, 16)
+   * - AD_EXCHANGE: 12 (1, 16)
+   * - ADSENSE: 12 (1, 16)
+   * - BUMPER: 16 (15, 16)
+   * - ADMOB: 21 (1, 16)
+   * - PREFERRED_DEAL: 12 (12, 12)
+   * This field can only be edited by certain networks, otherwise a
+   * PermissionError will occur.
+   * </pre>
+   *
+   * <code>
+   * optional int32 priority = 19 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The priority.
+   */
+  int getPriority();
 
   /**
    *
@@ -326,6 +967,636 @@ public interface LineItemOrBuilder
    * <code>optional .google.type.Money rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.type.MoneyOrBuilder getRateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the valueCpm field is set.
+   */
+  boolean hasValueCpm();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The valueCpm.
+   */
+  com.google.type.Money getValueCpm();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. An amount to help the adserver rank inventory.
+   * [value_cpm][google.ads.admanager.v1.LineItem.value_cpm] artificially raises
+   * the value of inventory over the
+   * [rate][google.ads.admanager.v1.LineItem.rate] but avoids raising the actual
+   * [rate][google.ads.admanager.v1.LineItem.rate]. This attribute defaults to a
+   * Money object in the local currency with units and nanos set to 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.type.Money value_cpm = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   */
+  com.google.type.MoneyOrBuilder getValueCpmOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the costType field is set.
+   */
+  boolean hasCostType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for costType.
+   */
+  int getCostTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The method used for billing this LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType cost_type = 22 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The costType.
+   */
+  com.google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType getCostType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the discount field is set.
+   */
+  boolean hasDiscount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The discount.
+   */
+  com.google.ads.admanager.v1.LineItemDiscount getDiscount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Discount information for the line item.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDiscount discount = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.LineItemDiscountOrBuilder getDiscountOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This attribute is only applicable for certain line item types and
+   * acts as an "FYI" or note, which does not impact adserving or other backend
+   * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+   * which is a lifetime impression volume goal for reporting purposes only. For
+   * STANDARD line items, this represent the contracted quantity, which is the
+   * number of units specified in the contract the advertiser has bought for
+   * this LineItem. This field is just a "FYI" for traffickers to manually
+   * intervene with the LineItem when needed. This attribute is only available
+   * for STANDARD line items if you have this feature enabled on your network.
+   * </pre>
+   *
+   * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contractedUnitsBought field is set.
+   */
+  boolean hasContractedUnitsBought();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This attribute is only applicable for certain line item types and
+   * acts as an "FYI" or note, which does not impact adserving or other backend
+   * systems. For SPONSORSHIP line items, this represents the minimum quantity,
+   * which is a lifetime impression volume goal for reporting purposes only. For
+   * STANDARD line items, this represent the contracted quantity, which is the
+   * number of units specified in the contract the advertiser has bought for
+   * this LineItem. This field is just a "FYI" for traffickers to manually
+   * intervene with the LineItem when needed. This attribute is only available
+   * for STANDARD line items if you have this feature enabled on your network.
+   * </pre>
+   *
+   * <code>optional int64 contracted_units_bought = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contractedUnitsBought.
+   */
+  long getContractedUnitsBought();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.CreativePlaceholder> getCreativePlaceholdersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CreativePlaceholder getCreativePlaceholders(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  int getCreativePlaceholdersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.CreativePlaceholderOrBuilder>
+      getCreativePlaceholdersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Details about the creatives that are expected to serve through
+   * this LineItem.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativePlaceholder creative_placeholders = 25 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CreativePlaceholderOrBuilder getCreativePlaceholdersOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the environmentType field is set.
+   */
+  boolean hasEnvironmentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for environmentType.
+   */
+  int getEnvironmentTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The environment that the LineItem is
+   * targeting. The default value is BROWSER. If this value is VIDEO_PLAYER,
+   * then this line item can only target AdUnits that have AdUnitSizes whose
+   * environmentType is also VIDEO_PLAYER.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType environment_type = 26 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The environmentType.
+   */
+  com.google.ads.admanager.v1.EnvironmentTypeEnum.EnvironmentType getEnvironmentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the companionDeliveryOption field is set.
+   */
+  boolean hasCompanionDeliveryOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for companionDeliveryOption.
+   */
+  int getCompanionDeliveryOptionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The delivery option for companions. Setting this field is only
+   * meaningful if the following conditions are met:
+   * - The "Guaranteed roadblocks" feature is enabled on your network.
+   * - One of the following is true (both cannot be true, these are mutually
+   * exclusive).
+   * - The environmentType is VIDEO_PLAYER.
+   * - The roadblockingType is CREATIVE_SET.
+   * This field defaults to OPTIONAL if the conditions are met.
+   * In all other cases it defaults to UNKNOWN and is not meaningful.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption companion_delivery_option = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The companionDeliveryOption.
+   */
+  com.google.ads.admanager.v1.CompanionDeliveryOptionEnum.CompanionDeliveryOption
+      getCompanionDeliveryOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether overbooking should be allowed when
+   * creating or updating reservations of line item types SPONSORSHIP and
+   * STANDARD. When true, operations on this line item will never
+   * trigger a ForecastError, which corresponds to an overbook warning in the
+   * UI. The default value is false.  Note: this field won't persist on the
+   * line item itself, and the value will only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return Whether the allowOverbook field is set.
+   */
+  boolean hasAllowOverbook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether overbooking should be allowed when
+   * creating or updating reservations of line item types SPONSORSHIP and
+   * STANDARD. When true, operations on this line item will never
+   * trigger a ForecastError, which corresponds to an overbook warning in the
+   * UI. The default value is false.  Note: this field won't persist on the
+   * line item itself, and the value will only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool allow_overbook = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The allowOverbook.
+   */
+  boolean getAllowOverbook();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether the inventory check should be
+   * skipped when creating or updating a line item. The default value is false.
+   * Note: this field won't persist on the line item itself, and the value will
+   * only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the skipInventoryCheck field is set.
+   */
+  boolean hasSkipInventoryCheck();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether the inventory check should be
+   * skipped when creating or updating a line item. The default value is false.
+   * Note: this field won't persist on the line item itself, and the value will
+   * only affect the current request.
+   * </pre>
+   *
+   * <code>optional bool skip_inventory_check = 29 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The skipInventoryCheck.
+   */
+  boolean getSkipInventoryCheck();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. True to skip checks for warnings from rules applied to line
+   * items targeting inventory shared by a distributor partner for cross selling
+   * when performing an action on this line item. The default is false. Note:
+   * this field won't persist on the line item itself, and the value will only
+   * affect the current request.
+   * </pre>
+   *
+   * <code>
+   * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the skipCrossSellingRuleWarningChecks field is set.
+   */
+  boolean hasSkipCrossSellingRuleWarningChecks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. True to skip checks for warnings from rules applied to line
+   * items targeting inventory shared by a distributor partner for cross selling
+   * when performing an action on this line item. The default is false. Note:
+   * this field won't persist on the line item itself, and the value will only
+   * affect the current request.
+   * </pre>
+   *
+   * <code>
+   * optional bool skip_cross_selling_rule_warning_checks = 30 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The skipCrossSellingRuleWarningChecks.
+   */
+  boolean getSkipCrossSellingRuleWarningChecks();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether inventory should be reserved when
+   * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+   * Order. The default value is false.
+   * </pre>
+   *
+   * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reserveOnCreation field is set.
+   */
+  boolean hasReserveOnCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The flag indicates whether inventory should be reserved when
+   * creating a line item of types SPONSORSHIP and STANDARD in an unapproved
+   * Order. The default value is false.
+   * </pre>
+   *
+   * <code>optional bool reserve_on_creation = 31 [(.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The reserveOnCreation.
+   */
+  boolean getReserveOnCreation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stats field is set.
+   */
+  boolean hasStats();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stats.
+   */
+  com.google.ads.admanager.v1.LineItemStats getStats();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains trafficking statistics for the line item. This will
+   * be empty in case there are no statistics for a line item yet.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemStats stats = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.LineItemStatsOrBuilder getStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the deliveryIndicator field is set.
+   */
+  boolean hasDeliveryIndicator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deliveryIndicator.
+   */
+  com.google.ads.admanager.v1.DeliveryIndicator getDeliveryIndicator();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates how well the line item has been performing. This
+   * will be empty if the delivery indicator information is not available due to
+   * one of the following reasons:
+   * - The line item is not delivering.
+   * - The line item has an unlimited goal or cap.
+   * - The line item has a percentage based goal or cap.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.DeliveryIndicator delivery_indicator = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.DeliveryIndicatorOrBuilder getDeliveryIndicatorOrBuilder();
 
   /**
    *
@@ -369,6 +1640,567 @@ public interface LineItemOrBuilder
    * </code>
    */
   com.google.type.MoneyOrBuilder getBudgetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus status = 36 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The status.
+   */
+  com.google.ads.admanager.v1.LineItemComputedStatusEnum.LineItemComputedStatus getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reservationStatus field is set.
+   */
+  boolean hasReservationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for reservationStatus.
+   */
+  int getReservationStatusValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes whether or not inventory has been reserved for the
+   * LineItem.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus reservation_status = 38 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The reservationStatus.
+   */
+  com.google.ads.admanager.v1.LineItemReservationStatusEnum.LineItemReservationStatus
+      getReservationStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the LineItem.
+   * </pre>
+   *
+   * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  boolean hasArchived();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the LineItem.
+   * </pre>
+   *
+   * <code>optional bool archived = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The archived.
+   */
+  boolean getArchived();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the webPropertyCode field is set.
+   */
+  boolean hasWebPropertyCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The webPropertyCode.
+   */
+  java.lang.String getWebPropertyCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The web property code used for dynamic allocation line items.
+   * This web property is only required with line item types AD_EXCHANGE and
+   * ADSENSE.
+   * </pre>
+   *
+   * <code>optional string web_property_code = 49 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for webPropertyCode.
+   */
+  com.google.protobuf.ByteString getWebPropertyCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.AppliedLabel> getAppliedLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabel getAppliedLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAppliedLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getAppliedLabelsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of labels applied directly to this line item.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel applied_labels = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabelOrBuilder getAppliedLabelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.AppliedLabel> getEffectiveAppliedLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabel getEffectiveAppliedLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getEffectiveAppliedLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.AppliedLabelOrBuilder>
+      getEffectiveAppliedLabelsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains the set of labels inherited from the order that
+   * contains this line item and the advertiser that owns the order. If a label
+   * has been negated, only the negated label is returned.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.AppliedLabel effective_applied_labels = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.ads.admanager.v1.AppliedLabelOrBuilder getEffectiveAppliedLabelsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a line item has a series of competitive exclusions on it, it
+   * could be blocked from serving with line items from the same advertiser.
+   * Setting this to true will allow line items from the same advertiser to
+   * serve regardless of the other competitive exclusion labels being applied.
+   * </pre>
+   *
+   * <code>
+   * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sameAdvertiserExceptionEnabled field is set.
+   */
+  boolean hasSameAdvertiserExceptionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If a line item has a series of competitive exclusions on it, it
+   * could be blocked from serving with line items from the same advertiser.
+   * Setting this to true will allow line items from the same advertiser to
+   * serve regardless of the other competitive exclusion labels being applied.
+   * </pre>
+   *
+   * <code>
+   * optional bool same_advertiser_exception_enabled = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sameAdvertiserExceptionEnabled.
+   */
+  boolean getSameAdvertiserExceptionEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the updateSource field is set.
+   */
+  boolean hasUpdateSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The updateSource.
+   */
+  java.lang.String getUpdateSource();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application that last modified this line item.
+   * </pre>
+   *
+   * <code>optional string update_source = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for updateSource.
+   */
+  com.google.protobuf.ByteString getUpdateSourceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the notes field is set.
+   */
+  boolean hasNotes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the LineItem.
+   * This attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 54 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString getNotesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the competitiveConstraintScope field is set.
+   */
+  boolean hasCompetitiveConstraintScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for competitiveConstraintScope.
+   */
+  int getCompetitiveConstraintScopeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. The CompetitiveConstraintScope for the
+   * competitive exclusion labels assigned to this line item. This field
+   * defaults to POD.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope competitive_constraint_scope = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The competitiveConstraintScope.
+   */
+  com.google.ads.admanager.v1.ExclusionScopeEnum.ExclusionScope getCompetitiveConstraintScope();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was last modified.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 57 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time this line item was created.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Timestamp create_time = 58 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
    *
@@ -440,6 +2272,185 @@ public interface LineItemOrBuilder
    *
    *
    * <pre>
+   * Output only. Indicates if a LineItem is missing any Creative creatives for
+   * the creativePlaceholders specified.  Creative Creatives can be considered
+   * missing for several reasons including:
+   * - Not enough Creative creatives of a certain size have been uploaded, as
+   * determined by
+   * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+   * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+   * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+   * only one was uploaded.
+   * - The [Creative.applied_labels][] of an associated Creative don't match
+   * the
+   * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+   * of the LineItem. For example LineItem specifies 750x350 with a Foo
+   * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+   * </pre>
+   *
+   * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the missingCreatives field is set.
+   */
+  boolean hasMissingCreatives();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if a LineItem is missing any Creative creatives for
+   * the creativePlaceholders specified.  Creative Creatives can be considered
+   * missing for several reasons including:
+   * - Not enough Creative creatives of a certain size have been uploaded, as
+   * determined by
+   * [expected_creative_count][google.ads.admanager.v1.CreativePlaceholder.expected_creative_count].
+   * For example a LineItem specifies 750x350, 400x200 but only a 750x350 was
+   * uploaded. Or LineItem specifies 750x350 with an expected count of 2, but
+   * only one was uploaded.
+   * - The [Creative.applied_labels][] of an associated Creative don't match
+   * the
+   * [CreativePlaceholder.applied_labels][google.ads.admanager.v1.CreativePlaceholder.applied_labels]
+   * of the LineItem. For example LineItem specifies 750x350 with a Foo
+   * AppliedLabel but a 750x350 creative without a AppliedLabel was uploaded.
+   * </pre>
+   *
+   * <code>optional bool missing_creatives = 61 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The missingCreatives.
+   */
+  boolean getMissingCreatives();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the thirdPartyMeasurementSettings field is set.
+   */
+  boolean hasThirdPartyMeasurementSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thirdPartyMeasurementSettings.
+   */
+  com.google.ads.admanager.v1.ThirdPartyMeasurementSettings getThirdPartyMeasurementSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Third party auto-pixeling settings for cross-sell Partners.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ThirdPartyMeasurementSettings third_party_measurement_settings = 67 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ThirdPartyMeasurementSettingsOrBuilder
+      getThirdPartyMeasurementSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Designates this line item as intended for YT Kids app. If true,
+   * all creatives associated with this line item must be reviewed and approved.
+   * See the help center article for more information:
+   * https://support.google.com/yt-partner-sales/answer/10015534.
+   * </pre>
+   *
+   * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the youtubeKidsRestricted field is set.
+   */
+  boolean hasYoutubeKidsRestricted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Designates this line item as intended for YT Kids app. If true,
+   * all creatives associated with this line item must be reviewed and approved.
+   * See the help center article for more information:
+   * https://support.google.com/yt-partner-sales/answer/10015534.
+   * </pre>
+   *
+   * <code>optional bool youtube_kids_restricted = 74 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The youtubeKidsRestricted.
+   */
+  boolean getYoutubeKidsRestricted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxVideoCreativeDuration field is set.
+   */
+  boolean hasMaxVideoCreativeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxVideoCreativeDuration.
+   */
+  com.google.protobuf.Duration getMaxVideoCreativeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The max duration of a video creative associated with this
+   * LineItem. This attribute is only meaningful for video line items. This
+   * attribute is required for video line items and must be greater than 0.
+   * </pre>
+   *
+   * <code>
+   * optional .google.protobuf.Duration max_video_creative_duration = 75 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getMaxVideoCreativeDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The primary goal that this LineItem is associated with, which is
    * used in its pacing and budgeting.
    * </pre>
@@ -481,4 +2492,643 @@ public interface LineItemOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.GoalOrBuilder getGoalOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.Goal> getSecondaryGoalsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.Goal getSecondaryGoals(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getSecondaryGoalsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.GoalOrBuilder>
+      getSecondaryGoalsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The secondary goals that this LineItem is associated with. This
+   * is required and meaningful only if the
+   * [line_item_type][google.ads.admanager.v1.LineItem.line_item_type] is
+   * SPONSORSHIP and [cost_type][google.ads.admanager.v1.LineItem.cost_type] is
+   * CPM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.Goal secondary_goals = 100 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.GoalOrBuilder getSecondaryGoalsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the grpSettings field is set.
+   */
+  boolean hasGrpSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The grpSettings.
+   */
+  com.google.ads.admanager.v1.GrpSettings getGrpSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains the information for a line item which has a target GRP
+   * demographic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.GrpSettings grp_settings = 78 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.GrpSettingsOrBuilder getGrpSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dealInfo field is set.
+   */
+  boolean hasDealInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dealInfo.
+   */
+  com.google.ads.admanager.v1.LineItemDealInfo getDealInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The deal information associated with this line item, if it is
+   * programmatic.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.LineItemDealInfo deal_info = 79 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.LineItemDealInfoOrBuilder getDealInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the viewabilityProviderCompanies.
+   */
+  java.util.List<java.lang.String> getViewabilityProviderCompaniesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of viewabilityProviderCompanies.
+   */
+  int getViewabilityProviderCompaniesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The viewabilityProviderCompanies at the given index.
+   */
+  java.lang.String getViewabilityProviderCompanies(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional IDs of the Company that provide ad verification for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * repeated string viewability_provider_companies = 85 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the viewabilityProviderCompanies at the given index.
+   */
+  com.google.protobuf.ByteString getViewabilityProviderCompaniesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the childContentEligibility field is set.
+   */
+  boolean hasChildContentEligibility();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for childContentEligibility.
+   */
+  int getChildContentEligibilityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Child content eligibility designation for this
+   * line item. This field defaults to DISALLOWED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility child_content_eligibility = 86 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The childContentEligibility.
+   */
+  com.google.ads.admanager.v1.ChildContentEligibilityEnum.ChildContentEligibility
+      getChildContentEligibility();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customVastExtension field is set.
+   */
+  boolean hasCustomVastExtension();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customVastExtension.
+   */
+  java.lang.String getCustomVastExtension();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Custom XML to be rendered in a custom VAST response at serving
+   * time.
+   * </pre>
+   *
+   * <code>optional string custom_vast_extension = 88 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for customVastExtension.
+   */
+  com.google.protobuf.ByteString getCustomVastExtensionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+   * true, only exclusive sponsorships can be served on inventory targeted by
+   * this LineItem. This control should only be available for 100% video
+   * sponsorships.
+   * </pre>
+   *
+   * <code>
+   * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sponsorshipExclusivityEnabled field is set.
+   */
+  boolean hasSponsorshipExclusivityEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the line item is enabled for sponsorship exclusivity.  If
+   * true, only exclusive sponsorships can be served on inventory targeted by
+   * this LineItem. This control should only be available for 100% video
+   * sponsorships.
+   * </pre>
+   *
+   * <code>
+   * optional bool sponsorship_exclusivity_enabled = 89 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sponsorshipExclusivityEnabled.
+   */
+  boolean getSponsorshipExclusivityEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether repeated creative serving is enabled for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the repeatedCreativeServingEnabled field is set.
+   */
+  boolean hasRepeatedCreativeServingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether repeated creative serving is enabled for this
+   * line item.
+   * </pre>
+   *
+   * <code>
+   * optional bool repeated_creative_serving_enabled = 90 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The repeatedCreativeServingEnabled.
+   */
+  boolean getRepeatedCreativeServingEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return Whether the targeting field is set.
+   */
+  boolean hasTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   *
+   * @return The targeting.
+   */
+  com.google.ads.admanager.v1.Targeting getTargeting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Contains the targeting criteria for the ad campaign.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.Targeting targeting = 93 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
+  com.google.ads.admanager.v1.TargetingOrBuilder getTargetingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.ads.admanager.v1.CreativeTargeting> getCreativeTargetingsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CreativeTargeting getCreativeTargetings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCreativeTargetingsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.ads.admanager.v1.CreativeTargetingOrBuilder>
+      getCreativeTargetingsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of CreativeTargeting objects that can be used to specify
+   * creative level targeting for this line item. Creative level targeting is
+   * specified in a
+   * [CreativePlaceholder.creative_targeting_display_name][google.ads.admanager.v1.CreativePlaceholder.creative_targeting_display_name]
+   * field by referencing the [CreativeTargeting.display_name][] field. It also
+   * needs to be re-specified in the
+   * [LineItemCreativeAssociation.targeting_display_name][] field when
+   * associating a line item with a creative that fits into that placeholder.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.CreativeTargeting creative_targetings = 94 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.CreativeTargetingOrBuilder getCreativeTargetingsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the allowedFormats.
+   */
+  java.util.List<com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat>
+      getAllowedFormatsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of allowedFormats.
+   */
+  int getAllowedFormatsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The allowedFormats at the given index.
+   */
+  com.google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat getAllowedFormats(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for allowedFormats.
+   */
+  java.util.List<java.lang.Integer> getAllowedFormatsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The set of allowed formats for this line item.
+   * If empty, all formats are allowed. This property only applies
+   * to programmatic video line items.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.ads.admanager.v1.LineItemAllowedFormatEnum.LineItemAllowedFormat allowed_formats = 112 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of allowedFormats at the given index.
+   */
+  int getAllowedFormatsValue(int index);
 }

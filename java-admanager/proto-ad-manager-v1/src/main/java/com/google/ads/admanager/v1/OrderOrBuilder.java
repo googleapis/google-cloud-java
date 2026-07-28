@@ -1460,4 +1460,98 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.ads.admanager.v1.CustomFieldValueOrBuilder getCustomFieldValuesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of impressions delivered for Line items in
+   * this order.
+   * </pre>
+   *
+   * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the impressionsDelivered field is set.
+   */
+  boolean hasImpressionsDelivered();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total number of impressions delivered for Line items in
+   * this order.
+   * </pre>
+   *
+   * <code>optional int64 impressions_delivered = 41 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The impressionsDelivered.
+   */
+  long getImpressionsDelivered();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total clicks delivered for all Line items of this `Order`.
+   * This value is calculated from the associated `LineItem` values.
+   * </pre>
+   *
+   * <code>optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalClicksDelivered field is set.
+   */
+  boolean hasTotalClicksDelivered();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total clicks delivered for all Line items of this `Order`.
+   * This value is calculated from the associated `LineItem` values.
+   * </pre>
+   *
+   * <code>optional int64 total_clicks_delivered = 53 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalClicksDelivered.
+   */
+  long getTotalClicksDelivered();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total viewable impressions delivered for all Line items of
+   * this `Order`. This value is calculated from the associated `LineItem`
+   * values.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalViewableImpressionsDelivered field is set.
+   */
+  boolean hasTotalViewableImpressionsDelivered();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total viewable impressions delivered for all Line items of
+   * this `Order`. This value is calculated from the associated `LineItem`
+   * values.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_viewable_impressions_delivered = 54 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalViewableImpressionsDelivered.
+   */
+  long getTotalViewableImpressionsDelivered();
 }

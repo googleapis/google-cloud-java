@@ -150,4 +150,48 @@ public interface ManagedFolderOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rapid Cache configuration for a managed prefix.
+   * </pre>
+   *
+   * <code>
+   * optional .google.storage.control.v2.ManagedFolder.RapidCacheConfig rapid_cache_config = 6;
+   * </code>
+   *
+   * @return Whether the rapidCacheConfig field is set.
+   */
+  boolean hasRapidCacheConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rapid Cache configuration for a managed prefix.
+   * </pre>
+   *
+   * <code>
+   * optional .google.storage.control.v2.ManagedFolder.RapidCacheConfig rapid_cache_config = 6;
+   * </code>
+   *
+   * @return The rapidCacheConfig.
+   */
+  com.google.storage.control.v2.ManagedFolder.RapidCacheConfig getRapidCacheConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rapid Cache configuration for a managed prefix.
+   * </pre>
+   *
+   * <code>
+   * optional .google.storage.control.v2.ManagedFolder.RapidCacheConfig rapid_cache_config = 6;
+   * </code>
+   */
+  com.google.storage.control.v2.ManagedFolder.RapidCacheConfigOrBuilder
+      getRapidCacheConfigOrBuilder();
 }

@@ -912,7 +912,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
    * @return A list containing the authorizedGaeApplications.
    */
   @java.lang.Deprecated
@@ -931,7 +931,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
    * @return The count of authorizedGaeApplications.
    */
   @java.lang.Deprecated
@@ -950,7 +950,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
    * @param index The index of the element to return.
    * @return The authorizedGaeApplications at the given index.
    */
@@ -970,7 +970,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
    * @param index The index of the value to return.
    * @return The bytes of the authorizedGaeApplications at the given index.
    */
@@ -1303,7 +1303,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.sql.v1.SqlReplicationType replication_type = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
    * @return The enum numeric value on the wire for replicationType.
    */
   @java.lang.Override
@@ -1324,7 +1324,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * <code>.google.cloud.sql.v1.SqlReplicationType replication_type = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
    * @return The replicationType.
    */
   @java.lang.Override
@@ -1916,7 +1916,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.sql.v1.Settings.crash_safe_replication_enabled is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1743
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1739
    * @return Whether the crashSafeReplicationEnabled field is set.
    */
   @java.lang.Override
@@ -1938,7 +1938,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.sql.v1.Settings.crash_safe_replication_enabled is deprecated. See
-   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1743
+   *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1739
    * @return The crashSafeReplicationEnabled.
    */
   @java.lang.Override
@@ -5686,7 +5686,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @return A list containing the authorizedGaeApplications.
      */
     @java.lang.Deprecated
@@ -5706,7 +5706,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @return The count of authorizedGaeApplications.
      */
     @java.lang.Deprecated
@@ -5725,7 +5725,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param index The index of the element to return.
      * @return The authorizedGaeApplications at the given index.
      */
@@ -5745,7 +5745,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param index The index of the value to return.
      * @return The bytes of the authorizedGaeApplications at the given index.
      */
@@ -5765,7 +5765,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param index The index to set the value at.
      * @param value The authorizedGaeApplications to set.
      * @return This builder for chaining.
@@ -5793,7 +5793,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param value The authorizedGaeApplications to add.
      * @return This builder for chaining.
      */
@@ -5820,7 +5820,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param values The authorizedGaeApplications to add.
      * @return This builder for chaining.
      */
@@ -5844,7 +5844,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5867,7 +5867,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * <code>repeated string authorized_gae_applications = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.sql.v1.Settings.authorized_gae_applications is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1662
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1658
      * @param value The bytes of the authorizedGaeApplications to add.
      * @return This builder for chaining.
      */
@@ -6538,7 +6538,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
      * @return The enum numeric value on the wire for replicationType.
      */
     @java.lang.Override
@@ -6560,7 +6560,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
      * @param value The enum numeric value on the wire for replicationType to set.
      * @return This builder for chaining.
      */
@@ -6585,7 +6585,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
      * @return The replicationType.
      */
     @java.lang.Override
@@ -6609,7 +6609,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
      * @param value The replicationType to set.
      * @return This builder for chaining.
      */
@@ -6637,7 +6637,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.replication_type is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1692
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1688
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8717,7 +8717,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.crash_safe_replication_enabled is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1743
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1739
      * @return Whether the crashSafeReplicationEnabled field is set.
      */
     @java.lang.Deprecated
@@ -8738,7 +8738,7 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.sql.v1.Settings.crash_safe_replication_enabled is deprecated. See
-     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1743
+     *     google/cloud/sql/v1/cloud_sql_resources.proto;l=1739
      * @return The crashSafeReplicationEnabled.
      */
     @java.lang.Deprecated

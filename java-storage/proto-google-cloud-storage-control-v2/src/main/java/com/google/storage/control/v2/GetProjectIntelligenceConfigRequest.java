@@ -26,12 +26,6 @@ package com.google.storage.control.v2;
  * <pre>
  * Request message to get the `IntelligenceConfig` resource associated with your
  * project.
- *
- * **IAM Permissions**:
- *
- * Requires `storage.intelligenceConfigs.get`
- * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission
- * on the project.
  * </pre>
  *
  * Protobuf type {@code google.storage.control.v2.GetProjectIntelligenceConfigRequest}
@@ -309,12 +303,6 @@ public final class GetProjectIntelligenceConfigRequest extends com.google.protob
    * <pre>
    * Request message to get the `IntelligenceConfig` resource associated with your
    * project.
-   *
-   * **IAM Permissions**:
-   *
-   * Requires `storage.intelligenceConfigs.get`
-   * [IAM](https://cloud.google.com/iam/docs/overview#permissions) permission
-   * on the project.
    * </pre>
    *
    * Protobuf type {@code google.storage.control.v2.GetProjectIntelligenceConfigRequest}
