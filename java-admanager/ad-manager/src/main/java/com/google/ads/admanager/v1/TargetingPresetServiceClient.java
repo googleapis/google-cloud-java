@@ -27,6 +27,7 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -136,6 +137,40 @@ import org.jspecify.annotations.Nullable;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> batchCreateTargetingPresetsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateTargetingPreset</td>
+ *      <td><p> Updates a `TargetingPreset` object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateTargetingPreset(UpdateTargetingPresetRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateTargetingPreset(TargetingPreset targetingPreset, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateTargetingPresetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateTargetingPresets</td>
+ *      <td><p> Batch updates `TargetingPreset` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateTargetingPresets(NetworkName parent, List&lt;UpdateTargetingPresetRequest&gt; requests)
+ *           <li><p> batchUpdateTargetingPresets(String parent, List&lt;UpdateTargetingPresetRequest&gt; requests)
+ *           <li><p> batchUpdateTargetingPresets(BatchUpdateTargetingPresetsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateTargetingPresetsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -834,6 +869,243 @@ public class TargetingPresetServiceClient implements BackgroundResource {
           BatchCreateTargetingPresetsRequest, BatchCreateTargetingPresetsResponse>
       batchCreateTargetingPresetsCallable() {
     return stub.batchCreateTargetingPresetsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `TargetingPreset` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   TargetingPreset targetingPreset = TargetingPreset.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   TargetingPreset response =
+   *       targetingPresetServiceClient.updateTargetingPreset(targetingPreset, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param targetingPreset Required. The `TargetingPreset` to update.
+   *     <p>The `TargetingPreset`'s `name` is used to identify the `TargetingPreset` to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TargetingPreset updateTargetingPreset(
+      TargetingPreset targetingPreset, FieldMask updateMask) {
+    UpdateTargetingPresetRequest request =
+        UpdateTargetingPresetRequest.newBuilder()
+            .setTargetingPreset(targetingPreset)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateTargetingPreset(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `TargetingPreset` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   UpdateTargetingPresetRequest request =
+   *       UpdateTargetingPresetRequest.newBuilder()
+   *           .setTargetingPreset(TargetingPreset.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   TargetingPreset response = targetingPresetServiceClient.updateTargetingPreset(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TargetingPreset updateTargetingPreset(UpdateTargetingPresetRequest request) {
+    return updateTargetingPresetCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `TargetingPreset` object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   UpdateTargetingPresetRequest request =
+   *       UpdateTargetingPresetRequest.newBuilder()
+   *           .setTargetingPreset(TargetingPreset.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TargetingPreset> future =
+   *       targetingPresetServiceClient.updateTargetingPresetCallable().futureCall(request);
+   *   // Do something.
+   *   TargetingPreset response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateTargetingPresetRequest, TargetingPreset>
+      updateTargetingPresetCallable() {
+    return stub.updateTargetingPresetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `TargetingPreset` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+   *   BatchUpdateTargetingPresetsResponse response =
+   *       targetingPresetServiceClient.batchUpdateTargetingPresets(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `TargetingPresets` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateTargetingPresetRequest must match
+   *     this field.
+   * @param requests Required. The `TargetingPreset` objects to update. A maximum of 100 objects can
+   *     be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateTargetingPresetsResponse batchUpdateTargetingPresets(
+      @Nullable NetworkName parent, List<UpdateTargetingPresetRequest> requests) {
+    BatchUpdateTargetingPresetsRequest request =
+        BatchUpdateTargetingPresetsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateTargetingPresets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `TargetingPreset` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateTargetingPresetRequest> requests = new ArrayList<>();
+   *   BatchUpdateTargetingPresetsResponse response =
+   *       targetingPresetServiceClient.batchUpdateTargetingPresets(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where `TargetingPresets` will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateTargetingPresetRequest must match
+   *     this field.
+   * @param requests Required. The `TargetingPreset` objects to update. A maximum of 100 objects can
+   *     be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateTargetingPresetsResponse batchUpdateTargetingPresets(
+      String parent, List<UpdateTargetingPresetRequest> requests) {
+    BatchUpdateTargetingPresetsRequest request =
+        BatchUpdateTargetingPresetsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateTargetingPresets(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `TargetingPreset` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   BatchUpdateTargetingPresetsRequest request =
+   *       BatchUpdateTargetingPresetsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateTargetingPresetRequest>())
+   *           .build();
+   *   BatchUpdateTargetingPresetsResponse response =
+   *       targetingPresetServiceClient.batchUpdateTargetingPresets(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateTargetingPresetsResponse batchUpdateTargetingPresets(
+      BatchUpdateTargetingPresetsRequest request) {
+    return batchUpdateTargetingPresetsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates `TargetingPreset` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (TargetingPresetServiceClient targetingPresetServiceClient =
+   *     TargetingPresetServiceClient.create()) {
+   *   BatchUpdateTargetingPresetsRequest request =
+   *       BatchUpdateTargetingPresetsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateTargetingPresetRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateTargetingPresetsResponse> future =
+   *       targetingPresetServiceClient.batchUpdateTargetingPresetsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateTargetingPresetsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchUpdateTargetingPresetsRequest, BatchUpdateTargetingPresetsResponse>
+      batchUpdateTargetingPresetsCallable() {
+    return stub.batchUpdateTargetingPresetsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

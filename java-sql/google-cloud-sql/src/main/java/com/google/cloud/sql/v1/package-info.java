@@ -166,6 +166,7 @@
  *       SqlOperationsGetRequest.newBuilder()
  *           .setOperation("operation1662702951")
  *           .setProject("project-309310695")
+ *           .setLocation("location1901043637")
  *           .build();
  *   Operation response = sqlOperationsServiceClient.get(request);
  * }

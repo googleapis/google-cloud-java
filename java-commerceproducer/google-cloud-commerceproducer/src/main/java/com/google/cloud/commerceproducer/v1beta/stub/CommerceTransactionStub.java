@@ -53,6 +53,8 @@ import com.google.cloud.commerceproducer.v1beta.ListStandardOffersResponse;
 import com.google.cloud.commerceproducer.v1beta.PrivateOffer;
 import com.google.cloud.commerceproducer.v1beta.PrivateOfferDocument;
 import com.google.cloud.commerceproducer.v1beta.PublishPrivateOfferRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetRequest;
+import com.google.cloud.commerceproducer.v1beta.ResolveAmendmentTargetResponse;
 import com.google.cloud.commerceproducer.v1beta.Service;
 import com.google.cloud.commerceproducer.v1beta.Sku;
 import com.google.cloud.commerceproducer.v1beta.SkuGroup;
@@ -102,6 +104,11 @@ public abstract class CommerceTransactionStub implements BackgroundResource {
 
   public UnaryCallable<GetPrivateOfferRequest, PrivateOffer> getPrivateOfferCallable() {
     throw new UnsupportedOperationException("Not implemented: getPrivateOfferCallable()");
+  }
+
+  public UnaryCallable<ResolveAmendmentTargetRequest, ResolveAmendmentTargetResponse>
+      resolveAmendmentTargetCallable() {
+    throw new UnsupportedOperationException("Not implemented: resolveAmendmentTargetCallable()");
   }
 
   public UnaryCallable<CreatePrivateOfferRequest, PrivateOffer> createPrivateOfferCallable() {

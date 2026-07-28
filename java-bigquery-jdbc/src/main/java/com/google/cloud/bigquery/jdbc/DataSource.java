@@ -21,6 +21,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -58,6 +59,8 @@ public class DataSource implements javax.sql.DataSource {
   private String logLevel;
   private Boolean enableSession;
   private String logPath;
+  private String gcpTelemetryProjectId;
+  private String gcpTelemetryCredentials;
   private Integer oAuthType;
   private String oAuthServiceAcctEmail;
   private String oAuthPvtKeyPath;
@@ -118,6 +121,12 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
+  private boolean enableGcpTraceExporter =
+      BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE;
+  private boolean enableGcpLogExporter =
+      BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
+  private OpenTelemetry customOpenTelemetry;
+  private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -134,6 +143,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(BigQueryJdbcUrlUtility.PROJECT_ID_PROPERTY_NAME, DataSource::setProjectId)
           .put(BigQueryJdbcUrlUtility.DEFAULT_DATASET_PROPERTY_NAME, DataSource::setDefaultDataset)
           .put(BigQueryJdbcUrlUtility.LOCATION_PROPERTY_NAME, DataSource::setLocation)
+          .put(
+              BigQueryJdbcUrlUtility.GCP_TELEMETRY_PROJECT_ID_PROPERTY_NAME,
+              DataSource::setGcpTelemetryProjectId)
+          .put(
+              BigQueryJdbcUrlUtility.GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME,
+              DataSource::setGcpTelemetryCredentials)
           .put(
               BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
               (ds, val) ->
@@ -347,6 +362,24 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
               (ds, val) -> ds.setListenerPoolSize(Long.parseLong(val)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGcpTraceExporter(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGcpLogExporter(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setUseGlobalOpenTelemetry(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -404,7 +437,11 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcException(
           "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
     }
-    return DriverManager.getConnection(getURL(), createProperties());
+    Properties props = createProperties();
+    if (this.customOpenTelemetry != null) {
+      props.put("customOpenTelemetry", this.customOpenTelemetry);
+    }
+    return DriverManager.getConnection(getURL(), props);
   }
 
   Properties createProperties() {
@@ -665,6 +702,21 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
+    if (this.enableGcpTraceExporter) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpTraceExporter));
+    }
+    if (this.enableGcpLogExporter) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpLogExporter));
+    }
+    if (this.useGlobalOpenTelemetry) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
+          String.valueOf(this.useGlobalOpenTelemetry));
+    }
     return connectionProperties;
   }
 
@@ -798,6 +850,38 @@ public class DataSource implements javax.sql.DataSource {
     this.listenerPoolSize = listenerPoolSize;
   }
 
+  public boolean getEnableGcpTraceExporter() {
+    return enableGcpTraceExporter;
+  }
+
+  public void setEnableGcpTraceExporter(boolean enableGcpTraceExporter) {
+    this.enableGcpTraceExporter = enableGcpTraceExporter;
+  }
+
+  public boolean getEnableGcpLogExporter() {
+    return enableGcpLogExporter;
+  }
+
+  public void setEnableGcpLogExporter(boolean enableGcpLogExporter) {
+    this.enableGcpLogExporter = enableGcpLogExporter;
+  }
+
+  public OpenTelemetry getCustomOpenTelemetry() {
+    return customOpenTelemetry;
+  }
+
+  public void setCustomOpenTelemetry(OpenTelemetry customOpenTelemetry) {
+    this.customOpenTelemetry = customOpenTelemetry;
+  }
+
+  public boolean getUseGlobalOpenTelemetry() {
+    return useGlobalOpenTelemetry;
+  }
+
+  public void setUseGlobalOpenTelemetry(boolean useGlobalOpenTelemetry) {
+    this.useGlobalOpenTelemetry = useGlobalOpenTelemetry;
+  }
+
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {
     if (highThroughputMinTableSize != null) {
       validateNonNegative(
@@ -865,6 +949,22 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setLogPath(String logPath) {
     this.logPath = logPath;
+  }
+
+  public String getGcpTelemetryProjectId() {
+    return gcpTelemetryProjectId;
+  }
+
+  public void setGcpTelemetryProjectId(String gcpTelemetryProjectId) {
+    this.gcpTelemetryProjectId = gcpTelemetryProjectId;
+  }
+
+  public String getGcpTelemetryCredentials() {
+    return gcpTelemetryCredentials;
+  }
+
+  public void setGcpTelemetryCredentials(String gcpTelemetryCredentials) {
+    this.gcpTelemetryCredentials = gcpTelemetryCredentials;
   }
 
   public String getUniverseDomain() {

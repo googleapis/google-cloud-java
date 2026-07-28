@@ -76,6 +76,7 @@ import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
@@ -84,10 +85,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.LongPredicate;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -551,13 +555,16 @@ public class SessionPoolImplTest {
     @Test
     public void test() throws Exception {
       ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
-      // Filter out watchdog (5 min, exact) and AFE prune (10 min, exact) ticks. The
-      // retry-create-session site computes its delay against the real wall clock and the fake
-      // budget clock, so it can land anywhere from sub-second to a couple of penalty intervals.
-      // Match anything that isn't one of the two fixed cadences.
+      // Filter out watchdog (5 min, exact), AFE prune (10 min, exact), and per-session open-timeout
+      // (OPEN_SESSION_TIMEOUT, exact) ticks. The retry-create-session site computes its delay
+      // against the real wall clock and the fake budget clock, so it can land anywhere from
+      // sub-second to a couple of penalty intervals. Match anything that isn't one of the fixed
+      // cadences.
       long watchdogMs = Duration.ofMinutes(5).toMillis();
       long afePruneMs = SessionList.SESSION_LIST_PRUNE_INTERVAL.toMillis();
-      LongPredicate isRetrySchedule = d -> d > 0 && d != watchdogMs && d != afePruneMs;
+      long openTimeoutMs = SessionImpl.OPEN_SESSION_TIMEOUT.toMillis();
+      LongPredicate isRetrySchedule =
+          d -> d > 0 && d != watchdogMs && d != afePruneMs && d != openTimeoutMs;
 
       // start the pool
       sessionPool.start(
@@ -609,6 +616,200 @@ public class SessionPoolImplTest {
       // before
       int requestsAfter = fakeService.getOpenRequestCount().get();
       assertThat(requestsAfter).isGreaterThan(requestsBefore);
+    }
+  }
+
+  @Nested
+  class GoAwayBeforeReadyBudgetRelease {
+
+    private FakeClock fakeClock;
+    private BigtableTimer mockTimer;
+    private FakeSessionService fakeService;
+    private Server server;
+    private ChannelPool channelPool;
+    private SessionPoolImpl<OpenFakeSessionRequest> sessionPool;
+    private SessionCreationBudget budget;
+
+    private final Duration penalty = Duration.ofMinutes(1);
+
+    @BeforeEach
+    void setUp() throws Exception {
+      fakeClock = new FakeClock(Instant.now());
+      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // their own -- the budget stays quiescent after the session lifecycle completes, leaving the
+      // test thread as the only actor that touches it.
+      mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
+
+      // Budget of 1 so exactly one session goes STARTING; any extra create attempts fail to reserve
+      // and just schedule a (no-op) retry on the mock timer.
+      budget = new SessionCreationBudget(1, penalty, fakeClock);
+
+      fakeService = new FakeSessionService(executor);
+      server = FakeServiceBuilder.create(fakeService).intercept(new PeerInfoInterceptor()).start();
+
+      channelPool =
+          new SingleChannelPool(
+              Suppliers.ofInstance(
+                  Grpc.newChannelBuilderForAddress(
+                          "localhost", server.getPort(), InsecureChannelCredentials.create())
+                      .build()));
+      channelPool.start();
+
+      sessionPool =
+          new SessionPoolImpl<>(
+              metrics,
+              FeatureFlags.getDefaultInstance(),
+              CLIENT_INFO,
+              configManager,
+              channelPool,
+              CallOptions.DEFAULT,
+              FakeDescriptor.FAKE_SESSION,
+              "fake-pool",
+              mockTimer,
+              MoreExecutors.directExecutor(),
+              budget);
+    }
+
+    @AfterEach
+    void tearDown() {
+      sessionPool.close(
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+              .setDescription("close session")
+              .build());
+      channelPool.close();
+      server.shutdownNow();
+    }
+
+    @Test
+    void goAwayWhileStartingReleasesBudget() throws Exception {
+      // Drive a single session that receives a GO_AWAY before the open handshake, so it transitions
+      // STARTING -> WAIT_SERVER_CLOSE and closes with prevState == WAIT_SERVER_CLOSE. The
+      // abnormal-close branch (prevState != WAIT_SERVER_CLOSE) is skipped, so before the fix the
+      // STARTING budget slot -- which was released only on the prevState == STARTING path -- leaked
+      // permanently. The fix keys the release off the reservation set, releasing it here as a
+      // creation failure.
+      sessionPool.start(
+          OpenFakeSessionRequest.newBuilder().setGoAwayBeforeOpen(true).build(), new Metadata());
+
+      // Poll for the leaked slot to become reclaimable. onSessionClose(WAIT_SERVER_CLOSE) records a
+      // creation failure (fix only); advancing past the penalty lets tryReserveSession drain it and
+      // succeed. SessionCreationBudget has no internal locking -- the pool guards it with poolLock
+      // --
+      // so hold that same lock here so this doesn't race the session-close callback that mutates
+      // the
+      // budget. With the bug no slot is ever released and this stays false until the deadline.
+      ReentrantLock poolLock = extractPoolLock(sessionPool);
+      boolean recovered = false;
+      long deadlineMs = System.currentTimeMillis() + 5_000;
+      while (System.currentTimeMillis() < deadlineMs) {
+        poolLock.lock();
+        try {
+          fakeClock.increment(penalty.plusMillis(1));
+          if (budget.tryReserveSession()) {
+            recovered = true;
+            break;
+          }
+        } finally {
+          poolLock.unlock();
+        }
+        Thread.sleep(20);
+      }
+
+      assertThat(recovered).isTrue();
+
+      // Sanity check that the client actually walked the GO_AWAY-before-open path: on receiving the
+      // GO_AWAY while STARTING it moves to WAIT_SERVER_CLOSE and sends a CloseSession.
+      boolean sentClose =
+          fakeService.getSessionRequests().stream()
+              .anyMatch(r -> r.getPayloadCase() == SessionRequest.PayloadCase.CLOSE_SESSION);
+      assertThat(sentClose).isTrue();
+    }
+  }
+
+  @Nested
+  class CreateSessionFailureBudgetRelease {
+
+    private FakeClock fakeClock;
+    private BigtableTimer mockTimer;
+    private ChannelPool throwingChannelPool;
+    private SessionPoolImpl<OpenFakeSessionRequest> sessionPool;
+    private SessionCreationBudget budget;
+
+    private final Duration penalty = Duration.ofMinutes(1);
+
+    @BeforeEach
+    void setUp() {
+      fakeClock = new FakeClock(Instant.now());
+      // Mock timer so the pool's watchdog / AFE-prune / create-session-retry ticks never fire on
+      // their own, leaving the test thread as the only actor touching the budget.
+      mockTimer = mock(BigtableTimer.class, Mockito.RETURNS_DEEP_STUBS);
+
+      // Budget of 1 so a single create attempt reserves the only slot.
+      budget = new SessionCreationBudget(1, penalty, fakeClock);
+
+      // newStream throws synchronously, so factory.createNew() fails inside createSession before a
+      // SessionImpl is constructed and before any listener is wired -- the failure mode Claim 2
+      // addresses. With no session, no terminal callback ever runs to release the reservation.
+      throwingChannelPool = mock(ChannelPool.class);
+      when(throwingChannelPool.newStream(any(), any()))
+          .thenThrow(new RuntimeException("boom: newStream failed"));
+
+      sessionPool =
+          new SessionPoolImpl<>(
+              metrics,
+              FeatureFlags.getDefaultInstance(),
+              CLIENT_INFO,
+              configManager,
+              throwingChannelPool,
+              CallOptions.DEFAULT,
+              FakeDescriptor.FAKE_SESSION,
+              "fake-pool",
+              mockTimer,
+              MoreExecutors.directExecutor(),
+              budget);
+    }
+
+    @AfterEach
+    void tearDown() {
+      sessionPool.close(
+          CloseSessionRequest.newBuilder()
+              .setReason(CloseSessionRequest.CloseSessionReason.CLOSE_SESSION_REASON_USER)
+              .setDescription("close session")
+              .build());
+    }
+
+    @Test
+    void createSessionSynchronousFailureReleasesBudget() throws Exception {
+      // Starting the pool drives createSession, whose factory.createNew() throws synchronously. No
+      // session is constructed and no listener is wired, so no terminal callback will ever run.
+      // Before the fix the reserved budget slot leaked permanently; the fix releases it as a
+      // creation failure in createSession's catch block (and unwinds any partial handle).
+      sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+
+      // Poll for the slot to become reclaimable: draining the failure penalty must let a fresh
+      // reservation succeed. SessionCreationBudget has no internal locking -- the pool guards it
+      // with
+      // poolLock -- so hold that same lock here so this doesn't race any callback. With the bug no
+      // slot is ever released and this stays false until the deadline.
+      ReentrantLock poolLock = extractPoolLock(sessionPool);
+      boolean recovered = false;
+      long deadlineMs = System.currentTimeMillis() + 5_000;
+      while (System.currentTimeMillis() < deadlineMs) {
+        poolLock.lock();
+        try {
+          fakeClock.increment(penalty.plusMillis(1));
+          if (budget.tryReserveSession()) {
+            recovered = true;
+            break;
+          }
+        } finally {
+          poolLock.unlock();
+        }
+        Thread.sleep(20);
+      }
+
+      assertThat(recovered).isTrue();
     }
   }
 
@@ -677,6 +878,180 @@ public class SessionPoolImplTest {
         .comparingElementsUsing(OPEN_SESSION_REQUEST_CORRESPONDENCE)
         .contains(refreshRequest);
     assertThat(containsHeader).isTrue();
+  }
+
+  private void assertPoolServesVRpc(SessionPoolImpl<OpenFakeSessionRequest> pool, String label)
+      throws Exception {
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+        pool.newCall(FakeDescriptor.SCRIPTED);
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    vrpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(15, TimeUnit.SECONDS), true, vrpcTracer),
+        f);
+    try {
+      f.get(15, TimeUnit.SECONDS);
+    } catch (TimeoutException e) {
+      throw new AssertionError(
+          "pool did not serve a vRPC (" + label + ") within 15s — the pool monitor appears wedged",
+          e);
+    }
+  }
+
+  /**
+   * Reproduces the production thread-dump wedge and verifies the fix.
+   *
+   * <p>The dump (2026-07-23) showed a {@code SessionPoolImpl} whose pool lock had <em>no owner but
+   * dozens of waiters</em> — an orphaned monitor, the classic signature of a thread that died while
+   * holding the lock (e.g. a native-thread OOM mid-critical-section). Because the shim probes the
+   * pool on every RPC via the {@code synchronized hasSession()} / {@code newCall()} path, every
+   * incoming request then blocked on that lock forever, threads piled up, and the pod shed 100% of
+   * traffic with no recovery.
+   *
+   * <p>A truly orphaned intrinsic monitor cannot be produced inside a JVM unit test (a dead
+   * thread's {@code synchronized} block always unwinds), so we simulate the dead owner faithfully:
+   * a helper thread grabs the pool lock and never lets go. Under the old {@code synchronized
+   * (this)} design every call below would block on that held monitor indefinitely and this test
+   * would fail on its timeout. With the {@link java.util.concurrent.locks.ReentrantLock} + bounded
+   * {@code tryLock} fix, the request-serving hot path degrades to a bounded fast-fail instead of
+   * hanging, and the pool fully recovers once the lock is released.
+   */
+  @Test
+  @Timeout(60)
+  void orphanedPoolLock_hotPathDegradesInsteadOfHangingForever() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    // Baseline: a live session exists and the pool serves traffic normally.
+    assertPoolServesVRpc(sessionPool, "baseline (before lock is orphaned)");
+
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+
+    // A separate probe thread stands in for real request threads; the test thread must never touch
+    // the pool directly, because on the unfixed code those calls would block forever.
+    ExecutorService probe = Executors.newSingleThreadExecutor();
+    // The "dead owner": this thread acquires the pool lock and parks holding it, exactly like the
+    // thread dump's owner-less-but-waited-on monitor.
+    ExecutorService deadOwner = Executors.newSingleThreadExecutor();
+    CountDownLatch lockHeld = new CountDownLatch(1);
+    CountDownLatch releaseLock = new CountDownLatch(1);
+    try {
+      deadOwner.submit(
+          () -> {
+            poolLock.lock();
+            try {
+              lockHeld.countDown();
+              releaseLock.await(); // hold the lock until the test releases us
+            } finally {
+              poolLock.unlock();
+            }
+            return null;
+          });
+      assertThat(lockHeld.await(10, TimeUnit.SECONDS)).isTrue();
+      assertThat(poolLock.isLocked()).isTrue();
+      assertThat(poolLock.isHeldByCurrentThread()).isFalse(); // owned by the dead-owner thread
+
+      // (1) The per-RPC routing probe must return promptly instead of blocking on the wedged lock.
+      // On the old synchronized code this get() would time out (the probe thread would be stuck).
+      Future<Boolean> hasSession = probe.submit(sessionPool::hasSession);
+      assertThat(hasSession.get(15, TimeUnit.SECONDS)).isFalse();
+
+      // (2) A brand-new call must also degrade to a bounded fast-fail rather than hang. newCall()
+      // returns without blocking and start() fast-fails the vRPC with UNAVAILABLE (uncommitted, so
+      // gax can still retry / fall back to the classic client).
+      CompletableFuture<VRpcResult> wedgedResult = new CompletableFuture<>();
+      Future<?> starter =
+          probe.submit(
+              () -> {
+                VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+                    sessionPool.newCall(FakeDescriptor.SCRIPTED);
+                vrpc.start(
+                    SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+                    VRpcCallContext.create(Deadline.after(30, TimeUnit.SECONDS), true, vrpcTracer),
+                    new VRpc.VRpcListener<SessionFakeScriptedResponse>() {
+                      @Override
+                      public void onMessage(SessionFakeScriptedResponse msg) {}
+
+                      @Override
+                      public void onClose(VRpcResult result) {
+                        wedgedResult.complete(result);
+                      }
+                    });
+              });
+      starter.get(15, TimeUnit.SECONDS); // start() itself must return bounded
+      VRpcResult result = wedgedResult.get(15, TimeUnit.SECONDS);
+      assertThat(result.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+
+      // (2b) Cancelling a call must also be bounded. PendingVRpc.cancel() takes poolLock only to
+      // eagerly remove itself from pendingRpcs; on the old code that was an unbounded lock() and
+      // would park this (callback-path) thread forever on the wedged lock. It must now skip the
+      // eager removal after the bounded timeout and return promptly.
+      Future<?> canceller =
+          probe.submit(
+              () -> {
+                VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> vrpc =
+                    sessionPool.newCall(FakeDescriptor.SCRIPTED);
+                vrpc.start(
+                    SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+                    VRpcCallContext.create(Deadline.after(30, TimeUnit.SECONDS), true, vrpcTracer),
+                    new VRpc.VRpcListener<SessionFakeScriptedResponse>() {
+                      @Override
+                      public void onMessage(SessionFakeScriptedResponse msg) {}
+
+                      @Override
+                      public void onClose(VRpcResult ignored) {}
+                    });
+                vrpc.cancel("cancelled while pool lock is wedged", null);
+              });
+      canceller.get(15, TimeUnit.SECONDS); // cancel() must return bounded, not hang on the lock
+    } finally {
+      // Revive the pool: the "dead owner" releases the lock. A healthy pool must resume serving.
+      releaseLock.countDown();
+      deadOwner.shutdown();
+      assertThat(deadOwner.awaitTermination(10, TimeUnit.SECONDS)).isTrue();
+      probe.shutdownNow();
+    }
+
+    // (3) Recovery: once the lock is free, the pool serves traffic again — no permanent wedge.
+    assertPoolServesVRpc(sessionPool, "after the orphaned lock was released");
+  }
+
+  /**
+   * Regression guard for the bounded-lock fix: the timed {@code tryLock(timeout)} used on the hot
+   * path throws {@code InterruptedException} <em>immediately</em> if the calling thread already has
+   * its interrupt flag set, even when the lock is free. The old {@code synchronized} never observed
+   * the interrupt flag, so without the non-interruptible zero-arg {@code tryLock()} fast path a
+   * pre-existing interrupt (common on reused worker threads) would spuriously shed traffic on a
+   * perfectly healthy pool. This verifies a healthy pool still serves — and still reports a session
+   * — when the caller arrives interrupted, and that the interrupt status is preserved.
+   */
+  @Test
+  @Timeout(60)
+  void healthyPool_preExistingInterrupt_doesNotSpuriouslyDegrade() throws Exception {
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    assertPoolServesVRpc(sessionPool, "baseline (before interrupt)");
+
+    ExecutorService probe = Executors.newSingleThreadExecutor();
+    try {
+      Future<Boolean> interruptStillSet =
+          probe.submit(
+              () -> {
+                Thread.currentThread().interrupt(); // arrive already-interrupted
+                // A healthy pool must still report its ready session rather than fast-failing.
+                assertThat(sessionPool.hasSession()).isTrue();
+                // The interrupt flag must survive the acquisition (fast path never consumes it).
+                return Thread.currentThread().isInterrupted();
+              });
+      assertThat(interruptStillSet.get(15, TimeUnit.SECONDS)).isTrue();
+    } finally {
+      probe.shutdownNow();
+    }
+
+    assertPoolServesVRpc(sessionPool, "after an interrupted caller (pool must remain healthy)");
+  }
+
+  private static ReentrantLock extractPoolLock(SessionPoolImpl<?> pool) throws Exception {
+    Field field = SessionPoolImpl.class.getDeclaredField("poolLock");
+    field.setAccessible(true);
+    return (ReentrantLock) field.get(pool);
   }
 
   private static class DelayedClientInterceptor implements ClientInterceptor {

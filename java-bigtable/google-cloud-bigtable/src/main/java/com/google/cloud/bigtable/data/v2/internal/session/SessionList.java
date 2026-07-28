@@ -77,6 +77,24 @@ class SessionList {
     return h;
   }
 
+  /**
+   * Unwinds a handle produced by {@link #newHandle} whose session never started, i.e. a synchronous
+   * failure in {@code SessionPoolImpl.createSession} between {@code newHandle} and {@code
+   * session.start}. Such a session stays in {@link SessionState#NEW}, so it never receives a
+   * terminal {@link SessionHandle#onSessionClosed} callback (which additionally rejects NEW
+   * sessions). This reverses exactly the bookkeeping {@code newHandle} performed so the handle
+   * doesn't strand {@link #allSessions} (blocking pool drain) or skew the pool stats.
+   */
+  void removeUnstartedHandle(SessionHandle handle) {
+    if (allSessions.remove(handle)) {
+      poolStats.startingCount--;
+      if (handle.inExpectedCount) {
+        poolStats.expectedCapacity--;
+        handle.inExpectedCount = false;
+      }
+    }
+  }
+
   /** Get {@link PoolStats} */
   PoolStats getStats() {
     return poolStats;

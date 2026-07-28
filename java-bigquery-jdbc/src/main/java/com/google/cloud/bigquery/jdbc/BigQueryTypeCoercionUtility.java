@@ -63,8 +63,13 @@ class BigQueryTypeCoercionUtility {
   }
 
   /**
-   * Converts a java.sql.Date by shifting its wall-clock year, month, and day fields into the target
-   * Calendar's timezone per JDBC specification.
+   * Converts a {@link Date} for reading/outbound operations (e.g., {@code getDate(..., Calendar)})
+   * by shifting its wall-clock year, month, and day fields into the target {@link Calendar}'s
+   * timezone per the JDBC specification.
+   *
+   * @param date the date in system-default time representation
+   * @param cal the target Calendar containing the desired timezone
+   * @return the adjusted Date starting at 00:00:00 in the target Calendar's timezone
    */
   static Date convertDateWithCalendar(Date date, Calendar cal) {
     if (date == null || cal == null) {
@@ -80,6 +85,16 @@ class BigQueryTypeCoercionUtility {
     return new Date(zdt.toInstant().toEpochMilli());
   }
 
+  /**
+   * Converts a {@link Date} for writing/inbound parameter setting operations (e.g., {@code
+   * setDate(..., Calendar)}) by extracting its local date fields as interpreted in the target
+   * {@link Calendar}'s timezone and normalizing them back into start-of-day in the system-default
+   * timezone.
+   *
+   * @param date the date instant specified relative to the target Calendar
+   * @param cal the Calendar containing the source timezone
+   * @return the normalized Date starting at 00:00:00 in the system-default timezone
+   */
   static Date convertDateToCalendar(Date date, Calendar cal) {
     if (date == null || cal == null) {
       return date;
