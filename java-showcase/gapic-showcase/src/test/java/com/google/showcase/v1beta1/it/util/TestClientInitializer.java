@@ -33,9 +33,12 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.IdentityClient;
 import com.google.showcase.v1beta1.IdentitySettings;
+import com.google.showcase.v1beta1.SequenceServiceClient;
+import com.google.showcase.v1beta1.SequenceServiceSettings;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import com.google.showcase.v1beta1.stub.SequenceServiceStubSettings;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
@@ -475,5 +478,75 @@ public class TestClientInitializer {
     public String getServiceName() {
       return "showcase";
     }
+  }
+
+  public static SequenceServiceClient createGrpcSequenceClient() throws Exception {
+    SequenceServiceSettings settings =
+        SequenceServiceSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                SequenceServiceSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+    return SequenceServiceClient.create(settings);
+  }
+
+  public static SequenceServiceClient createHttpJsonSequenceClient() throws Exception {
+    SequenceServiceSettings settings =
+        SequenceServiceSettings.newHttpJsonBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                SequenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+    return SequenceServiceClient.create(settings);
+  }
+
+  public static SequenceServiceClient createGrpcSequenceClientWithRetrySettings(
+      RetrySettings retrySettings, Set<StatusCode.Code> retryableCodes) throws Exception {
+    SequenceServiceStubSettings.Builder stubSettingsBuilder =
+        SequenceServiceStubSettings.newBuilder();
+    stubSettingsBuilder
+        .attemptSequenceSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    SequenceServiceSettings settings = SequenceServiceSettings.create(stubSettingsBuilder.build());
+    settings =
+        settings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                SequenceServiceSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+    return SequenceServiceClient.create(settings);
+  }
+
+  public static SequenceServiceClient createHttpJsonSequenceClientWithRetrySettings(
+      RetrySettings retrySettings, Set<StatusCode.Code> retryableCodes) throws Exception {
+    SequenceServiceStubSettings.Builder stubSettingsBuilder =
+        SequenceServiceStubSettings.newHttpJsonBuilder();
+    stubSettingsBuilder
+        .attemptSequenceSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    SequenceServiceSettings settings = SequenceServiceSettings.create(stubSettingsBuilder.build());
+    settings =
+        settings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                SequenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+    return SequenceServiceClient.create(settings);
   }
 }
