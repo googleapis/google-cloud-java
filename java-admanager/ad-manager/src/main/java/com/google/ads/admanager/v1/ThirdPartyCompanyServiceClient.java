@@ -69,7 +69,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetThirdPartyCompany</td>
- *      <td><p> API to retrieve a `ThirdPartyCompany` object.</td>
+ *      <td><p> Retrieves a `ThirdPartyCompany` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -88,7 +88,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListThirdPartyCompanies</td>
- *      <td><p> API to retrieve a list of `ThirdPartyCompany` objects.</td>
+ *      <td><p> Lists `ThirdPartyCompany` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -204,7 +204,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ThirdPartyCompany` object.
+   * Retrieves a `ThirdPartyCompany` object.
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ThirdPartyCompany` object.
+   * Retrieves a `ThirdPartyCompany` object.
    *
    * <p>Sample code:
    *
@@ -265,7 +265,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ThirdPartyCompany` object.
+   * Retrieves a `ThirdPartyCompany` object.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `ThirdPartyCompany` object.
+   * Retrieves a `ThirdPartyCompany` object.
    *
    * <p>Sample code:
    *
@@ -326,7 +326,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ThirdPartyCompany` objects.
+   * Lists `ThirdPartyCompany` objects.
    *
    * <p>Sample code:
    *
@@ -361,7 +361,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ThirdPartyCompany` objects.
+   * Lists `ThirdPartyCompany` objects.
    *
    * <p>Sample code:
    *
@@ -393,7 +393,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ThirdPartyCompany` objects.
+   * Lists `ThirdPartyCompany` objects.
    *
    * <p>Sample code:
    *
@@ -431,7 +431,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ThirdPartyCompany` objects.
+   * Lists `ThirdPartyCompany` objects.
    *
    * <p>Sample code:
    *
@@ -468,7 +468,7 @@ public class ThirdPartyCompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `ThirdPartyCompany` objects.
+   * Lists `ThirdPartyCompany` objects.
    *
    * <p>Sample code:
    *

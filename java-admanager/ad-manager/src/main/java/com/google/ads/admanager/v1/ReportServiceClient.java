@@ -70,7 +70,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetReport</td>
- *      <td><p> API to retrieve a `Report` object.</td>
+ *      <td><p> Retrieves a `Report` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +89,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListReports</td>
- *      <td><p> API to retrieve a list of `Report` objects.</td>
+ *      <td><p> Lists `Report` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -109,7 +109,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> CreateReport</td>
- *      <td><p> API to create a `Report` object.</td>
+ *      <td><p> Creates a `Report` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -128,7 +128,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateReport</td>
- *      <td><p> API to update a `Report` object.</td>
+ *      <td><p> Updates a `Report` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -288,7 +288,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Report` object.
+   * Retrieves a `Report` object.
    *
    * <p>Sample code:
    *
@@ -316,7 +316,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Report` object.
+   * Retrieves a `Report` object.
    *
    * <p>Sample code:
    *
@@ -343,7 +343,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Report` object.
+   * Retrieves a `Report` object.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Report` object.
+   * Retrieves a `Report` object.
    *
    * <p>Sample code:
    *
@@ -398,7 +398,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Report` objects.
+   * Lists `Report` objects.
    *
    * <p>Sample code:
    *
@@ -430,7 +430,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Report` objects.
+   * Lists `Report` objects.
    *
    * <p>Sample code:
    *
@@ -459,7 +459,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Report` objects.
+   * Lists `Report` objects.
    *
    * <p>Sample code:
    *
@@ -494,7 +494,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Report` objects.
+   * Lists `Report` objects.
    *
    * <p>Sample code:
    *
@@ -529,7 +529,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Report` objects.
+   * Lists `Report` objects.
    *
    * <p>Sample code:
    *
@@ -570,7 +570,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Report` object.
+   * Creates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -603,7 +603,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Report` object.
+   * Creates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -633,7 +633,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Report` object.
+   * Creates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -662,7 +662,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Report` object.
+   * Creates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -690,7 +690,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Report` object.
+   * Updates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -719,7 +719,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Report` object.
+   * Updates a `Report` object.
    *
    * <p>Sample code:
    *
@@ -748,7 +748,7 @@ public class ReportServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Report` object.
+   * Updates a `Report` object.
    *
    * <p>Sample code:
    *

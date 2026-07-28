@@ -25,7 +25,7 @@ package com.google.storage.control.v2;
  *
  * <pre>
  * Response message to summarize the intelligence findings for a specified
- * scope(org, folder or project).
+ * scope (organization, folder or project).
  * </pre>
  *
  * Protobuf type {@code google.storage.control.v2.SummarizeIntelligenceFindingsResponse}
@@ -386,7 +386,7 @@ public final class SummarizeIntelligenceFindingsResponse
    *
    * <pre>
    * Response message to summarize the intelligence findings for a specified
-   * scope(org, folder or project).
+   * scope (organization, folder or project).
    * </pre>
    *
    * Protobuf type {@code google.storage.control.v2.SummarizeIntelligenceFindingsResponse}

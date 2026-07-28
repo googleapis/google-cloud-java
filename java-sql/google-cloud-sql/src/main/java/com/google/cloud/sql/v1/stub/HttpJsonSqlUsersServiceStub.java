@@ -234,6 +234,14 @@ public class HttpJsonSqlUsersServiceStub extends SqlUsersServiceStub {
                               serializer.putQueryParam(
                                   fields, "revokeExistingRoles", request.getRevokeExistingRoles());
                             }
+                            if (request.hasRevokeExistingServerRoles()) {
+                              serializer.putQueryParam(
+                                  fields,
+                                  "revokeExistingServerRoles",
+                                  request.getRevokeExistingServerRoles());
+                            }
+                            serializer.putQueryParam(
+                                fields, "serverRoles", request.getServerRolesList());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
