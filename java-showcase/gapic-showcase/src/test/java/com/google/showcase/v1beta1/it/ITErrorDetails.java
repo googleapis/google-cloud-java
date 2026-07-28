@@ -33,6 +33,7 @@ import com.google.rpc.RequestInfo;
 import com.google.rpc.ResourceInfo;
 import com.google.rpc.RetryInfo;
 import com.google.showcase.v1beta1.EchoClient;
+import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.FailEchoWithDetailsRequest;
 import com.google.showcase.v1beta1.PoetryError;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
@@ -123,8 +124,7 @@ class ITErrorDetails {
     assertThat(poetryError.getPoem()).isEqualTo("roses are red");
 
     // Verify mismatched type returns null safely (mismatch unpacking)
-    com.google.showcase.v1beta1.EchoResponse mismatchedDetail =
-        errorDetails.getMessage(com.google.showcase.v1beta1.EchoResponse.class);
+    EchoResponse mismatchedDetail = errorDetails.getMessage(EchoResponse.class);
     assertThat(mismatchedDetail).isNull();
   }
 
