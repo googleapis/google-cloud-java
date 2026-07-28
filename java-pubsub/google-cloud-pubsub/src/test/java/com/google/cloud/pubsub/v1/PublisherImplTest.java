@@ -43,6 +43,11 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannel;
+import io.grpc.Metadata;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
+import io.grpc.ServerInterceptors;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -98,8 +103,19 @@ public class PublisherImplTest {
   public void setUp() throws Exception {
     testPublisherServiceImpl = new FakePublisherServiceImpl();
 
+    ServerInterceptor headerInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> call, Metadata headers, ServerCallHandler<ReqT, RespT> next) {
+            testPublisherServiceImpl.recordHeaders(headers);
+            return next.startCall(call, headers);
+          }
+        };
+
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
-    serverBuilder.addService(testPublisherServiceImpl);
+    serverBuilder.addService(
+        ServerInterceptors.intercept(testPublisherServiceImpl, headerInterceptor));
     testServer = serverBuilder.build();
     testChannel = InProcessChannelBuilder.forName("test-server").build();
     testServer.start();
@@ -1509,6 +1525,15 @@ public class PublisherImplTest {
     fakeExecutor.advanceTime(Duration.ofMillis(100));
     fakeExecutor.advanceTime(Duration.ZERO); // Drain pending tasks
     assertEquals("1", future.get(5, TimeUnit.SECONDS));
+
+    List<Metadata> capturedHeaders = testPublisherServiceImpl.getCapturedHeaders();
+    assertThat(capturedHeaders).hasSize(2);
+    Metadata.Key<String> hedgedHeaderKey =
+        Metadata.Key.of("x-goog-pubsub-hedged", Metadata.ASCII_STRING_MARSHALLER);
+    // Original request should NOT have the header
+    assertThat(capturedHeaders.get(0).get(hedgedHeaderKey)).isNull();
+    // Hedged request SHOULD have the header set to "true"
+    assertThat(capturedHeaders.get(1).get(hedgedHeaderKey)).isEqualTo("true");
 
     shutdownTestPublisher(publisher);
   }

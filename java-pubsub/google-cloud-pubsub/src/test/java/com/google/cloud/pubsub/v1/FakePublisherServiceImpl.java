@@ -22,6 +22,7 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import io.grpc.stub.StreamObserver;
 import java.time.Duration;
+import io.grpc.Metadata;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -36,6 +37,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 class FakePublisherServiceImpl extends PublisherImplBase {
 
   private final LinkedBlockingQueue<PublishRequest> requests = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<Metadata> capturedHeaders = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
   private boolean autoPublishResponse;
@@ -162,7 +164,16 @@ class FakePublisherServiceImpl extends PublisherImplBase {
     return new ArrayList<PublishRequest>(requests);
   }
 
+  public void recordHeaders(Metadata headers) {
+    capturedHeaders.add(headers);
+  }
+
+  public List<Metadata> getCapturedHeaders() {
+    return new ArrayList<>(capturedHeaders);
+  }
+
   public void clearRequests() {
     requests.clear();
+    capturedHeaders.clear();
   }
 }

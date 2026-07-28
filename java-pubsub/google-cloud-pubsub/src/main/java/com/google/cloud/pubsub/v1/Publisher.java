@@ -48,6 +48,8 @@ import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.CodedOutputStream;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -61,6 +63,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -143,6 +146,7 @@ public class Publisher implements PublisherInterface {
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private final HedgeSettings hedgeSettings;
+  private final Map<String, List<String>> hedgingMetadata;
 
   /**
    * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
@@ -150,6 +154,7 @@ public class Publisher implements PublisherInterface {
    * (1%). For example, 1.0 logical token is represented as 100.
    */
   private static final int HEDGE_TOKEN_SCALE = 100;
+
 
   private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
@@ -273,6 +278,8 @@ public class Publisher implements PublisherInterface {
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
+    this.hedgingMetadata =
+        ImmutableMap.of("x-goog-pubsub-hedged", ImmutableList.of("true"));
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
@@ -547,6 +554,9 @@ public class Publisher implements PublisherInterface {
     GrpcCallContext context = publishContext;
     if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
       context = publishContextWithCompression;
+    }
+    if (attemptNumber > 1) {
+      context = context.withExtraHeaders(hedgingMetadata);
     }
 
     int numMessagesInBatch = outstandingBatch.size();
