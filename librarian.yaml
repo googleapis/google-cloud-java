@@ -30,7 +30,7 @@ tools:
       classifier: all-deps
       packaging: jar
     - name: protoc-gen-java_grpc
-      version: 1.81.0
+      version: 1.82.2
       group_id: io.grpc
       artifact_id: protoc-gen-grpc-java
       classifier: linux-x86_64
