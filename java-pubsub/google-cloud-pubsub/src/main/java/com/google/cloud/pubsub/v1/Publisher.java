@@ -63,7 +63,7 @@ import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
-
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -154,7 +154,6 @@ public class Publisher implements PublisherInterface {
    * (1%). For example, 1.0 logical token is represented as 100.
    */
   private static final int HEDGE_TOKEN_SCALE = 100;
-
 
   private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
@@ -278,8 +277,7 @@ public class Publisher implements PublisherInterface {
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
-    this.hedgingMetadata =
-        ImmutableMap.of("x-goog-pubsub-hedged", ImmutableList.of("true"));
+    this.hedgingMetadata = ImmutableMap.of("x-goog-pubsub-hedged", ImmutableList.of("true"));
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
@@ -556,7 +554,11 @@ public class Publisher implements PublisherInterface {
       context = publishContextWithCompression;
     }
     if (attemptNumber > 1) {
-      context = context.withExtraHeaders(hedgingMetadata);
+      logger.log(Level.FINER, "Publishing hedged attempt {0}", attemptNumber);
+      context =
+          context
+              .withExtraHeaders(hedgingMetadata)
+              .withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
 
     int numMessagesInBatch = outstandingBatch.size();

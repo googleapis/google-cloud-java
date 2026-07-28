@@ -34,8 +34,8 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
-import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -45,11 +45,11 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
+import io.grpc.Server;
 import io.grpc.ServerCall;
 import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.ServerInterceptors;
-import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -1432,12 +1432,14 @@ public class PublisherImplTest {
     return getPublisherWithHedge(delay, 0.1f, 20);
   }
 
-  private Publisher getPublisherWithHedge(Duration delay, float refillRatio, int maxTokens) throws Exception {
-    HedgeSettings hedgeSettings = HedgeSettings.newBuilder()
-        .setHedgeDelay(delay)
-        .setRefillRatio(refillRatio)
-        .setMaxTokens(maxTokens)
-        .build();
+  private Publisher getPublisherWithHedge(Duration delay, float refillRatio, int maxTokens)
+      throws Exception {
+    HedgeSettings hedgeSettings =
+        HedgeSettings.newBuilder()
+            .setHedgeDelay(delay)
+            .setRefillRatio(refillRatio)
+            .setMaxTokens(maxTokens)
+            .build();
     return getTestPublisherBuilder()
         .setHedgeSettings(hedgeSettings)
         .setClock(fakeExecutor.getClock())
@@ -1636,7 +1638,7 @@ public class PublisherImplTest {
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
 
     ApiFuture<String> future = sendTestMessage(publisher, "msg-fail-fast");
-    
+
     // The request should fail immediately without waiting or advancing time
     try {
       future.get(1, TimeUnit.SECONDS);
@@ -1651,7 +1653,7 @@ public class PublisherImplTest {
 
     // Advance time past the 100ms hedge delay and check that no hedge was sent
     fakeExecutor.advanceTime(Duration.ofMillis(200));
-    
+
     // Captured requests should still be 1 (no hedge triggered)
     assertThat(testPublisherServiceImpl.getCapturedRequests()).hasSize(1);
 
