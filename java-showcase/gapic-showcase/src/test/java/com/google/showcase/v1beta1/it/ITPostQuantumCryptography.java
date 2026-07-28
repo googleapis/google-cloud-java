@@ -16,7 +16,6 @@
 
 package com.google.showcase.v1beta1.it;
 
-import static com.google.api.gax.httpjson.HttpJsonConscryptUtils.DEFAULT_CONSCRYPT_NAMED_GROUPS;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
