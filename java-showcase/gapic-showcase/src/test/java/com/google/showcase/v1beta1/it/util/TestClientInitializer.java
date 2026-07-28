@@ -38,7 +38,6 @@ import com.google.showcase.v1beta1.SequenceServiceSettings;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
-import com.google.showcase.v1beta1.stub.SequenceServiceStubSettings;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
@@ -509,44 +508,35 @@ public class TestClientInitializer {
 
   public static SequenceServiceClient createGrpcSequenceClientWithRetrySettings(
       RetrySettings retrySettings, Set<StatusCode.Code> retryableCodes) throws Exception {
-    SequenceServiceStubSettings.Builder stubSettingsBuilder =
-        SequenceServiceStubSettings.newBuilder();
-    stubSettingsBuilder
+    SequenceServiceSettings.Builder settingsBuilder = SequenceServiceSettings.newBuilder();
+    settingsBuilder
         .attemptSequenceSettings()
         .setRetrySettings(retrySettings)
         .setRetryableCodes(retryableCodes);
-    SequenceServiceSettings settings = SequenceServiceSettings.create(stubSettingsBuilder.build());
-    settings =
-        settings.toBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                SequenceServiceSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
-                    .build())
-            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
-            .build();
-    return SequenceServiceClient.create(settings);
+    settingsBuilder
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setTransportChannelProvider(
+            SequenceServiceSettings.defaultGrpcTransportProviderBuilder()
+                .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                .build())
+        .setEndpoint(DEFAULT_GRPC_ENDPOINT);
+    return SequenceServiceClient.create(settingsBuilder.build());
   }
 
   public static SequenceServiceClient createHttpJsonSequenceClientWithRetrySettings(
       RetrySettings retrySettings, Set<StatusCode.Code> retryableCodes) throws Exception {
-    SequenceServiceStubSettings.Builder stubSettingsBuilder =
-        SequenceServiceStubSettings.newHttpJsonBuilder();
-    stubSettingsBuilder
+    SequenceServiceSettings.Builder settingsBuilder = SequenceServiceSettings.newHttpJsonBuilder();
+    settingsBuilder
         .attemptSequenceSettings()
         .setRetrySettings(retrySettings)
         .setRetryableCodes(retryableCodes);
-    SequenceServiceSettings settings = SequenceServiceSettings.create(stubSettingsBuilder.build());
-    settings =
-        settings.toBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                SequenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
-                    .setHttpTransport(
-                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
-                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
-                    .build())
-            .build();
-    return SequenceServiceClient.create(settings);
+    settingsBuilder
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setTransportChannelProvider(
+            SequenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
+                .setHttpTransport(new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                .build());
+    return SequenceServiceClient.create(settingsBuilder.build());
   }
 }
