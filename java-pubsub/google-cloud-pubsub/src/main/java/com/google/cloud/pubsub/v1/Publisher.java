@@ -752,6 +752,21 @@ public class Publisher implements PublisherInterface {
     }
   }
 
+  void removeFromHedgingQueue(CancellationSharer coordinator) {
+    queueLock.lock();
+    try {
+      Iterator<HedgedRequest> iterator = hedgingQueue.iterator();
+      while (iterator.hasNext()) {
+        if (iterator.next().getCoordinator() == coordinator) {
+          iterator.remove();
+          coordinator.isInQueue.set(false);
+        }
+      }
+    } finally {
+      queueLock.unlock();
+    }
+  }
+
   private void processQueue() {
     queueLock.lock();
     try {

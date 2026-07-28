@@ -34,6 +34,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
@@ -1621,6 +1622,38 @@ public class PublisherImplTest {
 
     // Verify cancellation propagates to overall future
     assertTrue(future.isCancelled());
+
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testNoHedgingIfOriginalFailsImmediately() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
+
+    // Configure the fake to immediately return an INVALID_ARGUMENT error
+    testPublisherServiceImpl.setAutoPublishResponse(false);
+    testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-fail-fast");
+    
+    // The request should fail immediately without waiting or advancing time
+    try {
+      future.get(1, TimeUnit.SECONDS);
+      fail("Should have failed with ExecutionException");
+    } catch (ExecutionException e) {
+      // expected
+      assertThat(e.getCause()).isInstanceOf(InvalidArgumentException.class);
+    }
+
+    // Server should receive exactly 1 request (the original attempt)
+    assertThat(testPublisherServiceImpl.getCapturedRequests()).hasSize(1);
+
+    // Advance time past the 100ms hedge delay and check that no hedge was sent
+    fakeExecutor.advanceTime(Duration.ofMillis(200));
+    
+    // Captured requests should still be 1 (no hedge triggered)
+    assertThat(testPublisherServiceImpl.getCapturedRequests()).hasSize(1);
 
     shutdownTestPublisher(publisher);
   }

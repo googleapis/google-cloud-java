@@ -89,12 +89,14 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private void handleAttemptFailure(int attemptNumber, Throwable t) {
     runningAttempts.remove(attemptNumber);
 
-    if (!done.get()) {
-      lastError.set(t);
-      if (runningAttempts.isEmpty() && !isInQueue.get()) {
-        if (done.compareAndSet(false, true)) {
-          setException(lastError.get());
-        }
+    if (done.get()) {
+      return;
+    }
+    lastError.set(t);
+    if (runningAttempts.isEmpty() && done.compareAndSet(false, true)) {
+      setException(lastError.get());
+      if (isInQueue.get()) {
+        publisher.removeFromHedgingQueue(this);
       }
     }
   }
@@ -120,12 +122,14 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   @Override
   public boolean cancel(boolean mayInterruptIfRunning) {
     if (super.cancel(mayInterruptIfRunning)) {
-      if (done.compareAndSet(false, true)) {
-        for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
-          future.cancel(mayInterruptIfRunning);
-        }
-        return true;
+      done.set(true);
+      if (isInQueue.get()) {
+        publisher.removeFromHedgingQueue(this);
       }
+      for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
+        future.cancel(mayInterruptIfRunning);
+      }
+      return true;
     }
     return false;
   }
