@@ -38,6 +38,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
@@ -611,6 +612,7 @@ public class HttpJsonEchoStub extends EchoStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final HttpJsonEchoResumableUploadStub uploadStub;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -886,6 +888,8 @@ public class HttpJsonEchoStub extends EchoStub {
             settings.testIamPermissionsSettings(),
             clientContext);
 
+    this.uploadStub = HttpJsonEchoResumableUploadStub.create(settings, clientContext);
+
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -1011,6 +1015,11 @@ public class HttpJsonEchoStub extends EchoStub {
   }
 
   @Override
+  public ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable() {
+    return uploadStub.resumableUploadCallable();
+  }
+
+  @Override
   public ClientStreamingCallable<EchoRequest, EchoResponse> collectCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: collectCallable(). REST transport is not implemented for this method"
@@ -1027,6 +1036,9 @@ public class HttpJsonEchoStub extends EchoStub {
   public final void close() {
     try {
       backgroundResources.close();
+      if (uploadStub != null) {
+        uploadStub.close();
+      }
     } catch (RuntimeException e) {
       throw e;
     } catch (Exception e) {
@@ -1037,6 +1049,9 @@ public class HttpJsonEchoStub extends EchoStub {
   @Override
   public void shutdown() {
     backgroundResources.shutdown();
+    if (uploadStub != null) {
+      uploadStub.shutdown();
+    }
   }
 
   @Override

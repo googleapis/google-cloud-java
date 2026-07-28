@@ -25,6 +25,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -161,6 +162,11 @@ public abstract class EchoStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
+  public ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable() {
+    throw new UnsupportedOperationException("Not implemented: resumableUploadCallable()");
+  }
+
   @Override
   public abstract void close();
 }
+
